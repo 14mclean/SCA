@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar {
+    overflow: hidden;
+}
+
+.navbar a {
+    background-color: lightgreen;
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+    width: 21.2vw;
+}
+
+.navbar a:hover {
+    background-color: rgb(119, 197, 119);
+    color: black;
+}
+
+.navbar a.active {
+    background-color: rgb(107, 224, 107);
+}
+
+.mtebutton {
+    overflow: hidden;
+    display:inline-flex;
+    width: 100%;
+    text-align: center;
+}
+
+.mtebutton a {
+    margin-top: 1vh;
+    margin-left: 1vw;
+    margin-bottom: 2vh;
+    font-size: 4vw;
+    width: 48.5vw;
+    padding: 44vh 0px;
+    text-align: center;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    border-radius: 1vw;
+}
+
+.mtebutton a:hover {
+    background-color: lightgrey;
+}    
