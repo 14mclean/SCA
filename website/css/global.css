@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #444;
+}
+
+.navbar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 0.8vh;
+    text-decoration: none;
+    font-size: calc(calc(1vw + 1vh)/2);
+
+    width: 21.2vw;
+}
+
+.navbar a:hover {
+    background-color: rgb(119, 197, 119);
+    color: black;
+}
+
+.navbar a.active {
+    background-color: rgb(107, 224, 107);
+    color: black;
+}
+
+.title {
+    text-align: center;
+    margin: 0.5vh;
+    font-size: 4vh;
+}

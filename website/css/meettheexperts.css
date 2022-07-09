@@ -1,0 +1,26 @@
+.mtebutton {
+    overflow: hidden;
+    display:inline-flex;
+    width: 100%;
+    text-align: center;
+}
+
+.mtebutton a {
+    margin-top: 4vh;
+    margin-left: 1vw;
+    margin-bottom: 2vh;
+    width: 23vw;
+    padding: 20vh 0px;
+    border-radius: 1vw;
+
+    font-size: 4vh;
+    text-align: center;
+    font-weight: 5000;
+    text-decoration: none;
+    color: black;
+}
+
+.mtebutton a:hover {
+    opacity: 0.5;
+    transition: 0.25s;
+}
