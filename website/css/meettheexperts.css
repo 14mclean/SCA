@@ -7,20 +7,20 @@
 
 .mtebutton a {
     margin-top: 4vh;
-    margin-left: 1vw;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 2vh;
-    width: 23vw;
+    width: 30vw;
     padding: 20vh 0px;
     border-radius: 1vw;
 
     font-size: 4vh;
-    text-align: center;
     font-weight: 5000;
     text-decoration: none;
     color: black;
 }
 
 .mtebutton a:hover {
-    opacity: 0.5;
+    opacity: 0.8;
     transition: 0.25s;
 }

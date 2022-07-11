@@ -3,9 +3,39 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/directory.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
-        D
+        <div class="navbar">
+            <a href="home.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="teachingresources.html">Resources</a>
+            <a class="active" href="meettheexperts.html">Meet the Experts</a>
+        </div>
+
+        <div class="title">
+            Meet the Experts Directory
+        </div>
+
+        <form class="search" action="php/directorysearch.php" method="post">
+            <input type="text" placeholder="Search experts" name="expertSearch">
+            <button type="submit"><i class="fa fa-search"></i></button>
+
+            <div class="filters">
+                <div>
+                    <br> <input type="radio" name="interaction" value="1"> Online
+                    <br> <input type="radio" name="interaction" value="2"> Face-to-Face
+                    <br> <input type="radio" name="interaction" value="3"> Teacher Advice
+                </div>
+
+                <div>
+                    <br> <input type="radio" name="ages" value="1"> KS1
+                    <br> <input type="radio" name="ages" value="2"> KS2
+                    <br> <input type="radio" name="ages" value="3"> KS3
+                </div>
+            </div>
+            
+        </form>
     </body>
 </html>

@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/meettheexperts.css">
         <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/login.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
@@ -15,12 +15,13 @@
         </div>
 
         <div class="title">
-            <a>Meet The Experts</a>
+            Login to access directory
         </div>
 
-        <div class="mtebutton">
-            <a href="expertresources.html" style="background-color: lightcoral;">Expert Resources</a>
-            <a href="login.html"  style="background-color: lightseagreen;">Directory</a>
-        </div>
+        <form class="login" action="directory.html" method="GET">
+            <input type="text" placeholder="Email" name="email"><br>
+            <input type="text" placeholder="Password" name="password"><br>
+            <button type="submit">Login</button>
+        </form>
     </body>
 </html>
