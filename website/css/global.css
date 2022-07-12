@@ -7,32 +7,40 @@
 
 .navbar {
     overflow: hidden;
-    background-color: #444;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .navbar a {
     float: left;
-    color: white;
+    color: black;
     text-align: center;
     padding: 0.8vh;
     text-decoration: none;
-    font-size: calc(calc(1vw + 1vh)/2);
-
-    width: 21.2vw;
-}
-
-.navbar a:hover {
-    background-color: rgb(119, 197, 119);
-    color: black;
+    font-size: 18px;
+    font-weight: 1;
+    font-family: 'Open Sans',sans-serif;
 }
 
 .navbar a.active {
-    background-color: rgb(107, 224, 107);
-    color: black;
+    color: darkgrey;
+}
+
+.navbar a:hover {
+    color: #6b2c91;
 }
 
 .title {
     text-align: center;
-    margin-top: 1vh;
-    font-size: 4vh;
+    margin-top: 36px;
+    font-size: 40px;
 }
+
+/*
+
+UoM purple - 
+Nice green - 
+Nice blue - 
+
+*/

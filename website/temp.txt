@@ -1,11 +1,3 @@
-move resources to expert resources
-
-multiple choice for filters
-
-search bar default to "expertise area"
-
-info tab to left of search bar
-
 top 10 categories (bottom of directory)
 
 subcategories in +/- form for post-search
@@ -13,9 +5,7 @@ subcategories in +/- form for post-search
 https://www.transform-our-world.org/top-resources - for categories
 
 UoM scheme (purple)
-
 white - green,purple - black
-
 home button as icon
 
 resources: sca toolkit, teacher guide, student resources, other things
