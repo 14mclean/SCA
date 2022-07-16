@@ -6,18 +6,17 @@
 }
 
 .mtebutton a {
-    margin-top: 4vh;
+    margin-top: 14vh;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2vh;
-    width: 30vw;
-    padding: 20vh 0px;
+    width: 35vw;
+    padding: 10vh 0;
     border-radius: 1vw;
+    border: 2px solid #3397e8;
 
-    font-size: 4vh;
-    font-weight: 5000;
+    font-size: 4vmin;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .mtebutton a:hover {

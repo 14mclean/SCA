@@ -20,32 +20,8 @@
     opacity: 0.8;
 }
 
-.filters {
+.filter {
     display: inline-block;
     text-align: left;
     margin-right: 40px;
-}
-
-.filters input[type="checkbox"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-
-    transition-duration: 0.25s;
-    cursor: pointer;
-
-    background-color: white;
-    border: 1px solid black;
-}
-
-.filters input[type="checkbox"]:checked {
-    background-color: #6b2c91;
-    content: '\1F5F8';
-    color: white;
-    text-align: center;
 }

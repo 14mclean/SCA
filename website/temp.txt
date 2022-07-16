@@ -1,3 +1,5 @@
+custom checkboxes
+
 top 10 categories (bottom of directory)
 
 subcategories in +/- form for post-search
@@ -6,6 +8,5 @@ https://www.transform-our-world.org/top-resources - for categories
 
 UoM scheme (purple)
 white - green,purple - black
-home button as icon
 
 resources: sca toolkit, teacher guide, student resources, other things

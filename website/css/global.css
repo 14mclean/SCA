@@ -1,8 +1,15 @@
 @charset "utf-8";
 
+:root {
+    --uomPurple: #6b2c91;
+    --niceBlue: #3397e8;
+    --niceGreen: #2cbf3d;
+}
+
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 .navbar {
@@ -18,29 +25,35 @@
     text-align: center;
     padding: 0.8vh;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 1;
+    font-size: 3.5vmin;
     font-family: 'Open Sans',sans-serif;
 }
 
 .navbar a.active {
-    color: darkgrey;
+    opacity: 0.45;
+    color: #6b2c91;
 }
 
 .navbar a:hover {
     color: #6b2c91;
+    opacity: 1;
+}
+
+.navbar a img {
+    width: 3.5vmin;
+    opacity: 0.7;
+}
+
+.navbar a img:hover {
+    opacity: 1;
 }
 
 .title {
+    display: inline-block;
     text-align: center;
+    margin-left: auto;
     margin-top: 36px;
-    font-size: 40px;
+    font-size: 5vmin;
+    background-color: var(--niceGreen);
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
-
-/*
-
-UoM purple - 
-Nice green - 
-Nice blue - 
-
-*/
