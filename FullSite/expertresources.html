@@ -6,8 +6,10 @@
         <title>School Citizen Assemblies</title>
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/scahome.css">
+        <link rel="stylesheet" href="css/expertresources.css">
+        <script src="javascript/modernizr.js"></script>
     </head>
+
     <body>
         <header>
             <img class="logo" src="assets/tempLogo.png" alt="SCA Logo">
@@ -45,10 +47,35 @@
             </div>
         </header>
         
-        <content>
-            <p>Expert Resources</p>
+        <content> <!--
+            <div id="overlay" onclick="off()">
+                <h1>
+                    title
+                </h1>
+                <p>
+                    content
+                </p>
+            </div>-->
+
+            <div class="title">
+                Expert Resources
+            </div>
+
+            <div id="coverflow">
+                <section data-cover="assets/chesterzoo.png"></section>
+                <section data-cover="assets/nationalTrust.jpg"></section>
+                <section data-cover="assets/oxfam.png"></section>
+                <section data-cover="assets/UoM.png"></section>
+                <section data-cover="assets/wwf.jpg"></section>
+                <section data-cover="assets/un.png"></section>
+            </div>
+            <br><br>
+            <nav class="controls">
+                <a id="prev"> <img src="https://cdn-icons-png.flaticon.com/512/271/271220.png"/> </a>
+                <a id="next"> <img src="https://cdn-icons-png.flaticon.com/512/271/271228.png"/> </a>
+            </nav>
         </content>
     </body>
-    
+    <script src="javascript/coverflow.js"></script>
     <script src="javascript/navbar.js"></script>
 </html>

@@ -6,11 +6,6 @@
     padding: 0;
 }
 
-content {
-    width: 80vw;
-    display: inline-flex;
-}
-
 .leftSpacer {
     width: 20px;
     height: 100px;
