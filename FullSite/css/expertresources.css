@@ -6,6 +6,7 @@
 .content {
     display: inline;
     width: 100vw;
+    text-align: center;
 }
 
 #coverflow {

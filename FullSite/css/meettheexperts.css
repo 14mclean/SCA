@@ -1,0 +1,19 @@
+.loginButton {
+    background-color: lightgrey;
+    font-size: 22px;
+    height: 29px;
+    width: 100px;
+    margin-top: 85px;
+    margin-right: 20px;
+    border: solid #333333 2px;
+    border-radius: 10px;
+    color: #333333;
+    text-align: center;
+    text-decoration: none!important;
+}
+
+@media only screen and (max-width: 815px) {
+    .loginButton {
+        margin-top: 20px;
+    }
+}

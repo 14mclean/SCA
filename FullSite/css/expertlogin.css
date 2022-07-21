@@ -1,0 +1,86 @@
+
+.container {
+    position:absolute; 
+    top:0; left:0; right:0; bottom:0; 
+    margin: auto;
+    
+    width: fit-content;
+    min-width: 250px;
+    height: fit-content;
+    min-height: 400px;
+    
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+}
+
+.container h1 {
+    color: black;
+    margin-bottom: 35px;
+    margin-left: 20px;
+}
+
+.container form input {
+    width: 60%;
+    height: 7vh;
+    
+    margin-bottom: 20px;
+    margin-left: 20%;
+    
+    border: 1px solid grey;
+    border-radius: 8px;
+    
+    font-size: 20px;
+}
+
+.container form label {
+    width: fit-content;
+    height: fit-content;
+    margin-left: -15%;
+    color: darkblue;
+}
+
+.container form button {
+    transform: translateX(-50%);
+    width: 60%;
+    height: 6.5vh;
+    
+    margin-top: 10px;
+    margin-left: 50%;
+    
+    border: 0;
+    border-radius: 30px;
+    
+    background-color: #03570d;
+    color: white;
+    font-size: 100%;
+}
+
+.container p {
+    text-align: center;
+}
+
+.container p a {
+    text-decoration: none;
+    color: #03570d;
+}
+
+.userRedirect {
+    position:absolute; 
+    left:0; right:0;
+    bottom: 5vh; 
+    margin: auto;
+    background-color: #6b2c91;
+    width: 20vw;
+    height: 6.5vh;
+    text-decoration: none;
+    color: white;
+    border: 0;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 6.5vh;
+
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 400;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+}
