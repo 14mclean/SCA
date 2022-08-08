@@ -17,36 +17,33 @@
     top:0; left:0; right:0; bottom:0; 
     margin: auto;
     
-    width: 100%;
+    width: 420px;
     height: 430px;
     
     border-radius: 8px;
-    box-shadow: none;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
 }
 
 .container h1 {
     cursor: default;
     color: black;
     margin-bottom: 35px;
-    margin-left: 50%;
+    margin-left: 20px;
     font-family: 'Open Sans';
     font-weight: 400;
-    transform: translateX(-50%);
-    width: fit-content;
 }
 
 .container form input {
-    width: 80%;
+    width: 320px;
     height: 50px;
     
     margin-bottom: 20px;
-    margin-left: 50%;
+    margin-left: 45px;
     
     border: 1px solid #ababab;
     border-radius: 8px;
     
     font-size: 20px;
-    transform: translateX(-50%);
 }
 
 .container form button {
@@ -92,32 +89,31 @@
 form img {
     height: 20px;
     width: 20px;
-    margin-left: 82%;
+    margin-left: -12%;
     margin-bottom: -1%;
     cursor: pointer;
-    transform: translateY(-285%);
 }
 
-@media (min-width: 500px) {     
+@media (max-width: 500px) {
     .container {
-        width: 420px;
-        box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+        width: 100%;
+        box-shadow: none;
     }
-    
+
     .container h1 {
-        margin-left: 20px;
-        transform: none;
-        width: auto;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
     }
-    
+
     .container form input {
-        width: 320px;
-        margin-left: 45px;
-        transform: none;
+        width: 80%;
+        margin-left: 50%;
+        transform: translateX(-50%);
     }
-    
+
     form img {
-        margin-left: -12%;
-        transform: none;
+        margin-left: 82%;
+        transform: translateY(-285%);
     }
 }
