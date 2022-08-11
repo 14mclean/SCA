@@ -1,0 +1,169 @@
+.loginButton {
+    height: 35px;
+    width: 75px;
+
+    margin-top: 80px;
+    margin-right: 20px;
+    border-radius: 24px;
+
+    background-color: #6b2c91;
+
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 35px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.loginButton:hover {
+    background-color: #4c1f68;
+}
+
+content {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-bottom: 60px;
+}
+
+.refinements {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+    margin-left: 5px;
+    margin-right: 4%;
+}
+
+.refinements h1 {
+    font-family: 'Open Sans';
+    font-size: 24px;
+    color: #333333;
+    margin-left: 10px;
+}
+
+.refine {
+    margin-top: 20px;
+}
+
+.refine label {
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.refine input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+.refine h1 {
+    font-family: 'Open Sans';
+    font-size: 20px;
+    color: #333333;
+}
+
+.main {
+    width: 75%;
+    height: 100%;
+}
+
+.searchHead {
+    background-color: purple;
+}
+
+.search {
+    border: 1px solid #333333;
+    border-radius: 30px;
+    width: 60%;
+    height: 50px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.search input {
+    width: 85%;
+    height: 95%;
+    margin-left: 15%;
+    object-fit: contain;
+    border: 0 solid transparent;
+    background-color: transparent;
+    font-size: 24px;
+    color: #333333;
+    margin-left: 5px;
+}
+
+.search img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+.results {
+    width: 100%;
+    margin-top: 30px
+}
+
+.item {
+    display: inline-block;
+    background-color: #efefef;
+    margin: 20px;
+    width: 25%;
+    height: 100px;
+    
+}
+
+.item:hover {
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+}
+
+.overlay {
+    position: fixed;
+    bottom: 0px;
+
+    display: flex;
+    background-color: #6b2c91;
+    width: 100%;
+    height: 50px;
+}
+
+.overlay h1 {
+    margin-left: 15px;
+    width: fit-content;
+
+    color: white;
+    font-family: 'Open Sans';
+    font-size: 18px;
+    line-height: 50px;
+}
+
+.area {
+    width: fit-content;
+    margin: auto;
+    cursor: pointer;
+}
+
+.area:hover {
+    opacity: 0.8;
+}
+
+.area h2 {
+    color: white;
+    font-size: 18px;
+    font-family: 'Open Sans';
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 850px) {
+    .loginButton {
+        margin-top: 16px;
+    }
+}

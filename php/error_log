@@ -1,0 +1,129 @@
+[14-Jul-2022 21:16:02 UTC] PHP Warning:  require(connectDB.php): Failed to open stream: No such file or directory in /home/mwd3iqjaesdr/public_html/php/signup.php on line 2
+[14-Jul-2022 21:16:02 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'connectDB.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/mwd3iqjaesdr/public_html/php/signup.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/signup.php on line 2
+[14-Jul-2022 21:18:18 UTC] PHP Warning:  require(php/connectDB.php): Failed to open stream: No such file or directory in /home/mwd3iqjaesdr/public_html/php/signup.php on line 2
+[14-Jul-2022 21:18:18 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'php/connectDB.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/mwd3iqjaesdr/public_html/php/signup.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/signup.php on line 2
+[14-Jul-2022 21:18:58 UTC] PHP Fatal error:  Uncaught ArgumentCountError: ini_set() expects exactly 2 arguments, 1 given in /home/mwd3iqjaesdr/public_html/php/signup.php:2
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/signup.php(2): ini_set()
+#1 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/signup.php on line 2
+[14-Jul-2022 21:19:03 UTC] PHP Fatal error:  Uncaught ArgumentCountError: ini_set() expects exactly 2 arguments, 1 given in /home/mwd3iqjaesdr/public_html/php/signup.php:2
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/signup.php(2): ini_set()
+#1 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/signup.php on line 2
+[14-Jul-2022 21:20:18 UTC] PHP Fatal error:  Uncaught ArgumentCountError: ini_set() expects exactly 2 arguments, 1 given in /home/mwd3iqjaesdr/public_html/php/signup.php:2
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/signup.php(2): ini_set()
+#1 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/signup.php on line 2
+[14-Jul-2022 21:21:07 UTC] PHP Warning:  require(php/connectDB.php): Failed to open stream: No such file or directory in /home/mwd3iqjaesdr/public_html/php/signup.php on line 3
+[14-Jul-2022 21:21:07 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'php/connectDB.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/mwd3iqjaesdr/public_html/php/signup.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/signup.php on line 3
+[14-Jul-2022 21:22:35 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'mwd3iqjaesdr'@'localhost' (using password: YES) in /home/mwd3iqjaesdr/public_html/php/connectDB.php:2
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/connectDB.php(2): mysqli->__construct()
+#1 /home/mwd3iqjaesdr/public_html/php/signup.php(3): require('/home/mwd3iqjae...')
+#2 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/connectDB.php on line 2
+[14-Jul-2022 21:25:41 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'cpses_mwkfcr396'@'localhost' (using password: YES) in /home/mwd3iqjaesdr/public_html/php/connectDB.php:2
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/connectDB.php(2): mysqli->__construct()
+#1 /home/mwd3iqjaesdr/public_html/php/signup.php(3): require('/home/mwd3iqjae...')
+#2 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/connectDB.php on line 2
+[14-Jul-2022 21:32:46 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'cpses_mwkfcr396'@'localhost' (using password: YES) in /home/mwd3iqjaesdr/public_html/php/connectDB.php:2
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/connectDB.php(2): mysqli->__construct()
+#1 /home/mwd3iqjaesdr/public_html/php/signup.php(3): require('/home/mwd3iqjae...')
+#2 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/connectDB.php on line 2
+[14-Jul-2022 21:33:04 UTC] PHP Warning:  Array to string conversion in /home/mwd3iqjaesdr/public_html/php/signup.php on line 34
+[14-Jul-2022 21:33:53 UTC] PHP Warning:  Array to string conversion in /home/mwd3iqjaesdr/public_html/php/signup.php on line 34
+[14-Jul-2022 21:33:58 UTC] PHP Warning:  Array to string conversion in /home/mwd3iqjaesdr/public_html/php/signup.php on line 34
+[14-Jul-2022 21:34:45 UTC] PHP Warning:  Undefined variable $uppercase in /home/mwd3iqjaesdr/public_html/php/signup.php on line 21
+[15-Jul-2022 17:58:02 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/mwd3iqjaesdr/public_html/php/signup.php:12
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/signup.php(12): mysqli->query()
+#1 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/signup.php on line 12
+[15-Jul-2022 18:00:09 UTC] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/mwd3iqjaesdr/public_html/php/signup.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/signup.php on line 13
+[15-Jul-2022 18:10:42 UTC] PHP Warning:  Undefined array key 1 in /home/mwd3iqjaesdr/public_html/php/signup.php on line 13
+[10-Aug-2022 21:25:01 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE email=''' at line 1 in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php:11
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/teacherlogin.php(11): mysqli->query()
+#1 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 11
+[10-Aug-2022 21:25:38 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE email=''' at line 1 in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php:11
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/teacherlogin.php(11): mysqli->query()
+#1 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 11
+[10-Aug-2022 21:26:57 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE email=''' at line 1 in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php:11
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/teacherlogin.php(11): mysqli->query()
+#1 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 11
+[10-Aug-2022 21:27:53 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE email=''' at line 1 in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php:11
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/teacherlogin.php(11): mysqli->query()
+#1 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 11
+[10-Aug-2022 21:28:32 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE email='test@test.com'' at line 1 in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php:11
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/teacherlogin.php(11): mysqli->query()
+#1 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 11
+[10-Aug-2022 21:30:31 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE email='test@test.com'' at line 1 in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php:11
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/teacherlogin.php(11): mysqli->query()
+#1 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 11
+[10-Aug-2022 21:31:38 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE email='test@test.com'' at line 1 in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php:11
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/teacherlogin.php(11): mysqli->query()
+#1 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 11
+[10-Aug-2022 21:32:09 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE email=''' at line 1 in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php:11
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/teacherlogin.php(11): mysqli->query()
+#1 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 11
+[10-Aug-2022 21:32:17 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE email='test@test.com'' at line 1 in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php:11
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/teacherlogin.php(11): mysqli->query()
+#1 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 11
+[10-Aug-2022 21:34:07 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE email='test@test.com'' at line 1 in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php:13
+Stack trace:
+#0 /home/mwd3iqjaesdr/public_html/php/teacherlogin.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 13
+[10-Aug-2022 21:41:05 UTC] PHP Warning:  Undefined variable $email in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 12
+[10-Aug-2022 21:42:18 UTC] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 17
+[10-Aug-2022 21:42:35 UTC] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 17
+[10-Aug-2022 21:43:45 UTC] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 17
+[10-Aug-2022 21:44:17 UTC] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/mwd3iqjaesdr/public_html/php/teacherlogin.php on line 17
