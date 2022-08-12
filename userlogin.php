@@ -12,7 +12,7 @@
             <h1>Teacher Login</h1>
             
             <form method="post" action="php/teacherlogin.php">
-                <div class="loginError" <?php if(isset($_POST['loginError'])) {?>style="display:none"<?php } ?>>
+                <div class="loginError" <?php if(isset($_GET['loginError'])) {?>style="display:none"<?php } ?>>
                     Incorrect Username or Password
                 </div>
 
@@ -24,7 +24,6 @@
             <p>
                 or <br>
                 <a href="usersignup.html">Sign Up</a>
-                <?php $_POST['loginError']; ?>
             </p>
         </div>
 
