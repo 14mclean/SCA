@@ -7,7 +7,7 @@
     $password = $_POST['password'];
     
     // check for already used email
-    $existingEmailQuery = "SELECT EXISTS(SELECT * from Users WHERE email='$email');";
+    $existingEmailQuery = prepare("SELECT EXISTS(SELECT * from Users WHERE email='$email');");
     $isExisting = mysqli_fetch_array($conn->query($existingEmailQuery))[0][0];
     
     if($isExisting == '1') {
@@ -34,7 +34,7 @@
     
     if(count($errors) == 0) {
         $passHash = hash('sha256', $password);
-        $query = "INSERT INTO Users (email, passwordHash) VALUES ('$email','$passHash');";
+        $query = prepare("INSERT INTO Users (email, passwordHash) VALUES ('$email','$passHash');");
         
         $result = $conn->query($query);
         echo($result);

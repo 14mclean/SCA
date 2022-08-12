@@ -7,9 +7,9 @@
     $password = $_POST['password'];
     $passHash = hash('sha256', $password);
     
-    $query = "
+    $query = prepare("
     SELECT * from Users WHERE email='$email' AND passwordHash='$passHash'
-    ";
+    ");
     
     $response = $conn->query($query);
     
@@ -17,5 +17,7 @@
         echo("Incorrect username or password");
     } else {
         echo("Logged In");
+        session_start();
+        $_SESSION['email'] = $email;
     }
 ?>
