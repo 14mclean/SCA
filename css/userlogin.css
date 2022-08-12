@@ -148,5 +148,10 @@ form img {
         background-color: red;
         width: 300px;
         height: 25px;
+        margin-left: auto;
+        color: white;
+        font-family: 'Open Sans';
+        font-size: 24px;
+        margin-bottom: 20px;
     }
 }
