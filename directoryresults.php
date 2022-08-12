@@ -1,6 +1,6 @@
 <?php
     if(!isset($_SESSION['email'])) {
-        header("Location: teacherLogin.php");
+        header("Location: teacherLogin.html");
         exit();
     }
 ?>
@@ -40,7 +40,7 @@
                     <button class="dropbtn" onclick="location.href='meettheexperts.html'">Meet the Experts</button>
                     <div class="dropdown-content">
                         <a href="expertresources.html">Expert Resources</a>
-                        <a href="directoryresults.html">Directory</a>
+                        <a href="directoryresults.php">Directory</a>
                     </div>
                 </div>
             </nav>

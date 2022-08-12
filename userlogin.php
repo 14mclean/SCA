@@ -12,6 +12,9 @@
             <h1>Teacher Login</h1>
             
             <form method="post" action="php/teacherlogin.php">
+                <div class="loginError">
+                    Incorrect Username or Password
+                </div>
                 <input type="email" placeholder="Email" name="email" id="email"><br>
                 <input type="password" placeholder="Password" name="password" id="passwordObscured"> <img class="eyeIcon" src="assets/openEye.png">
                 <button type="submit">Login</button>

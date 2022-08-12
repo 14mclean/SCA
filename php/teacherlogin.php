@@ -14,7 +14,9 @@
     $response = $conn->query($query);
     
     if(mysqli_num_rows($response) == 0) {
-        echo("Incorrect username or password");
+        $_POST['loginError'] = "Incorrect Email or Password";
+        header("Location: userlogin.html");
+        exit();
     } else {
         echo("Logged In");
         session_start();
