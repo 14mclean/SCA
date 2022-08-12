@@ -14,7 +14,7 @@
     $response = $conn->query($query);
     
     if(mysqli_num_rows($response) == 0) {
-        $_POST['loginError'] = "Incorrect Email or Password";
+        $_POST['loginError'] = true;
         header("Location: ../userlogin.php");
         exit();
     } else {
