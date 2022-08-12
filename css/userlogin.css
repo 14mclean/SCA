@@ -136,7 +136,11 @@ form img {
     line-height: 30px;
 }
 
-@media (min-width: 500px) {     
+@media (min-width: 500px) {  
+    body {
+        overflow: hidden;
+    }
+    
     .container {
         width: 420px;
         box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
