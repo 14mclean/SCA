@@ -24,6 +24,7 @@
             <p>
                 or <br>
                 <a href="usersignup.html">Sign Up</a>
+                <?php $_POST['loginError']; ?>
             </p>
         </div>
 
