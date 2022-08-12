@@ -7,9 +7,9 @@
     $password = $_POST['password'];
     $passHash = hash('sha256', $password);
     
-    $query = $conn -> prepare("
+    $query = "
     SELECT * from Users WHERE email='$email' AND passwordHash='$passHash'
-    ");
+    ";
     
     $response = $conn->query($query);
     
