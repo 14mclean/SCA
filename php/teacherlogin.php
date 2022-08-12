@@ -14,8 +14,7 @@
     $response = $conn->query($query);
     
     if(mysqli_num_rows($response) == 0) {
-        $_GET['loginError'] = true;
-        header("Location: ../userlogin.php");
+        header("Location: ../userlogin.php?loginError");
         exit();
     } else {
         echo("Logged In");
