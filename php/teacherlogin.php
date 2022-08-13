@@ -17,6 +17,7 @@
         header("Location: ../userlogin.php?loginError=true");
         exit();
     } else {
+        session_destroy();
         session_start();
         $_SESSION["email"] = $email;
         header("Location: ../directoryresults.php");
