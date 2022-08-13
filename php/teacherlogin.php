@@ -17,7 +17,10 @@
         header("Location: ../userlogin.php?loginError=true");
         exit();
     } else {
-        session_destroy();
+        if(isset(session_id())) {
+            session_destroy();
+        }
+        
         session_start();
         $_SESSION["email"] = $email;
         echo session_id();
