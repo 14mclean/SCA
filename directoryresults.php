@@ -1,4 +1,5 @@
 <?php
+    echo $_SESSION;
     echo $_SESSION["email"];
 
     if(!isset($_SESSION["email"])) {
