@@ -20,7 +20,8 @@
         session_destroy();
         session_start();
         $_SESSION["email"] = $email;
-        header("Location: ../directoryresults.php");
-        exit();
+        echo session_id();
+        //header("Location: ../directoryresults.php");
+        //exit();
     }
 ?>
