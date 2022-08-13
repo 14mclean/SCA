@@ -1,7 +1,8 @@
 <?php
     if(!isset($_SESSION["email"])) {
-        header("Location: userlogin.php");
-        exit();
+        /*header("Location: userlogin.php");
+        exit();*/
+        echo var_dump($_SESSION);
     }
 ?>
 
