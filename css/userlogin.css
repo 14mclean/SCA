@@ -1,3 +1,10 @@
+html, body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative
+  }
+
 .homeButton {
     display: flex;
     width: 32px;
@@ -105,7 +112,7 @@ form img {
     bottom: 5vh; 
     margin: auto;
     background-color: #03570d;
-    width: 20vw;
+    width: fit-content;
     height: 6.5vh;
     text-decoration: none;
     color: white;
@@ -136,11 +143,7 @@ form img {
     line-height: 30px;
 }
 
-@media (min-width: 500px) {  
-    body {
-        overflow: hidden;
-    }
-    
+@media (min-width: 500px) {      
     .container {
         width: 420px;
         box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
@@ -165,5 +168,9 @@ form img {
 
     .loginError {
         width: 300px;
+    }
+
+    .expertRedirect {
+        width: 20vw;
     }
 }
