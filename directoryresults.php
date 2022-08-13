@@ -1,6 +1,7 @@
 <?php
     echo $_SESSION;
     echo $_SESSION["email"];
+    echo session_id();
     echo "Session";
 
     if(!isset($_SESSION["email"])) {
