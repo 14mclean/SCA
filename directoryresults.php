@@ -1,6 +1,6 @@
 <?php
     if(!isset($_SESSION['email'])) {
-        header("Location: teacherLogin.php");
+        header("Location: userlogin.php");
         exit();
     }
 ?>
