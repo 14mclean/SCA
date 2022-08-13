@@ -112,7 +112,6 @@ form img {
     bottom: 5vh; 
     margin: auto;
     background-color: #03570d;
-    width: calc(fit-content + 10px);
     height: 6.5vh;
     text-decoration: none;
     color: white;
@@ -120,6 +119,8 @@ form img {
     border-radius: 15px;
     text-align: center;
     line-height: 6.5vh;
+    padding-left: 5px;
+    padding-right: 5px;
 
     font-family: Arial;
     font-size: 16px;
