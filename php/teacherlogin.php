@@ -19,8 +19,7 @@
     } else {
         session_start();
         $_SESSION["email"] = $email;
-        echo $_SESSION["email"];
-        //header("Location: ../directoryresults.php");
+        header("Location: ../directoryresults.php");
         exit();
     }
 ?>
