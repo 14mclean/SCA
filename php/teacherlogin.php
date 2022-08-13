@@ -16,11 +16,7 @@
     if(mysqli_num_rows($response) == 0) {
         header("Location: ../userlogin.php?loginError=true");
         exit();
-    } else {
-        if(isset(session_id())) {
-            session_destroy();
-        }
-        
+    } else {        
         session_start();
         $_SESSION["email"] = $email;
         echo session_id();
