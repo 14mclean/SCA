@@ -112,7 +112,7 @@ form img {
     bottom: 5vh; 
     margin: auto;
     background-color: #03570d;
-    width: fit-content;
+    width: calc(fit-content + 10px);
     height: 6.5vh;
     text-decoration: none;
     color: white;
