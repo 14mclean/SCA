@@ -1,5 +1,6 @@
 <?php
-    echo("SessionID: " session_id());
+    echo("SessionID: ");
+    echo(session_id());
 
     if(!isset($_SESSION["email"])) {
         /*header("Location: userlogin.php");
