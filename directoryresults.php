@@ -3,6 +3,7 @@
         /*header("Location: userlogin.php");
         exit();*/
         echo var_dump($_SESSION);
+        echo session_id();
     }
 ?>
 
