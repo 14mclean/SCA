@@ -1,3 +1,5 @@
+<?php echo var_dump($_SESSION) ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,7 +28,6 @@
                 <a href="usersignup.html">Sign Up</a>
             </p>
         </div>
-        <?php echo var_dump($_SESSION) ?>
         <a class="expertRedirect" href="expertlogin.html">Expert Login</a>
     </body>
     <script src="javascript/passwordVisibility.js"></script>
