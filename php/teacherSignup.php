@@ -41,8 +41,8 @@
 
     echo($lowercase);
     echo($uppercase);
-    echo($number)
-    echo(strlen($password))
+    echo($number);
+    echo(strlen($password));
     print_r($errors);
     
     if(isError($errors)) {
