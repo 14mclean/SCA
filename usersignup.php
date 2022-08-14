@@ -13,7 +13,8 @@
             <h1>Sign Up</h1>
 
             <div class="loginError">
-                    <?php 
+                    <?php
+                    echo($_GET);
                         if($_GET["charLengthError"] == "true") {
                             echo("Password must to be at least 8 characters long");
                         }
@@ -28,6 +29,10 @@
 
                         if($_GET["lowercaseError"] == "true") {
                             echo("Password must contain at least 1 lowercase character");
+                        }
+
+                        if($_GET["emailTakenError"] == "true") {
+                            echo("Email has already been taken");
                         }
                     ?>
                 </div>
