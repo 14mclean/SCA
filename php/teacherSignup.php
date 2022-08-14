@@ -27,6 +27,7 @@
         "numError" => false,
         "uppercaseError" => false,
         "lowercaseError" => false,
+        "emailTakenError" => false
     ];
     
     if(strlen($password) < 8) {
@@ -51,25 +52,21 @@
     if(isError($errors)) {
         $passHash = hash('sha256', $password);
         $query = "INSERT INTO Users (email, passwordHash) VALUES ('$email','$passHash');";
-        $result = $conn->query($query);
 
+        try {
+            $result = $conn->query($query);
+        } catch(Exception e) {
+            $errors["emailTakenError"] = true;
+            errorOccured($errors);
+        }
+        
         session_start();
         $_SESSION["email"] = $email;
         $_SESSION["loginType"] = "teacher";
-        //header("Location: ../directoryresults.php");
-        //exit();
+        header("Location: ../directoryresults.php");
+        exit();
     } else {
-        $url = "Location: ../usersignup.php?";
-
-        foreach ($errors as $key => $value) {
-            if(array_search($key, array_keys($errors)) != 0) {
-                $url .= ",";
-            }
-            $url .= "$key=$value";
-        }
-
-        //header($url);
-        //exit();
+        errorOccured($errors);
     }
 
     function isError($errors) {
@@ -79,5 +76,19 @@
             }
         }
         return false;
+    }
+
+    function errorOccured($errors) {
+        $url = "Location: ../usersignup.php?";
+
+        foreach ($errors as $key => $value) {
+            if(array_search($key, array_keys($errors)) != 0) {
+                $url .= ",";
+            }
+            $url .= "$key=$value";
+        }
+
+        header($url);
+        exit();
     }
 ?>
