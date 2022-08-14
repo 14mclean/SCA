@@ -42,12 +42,6 @@
     if(!$lowercase < 1) {
         $errors["lowercaseError"] = true;
     }
-
-    echo($lowercase);
-    echo($uppercase);
-    echo($number);
-    echo(strlen($password));
-    print_r($errors);
     
     if(isError($errors)) {
         $passHash = hash('sha256', $password);
@@ -85,7 +79,12 @@
             if(array_search($key, array_keys($errors)) != 0) {
                 $url .= ",";
             }
-            $url .= "$key=$value";
+            $url .= "$key=";
+            if($value) {
+                $url .= "true";
+            } else {
+                $url .= "false";
+            }
         }
 
         header($url);
