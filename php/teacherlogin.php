@@ -1,5 +1,4 @@
 <?php
-    session_start();
     ini_set('display_errors', 1);
 
     require 'connectDB.php';
@@ -15,10 +14,10 @@
     $response = $conn->query($query);
     
     if(mysqli_num_rows($response) == 0) {
-        session_destroy();
         header("Location: ../userlogin.php?loginError=true");
         exit();
     } else {
+        session_start();
         $_SESSION["email"] = $email;
         header("Location: ../directoryresults.php");
         exit();

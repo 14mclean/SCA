@@ -1,11 +1,9 @@
 <?php
-    session_start();
-    echo("SessionID: ");
-    print_r($_SESSION);
+    session_start()
 
     if(!isset($_SESSION["email"])) {
-        /*header("Location: userlogin.php");
-        exit();*/
+        header("Location: userlogin.php");
+        exit();
     }
 ?>
 
