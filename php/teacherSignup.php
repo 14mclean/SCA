@@ -65,9 +65,10 @@
 
     function isError($errors) {
         foreach ($errors as $key => $value) {
-            if($value) {
+            if($value == true) {
                 return true;
             }
         }
+        return false;
     }
 ?>
