@@ -23,10 +23,10 @@
     $uppercase = preg_match('@[A-Z]@', $password);
     $number = preg_match('@[0-9]@', $password);
     $errors = [
-        "charLengthError" = false,
-        "numError" = false,
-        "uppercaseError" = false,
-        "lowercaseError" = false,
+        "charLengthError" => false,
+        "numError" => false,
+        "uppercaseError" => false,
+        "lowercaseError" => false,
     ];
     
     if(strlen($password) < 8) {
