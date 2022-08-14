@@ -7,41 +7,17 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
     
-    // check for already used email
-    $existingEmailQuery = "SELECT EXISTS(SELECT * from Users WHERE email='$email');";
-    $isExisting = mysqli_fetch_array($conn->query($existingEmailQuery))[0][0];
-    
-    if($isExisting == '1') {
-        array_push($errors, 'Email has already been used');
-    }
-    
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         array_push($errors, 'Invalid email');
     }
     
-    $lowercase = preg_match('@[a-z]@', $password);
-    $uppercase = preg_match('@[A-Z]@', $password);
-    $number = preg_match('@[0-9]@', $password);
     $errors = [
         "charLengthError" => strlen($password) < 8,
-        "numError" => false,
-        "uppercaseError" => false,
-        "lowercaseError" => false,
+        "numError" => preg_match('@[0-9]@', $password) < 1,
+        "uppercaseError" => preg_match('@[A-Z]@', $password) < 1,
+        "lowercaseError" => preg_match('@[a-z]@', $password) < 1,
         "emailTakenError" => false
     ];
-    
-    /*if(strlen($password) < 8) {
-        $errors["charLengthError"] = true;
-    }*/
-    if($number < 1) {
-        $errors["numError"] = true;
-    }
-    if(!$uppercase < 1) {
-        $errors["uppercaseError"] = true;
-    }
-    if(!$lowercase < 1) {
-        $errors["lowercaseError"] = true;
-    }
     
     if(isError($errors)) {
         $passHash = hash('sha256', $password);
