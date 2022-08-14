@@ -31,11 +31,14 @@
     
     if(strlen($password) < 8) {
         $errors["charLengthError"] = true;
-    } else if(!$number) {
+    }
+    if($number < 1) {
         $errors["numError"] = true;
-    } else if(!$uppercase) {
+    }
+    if(!$uppercase < 1) {
         $errors["uppercaseError"] = true;
-    } else if(!$lowercase) {
+    }
+    if(!$lowercase < 1) {
         $errors["lowercaseError"] = true;
     }
 
