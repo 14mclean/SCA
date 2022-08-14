@@ -23,7 +23,7 @@
             
             <p>
                 or <br>
-                <a href="usersignup.html">Sign Up</a>
+                <a href="usersignup.php">Sign Up</a>
             </p>
         </div>
         <a class="expertRedirect" href="expertlogin.html">Expert Login</a>
