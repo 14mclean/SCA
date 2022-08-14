@@ -50,7 +50,7 @@
         header("Location: ../directoryresults.php");
         exit();
     } else {
-        $url = "Location: ../usersignup.php?"
+        $url = "Location: ../usersignup.php?";
 
         foreach ($errors as $key => $value) {
             if(key($key $errors) != 0) {
