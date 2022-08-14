@@ -12,7 +12,7 @@
         <div class="container">
             <h1>Sign Up</h1>
 
-            <form method="post" action="php/signup.php"> 
+            <form method="post" action="php/teacherSignup.php"> 
                 <input type="email" placeholder="Email" name="email" id="email"><br>
                 <input type="password" placeholder="Password" name="password" id="passwordObscured"> <img class="eyeIcon" src="assets/openEye.png">
                 <button type="submit">Sign Up</button>
