@@ -53,7 +53,7 @@
         $url = "Location: ../usersignup.php?";
 
         foreach ($errors as $key => $value) {
-            if(key($key $errors) != 0) {
+            if(array_search($key, array_keys($errors)) != 0) {
                 $url .= ",";
             }
             $url .= "$key=$value";
