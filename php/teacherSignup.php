@@ -21,28 +21,49 @@
     $lowercase = preg_match('@[a-z]@', $password);
     $uppercase = preg_match('@[A-Z]@', $password);
     $number = preg_match('@[0-9]@', $password);
+    $errors = [
+        "charLengthError" = false,
+        "numError" = false,
+        "uppercaseError" = false,
+        "lowercaseError" = false,
+    ];
     
     if(strlen($password) < 8) {
-        array_push($errors, 'Password must be at least 8 characters long');
+        $errors["charLengthError"] = true;
     } else if(!$number) {
-        array_push($errors, 'Password must include a number');
+        $errors["numError"] = true;
     } else if(!$uppercase) {
-        array_push($errors, 'Password must include an uppercase letter');
+        $errors["uppercaseError"] = true;
     } else if(!$lowercase) {
-        array_push($errors, 'Password must include an lowercase letter');
+        $errors["lowercaseError"] = true;
     }
     
-    if(count($errors) == 0) {
+    if(isError($errors)) {
         $passHash = hash('sha256', $password);
         $query = "INSERT INTO Users (email, passwordHash) VALUES ('$email','$passHash');";
         $result = $conn->query($query);
-        
+
         session_start();
         $_SESSION["email"] = $email;
         $_SESSION["loginType"] = "teacher";
         header("Location: ../directoryresults.php");
         exit();
     } else {
-        print_r($errors);
+        $url = "Location: ../usersignup.php?"
+
+        foreach ($errors as $key => $value) {
+            if(key($key $errors) != 0) {
+                $url .= ",";
+            }
+            $url .= "$key=$value";
+        }
+    }
+
+    function isError($errors) {
+        foreach ($errors as $key => $value) {
+            if($value) {
+                return true;
+            }
+        }
     }
 ?>
