@@ -1,4 +1,5 @@
 <?php
+    session_start();
     echo("SessionID: ");
     print_r($_SESSION);
 
