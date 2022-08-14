@@ -57,6 +57,9 @@
             }
             $url .= "$key=$value";
         }
+
+        header($url);
+        exit();
     }
 
     function isError($errors) {
