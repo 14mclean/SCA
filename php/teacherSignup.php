@@ -81,9 +81,9 @@
             }
             $url .= "$key=";
             if($value) {
-                $url .= "true";
+                $url .= "'true'";
             } else {
-                $url .= "false";
+                $url .= "'false'";
             }
         }
 
