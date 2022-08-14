@@ -38,6 +38,12 @@
     } else if(!$lowercase) {
         $errors["lowercaseError"] = true;
     }
+
+    echo($lowercase);
+    echo($uppercase);
+    echo($number)
+    echo(strlen($password))
+    print_r($errors);
     
     if(isError($errors)) {
         $passHash = hash('sha256', $password);
@@ -47,8 +53,8 @@
         session_start();
         $_SESSION["email"] = $email;
         $_SESSION["loginType"] = "teacher";
-        header("Location: ../directoryresults.php");
-        exit();
+        //header("Location: ../directoryresults.php");
+        //exit();
     } else {
         $url = "Location: ../usersignup.php?";
 
@@ -59,8 +65,8 @@
             $url .= "$key=$value";
         }
 
-        header($url);
-        exit();
+        //header($url);
+        //exit();
     }
 
     function isError($errors) {
