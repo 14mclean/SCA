@@ -14,7 +14,7 @@
 
             <div class="loginError">
                     <?php
-                    echo($_GET);
+                    echo(var_dump($_GET));
                         if($_GET["charLengthError"] == "true") {
                             echo("Password must to be at least 8 characters long");
                         }
