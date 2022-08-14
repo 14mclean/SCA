@@ -55,7 +55,7 @@
 
         try {
             $result = $conn->query($query);
-        } catch(Exception e) {
+        } catch(Exception $e) {
             $errors["emailTakenError"] = true;
             errorOccured($errors);
         }
