@@ -14,21 +14,20 @@
 
             <div class="loginError">
                     <?php
-                    echo(var_dump($_GET));
                         if($_GET["charLengthError"] == "true") {
-                            echo("Password must to be at least 8 characters long");
+                            echo("Password must to be at least 8 characters long<br>");
                         }
 
                         if($_GET["numError"] == "true") {
-                            echo("Password must contain at least 1 number");
+                            echo("Password must contain at least 1 number<br>");
                         }
 
                         if($_GET["uppercaseError"] == "true") {
-                            echo("Password must contain at least 1 uppercase character");
+                            echo("Password must contain at least 1 uppercase character<br>");
                         }
 
                         if($_GET["lowercaseError"] == "true") {
-                            echo("Password must contain at least 1 lowercase character");
+                            echo("Password must contain at least 1 lowercase character<br>");
                         }
 
                         if($_GET["emailTakenError"] == "true") {
