@@ -23,16 +23,16 @@
     $uppercase = preg_match('@[A-Z]@', $password);
     $number = preg_match('@[0-9]@', $password);
     $errors = [
-        "charLengthError" => false,
+        "charLengthError" => strlen($password) < 8,
         "numError" => false,
         "uppercaseError" => false,
         "lowercaseError" => false,
         "emailTakenError" => false
     ];
     
-    if(strlen($password) < 8) {
+    /*if(strlen($password) < 8) {
         $errors["charLengthError"] = true;
-    }
+    }*/
     if($number < 1) {
         $errors["numError"] = true;
     }
