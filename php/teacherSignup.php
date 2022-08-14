@@ -77,13 +77,13 @@
 
         foreach ($errors as $key => $value) {
             if(array_search($key, array_keys($errors)) != 0) {
-                $url .= ",";
+                $url .= "&";
             }
             $url .= "$key=";
             if($value) {
-                $url .= "'true'";
+                $url .= "true";
             } else {
-                $url .= "'false'";
+                $url .= "false";
             }
         }
 
