@@ -19,6 +19,7 @@
     } else {
         session_start();
         $_SESSION["email"] = $email;
+        $_SESSION["loginType"] = "teacher";
         header("Location: ../directoryresults.php");
         exit();
     }

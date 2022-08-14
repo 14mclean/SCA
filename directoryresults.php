@@ -1,5 +1,4 @@
 <?php
-    ini_set('display_errors', 1);
     session_start();
 
     if(!isset($_SESSION["email"])) {
@@ -54,7 +53,7 @@
                 <span></span>
             </div>
 
-            <a href="userlogin.html" class="loginButton">Login</a>
+            <a href="userlogin.php" class="loginButton">Login</a>
         </header>
         
         <content>

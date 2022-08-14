@@ -35,9 +35,13 @@
     if(count($errors) == 0) {
         $passHash = hash('sha256', $password);
         $query = "INSERT INTO Users (email, passwordHash) VALUES ('$email','$passHash');";
-        
         $result = $conn->query($query);
-        echo($result);
+        
+        session_start();
+        $_SESSION["email"] = $email;
+        $_SESSION["loginType"] = "teacher";
+        header("Location: ../directoryresults.php");
+        exit();
     } else {
         print_r($errors);
     }
