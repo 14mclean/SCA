@@ -1,6 +1,10 @@
 <?php 
     function getGet($index) {
-        isset($_GET[$index]) ? $_GET[$index] : null;
+        if(isset($_GET[$index])) {
+            return $_GET[$index];
+        } else {
+            return NULL;
+        }
     }
 ?>
 
