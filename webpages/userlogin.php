@@ -11,13 +11,13 @@
         <div class="container">
             <h1>Teacher Login</h1>
             
-            <form method="post" action="php/teacherlogin.php">
+            <form method="post" action="../phpScripts/teacherlogin.php">
                 <div class="loginError" <?php if(!isset($_GET['loginError'])) {?>style="display:none"<?php } ?>>
                     Incorrect Username or Password
                 </div>
 
                 <input type="email" placeholder="Email" name="email" id="email"><br>
-                <input type="password" placeholder="Password" name="password" id="passwordObscured"> <img class="eyeIcon" src="assets/openEye.png">
+                <input type="password" placeholder="Password" name="password" id="passwordObscured"> <img class="eyeIcon" src="../assets/openEye.png">
                 <button type="submit">Login</button>
             </form>
             
@@ -28,5 +28,5 @@
         </div>
         <a class="expertRedirect" href="expertlogin.html">Expert Login</a>
     </body>
-    <script src="javascript/passwordVisibility.js"></script>
+    <script src="../javascript/passwordVisibility.js"></script>
 </html>

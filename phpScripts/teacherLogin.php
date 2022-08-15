@@ -14,13 +14,13 @@
     $response = $conn->query($query);
     
     if(mysqli_num_rows($response) == 0) {
-        header("Location: ../userlogin.php?loginError=true");
+        header("Location: ../webpages/userlogin.php?loginError=true");
         exit();
     } else {
         session_start();
         $_SESSION["email"] = $email;
         $_SESSION["loginType"] = "teacher";
-        header("Location: ../directoryresults.php");
+        header("Location: ../webpages/directoryresults.php");
         exit();
     }
 ?>

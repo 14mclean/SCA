@@ -33,7 +33,7 @@
         session_start();
         $_SESSION["email"] = $email;
         $_SESSION["loginType"] = "teacher";
-        header("Location: ../directoryresults.php");
+        header("Location: ../webpages/directoryresults.php");
         exit();
     } else {
         errorOccured($errors);
@@ -49,7 +49,7 @@
     }
 
     function errorOccured($errors) {
-        $url = "Location: ../usersignup.php?";
+        $url = "Location: ../webpages/usersignup.php?";
 
         foreach ($errors as $key => $value) {
             if(array_search($key, array_keys($errors)) != 0) {

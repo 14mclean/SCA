@@ -13,13 +13,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>School Citizen Assemblies</title>
-        <link rel="stylesheet" href="css/global.css">
-        <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/directoryresults.css">
+        <link rel="stylesheet" href="../css/global.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/directoryresults.css">
     </head>
     <body>
         <header>
-            <img class="logo" src="assets/tempLogo.png" alt="SCA Logo">
+            <img class="logo" src="../assets/tempLogo.png" alt="SCA Logo">
             
             <nav class="navbar">
                 <a href="scahome.html" id="homeMenu"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Home_free_icon.svg/1200px-Home_free_icon.svg.png"></a>
@@ -39,7 +39,7 @@
                 </div>
                 
                 <div class="dropdown">
-                    <button class="dropbtn" onclick="location.href='meettheexperts.html'">Meet the Experts</button>
+                    <button class="dropbtn" onclick="location.href='meettheexperts.php'">Meet the Experts</button>
                     <div class="dropdown-content">
                         <a href="expertresources.html">Expert Resources</a>
                         <a href="directoryresults.php">Directory</a>
@@ -53,7 +53,7 @@
                 <span></span>
             </div>
 
-            <a href="php/logout.php" class="loginButton">Logout</a>
+            <a href="../phpScripts/logout.php" class="loginButton">Logout</a>
         </header>
         
         <content>
@@ -100,7 +100,7 @@
             <div class="main">
                 <div class="search">
                     <input type="text" placeholder="Search expertise">
-                    <img src="assets/searchIcon.png">
+                    <img src="../assets/searchIcon.png">
                 </div>
                 
     
@@ -189,6 +189,6 @@
                 </div>
         </div>
     </body>
-    <script src="javascript/navbar.js"></script>
-    <script src="javascript/directoryResults.js"></script>
+    <script src="../javascript/navbar.js"></script>
+    <script src="../javascript/directoryResults.js"></script>
 </html>

@@ -10,7 +10,7 @@ function swapPasswordVisiblity() {
         passwordInput.setAttribute('type','password');
         passwordInput.setAttribute('id','passwordObscured');
         // set eye icon to open eye
-        eyeIcon.setAttribute('src','assets/openEye.png');
+        eyeIcon.setAttribute('src','../assets/openEye.png');
     }
     // else
     else {
@@ -18,6 +18,6 @@ function swapPasswordVisiblity() {
         passwordInput.setAttribute('type','text');
         passwordInput.setAttribute('id','passwordVisible');
         // set eye icon to noEye
-        eyeIcon.setAttribute('src','assets/noEye.png');
+        eyeIcon.setAttribute('src','../assets/noEye.png');
     }
 }
