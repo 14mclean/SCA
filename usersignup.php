@@ -1,7 +1,7 @@
 <?php 
     function getGet($index) {
         try {
-            return $_GET[$index]
+            return $_GET[$index];
         } catch(Exception $e) {
             return NULL;
         }
