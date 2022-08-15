@@ -1,3 +1,13 @@
+<?php 
+    function getGet($index) {
+        try {
+            return $_GET[$index]
+        } catch(Exception $e) {
+            return NULL;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,24 +23,25 @@
             <h1>Sign Up</h1>
 
             <div class="loginError">
-                    <?php
-                        if($_GET["charLengthError"] == "true") {
+                    <?php 
+
+                        if(getGet("charLengthError") == "true") {
                             echo("Password must to be at least 8 characters long<br>");
                         }
 
-                        if($_GET["numError"] == "true") {
+                        if(getGet("numError") == "true") {
                             echo("Password must contain at least 1 number<br>");
                         }
 
-                        if($_GET["uppercaseError"] == "true") {
+                        if(getGet("uppercaseError") == "true") {
                             echo("Password must contain at least 1 uppercase character<br>");
                         }
 
-                        if($_GET["lowercaseError"] == "true") {
+                        if(getGet("lowercaseError") == "true") {
                             echo("Password must contain at least 1 lowercase character<br>");
                         }
 
-                        if($_GET["emailTakenError"] == "true") {
+                        if(getGet("emailTakenError") == "true") {
                             echo("Email has already been taken");
                         }
                     ?>
