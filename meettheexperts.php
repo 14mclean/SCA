@@ -50,13 +50,13 @@
 
             <?php
                 if(isset($_SESSION["email"])) {
-                    echo(
+                    echo( '
                         <a href="php/teacherLogout.php" class="loginButton">Logout</a>
-                    );
+                    ' );
                 } else {
-                    echo(
+                    echo( '
                         <a href="userlogin.php" class="loginButton">Login</a>
-                    );
+                    ' );
                 }
             ?>
             
