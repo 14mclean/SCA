@@ -53,7 +53,7 @@
                 <span></span>
             </div>
 
-            <a href="userlogin.php" class="loginButton">Login</a>
+            <a href="teacherLogout.php" class="loginButton">Logout</a>
         </header>
         
         <content>

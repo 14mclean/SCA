@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -44,7 +48,18 @@
                 <span></span>
             </div>
 
-            <a href="userlogin.php" class="loginButton">Login</a>
+            <?php
+                if(isset($_SESSION["email"])) {
+                    echo(
+                        <a href="teacherLogout.php" class="loginButton">Logout</a>
+                    );
+                } else {
+                    echo(
+                        <a href="userlogin.php" class="loginButton">Login</a>
+                    );
+                }
+            ?>
+            
         </header>
         
         <content>
