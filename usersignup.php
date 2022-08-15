@@ -1,10 +1,6 @@
 <?php 
     function getGet($index) {
-        try {
-            return $_GET[$index];
-        } catch(Exception $e) {
-            return NULL;
-        }
+        isset($_GET[$index]) ? $_GET[$index] : null;
     }
 ?>
 
