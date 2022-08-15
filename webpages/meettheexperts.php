@@ -51,7 +51,7 @@
             <?php
                 if(isset($_SESSION["email"])) {
                     echo( '
-                        <a href="php/teacherLogout.php" class="loginButton">Logout</a>
+                        <a href="php/logout.php" class="loginButton">Logout</a>
                     ' );
                 } else {
                     echo( '
