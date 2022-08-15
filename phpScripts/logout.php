@@ -2,6 +2,6 @@
     session_start();
     $_SESSION = array();
     session_destroy();
-    header("Location: ../webpages/meettheexperts.php");
+    header("Location: ../webpages/meettheexperts");
     exit();
 ?>
