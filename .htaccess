@@ -1,5 +1,6 @@
 php_flag display_errors 1
 
+# Remove file extensions
 Options +FollowSymLinks +MultiViews
 
 RewriteEngine On
@@ -7,3 +8,8 @@ RewriteEngine On
 # Force HTTPS on all web traffic
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://www.schoolcitizenassemblies.org/$1 [R,L]
+
+# Remove webpages prefix
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.+) /webpages/$1 [L]
