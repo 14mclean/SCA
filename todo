@@ -1,7 +1,6 @@
-Reformat db
+Fix logins 
+
 Make logo cursor pointer
-copy user/teacher login to expert login
-copy user/teacher signup to expert signup
 add expert profile functionailty
 add Expert table column for accepted users
 create admin panel for accepting/managing users
