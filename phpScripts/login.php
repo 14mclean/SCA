@@ -6,12 +6,10 @@
     $passHash = hash("sha256", $_POST["password"]); // hash user inputted password
 
     
-    /*$statement = $conn->prepare(
+    $statement = $conn->prepare(
         "SELECT userID,emailverified,userLevel FROM Users WHERE email = ? AND passwordHash = ?"     // prepare universal statement to get for user fitting GET variables
     );
-    $statement->bind_param("ss", $_POST["email"], $passHash);*/
-    $statement = $conn->prepare("SELECT userID,emailverified,userLevel FROM Users;");
-    //$statement->bind_param("s", $_POST["email"]);
+    $statement->bind_param("ss", $_POST["email"], $passHash);
     $statement->execute();
     $statement->store_result();    
 
@@ -23,7 +21,7 @@
             session_start();
             $_SESSION["userID"] = $userID; // get userID matching details and add to session
             $_SESSION["userLevel"] = $level; // get user's permissions and add to session
-            var_dump($_SESSION);
+
             //header("Location: ../webpages/directoryresults.php"); // redirect to directory
         } else {
             //header("Location: ../webpages/login.php?loginError=verifiedEmail"); // report non-verified email
