@@ -13,8 +13,8 @@
     $statement->execute();  
     print_r($statement->get_result());
 
-    if($statement->num_rows() == 1) { // if details match any in login db
-        $result = $statement->get_result();
+    if($statement->num_rows == 1) { // if details match any in login db
+        $result = $statement->fetch_assoc();
 
         if($result->fetch_column(1) == 1) { // if email has been verified
             session_start();
