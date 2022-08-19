@@ -20,7 +20,7 @@
     print_r($statement->num_rows);
     echo("\n");
     var_dump($statement);
-    print_r( mysqli_fetch_array($statement));
+    exit();
 
     if($statement->num_rows == 1) { // if details match any in login db
         $result = $statement->fetch_assoc();
