@@ -12,6 +12,8 @@
     $statement->bind_param("ss", $_POST["email"], $passHash);
     $statement->execute();
     print_r($statement->num_rows);
+    print_r($_POST["email"]);
+    print_r($passHash);
 
     if($statement->num_rows == 1) { // if details match any in login db
         $result = $statement->fetch_assoc();
