@@ -16,7 +16,7 @@
     echo("\n $passHash \n");
     print_r($statement->num_rows);
     echo("\n");
-    print_r($statement->get_result());
+    print_r( mysqli_fetch_array($statement));
 
     if($statement->num_rows == 1) { // if details match any in login db
         $result = $statement->fetch_assoc();
