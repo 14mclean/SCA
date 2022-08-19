@@ -20,10 +20,10 @@
     print_r($statement->num_rows);
     echo("\n");
     
-    $statement->bind_result($name, $code);
+    $statement->bind_result($userID, $emailVer, $level);
 
     while ($stmt->fetch()) {
-        printf ("%s (%s)\n", $name, $code);
+        printf ("%s %s %s\n", $userID, $emailVer, $level);
     }
 
     exit();
