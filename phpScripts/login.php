@@ -14,7 +14,7 @@
 
     if($statement->num_rows == 1) { // if details match any in login db
         $result = $statement->fetch_assoc();
-        print_r($result);
+        print_r($result->fetch_column(1));
 
         if($result->fetch_column(1) == 1) { // if email has been verified
             session_start();
