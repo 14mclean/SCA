@@ -22,7 +22,7 @@
     
     $statement->bind_result($userID, $emailVer, $level);
 
-    while ($stmt->fetch()) {
+    while ($statement->fetch()) {
         printf ("%s %s %s\n", $userID, $emailVer, $level);
     }
 
