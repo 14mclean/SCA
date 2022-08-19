@@ -15,6 +15,8 @@
     echo($_POST['email']);
     echo("\n $passHash \n");
     print_r($statement->num_rows);
+    echo("\n");
+    print_r($statement->fetch_assoc());
 
     if($statement->num_rows == 1) { // if details match any in login db
         $result = $statement->fetch_assoc();
