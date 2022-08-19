@@ -6,7 +6,7 @@
     </head>
 
     <body>
-        <a class="homeButton" href="scahome"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Home_free_icon.svg/1200px-Home_free_icon.svg.png"></a>
+        <a class="homeButton" href="scahome.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Home_free_icon.svg/1200px-Home_free_icon.svg.png"></a>
 
         <div class="container">
             <h1>Login</h1>
@@ -28,7 +28,7 @@
             
             <p>
                 or <br>
-                <a href="usersignup">Sign Up</a>
+                <a href="usersignup.php">Sign Up</a>
             </p>
         </div>
     </body>

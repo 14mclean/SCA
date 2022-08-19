@@ -24,7 +24,7 @@
         $statement->execute();
     } 
 
-    $url = "Location: ../webpages/usersignup?";
+    $url = "Location: ../webpages/usersignup.php?";
 
     foreach ($errors as $key => $value) {
         if(array_search($key, array_keys($errors)) != 0) {
