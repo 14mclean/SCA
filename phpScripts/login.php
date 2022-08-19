@@ -14,18 +14,19 @@
 
     if($statement->num_rows == 1) { // if details match any in login db
         $result = $statement->fetch_assoc();
+        print_r($result);
 
         if($result->fetch_column(1) == 1) { // if email has been verified
             session_start();
             $_SESSION["userID"] = $result->fetch_column(0); // get userID matching details and add to session
             $_SESSION["userLevel"] = $result->fetch_column(2); // get user's permissions and add to session
             
-            header("Location: ../webpages/directoryresults.php"); // redirect to directory
+            //header("Location: ../webpages/directoryresults.php"); // redirect to directory
         } else {
-            header("Location: ../webpages/login.php?loginError=verifiedEmail"); // report non-verified email
+            //header("Location: ../webpages/login.php?loginError=verifiedEmail"); // report non-verified email
         }
     } else {
-        header("Location: ../webpages/login.php?loginError=login"); // report incorrect details
+        //header("Location: ../webpages/login.php?loginError=login"); // report incorrect details
     }
     $statement->close();
     exit();
