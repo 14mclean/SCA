@@ -13,30 +13,17 @@
     $statement = $conn->prepare("SELECT userID,emailverified,userLevel FROM Users;");
     //$statement->bind_param("s", $_POST["email"]);
     $statement->execute();
-    $statement->store_result();
-    
-    echo($_POST['email']);
-    echo("\n $passHash \n");
-    print_r($statement->num_rows);
-    echo("\n");
-    
-    $statement->bind_result($userID, $emailVer, $level);
-
-    while ($statement->fetch()) {
-        printf ("%s %s %s\n", $userID, $emailVer, $level);
-    }
-
-    exit();
+    $statement->store_result();    
 
     if($statement->num_rows == 1) { // if details match any in login db
-        $result = $statement->fetch_assoc();
-        
+        $statement->bind_result($userID, $emailVerified, $level);
+        $statement->fetch();
 
-        if($result->fetch_column(1) == 1) { // if email has been verified
+        if($emailVerified == 1) { // if email has been verified
             session_start();
-            $_SESSION["userID"] = $result->fetch_column(0); // get userID matching details and add to session
-            $_SESSION["userLevel"] = $result->fetch_column(2); // get user's permissions and add to session
-            
+            $_SESSION["userID"] = $userID; // get userID matching details and add to session
+            $_SESSION["userLevel"] = $level; // get user's permissions and add to session
+            var_dump($_SESSION);
             //header("Location: ../webpages/directoryresults.php"); // redirect to directory
         } else {
             //header("Location: ../webpages/login.php?loginError=verifiedEmail"); // report non-verified email
