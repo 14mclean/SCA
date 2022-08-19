@@ -11,9 +11,11 @@
     );
     $statement->bind_param("ss", $_POST["email"], $passHash);
     $statement->execute();
-    $statement->store_result();    
+    $statement->store_result();
+    
+    var_dump($statement);
 
-    if($statement->num_rows == 1) { // if details match any in login db
+    if($statement->num_rows() == 1) { // if details match any in login db
         $statement->bind_result($userID, $emailVerified, $level);
         $statement->fetch();
 
