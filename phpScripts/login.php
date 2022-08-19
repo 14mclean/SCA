@@ -23,10 +23,10 @@
 
             header("Location: ../webpages/directoryresults.php"); // redirect to directory
         } else {
-            header("Location: ../webpages/userlogin.php?loginError=verifiedEmail"); // report non-verified email
+            header("Location: ../webpages/login.php?loginError=verifiedEmail"); // report non-verified email
         }
     } else {
-        header("Location: ../webpages/userlogin.php?loginError=login"); // report incorrect details
+        header("Location: ../webpages/login.php?loginError=login"); // report incorrect details
     }
     exit();
 ?>
