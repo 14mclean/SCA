@@ -13,6 +13,11 @@
             
             <form method="post" action="../phpScripts/login.php">
                 <div class="loginError" <?php if(!isset($_GET['loginError'])) {?>style="display:none"<?php } ?>>
+                    <?php 
+                        if($_GET["loginError"] == "login") {
+
+                        } else if($_GET["loginError"] == "verifiedEmail")
+                    ?>
                     Incorrect Username or Password
                 </div>
 

@@ -7,10 +7,6 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
     
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        array_push($errors, 'Invalid email');
-    }
-    
     $errors = [
         "charLengthError" => strlen($password) < 8, // Password length >= 8
         "numError" => preg_match('@[0-9]@', $password) < 1, // Password number characters >= 1
@@ -49,21 +45,6 @@
     }
 
     function errorOccured($errors) {
-        $url = "Location: ../webpages/usersignup?";
-
-        foreach ($errors as $key => $value) {
-            if(array_search($key, array_keys($errors)) != 0) {
-                $url .= "&";
-            }
-            $url .= "$key=";
-            if($value) {
-                $url .= "true";
-            } else {
-                $url .= "false";
-            }
-        }
-
-        header($url);
-        exit();
+        
     }
 ?>

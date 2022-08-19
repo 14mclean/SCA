@@ -8,25 +8,25 @@
 
     
     $statement = $conn->prepare(
-        "SELECT userID,emailVarified,userLevel FROM Users WHERE email = ? AND passwordHash = ?"     // prepare universal statement to get for user fitting GET variables
+        "SELECT userID,emailverified,userLevel FROM Users WHERE email = ? AND passwordHash = ?"     // prepare universal statement to get for user fitting GET variables
     );
-    $statement->bind_param("ss", $_POST["email"], $passHash); // input get variables to 
-    $statement->execute(); // execute query     
+    $statement->bind_param("ss", $_POST["email"], $passHash);
+    $statement->execute();  
 
     if($statement->num_rows() == 1) { // if details match any in login db
         $result = $statement->get_result();
-        if($result->fetch_column(1) == 1) { // if email has been varified
+        if($result->fetch_column(1) == 1) { // if email has been verified
             session_start();
             $_SESSION["userID"] = $result->fetch_column(0); // get userID matching details and add to session
             $_SESSION["userLevel"] = $result->fetch_column(2); // get user's permissions and add to session
             $statement->close();
 
-            header("Location: ../webpages/directoryresults"); // redirect to directory
+            header("Location: ../webpages/directoryresults.php"); // redirect to directory
         } else {
-            header("Location: ../webpages/userlogin?loginError=varifiedEmail"); // report non-varified email
+            header("Location: ../webpages/userlogin.php?loginError=verifiedEmail"); // report non-verified email
         }
     } else {
-        header("Location: ../webpages/userlogin?loginError=login"); // report incorrect details
+        header("Location: ../webpages/userlogin.php?loginError=login"); // report incorrect details
     }
     exit();
 ?>
