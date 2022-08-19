@@ -20,7 +20,7 @@
     print_r($statement->num_rows);
     echo("\n");
     
-    $statement->bind_result($name, $code)
+    $statement->bind_result($name, $code);
 
     while ($stmt->fetch()) {
         printf ("%s (%s)\n", $name, $code);
