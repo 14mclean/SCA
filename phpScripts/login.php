@@ -19,7 +19,7 @@
     echo("\n $passHash \n");
     print_r($statement->num_rows);
     echo("\n");
-    var_dump($statement);
+    var_dump($$statement->fetch_assoc());
     exit();
 
     if($statement->num_rows == 1) { // if details match any in login db
