@@ -6,10 +6,12 @@
     $passHash = hash("sha256", $_POST["password"]); // hash user inputted password
 
     
-    $statement = $conn->prepare(
+    /*$statement = $conn->prepare(
         "SELECT userID,emailverified,userLevel FROM Users WHERE email = ? AND passwordHash = ?"     // prepare universal statement to get for user fitting GET variables
     );
-    $statement->bind_param("ss", $_POST["email"], $passHash);
+    $statement->bind_param("ss", $_POST["email"], $passHash);*/
+    $statement = $conn->prepare("SELECT userID,emailverified,userLevel FROM Users WHERE email = ?");
+    $statement->bind_param("s", $_POST["email"]);
     $statement->execute();
     
     echo($_POST['email']);
