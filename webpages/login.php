@@ -15,10 +15,12 @@
                 <div class="loginError" <?php if(!isset($_GET['loginError'])) {?>style="display:none"<?php } ?>>
                     <?php 
                         if($_GET["loginError"] == "login") {
-
-                        } else if($_GET["loginError"] == "verifiedEmail")
+                            echo "Incorrect Username or Password";
+                        } else if($_GET["loginError"] == "verifiedEmail") {
+                            echo "Verify your email before logging in";
+                        }
                     ?>
-                    Incorrect Username or Password
+                    
                 </div>
 
                 <input type="email" placeholder="Email" name="email" id="email"><br>
