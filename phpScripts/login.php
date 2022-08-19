@@ -26,7 +26,8 @@
             header("Location: ../webpages/login.php?loginError=verifiedEmail"); // report non-verified email
         }
     } else {
-        header("Location: ../webpages/login.php?loginError=login"); // report incorrect details
+        print_r($statement->get_result());
+        //header("Location: ../webpages/login.php?loginError=login"); // report incorrect details
     }
     exit();
 ?>
