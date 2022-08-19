@@ -10,8 +10,8 @@
         "SELECT userID,emailverified,userLevel FROM Users WHERE email = ? AND passwordHash = ?"     // prepare universal statement to get for user fitting GET variables
     );
     $statement->bind_param("ss", $_POST["email"], $passHash);*/
-    $statement = $conn->prepare("SELECT userID,emailverified,userLevel FROM Users WHERE email = ?");
-    $statement->bind_param("s", $_POST["email"]);
+    $statement = $conn->prepare("SELECT userID,emailverified,userLevel FROM Users");
+    //$statement->bind_param("s", $_POST["email"]);
     $statement->execute();
     
     echo($_POST['email']);
