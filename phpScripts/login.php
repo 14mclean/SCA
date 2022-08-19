@@ -12,8 +12,8 @@
     $statement->bind_param("ss", $_POST["email"], $passHash);
     $statement->execute();
     
-    echo($_POST["email"] + "\n");
-    echo($passHash + "\n");
+    echo("$_POST['email']  \n");
+    echo("$passHash \n");
     print_r($statement->num_rows);
 
     if($statement->num_rows == 1) { // if details match any in login db
