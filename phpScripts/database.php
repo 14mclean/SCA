@@ -12,7 +12,7 @@
             $query = $this->connection->prepare($statement);
             $newParams = $this->referenceArray($params);
 
-            var_dump($newParams);
+            print_r($newParams);
             echo("<br><br>");
 
             call_user_func_array(array(&$query, "bind_param"), $newParams);
