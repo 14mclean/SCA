@@ -35,7 +35,6 @@
             $query->close();
             return $result;
         }
-    }
 
         function temp() {
             $statement = $conn->prepare(
@@ -63,5 +62,5 @@
 
             return $result;
         }
-
+    }
 ?>
