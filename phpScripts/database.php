@@ -64,7 +64,8 @@
             $result = array();
 
             for($i = 0; $i < count($array); $i++) {
-                array_push($result, &$array[$i]);
+                $ref = &$array[$i];
+                array_push($result, $ref);
             }
 
             return $result;
