@@ -15,7 +15,7 @@
             echo("<br><br>");
 
             $this->referenceArray($params);
-            
+
             print_r($params);
             echo("<br><br>");
 
@@ -51,15 +51,15 @@
             return $result;
         }
 
-        private static function referenceArray(array &$array) {
-            var_dump($array);
+        private static function &referenceArray(array &$array) {
+            print_r($array);
             echo("<br><br>");
 
             foreach($array as $key => $value) {
                 $array[$key] = &$array[$key];
             }
 
-            var_dump($array);
+            print_r($array);
             echo("<br><br>");
         }
     }
