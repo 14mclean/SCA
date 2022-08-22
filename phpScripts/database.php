@@ -10,7 +10,7 @@
 
         function prepareStatement(string $statement, string $paramTypes, array $params):mysqli_stmt {
             $query = $this->connection->prepare($statement);
-
+            var_dump($this->referenceArray($params));
             call_user_func_array(array(&$query, "bind_param"), $this->referenceArray($params));
 
             return $query;
