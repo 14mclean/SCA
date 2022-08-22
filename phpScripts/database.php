@@ -52,7 +52,7 @@
             var_dump($array);
             echo("<br><br>");
 
-            foreach($params as $key => $value) {
+            foreach($array as $key => $value) {
                 $result[$key] = &$array[$key];
             }
 
