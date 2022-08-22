@@ -63,8 +63,8 @@
         private static function referenceArray(array $array): array {
             $result = array();
 
-            foreach($array as &$value) {
-                array_push($result, $value);
+            foreach($array as $value) {
+                array_push($result, &$value);
             }
 
             return $result;
