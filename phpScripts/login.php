@@ -7,7 +7,7 @@
 
     $db = new Database();
 
-    $statement = $conn->prepare(
+    $statement = $db->$connection->prepare(
         "SELECT userID,emailverified,userLevel FROM Users WHERE email = ? AND passwordHash = ?"     // prepare universal statement to get for user fitting GET variables
     );
     $statement->bind_param("ss", $_POST["email"], $passHash);
