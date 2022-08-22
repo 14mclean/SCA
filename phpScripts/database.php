@@ -47,7 +47,7 @@
             return $result;
         }
 
-        private static function referenceArray(array $array): array {
+        private static function referenceArray(array $array) {
             $result = array();
             var_dump($array);
             echo("<br><br>");
