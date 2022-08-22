@@ -51,7 +51,7 @@
             }*/
 
             for($i=0; $i < count($array); $i++) {
-                $ref = &$array[$i]
+                $ref = &$array[$i];
                 var_dump($ref);
                 array_push($result, $ref);
             }
