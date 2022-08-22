@@ -10,10 +10,13 @@
 
         function prepareStatement(string $statement, string $paramTypes, array $params):mysqli_stmt {
             $query = $this->connection->prepare($statement);
-            print_r($this->referenceArray($params));
-            //$newParams = $this->referenceArray($params);
 
-            print_r($newParams);
+            print_r($params);
+            echo("<br><br>");
+
+            $this->referenceArray($params);
+            
+            print_r($params);
             echo("<br><br>");
 
             call_user_func_array(array(&$query, "bind_param"), $newParams);
@@ -48,19 +51,16 @@
             return $result;
         }
 
-        private static function referenceArray(array $array) {
-            $result = array();
+        private static function referenceArray(array &$array) {
             var_dump($array);
             echo("<br><br>");
 
             foreach($array as $key => $value) {
-                $result[$key] = &$array[$key];
+                $array[$key] = &$array[$key];
             }
 
-            var_dump($result);
+            var_dump($array);
             echo("<br><br>");
-
-            return $result;
         }
     }
 ?>
