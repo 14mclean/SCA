@@ -8,7 +8,7 @@
             $this->connection = new mysqli('localhost', 'mwd3iqjaesdr', 'cPanMT3', 'SchoolCitizenAssemblies');
         }
 
-        function prepareStatement(string $statement, array $paramTypes, array $params):mysqli_stmt {
+        function prepareStatement(string $statement, string $paramTypes, array $params):mysqli_stmt {
             $query = $this->connection->prepare($statement);
 
             call_user_func_array(array(&$query), "bind_param", $params);
