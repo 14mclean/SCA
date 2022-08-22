@@ -56,6 +56,7 @@
             echo("<br><br>");
 
             foreach($array as $key => $value) {
+                print_r(&$array[$key]);
                 $array[$key] = &$array[$key];
             }
 
