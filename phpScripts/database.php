@@ -44,11 +44,15 @@
         }
 
         private static function referenceArray(array $array): array {
-            var_dump($array);
             $result = array();
 
-            foreach($array as $key=>$value) {
+            /*foreach($array as $key=>$value) {
                 $result[$key] = &$value;
+            }*/
+
+            for($i=0; $i < count($array); $i++) {
+                var_dump(&$array[$i]);
+                array_push($result, &$array[$i]);
             }
 
             return $result;
