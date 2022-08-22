@@ -51,9 +51,8 @@
                 array_push($result, $ref);
             }*/
 
-            foreach($array as &$ref) {
-                echo(&$ref);
-                array_push($result, $ref);
+            foreach($array as $key=>$value) {
+                $result[$key] = &$value;
             }
 
             return $result;
