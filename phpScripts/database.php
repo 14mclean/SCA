@@ -63,9 +63,13 @@
         private static function referenceArray(array $array): array {
             $result = array();
 
-            for($i = 0; $i < count($array); $i++) {
-                $ref = &$array[$i];
+            /*for($i = 0; $i < count($array); $i++) {
+                $ref =& $array[$i];
                 array_push($result, $ref);
+            }*/
+
+            foreach($array as &$ref) {
+                array_push($result, &$ref);
             }
 
             return $result;
