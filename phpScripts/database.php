@@ -69,7 +69,7 @@
             }*/
 
             foreach($array as &$ref) {
-                array_push($result, &$ref);
+                array_push($result, $ref);
             }
 
             return $result;
