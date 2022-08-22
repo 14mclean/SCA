@@ -1,6 +1,8 @@
 <?php
     ini_set("display_errors", 1); // show errors in html (remove after dev)
 
+    include_once("database.php");
+
     $passHash = hash("sha256", $_POST["password"]); // hash user inputted password
 
     $db = new Database();
