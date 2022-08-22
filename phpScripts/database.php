@@ -45,6 +45,7 @@
 
         private static function referenceArray(array $array): array {
             $result = array();
+            var_dump($array);
 
             foreach($array as $key=>$value) {
                 $result[$key] = &$value;
