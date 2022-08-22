@@ -52,7 +52,7 @@
             }*/
 
             foreach($array as &$ref) {
-                echo($ref);
+                echo(&$ref);
                 array_push($result, $ref);
             }
 
