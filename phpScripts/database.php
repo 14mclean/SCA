@@ -11,6 +11,7 @@
         function prepareStatement(string $statement, string $paramTypes, array $params):mysqli_stmt {
             $query = $this->connection->prepare($statement);
             var_dump($this->referenceArray($params));
+            echo("<br>");
             call_user_func_array(array(&$query, "bind_param"), $this->referenceArray($params));
 
             return $query;
@@ -46,6 +47,7 @@
         private static function referenceArray(array $array): array {
             $result = array();
             var_dump($array);
+            echo("<br>");
 
             foreach($array as $key=>$value) {
                 $result[$key] = &$value;
