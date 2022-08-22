@@ -56,6 +56,9 @@
                 $result[$key] = &$array[$key];
             }
 
+            var_dump($result);
+            echo("<br><br>");
+
             return $result;
         }
     }
