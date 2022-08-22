@@ -10,7 +10,8 @@
 
         function prepareStatement(string $statement, string $paramTypes, array $params):mysqli_stmt {
             $query = $this->connection->prepare($statement);
-            $newParams = $this->referenceArray($params);
+            print_r($this->referenceArray($params));
+            //$newParams = $this->referenceArray($params);
 
             print_r($newParams);
             echo("<br><br>");
