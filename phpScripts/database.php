@@ -52,8 +52,8 @@
             var_dump($array);
             echo("<br><br>");
 
-            foreach($array as $key=>$value) {
-                $result[$key] = &$value;
+            foreach($params as $key => $value) {
+                $result[$key] = &$array[$key];
             }
 
             return $result;
