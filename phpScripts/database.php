@@ -51,16 +51,17 @@
             return $result;
         }
 
-        private static function &referenceArray(array &$array) {
-            print_r($array);
-            echo("<br><br>");
-
-            foreach($array as $key => $value) {
-                print_r(&$array[$key]);
+        private static function referenceArray(&$array) {
+            /*foreach($array as $key => $value) {
                 $array[$key] = &$array[$key];
+            }*/
+
+            $result = array();
+            foreach($array as $key => &$value) {
+                $result[] =& $value;
             }
 
-            print_r($array);
+            print_r($result);
             echo("<br><br>");
         }
     }
