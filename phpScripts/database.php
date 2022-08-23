@@ -52,7 +52,7 @@
             return $result;
         }
 
-        private static function referenceArray(&$array) {
+        private function referenceArray(&$array) {
             foreach($array as $key => &$value) {
                 $this->refParams[] =& $value;
             }
