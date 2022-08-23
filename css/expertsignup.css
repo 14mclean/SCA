@@ -143,9 +143,9 @@ form img {
     }
     
     .container h1 {
-        margin-left: 20px;
+        margin-left: auto;
         transform: none;
-        width: auto;
+        width: fit-content;
     }
     
     .container form input {
