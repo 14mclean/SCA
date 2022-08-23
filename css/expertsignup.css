@@ -25,6 +25,7 @@
 }
 
 .container h1 {
+    display: inline-block;
     cursor: default;
     color: black;
     margin-bottom: 35px;
