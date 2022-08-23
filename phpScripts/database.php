@@ -13,7 +13,8 @@
 
             $this->referencedArray = array();
             $this->referenceArray($params);
-            call_user_func_array(array(&$query, "bind_param"), array($paramTypes, $this->referencedArray));
+            array_unshift($this->referencedArray, $paramTypes);
+            call_user_func_array(array(&$query, "bind_param"), $this->referencedArray);
             unset($this->referencedArray);
 
             return $query;
