@@ -54,7 +54,7 @@
 
             <p>
                 Have an account? <br>
-                <a href="userlogin">Login</a>
+                <a href="login.php">Login</a>
             </p>
         </div>
 

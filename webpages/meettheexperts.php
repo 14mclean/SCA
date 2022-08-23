@@ -54,7 +54,7 @@
                     ' );
                 } else {
                     echo( '
-                        <a href="userlogin.php" class="loginButton">Login</a>
+                        <a href="login.php" class="loginButton">Login</a>
                     ' );
                 }
             ?>
