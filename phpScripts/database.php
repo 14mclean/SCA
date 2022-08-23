@@ -33,12 +33,12 @@
             $tempRow = array();
 
             for($j = 0; $j < $query->field_count; $j++) {
-                $tempRow[$resultFields[$j]] = 0;
+                $tempRow[$resultFields[$j]] = NULL;
             }
 
             $this->referencedArray = array();
             $this->referenceArray($tempRow);
-            call_user_func_array(array(&$query, 'bind_result'), $this->referenceArray($tempRow));
+            call_user_func_array(array(&$query, 'bind_result'), $this->referencedArray);
             unset($this->referencedArray);
 
             for($i = 0; $i < $query->num_rows; $i++) {
