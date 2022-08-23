@@ -43,7 +43,7 @@ header {
 
 .dropdown {
     float: left;
-    overflow: hidden;
+    /*overflow: hidden;*/
     position: relative;
 }
 
