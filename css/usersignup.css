@@ -117,7 +117,8 @@ form img {
 .expertSignup {
     display: inline-block;
     margin-left: 50%;
-    margin-top: 75%;
+    margin-top: 85%;
+    transform: translateX(-50%);
 
     width: 250px;
     height: 50px;
@@ -127,6 +128,8 @@ form img {
     font-family: 'Open Sans';
     background-color: green;
     color: white;
+    text-align: center;
+    line-height: 50px;
 }
 
 @media (min-width: 500px) {     
