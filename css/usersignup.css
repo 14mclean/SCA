@@ -120,6 +120,8 @@ form img {
     margin-top: 20px;
     font-size: 24px;
     font-family: 'Open Sans';
+    background-color: green;
+    font-style: none;
 }
 
 @media (min-width: 500px) {     
