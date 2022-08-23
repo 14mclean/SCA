@@ -28,8 +28,8 @@
             $query->execute();
             $query->store_result();
 
-            if($query->errno != "") {
-                return $query->errno;
+            if($this->connection->errno != 0) {
+                return $this->connection->errno;
             }
 
             if($query->num_rows > 0) {
