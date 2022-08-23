@@ -33,7 +33,7 @@
             $tempRow = array();
 
             for($j = 0; $j < $query->field_count; $j++) {
-                $tempRow[$resultFields[$j]] = NULL;
+                $tempRow[$resultFields[$j]] = 0;
             }
 
             $this->referencedArray = array();
