@@ -15,7 +15,7 @@
         "emailTakenError" => false // E-mail must be unique
     ];
 
-    if(!in_array(true, $erros)) {
+    if(!in_array(true, $errors)) {
         $db = new Database();
 
         $passHash = hash('sha256', $password);
@@ -27,6 +27,28 @@
         );
 
         $response = $db->sendQuery($statement, array());
+
+        $errors["emailTakenError"] = $response == 1022; // ER_DUP_KEY
     }
 
+    if(in_array(true, $errors)) {
+        $location = "Location: ../webpages/expertsignup.php?";
+
+        foreach ($errors as $key => $value) {
+            if(array_search($key, array_keys($errors)) != 0) {
+                $location .= "&";
+            }
+            $location .= "$key=";
+            if($value) {
+                $location .= "true";
+            } else {
+                $location .= "false";
+            }
+        }
+
+        header($location);
+    } else {
+        // verify email page
+    }
+    exit();
 ?>

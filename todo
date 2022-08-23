@@ -1,6 +1,5 @@
 Fix logins/signups
 
-Make logo cursor pointer
 add expert profile functionailty
 add Expert table column for accepted users
 create admin panel for accepting/managing users

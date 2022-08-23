@@ -28,9 +28,9 @@
             $query->execute();
             $query->store_result();
 
-            if($query->error != "") {
+            if($query->errno != "") {
                 $query->close();
-                return $query->error;
+                return $query->errno;
             }
 
             if($query->num_rows > 0) {

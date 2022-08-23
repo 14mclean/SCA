@@ -13,6 +13,8 @@ header {
     
     margin-left: 15px;
     margin-top: 15px;
+
+    cursor: pointer;
 }
 
 .navbar {
