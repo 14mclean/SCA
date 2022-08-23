@@ -1,4 +1,5 @@
 .loginButton {
+    display: inline-block;
     height: 35px;
     width: 90px;
 
