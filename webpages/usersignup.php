@@ -57,6 +57,11 @@
                 <a href="userlogin">Login</a>
             </p>
         </div>
+
+        <a class="expertSignup" href="expertsignup.php">
+            Expert Sign Up
+        </a>
+
     </body>
     <script src="../javascript/passwordVisibility.js"></script>
 </html>
