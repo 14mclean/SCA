@@ -114,6 +114,28 @@ form img {
     line-height: 30px;
 }
 
+.userSignup {
+    display: inline-block;
+    margin-left: 50vw;
+    margin-top: 80vh;
+    transform: translateX(-50%);
+
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 100%;
+    font-family: 'Open Sans';
+    background-color: #6b2c91;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+}
+
+.userSignup:hover {
+    opacity: 0.8;
+}
+
 @media (min-width: 500px) {     
     .container {
         width: 420px;

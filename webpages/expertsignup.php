@@ -47,7 +47,7 @@
 
             <form method="post" action=""> 
                 <input type="email" placeholder="Email" name="email" id="email"><br>
-                <input type="password" placeholder="Password" name="password" id="passwordObscured"> <img class="eyeIcon" src="assets/openEye.png">
+                <input type="password" placeholder="Password" name="password" id="passwordObscured"> <img class="eyeIcon" src="../assets/openEye.png">
                 <button type="submit">Sign Up</button>
             </form>
 
@@ -56,6 +56,10 @@
                 <a href="login.php">Login</a>
             </p>
         </div>
+
+        <a class="userSignup" href="usersignup.php">
+            User Sign Up
+        </a>
     </body>
     <script src="../javascript/passwordVisibility.js"></script>
 </html>

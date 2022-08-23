@@ -117,7 +117,7 @@ form img {
 .expertSignup {
     display: inline-block;
     margin-left: 50vw;
-    margin-top: 85vh;
+    margin-top: 80vh;
     transform: translateX(-50%);
 
     width: 200px;
@@ -126,10 +126,14 @@ form img {
     text-decoration: none;
     font-size: 100%;
     font-family: 'Open Sans';
-    background-color: green;
+    background-color: #03570d;
     color: white;
     text-align: center;
     line-height: 50px;
+}
+
+.expertSignup:hover {
+    opacity: 0.8;
 }
 
 @media (min-width: 500px) {     
