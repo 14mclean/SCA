@@ -145,7 +145,7 @@ form img {
     .container h1 {
         margin-left: auto;
         transform: none;
-        width: fit-content;
+        width: 100vw;
     }
     
     .container form input {
