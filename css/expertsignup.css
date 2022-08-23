@@ -33,6 +33,7 @@
     font-weight: 400;
     transform: translateX(-50%);
     width: 100vw;
+    text-align: center;
 }
 
 .container form input {
