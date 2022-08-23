@@ -11,15 +11,16 @@
         function prepareStatement(string $statement, string $paramTypes, array $params):mysqli_stmt {
             $query = $this->connection->prepare($statement);
 
-            print_r($params);
+            var_dump($params);
             echo("<br><br>");
+
+            $this->refParams = array();
 
             $this->referenceArray($params);
 
-            print_r($params);
-            echo("<br><br>");
+            var_dump($this->refParams);
 
-            call_user_func_array(array(&$query, "bind_param"), $newParams);
+            call_user_func_array(array(&$query, "bind_param"), $this->refParams);
 
             return $query;
         }
@@ -52,17 +53,9 @@
         }
 
         private static function referenceArray(&$array) {
-            /*foreach($array as $key => $value) {
-                $array[$key] = &$array[$key];
-            }*/
-
-            $result = array();
             foreach($array as $key => &$value) {
-                $result[] =& $value;
+                $this->refParams[] =& $value;
             }
-
-            print_r($result);
-            echo("<br><br>");
         }
     }
 ?>
