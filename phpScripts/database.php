@@ -29,7 +29,6 @@
             $query->store_result();
 
             if($query->errno != "") {
-                $query->close();
                 return $query->errno;
             }
 
@@ -55,7 +54,6 @@
                 $result = array();
             }
 
-            $query->close();
             return $result;
         }
 
