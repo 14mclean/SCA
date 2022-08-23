@@ -13,7 +13,19 @@
         array($_POST["email"], $passHash)
     );    
 
-    $result = $db->getResult($statement, array("userID", "verifiedEmail", "userLevel"));
+    $result = $db->sendQuery($statement, array("userID", "verifiedEmail", "userLevel"));
 
-    var_dump($result);
+    if(count($result) == 1) {
+        if($result[0]["verifiedEmail"] == 1) {
+            session_start();
+            $_SESSION["userID"] = $result[0]["userID"];
+            $_SESSION["userLevel"] = $result[0]["userLevel"];
+            header("Location: ../webpages/directoryresults.php"); // redirect to directory
+        } else {
+            header("Location: ../webpages/login.php?loginError=verifiedEmail"); // report non-verified email
+        }
+    } else {
+        header("Location: ../webpages/login.php?loginError=login"); // report incorrect details
+    }
+    exit();
 ?>

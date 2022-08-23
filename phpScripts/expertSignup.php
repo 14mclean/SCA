@@ -1,7 +1,8 @@
-<?php 
+<?php
 
     ini_set('display_errors', 1);
-    require 'connectDB.php';
+
+    include_once("database.php");
 
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -14,30 +15,18 @@
         "emailTakenError" => false // E-mail must be unique
     ];
 
-    if(in_array(true)) {
+    if(!in_array(true, $erros)) {
+        $db = new Database();
+
         $passHash = hash('sha256', $password);
 
-        $statement = $conn->prepare(
-            "INSERT INTO Users (email,passwordHash,emailVerified,userLevel) VALUES (?,?,0,'Expert');"
+        $statement = $db->prepareStatement(
+            "INSERT INTO Users (email,passwordHash,emailVerified,userLevel) VALUES (?,?,0,'Expert');",
+            "ss",
+            array($email, $passHash)
         );
-        $statement->bind_param("ss", $email, $passHash);
-        $statement->execute();
-    } 
 
-    $url = "Location: ../webpages/usersignup.php?";
-
-    foreach ($errors as $key => $value) {
-        if(array_search($key, array_keys($errors)) != 0) {
-            $url .= "&";
-        }
-        $url .= "$key=";
-        if($value) {
-            $url .= "true";
-        } else {
-            $url .= "false";
-        }
+        $response = $db->sendQuery($statement, array());
     }
 
-    header($url);
-    exit();
 ?>

@@ -23,27 +23,36 @@
         /**
          * query - mysqli statement with parameters already bound
          */
-        function getResult(mysqli_stmt $query, array $resultFields): array {
+        function sendQuery(mysqli_stmt $query, array $resultFields): array {
             // execute query and get mysqli_result
             $query->execute();
             $query->store_result();
 
-            // make result 2d array of result
-            $result = array();
-            $tempRow = array();
-
-            for($j = 0; $j < $query->field_count; $j++) {
-                $tempRow[$resultFields[$j]] = NULL;
+            if($query->error != "") {
+                $query->close();
+                return $query->error;
             }
 
-            $this->referencedArray = array();
-            $this->referenceArray($tempRow);
-            call_user_func_array(array(&$query, 'bind_result'), $this->referencedArray);
-            unset($this->referencedArray);
+            if($query->num_rows > 0) {
+                // make result 2d array of result
+                $result = array();
+                $tempRow = array();
 
-            for($i = 0; $i < $query->num_rows; $i++) {
-                $query->fetch();
-                array_push($result, $tempRow);
+                for($j = 0; $j < $query->field_count; $j++) {
+                    $tempRow[$resultFields[$j]] = NULL;
+                }
+
+                $this->referencedArray = array();
+                $this->referenceArray($tempRow);
+                call_user_func_array(array(&$query, 'bind_result'), $this->referencedArray);
+                unset($this->referencedArray);
+
+                for($i = 0; $i < $query->num_rows; $i++) {
+                    $query->fetch();
+                    array_push($result, $tempRow);
+                }
+            } else {
+                $result = array();
             }
 
             $query->close();
