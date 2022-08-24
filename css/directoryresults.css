@@ -132,7 +132,7 @@ content {
 
     display: flex;
     background-color: #6b2c91;
-    width: 100%;
+    width: 100vw;
     height: 50px;
 }
 
