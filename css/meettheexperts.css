@@ -22,6 +22,12 @@
 }
 
 .adminButton {
+    margin-top: 15px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.adminButton img {
     height: 50px;
     width: 50px;
 }
