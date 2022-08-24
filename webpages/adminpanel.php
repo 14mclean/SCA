@@ -25,6 +25,6 @@
 
         <section>
             <h1>Admin Users</h1>
-        <section>
+        </section>
     </body>
 </html>
