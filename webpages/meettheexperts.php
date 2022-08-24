@@ -52,6 +52,13 @@
                     echo( '
                         <a href="../phpScripts/logout.php" class="loginButton">Logout</a>
                     ' );
+
+                    if($_SESSION[""] = "Expert") {
+                        echo('
+                        
+                        ');
+                    }
+
                 } else {
                     echo( '
                         <a href="login.php" class="loginButton">Login</a>

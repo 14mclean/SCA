@@ -20,9 +20,3 @@
 .loginButton:hover {
     background-color: #4c1f68;
 }
-
-@media only screen and (max-width: 850px) {
-    .loginButton {
-        margin-top: 16px;
-    }
-}
