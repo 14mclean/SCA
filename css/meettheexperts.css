@@ -21,6 +21,11 @@
     background-color: #4c1f68;
 }
 
+.adminButton {
+    height: 50px;
+    width: 50px;
+}
+
 .expertProfile {
     background-color: #03570d;
 }

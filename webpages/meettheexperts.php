@@ -53,9 +53,13 @@
                         <a href="../phpScripts/logout.php" class="loginButton">Logout</a>
                     ' );
 
-                    if($_SESSION["userLevel"] = "Expert") {
+                    if($_SESSION["userLevel"] == "Expert") {
                         echo('
                             <a href="expertprofile.php" class="expertProfile">Account</a>
+                        ');
+                    } else if($_SESSION["userLevel"] == "Admin") {
+                        echo('
+                            <a class="adminButton"><img src="../assets/adminSettingsIcon.png"></a>
                         ');
                     }
 
