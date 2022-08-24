@@ -48,7 +48,7 @@
             </div>
 
             <?php
-                if(isset($_SESSION["email"])) {
+                if(isset($_SESSION["userID"])) {
                     echo( '
                         <a href="../phpScripts/logout.php" class="loginButton">Logout</a>
                     ' );

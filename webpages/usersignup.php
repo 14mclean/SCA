@@ -46,7 +46,7 @@
                 ?>
             </div>
 
-            <form method="post" action="../phpScripts/teacherSignup.php"> 
+            <form method="post" action="../phpScripts/userSignup.php"> 
                 <input type="email" placeholder="Email" name="email" id="email"><br>
                 <input type="password" placeholder="Password" name="password" id="passwordObscured"> <img class="eyeIcon" src="../assets/openEye.png">
                 <button type="submit">Sign Up</button>
