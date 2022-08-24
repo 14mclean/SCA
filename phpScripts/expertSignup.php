@@ -48,7 +48,7 @@
 
         header($location);
     } else {
-        // verify email page
+        header("Location: verifyEmail.html");
     }
     exit();
 ?>
