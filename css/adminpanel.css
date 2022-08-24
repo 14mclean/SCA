@@ -8,11 +8,13 @@ section {
 
 section div {
     width: 100%;
-    height: 25px;
+    height: 40px;
     background-color: #555555;
 }
 
 section div h1 {
     margin-left: 20px;
     color: white;
+    height: 40px;
+    line-height: 40px;
 }
