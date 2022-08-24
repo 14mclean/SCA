@@ -129,6 +129,7 @@ content {
 .overlay {
     position: fixed;
     bottom: 0px;
+    left: 0px;
 
     display: flex;
     background-color: #6b2c91;
