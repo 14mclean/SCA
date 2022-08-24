@@ -20,11 +20,15 @@
     </head>
     <body>
         <section>
-            <h1>Unapproved Experts</h1>
+            <h1>  Unapproved Experts</h1>
         </section>
 
         <section>
-            <h1>Admin Users</h1>
+            <h1>  Admin Users</h1>
+        </section>
+
+        <section>
+            <h1>  Notifications</h1>
         </section>
     </body>
 </html>
