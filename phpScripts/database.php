@@ -25,12 +25,12 @@
          */
         function sendQuery(mysqli_stmt $query, array $resultFields): array {
             // execute query and get mysqli_result
-            $query->execute();
-            $query->store_result();
-
-            if($this->connection->errno != 0) {
-                return $this->connection->errno;
+            try {
+                $query->execute();
+            } catch(mysqli_sql_exception $e) {
+                var_dump($e);
             }
+            $query->store_result();
 
             if($query->num_rows > 0) {
                 // make result 2d array of result
