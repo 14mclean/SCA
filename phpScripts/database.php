@@ -28,7 +28,7 @@
             try {
                 $query->execute();
             } catch(mysqli_sql_exception $e) {
-                var_dump($e);
+                error_log(var_dump($e));
             }
             $query->store_result();
 
