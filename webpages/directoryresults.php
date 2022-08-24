@@ -167,25 +167,26 @@
 
         <div class="overlay">
             <h1>Top Searches</h1>
-                <div class="area">
-                    <h2>Pollution</h2>
-                </div>
 
-                <div class="area">
-                    <h2>Food</h2>
-                </div>
+            <div class="area">
+                <h2>Pollution</h2>
+            </div>
 
-                <div class="area">
-                    <h2>Biodiversity</h2>
-                </div>
+            <div class="area">
+                <h2>Food</h2>
+            </div>
 
-                <div class="area">
-                    <h2>Water</h2>
-                </div>
+            <div class="area">
+                <h2>Biodiversity</h2>
+            </div>
 
-                <div class="area">
-                    <h2>Climate</h2>
-                </div>
+            <div class="area">
+                <h2>Water</h2>
+            </div>
+
+            <div class="area">
+                <h2>Climate</h2>
+            </div>
         </div>
     </body>
     <script src="../javascript/navbar.js"></script>
