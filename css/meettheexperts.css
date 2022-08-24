@@ -20,3 +20,11 @@
 .loginButton:hover {
     background-color: #4c1f68;
 }
+
+.expertProfile {
+    background-color: #03570d;
+}
+
+.expertProfile:hover {
+    opacity: 0.8;
+}

@@ -53,9 +53,9 @@
                         <a href="../phpScripts/logout.php" class="loginButton">Logout</a>
                     ' );
 
-                    if($_SESSION[""] = "Expert") {
+                    if($_SESSION["userLevel"] = "Expert") {
                         echo('
-                        
+                            <a href="expertprofile.php" class="expertProfile">Account</a>
                         ');
                     }
 
