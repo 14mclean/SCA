@@ -48,7 +48,7 @@
 
         header($location);
     } else {
-        header("Location: verifyEmail.html");
+        header("Location: ../webpages/verifyEmail.html");
     }
     exit();
 ?>
