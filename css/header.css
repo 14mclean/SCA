@@ -20,7 +20,7 @@ header {
 .navbar {
     height: 170px;
     width: 100%;
-    margin-top: 2vmin;
+    margin-top: 15px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
