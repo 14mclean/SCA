@@ -28,7 +28,7 @@
 
         $response = $db->sendQuery($statement, array());
 
-        $errors["emailTakenError"] = $response == 1022; // ER_DUP_KEY
+        $errors["emailTakenError"] = $response == 1062; // ER_DUP_ENTRY
     }
 
     if(in_array(true, $errors)) {
