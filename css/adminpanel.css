@@ -18,4 +18,5 @@ section div h1 {
     height: 40px;
     line-height: 40px;
     font-family: 'Open Sans';
+    width: fit-content;
 }
