@@ -27,13 +27,13 @@
                 // button to block email
                 // each row in db is row in table
 
-                $db = new Database();
-                $statement = $->prepareStatement();
+                /*$db = new Database();
+                $statement = $db->prepareStatement();
                 $result = $db->sendQuery($statement, array());
 
                 foreach($result as $row) {
 
-                }
+                }*/
             ?>
         </section>
 
