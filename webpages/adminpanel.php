@@ -46,7 +46,7 @@
                 // add button to elevate other user to admin
 
                 $db = new Database();
-                $statement = $->prepareStatement(
+                $statement = $db->prepareStatement(
                     "SELECT userID, email FROM Users WHERE userLevel = 'Admin'",
                     "",
                     array()
