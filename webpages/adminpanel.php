@@ -49,20 +49,18 @@
 
                 $db = new Database();
                 $statement = $db->prepareStatement(
-                    "SELECT userID, email FROM Users WHERE userLevel = 'Admin'",
+                    "SELECT email FROM Users WHERE userLevel = 'Admin'",
                     "",
                     array()
                 );
-                $result = $db->sendQuery($statement, array("userID", "email"));
+                $result = $db->sendQuery($statement, array("email"));
 
                 echo("<table>");
-                echo("<tr><td>User ID</td><td>Email</td><tr>");
+                echo("<tr><td>Email</td><tr>");
                 foreach($result as $row) {
-                    $userID = $row['userID'];
                     $email = $row['email'];
 
                     echo("<tr>");
-                    echo("<td> $userID </td>");
                     echo("<td> $email </td>");
                     echo("</tr>");
                 }
