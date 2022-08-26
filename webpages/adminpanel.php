@@ -54,7 +54,7 @@
                 $result = $db->sendQuery($statement, array("userID", "email"));
 
                 foreach($result as $row) {
-                    echo("$row['userID']");
+                    echo($row['userID']);
                 }
             ?> 
         </section>
