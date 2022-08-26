@@ -13,6 +13,7 @@ section div {
 }
 
 section div h1 {
+    display: inline;
     margin-left: 20px;
     margin-right: 0;
     color: white;
