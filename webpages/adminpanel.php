@@ -56,6 +56,7 @@
                 $result = $db->sendQuery($statement, array("userID", "email"));
 
                 echo("<table>");
+                echo("<tr><td>User ID</td><td>Email</td><tr>");
                 foreach($result as $row) {
                     $userID = $row['userID'];
                     $email = $row['email'];
