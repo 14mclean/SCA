@@ -11,12 +11,14 @@
         function prepareStatement(string $statement, string $paramTypes, array $params):mysqli_stmt {
             $query = $this->connection->prepare($statement);
 
-            $this->referencedArray = array();
-            $this->referenceArray($params);
-            array_unshift($this->referencedArray, $paramTypes);
-            call_user_func_array(array(&$query, "bind_param"), $this->referencedArray);
-            unset($this->referencedArray);
-
+            if($paramTypes != "") {
+                $this->referencedArray = array();
+                $this->referenceArray($params);
+                array_unshift($this->referencedArray, $paramTypes);
+                call_user_func_array(array(&$query, "bind_param"), $this->referencedArray);
+                unset($this->referencedArray);
+            }
+            
             return $query;
         }
 
