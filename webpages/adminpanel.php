@@ -55,8 +55,12 @@
                 );
                 $result = $db->sendQuery($statement, array("userID", "email"));
 
+                echo("<table>");
                 foreach($result as $row) {
-                    echo($row['userID']);
+                    echo("<tr>");
+                    echo("<td>$row['userID']</td>");
+                    echo("<td>$row['email']</td>");
+                    echo("</tr>");
                 }
             ?> 
         </section>
