@@ -62,7 +62,7 @@
 
                     echo("<tr>");
                     echo("<td> $email </td>");
-                    echo("<button>X</button>")
+                    echo("<button>X</button>");
                     echo("</tr>");
                 }
                 echo("</table>");
