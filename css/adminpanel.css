@@ -14,6 +14,7 @@ section div {
 
 section div h1 {
     margin-left: 20px;
+    margin-right: 0;
     color: white;
     height: 40px;
     line-height: 40px;
