@@ -29,13 +29,30 @@
                 // button to block email
                 // each row in db is row in table
 
-                /*$db = new Database();
-                $statement = $db->prepareStatement();
-                $result = $db->sendQuery($statement, array());
+                $db = new Database();
+                $statement = $db->prepareStatement(
+                    "SELECT Users.email, Experts.organisation, Experts.location FROM Users INNER JOIN Experts ON Users.userID = Experts.userID WHERE Experts.adminVerified = 1",
+                    "",
+                    array()
+                );
+                $result = $db->sendQuery($statement, array("email", "org", "loc"));
 
+                echo("<table>");
+                echo("<tr><td>Email</td><td>Organisation</td><td>Location</td><td>Approve Expert</td><td>Block Email</td>")
                 foreach($result as $row) {
+                    $email = $row["email"];
+                    $org = $row["org"];
+                    $loc = $row["loc"];
 
-                }*/
+                    echo("<tr>");
+                    echo("<td> $email </td>");
+                    echo("<td> $org </td>");
+                    echo("<td> $loc </td>");
+                    echo("<td> <button>Y</button> </td>");
+                    echo("<td> <button>X</button> </td>");
+                    echo("</tr>");
+                }
+                echo("</table>");
             ?>
         </section>
 
