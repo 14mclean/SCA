@@ -25,4 +25,5 @@ section div h1 {
 
 section div button {
     display: inline;
+    flex: right;
 }
