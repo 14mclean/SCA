@@ -21,3 +21,7 @@ section div h1 {
     font-family: 'Open Sans';
     width: fit-content;
 }
+
+section div button {
+    display: inline;
+}
