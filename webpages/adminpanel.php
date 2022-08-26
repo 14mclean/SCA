@@ -57,7 +57,10 @@
         </section>
 
         <section>
-            <div><h1>Admin Users</h1></div>
+            <div>
+                <h1>Admin Users</h1>
+                <button>+</button>
+            </div>
             
             <?php
                 // get userID, email from users where userLevel = "Admin"
@@ -84,7 +87,6 @@
                 }
                 echo("</table>");
             ?>
-            <button>+</button>
         </section>
 
         <section>
