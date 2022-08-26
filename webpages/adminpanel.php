@@ -31,7 +31,7 @@
 
                 $db = new Database();
                 $statement = $db->prepareStatement(
-                    "SELECT Users.email, Experts.organisation, Experts.location FROM Users INNER JOIN Experts ON Users.userID = Experts.userID WHERE Experts.adminVerified = 1",
+                    "SELECT Users.email, Experts.organisation, Experts.location FROM Users INNER JOIN Experts ON Users.userID = Experts.userID WHERE Experts.adminVerified = 0",
                     "",
                     array()
                 );
