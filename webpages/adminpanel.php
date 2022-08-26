@@ -7,6 +7,8 @@
             exit();
         }
     }
+
+    include_once("database.php");
 ?>
 
 
