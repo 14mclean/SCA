@@ -8,7 +8,7 @@
         }
     }
 
-    include_once("database.php");
+    include_once("../phpScripts/database.php");
 ?>
 
 
