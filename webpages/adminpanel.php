@@ -21,11 +21,42 @@
     <body>
         <section>
             <div><h1>Unapproved Experts</h1></div>
-            
+            <?php
+                // get userID, email where adminVerified = 0 from USers and experts
+                // create table with button to verify (then remove from list)
+                // button to block email
+                // each row in db is row in table
+
+                $db = new Database();
+                $statement = $->prepareStatement();
+                $result = $db->sendQuery($statement, array());
+
+                foreach($result as $row) {
+
+                }
+            ?>
         </section>
 
         <section>
             <div><h1>Admin Users</h1></div>
+            
+            <?php
+                // get userID, email from users where userLevel = "Admin"
+                // button to delete admin users
+                // add button to elevate other user to admin
+
+                $db = new Database();
+                $statement = $->prepareStatement(
+                    "SELECT userID, email FROM Users WHERE userLevel = 'Admin'",
+                    "",
+                    array()
+                );
+                $result = $db->sendQuery($statement, array("userID", "email"));
+
+                foreach($result as $row) {
+                    echo("$row['userID']");
+                }
+            ?> 
         </section>
 
         <section>
