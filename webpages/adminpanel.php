@@ -57,11 +57,15 @@
 
                 echo("<table>");
                 foreach($result as $row) {
+                    $userID = $row['userID'];
+                    $email = $row['email'];
+
                     echo("<tr>");
-                    echo("<td>$row['userID']</td>");
-                    echo("<td>$row['email']</td>");
+                    echo("<td> $userID </td>");
+                    echo("<td> $email </td>");
                     echo("</tr>");
                 }
+                echo("</table>");
             ?> 
         </section>
 
