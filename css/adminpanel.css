@@ -24,6 +24,20 @@ section div h1 {
     width: fit-content;
 }
 
+button {
+    background-color: transparent;
+    border-style: none;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button img {
+    width: 20px;
+    height: 20px;
+}
+
 section div button {
     float: right;
     display: inline;
@@ -42,28 +56,4 @@ section table tbody tr td {
     padding-right: 10px;
     font-family: 'Open Sans';
     font-size: 14px;
-}
-
-section table tbody tr td button {
-    background-color: transparent;
-    border-style: none;
-}
-
-section table tbody tr td button img {
-    width: 20px;
-    height: 20px;
-}
-
-section div button {
-    background-color: transparent;
-    border-style: none;
-}
-
-section div button img {
-    width: 20px;
-    height: 20px;
-}
-
-button:hover {
-    opacity: 0.8;
 }
