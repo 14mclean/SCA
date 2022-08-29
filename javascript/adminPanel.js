@@ -6,7 +6,7 @@ for(const button of approveButtons) {
 }
 
 function approveExpert() {
-    approveButtons[0].style.dispaly = "none";
+    console.log("Approved");
 }
 
 
