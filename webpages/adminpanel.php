@@ -78,7 +78,7 @@
                 $result = $db->sendQuery($statement, array("email"));
 
                 echo("<table>");
-                echo("<tr><td>Email</td><td>Remove Admin</td><tr>");
+                echo("<tr><td>Email</td><td>Remove Admin</td></tr>");
                 foreach($result as $row) {
                     $email = $row['email'];
 
