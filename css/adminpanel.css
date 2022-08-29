@@ -39,4 +39,5 @@ section table tbody tr:first-child td {
 section table tbody tr td {
     text-align: center;
     padding-left: 10px;
+    padding-right: 10px;
 }
