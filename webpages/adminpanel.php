@@ -95,4 +95,5 @@
             <div><h1>E-Mail Notifications</h1></div>
         </section>
     </body>
+    <script src="../javascript/adminPanel.js"></script>
 </html>
