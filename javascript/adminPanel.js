@@ -34,8 +34,8 @@ function addAdmin() {
 }
 
 // --------- remove admin ---------
-const removeAdminButtons = document.querySelectorAll("#admins table tbody tr td:nth-child(2) button");
-const adminEmails = document.querySelectorAll("#admins table tbody tr td:nth-child(1)");
+const removeAdminButtons = document.querySelectorAll("#admins table tbody tr:nth-child(n+1) td:nth-child(2) button");
+const adminEmails = document.querySelectorAll("#admins table tbody tr:nth-child(n+1) td:nth-child(1)");
 
 for(var i = 0; i < removeAdminButtons.length; i++) {
     removeAdminButtons[i].addEventListener("click", removeAdmin, false);
