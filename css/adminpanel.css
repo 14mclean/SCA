@@ -34,5 +34,8 @@ section table tbody tr:first-child td {
     font-family: 'Open Sans';
     font-weight: 500;
     background-color: #dddddd;
-    margin-right: 50px;
+}
+
+section table tbody tr td {
+    text-align: center;
 }
