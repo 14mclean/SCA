@@ -1,5 +1,5 @@
 // --------- approve expert ---------
-    const approveButtons = document.querySelectorAll("#unapprovedExperts table tbody tr:nth-child td:nth-child(4) button");
+    const approveButtons = document.querySelectorAll("#unapprovedExperts table tbody tr td:nth-child(4) button");
     const unapprovedEmails = document.querySelectorAll("#unapprovedExperts table tbody tr:not(:first-child) td:nth-child(1)");
 
     for(var i = 0; i < approveButtons.length; i++) {
@@ -12,7 +12,7 @@
     }
 
 // --------- block expert ---------
-    const blockButtons = document.querySelectorAll("#unapprovedExperts table tbody tr:nth-child td:nth-child(5) button");
+    const blockButtons = document.querySelectorAll("#unapprovedExperts table tbody tr td:nth-child(5) button");
 
     for(var i = 0; i < blockButtons.length; i++) {
         blockButtons[i].addEventListener("click", blockExpert, false);
@@ -34,7 +34,7 @@
     }
 
 // --------- remove admin ---------
-    const removeAdminButtons = document.querySelectorAll("#admins table tbody tr:nth-child td:nth-child(2) button");
+    const removeAdminButtons = document.querySelectorAll("#admins table tbody tr td:nth-child(2) button");
     const adminEmails = document.querySelectorAll("#admins table tbody tr:not(:first-child) td:nth-child(1)");
 
     for(var i = 0; i < removeAdminButtons.length; i++) {
