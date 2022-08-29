@@ -48,8 +48,8 @@
                     echo("<td> $email </td>");
                     echo("<td> $org </td>");
                     echo("<td> $loc </td>");
-                    echo("<td> <button>Y</button> </td>");
-                    echo("<td> <button>X</button> </td>");
+                    echo('<td> <button><img src="../assets/check.png"></button> </td>');
+                    echo('<td> <button><img src="../assets/remove.png"></button> </td>');
                     echo("</tr>");
                 }
                 echo("</table>");
@@ -59,7 +59,7 @@
         <section>
             <div>
                 <h1>Admin Users</h1>
-                <button>+</button>
+                <button><img src="../assets/plus.png"></button>
             </div>
             
             <?php
@@ -82,7 +82,7 @@
 
                     echo("<tr>");
                     echo("<td> $email </td>");
-                    echo("<td> <button>X</button> </td>");
+                    echo('<td> <button><img src="../assets/remove.png"></button> </td>');
                     echo("</tr>");
                 }
                 echo("</table>");
