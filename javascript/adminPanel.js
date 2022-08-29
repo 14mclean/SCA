@@ -12,7 +12,7 @@
     }
 
 // --------- block expert ---------
-    const blockButtons = document.querySelectorAll("#unapprovedExperts table tbody tr:nth-child(n+1) td:nth-child(5)");
+    const blockButtons = document.querySelectorAll("#unapprovedExperts table tbody tr:nth-child(n+1) td:nth-child(5) button");
 
     for(var i = 0; i < blockButtons.length; i++) {
         blockButtons[i].addEventListener("click", blockExpert, false);
