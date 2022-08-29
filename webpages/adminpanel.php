@@ -23,7 +23,7 @@
     <body>
         <a class="homeButton" href="scahome.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Home_free_icon.svg/1200px-Home_free_icon.svg.png"></a>
 
-        <section>
+        <section id="unapprovedExperts">
             <div><h1>Unapproved Experts</h1></div>
             <?php
                 // get userID, email where adminVerified = 0 from USers and experts
@@ -58,7 +58,7 @@
             ?>
         </section>
 
-        <section>
+        <section id="admins">
             <div>
                 <h1>Admin Users</h1>
                 <button><img src="../assets/plus.png"></button>
@@ -91,7 +91,7 @@
             ?>
         </section>
 
-        <section>
+        <section id="notifications">
             <div><h1>E-Mail Notifications</h1></div>
         </section>
     </body>
