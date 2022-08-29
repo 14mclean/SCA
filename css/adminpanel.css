@@ -31,7 +31,6 @@ section div button {
 }
 
 section table tbody tr:first-child td {
-    font-family: 'Open Sans';
     font-weight: 500;
     background-color: #dddddd;
 }
@@ -40,4 +39,5 @@ section table tbody tr td {
     text-align: center;
     padding-left: 10px;
     padding-right: 10px;
+    font-family: 'Open Sans';
 }
