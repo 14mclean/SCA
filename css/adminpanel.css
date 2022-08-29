@@ -64,6 +64,6 @@ section div button img {
     height: 20px;
 }
 
-button {
+button:hover {
     opacity: 0.8;
 }
