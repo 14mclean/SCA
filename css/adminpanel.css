@@ -29,3 +29,7 @@ section div button {
     display: inline;
     margin: 10px 10px 10px 0px;
 }
+
+section table:first-child td {
+    font-weight: 500;
+}
