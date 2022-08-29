@@ -9,6 +9,12 @@
 
     function approveExpert(event) {
         console.log("Approved " + event.currentTarget.assocEmail);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "../phpScripts/jsToSQL.php");
+        xhr.send(JSON.stringify({
+            statement: "UPDATE Experts SET adminVerified=1 WHERE email="+event.currentTarget.assocEmail,
+        }));
     }
 
 // --------- block expert ---------
