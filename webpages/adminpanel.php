@@ -47,9 +47,9 @@
                     $loc = $row["loc"];
 
                     echo("<tr>");
-                    echo("<td> $email </td>");
-                    echo("<td> $org </td>");
-                    echo("<td> $loc </td>");
+                    echo("<td>$email</td>");
+                    echo("<td>$org</td>");
+                    echo("<td>$loc</td>");
                     echo('<td> <button><img src="../assets/check.png"></button> </td>');
                     echo('<td> <button><img src="../assets/remove.png"></button> </td>');
                     echo("</tr>");
@@ -83,8 +83,8 @@
                     $email = $row['email'];
 
                     echo("<tr>");
-                    echo("<td> $email </td>");
-                    echo('<td> <button><img src="../assets/remove.png"></button> </td>');
+                    echo("<td>$email</td>");
+                    echo('<td><button><img src="../assets/remove.png"></button></td>');
                     echo("</tr>");
                 }
                 echo("</table>");
