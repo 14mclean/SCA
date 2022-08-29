@@ -30,7 +30,7 @@ section div button {
     margin: 10px 10px 10px 0px;
 }
 
-section table:first-child td {
+section table tbody tr:first-child td {
     font-family: 'Open Sans';
     font-weight: 500;
     background-color: #999999;
