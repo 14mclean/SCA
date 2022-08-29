@@ -52,7 +52,28 @@
                 <span></span>
             </div>
 
-            <a href="../phpScripts/logout.php" class="loginButton">Logout</a>
+            <?php
+                if(isset($_SESSION["userID"])) {
+                    echo( '
+                        <a href="../phpScripts/logout.php" class="loginButton">Logout</a>
+                    ' );
+
+                    if($_SESSION["userLevel"] == "Expert") {
+                        echo('
+                            <a href="expertprofile.php" class="expertProfile">Account</a>
+                        ');
+                    } else if($_SESSION["userLevel"] == "Admin") {
+                        echo('
+                            <a href="adminpanel.php" class="adminButton"><img src="../assets/adminSettingsIcon.png"></a>
+                        ');
+                    }
+
+                } else {
+                    echo( '
+                        <a href="login.php" class="loginButton">Login</a>
+                    ' );
+                }
+            ?>
         </header>
         
         <content>

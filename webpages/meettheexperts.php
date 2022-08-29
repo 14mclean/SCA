@@ -59,7 +59,7 @@
                         ');
                     } else if($_SESSION["userLevel"] == "Admin") {
                         echo('
-                            <a class="adminButton"><img src="../assets/adminSettingsIcon.png"></a>
+                            <a href="adminpanel.php" class="adminButton"><img src="../assets/adminSettingsIcon.png"></a>
                         ');
                     }
 

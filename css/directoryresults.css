@@ -1,9 +1,8 @@
 .loginButton {
-    display: inline-block;
     height: 35px;
-    width: 90px;
+    width: 75px;
 
-    margin-top: 87px;
+    margin-top: 83px;
     margin-right: 20px;
     border-radius: 24px;
 
@@ -145,6 +144,17 @@ content {
     font-family: 'Open Sans';
     font-size: 18px;
     line-height: 50px;
+}
+
+.adminButton {
+    margin-top: 80px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.adminButton img {
+    height: 40px;
+    width: 40px;
 }
 
 .area {
