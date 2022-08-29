@@ -29,6 +29,7 @@ section div button {
     display: inline;
     margin: 10px 10px 10px 0px;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
+    border-width: 0px;
 }
