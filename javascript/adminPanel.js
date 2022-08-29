@@ -8,7 +8,7 @@ for(var i = 0; i < approveButtons.length; i++) {
 }
 
 function approveExpert(event) {
-    console.log("Approved " + event.currentTarget.assocEmail);
+    console.log("Approved '" + event.currentTarget.assocEmail + "'");
 }
 
 
