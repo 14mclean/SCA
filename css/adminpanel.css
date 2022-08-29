@@ -27,6 +27,7 @@ section div h1 {
 section div button {
     float: right;
     display: inline;
-    margin-left: auto;
     margin-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
