@@ -63,3 +63,7 @@ section div button img {
     width: 20px;
     height: 20px;
 }
+
+button {
+    opacity: 0.8;
+}
