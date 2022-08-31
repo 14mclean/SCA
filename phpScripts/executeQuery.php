@@ -7,9 +7,10 @@
 
     $statement = $db->prepareStatement(
         $_POST["statement"],
-        "$paramTypes",
+        $paramTypes,
         array()
     );
+    $db->sendQuery($statement, array());
 
     header("Location:".$_SERVER["HTTP_REFERER"]);
     exit();
