@@ -85,7 +85,6 @@
                     <div  class="field">
                         <label>
                             Ages
-                            <input mbsc-input id="multiple-select-input" placeholder="Please select..." data-dropdown="true" data-input-style="outline" data-label-style="stacked" data-tags="true"/>
                         </label>
 
                         
