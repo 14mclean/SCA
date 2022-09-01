@@ -58,7 +58,7 @@
     border-radius: 5px;
 }
 
-.field input[type="text"]:active {
+.field input[type="text"]:focus {
     border: 1px solid #333333;
 }
 
