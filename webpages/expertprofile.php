@@ -5,10 +5,12 @@
     $userLevel = $_SESSION["userLevel"];
 
     if(!isset($userID)) {
-        if($userLevel == "Teacher") {
-            header("Location: login.php");
-            exit();
-        }
+        header("Location: login.php");
+        exit();
+        
+    } else if($userLevel == "Teacher") {
+        header("Location: login.php");
+        exit();      
     }
 
     include_once("../phpScripts/database.php");
