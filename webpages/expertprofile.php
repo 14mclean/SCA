@@ -39,13 +39,17 @@
     $email = $result[0]["email"];
     $expertise = $result[0]["expertise"];
     $org = $result[0]["org"];
-    $ages = "";
+    $ages = array();
     $teacherAdvice = $result[0]["teacherAdvice"] == '1';
     $projectWork = $result[0]["projectWork"] == '1';
     $studentOnline = $result[0]["studentOnline"] == '1';
     $studentF2F = $result[0]["studentF2F"] == '1';
     $studentResources = $result[0]["studentResources"] == '1';
     $location = $result[0]["location"];
+
+    for(int $i = 0; $i < 5; $i++) {
+        array_push($ages, in_array("KS".$i, $result[0]["ages"]));
+    }
 ?>
 
 <!DOCTYPE html>
@@ -116,11 +120,11 @@
                         </label>
 
                         <div>
-                            <label>KS1</label> <input type="checkbox">
-                            <label>KS2</label> <input type="checkbox">
-                            <label>KS3</label> <input type="checkbox">
-                            <label>KS4</label> <input type="checkbox">
-                            <label>KS5</label> <input type="checkbox">
+                            <label>KS1</label> <input type="checkbox" <?php if($ages[0]) echo("checked") ?> >
+                            <label>KS2</label> <input type="checkbox" <?php if($ages[1]) echo("checked") ?> >
+                            <label>KS3</label> <input type="checkbox" <?php if($ages[2]) echo("checked") ?> >
+                            <label>KS4</label> <input type="checkbox" <?php if($ages[3]) echo("checked") ?> >
+                            <label>KS5</label> <input type="checkbox" <?php if($ages[4]) echo("checked") ?> >
                         </div>
                     </div>
                     
