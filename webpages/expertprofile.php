@@ -95,6 +95,23 @@
                     <div class="field">
                         <label>Student Interaction</label>
                         <input type="checkbox">
+
+                        <div>
+                            <label>Online</label>
+                            <input type="checkbox">
+                        </div>
+
+                        <div>
+                            <label>Face-to-Face</label>
+                            <input type="checkbox">
+                        </div>
+
+                        <div>
+                            <label>Resources</label>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+
                     </div>
 
                     <div class="field">
