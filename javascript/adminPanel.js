@@ -14,7 +14,7 @@
         xhr.open("POST", "../phpScripts/executeQuery.php", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({
-            statement: "UPDATE Experts SET adminVerified=1 WHERE email="+event.currentTarget.assocEmail,
+            "statement": "UPDATE Experts SET adminVerified=1 WHERE email="+event.currentTarget.assocEmail,
         }));
     }
 
