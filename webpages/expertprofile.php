@@ -48,7 +48,7 @@
     $location = $result[0]["location"];
 
     for($i = 0; $i < 5; $i++) {
-        array_push($ages, in_array("KS".$i, $result[0]["ages"]));
+        str_contains($ages, in_array("KS".$i, $result[0]["ages"]));
     }
 ?>
 
