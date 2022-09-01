@@ -27,6 +27,6 @@ function validateLocationInput(event) {
 
     // fits postcode format: 2-4 chars, starts with letter
     if(inputText.length < 2 || inputText.length > 4 || !inputText[0].match(/[a-z]/i)) {
-        expertiseInput.style.borderColor = "red";
+        locationInput.style.borderColor = "red";
     }
 }
