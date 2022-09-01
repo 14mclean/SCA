@@ -23,10 +23,38 @@ const locationInput = document.querySelector("input[name='location']");
 locationInput.addEventListener("input", validateLocationInput);
 
 function validateLocationInput(event) {
-    $inputText = event.target.value;
-
-    // fits postcode format: 2-4 chars, starts with letter
-    if(inputText.length < 2 || inputText.length > 4 || !inputText[0].match(/[a-z]/i)) {
+    if(!validPostcode(event.target.value)) {
         locationInput.style.borderColor = "red";
     }
+}
+
+function validPostcode(outcode) {
+    function generatePattern(string) {
+        pattern = "";
+
+        for (const char of string) {
+            if((/[a-zA-Z]/).test(char)) {
+                pattern += "A"
+            } else if((/[0-9]/).test(char)) {
+                pattern += "N"
+            } else {
+                pattern += "S" // symbol
+            }
+        }
+
+        return pattern;
+    }
+
+    validPatterns = [
+        "AN",
+        "ANN",
+        "AAN",
+        "AANN",
+        "ANA",
+        "AANA"
+    ];
+    outcode = outcode.toUpperCase();
+    outcodePattern = generatePattern(outcode);
+
+    return validPatterns.includes(outcodePattern)
 }
