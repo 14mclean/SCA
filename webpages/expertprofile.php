@@ -173,4 +173,5 @@
     </body>
     
     <script src="../javascript/navbar.js"></script>
+    <script src="../javascript/expertProfile.js"></script>
 </html>
