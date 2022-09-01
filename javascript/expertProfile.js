@@ -64,7 +64,7 @@ function validPostcode(outcode) {
 }
 
 const saveButton = document.querySelector(".profile button");
-saveButton.addEventListener("input", submit);
+saveButton.addEventListener("click", submit);
 
 function submit() {
     // get all values
