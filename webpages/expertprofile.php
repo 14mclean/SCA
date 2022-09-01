@@ -48,7 +48,7 @@
     $location = $result[0]["location"];
 
     for(int $i = 0; $i < 5; $i++) {
-        array_push($ages, in_array("KS".$i, $result[0]["ages"]));
+        array_push($ages, in_array("KS$i", $result[0]["ages"]));
     }
 ?>
 
