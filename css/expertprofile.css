@@ -51,8 +51,9 @@
     color: #333333;
     font-family: 'Open Sans';
     margin-right: 20px;
+    height: 24px;
 
-    border: 1px solid #333333;
+    border: 1px solid #666666;
     border-radius: 5px;
 }
 
