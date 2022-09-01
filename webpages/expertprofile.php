@@ -11,14 +11,6 @@
         }
     }
 
-    $ages = "";
-    $teacherAdvice = false;
-    $projectWork = false;
-    $studentOnline = false;
-    $studentF2F = false;
-    $studentResources = false;
-    $location = "";
-
     include_once("../phpScripts/database.php");
     $db = new Database();
 
@@ -45,8 +37,15 @@
     );
 
     $email = $result[0]["email"];
-    $expertise = $result[0]["teacherAdvice"];
+    $expertise = $result[0]["expertise"];
     $org = $result[0]["org"];
+    $ages = "";
+    $teacherAdvice = if($result[0]["teacherAdvice"] == '0') false else true;
+    $projectWork = if($result[0]["projectWork"] == '0') false else true;
+    $studentOnline = if($result[0]["studentOnline"] == '0') false else true;
+    $studentF2F = if($result[0]["studentF2F"] == '0') false else true;
+    $studentResources = if($result[0]["studentResources"] == '0') false else true;
+    $location = $result[0]["location"];
 ?>
 
 <!DOCTYPE html>
