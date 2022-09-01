@@ -7,6 +7,8 @@ function validateExpertiseInput(event) {
     if(event.target.value == "") {
         // cannot be empty popup
         expertiseInput.style.borderColor = "red";
+    } else {
+        locationInput.style.borderColor = "#666666";
     }
 }
 
@@ -25,6 +27,8 @@ locationInput.addEventListener("input", validateLocationInput);
 function validateLocationInput(event) {
     if(!validPostcode(event.target.value)) {
         locationInput.style.borderColor = "red";
+    } else {
+        locationInput.style.borderColor = "#666666";
     }
 }
 
