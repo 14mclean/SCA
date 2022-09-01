@@ -73,16 +73,16 @@ function submit() {
 
     formData.append("expertise", inputs[0].value);
     formData.append("org", inputs[1].value);
-    formData.append("teacherAdvice", inputs[7].value == "on");
-    formData.append("projectWork", inputs[8].value == "on");
-    formData.append("studentOnline", inputs[9].value == "on");
-    formData.append("studentF2F", inputs[10].value == "on");
-    formData.append("studentResources", inputs[11].value == "on");
+    formData.append("teacherAdvice", inputs[7].checked);
+    formData.append("projectWork", inputs[8].checked);
+    formData.append("studentOnline", inputs[9].checked);
+    formData.append("studentF2F", inputs[10].checked);
+    formData.append("studentResources", inputs[11].checked);
     formData.append("location", inputs[12].value);
 
     ages = "";
     for(i=2; i<7; i++) {
-        if(inputs[i].value == "on") {
+        if(inputs[i].checked) {
             if(i > 2) {
                 ages += ",";
             }
