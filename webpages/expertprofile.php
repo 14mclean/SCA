@@ -11,9 +11,6 @@
         }
     }
 
-    $email = "";
-    $expertise = "";
-    $org = "";
     $ages = "";
     $teacherAdvice = false;
     $projectWork = false;
@@ -48,6 +45,8 @@
     );
 
     $email = $result[0]["email"];
+    $expertise = $result[0]["expertise"];
+    $org = $result[0]["org"];
 ?>
 
 <!DOCTYPE html>
