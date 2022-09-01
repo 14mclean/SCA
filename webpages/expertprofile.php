@@ -34,18 +34,20 @@
     $result=$db->sendQuery(
         $statement,
         array(
-            $email,
-            $expertise,
-            $org,
-            $ages,
-            $teacherAdvice,
-            $projectWork,
-            $studentOnline,
-            $studentF2F,
-            $studentResources,
-            $location
+            "email",
+            "expertise",
+            "org",
+            "ages",
+            "teacherAdvice",
+            "projectWork",
+            "studentOnline",
+            "studentF2F",
+            "studentResources",
+            "location"
         )
     );
+
+    $email = $result[0]["email"];
 ?>
 
 <!DOCTYPE html>
