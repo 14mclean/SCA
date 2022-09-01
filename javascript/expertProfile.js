@@ -20,7 +20,7 @@ function validateOrgInput(event) {
 
 // validation on location
 const locationInput = document.querySelector("input[name='location']");
-orgInput.addEventListener("input", validateLocationInput);
+locationInput.addEventListener("input", validateLocationInput);
 
 function validateLocationInput(event) {
     $inputText = event.target.value;
