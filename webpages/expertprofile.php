@@ -28,7 +28,7 @@
     $statement = $db->prepareStatement(
         "SELECT email, expertise, organisation, ages, teacherAdvice, projectWork, studentOnline, studentF2F, studentResources, Experts.location FROM Users INNER JOIN Experts ON Users.userID = Experts.userID WHERE Users.userID = ?",
         "i",
-        $userID
+        array($userID)
     );
 
     $result=$db->sendQuery(
