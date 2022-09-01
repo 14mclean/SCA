@@ -112,8 +112,6 @@
                         </div>
                     </div>
 
-                    </div>
-
                     <div class="field">
                         <label>Location</label>
                         <input type="text" name="location">
