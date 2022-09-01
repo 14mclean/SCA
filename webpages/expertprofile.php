@@ -22,7 +22,7 @@
     $studentResources = false;
     $location = "";
 
-    include_once("database.php");
+    include_once("../phpScripts/database.php");
     $db = new Database();
 
     $statement = $db->prepareStatement(
