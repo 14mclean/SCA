@@ -79,7 +79,13 @@
                             Ages
                         </label>
 
-                        
+                        <div>
+                            <label>KS1</label> <input type="checkbox">
+                            <label>KS2</label> <input type="checkbox">
+                            <label>KS3</label> <input type="checkbox">
+                            <label>KS4</label> <input type="checkbox">
+                            <label>KS5</label> <input type="checkbox">
+                        </div>
                     </div>
                     
                     <div class="field">
