@@ -142,7 +142,7 @@
                     
                     <div class="field">
                         <label>Student Interaction</label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="studentInteraction">
 
                         <div>
                             <label>Online</label>

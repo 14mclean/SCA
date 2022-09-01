@@ -25,7 +25,7 @@ const locationInput = document.querySelector("input[name='location']");
 locationInput.addEventListener("input", validateLocationInput);
 
 function validateLocationInput(event) {
-    if(!validPostcode(event.target.value)) {
+    if(!validPostcode(event.target.value) || event.target.value == "") {
         locationInput.style.borderColor = "red";
     } else {
         locationInput.style.borderColor = "#666666";
@@ -61,4 +61,18 @@ function validPostcode(outcode) {
     outcodePattern = generatePattern(outcode);
 
     return validPatterns.includes(outcodePattern)
+}
+
+const saveButton = document.querySelector(".profile button");
+saveButton.addEventListener("input", submit);
+
+function submit() {
+    // get all values
+    inputs = document.querySelectorAll('input:not([name="studentInteraction"])');
+    // format results
+    // add 
+    console.log(inputs);
+
+    xhr = new XMLHttpRequest();
+    formData = new FormData();
 }
