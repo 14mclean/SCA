@@ -10,14 +10,6 @@
             exit();
         }
     }
-
-    $expertise = "";
-    $organisation = "";
-    $ages = array();
-    $f2f = false;
-    $online = false;
-    $teacherAdvice = false;
-    $location = "";
 ?>
 
 <!DOCTYPE html>
@@ -90,22 +82,22 @@
                         
                     </div>
                     
-                    <div  class="field">
-                        <label>Face-to-Face</label>
+                    <div class="field">
+                        <label>Teacher Advice & Information</label>
                         <input type="checkbox">
                     </div>
                     
-                    <div  class="field">
-                        <label>Online</label>
+                    <div class="field">
+                        <label>Project Work</label>
                         <input type="checkbox">
                     </div>
                     
-                    <div  class="field">
-                        <label>Teacher Advice</label>
+                    <div class="field">
+                        <label>Student Interaction</label>
                         <input type="checkbox">
                     </div>
 
-                    <div  class="field">
+                    <div class="field">
                         <label>Location</label>
                         <input type="text" name="location">
                     </div>
