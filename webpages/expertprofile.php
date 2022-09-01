@@ -1,3 +1,25 @@
+<?php
+    session_start();
+
+    $userID = $_SESSION["userID"];
+    $userLevel = $_SESSION["userLevel"];
+
+    if(!isset($userID)) {
+        if($userLevel == "Teacher") {
+            header("Location: login.php");
+            exit();
+        }
+    }
+
+    $expertise = "";
+    $organisation = "";
+    $ages = array();
+    $f2f = false;
+    $online = false;
+    $teacherAdvice = false;
+    $location = "";
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -47,49 +69,44 @@
         <content>
             <div class="container">
                 <div class="profile">
+
                     <h1>Namey Name</h1> <br>
 
-                    <div>
+                    <div class="field">
                         <label>Expertise</label>
                         <input type="text" name="expertise">
                     </div>
 
-                    <div>
+                    <div  class="field">
                         <label>Organisation (if applicable)</label>
                         <input type="text" name="company">
                     </div>
 
-                    <div>
+                    <div  class="field">
                         <label>
                             Ages
                             <input mbsc-input id="multiple-select-input" placeholder="Please select..." data-dropdown="true" data-input-style="outline" data-label-style="stacked" data-tags="true"/>
                         </label>
 
-                        <select multiple id="multiple-select-select">
-                            <option value="1">KS1</option>
-                            <option value="2">KS2</option>
-                            <option value="3">KS3</option>
-                            <option value="4">KS4</option>
-                            <option value="5">KS5</option>
-                        </select>
+                        
                     </div>
                     
-                    <div>
+                    <div  class="field">
                         <label>Face-to-Face</label>
                         <input type="checkbox">
                     </div>
                     
-                    <div>
+                    <div  class="field">
                         <label>Online</label>
                         <input type="checkbox">
                     </div>
                     
-                    <div>
+                    <div  class="field">
                         <label>Teacher Advice</label>
                         <input type="checkbox">
                     </div>
 
-                    <div>
+                    <div  class="field">
                         <label>Location</label>
                         <input type="text" name="location">
                     </div>
