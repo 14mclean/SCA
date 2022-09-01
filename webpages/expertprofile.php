@@ -47,8 +47,8 @@
     $studentResources = $result[0]["studentResources"] == '1';
     $location = $result[0]["location"];
 
-    for(int $i = 0; $i < 5; $i++) {
-        array_push($ages, in_array("KS$i", $result[0]["ages"]));
+    for($i = 0; $i < 5; $i++) {
+        array_push($ages, in_array("KS".$i, $result[0]["ages"]));
     }
 ?>
 
