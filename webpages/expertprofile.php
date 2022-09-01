@@ -45,7 +45,7 @@
     );
 
     $email = $result[0]["email"];
-    $expertise = $result[0]["expertise"];
+    $expertise = $result[0]["teacherAdvice"];
     $org = $result[0]["org"];
 ?>
 
