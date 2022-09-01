@@ -58,6 +58,10 @@
     border-radius: 5px;
 }
 
+.field input[type="text"]:active {
+    border: 1px solid #333333;
+}
+
 .field label {
     margin-left: 10px;
     color: #666666;
