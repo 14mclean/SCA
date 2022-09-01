@@ -40,11 +40,11 @@
     $expertise = $result[0]["expertise"];
     $org = $result[0]["org"];
     $ages = "";
-    $teacherAdvice = if($result[0]["teacherAdvice"] == '0') false else true;
-    $projectWork = if($result[0]["projectWork"] == '0') false else true;
-    $studentOnline = if($result[0]["studentOnline"] == '0') false else true;
-    $studentF2F = if($result[0]["studentF2F"] == '0') false else true;
-    $studentResources = if($result[0]["studentResources"] == '0') false else true;
+    $teacherAdvice = $result[0]["teacherAdvice"] == '1';
+    $projectWork = $result[0]["projectWork"] == '1';
+    $studentOnline = $result[0]["studentOnline"] == '1';
+    $studentF2F = $result[0]["studentF2F"] == '1';
+    $studentResources = $result[0]["studentResources"] == '1';
     $location = $result[0]["location"];
 ?>
 
