@@ -126,12 +126,12 @@
                     
                     <div class="field">
                         <label>Teacher Advice & Information</label>
-                        <input type="checkbox">
+                        <input type="checkbox" <?php if($teacherAdvice) echo("checked") ?> >
                     </div>
                     
                     <div class="field">
                         <label>Project Work</label>
-                        <input type="checkbox">
+                        <input type="checkbox" <?php if($projectWork) echo("checked") ?> >
                     </div>
                     
                     <div class="field">
@@ -140,23 +140,23 @@
 
                         <div>
                             <label>Online</label>
-                            <input type="checkbox">
+                            <input type="checkbox" <?php if($studentOnline) echo("checked") ?> >
                         </div>
 
                         <div>
                             <label>Face-to-Face</label>
-                            <input type="checkbox">
+                            <input type="checkbox" <?php if($studentF2F) echo("checked") ?> >
                         </div>
 
                         <div>
                             <label>Resources</label>
-                            <input type="checkbox">
+                            <input type="checkbox" <?php if($studentResources) echo("checked") ?> >
                         </div>
                     </div>
 
                     <div class="field">
                         <label>Location</label>
-                        <input type="text" name="location">
+                        <input type="text" name="location" value="<?php echo($expertise); ?>">
                     </div>
 
                     <br>
