@@ -10,6 +10,41 @@
             exit();
         }
     }
+
+    $email = "";
+    $expertise = "";
+    $org = "";
+    $ages = "";
+    $teacherAdvice = false;
+    $projectWork = false;
+    $studentOnline = false;
+    $studentF2F = false;
+    $studentResources = false;
+    $location = "";
+
+    $db = new Database();
+
+    $statement = $db->prepareStatement(
+        "SELECT email, expertise, organisation, ages, teacherAdvice, projectWork, studentOnline, studentF2F, studentResources, Experts.location FROM Users INNER JOIN Experts ON Users.userID = Experts.userID WHERE Users.userID = ?",
+        "i",
+        $userID
+    );
+
+    $result=$db->sendQuery(
+        $statement,
+        array(
+            $email,
+            $expertise,
+            $org,
+            $ages,
+            $teacherAdvice,
+            $projectWork,
+            $studentOnline,
+            $studentF2F,
+            $studentResources,
+            $location
+        )
+    );
 ?>
 
 <!DOCTYPE html>
@@ -62,16 +97,16 @@
             <div class="container">
                 <div class="profile">
 
-                    <h1>Namey Name</h1> <br>
+                    <h1><?php echo($email); ?></h1> <br>
 
                     <div class="field">
                         <label>Expertise</label>
-                        <input type="text" name="expertise">
+                        <input type="text" name="expertise" value="<?php echo($expertise); ?>">
                     </div>
 
                     <div  class="field">
                         <label>Organisation (if applicable)</label>
-                        <input type="text" name="company">
+                        <input type="text" name="company" value="<?php echo($org); ?>">
                     </div>
 
                     <div  class="field">
