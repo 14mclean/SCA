@@ -5,8 +5,8 @@ expertiseInput.addEventListener("input", validateExpertiseInput);
 function validateExpertiseInput(event) {
     // not null
     if(event.target.value == "") {
-        // cannot be empty popup
         expertiseInput.style.borderColor = "red";
+        // disable save button
     } else {
         locationInput.style.borderColor = "#666666";
     }
@@ -25,8 +25,9 @@ const locationInput = document.querySelector("input[name='location']");
 locationInput.addEventListener("input", validateLocationInput);
 
 function validateLocationInput(event) {
-    if(!validPostcode(event.target.value) || event.target.value == "") {
+    if(!validPostcode(event.target.value)) {
         locationInput.style.borderColor = "red";
+        // disable save button
     } else {
         locationInput.style.borderColor = "#666666";
     }
@@ -67,6 +68,8 @@ const saveButton = document.querySelector(".profile button");
 saveButton.addEventListener("click", submit);
 
 function submit() {
+    // if disabled return
+
     inputs = document.querySelectorAll('input:not([name="studentInteraction"])');
     xhr = new XMLHttpRequest();
     formData = new FormData();
@@ -93,4 +96,6 @@ function submit() {
 
     xhr.open("POST", "../phpScripts/updateExpert.php");
     xhr.send(formData);
+
+    // foward to mte
 }
