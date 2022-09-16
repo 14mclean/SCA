@@ -111,12 +111,12 @@
                         <input type="text" name="expertise" value="<?php echo($expertise); ?>">
                     </div>
 
-                    <div  class="field">
+                    <div class="field">
                         <label>Organisation (if applicable)</label>
                         <input type="text" name="company" value="<?php echo($org); ?>">
                     </div>
 
-                    <div  class="field">
+                    <div class="field">
                         <label>
                             Ages
                         </label>
@@ -132,12 +132,12 @@
                     
                     <div class="field">
                         <label>Teacher Advice & Information</label>
-                        <input type="checkbox" <?php if($teacherAdvice) echo("checked") ?> >
+                        <input id="teacherAdvice" type="checkbox" <?php if($teacherAdvice) echo("checked") ?> >
                     </div>
                     
                     <div class="field">
                         <label>Project Work</label>
-                        <input type="checkbox" <?php if($projectWork) echo("checked") ?> >
+                        <input id="projectWork" type="checkbox" <?php if($projectWork) echo("checked") ?> >
                     </div>
                     
                     <div class="field">
@@ -146,17 +146,17 @@
 
                         <div>
                             <label>Online</label>
-                            <input type="checkbox" <?php if($studentOnline) echo("checked") ?> >
+                            <input id="online" type="checkbox" <?php if($studentOnline) echo("checked") ?> >
                         </div>
 
                         <div>
                             <label>Face-to-Face</label>
-                            <input type="checkbox" <?php if($studentF2F) echo("checked") ?> >
+                            <input id="f2f" type="checkbox" <?php if($studentF2F) echo("checked") ?> >
                         </div>
 
                         <div>
                             <label>Resources</label>
-                            <input type="checkbox" <?php if($studentResources) echo("checked") ?> >
+                            <input id="resources" type="checkbox" <?php if($studentResources) echo("checked") ?> >
                         </div>
                     </div>
 
