@@ -1,3 +1,9 @@
+function init() {
+    locationInput.dispatchEvent(new Event("input"));
+    expertiseInput.dispatchEvent(new Event("input"));
+    //studentInteractionCheckbox.dispatchEvent(new Event(""));
+}
+
 // validation on expertise
 const expertiseInput = document.querySelector("input[name='expertise']");
 expertiseInput.addEventListener("input", validateExpertiseInput);
@@ -100,5 +106,15 @@ function submit() {
     // foward to mte
 }
 
-locationInput.dispatchEvent(new Event("input"));
-expertiseInput.dispatchEvent(new Event("input"));
+const studentInteractionCheckbox = document.querySelector('input[name="studentInteraction"]');
+//studentInteractionCheckbox.addEventListener("", );
+
+function updateInteractionVisibilities(event) {
+    // if student interaction not checked
+        //  uncheck all interactions
+        // hide interactions
+    // else
+        // show interactions
+}
+
+init();

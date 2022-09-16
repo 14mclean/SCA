@@ -142,7 +142,7 @@
                     
                     <div class="field">
                         <label>Student Interaction</label>
-                        <input type="checkbox" name="studentInteraction">
+                        <input type="checkbox" name="studentInteraction" <?php if($studentOnline || $studentF2F || $studentResources) echo("checked") ?>>
 
                         <div>
                             <label>Online</label>
