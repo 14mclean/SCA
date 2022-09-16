@@ -100,6 +100,5 @@ function submit() {
     // foward to mte
 }
 
-validateExpertiseInput(expertiseInput);
-validateOrgInput(orgInput);
-validateLocationInput(locationInput);
+locationInput.dispatchEvent(new Event("input"));
+expertiseInput.dispatchEvent(new Event("input"));
