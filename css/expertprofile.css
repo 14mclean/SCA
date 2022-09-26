@@ -90,12 +90,11 @@
 }
 
 .profile button:disabled {
-    background-color: #999999;
-    border: 10px solid #999999;
+    opacity: 0.2;
 }
 
 .profile button:disabled:hover {
-    opacity: 1;
+    opacity: 0.2;
 }
 
 .field:hover {
