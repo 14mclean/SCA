@@ -22,7 +22,7 @@ function validateExpertiseInput(event) {
         expertiseInput.style.borderColor = "red";
         isExpertiseValid = false;
     } else {
-        locationInput.style.borderColor = "#666666";
+        expertiseInput.style.borderColor = "#666666";
         isExpertiseValid = true;
     }
     buttonCheck()
