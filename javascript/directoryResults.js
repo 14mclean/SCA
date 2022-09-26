@@ -101,6 +101,6 @@ function updateResults() {
 
     */
     
-    const response = fetch("../phpScripts/getResults.php?"+getFilter).json();
+    const response = fetch("../phpScripts/getResults.php?"+getFilter);
     console.log(response);
 }
