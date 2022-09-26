@@ -32,6 +32,7 @@
     $db = new Database();
 
     print_r(gettype($_POST["studentOnline"]));
+    print_r($_POST["studentOnline"]);
 
     $statement = $db->prepareStatement(
         "UPDATE Experts SET expertise=?, organisation=?, teacherAdvice=?, projectWork=?, studentOnline=?, studentF2F=? studentResources=?, location=?, ages=? WHERE userID = ?",
