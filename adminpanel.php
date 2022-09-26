@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="../css/adminpanel.css">
     </head>
     <body>
-        <a class="homeButton" href="scahome.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Home_free_icon.svg/1200px-Home_free_icon.svg.png"></a>
+        <a class="homeButton" href="home.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Home_free_icon.svg/1200px-Home_free_icon.svg.png"></a>
 
         <section id="unapprovedExperts">
             <div><h1>Unapproved Experts</h1></div>

@@ -68,7 +68,7 @@
             <img class="logo" src="../assets/tempLogo.png" alt="SCA Logo">
             
             <nav class="navbar">
-                <a href="scahome.html" id="homeMenu"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Home_free_icon.svg/1200px-Home_free_icon.svg.png"></a>
+                <a href="home.html" id="homeMenu"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Home_free_icon.svg/1200px-Home_free_icon.svg.png"></a>
                 
                 <div class="dropdown">
                     <button class="dropbtn" onclick="location.href='aboutus.html'">About Us</button>
