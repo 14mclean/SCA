@@ -122,11 +122,11 @@
                         </label>
 
                         <div>
-                            <label>KS1</label> <input type="checkbox" <?php if($ages[0]) echo("checked") ?> > <br>
-                            <label>KS2</label> <input type="checkbox" <?php if($ages[1]) echo("checked") ?> > <br>
-                            <label>KS3</label> <input type="checkbox" <?php if($ages[2]) echo("checked") ?> > <br>
-                            <label>KS4</label> <input type="checkbox" <?php if($ages[3]) echo("checked") ?> > <br>
-                            <label>KS5</label> <input type="checkbox" <?php if($ages[4]) echo("checked") ?> > <br>
+                            <label> KS1</label> <input type="checkbox" <?php if($ages[0]) echo("checked") ?> > <br>
+                            <label> KS2</label> <input type="checkbox" <?php if($ages[1]) echo("checked") ?> > <br>
+                            <label> KS3</label> <input type="checkbox" <?php if($ages[2]) echo("checked") ?> > <br>
+                            <label> KS4</label> <input type="checkbox" <?php if($ages[3]) echo("checked") ?> > <br>
+                            <label> KS5</label> <input type="checkbox" <?php if($ages[4]) echo("checked") ?> > <br>
                         </div>
                     </div>
                     
