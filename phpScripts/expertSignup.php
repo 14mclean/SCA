@@ -57,7 +57,7 @@
 
 
         $statement = $db->prepareStatement(
-            "INSERT INTO Experts (userID, adminVerified)",
+            "INSERT INTO Experts (userID, adminVerified) VALUES (?,?)",
             "ii",
             array($userID,0)
         );
