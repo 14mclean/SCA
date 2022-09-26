@@ -145,17 +145,17 @@
                         <input type="checkbox" name="studentInteraction" <?php if($studentOnline || $studentF2F || $studentResources) echo("checked") ?>>
 
                         <div>
-                            <label>Online</label>
+                            <label id="online">Online</label>
                             <input id="online" type="checkbox" <?php if($studentOnline) echo("checked") ?> >
                         </div>
 
                         <div>
-                            <label>Face-to-Face</label>
+                            <label id="f2f">Face-to-Face</label>
                             <input id="f2f" type="checkbox" <?php if($studentF2F) echo("checked") ?> >
                         </div>
 
                         <div>
-                            <label>Resources</label>
+                            <label id="resources">Resources</label>
                             <input id="resources" type="checkbox" <?php if($studentResources) echo("checked") ?> >
                         </div>
                     </div>
