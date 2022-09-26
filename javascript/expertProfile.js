@@ -112,18 +112,28 @@ const interactionCheckboxes = [
     document.querySelector('input#f2f'),
     document.querySelector('input#resources')
 ];
+const interactionLabels = [
+    document.querySelector('label#online'),
+    document.querySelector('label#f2f'),
+    document.querySelector('label#resources')
+];
 studentInteractionCheckbox.addEventListener("click", updateInteractionVisibilities);
 
 function updateInteractionVisibilities(event) {
-    for(const checkbox of interactionCheckboxes) {
+    for(let i = 0; i < 3; i++) {
+        checkbox = interactionCheckboxes[i];
+        label = interactionLabels[i];
+
         checkbox.checked = false;
 
         if(studentInteractionCheckbox.checked) {
             checkbox.style.display = "initial";
+            label.style.display = "initial";
         } else {
             checkbox.style.display = "none";
+            label.style.display = "none";
         } 
-    }    
+    }  
 }
 
 init();
