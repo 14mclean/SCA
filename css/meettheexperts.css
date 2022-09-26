@@ -35,6 +35,7 @@
 .expertProfile {
     height: 35px;
     width: fit-content;
+    padding: 0px 5px;
     border-radius: 24px;
     background-color: #03570d;
     font-family: 'Open Sans';
