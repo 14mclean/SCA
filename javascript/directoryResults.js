@@ -29,7 +29,7 @@ function checkBox() {
 
 // ---------  Update distance value on slider ---------
 const slider = document.querySelector('input[type="range"]');
-const output = document.querySelector(".distanceOutput");
+const output = document.querySelector("#distanceDisplay");
 output.innerHTML = slider.value;
 
 slider.oninput = function() {
