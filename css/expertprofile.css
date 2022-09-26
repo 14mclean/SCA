@@ -95,7 +95,7 @@
 }
 
 .profile button:disabled:hover {
-    
+    opacity: 1;
 }
 
 .field:hover {
