@@ -94,6 +94,10 @@
     border: 10px solid #999999;
 }
 
+.profile button:disabled:hover {
+    
+}
+
 .field:hover {
     background-color: #efefef;
 }
