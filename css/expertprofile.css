@@ -89,6 +89,11 @@
     opacity: 0.8;
 }
 
+.profile button:disabled {
+    background-color: #4e4e4e;
+    border: 10px solid #4e4e4e;
+}
+
 .field:hover {
     background-color: #efefef;
 }
