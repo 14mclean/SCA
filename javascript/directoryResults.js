@@ -26,3 +26,12 @@ for(const label of filterLabels) {
 function checkBox() {
     this.previousElementSibling.click();
 }
+
+// ---------  Update distance value on slider ---------
+const slider = document.querySelector('input[type="range"]');
+const output = document.querySelector(".distanceOutput");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+    output.innerHTML = this.value;
+  }

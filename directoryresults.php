@@ -119,8 +119,9 @@
                 <div class="refine" id="distance">
                     <h1>Distance</h1>
 
-                    <input type="text" name="outcode"><br>
+                    <input type="text" name="outcode" placeholder="Outcode"><br>
                     <input type="range" name="distanceRange"><br>
+                    <p class="distanceOutput"><span id="distanceDisplay"></span>mins</p>
                 </div>
             </div>
 
