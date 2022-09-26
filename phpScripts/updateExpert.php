@@ -31,19 +31,27 @@
 
     $db = new Database();
 
+    print_r($_POST);
+
     $statement = $db->prepareStatement(
         "UPDATE Experts SET expertise=?, organisation=?, teacherAdvice=?, projectWork=?, studentOnline=?, studentF2F=? studentResources=?, location=?, ages=? WHERE userID = ?",
-        "ssiiiiisi", // is set string??
+        "ssiiiiisi", // is a set of type string??
         array(
             $_POST["expertise"],
             $_POST["organisation"],
-            
+            // teacherAdvice
+            // projectWork
+            // studentOnline
+            // studentF2F
+            // studentResource
+            $_POST["location"],
+            $_POST["ages"],     // check for correct formatting
             $_SESSION["userID"]
         )
     );
 
-    $db->sendQuery($statement, array());
+    //$db->sendQuery($statement, array());
 
-    header("Location: ../webpages/directoryresults.php");
+    //header("Location: ../webpages/directoryresults.php");
     exit();
 ?>
