@@ -120,7 +120,7 @@
                     <h1>Distance</h1>
 
                     <input type="text" name="outcode" placeholder="Outcode"><br>
-                    <input type="range" name="distanceRange"><br>
+                    <input type="range" name="distanceRange" min="1" max="180" value="30"><br>
                     <p class="distanceOutput"><span id="distanceDisplay"></span>mins</p>
                 </div>
             </div>
