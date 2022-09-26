@@ -102,5 +102,5 @@ async function updateResults() {
     */
     
     const response = await fetch("../phpScripts/getResults.php?"+getFilter);
-    console.log(response.text());
+    console.log(response.text()["PromiseResult"]);
 }
