@@ -121,13 +121,13 @@
 
                     <input type="text" name="outcode" placeholder="Outcode"><br>
                     <input type="range" name="distanceRange" min="1" max="180" value="30"><br>
-                    <p class="distanceOutput"><span id="distanceDisplay"></span>mins</p>
+                    <p class="distanceOutput"><span id="distanceDisplay"></span>mi</p>
                 </div>
             </div>
 
             <div class="main">
                 <div class="search">
-                    <input type="text" placeholder="Search expertise">
+                    <input type="text" name="expertise" placeholder="Search expertise">
                     <img src="assets/searchIcon.png">
                 </div>
                 
