@@ -34,7 +34,5 @@
     );
 
     $db->sendQuery($statement, array());
-
-    //header("Location: ../webpages/directoryresults.php");
     exit();
 ?>
