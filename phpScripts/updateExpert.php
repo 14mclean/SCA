@@ -31,14 +31,14 @@
 
     $db = new Database();
 
-    print_r($_POST);
+    print_r(gettype($_POST["studentOnline"]));
 
     $statement = $db->prepareStatement(
         "UPDATE Experts SET expertise=?, organisation=?, teacherAdvice=?, projectWork=?, studentOnline=?, studentF2F=? studentResources=?, location=?, ages=? WHERE userID = ?",
         "ssiiiiisi", // is a set of type string??
         array(
             $_POST["expertise"],
-            $_POST["organisation"],
+            $_POST["org"],
             // teacherAdvice
             // projectWork
             // studentOnline
