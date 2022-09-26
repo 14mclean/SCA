@@ -13,7 +13,7 @@
         exit();      
     }
 
-    include_once("../phpScripts/database.php");
+    include_once("phpScripts/database.php");
     $db = new Database();
 
     $statement = $db->prepareStatement(
@@ -60,12 +60,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>School Citizen Assemblies</title>
-        <link rel="stylesheet" href="../css/header.css">
-        <link rel="stylesheet" href="../css/expertprofile.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/expertprofile.css">
     </head>
     <body>
         <header>
-            <img class="logo" src="../assets/tempLogo.png" alt="SCA Logo">
+            <img class="logo" src="assets/tempLogo.png" alt="SCA Logo">
             
             <nav class="navbar">
                 <a href="home.html" id="homeMenu"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Home_free_icon.svg/1200px-Home_free_icon.svg.png"></a>
@@ -172,6 +172,6 @@
         </content>
     </body>
     
-    <script src="../javascript/navbar.js"></script>
-    <script src="../javascript/expertProfile.js"></script>
+    <script src="javascript/navbar.js"></script>
+    <script src="javascript/expertProfile.js"></script>
 </html>

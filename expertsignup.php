@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/expertsignup.css">
+        <link rel="stylesheet" href="css/expertsignup.css">
     </head>
 
     <body>
@@ -45,9 +45,9 @@
                 ?>
             </div>
 
-            <form method="post" action="../phpScripts/expertSignup.php"> 
+            <form method="post" action="phpScripts/expertSignup.php"> 
                 <input type="email" placeholder="Email" name="email" id="email"><br>
-                <input type="password" placeholder="Password" name="password" id="passwordObscured"> <img class="eyeIcon" src="../assets/openEye.png">
+                <input type="password" placeholder="Password" name="password" id="passwordObscured"> <img class="eyeIcon" src="assets/openEye.png">
                 <button type="submit">Sign Up</button>
             </form>
 
@@ -61,5 +61,5 @@
             User Sign Up
         </a>
     </body>
-    <script src="../javascript/passwordVisibility.js"></script>
+    <script src="javascript/passwordVisibility.js"></script>
 </html>

@@ -8,7 +8,7 @@
         }
     }
 
-    include_once("../phpScripts/database.php");
+    include_once("phpScripts/database.php");
 ?>
 
 
@@ -18,7 +18,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>School Citizen Assemblies</title>
-        <link rel="stylesheet" href="../css/adminpanel.css">
+        <link rel="stylesheet" href="css/adminpanel.css">
     </head>
     <body>
         <a class="homeButton" href="home.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Home_free_icon.svg/1200px-Home_free_icon.svg.png"></a>
@@ -50,8 +50,8 @@
                     echo("<td>$email</td>");
                     echo("<td>$org</td>");
                     echo("<td>$loc</td>");
-                    echo('<td> <button><img src="../assets/check.png"></button> </td>');
-                    echo('<td> <button><img src="../assets/remove.png"></button> </td>');
+                    echo('<td> <button><img src="assets/check.png"></button> </td>');
+                    echo('<td> <button><img src="assets/remove.png"></button> </td>');
                     echo("</tr>");
                 }
                 echo("</table>");
@@ -61,7 +61,7 @@
         <section id="admins">
             <div>
                 <h1>Admin Users</h1>
-                <button><img src="../assets/plus.png"></button>
+                <button><img src="assets/plus.png"></button>
             </div>
             
             <?php
@@ -84,7 +84,7 @@
 
                     echo("<tr>");
                     echo("<td>$email</td>");
-                    echo('<td><button><img src="../assets/remove.png"></button></td>');
+                    echo('<td><button><img src="assets/remove.png"></button></td>');
                     echo("</tr>");
                 }
                 echo("</table>");
@@ -95,5 +95,5 @@
             <div><h1>E-Mail Notifications</h1></div>
         </section>
     </body>
-    <script src="../javascript/adminPanel.js"></script>
+    <script src="javascript/adminPanel.js"></script>
 </html>

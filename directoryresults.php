@@ -13,12 +13,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>School Citizen Assemblies</title>
-        <link rel="stylesheet" href="../css/header.css">
-        <link rel="stylesheet" href="../css/directoryresults.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/directoryresults.css">
     </head>
     <body>
         <header>
-            <img class="logo" src="../assets/tempLogo.png" alt="SCA Logo">
+            <img class="logo" src="assets/tempLogo.png" alt="SCA Logo">
             
             <nav class="navbar">
                 <a href="home.html" id="homeMenu"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Home_free_icon.svg/1200px-Home_free_icon.svg.png"></a>
@@ -55,7 +55,7 @@
             <?php
                 if(isset($_SESSION["userID"])) {
                     echo( '
-                        <a href="../phpScripts/logout.php" class="loginButton">Logout</a>
+                        <a href="phpScripts/logout.php" class="loginButton">Logout</a>
                     ' );
 
                     if($_SESSION["userLevel"] == "Expert") {
@@ -64,7 +64,7 @@
                         ');
                     } else if($_SESSION["userLevel"] == "Admin") {
                         echo('
-                            <a href="adminpanel.php" class="adminButton"><img src="../assets/adminSettingsIcon.png"></a>
+                            <a href="adminpanel.php" class="adminButton"><img src="assets/adminSettingsIcon.png"></a>
                         ');
                     }
 
@@ -120,7 +120,7 @@
             <div class="main">
                 <div class="search">
                     <input type="text" placeholder="Search expertise">
-                    <img src="../assets/searchIcon.png">
+                    <img src="assets/searchIcon.png">
                 </div>
                 
     
@@ -210,6 +210,6 @@
             </div>
         </div>
     </body>
-    <script src="../javascript/navbar.js"></script>
-    <script src="../javascript/directoryResults.js"></script>
+    <script src="javascript/navbar.js"></script>
+    <script src="javascript/directoryResults.js"></script>
 </html>
