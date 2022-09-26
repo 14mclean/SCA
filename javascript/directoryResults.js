@@ -101,7 +101,9 @@ function updateResults() {
 
     */
     
-    fetch("../phpScripts/getResults.php?"+getFilter).then(result => console.log(result.text()));
+    fetch("../phpScripts/getResults.php?"+getFilter)
+    .then(response => response.text())
+    .then(data => console.log(data));
 
     //const response = await fetch("../phpScripts/getResults.php?"+getFilter);
     //console.log(response.text());
