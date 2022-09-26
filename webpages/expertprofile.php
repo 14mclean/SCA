@@ -119,7 +119,7 @@
                     <div class="field">
                         <label>
                             Ages
-                        </label> <br>
+                        </label>
 
                         <div>
                             <label>KS1</label> <input type="checkbox" <?php if($ages[0]) echo("checked") ?> > <br>
