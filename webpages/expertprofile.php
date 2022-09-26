@@ -37,7 +37,7 @@
             "location"
         )
     );
-    print_r($result);
+    
     $email = $result[0]["email"];
     $expertise = $result[0]["expertise"];
     $org = $result[0]["org"];
