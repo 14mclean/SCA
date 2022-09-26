@@ -107,7 +107,7 @@
                     <h1><?php echo($email); ?></h1> <br>
 
                     <div class="field">
-                        <label>Expertise</label>
+                        <label>Expertise *</label>
                         <input type="text" name="expertise" value="<?php echo($expertise); ?>">
                     </div>
 
