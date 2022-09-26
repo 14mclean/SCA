@@ -17,7 +17,7 @@
     $db = new Database();
 
     $statement = $db->prepareStatement(
-        "UPDATE Experts SET expertise = ?, organisation = ?, teacherAdvice = ?, projectWork = ?, studentOnline = ?, studentF2F = ? studentResources = ?, location = ?, ages = ? WHERE userID = ?;",
+        "UPDATE Experts SET expertise = ?, organisation = ?, teacherAdvice = ?, projectWork = ?, studentOnline = ?, studentF2F = ?, studentResources = ?, location = ?, ages = ? WHERE userID = ?",
         "ssiiiiisi",
         array(
             $_POST["expertise"],
