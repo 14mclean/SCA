@@ -9,11 +9,7 @@ var isLocationValid = false;
 const saveButton = document.querySelector(".profile button");
 
 function buttonCheck() {
-    if(isExpertiseValid && isLocationValid) {
-        saveButton.disabled = false;
-    } else {
-        saveButton.disabled = true;
-    }
+    saveButton.disabled = !(isExpertiseValid && isLocationValid)
 }
 
 // validation on expertise
@@ -22,7 +18,7 @@ expertiseInput.addEventListener("input", validateExpertiseInput);
 
 function validateExpertiseInput(event) {
     // not null
-    if(event.target.value == "") {
+    if(event.target.value == '') {
         expertiseInput.style.borderColor = "red";
         isExpertiseValid = false;
     } else {
