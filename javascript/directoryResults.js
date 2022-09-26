@@ -39,16 +39,41 @@ slider.oninput = function() {
 }
 
 // ---------  Update results ---------
-const inputs = document.querySelectorAll("input");
+const textInputs = document.querySelectorAll('input[type="text"]');
+const checkboxInputs = document.querySelectorAll('input[type="checkbox"]');
+const rangeInputs = document.querySelectorAll('input[type="range"]');
 
-for(const input of inputs) {
-    input.addEventListener("", updateResults);
+for(const input of textInputs) {
+    input.addEventListener("input", updateResults);
+}
+
+for(const input of checboxInputs) {
+    input.addEventListener("click", updateResults);
+}
+
+for(const input of rangeInputs) {
+    input.addEventListener("dragend", updateResults); //mouseup ?
 }
 
 function updateResults() {
-    /* 
+    var getFilter = "admin verified=1"; // a=b&c=d
 
-    adminVerified = 1
+    for(const input of textInputs) {
+        getFilter += "&" + input.id + "=" + input.value;
+    }
+
+    for(const input of rangeInputs) {
+        getFilter += "&" + input.id + "=" + input.value;
+    }
+
+    for(const input of textInputs) {
+        if(input.checked) {
+            getFilter += "&" + input.id + "=1";
+        }
+        
+    }
+
+    /* 
 
     organisation = org1 OR org2 ...
 
@@ -75,4 +100,6 @@ function updateResults() {
         distance/time < range
 
     */
+    
+    const response = fetch("../phpScripts/getResults.php?"+getFilter).json();
 }
