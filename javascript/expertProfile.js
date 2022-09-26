@@ -4,6 +4,18 @@ function init() {
     studentInteractionCheckbox.dispatchEvent(new Event("click"));
 }
 
+var isExpertiseValid = false;
+var isLocationValid = false;
+const saveButton = document.querySelector(".profile button");
+
+function buttonCheck() {
+    if(isExpertiseValid && isLocationValid) {
+        saveButton.disabled = false;
+    } else {
+        saveButton.disabled = true;
+    }
+}
+
 // validation on expertise
 const expertiseInput = document.querySelector("input[name='expertise']");
 expertiseInput.addEventListener("input", validateExpertiseInput);
@@ -12,18 +24,12 @@ function validateExpertiseInput(event) {
     // not null
     if(event.target.value == "") {
         expertiseInput.style.borderColor = "red";
-        // disable save button
+        isExpertiseValid = false;
     } else {
         locationInput.style.borderColor = "#666666";
+        isExpertiseValid = true;
     }
-}
-
-// validation on organisation?
-const orgInput = document.querySelector("input[name='company']");
-orgInput.addEventListener("input", validateOrgInput);
-
-function validateOrgInput(event) {
-    
+    buttonCheck()
 }
 
 // validation on location
@@ -33,10 +39,12 @@ locationInput.addEventListener("input", validateLocationInput);
 function validateLocationInput(event) {
     if(!validPostcode(event.target.value)) {
         locationInput.style.borderColor = "red";
-        // disable save button
+        isLocationValid = false;
     } else {
         locationInput.style.borderColor = "#666666";
+        isLocationValid = true;
     }
+    buttonCheck()
 }
 
 function validPostcode(outcode) {
@@ -70,7 +78,6 @@ function validPostcode(outcode) {
     return validPatterns.includes(outcodePattern)
 }
 
-const saveButton = document.querySelector(".profile button");
 saveButton.addEventListener("click", submit);
 
 function submit() {
