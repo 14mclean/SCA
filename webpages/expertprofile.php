@@ -37,7 +37,7 @@
             "location"
         )
     );
-
+    print_r($result);
     $email = $result[0]["email"];
     $expertise = $result[0]["expertise"];
     $org = $result[0]["org"];
@@ -52,8 +52,6 @@
     for($i = 0; $i < 5; $i++) {
         array_push($ages, str_contains($result[0]["ages"], "KS".$i));
     }
-
-    print_r($ages)
 ?>
 
 <!DOCTYPE html>
