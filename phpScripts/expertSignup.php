@@ -52,7 +52,7 @@
             "SELECT userID FROM Users WHERE email=?",
             "s",
             array($email)
-        )
+        );
         $userID = $db->sendQuery($statement, array("userID"))[0]["userID"];
 
 
