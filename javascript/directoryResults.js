@@ -66,7 +66,7 @@ function updateResults() {
         getFilter += "&" + input.name + "=" + input.value;
     }
 
-    for(const input of textInputs) {
+    for(const input of checkboxInputs) {
         if(input.checked) {
             getFilter += "&" + input.name + "=1";
         }
