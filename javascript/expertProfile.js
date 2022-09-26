@@ -1,7 +1,7 @@
 function init() {
     locationInput.dispatchEvent(new Event("input"));
     expertiseInput.dispatchEvent(new Event("input"));
-    //studentInteractionCheckbox.dispatchEvent(new Event(""));
+    studentInteractionCheckbox.dispatchEvent(new Event("click"));
 }
 
 // validation on expertise
@@ -107,14 +107,23 @@ function submit() {
 }
 
 const studentInteractionCheckbox = document.querySelector('input[name="studentInteraction"]');
-//studentInteractionCheckbox.addEventListener("", );
+const interactionCheckboxes = [
+    document.querySelector('input#online'),
+    document.querySelector('input#f2f'),
+    document.querySelector('input#resources')
+];
+studentInteractionCheckbox.addEventListener("click", updateInteractionVisibilities);
 
 function updateInteractionVisibilities(event) {
-    // if student interaction not checked
-        //  uncheck all interactions
-        // hide interactions
-    // else
-        // show interactions
+    for(const checkbox of interactionCheckboxes) {
+        checkbox.checked = false;
+
+        if(studentInteractionCheckbox.checked) {
+            checkbox.style.display = "initial";
+        } else {
+            checkbox.style.display = "none";
+        } 
+    }    
 }
 
 init();
