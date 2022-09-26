@@ -115,6 +115,13 @@
                     <input type="checkbox" name="f2f"><label>Face-to-Face</label><br>
                     <input type="checkbox" name="resources"><label>Resources</label>
                 </div>
+
+                <div class="refine" id="distance">
+                    <h1>Distance</h1>
+
+                    <input type="text" name="outcode"><br>
+                    <input type="range" name="distanceRange"><br>
+                </div>
             </div>
 
             <div class="main">
