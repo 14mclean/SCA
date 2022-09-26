@@ -42,6 +42,10 @@
     line-height: 24px;
 }
 
+.field div label {
+    font-weight: 300;
+}
+
 .field input[type="checkbox"] {
     float: right;
     margin-right: 95px;
