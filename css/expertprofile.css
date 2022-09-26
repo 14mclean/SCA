@@ -90,8 +90,8 @@
 }
 
 .profile button:disabled {
-    background-color: #4e4e4e;
-    border: 10px solid #4e4e4e;
+    background-color: #999999;
+    border: 10px solid #999999;
 }
 
 .field:hover {
