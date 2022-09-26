@@ -50,7 +50,7 @@
     $location = $result[0]["location"];
 
     for($i = 0; $i < 5; $i++) {
-        if(str_contains($result, "KS".$i)) {
+        if(str_contains($result[0]["ages"], "KS".$i)) {
             array_push($ages, 1);
         } else {
             array_push($ages, 0);
