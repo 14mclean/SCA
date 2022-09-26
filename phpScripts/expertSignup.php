@@ -48,6 +48,22 @@
 
         header($location);
     } else {
+        $statement = $db->prepareStatement(
+            "SELECT userID FROM Users WHERE email=?",
+            "s",
+            array($email)
+        )
+        $userID = $db->sendQuery($statement, array("userID"))[0]["userID"];
+
+
+        $statement = $db->prepareStatement(
+            "INSERT INTO Experts (userID, adminVerified)",
+            "ii",
+            array($userID,0)
+        );
+
+        $db->sendQuery($statement, array());
+
         header("Location: ../webpages/verifyemail.html");
     }
     exit();
