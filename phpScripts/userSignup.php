@@ -32,7 +32,7 @@
     }
 
     if(in_array(true, $errors)) {
-        $location = "Location: ../webpages/usersignup.php?";
+        $location = "Location: ../usersignup.php?";
 
         foreach ($errors as $key => $value) {
             if(array_search($key, array_keys($errors)) != 0) {
@@ -48,7 +48,7 @@
 
         header($location);
     } else {
-        header("Location: ../webpages/verifyemail.html");
+        header("Location: ../verifyemail.html");
     }
     exit();
 ?>

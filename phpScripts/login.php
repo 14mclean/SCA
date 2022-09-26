@@ -20,12 +20,12 @@
             session_start();
             $_SESSION["userID"] = $result[0]["userID"];
             $_SESSION["userLevel"] = $result[0]["userLevel"];
-            header("Location: ../webpages/directoryresults.php"); // redirect to directory
+            header("Location: ../directoryresults.php"); // redirect to directory
         } else {
-            header("Location: ../webpages/login.php?loginError=verifiedEmail"); // report non-verified email
+            header("Location: ../login.php?loginError=verifiedEmail"); // report non-verified email
         }
     } else {
-        header("Location: ../webpages/login.php?loginError=login"); // report incorrect details
+        header("Location: ../login.php?loginError=login"); // report incorrect details
     }
     exit();
 ?>

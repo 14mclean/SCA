@@ -32,7 +32,7 @@
     }
 
     if(in_array(true, $errors)) {
-        $location = "Location: ../webpages/expertsignup.php?";
+        $location = "Location: ../expertsignup.php?";
 
         foreach ($errors as $key => $value) {
             if(array_search($key, array_keys($errors)) != 0) {
@@ -64,7 +64,7 @@
 
         $db->sendQuery($statement, array());
 
-        header("Location: ../webpages/verifyemail.html");
+        header("Location: ../verifyemail.html");
     }
     exit();
 ?>

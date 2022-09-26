@@ -2,11 +2,11 @@
     session_start();
 
     if(!isset($_SESSION["userID"])) {
-        header("Location: ../webpages/scahome.html");
+        header("Location: ../scahome.html");
         exit();
         
     } else if($_SESSION["userLevel"] == "Teacher") {
-        header("Location: ../webpages/scahome.html");
+        header("Location: ../scahome.html");
         exit();      
     }
 
