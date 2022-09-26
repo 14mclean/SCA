@@ -90,11 +90,11 @@
 }
 
 .profile button:disabled {
-    opacity: 0.2;
+    opacity: 0.3;
 }
 
 .profile button:disabled:hover {
-    opacity: 0.2;
+    opacity: 0.3;
 }
 
 .field:hover {
