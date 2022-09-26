@@ -52,6 +52,8 @@
     for($i = 0; $i < 5; $i++) {
         array_push($ages, str_contains($result[0]["ages"], "KS".$i));
     }
+
+    print_r($ages)
 ?>
 
 <!DOCTYPE html>
