@@ -16,7 +16,7 @@
     $result = $db->sendQuery($statement, array("userID", "verifiedEmail", "userLevel"));
 
     if(count($result) == 1) {
-        if($result[0]["verifiedEmail"] == 1) {
+        if($result[0]["verifiedEmail"] == 1 || true) { // TODO: bypass email verification
             session_start();
             $_SESSION["userID"] = $result[0]["userID"];
             $_SESSION["userLevel"] = $result[0]["userLevel"];
