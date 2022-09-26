@@ -47,7 +47,7 @@ for(const input of textInputs) {
     input.addEventListener("input", updateResults);
 }
 
-for(const input of checboxInputs) {
+for(const input of checkboxInputs) {
     input.addEventListener("click", updateResults);
 }
 
