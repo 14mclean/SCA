@@ -39,12 +39,40 @@ slider.oninput = function() {
 }
 
 // ---------  Update results ---------
-inputs = document.querySelectorAll("input");
+const inputs = document.querySelectorAll("input");
 
 for(const input of inputs) {
     input.addEventListener("", updateResults);
 }
 
 function updateResults() {
-    
+    /* 
+
+    adminVerified = 1
+
+    organisation = org1 OR org2 ...
+
+    ages: includes 'ks1','ks2'...
+
+    expertise: SOUNDEX(expertise)
+
+    if teacherAdvice is checked
+        teacherAdvice = 1
+
+    if projectWork is checked
+        projectWork = 1
+
+    if studentOnline is checked
+        studentOnline = 1
+
+    if studentF2F is checked
+        studentF2F = 1
+
+    if studentResources is checked
+        projectWork = 1
+
+    location (none sql)
+        distance/time < range
+
+    */
 }
