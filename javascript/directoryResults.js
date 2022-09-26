@@ -56,19 +56,19 @@ for(const input of rangeInputs) {
 }
 
 async function updateResults() {
-    var getFilter = "admin verified=1"; // a=b&c=d
+    var getFilter = "adminVerified=1"; // a=b&c=d
 
     for(const input of textInputs) {
-        getFilter += "&" + input.id + "=" + input.value;
+        getFilter += "&" + input.name + "=" + input.value;
     }
 
     for(const input of rangeInputs) {
-        getFilter += "&" + input.id + "=" + input.value;
+        getFilter += "&" + input.name + "=" + input.value;
     }
 
     for(const input of textInputs) {
         if(input.checked) {
-            getFilter += "&" + input.id + "=1";
+            getFilter += "&" + input.name + "=1";
         }
         
     }
