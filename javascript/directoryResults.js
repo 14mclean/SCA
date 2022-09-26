@@ -55,7 +55,7 @@ for(const input of rangeInputs) {
     input.addEventListener("dragend", updateResults); //mouseup ?
 }
 
-function updateResults() {
+async function updateResults() {
     var getFilter = "admin verified=1"; // a=b&c=d
 
     for(const input of textInputs) {
@@ -101,6 +101,6 @@ function updateResults() {
 
     */
     
-    const response = fetch("../phpScripts/getResults.php?"+getFilter);
+    const response = await fetch("../phpScripts/getResults.php?"+getFilter);
     console.log(response);
 }
