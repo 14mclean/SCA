@@ -19,5 +19,5 @@ const homeImage = document.querySelector(".logo");
 homeImage.addEventListener("click", toHome);
 
 function toHome() {
-    window.location.href = "scahome";
+    window.location.href = "home.html";
 }
