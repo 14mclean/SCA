@@ -151,6 +151,9 @@ function addResource(event) {
     const nameData = document.createElement("td");
     // make text input
     const nameInput = document.createElement("input");
+    nameInput.setAttribute("type","text");
+    nameInput.setAttribute("name", "resourceName");
+    nameInput.setAttribute("placeholder", "Resource Name");
     // append input to data
     nameData.appendChild(nameInput);
     // append data to row
@@ -160,6 +163,9 @@ function addResource(event) {
     const linkData = document.createElement("td");
     // make text input
     const linkInput = document.createElement("input");
+    linkInput.setAttribute("type","text");
+    linkInput.setAttribute("name", "resourceLink");
+    linkInput.setAttribute("placeholder", "Resource Link");
     // append input to data
     linkData.appendChild(linkInput);
     // append data to row
@@ -169,6 +175,7 @@ function addResource(event) {
     const deleteData = document.createElement("td");
     // make text input
     const deleteImg = document.createElement("img");
+    deleteImg.setAttribute("src", "assets/remove.png")
     // append input to data
     deleteData.appendChild(deleteImg);
     // append data to row
