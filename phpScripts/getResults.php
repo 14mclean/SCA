@@ -32,7 +32,7 @@
         $statementString = "SELECT userID, location FROM Experts WHERE adminVerified=1";
     }
 
-    print_r($statementString)
+    print_r($statementString);
 
     $db = new Database();
 
