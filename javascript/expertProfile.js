@@ -213,9 +213,9 @@ async function checkResourceLink(event) {
     console.log(event);
 
     if(linkStatus > 299 || linkStatus < 200) {
-        event.currentTarget.style.borderColor = "red";
+        event.path[0].style.borderColor = "red";
     } else {
-        event.currentTarget.style.borderColor = "#666666";
+        event.path[0].style.borderColor = "#666666";
     }
 }
 
