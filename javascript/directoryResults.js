@@ -78,7 +78,7 @@ function updateResults() {
     if(ages.length > 0) {
         getFilter += "&ages=" + ages.toString();
     }
-    
+
     if(organisations.length > 0) {
         getFilter += "&orgs=" + organisations.toString();
     }
@@ -95,4 +95,19 @@ function updateResults() {
     fetch("../phpScripts/getResults.php?"+getFilter)
     .then(response => response.text())
     .then(data => console.log(data));
+
+    var service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix(
+        {
+          origins: ["WA13"],
+          destinations: ["WA1"],
+        }, callback);
+}
+
+function callback(response, status) {
+    if(status == 'OK') {
+        console.log(response);
+    } else {
+        console.log(status);
+    }
 }
