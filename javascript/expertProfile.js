@@ -187,7 +187,7 @@ function addResource(event) {
 }
 
 function deleteResource(event) {
-    event.target.parentElement.parentElement.remove()
+    event.currentTarget.parentElement.parentElement.remove()
 }
 
 init();
