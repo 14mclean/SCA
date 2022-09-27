@@ -32,7 +32,7 @@
     $db = new Database();
 
     $statement = $db->prepareStatement(
-        "SELECT userID, location FROM Experts WHERE adminVerified=1".$filter;
+        "SELECT userID, location FROM Experts WHERE adminVerified=1".$filter,
         $varTypes,
         $vars
     );
