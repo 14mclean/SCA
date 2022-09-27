@@ -83,6 +83,7 @@ form img {
     color: white;
     font-size: 100%;
     cursor: pointer;
+    font-size: 22px;
 }
 
 .container form button:hover {
