@@ -39,7 +39,7 @@
         );
     }
 
-    $result = $db->sendQuery($statement, array("userID, location, fuzzyExpertise"));
+    $result = $db->sendQuery($statement, array("userID, location"));
     print_r($result);
 ?>
 
