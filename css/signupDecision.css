@@ -1,0 +1,21 @@
+body {
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.homeButton {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    opacity: 0.8;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.homeButton:hover {
+    opacity: 1;
+}
+
