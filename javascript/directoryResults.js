@@ -96,18 +96,4 @@ function updateResults() {
     .then(response => response.text())
     .then(data => console.log(data));
 
-    var service = new google.maps.DistanceMatrixService();
-    service.getDistanceMatrix(
-        {
-          origins: ["WA13"],
-          destinations: ["WA1"],
-        }, callback);
-}
-
-function callback(response, status) {
-    if(status == 'OK') {
-        console.log(response);
-    } else {
-        console.log(status);
-    }
 }
