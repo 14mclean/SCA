@@ -55,7 +55,7 @@
 
     $statement = $db->prepareStatement(
         "SELECT name,link FROM ExpertResources WHERE userID=?",
-        "i"
+        "i",
         array($userID)
     );
 
