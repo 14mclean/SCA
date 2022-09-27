@@ -112,7 +112,7 @@
                     <h1>Student Interactions</h1>
 
                     <input type="checkbox" name="studentOnline"><label>Online</label><br>
-                    <input type="checkbox" name="studentOnline"><label>Face-to-Face</label><br>
+                    <input type="checkbox" name="studentF2F"><label>Face-to-Face</label><br>
                     <input type="checkbox" name="studentResources"><label>Resources</label>
                 </div>
 
