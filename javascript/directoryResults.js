@@ -59,7 +59,7 @@ function updateResults() {
     var getFilter = "adminVerified=1"; // a=b&c=d
 
     for(const input of textInputs) {
-        getFilter += "&" + input.name + "=" + input.value;
+        getFilter += ("&" + input.name + "=" + input.value);
     }
 
     for(const input of rangeInputs) {
