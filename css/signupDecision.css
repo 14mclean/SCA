@@ -22,6 +22,7 @@ body {
 }
 
 .choices {
+    display: flex;
     justify-content: space-around;
     position: absolute;
     top: 50%;
