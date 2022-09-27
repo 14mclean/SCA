@@ -25,4 +25,14 @@ body {
 
 .box {
     display: inline-block;
+    width: 30vw;
+    color: white;
+}
+
+#user {
+    background-color: purple;
+}
+
+#expert {
+    background-color: green;
 }
