@@ -169,7 +169,7 @@
                         <label>Resource Links</label>
                         <img class="addResource" src="assets/plus.png">
 
-                        <table>
+                        <table class="resourceTable">
                             <tr>
                                 <th><input type="text" name="resourceName" placeholder="Resource Name"></th>
                                 <th><input type="text" name="resourceLink" placeholder="Resource Link"></th>
