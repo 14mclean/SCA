@@ -7,7 +7,7 @@
 
     if(isset($_GET["expertise"])) {
         $innerStatementString = "SELECT userID, location, SOUNDEX(expertise) as fuzzyExpertise FROM Experts WHERE adminVerified=1";
-        $statementString = "SELECT userID, location, fuzzyExpertise FROM ("+$innerStatementString+") AS temp WHERE fuzzyExpertise=SOUNDEX(?)";
+        $statementString = "SELECT userID, location, fuzzyExpertise FROM (".$innerStatementString.") AS temp WHERE fuzzyExpertise=SOUNDEX(?)";
     } else {
         $statementString = "SELECT userID, location FROM Experts WHERE adminVerified=1";
     }
