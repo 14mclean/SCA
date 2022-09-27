@@ -33,7 +33,7 @@
     $statement = $db->prepareStatement(
         "SELECT userID, location, fuzzyExpertise FROM (
             SELECT userID, location, SOUNDEX(expertise) as fuzzyExpertise FROM Experts WHERE adminVerified=1
-        ) WHERE fuzzyExpertise=SOUNDEX(?)",
+        ) AS temp WHERE fuzzyExpertise=SOUNDEX(?)",
         "s",
         array($_POST["expertise"])
     );
