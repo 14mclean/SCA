@@ -30,7 +30,7 @@
     }
 
     $db = new Database();
-    print_r($statementString);
+    
     $statement = $db->prepareStatement(
         $statementString,
         $varTypes,
