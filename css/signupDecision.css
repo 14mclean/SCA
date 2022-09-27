@@ -23,7 +23,7 @@ body {
 
 .choices {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
