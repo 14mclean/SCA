@@ -30,7 +30,7 @@
             
             <p>
                 or <br>
-                <a href="usersignup.php">Sign Up</a>
+                <a href="signupDecision.html">Sign Up</a>
             </p>
         </div>
     </body>
