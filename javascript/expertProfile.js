@@ -176,6 +176,7 @@ function addResource(event) {
     // make text input
     const deleteImg = document.createElement("img");
     deleteImg.setAttribute("src", "assets/remove.png")
+    deleteImg.addEventListener("click", deleteResource);
     // append input to data
     deleteData.appendChild(deleteImg);
     // append data to row
@@ -183,6 +184,10 @@ function addResource(event) {
 
     // append row to table
     document.querySelector(".resourceTable").appendChild(newRow);
+}
+
+function deleteResource(event) {
+    event.target.parentElement.parentElement.remove()
 }
 
 init();
