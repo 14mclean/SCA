@@ -41,7 +41,7 @@
                 if(substr($statementString, -1) != "(") {
                     $statementString .= " OR ";
                 }
-                $statementString .= "organisation SOUNDS LIKE $org";
+                $statementString .= "organisation SOUNDS LIKE '$org'";
             }
 
             $statementString .= ")";
