@@ -115,3 +115,9 @@
 .resourceTable {
     margin-top: 15px;
 }
+
+.resourceTable tr td img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
