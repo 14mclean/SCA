@@ -28,6 +28,8 @@
 
     include_once("database.php");
 
+    print_r($_POST);
+
     $db = new Database();
 
     $statement = $db->prepareStatement(
