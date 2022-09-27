@@ -167,7 +167,7 @@
 
                     <div class="field">
                         <label>Resource Links</label>
-                        <button><img src="assets/plus.png"></button>
+                        <img class="addResource" src="assets/plus.png">
 
                         <input type="text" name="resourceName" placeholder="Resource Name">
                         <input type="text" name="resourceLink" placeholder="Resource Link">
