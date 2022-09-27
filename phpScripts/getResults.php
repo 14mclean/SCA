@@ -16,28 +16,26 @@
     */
 
     $filter = "";
+    $vars = array()
+    $varTypes = "";
 
     foreach ($_GET as $key => $value) {
         if($key != "adminVerified" && $value == 1) {
             $filter .= " AND ".$key."=1";
+        } else if($key == "expertise") {
+            $filter .= "AND expertise SOUNDS LIKE ?";
+            array_push($vars, $value);
+            $varTypes .= "s";
         }
     }
 
     $db = new Database();
 
-    if(isset($_GET["expertise"])) {
-        $statement = $db->prepareStatement(
-            "SELECT userID, location FROM Experts WHERE adminVerified=1 AND expertise SOUNDS LIKE ?",
-            "s",
-            array($_GET["expertise"])
-        );
-    } else {
-        $statement = $db->prepareStatement(
-            "SELECT userID, location FROM Experts WHERE adminVerified=1",
-            "",
-            array()
-        );
-    }
+    $statement = $db->prepareStatement(
+        "SELECT userID, location FROM Experts WHERE adminVerified=1".$filter;
+        $varTypes,
+        $vars
+    );
 
     $result = $db->sendQuery($statement, array("userID", "location"));
     print_r($result);
