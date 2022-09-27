@@ -195,4 +195,20 @@ function deleteResource(event) {
     event.currentTarget.parentElement.parentElement.remove()
 }
 
+async function checkResourceLink(event) {
+    url = event.currentTarget.value;
+    fetch(url).then(
+        response => linkStatus = response.status
+    );
+    console.log(linkStatus);
+}
+
+function checkResourceName(event) {
+    if(event.target.value == '') {
+        event.currentTarget.style.borderColor = "red";
+    } else {
+        event.currentTarget.style.borderColor = "#666666";
+    }
+}
+
 init();
