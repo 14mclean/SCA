@@ -26,11 +26,18 @@
             $statementString .= " AND expertise SOUNDS LIKE ?";
             array_push($vars, $value);
             $varTypes .= "s";
+        } else if($key == "ages") {
+            $ages = explode(",", $value);
+            foreach($ages as $age) {
+                $statementString .= " AND FIND_IN_SET('$age',ages)>0";
+            }
+        } else if($key == "orgs") {
+
         }
     }
 
     $db = new Database();
-    
+
     $statement = $db->prepareStatement(
         $statementString,
         $varTypes,
