@@ -195,8 +195,8 @@ function deleteResource(event) {
     event.currentTarget.parentElement.parentElement.remove()
 }
 
-const resourceNameInputs = querySelectorAll('input[name="resourceName"]');
-const resourceLinkInputs = querySelectorAll('input[name="resourceLink"]');
+const resourceNameInputs = document.querySelectorAll('input[name="resourceName"]');
+const resourceLinkInputs = document.querySelectorAll('input[name="resourceLink"]');
 
 for(const nameInput of resourceNameInputs) {
     nameInput.addEventListener("input", checkResourceName);
