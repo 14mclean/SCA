@@ -171,8 +171,8 @@
 
                         <table class="resourceTable">
                             <tr>
-                                <th><input type="text" name="resourceName" placeholder="Resource Name"></th>
-                                <th><input type="text" name="resourceLink" placeholder="Resource Link"></th>
+                                <td><input type="text" name="resourceName" placeholder="Resource Name"></td>
+                                <td><input type="text" name="resourceLink" placeholder="Resource Link"></td>
                             <tr>
                         </table>
                     </div>
