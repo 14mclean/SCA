@@ -29,13 +29,13 @@
         $innerStatementString = "SELECT userID, location, SOUNDEX(expertise) as fuzzyExpertise FROM Experts WHERE adminVerified=1";
 
         $statement = $db->prepareStatement(
-            "SELECT userID, location, fuzzyExpertise FROM (".$innerStatementString.") AS temp WHERE fuzzyExpertise=SOUNDEX(?)",
+            "SELECT userID, location, fuzzyExpertise FROM (".$innerStatementString.") AS temp WHERE fuzzyExpertise=SOUNDEX(?);",
             "s",
             array($_GET["expertise"])
         );
     } else {
         $statement = $db->prepareStatement(
-            "SELECT userID, location FROM Experts WHERE adminVerified=1",
+            "SELECT userID, location FROM Experts WHERE adminVerified=1;",
             "",
             array()
         );
