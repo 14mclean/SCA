@@ -53,7 +53,7 @@
         array_push($ages, str_contains($result[0]["ages"], "KS".$i));
     }
 
-    $statement $db->prepareStatement(
+    $statement = $db->prepareStatement(
         "SELECT name,link FROM ExpertResources WHERE userID=?",
         "i"
         array($userID)
