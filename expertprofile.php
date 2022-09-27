@@ -189,7 +189,7 @@
                                         echo("</td>");
 
                                         echo("<td>");
-                                            echo("<input type='text' name='resourceLink' value='" + $resource["link"] +"'>");
+                                            echo("<input type='text' name='resourceLink' value='".$resource["link"]."'>");
                                         echo("</td>");
 
                                         echo("<td>");
