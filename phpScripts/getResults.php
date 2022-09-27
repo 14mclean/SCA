@@ -21,9 +21,9 @@
 
     foreach ($_GET as $key => $value) {
         if($key != "adminVerified" && $value == 1) {
-            $filter .= " AND ".$key."=1";
+            $statementString .= " AND ".$key."=1";
         } else if($key == "expertise") {
-            $filter .= " AND expertise SOUNDS LIKE ?";
+            $statementString .= " AND expertise SOUNDS LIKE ?";
             array_push($vars, $value);
             $varTypes .= "s";
         }
