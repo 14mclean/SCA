@@ -169,8 +169,12 @@
                         <label>Resource Links</label>
                         <img class="addResource" src="assets/plus.png">
 
-                        <input type="text" name="resourceName" placeholder="Resource Name">
-                        <input type="text" name="resourceLink" placeholder="Resource Link">
+                        <table>
+                            <tr>
+                                <th><input type="text" name="resourceName" placeholder="Resource Name"></th>
+                                <th><input type="text" name="resourceLink" placeholder="Resource Link"></th>
+                            <tr>
+                        </table>
                     </div>
 
                     <br>
