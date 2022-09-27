@@ -35,7 +35,7 @@ body {
     width: 30vw;
     height: 50vh;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 30%);
 }
 
 .box:hover {
