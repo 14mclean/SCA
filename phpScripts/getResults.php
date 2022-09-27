@@ -15,7 +15,7 @@
         [expertise] => blah /
     */
 
-    $filter = "";
+    $statementString = "SELECT userID, location FROM Experts WHERE adminVerified=1";
     $vars = array();
     $varTypes = "";
 
@@ -23,16 +23,16 @@
         if($key != "adminVerified" && $value == 1) {
             $filter .= " AND ".$key."=1";
         } else if($key == "expertise") {
-            $filter .= "AND expertise SOUNDS LIKE ?";
+            $filter .= " AND expertise SOUNDS LIKE ?";
             array_push($vars, $value);
             $varTypes .= "s";
         }
     }
 
     $db = new Database();
-
+    print_r($statementString);
     $statement = $db->prepareStatement(
-        "SELECT userID, location FROM Experts WHERE adminVerified=1".$filter,
+        $statementString,
         $varTypes,
         $vars
     );
