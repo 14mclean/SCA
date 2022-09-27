@@ -103,3 +103,8 @@
 .field:hover {
     background-color: #efefef;
 }
+
+.addResource {
+    width: 20px;
+    height: 20px;
+}
