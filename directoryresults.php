@@ -111,9 +111,9 @@
                 <div class="refine" id="studentInteractions">
                     <h1>Student Interactions</h1>
 
-                    <input type="checkbox" name="online"><label>Online</label><br>
-                    <input type="checkbox" name="f2f"><label>Face-to-Face</label><br>
-                    <input type="checkbox" name="resources"><label>Resources</label>
+                    <input type="checkbox" name="studentOnline"><label>Online</label><br>
+                    <input type="checkbox" name="studentOnline"><label>Face-to-Face</label><br>
+                    <input type="checkbox" name="studentResources"><label>Resources</label>
                 </div>
 
                 <div class="refine" id="distance">

@@ -28,12 +28,23 @@
 
     include_once("database.php");
 
+    if(isset($_GET["expertise"])) {
+        $innerStatementString = "SELECT userID, location, SOUNDEX(expertise) as fuzzyExpertise FROM Experts WHERE adminVerified=1";
+        $statementString = "SELECT userID, location, fuzzyExpertise FROM ("+$innerStatementString+") AS temp WHERE fuzzyExpertise=SOUNDEX(?)";
+    } else {
+        $statementString = "SELECT userID, location FROM Experts WHERE adminVerified=1"
+    }
+
+    
+
+    if(isset($_GET["expertise"])) {
+        
+    }
+
     $db = new Database();
 
     $statement = $db->prepareStatement(
-        "SELECT userID, location, fuzzyExpertise FROM (
-            SELECT userID, location, SOUNDEX(expertise) as fuzzyExpertise FROM Experts WHERE adminVerified=1
-        ) AS temp WHERE fuzzyExpertise=SOUNDEX(?)",
+        ,
         "s",
         array($_GET["expertise"])
     );

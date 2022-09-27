@@ -11,6 +11,7 @@ function expandStudentInteraction() {
         studentInteractionDiv.style.display = "initial";
     } else {
         studentInteractionDiv.style.display = "none";
+        // TODO: uncheck interaction boxes
     }
 }
 
@@ -56,23 +57,36 @@ for(const input of rangeInputs) {
 }
 
 function updateResults() {
-    var getFilter = "adminVerified=1"; // a=b&c=d
-
-    for(const input of textInputs) {
-        getFilter += ("&" + input.name + "=" + input.value);
-    }
-
-    for(const input of rangeInputs) {
-        getFilter += "&" + input.name + "=" + input.value;
-    }
+    var getFilter = "adminVerified=1";
+    var ages = [];
+    var organisations = [];
+    var outcode = "";
+    const maxRange = rangeInputs[0].value;
 
     for(const input of checkboxInputs) {
         if(input.checked) {
-            getFilter += "&" + input.name + "=1";
-        }
-        
+            if(input.name.includes("age")) {
+                ages.push("ks"+input.name[3]);
+            } else if(input.name == "teacherAdvice" || input.name == "projectWork" || input.name == "studentOnline" || input.name == "studentResources" || input.name == "studentOnline") {
+                getFilter += "&" + input.name + "=1";
+            } else {
+                organisations.push(input.name);
+            }
+        } 
     }
-    
+
+    getFilter += "&ages=" + ages.toString();
+    getFilter += "&orgs=" + organisations.toString();
+
+    for(const input of textInputs) {
+        switch(input.name) {
+            case "expertise":
+                getFilter += "&expertise=" + input.value;
+            case "outcode":
+                outcode = input.value;
+        }
+    }
+
     fetch("../phpScripts/getResults.php?"+getFilter)
     .then(response => response.text())
     .then(data => console.log(data));
