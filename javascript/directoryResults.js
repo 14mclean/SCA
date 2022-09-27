@@ -69,7 +69,7 @@ function updateResults() {
                 ages.push("ks"+input.name[3]);
             } else if(input.name == "teacherAdvice" || input.name == "projectWork" || input.name == "studentOnline" || input.name == "studentResources" || input.name == "studentOnline") {
                 getFilter += "&" + input.name + "=1";
-            } else {
+            } else if(input.name != "studentInteraction") {
                 organisations.push(input.name);
             }
         } 
