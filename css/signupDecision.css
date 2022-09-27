@@ -19,8 +19,10 @@ body {
     opacity: 1;
 }
 
+.choices {
+    justify-content: space-around;
+}
+
 .box {
     display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
 }
