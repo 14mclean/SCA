@@ -230,11 +230,12 @@ async function checkResourceLink(event) {
     linkStatus = (await fetch(url)).status;
 
     if(linkStatus > 299 || linkStatus < 200) {
+        console.log(event.composedPath());
         event.composedPath()[0].style.borderColor = "red";
-        // disable button
+        buttonCheck();
     } else {
         event.composedPath()[0].style.borderColor = "#666666";
-        // enable button
+        buttonCheck();
     }
 }
 
