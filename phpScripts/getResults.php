@@ -28,8 +28,6 @@
 
     include_once("database.php");
 
-    print_r($_POST);
-
     $db = new Database();
 
     $statement = $db->prepareStatement(
@@ -37,7 +35,7 @@
             SELECT userID, location, SOUNDEX(expertise) as fuzzyExpertise FROM Experts WHERE adminVerified=1
         ) AS temp WHERE fuzzyExpertise=SOUNDEX(?)",
         "s",
-        array($_POST["expertise"])
+        array($_GET["expertise"])
     );
 ?>
 
