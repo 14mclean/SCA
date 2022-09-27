@@ -165,6 +165,14 @@
                         <input type="text" name="location" value="<?php echo($location); ?>">
                     </div>
 
+                    <div class="field">
+                        <label>Resource Links</label>
+                        <button><img src="assets/plus.png"></button>
+
+                        <input type="text" name="resourceName" placeholder="Resource Name">
+                        <input type="text" name="resourceLink" placeholder="Resource Link">
+                    </div>
+
                     <br>
                     <button>Save</button>
                 </div>
