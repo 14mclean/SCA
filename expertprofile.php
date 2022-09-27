@@ -59,10 +59,10 @@
         array($userID)
     );
 
-    /*$originalResources = $db->sendQuery(
+    $originalResources = $db->sendQuery(
         $statement,
         array("name", "link")
-    );*/
+    );
 ?>
 
 <!DOCTYPE html>
