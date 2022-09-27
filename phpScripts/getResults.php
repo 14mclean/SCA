@@ -36,13 +36,12 @@
             // AND (organisation SOUNDS LIKE org1 OR organisation SOUNDS LIKE org2)
             $statementString .= " AND (";
             $orgs = explode(",", $value);
-            print_r($orgs);
 
             foreach($orgs as $org) {
                 if(substr($statementString, -1) != "(") {
                     $statementString .= " OR ";
                 }
-                $statementString .= "organisation SOUNDS LIKE ".$org;
+                $statementString .= "organisation SOUNDS LIKE $org";
             }
 
             $statementString .= ")";
