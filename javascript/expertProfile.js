@@ -210,13 +210,13 @@ async function checkResourceLink(event) {
     url = event.currentTarget.value;
     linkStatus = (await fetch(url)).status;
 
+    console.log(event);
+
     if(linkStatus > 299 || linkStatus < 200) {
         event.currentTarget.style.borderColor = "red";
     } else {
         event.currentTarget.style.borderColor = "#666666";
     }
-    
-    console.log(linkStatus);
 }
 
 function checkResourceName(event) {
