@@ -185,7 +185,7 @@
                                 foreach($originalResources as $resource) {
                                     echo("<tr>");
                                         echo("<td>");
-                                            echo("<input type='text' name='resourceName' value='" + $resource["name"] +"'>");
+                                            echo("<input type='text' name='resourceName' value='".$resource["name"]."'>");
                                         echo("</td>");
 
                                         echo("<td>");
