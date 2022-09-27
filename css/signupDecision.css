@@ -36,13 +36,13 @@ body {
     height: 50vh;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgb(0 0 0 / 30%);
+    color: white;
+    font-family: 'Open Sans';
 }
 
 .box:hover {
     cursor: pointer;
     opacity: 0.8;
-    color: white;
-    font-family: 'Open Sans';
 }
 
 .box h1 {
