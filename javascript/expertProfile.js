@@ -228,23 +228,24 @@ for(const linkInput of resourceLinkInputs) {
 async function checkResourceLink(event) {
     url = event.currentTarget.value;
     linkStatus = (await fetch(url)).status;
+    target = event.path[0] || event.composedPath()[0];
 
     if(linkStatus > 299 || linkStatus < 200) {
-        console.log(event.composedPath());
-        event.composedPath()[0].style.borderColor = "red";
+        target.style.borderColor = "red";
         buttonCheck();
     } else {
-        event.composedPath()[0].style.borderColor = "#666666";
+        target.style.borderColor = "#666666";
         buttonCheck();
     }
 }
 
 function checkResourceName(event) {
-    if(event.target.value == '') {
+    target = event.path[0] || event.composedPath()[0];
+    if(target.value == '') {
         event.composedPath()[0].style.borderColor = "red";
         buttonCheck();
     } else {
-        event.composedPath()[0].style.borderColor = "#666666";
+        target.style.borderColor = "#666666";
         buttonCheck();
     }
 }
