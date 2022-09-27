@@ -165,6 +165,15 @@ function addResource(event) {
     // append data to row
     newRow.appendChild(linkData)
 
+    // make table data
+    const deleteData = document.createElement("td");
+    // make text input
+    const deleteImg = document.createElement("img");
+    // append input to data
+    deleteData.appendChild(deleteImg);
+    // append data to row
+    newRow.appendChild(deleteData)
+
     // append row to table
     document.querySelector(".resourceTable").appendChild(newRow);
 }
