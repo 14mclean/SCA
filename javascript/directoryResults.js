@@ -75,8 +75,13 @@ function updateResults() {
         } 
     }
 
-    getFilter += "&ages=" + ages.toString();
-    getFilter += "&orgs=" + organisations.toString();
+    if(ages.length > 0) {
+        getFilter += "&ages=" + ages.toString();
+    }
+    
+    if(organisations.length > 0) {
+        getFilter += "&orgs=" + organisations.toString();
+    }
 
     for(const input of textInputs) {
         switch(input.name) {
