@@ -48,8 +48,6 @@
         }
     }
 
-    print_r($statementString);
-
     $db = new Database();
 
     $statement = $db->prepareStatement(
@@ -59,7 +57,7 @@
     );
 
     $result = $db->sendQuery($statement, array("userID", "location"));
-    print_r($result);
+    print_r(json_encode($result));
 ?>
 
 
