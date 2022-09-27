@@ -170,11 +170,6 @@
                         <img class="addResource" src="assets/plus.png">
 
                         <table class="resourceTable">
-                            <tr>
-                                <td><input type="text" name="resourceName" placeholder="Resource Name"></td>
-                                <td><input type="text" name="resourceLink" placeholder="Resource Link"></td>
-                                <td><img src="assets/remove.png"></td>
-                            <tr>
                         </table>
                     </div>
 
