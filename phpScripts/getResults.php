@@ -35,7 +35,7 @@
         } else if($key == "orgs") {
             // AND (organisation SOUNDS LIKE org1 OR organisation SOUNDS LIKE org2)
             $statementString .= " AND (";
-            $orgs = explode("," $value);
+            $orgs = explode(",", $value);
 
             foreach($orgs as $org) {
                 if(substr($statementString, -1) != "(") {
