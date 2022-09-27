@@ -3,18 +3,6 @@
 
     include_once("database.php");
 
-    /*
-        [adminVerified] => 1 /
-        [teacherAdvice] => 1 /
-        [projectWork] => 1 /
-        [studentOnline] => 1 /
-        [studentF2F] => 1 /
-        [studentResources] => 1 /
-        [ages] => ks1,ks2,ks3,ks4,ks5
-        [orgs] => wwf,nationaltrust,mbs,unicef,oxfam
-        [expertise] => blah /
-    */
-
     $statementString = "SELECT userID, location FROM Experts WHERE adminVerified=1";
     $vars = array();
     $varTypes = "";
@@ -33,7 +21,6 @@
                 $statementString .= " AND FIND_IN_SET('$age',ages)>0";
             }
         } else if($key == "orgs") {
-            // AND (organisation SOUNDS LIKE org1 OR organisation SOUNDS LIKE org2)
             $statementString .= " AND (";
             $orgs = explode(",", $value);
 
