@@ -3,8 +3,6 @@
 
     include_once("database.php");
 
-    print_r($_GET);
-
     /*
         [adminVerified] => 1 /
         [teacherAdvice] => 1 /
@@ -43,7 +41,7 @@
         );
     }
 
-    $result = $db->sendQuery($statement, array("userID, location, fuzzyExperience"));
+    $result = $db->sendQuery($statement, array("userID, location, fuzzyExpertise"));
     print_r($result);
 ?>
 
