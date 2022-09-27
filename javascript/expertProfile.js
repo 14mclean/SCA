@@ -209,11 +209,7 @@ for(const linkInput of resourceLinkInputs) {
 async function checkResourceLink(event) {
     url = event.currentTarget.value;
 
-    try {
-        response = await fetch(url);
-    } catch(e) {}
-    
-    linkStatus = response.status;
+    linkStatus = (await fetch(url)).status;
     
     console.log(linkStatus);
 }
