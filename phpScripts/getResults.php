@@ -28,13 +28,27 @@
             $varTypes .= "s";
         } else if($key == "ages") {
             $ages = explode(",", $value);
+
             foreach($ages as $age) {
                 $statementString .= " AND FIND_IN_SET('$age',ages)>0";
             }
         } else if($key == "orgs") {
+            // AND (organisation SOUNDS LIKE org1 OR organisation SOUNDS LIKE org2)
+            $statementString .= " AND (";
+            $orgs = explode("," $value);
 
+            foreach($orgs as $org) {
+                if(substr($statementString, -1) != "(") {
+                    $statementString .= " OR ";
+                }
+                $statementString .= "organisation SOUNDS LIKE ".$org;
+            }
+
+            $statementString .= ")"
         }
     }
+
+    print_r($statementString);
 
     $db = new Database();
 
