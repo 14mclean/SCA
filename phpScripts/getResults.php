@@ -16,7 +16,7 @@
     */
 
     $filter = "";
-    $vars = array()
+    $vars = array();
     $varTypes = "";
 
     foreach ($_GET as $key => $value) {
