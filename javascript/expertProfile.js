@@ -186,6 +186,11 @@ function addResource(event) {
     document.querySelector(".resourceTable").appendChild(newRow);
 }
 
+const deleteImgs = document.querySelectorAll('img[src="assets/remove.png"]');
+for(const img of deleteImgs) {
+    img.addEventListener("click", deleteResource);
+}
+
 function deleteResource(event) {
     event.currentTarget.parentElement.parentElement.remove()
 }

@@ -181,6 +181,23 @@
                         <img class="addResource" src="assets/plus.png">
 
                         <table class="resourceTable">
+                            <?php
+                                foreach($originalResources as $resource) {
+                                    echo("<tr>");
+                                        echo("<td>");
+                                            echo("<input type='text' name='resourceName' value='" + $resource["name"] +"'>");
+                                        echo("</td>");
+
+                                        echo("<td>");
+                                            echo("<input type='text' name='resourceLink' value='" + $resource["link"] +"'>");
+                                        echo("</td>");
+
+                                        echo("<td>");
+                                            echo("<img src='assets/remove.png'>");
+                                        echo("</td>");
+                                    echo("</tr>");
+                                }
+                            ?>
                         </table>
                     </div>
 
