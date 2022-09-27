@@ -20,7 +20,7 @@
         <a class="homeButton" href="scahome"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Home_free_icon.svg/1200px-Home_free_icon.svg.png"></a>
 
         <div class="container">
-            <h1>Sign Up</h1>
+            <h1>User Sign Up</h1>
 
             <div class="loginError">
                 <?php 
