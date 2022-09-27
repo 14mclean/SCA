@@ -139,4 +139,34 @@ function updateInteractionVisibilities(event) {
     }  
 }
 
+
+const newResource = document.querySelector(".addResource")
+newResource.addEventListener("click", addResource);
+
+function addResource(event) {
+    // make table row
+    const newRow = document.createElement("tr");
+
+    // make table data
+    const nameData = document.createElement("td");
+    // make text input
+    const nameInput = document.createElement("input");
+    // append input to data
+    nameData.appendChild(nameInput);
+    // append data to row
+    newRow.appendChild(nameData)
+
+    // make table data
+    const linkData = document.createElement("td");
+    // make text input
+    const linkInput = document.createElement("input");
+    // append input to data
+    linkData.appendChild(linkInput);
+    // append data to row
+    newRow.appendChild(linkData)
+
+    // append row to table
+    document.querySelector(".resourceTable").appendChild(newRow);
+}
+
 init();
