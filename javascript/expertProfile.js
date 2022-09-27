@@ -240,10 +240,10 @@ async function checkResourceLink(event) {
 
 function checkResourceName(event) {
     if(event.target.value == '') {
-        event.currentTarget.style.borderColor = "red";
+        event.composedPath()[0].style.borderColor = "red";
         buttonCheck();
     } else {
-        event.currentTarget.style.borderColor = "#666666";
+        event.composedPath()[0].style.borderColor = "#666666";
         buttonCheck();
     }
 }
