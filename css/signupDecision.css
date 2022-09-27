@@ -41,20 +41,18 @@ body {
 .box:hover {
     cursor: pointer;
     opacity: 0.8;
+    color: white;
+    font-family: 'Open Sans';
 }
 
 .box h1 {
     text-align: center;
-    font-family: 'Open Sans';
     font-weight: 400;
-    color: white;
     font-size: 44px;
 }
 
 .box p {
-    font-family: 'Open Sans';
     font-weight: 200;
-    color: #dddddd;
     margin: 0px 20px;
 }
 
