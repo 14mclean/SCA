@@ -44,7 +44,7 @@
                 $statementString .= "organisation SOUNDS LIKE ".$org;
             }
 
-            $statementString .= ")"
+            $statementString .= ")";
         }
     }
 
