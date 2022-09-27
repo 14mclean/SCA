@@ -19,7 +19,7 @@
 
     $filter = "";
 
-    foreach ($get as $key => $value) {
+    foreach ($_GET as $key => $value) {
         if($key != "adminVerified" && $value == 1) {
             $filter .= " AND ".$key."=1";
         }
