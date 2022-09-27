@@ -9,6 +9,23 @@ var isLocationValid = false;
 const saveButton = document.querySelector(".profile button");
 
 function buttonCheck() {
+    const resourceNameInputs = document.querySelectorAll('input[name="resourceName"]');
+    const resourceLinkInputs = document.querySelectorAll('input[name="resourceLink"]');
+
+    for(const nameInput of resourceNameInputs) {
+        if(nameInput.style.borderColor == "red") {
+            saveButton.disabled = true;
+            return;
+        }
+    }
+    
+    for(const linkInput of resourceLinkInputs) {
+        if(linkInput.style.borderColor == "red") {
+            saveButton.disabled = true;
+            return;
+        }
+    }
+
     saveButton.disabled = !(isExpertiseValid && isLocationValid)
 }
 
@@ -224,10 +241,10 @@ async function checkResourceLink(event) {
 function checkResourceName(event) {
     if(event.target.value == '') {
         event.currentTarget.style.borderColor = "red";
-        // disable button
+        buttonCheck();
     } else {
         event.currentTarget.style.borderColor = "#666666";
-        // enable button
+        buttonCheck();
     }
 }
 
