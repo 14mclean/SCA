@@ -42,7 +42,8 @@ body {
 .box p {
     font-family: 'Open Sans';
     font-weight: 200;
-    color: #eeeeee
+    color: #dddddd;
+    margin: 0px 5px;
 }
 
 #user {
