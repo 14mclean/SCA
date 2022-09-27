@@ -31,8 +31,8 @@
     $db = new Database();
 
     $statement = $db->prepareStatement(
-        "SELECT userID, SOUNDEX(expertise) as fuzzyExpertise FROM Experts WHERE adminVerified=1 AND ",
-        "",
-        array()
+        "SELECT userID, location, SOUNDEX(expertise) as fuzzyExpertise FROM Experts WHERE adminVerified=1 AND fuzzyExpertise=SOUNDEX(?)",
+        "s",
+        array($_POST["expertise"])
     );
 ?>
