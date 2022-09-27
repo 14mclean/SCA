@@ -29,6 +29,7 @@ body {
 .box {
     display: inline-block;
     width: 30vw;
+    height: 50vh;
     border-radius: 15px;
 }
 
