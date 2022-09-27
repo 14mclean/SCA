@@ -27,6 +27,9 @@ body {
     display: inline-block;
     width: 30vw;
     color: white;
+}
+
+.box h1 {
     text-align: center;
 }
 
