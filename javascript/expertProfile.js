@@ -106,6 +106,8 @@ function submit() {
     xhr.open("POST", "../phpScripts/updateExpert.php");
     xhr.send(formData);
 
+    // new update for expert resources
+
     // foward to mte
 }
 
@@ -210,20 +212,22 @@ async function checkResourceLink(event) {
     url = event.currentTarget.value;
     linkStatus = (await fetch(url)).status;
 
-    console.log(event);
-
     if(linkStatus > 299 || linkStatus < 200) {
-        event.path[0].style.borderColor = "red";
+        event.composedPath()[0].style.borderColor = "red";
+        // disable button
     } else {
-        event.path[0].style.borderColor = "#666666";
+        event.composedPath()[0].style.borderColor = "#666666";
+        // enable button
     }
 }
 
 function checkResourceName(event) {
     if(event.target.value == '') {
         event.currentTarget.style.borderColor = "red";
+        // disable button
     } else {
         event.currentTarget.style.borderColor = "#666666";
+        // enable button
     }
 }
 
