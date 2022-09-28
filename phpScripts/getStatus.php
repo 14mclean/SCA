@@ -1,6 +1,6 @@
 <?php
     try {
-        $headers = get_headers($_GET["url"]);
+        @$headers = get_headers($_GET["url"]);
         $httpStatusCode = substr($headers[0], 9, 3);
         print_r("worked");
         print_r($httpStatusCode);
