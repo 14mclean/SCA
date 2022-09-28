@@ -232,8 +232,8 @@ function checkResourceLink(event) {
         url = "http://" + url;
     }
 
-    if(url.substring(7,10) != "www") {
-        url = url.slice(0,7) + "www" + url.slice(7);
+    if(url.substring(7,11) != "www.") {
+        url = url.slice(0,7) + "www." + url.slice(7);
     }
 
     linkStatus = fetch("../phpScripts/getStatus.php?url="+url)
