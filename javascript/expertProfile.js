@@ -235,7 +235,7 @@ function checkResourceLink(event) {
       })).status;
     target = event.path[0] || event.composedPath()[0];*/
 
-    response = fetch("../phpScripts/getStatus.php")
+    response = fetch("../phpScripts/getStatus.php?url="+url)
     .then(response => response.text())
     .then(data => console.log(data));
 
