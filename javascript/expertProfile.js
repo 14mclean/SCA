@@ -227,15 +227,16 @@ for(const linkInput of resourceLinkInputs) {
 
 function checkResourceLink(event) {
     url = event.currentTarget.value;
-    /*linkStatus = (await fetch(url, {
-        mode: 'cors',
-        headers: {
-          'Access-Control-Allow-Origin':'*'
-        }
-      })).status;
-    target = event.path[0] || event.composedPath()[0];*/
 
-    response = fetch("../phpScripts/getStatus.php?url="+url)
+    if(!url.startsWith("http://") || !url.startsWith("https://")) {
+        url = "http://" + url;
+    }
+
+    if(url.substring(7,10) != "www") {
+        url = url.slice(0,7) + "www" + url.slice(7);
+    }
+
+    linkStatus = fetch("../phpScripts/getStatus.php?url="+url)
     .then(response => response.text())
     .then(data => console.log(data));
 
