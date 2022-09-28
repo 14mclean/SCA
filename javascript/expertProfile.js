@@ -240,11 +240,11 @@ function checkResourceLink(event) {
     fetch("../phpScripts/getStatus.php?url="+url)
     .then(response => response.text())
     .then(linkStatus => {
+        console.log(linkStatus);
         if(linkStatus > 299 || linkStatus < 200) {
             target.style.borderColor = "red";
         } else {
             target.style.borderColor = "#666666";
-            
         }
     });
     buttonCheck();
