@@ -236,6 +236,7 @@ function checkResourceLink(event) {
         url = url.slice(0,7) + "www." + url.slice(7);
     }
 
+    target = event.path[0] || event.composedPath()[0];
     fetch("../phpScripts/getStatus.php?url="+url)
     .then(response => response.text())
     .then(linkStatus => {
