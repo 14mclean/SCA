@@ -244,7 +244,7 @@ function checkResourceLink(event) {
 
         if(200 <= linkStatus && linkStatus <= 299) {
             target.style.borderColor = "green";
-        } else if (200 <= linkStatus && linkStatus <= 299) {
+        } else if (300 <= linkStatus && linkStatus <= 399) {
             target.style.borderColor = "yellow";
         } else if(399 < linkStatus) {
             target.style.borderColor = "red";
