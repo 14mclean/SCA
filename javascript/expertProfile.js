@@ -225,7 +225,7 @@ for(const linkInput of resourceLinkInputs) {
     linkInput.addEventListener("input", checkResourceLink);
 }
 
-async function checkResourceLink(event) {
+function checkResourceLink(event) {
     url = event.currentTarget.value;
     /*linkStatus = (await fetch(url, {
         mode: 'cors',
@@ -235,8 +235,9 @@ async function checkResourceLink(event) {
       })).status;
     target = event.path[0] || event.composedPath()[0];*/
 
-    response = (await fetch("../phpScripts/getStatus.php"))[0].text();
-    console.log(response);
+    response = fetch("../phpScripts/getStatus.php")
+    .then(response => response.text())
+    .then(data => console.log(data));
 
     /*if(linkStatus > 299 || linkStatus < 200) {
         target.style.borderColor = "red";
