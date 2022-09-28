@@ -227,7 +227,12 @@ for(const linkInput of resourceLinkInputs) {
 
 async function checkResourceLink(event) {
     url = event.currentTarget.value;
-    linkStatus = (await fetch(url, {mode: 'cors'})).status;
+    linkStatus = (await fetch(url, {
+        mode: 'cors',
+        headers: {
+          'Access-Control-Allow-Origin':'*'
+        }
+      })).status;
     target = event.path[0] || event.composedPath()[0];
 
     if(linkStatus > 299 || linkStatus < 200) {
