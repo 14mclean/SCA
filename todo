@@ -2,3 +2,7 @@ admin panel: buttons not sending data properly through POST
 check all php session start and checks (order and occurance)
 
 question marks with popup for each field
+
+TODO: autocomplete and id's for login/signup
+https://web.dev/sign-in-form-best-practices/#element-attributes
+
