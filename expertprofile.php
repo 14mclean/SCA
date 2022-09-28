@@ -63,6 +63,8 @@
         $statement,
         array("name", "link")
     );
+
+    print_r($ages);
 ?>
 
 <!DOCTYPE html>
