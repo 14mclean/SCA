@@ -23,6 +23,15 @@ for(const img of deleteImgs) img.addEventListener("click", deleteResource);
 saveButton.addEventListener("click", submit);
 
 
+// ---------- Initial checks ----------
+function init() {
+    expertiseInput.dispatchEvent(new Event("input"));
+    locationInput.dispatchEvent(new Event("input"));
+    for(const nameInput of resourceNameInputs) nameInput.dispatchEvent(new Event("input"));
+    for(const linkInput of resourceLinkInputs) linkInput.dispatchEvent(new Event("input"));
+}
+
+
 // ---------- Check for validity of inputs to disable or enable save button ----------
 function buttonCheck() {
     for(const nameInput of resourceNameInputs) {
