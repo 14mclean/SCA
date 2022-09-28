@@ -260,3 +260,5 @@ function checkResourceName(event) {
     }
     buttonCheck();
 }
+
+init();
