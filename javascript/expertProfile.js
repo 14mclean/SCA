@@ -241,7 +241,12 @@ function checkResourceLink(event) {
     .then(response => response.text())
     .then(linkStatus => {
         console.log(linkStatus);
-        if(linkStatus > 299 || linkStatus < 200) {
+
+        if(200 <= linkStatus && linkStatus <= 299) {
+            target.style.borderColor = "green";
+        } else if (200 <= linkStatus && linkStatus <= 299) {
+            target.style.borderColor = "yellow";
+        } else if(399 < linkStatus) {
             target.style.borderColor = "red";
         } else {
             target.style.borderColor = "#666666";
