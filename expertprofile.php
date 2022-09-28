@@ -64,7 +64,7 @@
         array("name", "link")
     );
 
-    print_r($ages);
+    print_r($result[0]["ages"]);
 ?>
 
 <!DOCTYPE html>
