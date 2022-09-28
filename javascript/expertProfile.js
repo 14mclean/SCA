@@ -42,7 +42,7 @@ function validateExpertiseInput(event) {
         expertiseInput.style.borderColor = "#666666";
         isExpertiseValid = true;
     }
-    buttonCheck()
+    buttonCheck();
 }
 
 // validation on location
@@ -57,7 +57,7 @@ function validateLocationInput(event) {
         locationInput.style.borderColor = "#666666";
         isLocationValid = true;
     }
-    buttonCheck()
+    buttonCheck();
 }
 
 function validPostcode(outcode) {
@@ -236,28 +236,27 @@ function checkResourceLink(event) {
         url = url.slice(0,7) + "www." + url.slice(7);
     }
 
-    linkStatus = fetch("../phpScripts/getStatus.php?url="+url)
+    fetch("../phpScripts/getStatus.php?url="+url)
     .then(response => response.text())
-    .then(data => console.log(data));
-
-    /*if(linkStatus > 299 || linkStatus < 200) {
-        target.style.borderColor = "red";
-        buttonCheck();
-    } else {
-        target.style.borderColor = "#666666";
-        buttonCheck();
-    }*/
+    .then(linkStatus => {
+        if(linkStatus > 299 || linkStatus < 200) {
+            target.style.borderColor = "red";
+        } else {
+            target.style.borderColor = "#666666";
+            
+        }
+    });
+    buttonCheck();
 }
 
 function checkResourceName(event) {
     target = event.path[0] || event.composedPath()[0];
     if(target.value == '') {
-        event.composedPath()[0].style.borderColor = "red";
-        buttonCheck();
+        event.composedPath()[0].style.borderColor = "red"; 
     } else {
         target.style.borderColor = "#666666";
-        buttonCheck();
     }
+    buttonCheck();
 }
 
 init();
