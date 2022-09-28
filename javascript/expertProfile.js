@@ -2,6 +2,14 @@ function init() {
     locationInput.dispatchEvent(new Event("input"));
     expertiseInput.dispatchEvent(new Event("input"));
     studentInteractionCheckbox.dispatchEvent(new Event("click"));
+    
+    for(const nameInput of resourceNameInputs) {
+        nameInput.dispatchEvent(new Event("input"));
+    }
+    
+    for(const linkInput of resourceLinkInputs) {
+        linkInput.dispatchEvent(new Event("input"));
+    }
 }
 
 var isExpertiseValid = false;
