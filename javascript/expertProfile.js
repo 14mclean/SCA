@@ -181,6 +181,7 @@ function addResource(event) {
     nameInput.setAttribute("type","text");
     nameInput.setAttribute("name", "resourceName");
     nameInput.setAttribute("placeholder", "Resource Name");
+    nameInput.addEventListener("input", checkResourceName);
     // append input to data
     nameData.appendChild(nameInput);
     // append data to row
@@ -193,6 +194,7 @@ function addResource(event) {
     linkInput.setAttribute("type","text");
     linkInput.setAttribute("name", "resourceLink");
     linkInput.setAttribute("placeholder", "Resource Link");
+    linkInput.addEventListener("input", checkResourceLink);
     // append input to data
     linkData.appendChild(linkInput);
     // append data to row
