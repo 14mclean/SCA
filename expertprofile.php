@@ -50,7 +50,7 @@
     $location = $result[0]["location"];
 
     for($i = 0; $i < 5; $i++) {
-        array_push($ages, str_contains($result[0]["ages"], "KS".$i));
+        array_push($ages, str_contains($result[0]["ages"], "ks".$i));
     }
 
     $statement = $db->prepareStatement(
@@ -63,8 +63,6 @@
         $statement,
         array("name", "link")
     );
-
-    print_r($result[0]["ages"]);
 ?>
 
 <!DOCTYPE html>
