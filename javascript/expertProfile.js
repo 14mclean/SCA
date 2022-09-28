@@ -227,21 +227,24 @@ for(const linkInput of resourceLinkInputs) {
 
 async function checkResourceLink(event) {
     url = event.currentTarget.value;
-    linkStatus = (await fetch(url, {
+    /*linkStatus = (await fetch(url, {
         mode: 'cors',
         headers: {
           'Access-Control-Allow-Origin':'*'
         }
       })).status;
-    target = event.path[0] || event.composedPath()[0];
+    target = event.path[0] || event.composedPath()[0];*/
 
-    if(linkStatus > 299 || linkStatus < 200) {
+    response = (await fetch("../phpScripts/getStatus.php"))[0].text();
+    console.log(response);
+
+    /*if(linkStatus > 299 || linkStatus < 200) {
         target.style.borderColor = "red";
         buttonCheck();
     } else {
         target.style.borderColor = "#666666";
         buttonCheck();
-    }
+    }*/
 }
 
 function checkResourceName(event) {
