@@ -112,8 +112,8 @@ function submit(event) {
     xhr.open("POST", "../phpScripts/updateExpert.php");
     xhr.send(formData);
 
-    const nameInputs = document.querySelectorAll('input["name=resourceName"]');
-    const linkInputs = document.querySelectorAll('input["name=resourceLink"]');
+    const nameInputs = document.querySelectorAll('input[name="resourceName"]');
+    const linkInputs = document.querySelectorAll('input[name="resourceLink"]');
 
     nameInputs.forEach(element => element.value);
     linkInputs.forEach(element => element.value);
