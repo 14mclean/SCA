@@ -129,6 +129,7 @@ function addResource() {
     const linkInput = document.createElement("input");
     linkInput.setAttribute("type","url");
     linkInput.setAttribute("name", "resourceLink");
+    nameInput.setAttribute("required", "required");
     linkInput.setAttribute("placeholder", "Resource Link");
     linkInput.addEventListener("input", checkResourceLink);
     // append input to data
