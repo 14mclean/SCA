@@ -27,9 +27,9 @@ function init() {
 
 // ---------- Check for validity of inputs to disable or enable save button ----------
 function buttonCheck() {
-    var tmp = document.querySelectorAll('input[type="text"]');
-    tmp.concat(document.querySelectorAll('input[type="url"]'));
-    
+    var tmp = array.from(document.querySelectorAll('input[type="text"]'));
+    tmp.concat(array.from(document.querySelectorAll('input[type="url"]')));
+
     for(const element of tmp) {
         console.log(element.checkValidity());
         if(!element.checkValidity()) {
