@@ -1,12 +1,10 @@
 // ---------- HTML Element Constants ----------
-const expertiseInput = document.querySelector("input[name='expertise']");
 const studentInteractionCheckbox = document.querySelector('input[name="studentInteraction"]');
 const interactionLabels = [document.querySelector('label#online'), document.querySelector('label#f2f'), document.querySelector('label#resources')];
 const interactionCheckboxes = [document.querySelector('input#online'), document.querySelector('input#f2f'), document.querySelector('input#resources')];
 const locationInput = document.querySelector("input[name='location']");
 const newResourceButton = document.querySelector(".addResource");
 const resourcesTable = document.querySelector(".resourceTable");
-const resourceNameInputs = document.querySelectorAll('input[name="resourceName"]');
 const resourceLinkInputs = document.querySelectorAll('input[name="resourceLink"]');
 const deleteImgs = document.querySelectorAll('img[src="assets/remove.png"]');
 const saveButton = document.querySelector(".saveButton");
@@ -15,10 +13,10 @@ const form = document.querySelector(".profile");
 // ---------- Event Listeners ----------
 locationInput.addEventListener("input", validateLocationInput);
 newResourceButton.addEventListener("click", addResource);
-for(const nameInput of resourceNameInputs) nameInput.addEventListener("input", buttonCheck);
 for(const linkInput of resourceLinkInputs) linkInput.addEventListener("input", checkResourceLink);
 for(const img of deleteImgs) img.addEventListener("click", deleteResource);
-expertiseInput.addEventListener("input", buttonCheck);
+for(const element of document.querySelectorAll('input[type="text"')) element.addEventListener("input", buttonCheck);
+for(const element of document.querySelectorAll('input[type="url"')) element.addEventListener("input", buttonCheck);
 
 // ---------- Initial checks ----------
 function init() {
@@ -29,17 +27,6 @@ function init() {
 
 // ---------- Check for validity of inputs to disable or enable save button ----------
 function buttonCheck() {
-    /*var textInputs = document.querySelectorAll('input[type="text"]');
-    textInputs.push(document.querySelectorAll('input[type="url"]'));
-
-    for(const element of textInputs) {
-        if(!element.checkValidity()) {
-            saveButton.disabled = true;
-            return
-        }
-    }
-    saveButton.disabled = false;*/
-
     saveButton.disabled = !form.reportValidity();
 }
 
@@ -52,7 +39,6 @@ function validateLocationInput(event) {
     } else {
         locationInput.setCustomValidity('');
     }
-    buttonCheck();
 }
 
 function validPostcode(outcode) {
@@ -161,8 +147,7 @@ function addResource() {
 
 // ---------- Delete resource row ----------
 function deleteResource(event) {
-    event.currentTarget.parentElement.parentElement.remove()
-    buttonCheck();
+    event.currentTarget.parentElement.parentElement.remove();
 }
 
 // ---------- Check if the provided resource link is valid ----------
@@ -192,5 +177,6 @@ function checkResourceLink(event) {
             locationInput.setCustomValidity('');
         }
     });
-    buttonCheck();
 }
+
+init();
