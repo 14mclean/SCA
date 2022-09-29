@@ -1,3 +1,19 @@
+class PostForm extends XMLHttpRequest {
+    constructor() {
+        super();
+        this.form = new FormData();
+    }
+
+    append(name, value,) {
+        this.form.append(name, value);
+    }
+
+    send(path) {
+        super.open("POST", path);
+        super.send(this.form);
+    }
+}
+
 // ---------- HTML Element Constants ----------
 const studentInteractionCheckbox = document.querySelector('input[name="studentInteraction"]');
 const interactionLabels = [document.querySelector('label#online'), document.querySelector('label#f2f'), document.querySelector('label#resources')];
