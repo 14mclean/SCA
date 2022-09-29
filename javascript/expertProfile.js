@@ -10,7 +10,7 @@ const resourceNameInputs = document.querySelectorAll('input[name="resourceName"]
 const resourceLinkInputs = document.querySelectorAll('input[name="resourceLink"]');
 const deleteImgs = document.querySelectorAll('img[src="assets/remove.png"]');
 const saveButton = document.querySelector(".saveButton");
-const form = document.querySelector("profile");
+const form = document.querySelector(".profile");
 
 // ---------- Event Listeners ----------
 locationInput.addEventListener("input", validateLocationInput);
