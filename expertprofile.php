@@ -113,7 +113,7 @@
         
         <content>
             <div class="container">
-                <form class="profile" onSubmit="submit()">
+                <form class="profile" onSubmit="submit()" action="">
 
                     <h1><?php echo($email); ?></h1> <br>
 
