@@ -185,6 +185,7 @@ function checkResourceLink(event) {
         } else {
             locationInput.setCustomValidity('');
         }
+        buttonCheck();
     });
 }
 
