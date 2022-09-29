@@ -49,6 +49,7 @@
     $studentResources = $result[0]["studentResources"] == '1';
     $location = $result[0]["location"];
 
+    print_r($result[0]["ages"]);
     for($i = 0; $i < 5; $i++) {
         array_push($ages, str_contains($result[0]["ages"], "ks".$i));
     }
