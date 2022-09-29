@@ -49,8 +49,7 @@
     $studentResources = $result[0]["studentResources"] == '1';
     $location = $result[0]["location"];
 
-    print_r($result[0]["ages"]);
-    for($i = 0; $i < 5; $i++) {
+    for($i = 1; $i <= 5; $i++) {
         array_push($ages, str_contains($result[0]["ages"], "ks".$i));
     }
 
@@ -134,7 +133,6 @@
                         </label>
 
                         <div>
-                            <?php print_r($ages); ?>
                             <label>KS1</label> <input type="checkbox" <?php if($ages[0]) echo("checked") ?> > <br>
                             <label>KS2</label> <input type="checkbox" <?php if($ages[1]) echo("checked") ?> > <br>
                             <label>KS3</label> <input type="checkbox" <?php if($ages[2]) echo("checked") ?> > <br>
