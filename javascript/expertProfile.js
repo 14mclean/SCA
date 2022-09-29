@@ -17,6 +17,7 @@ for(const linkInput of resourceLinkInputs) linkInput.addEventListener("input", c
 for(const img of deleteImgs) img.addEventListener("click", deleteResource);
 for(const element of document.querySelectorAll('input[type="text"]')) element.addEventListener("input", buttonCheck);
 for(const element of document.querySelectorAll('input[type="url"]')) element.addEventListener("input", buttonCheck);
+form.addEventListener("submit", submit);
 
 // ---------- Initial checks ----------
 function init() {
