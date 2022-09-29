@@ -23,7 +23,7 @@
         "SELECT resourceID,name,link FROM ExpertResources WHERE userID=?;",
         "i",
         array($_POST["userID"])
-    )
+    );
     $currentResources = $db->sendQuery($statement, array("resourceID", "name", "link"));
 
     print_r($currentResources);
