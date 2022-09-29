@@ -65,6 +65,10 @@
     border: 1px solid #333333;
 }
 
+.field input[type="text"]:invalid {
+    border-color: "red";
+}
+
 .field input[type="url"]{
     float: right;
     color: #333333;
@@ -78,6 +82,10 @@
 
 .field input[type="url"]:focus {
     border: 1px solid #333333;
+}
+
+.field input[type="url"]:invalid {
+    border-color: "red";
 }
 
 .field label {
