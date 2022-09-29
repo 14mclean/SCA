@@ -65,6 +65,21 @@
     border: 1px solid #333333;
 }
 
+.field input[type="url"]{
+    float: right;
+    color: #333333;
+    font-family: 'Open Sans';
+    margin-right: 20px;
+    height: 24px;
+
+    border: 1px solid #666666;
+    border-radius: 5px;
+}
+
+.field input[type="url"]:focus {
+    border: 1px solid #333333;
+}
+
 .field label {
     margin-left: 10px;
     color: #666666;
