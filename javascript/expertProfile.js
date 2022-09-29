@@ -176,14 +176,14 @@ function checkResourceLink(event) {
     .then(response => response.text())
     .then(linkStatus => {
         if(200 <= linkStatus && linkStatus <= 299) {
-            locationInput.setCustomValidity('');
+            target.setCustomValidity('');
             
         } else if (300 <= linkStatus && linkStatus <= 399) {
-            locationInput.setValidity({});
+            target.setValidity({});
         } else if(399 < linkStatus) {
-            locationInput.setCustomValidity('Invalid URL');
+            target.setCustomValidity('Invalid URL');
         } else {
-            locationInput.setCustomValidity('');
+            target.setCustomValidity('');
         }
         buttonCheck();
     });
