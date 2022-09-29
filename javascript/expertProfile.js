@@ -49,8 +49,11 @@ function buttonCheck() {
         }
     }
 
-    //saveButton.disabled = !(isExpertiseValid && isLocationValid)
-    // if outlinw is red
+    if(expertiseInput.style.borderColor == "red" || locationInput.style.borderColor == "red") {
+        saveButton.disabled = true;
+    } else {
+        saveButton.disabled = false;
+    }
 }
 
 
