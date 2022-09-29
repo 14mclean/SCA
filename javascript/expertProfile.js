@@ -130,6 +130,7 @@ function submit(event) {
     formData.append("resourceLinks", linkInputs);
     xhr.open("POST", "../phpScripts/updateResource.php");
     xhr.send(formData);*/
+    return false;
 }
 
 // ---------- Update whether specific student interactions can be seen ----------
