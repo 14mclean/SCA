@@ -29,4 +29,11 @@
     print_r($currentResources);
     print_r("<br>");
     print_r($_POST);
+
+    /*
+
+    db: Array ( [0] => Array ( [resourceID] => 1 [name] => Exmaple Resource [link] => test.com/exampleresource ) )
+    post: Array ( [userID] => 1 [resourceNames] => [object NodeList] [resourceLinks] => [object NodeList] )
+
+    */
 ?>
