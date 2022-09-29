@@ -15,8 +15,10 @@ const form = document.querySelector(".profile");
 // ---------- Event Listeners ----------
 locationInput.addEventListener("input", validateLocationInput);
 newResourceButton.addEventListener("click", addResource);
+for(const nameInput of resourceNameInputs) linkInnameInputput.addEventListener("input", buttonCheck);
 for(const linkInput of resourceLinkInputs) linkInput.addEventListener("input", checkResourceLink);
 for(const img of deleteImgs) img.addEventListener("click", deleteResource);
+expertiseInput.addEventListener("input", buttonCheck);
 
 // ---------- Initial checks ----------
 function init() {
