@@ -11,6 +11,12 @@ const resourceLinkInputs = document.querySelectorAll('input[name="resourceLink"]
 const deleteImgs = document.querySelectorAll('img[src="assets/remove.png"]');
 const saveButton = document.querySelector(".profile button");
 
+// ---------- Event Listeners ----------
+locationInput.addEventListener("input", validateLocationInput);
+newResourceButton.addEventListener("click", addResource);
+for(const linkInput of resourceLinkInputs) linkInput.addEventListener("input", checkResourceLink);
+for(const img of deleteImgs) img.addEventListener("click", deleteResource);
+
 // ---------- Initial checks ----------
 function init() {
     locationInput.dispatchEvent(new Event("input"));
