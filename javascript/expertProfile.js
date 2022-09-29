@@ -9,7 +9,8 @@ const resourcesTable = document.querySelector(".resourceTable");
 const resourceNameInputs = document.querySelectorAll('input[name="resourceName"]');
 const resourceLinkInputs = document.querySelectorAll('input[name="resourceLink"]');
 const deleteImgs = document.querySelectorAll('img[src="assets/remove.png"]');
-const saveButton = document.querySelector(".profile button");
+const saveButton = document.querySelector(".saveButton");
+const form = document.querySelector("profile");
 
 // ---------- Event Listeners ----------
 locationInput.addEventListener("input", validateLocationInput);
@@ -26,7 +27,7 @@ function init() {
 
 // ---------- Check for validity of inputs to disable or enable save button ----------
 function buttonCheck() {
-    var textInputs = document.querySelectorAll('input[type="text"]');
+    /*var textInputs = document.querySelectorAll('input[type="text"]');
     textInputs.push(document.querySelectorAll('input[type="url"]'));
 
     for(const element of textInputs) {
@@ -35,17 +36,19 @@ function buttonCheck() {
             return
         }
     }
-    saveButton.disabled = false;
+    saveButton.disabled = false;*/
+
+    saveButton.disabled = !form.reportValidity();
 }
 
 // ---------- Check validity of location input ----------
 function validateLocationInput(event) {
     if(event.target.value == "") {
-        locationInput.setValidity({});
+        locationInput.setCustomValidity('')
     } else if(!validPostcode(event.target.value)) {
-        locationInput.setValidity("patternMismatch");
+        locationInput.setCustomValidity("Invalid outcode format");
     } else {
-        locationInput.setValidity({});
+        locationInput.setCustomValidity('');
     }
     buttonCheck();
 }
@@ -177,13 +180,14 @@ function checkResourceLink(event) {
     .then(response => response.text())
     .then(linkStatus => {
         if(200 <= linkStatus && linkStatus <= 299) {
-            locationInput.setValidity({});
+            locationInput.setCustomValidity('');
+            
         } else if (300 <= linkStatus && linkStatus <= 399) {
             locationInput.setValidity({});
         } else if(399 < linkStatus) {
-            locationInput.setValidity("badInput");
+            locationInput.setCustomValidity('Invalid URL');
         } else {
-            locationInput.setValidity({});
+            locationInput.setCustomValidity('');
         }
     });
     buttonCheck();
