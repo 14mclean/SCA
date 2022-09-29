@@ -208,6 +208,9 @@
         </content>
     </body>
     
+    <script type="text/javascript">
+        const userID = <?php echo"$userID"?>;
+    </script>
     <script src="javascript/navbar.js"></script>
     <script src="javascript/expertProfile.js"></script>
 </html>

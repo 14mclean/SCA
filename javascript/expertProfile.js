@@ -117,17 +117,18 @@ function submit() {
     nameInputs.forEach(element => element.value);
     linkInputs.forEach(element => element.value);
 
+    var form = PostForm();
+    form.append("userID", userID);
+    form.append("resourceNames", nameInputs);
+    form.append("resourceLinks", linkInputs);
+    form.send("../phpScripts/updateResource.php")
+
     /*xhr = new XMLHttpRequest();
     formData = new FormData();
     formData.append("resourceNames", nameInputs);
     formData.append("resourceLinks", linkInputs);
     xhr.open("POST", "../phpScripts/updateResource.php");
     xhr.send(formData);*/
-
-    var form = PostForm();
-    form.append("resourceNames", nameInputs);
-    form.append("resourceLinks", linkInputs);
-    form.send("../phpScripts/updateResource.php")
 }
 
 // ---------- Update whether specific student interactions can be seen ----------
