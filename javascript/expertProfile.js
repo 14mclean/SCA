@@ -134,7 +134,7 @@ function submit(event) {
     nameInputs.forEach(element => element.value);
     linkInputs.forEach(element => element.value);
 
-    var form = PostForm();
+    var form = new PostForm();
     form.append("userID", userID);
     form.append("resourceNames", nameInputs);
     form.append("resourceLinks", linkInputs);
