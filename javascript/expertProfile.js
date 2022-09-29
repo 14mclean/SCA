@@ -82,8 +82,8 @@ function validPostcode(outcode) {
 }
 
 // ---------- Save contents of page then leave ----------
-function submit() {
-    // use get headers
+function submit(event) {
+    event.preventDefault();
     inputs = document.querySelectorAll('input:not([name="studentInteraction"])');
     xhr = new XMLHttpRequest();
     formData = new FormData();
