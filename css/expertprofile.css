@@ -66,7 +66,7 @@
 }
 
 .field input[type="text"]:invalid {
-    border-color: "red";
+    border-color: #FF0000;
 }
 
 .field input[type="url"]{
@@ -85,7 +85,7 @@
 }
 
 .field input[type="url"]:invalid {
-    border-color: "red";
+    border-color: #FF0000;
 }
 
 .field label {
