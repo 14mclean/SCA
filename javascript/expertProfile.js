@@ -15,7 +15,8 @@ locationInput.addEventListener("input", validateLocationInput);
 newResourceButton.addEventListener("click", addResource);
 for(const linkInput of resourceLinkInputs) linkInput.addEventListener("input", checkResourceLink);
 for(const img of deleteImgs) img.addEventListener("click", deleteResource);
-for(const element of document.querySelectorAll('input[type="text"').concat(document.querySelectorAll('input[type="url"'))) element.addEventListener("input", buttonCheck);
+for(const element of document.querySelectorAll('input[type="text"]')) element.addEventListener("input", buttonCheck);
+for(const element of document.querySelectorAll('input[type="url"]')) element.addEventListener("input", buttonCheck);
 
 // ---------- Initial checks ----------
 function init() {
@@ -26,7 +27,10 @@ function init() {
 
 // ---------- Check for validity of inputs to disable or enable save button ----------
 function buttonCheck() {
-    for(const element of document.querySelectorAll('input[type="text"').concat(document.querySelectorAll('input[type="url"'))) {
+    var tmp = document.querySelectorAll('input[type="text"]');
+    tmp.concat(document.querySelectorAll('input[type="url"]'));
+    
+    for(const element of tmp) {
         console.log(element.checkValidity());
         if(!element.checkValidity()) {
             saveButton.disabled = true;
