@@ -133,6 +133,7 @@
                         </label>
 
                         <div>
+                            <?php print_r($ages); ?>
                             <label>KS1</label> <input type="checkbox" <?php if($ages[0]) echo("checked") ?> > <br>
                             <label>KS2</label> <input type="checkbox" <?php if($ages[1]) echo("checked") ?> > <br>
                             <label>KS3</label> <input type="checkbox" <?php if($ages[2]) echo("checked") ?> > <br>
