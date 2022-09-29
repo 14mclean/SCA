@@ -84,7 +84,50 @@ function validPostcode(outcode) {
 // ---------- Save contents of page then leave ----------
 function submit() {
     // use get headers
-    window.history.back();
+    inputs = document.querySelectorAll('input:not([name="studentInteraction"])');
+    xhr = new XMLHttpRequest();
+    formData = new FormData();
+
+    formData.append("expertise", inputs[0].value);
+    formData.append("org", inputs[1].value);
+    formData.append("teacherAdvice", + inputs[7].checked);
+    formData.append("projectWork", + inputs[8].checked);
+    formData.append("studentOnline", + inputs[9].checked);
+    formData.append("studentF2F", + inputs[10].checked);
+    formData.append("studentResources", + inputs[11].checked);
+    formData.append("location", inputs[12].value);
+
+    ages = "";
+    for(i=2; i<7; i++) {
+        if(inputs[i].checked) {
+            if(i > 2) {
+                ages += ",";
+            }
+            ages += "KS"+(i-1);
+        }
+    }
+    formData.append("ages", ages);
+
+    xhr.open("POST", "../phpScripts/updateExpert.php");
+    xhr.send(formData);
+
+    const nameInputs = document.querySelectorAll('input["name=resourceName"]');
+    const linkInputs = document.querySelectorAll('input["name=resourceLink"]');
+
+    nameInputs.forEach(element => element.value);
+    linkInputs.forEach(element => element.value);
+
+    /*xhr = new XMLHttpRequest();
+    formData = new FormData();
+    formData.append("resourceNames", nameInputs);
+    formData.append("resourceLinks", linkInputs);
+    xhr.open("POST", "../phpScripts/updateResource.php");
+    xhr.send(formData);*/
+
+    var form = PostForm();
+    form.append("resourceNames", nameInputs);
+    form.append("resourceLinks", linkInputs);
+    form.send("../phpScripts/updateResource.php")
 }
 
 // ---------- Update whether specific student interactions can be seen ----------
