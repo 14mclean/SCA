@@ -83,7 +83,8 @@ function validPostcode(outcode) {
 
 // ---------- Save contents of page then leave ----------
 function submit() {
-    // use form data
+    // use get headers
+    window.history.back();
 }
 
 // ---------- Update whether specific student interactions can be seen ----------
