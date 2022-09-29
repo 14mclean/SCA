@@ -131,13 +131,11 @@ function submit(event) {
     const nameInputs = document.querySelectorAll('input[name="resourceName"]');
     const linkInputs = document.querySelectorAll('input[name="resourceLink"]');
 
-    nameInputs.forEach(element => element.value);
-    linkInputs.forEach(element => element.value);
-
     var form = new PostForm();
     form.append("userID", userID);
-    form.append("resourceNames", nameInputs);
-    form.append("resourceLinks", linkInputs);
+    for(let i=0; i<nameInputs.length; i++) {
+        form.append(nameInputs[i].value, linkInputs[i].value);
+    }
     form.send("../phpScripts/updateResource.php")
 
     /*xhr = new XMLHttpRequest();
