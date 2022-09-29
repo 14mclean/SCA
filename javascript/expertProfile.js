@@ -31,7 +31,6 @@ function buttonCheck() {
     tmp.concat(Array.from(document.querySelectorAll('input[type="url"]')));
 
     for(const element of tmp) {
-        console.log(element.checkValidity());
         if(!element.checkValidity()) {
             saveButton.disabled = true;
             return
