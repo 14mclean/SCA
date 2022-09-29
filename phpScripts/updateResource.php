@@ -26,4 +26,7 @@
     )
     $currentResources = $db->sendQuery($statement, array("resourceID", "name", "link"));
 
+    print_r($currentResources);
+    print_r("<br>");
+    print_r($_POST);
 ?>
