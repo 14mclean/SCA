@@ -162,14 +162,17 @@ function deleteResource(event) {
 // ---------- Check if the provided resource link is valid ----------
 function checkResourceLink(event) {
     url = event.currentTarget.value;
+    newUrl = "";
 
     if(!url.startsWith("http://") || !url.startsWith("https://")) {
-        url = "http://" + url;
+        newUrl += "http://"
     }
 
-    if(url.substring(7,11) != "www.") {
-        url = url.slice(0,7) + "www." + url.slice(7);
+    if(!url.startsWith("www.")) {
+        newUrl += "www.";
     }
+
+    newUrl += url;
 
     target = event.path[0] || event.composedPath()[0];
     fetch("../phpScripts/getStatus.php?url="+url)
