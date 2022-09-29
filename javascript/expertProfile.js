@@ -29,6 +29,7 @@ function init() {
     locationInput.dispatchEvent(new Event("input"));
     for(const nameInput of resourceNameInputs) nameInput.dispatchEvent(new Event("input"));
     for(const linkInput of resourceLinkInputs) linkInput.dispatchEvent(new Event("input"));
+    buttonCheck();
 }
 
 
