@@ -1,25 +1,40 @@
-function init() {
-    locationInput.dispatchEvent(new Event("input"));
-    expertiseInput.dispatchEvent(new Event("input"));
-    studentInteractionCheckbox.dispatchEvent(new Event("click"));
-    
-    for(const nameInput of resourceNameInputs) {
-        nameInput.dispatchEvent(new Event("input"));
-    }
-    
-    for(const linkInput of resourceLinkInputs) {
-        linkInput.dispatchEvent(new Event("input"));
-    }
-}
-
-var isExpertiseValid = false;
-var isLocationValid = false;
+// ---------- HTML Element Constants ----------
+const expertiseInput = document.querySelector("input[name='expertise']");
+const studentInteractionCheckbox = document.querySelector('input[name="studentInteraction"]');
+const interactionLabels = [document.querySelector('label#online'), document.querySelector('label#f2f'), document.querySelector('label#resources')];
+const interactionCheckboxes = [document.querySelector('input#online'), document.querySelector('input#f2f'), document.querySelector('input#resources')];
+const locationInput = document.querySelector("input[name='location']");
+const newResourceButton = document.querySelector(".addResource");
+const resourcesTable = document.querySelector(".resourceTable");
+const resourceNameInputs = document.querySelectorAll('input[name="resourceName"]');
+const resourceLinkInputs = document.querySelectorAll('input[name="resourceLink"]');
+const deleteImgs = document.querySelectorAll('img[src="assets/remove.png"]');
 const saveButton = document.querySelector(".profile button");
 
-function buttonCheck() {
-    const resourceNameInputs = document.querySelectorAll('input[name="resourceName"]');
-    const resourceLinkInputs = document.querySelectorAll('input[name="resourceLink"]');
 
+// ---------- Event Listeners ----------
+expertiseInput.addEventListener("input", validateExpertiseInput);
+studentInteractionCheckbox.addEventListener("click", updateInteractionVisibilities);
+locationInput.addEventListener("input", validateLocationInput);
+newResourceButton.addEventListener("click", addResource);
+for(const nameInput of resourceNameInputs) nameInput.addEventListener("input", checkResourceName);
+for(const linkInput of resourceLinkInputs) linkInput.addEventListener("input", checkResourceLink);
+for(const img of deleteImgs) img.addEventListener("click", deleteResource);
+saveButton.addEventListener("click", submit);
+
+
+// ---------- Initial checks ----------
+function init() {
+    expertiseInput.dispatchEvent(new Event("input"));
+    locationInput.dispatchEvent(new Event("input"));
+    for(const nameInput of resourceNameInputs) nameInput.dispatchEvent(new Event("input"));
+    for(const linkInput of resourceLinkInputs) linkInput.dispatchEvent(new Event("input"));
+    buttonCheck();
+}
+
+
+// ---------- Check for validity of inputs to disable or enable save button ----------
+function buttonCheck() {
     for(const nameInput of resourceNameInputs) {
         if(nameInput.style.borderColor == "red") {
             saveButton.disabled = true;
@@ -34,15 +49,16 @@ function buttonCheck() {
         }
     }
 
-    saveButton.disabled = !(isExpertiseValid && isLocationValid)
+    if(expertiseInput.style.borderColor == "red" || locationInput.style.borderColor == "red") {
+        saveButton.disabled = true;
+    } else {
+        saveButton.disabled = false;
+    }
 }
 
-// validation on expertise
-const expertiseInput = document.querySelector("input[name='expertise']");
-expertiseInput.addEventListener("input", validateExpertiseInput);
 
+// ---------- Check validity of expertise input ----------
 function validateExpertiseInput(event) {
-    // not null
     if(event.target.value == '') {
         expertiseInput.style.borderColor = "red";
         isExpertiseValid = false;
@@ -53,10 +69,8 @@ function validateExpertiseInput(event) {
     buttonCheck();
 }
 
-// validation on location
-const locationInput = document.querySelector("input[name='location']");
-locationInput.addEventListener("input", validateLocationInput);
 
+// ---------- Check validity of location input ----------
 function validateLocationInput(event) {
     if(!validPostcode(event.target.value)) {
         locationInput.style.borderColor = "red";
@@ -99,11 +113,9 @@ function validPostcode(outcode) {
     return validPatterns.includes(outcodePattern)
 }
 
-saveButton.addEventListener("click", submit);
 
+// ---------- Save contents of page then leave ----------
 function submit() {
-    // if disabled return
-
     inputs = document.querySelectorAll('input:not([name="studentInteraction"])');
     xhr = new XMLHttpRequest();
     formData = new FormData();
@@ -136,19 +148,8 @@ function submit() {
     // foward to mte
 }
 
-const studentInteractionCheckbox = document.querySelector('input[name="studentInteraction"]');
-const interactionCheckboxes = [
-    document.querySelector('input#online'),
-    document.querySelector('input#f2f'),
-    document.querySelector('input#resources')
-];
-const interactionLabels = [
-    document.querySelector('label#online'),
-    document.querySelector('label#f2f'),
-    document.querySelector('label#resources')
-];
-studentInteractionCheckbox.addEventListener("click", updateInteractionVisibilities);
 
+// ---------- Update whether specific student interactions can be seen ----------
 function updateInteractionVisibilities(event) {
     for(let i = 0; i < 3; i++) {
         checkbox = interactionCheckboxes[i];
@@ -167,9 +168,7 @@ function updateInteractionVisibilities(event) {
 }
 
 
-const newResourceButton = document.querySelector(".addResource");
-newResourceButton.addEventListener("click", addResource);
-
+// ---------- Add new row to resources table ----------
 function addResource(event) {
     // make table row
     const newRow = document.createElement("tr");
@@ -191,7 +190,7 @@ function addResource(event) {
     const linkData = document.createElement("td");
     // make text input
     const linkInput = document.createElement("input");
-    linkInput.setAttribute("type","text");
+    linkInput.setAttribute("type","url");
     linkInput.setAttribute("name", "resourceLink");
     linkInput.setAttribute("placeholder", "Resource Link");
     linkInput.addEventListener("input", checkResourceLink);
@@ -212,30 +211,18 @@ function addResource(event) {
     newRow.appendChild(deleteData)
 
     // append row to table
-    document.querySelector(".resourceTable").appendChild(newRow);
+    resourcesTable.appendChild(newRow);
 }
 
-const deleteImgs = document.querySelectorAll('img[src="assets/remove.png"]');
-for(const img of deleteImgs) {
-    img.addEventListener("click", deleteResource);
-}
 
+// ---------- Delete resource row ----------
 function deleteResource(event) {
     event.currentTarget.parentElement.parentElement.remove()
     buttonCheck();
 }
 
-const resourceNameInputs = document.querySelectorAll('input[name="resourceName"]');
-const resourceLinkInputs = document.querySelectorAll('input[name="resourceLink"]');
 
-for(const nameInput of resourceNameInputs) {
-    nameInput.addEventListener("input", checkResourceName);
-}
-
-for(const linkInput of resourceLinkInputs) {
-    linkInput.addEventListener("input", checkResourceLink);
-}
-
+// ---------- Check if the provided resource link is valid ----------
 function checkResourceLink(event) {
     url = event.currentTarget.value;
 
@@ -266,6 +253,8 @@ function checkResourceLink(event) {
     buttonCheck();
 }
 
+
+// ---------- Validate resource name ----------
 function checkResourceName(event) {
     target = event.path[0] || event.composedPath()[0];
     if(target.value == '') {

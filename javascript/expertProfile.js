@@ -11,73 +11,35 @@ const resourceLinkInputs = document.querySelectorAll('input[name="resourceLink"]
 const deleteImgs = document.querySelectorAll('img[src="assets/remove.png"]');
 const saveButton = document.querySelector(".profile button");
 
-
-// ---------- Event Listeners ----------
-expertiseInput.addEventListener("input", validateExpertiseInput);
-studentInteractionCheckbox.addEventListener("click", updateInteractionVisibilities);
-locationInput.addEventListener("input", validateLocationInput);
-newResourceButton.addEventListener("click", addResource);
-for(const nameInput of resourceNameInputs) nameInput.addEventListener("input", checkResourceName);
-for(const linkInput of resourceLinkInputs) linkInput.addEventListener("input", checkResourceLink);
-for(const img of deleteImgs) img.addEventListener("click", deleteResource);
-saveButton.addEventListener("click", submit);
-
-
 // ---------- Initial checks ----------
 function init() {
-    expertiseInput.dispatchEvent(new Event("input"));
     locationInput.dispatchEvent(new Event("input"));
-    for(const nameInput of resourceNameInputs) nameInput.dispatchEvent(new Event("input"));
     for(const linkInput of resourceLinkInputs) linkInput.dispatchEvent(new Event("input"));
     buttonCheck();
 }
 
-
 // ---------- Check for validity of inputs to disable or enable save button ----------
 function buttonCheck() {
-    for(const nameInput of resourceNameInputs) {
-        if(nameInput.style.borderColor == "red") {
+    var textInputs = document.querySelectorAll('input[type="text"]');
+    textInputs.push(document.querySelectorAll('input[type="url"]'));
+
+    for(const element of textInputs) {
+        if(!element.checkValidity()) {
             saveButton.disabled = true;
-            return;
+            return
         }
     }
-    
-    for(const linkInput of resourceLinkInputs) {
-        if(linkInput.style.borderColor == "red") {
-            saveButton.disabled = true;
-            return;
-        }
-    }
-
-    if(expertiseInput.style.borderColor == "red" || locationInput.style.borderColor == "red") {
-        saveButton.disabled = true;
-    } else {
-        saveButton.disabled = false;
-    }
+    saveButton.disabled = false;
 }
-
-
-// ---------- Check validity of expertise input ----------
-function validateExpertiseInput(event) {
-    if(event.target.value == '') {
-        expertiseInput.style.borderColor = "red";
-        isExpertiseValid = false;
-    } else {
-        expertiseInput.style.borderColor = "#666666";
-        isExpertiseValid = true;
-    }
-    buttonCheck();
-}
-
 
 // ---------- Check validity of location input ----------
 function validateLocationInput(event) {
-    if(!validPostcode(event.target.value)) {
-        locationInput.style.borderColor = "red";
-        isLocationValid = false;
+    if(event.target.value == "") {
+        locationInput.setValidity({});
+    } else if(!validPostcode(event.target.value)) {
+        locationInput.setValidity("patternMismatch");
     } else {
-        locationInput.style.borderColor = "#666666";
-        isLocationValid = true;
+        locationInput.setValidity({});
     }
     buttonCheck();
 }
@@ -113,44 +75,13 @@ function validPostcode(outcode) {
     return validPatterns.includes(outcodePattern)
 }
 
-
 // ---------- Save contents of page then leave ----------
 function submit() {
-    inputs = document.querySelectorAll('input:not([name="studentInteraction"])');
-    xhr = new XMLHttpRequest();
-    formData = new FormData();
-
-    formData.append("expertise", inputs[0].value);
-    formData.append("org", inputs[1].value);
-    formData.append("teacherAdvice", + inputs[7].checked);
-    formData.append("projectWork", + inputs[8].checked);
-    formData.append("studentOnline", + inputs[9].checked);
-    formData.append("studentF2F", + inputs[10].checked);
-    formData.append("studentResources", + inputs[11].checked);
-    formData.append("location", inputs[12].value);
-
-    ages = "";
-    for(i=2; i<7; i++) {
-        if(inputs[i].checked) {
-            if(i > 2) {
-                ages += ",";
-            }
-            ages += "KS"+(i-1);
-        }
-    }
-    formData.append("ages", ages);
-
-    xhr.open("POST", "../phpScripts/updateExpert.php");
-    xhr.send(formData);
-
-    // new update for expert resources
-
-    // foward to mte
+    // use form data
 }
 
-
 // ---------- Update whether specific student interactions can be seen ----------
-function updateInteractionVisibilities(event) {
+function updateInteractionVisibilities() {
     for(let i = 0; i < 3; i++) {
         checkbox = interactionCheckboxes[i];
         label = interactionLabels[i];
@@ -169,7 +100,7 @@ function updateInteractionVisibilities(event) {
 
 
 // ---------- Add new row to resources table ----------
-function addResource(event) {
+function addResource() {
     // make table row
     const newRow = document.createElement("tr");
 
@@ -179,8 +110,8 @@ function addResource(event) {
     const nameInput = document.createElement("input");
     nameInput.setAttribute("type","text");
     nameInput.setAttribute("name", "resourceName");
+    nameInput.setAttribute("required", "required");
     nameInput.setAttribute("placeholder", "Resource Name");
-    nameInput.addEventListener("input", checkResourceName);
     // append input to data
     nameData.appendChild(nameInput);
     // append data to row
@@ -190,7 +121,7 @@ function addResource(event) {
     const linkData = document.createElement("td");
     // make text input
     const linkInput = document.createElement("input");
-    linkInput.setAttribute("type","text");
+    linkInput.setAttribute("type","url");
     linkInput.setAttribute("name", "resourceLink");
     linkInput.setAttribute("placeholder", "Resource Link");
     linkInput.addEventListener("input", checkResourceLink);
@@ -212,6 +143,8 @@ function addResource(event) {
 
     // append row to table
     resourcesTable.appendChild(newRow);
+
+    init();
 }
 
 
@@ -220,7 +153,6 @@ function deleteResource(event) {
     event.currentTarget.parentElement.parentElement.remove()
     buttonCheck();
 }
-
 
 // ---------- Check if the provided resource link is valid ----------
 function checkResourceLink(event) {
@@ -238,31 +170,15 @@ function checkResourceLink(event) {
     fetch("../phpScripts/getStatus.php?url="+url)
     .then(response => response.text())
     .then(linkStatus => {
-        console.log(linkStatus);
-
         if(200 <= linkStatus && linkStatus <= 299) {
-            target.style.borderColor = "green";
+            locationInput.setValidity({});
         } else if (300 <= linkStatus && linkStatus <= 399) {
-            target.style.borderColor = "yellow";
+            locationInput.setValidity({});
         } else if(399 < linkStatus) {
-            target.style.borderColor = "red";
+            locationInput.setValidity("badInput");
         } else {
-            target.style.borderColor = "#666666";
+            locationInput.setValidity({});
         }
     });
     buttonCheck();
 }
-
-
-// ---------- Validate resource name ----------
-function checkResourceName(event) {
-    target = event.path[0] || event.composedPath()[0];
-    if(target.value == '') {
-        event.composedPath()[0].style.borderColor = "red"; 
-    } else {
-        target.style.borderColor = "#666666";
-    }
-    buttonCheck();
-}
-
-init();

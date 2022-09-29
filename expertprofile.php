@@ -113,13 +113,13 @@
         
         <content>
             <div class="container">
-                <div class="profile">
+                <form class="profile" onSubmit="submit()">
 
                     <h1><?php echo($email); ?></h1> <br>
 
                     <div class="field">
                         <label>Expertise *</label>
-                        <input type="text" name="expertise" value="<?php echo($expertise); ?>">
+                        <input required="required" type="text" name="expertise" value="<?php echo($expertise); ?>">
                     </div>
 
                     <div class="field">
@@ -185,11 +185,11 @@
                                 foreach($originalResources as $resource) {
                                     echo("<tr>");
                                         echo("<td>");
-                                            echo("<input type='text' name='resourceName' value='".$resource["name"]."'>");
+                                            echo("<input required='required' type='text' name='resourceName' value='".$resource["name"]."'>");
                                         echo("</td>");
 
                                         echo("<td>");
-                                            echo("<input type='text' name='resourceLink' value='".$resource["link"]."'>");
+                                            echo("<input required='required' type='url' name='resourceLink' value='".$resource["link"]."'>");
                                         echo("</td>");
 
                                         echo("<td>");
