@@ -100,10 +100,11 @@ function updateResults() {
         // google api for distance
 
         // if fits distance
-
-        const newResult = document.createElement("div");
-        newResult.setAttribute("class","item");
-        newResult.appendChild(document.createTextNode(data));
-        document.querySelector(".results").appendChild(newResult);
+        if(data.length > 0) {
+            const newResult = document.createElement("div");
+            newResult.setAttribute("class","item");
+            newResult.appendChild(document.createTextNode(data));
+            document.querySelector(".results").appendChild(newResult);
+        }
     });
 }
