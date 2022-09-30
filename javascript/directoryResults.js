@@ -111,11 +111,9 @@ function addExpert(userID, location) {
     newResult.setAttribute("class","item");
 
     fetch("../phpScripts/getResources.php?userid="+userID)
-    .then(response => response.text())
+    .then(response => response.json())
     .then(data => {
-        console.log(data);
         for(const resource of data) {
-            console.log(resource);
             newResult.appendChild(document.createTextNode(resource["name"]));
         }
     });
