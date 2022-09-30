@@ -95,16 +95,15 @@ function updateResults() {
     fetch("../phpScripts/getResults.php?"+getFilter)
     .then(response => response.json())
     .then(data => {
-        console.log(data)
+        console.log(data);
 
         // google api for distance
 
         // if fits distance
 
         const newResult = document.createElement("div");
-        newResult.setAttribute("class", "item");
-        const text = document.createTextNode(data)
-        newResult.appendChild(text);
+        newResult.setAttribute("class","item");
+        newResult.appendChild(document.createTextNode(data));
         document.querySelector(".results").appendChild(newResult);
     });
 }
