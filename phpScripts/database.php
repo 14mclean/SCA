@@ -51,12 +51,10 @@
                 for($i = 0; $i < $query->num_rows; $i++) {
                     $query->fetch();
                     $result[] = array();
-                    $result[array_key_last($result)] = $tempRow;
-
-
-                    /*$row = array();
+                    $row = array();
                     $row = $tempRow;
-                    $result[] = $tempRow;*/
+                    $result[array_key_last($result)] = $row;
+                    print_r($result);
                 }
             } else {
                 $result = array();
