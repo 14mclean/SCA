@@ -103,7 +103,7 @@ function updateResults() {
         if(data.length > 0) {
             const newResult = document.createElement("div");
             newResult.setAttribute("class","item");
-            newResult.appendChild(document.createTextNode(data["userID"]));
+            newResult.appendChild(document.createTextNode(data[0]["userID"]));
             document.querySelector(".results").appendChild(newResult);
         }
     });
