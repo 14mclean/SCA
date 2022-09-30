@@ -93,7 +93,8 @@ function updateResults() {
     }
 
     fetch("../phpScripts/getResults.php?"+getFilter)
-    .then(response => response.text())
+    .then(response => response.json())
     .then(data => console.log(data));
+
 
 }
