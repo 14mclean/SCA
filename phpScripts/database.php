@@ -50,13 +50,10 @@
 
                 for($i = 0; $i < $query->num_rows; $i++) {
                     $query->fetch();
-                    /*$row = $tempRow;
+                    $row = $tempRow;
                     print_r($row);
-                    array_push($result, $row);
-                    unset($row);*/
-                    print_r($tempRow);
                     $result[] = $tempRow;
-                    print_r($result);
+                    unset($row);
                 }
             } else {
                 $result = array();
