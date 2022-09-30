@@ -8,7 +8,7 @@
     $statement = $db->prepareStatement(
         "SELECT name,link FROM ExpertResources WHERE userID=?",
         "i",
-        $_GET["userid"]
+        array($_GET["userid"])
     );
 
     $result = $db->sendQuery($statement);
