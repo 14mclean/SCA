@@ -54,7 +54,9 @@
                     print_r($row);
                     array_push($result, $row);
                     unset($row);*/
+                    print_r($tempRow);
                     $result[] = $tempRow;
+                    print_r($result);
                 }
             } else {
                 $result = array();
