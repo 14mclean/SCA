@@ -33,16 +33,17 @@
         if(array_key_exists($value["name"], $newResources) && $newResources[$value["name"]] == $value["link"]) {
             unset($currentResources[$key]);
             unset($newResources[$value["name"]]);
-        } else {
-            // delete
-            $statement = $db->prepareStatement(
-                "DELETE FROM ExpertResources WHERE resourceID=?;",
-                "i",
-                array($value["resourceID"])
-            );
-            $db->sendQuery($statement, array());
-            
         }
+    }
+
+    foreach ($currentResources as $value) {
+        // delete
+        $statement = $db->prepareStatement(
+            "DELETE FROM ExpertResources WHERE resourceID=?;",
+            "i",
+            array($value["resourceID"])
+        );
+        $db->sendQuery($statement, array());
     }
 
     foreach ($newResources as $name => $link) {
