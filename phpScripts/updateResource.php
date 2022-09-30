@@ -48,9 +48,9 @@
     foreach ($newResources as $name => $link) {
         // insert
         $statement = $db->prepareStatement(
-            "INSERT INTO ExpertResources (userID,name,link) VALUES ($userID,?,?);",
-            "s,s",
-            array($name, $link)
+            "INSERT INTO ExpertResources (userID,name,link) VALUES (?,?,?);",
+            "iss",
+            array($userID,$name, $link)
         );
         $db->sendQuery($statement, array());
     }
