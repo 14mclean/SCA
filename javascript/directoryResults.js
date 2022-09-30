@@ -108,13 +108,13 @@ function addExpert(userID, location) {
 
     // if fits distance
 
-    fetch("../phpScripts/getResults.php?userid="+userID)
+    fetch("../phpScripts/getResources.php?userid="+userID)
     .then(response => response.json())
     .then(data => console.log(data));
 
 
     const newResult = document.createElement("div");
     newResult.setAttribute("class","item");
-    newResult.appendChild(document.createTextNode(data[0]["userID"]));
+    newResult.appendChild(document.createTextNode(userID));
     document.querySelector(".results").appendChild(newResult);
 }
