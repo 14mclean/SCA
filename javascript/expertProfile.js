@@ -137,7 +137,7 @@ function submit(event) {
         form.append(nameInputs[i].value, linkInputs[i].value);
     }
     form.send("../phpScripts/updateResource.php");
-    window.location.href("meettheexperts.php")
+    window.location.href = "meettheexperts.php";
     return false;
 }
 
