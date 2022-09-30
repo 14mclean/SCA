@@ -6,4 +6,6 @@ question marks with popup for each field
 autocomplete and id's for login/signup
 https://web.dev/sign-in-form-best-practices/#element-attributes
 
-required attribute for signup
+"required" attribute for signup
+
+fix admin panel for new db
