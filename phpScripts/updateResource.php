@@ -36,6 +36,10 @@
         }
     }
 
+    print_r($currentResources);
+    print_r("<br>");
+    print_r($newResources)
+
     foreach ($currentResources as $value) {
         // delete
         $statement = $db->prepareStatement(
