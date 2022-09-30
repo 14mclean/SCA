@@ -107,14 +107,16 @@ function addExpert(userID, location) {
     // google api for distance
 
     // if fits distance
+    const newResult = document.createElement("div");
+    newResult.setAttribute("class","item");
 
     fetch("../phpScripts/getResources.php?userid="+userID)
     .then(response => response.text())
-    .then(data => console.log(data));
+    .then(data => {
+        for(const resource of data) {
+            newResult.appendChild(document.createTextNode(resource["name"]));
+        }
+    });
 
-
-    const newResult = document.createElement("div");
-    newResult.setAttribute("class","item");
-    newResult.appendChild(document.createTextNode(userID));
     document.querySelector(".results").appendChild(newResult);
 }
