@@ -113,6 +113,7 @@ function addExpert(userID, location) {
     fetch("../phpScripts/getResources.php?userid="+userID)
     .then(response => response.text())
     .then(data => {
+        console.log(data);
         for(const resource of data) {
             newResult.appendChild(document.createTextNode(resource["name"]));
         }
