@@ -101,10 +101,9 @@ function updateResults() {
 
         // if fits distance
         if(data.length > 0) {
-            console.log(typeof data);
             const newResult = document.createElement("div");
             newResult.setAttribute("class","item");
-            newResult.appendChild(document.createTextNode(data));
+            newResult.appendChild(document.createTextNode(data["userID"]));
             document.querySelector(".results").appendChild(newResult);
         }
     });
