@@ -95,16 +95,17 @@ function updateResults() {
     fetch("../phpScripts/getResults.php?"+getFilter)
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        for(const expert of data) {
+            // google api for distance
 
-        // google api for distance
-
-        // if fits distance
-        if(data.length > 0) {
-            const newResult = document.createElement("div");
-            newResult.setAttribute("class","item");
-            newResult.appendChild(document.createTextNode(data[0]["userID"]));
-            document.querySelector(".results").appendChild(newResult);
+            // if fits distance
+            if(data.length > 0) {
+                const newResult = document.createElement("div");
+                newResult.setAttribute("class","item");
+                newResult.appendChild(document.createTextNode(data[0]["userID"]));
+                document.querySelector(".results").appendChild(newResult);
+            }
         }
     });
 }
+
