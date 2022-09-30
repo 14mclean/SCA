@@ -25,56 +25,10 @@
         /**
          * query - mysqli statement with parameters already bound
          */
-        function OLDsendQuery(mysqli_stmt $query, array $resultFields): array {
-            // execute query and get mysqli_result
-            try {
-                $query->execute();
-            } catch(mysqli_sql_exception $e) {
-                error_log(print_r($e, true));
-            }
-            $query->store_result();
-
-            if($query->num_rows > 0) {
-                // make result 2d array of result
-                $result = array();
-                $tempRow = array();
-
-                for($j = 0; $j < $query->field_count; $j++) {
-                    $tempRow[$resultFields[$j]] = NULL;
-                }
-
-                $this->referencedArray = array();
-                $this->referenceArray($tempRow);
-                call_user_func_array(array(&$query, 'bind_result'), $this->referencedArray);
-                unset($this->referencedArray);
-
-                for($i = 0; $i < $query->num_rows; $i++) {
-                    $query->fetch();
-                    $result[] = array();
-                    $row = array();
-                    $row = $tempRow;
-                    $result[array_key_last($result)] = $row;
-                    print_r($result);
-                }
-            } else {
-                $result = array();
-            }
-            
-            return $result;
-        }
-
         function sendQuery(mysqli_stmt $stmt): array {
             $stmt->execute();
-            if(extension_loaded('mysqlnd')) {
-                echo("Loaded");
-            } else {
-                echo("Failed");
-            }
             $result = $stmt->get_result();
-
-            $response = $result->fetch_all(MYSQLI_ASSOC);
-
-            return $response;
+            return $result->fetch_all(MYSQLI_ASSOC);
         }
 
         private function referenceArray(&$array) {
