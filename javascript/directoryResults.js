@@ -94,22 +94,27 @@ function updateResults() {
 
     fetch("../phpScripts/getResults.php?"+getFilter)
     .then(response => response.json())
-    .then(data => {for(const expert of data) addExpert(data["userID"], data["location"]);});
+    .then(data => {
+        for(const expert of data) {
+            if(data.length > 0) {
+                addExpert(data["userID"], data["location"]);
+            }
+        }
+    });
 }
 
 function addExpert(userID, location) {
     // google api for distance
 
     // if fits distance
-    if(data.length > 0) {
-        fetch("../phpScripts/getResults.php?userid="+userID)
-        .then(response => response.json())
-        .then(data => console.log(data));
+
+    fetch("../phpScripts/getResults.php?userid="+userID)
+    .then(response => response.json())
+    .then(data => console.log(data));
 
 
-        const newResult = document.createElement("div");
-        newResult.setAttribute("class","item");
-        newResult.appendChild(document.createTextNode(data[0]["userID"]));
-        document.querySelector(".results").appendChild(newResult);
-    }
+    const newResult = document.createElement("div");
+    newResult.setAttribute("class","item");
+    newResult.appendChild(document.createTextNode(data[0]["userID"]));
+    document.querySelector(".results").appendChild(newResult);
 }
