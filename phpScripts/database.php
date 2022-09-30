@@ -51,8 +51,6 @@
                 for($i = 0; $i < $query->num_rows; $i++) {
                     $query->fetch();
                     $row = $tempRow;
-                    print_r(&$tempRow);
-                    print_r(&$row);
                     array_push($result, $row);
                 }
             } else {
