@@ -20,6 +20,11 @@
     $userID = $_POST["userID"];
     $newResources = array_slice($_POST, 1, count($_POST), true);
 
+    foreach ($newResources as $name => $link) {
+        $newResources[str_replace("_"," ",$name)] = $link;
+        unset($newResources[$name]);
+    }
+
     $db = new Database();
 
     $statement = $db->prepareStatement(
