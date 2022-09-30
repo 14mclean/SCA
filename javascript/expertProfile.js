@@ -136,14 +136,7 @@ function submit(event) {
     for(let i=0; i<nameInputs.length; i++) {
         form.append(nameInputs[i].value, linkInputs[i].value);
     }
-    form.send("../phpScripts/updateResource.php")
-
-    /*xhr = new XMLHttpRequest();
-    formData = new FormData();
-    formData.append("resourceNames", nameInputs);
-    formData.append("resourceLinks", linkInputs);
-    xhr.open("POST", "../phpScripts/updateResource.php");
-    xhr.send(formData);*/
+    form.send("../phpScripts/updateResource.php");
     return false;
 }
 
