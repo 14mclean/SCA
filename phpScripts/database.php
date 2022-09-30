@@ -52,6 +52,7 @@
                     $query->fetch();
                     $row = $tempRow;
                     array_push($result, $row);
+                    unset($row);
                 }
             } else {
                 $result = array();
