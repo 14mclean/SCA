@@ -40,7 +40,7 @@
     
     $email = $result[0]["email"];
     $expertise = $result[0]["expertise"];
-    $org = $result[0]["org"];
+    $org = $result[0]["organisation"];
     $ages = array();
     $teacherAdvice = $result[0]["teacherAdvice"] == '1';
     $projectWork = $result[0]["projectWork"] == '1';
