@@ -97,7 +97,7 @@ function updateResults() {
     .then(data => {
         for(const expert of data) {
             if(data.length > 0) {
-                addExpert(data["userID"], data["location"]);
+                addExpert(expert["userID"], expert["location"]);
             }
         }
     });
