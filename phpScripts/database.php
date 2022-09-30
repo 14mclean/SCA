@@ -50,8 +50,8 @@
 
                 for($i = 0; $i < $query->num_rows; $i++) {
                     $query->fetch();
+                    print_r($result);
                     $row = $tempRow;
-                    print_r($row);
                     $result[] = $tempRow;
                     unset($row);
                 }
