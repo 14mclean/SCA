@@ -50,9 +50,13 @@
 
                 for($i = 0; $i < $query->num_rows; $i++) {
                     $query->fetch();
-                    $row = array();
+                    $result[] = array();
+                    $result[array_key_last($result)] = $tempRow;
+
+
+                    /*$row = array();
                     $row = $tempRow;
-                    $result[] = $tempRow;
+                    $result[] = $tempRow;*/
                 }
             } else {
                 $result = array();
