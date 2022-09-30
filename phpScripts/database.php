@@ -63,13 +63,9 @@
             return $result;
         }
 
-        function sendQuery(mysqli_stmt $query): array {
-            try {
-                $query->execute();
-            } catch(mysqli_sql_exception $e) {
-                error_log(print_r($e, true));
-            }
-            $result = $query->get_result();
+        function sendQuery(mysqli_stmt $stmt): array {
+            $stmt->execute();
+            $result = $stmt->get_result();
 
             $response = $result->fetch_all(MYSQLI_ASSOC);
 
