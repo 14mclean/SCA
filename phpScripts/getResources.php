@@ -6,7 +6,7 @@
     $db = new Database();
 
     $statement = $db->prepareStatement(
-        "SELECT blah FROM ExpertResources WHERE userID=?",
+        "SELECT name,link FROM ExpertResources WHERE userID=?",
         "i",
         $_GET["userid"]
     );
