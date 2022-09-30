@@ -115,6 +115,7 @@ function addExpert(userID, location) {
     .then(data => {
         console.log(data);
         for(const resource of data) {
+            console.log(resource);
             newResult.appendChild(document.createTextNode(resource["name"]));
         }
     });
