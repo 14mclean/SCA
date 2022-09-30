@@ -65,6 +65,11 @@
 
         function sendQuery(mysqli_stmt $stmt): array {
             $stmt->execute();
+            if(extension_loaded('mysqlnd')) {
+                echo("Loaded");
+            } else {
+                echo("Failed");
+            }
             $result = $stmt->get_result();
 
             $response = $result->fetch_all(MYSQLI_ASSOC);
