@@ -109,7 +109,7 @@ function addExpert(userID, location) {
     // if fits distance
 
     fetch("../phpScripts/getResources.php?userid="+userID)
-    .then(response => response.json())
+    .then(response => response.text())
     .then(data => console.log(data));
 
 
