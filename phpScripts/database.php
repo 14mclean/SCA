@@ -25,7 +25,7 @@
         /**
          * query - mysqli statement with parameters already bound
          */
-        function sendQuery(mysqli_stmt $query, array $resultFields): array {
+        function OLDsendQuery(mysqli_stmt $query, array $resultFields): array {
             // execute query and get mysqli_result
             try {
                 $query->execute();
@@ -61,6 +61,19 @@
             }
             
             return $result;
+        }
+
+        function sendQuery(mysqli_stmt $query): array {
+            try {
+                $query->execute();
+            } catch(mysqli_sql_exception $e) {
+                error_log(print_r($e, true));
+            }
+            $result = $query->get_result();
+
+            $response = $result->fetch_all(MYSQLI_ASSOC);
+
+            return $response;
         }
 
         private function referenceArray(&$array) {
