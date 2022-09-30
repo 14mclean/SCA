@@ -43,7 +43,7 @@
         $vars
     );
 
-    $result = $db->sendQuery($statement, array("userID", "location"));
+    $result = $db->sendQuery($statement);
     print_r(json_encode($result));
 ?>
 
