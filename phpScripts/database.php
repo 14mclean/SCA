@@ -50,7 +50,7 @@
 
                 for($i = 0; $i < $query->num_rows; $i++) {
                     $query->fetch();
-                    print_r($tempRow);
+                    $row = $tempRow;
                     array_push($result, $tempRow);
                 }
             } else {
