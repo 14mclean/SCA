@@ -114,7 +114,10 @@ function addExpert(userID, location) {
     .then(response => response.json())
     .then(data => {
         for(const resource of data) {
-            newResult.appendChild(document.createTextNode(resource["name"]));
+            const newLink = document.createElement("a");
+            newLink.setAttribute("href", resource["link"]);
+            newLink.appendChild(document.createTextNode(resource["name"]))
+            newResult.appendChild(newLink);
         }
     });
 
