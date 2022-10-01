@@ -23,8 +23,8 @@
                     
                 </div>
 
-                <input type="email" placeholder="Email" name="email" id="email"><br>
-                <input type="password" placeholder="Password" name="password" id="passwordObscured"> <img class="eyeIcon" src="assets/openEye.png">
+                <input type="email" placeholder="Email" name="email" id="email" required="required"><br>
+                <input type="password" placeholder="Password" name="password" id="passwordObscured" required="required" autocomplete="current-password"> <img class="eyeIcon" src="assets/openEye.png">
                 <button type="submit">Login</button>
             </form>
             
