@@ -46,8 +46,8 @@
             </div>
 
             <form method="post" action="phpScripts/expertSignup.php"> 
-                <input type="email" placeholder="Email" name="email" id="email"><br>
-                <input type="password" placeholder="Password" name="password" id="passwordObscured"> <img class="eyeIcon" src="assets/openEye.png">
+                <input type="email" placeholder="Email" name="email" id="email" required="required"><br>
+                <input type="password" placeholder="Password" name="password" id="passwordObscured" autocomplete="new-password" required="required"> <img class="eyeIcon" src="assets/openEye.png">
                 <button type="submit">Sign Up</button>
             </form>
 
