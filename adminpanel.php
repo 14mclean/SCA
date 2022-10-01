@@ -43,8 +43,8 @@
                 echo("<tr><td>Email</td><td>Organisation</td><td>Location</td><td>Approve Expert</td><td>Block Email</td>");
                 foreach($result as $row) {
                     $email = $row["email"];
-                    $org = $row["org"];
-                    $loc = $row["loc"];
+                    $org = $row["organisation"];
+                    $loc = $row["location"];
 
                     echo("<tr>");
                     echo("<td>$email</td>");
