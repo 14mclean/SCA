@@ -74,7 +74,7 @@ abstract class Controller {
 
                 $id = $this->gateway->create($data);
 
-                http_response_code(201)
+                http_response_code(201);
                 echo json_encode([
                     "message" => "$this->resource_name added",
                     "id" => $id
