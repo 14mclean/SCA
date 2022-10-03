@@ -1,7 +1,7 @@
 <?php
 
 class ExpertController {
-    public function __construct(private ProductGateway $gateway) {}
+    public function __construct(private ExpertGateway $gateway) {}
 
     public function process_request(string $method, ?string $id) {
         if($id) {
