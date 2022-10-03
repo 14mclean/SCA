@@ -16,6 +16,7 @@
     $id = $parts[1] ?? null;
 
     $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3"); // config file for hardcoded data?
+    
     $gateway = new ExpertGateway($db);
     
     $controller = new ExpertController($gateway);
