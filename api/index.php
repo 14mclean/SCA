@@ -18,5 +18,5 @@
     $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3"); // config file for hardcoded data?
     $gateway = new ExpertGateway($db);
 
-    $controller = new ExpertController($db);
+    $controller = new ExpertController($gateway);
     $controller->process_request($_SERVER["REQUEST_METHOD"], $id);
