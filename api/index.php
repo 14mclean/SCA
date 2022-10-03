@@ -1,6 +1,7 @@
 <?php
     declare(strict_types=1);
     spl_autoload_register(function($class) {require __DIR__ . "/$class.php";});
+    set_error_handler("ErrorHandler::handle_error");
     set_exception_handler("ErrorHandler::handle_exception");
 
     header("Content-type: application/json; charset=UTF-8");
