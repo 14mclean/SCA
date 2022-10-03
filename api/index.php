@@ -20,5 +20,6 @@
     $gateway = new ExpertGateway($db);
     
     $controller = new ExpertController($gateway);
-    print_r($_SERVER["REQUEST_METHOD"]);
+    var_dump($_SERVER);
+    exit();
     $controller->process_request($_SERVER["REQUEST_METHOD"], $id);
