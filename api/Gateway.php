@@ -1,6 +1,6 @@
 <?php
 
-public interface Gateway {
+interface Gateway {
     public function __construct(Database $db);
     public function get_all(): array;
     public function create(array $data): string;
