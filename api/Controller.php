@@ -15,7 +15,7 @@ abstract class Controller {
     protected function process_single_resource(string $method, string $id): void {
         $resource = $this->gateway->get($id);
 
-        if(!$expert) {
+        if(!$resource) {
             http_response_code(404);
             echo json_encode(["message" => "$this->resource_name not found"]);
             return;
@@ -36,7 +36,7 @@ abstract class Controller {
                     break;
                 }
 
-                $rows_affected = $this->gateway->update($expert, $data);
+                $rows_affected = $this->gateway->update($resource, $data);
 
                 echo json_encode([
                     "message" => "$this->resource_name $id updated",
