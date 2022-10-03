@@ -11,7 +11,7 @@ abstract class Controller {
         }
     }
 
-    private function process_single_resource(string $method, string $id): void {
+    protected function process_single_resource(string $method, string $id): void {
         $resource = $this->gateway->get($id);
 
         if(!$expert) {
@@ -56,7 +56,7 @@ abstract class Controller {
         }
     }
 
-    private function process_collection_resource(string $method): void {
+    protected function process_collection_resource(string $method): void {
         switch($method) {
             case "GET":
                 echo json_encode($this->gateway->get_all());
@@ -87,5 +87,5 @@ abstract class Controller {
         }
     }
 
-    private abstract function get_validation_errors(array $data, bool $is_new = true): array;
+    protected abstract function get_validation_errors(array $data, bool $is_new = true): array;
 }
