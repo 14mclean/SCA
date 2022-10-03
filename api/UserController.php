@@ -1,8 +1,8 @@
 <?php
 
-class ResourceController implements Controller{
+class UserController {
     public function __construct(ResourceGateway $gateway) {
-        parent::__construct($gateway, "Expert");
+        parent::__construct($gateway, "User");
     }
 
     private function get_validation_errors(array $data, bool $is_new = true): array {
