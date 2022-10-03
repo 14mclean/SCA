@@ -12,7 +12,7 @@ class ExpertGateway {
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function create(array $data): void {
+    public function create(array $data): string {
         $statemnet->connection->prepare("INSERT INTO Experts (userID, adminVerified) VALUES (:userid, 0)");
         $statement->bindValue(":userid", $data["userID"], PDO::PARAM_STR);
         $statement->execute();
