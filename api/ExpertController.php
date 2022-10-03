@@ -5,7 +5,7 @@ class ExpertController extends Controller{
         parent::__construct($gateway, "Expert");
     }
 
-    private function get_validation_errors(array $data, bool $is_new = true): array {
+    protected function get_validation_errors(array $data, bool $is_new = true): array {
         $errors = [];
 
         // do field validation
