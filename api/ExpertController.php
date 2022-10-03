@@ -1,9 +1,7 @@
 <?php
 
 class ExpertController {
-    public function __construct(private ExpertGateway $gateway) {
-        var_dump($this->$gateway);
-    }
+    public function __construct(private ExpertGateway $gateway) {}
 
     public function process_request(string $method, ?string $id) {
         if($id) {
@@ -20,7 +18,7 @@ class ExpertController {
     private function process_collection_resource($method): void {
         switch($method) {
             case "GET":
-                echo json_encode($this->$gateway->get_all());
+                echo json_encode($this->gateway->get_all());
                 break;
         }
     }
