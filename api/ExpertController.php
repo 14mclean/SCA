@@ -22,7 +22,13 @@ class ExpertController {
                 break;
             case "POST":
                 $data = (array) json_decode(file_get_contents("php://input"), true);
-                var_dump($data);
+                $id = $this->gateway->create($data);
+
+                echo json_encode([
+                    "message" => "Expert added",
+                    "id" => $id
+                ])
+
                 break;
         }
     }
