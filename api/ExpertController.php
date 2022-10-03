@@ -27,7 +27,7 @@ class ExpertController {
                 echo json_encode([
                     "message" => "Expert added",
                     "id" => $id
-                ])
+                ]);
 
                 break;
         }
