@@ -21,7 +21,7 @@ switch($parts[0]) {
     case "users":
         $id = $parts[1] ?? null;
         $gateway = new UserGateway($db);
-        $controller = new ExpertController($gateway);
+        $controller = new UserController($gateway);
         $controller->process_request($_SERVER["REQUEST_METHOD"], $id);
         break;
     default:
