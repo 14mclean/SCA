@@ -20,6 +20,10 @@ class ExpertController {
             case "GET":
                 echo json_encode($this->gateway->get_all());
                 break;
+            case "POST":
+                $data = file_get_contents("php://input");
+                var_dump($data);
+                break;
         }
     }
 }
