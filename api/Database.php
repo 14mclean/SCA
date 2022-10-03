@@ -10,11 +10,9 @@ class Database {
 
     public function get_connection(): PDO {
         $dsn = "mysql:host={$this->host};dbname={$this->name};charset=utf8";
-        return new PDO(
-            $dsn,
-            $this->username,
-            $this->password,
-            [PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_STRINGIFY_FETCHES => false]
-        );
+        $pdo = new PDO($dsn, $this->username, $this->password);
+        $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        $pdo->setAttribute(PDO::ATTR_STRINGIFY_FETCHES, false);
+        return $pdo;
     }
 }
