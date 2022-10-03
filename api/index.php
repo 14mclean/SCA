@@ -14,7 +14,7 @@
 
     $id = $parts[1] ?? null;
 
-    $db = Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3"); // config file for hardcoded data?
+    $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3"); // config file for hardcoded data?
     $db->get_connection();
 
     $controller = new ExpertController;
