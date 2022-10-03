@@ -13,16 +13,14 @@ $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPan
 
 switch($parts[0]) {
     case "experts":
-        $id = $parts[1] ?? null;
         $gateway = new ExpertGateway($db);
         $controller = new ExpertController($gateway);
-        $controller->process_request($_SERVER["REQUEST_METHOD"], $id);
+        $controller->process_request($_SERVER["REQUEST_METHOD"], $parts);
         break;
     case "users":
-        $id = $parts[1] ?? null;
         $gateway = new UserGateway($db);
         $controller = new UserController($gateway);
-        $controller->process_request($_SERVER["REQUEST_METHOD"], $id);
+        $controller->process_request($_SERVER["REQUEST_METHOD"], $parts);
         break;
     default:
         http_response_code(404);

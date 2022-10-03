@@ -13,6 +13,6 @@ class ErrorHandler {
     }
 
     public static function handle_error(int $errno, string $errstring, string $errfile, int $errline): bool {
-        throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
+        throw new ErrorException($errstring, 0, $errno, $errfile, $errline);
     }
 }

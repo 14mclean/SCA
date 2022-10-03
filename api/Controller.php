@@ -3,7 +3,8 @@
 abstract class Controller {
     public function __construct(private Gateway $gateway, private string $resource_name) {}
 
-    public function process_request(string $method, ?string $id): void {
+    public function process_request(string $method, array $url_parts): void {
+        $id = $url_parts[1] ?? null;
         if($id) {
             $this->process_single_resource($method, $id);
         } else {
