@@ -1,6 +1,6 @@
 <?php
 
-public abstract class Controller {
+abstract class Controller {
     public function __construct(private ExpertGateway $gateway, private string $resource_name) {}
 
     public function process_request(string $method, ?string $id): void {
