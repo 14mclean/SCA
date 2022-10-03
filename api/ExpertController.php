@@ -1,7 +1,7 @@
 <?php
 
 class ExpertController extends Controller{
-    public function __construct(ResourceGateway $gateway) {
+    public function __construct(ExpertGateway $gateway) {
         parent::__construct($gateway, "Expert");
     }
 
