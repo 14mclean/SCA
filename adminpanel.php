@@ -47,7 +47,7 @@
                     $loc = $row["location"];
 
                     echo("<tr>");
-                    echo("<td>$email</td>");
+                    echo("<td class='unapprovedEmail'>$email</td>");
                     echo("<td>$org</td>");
                     echo("<td>$loc</td>");
                     echo('<td> <button><img src="assets/check.png"></button> </td>');
@@ -83,7 +83,7 @@
                     $email = $row['email'];
 
                     echo("<tr>");
-                    echo("<td>$email</td>");
+                    echo("<td class='adminEmail'>$email</td>");
                     echo('<td><button><img src="assets/remove.png"></button></td>');
                     echo("</tr>");
                 }

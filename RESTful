@@ -1,0 +1,22 @@
+approve expert
+expert signup
+get experts from filters
+update expert
+    get resources for expert
+    update resources for expert
+
+get link status ??
+remove admin
+user signup
+
+
+
+Input and output with json
+Nouns rather than verbs for paths
+Handle erros by returning standard error codes (HTTP codes)
+Use SSL or TLS
+OAuth 2.0
+Cache data (apicache)
+
+/expert/{email}/approve
+/expert/{email}
