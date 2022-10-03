@@ -10,6 +10,7 @@ class ExpertGateway {
     public function get_all(): array {
         $statement = $this->connection->prepare("SELECT * FROM Experts");
         $statement->execute();
+        $statement->setFetchMode(PDO::FETCH_ASSOC);
         return $statement->fetchAll();
     }
 }
