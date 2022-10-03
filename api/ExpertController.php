@@ -18,7 +18,8 @@ class ExpertController {
     private function process_collection_resource($method): void {
         switch($method) {
             case "GET":
-                echo json_encode($this->gateway->get_all());
+                //echo json_encode($this->gateway->get_all());
+                print_r($this->gateway->get_all());
                 break;
         }
     }
