@@ -1,6 +1,6 @@
 <?php
 
-class UserGateway {
+class UserGateway implements Gateway{
     private PDO $connection;
 
     public function __construct(Database $db) {

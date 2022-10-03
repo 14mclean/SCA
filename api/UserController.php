@@ -1,6 +1,6 @@
 <?php
 
-class UserController {
+class UserController extends Controller {
     public function __construct(ResourceGateway $gateway) {
         parent::__construct($gateway, "User");
     }

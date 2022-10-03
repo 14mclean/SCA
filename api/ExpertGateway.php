@@ -1,6 +1,6 @@
 <?php
 
-class ExpertGateway extends Gateway implements GatewayInterface{
+class ExpertGateway implements Gateway {
     private PDO $connection;
 
     public function __construct(Database $db) {
