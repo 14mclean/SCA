@@ -1,6 +1,7 @@
 <?php
     declare(strict_types=1);
     spl_autoload_register(function($class) {require __DIR__ . "/$class.php";});
+    set_exception_handler("ErrorHandler::handle_exception");
 
     header("Content-type: application/json; charset=UTF-8");
 
@@ -15,7 +16,7 @@
     $id = $parts[1] ?? null;
 
     $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3"); // config file for hardcoded data?
-    $db->get_connection();
+    $gateway = new ExpertGateway($db);
 
-    $controller = new ExpertController;
+    $controller = new ExpertController($db);
     $controller->process_request($_SERVER["REQUEST_METHOD"], $id);

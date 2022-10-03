@@ -1,6 +1,8 @@
 <?php
 
 class ExpertController {
+    public function __construct(private ProductGateway $gateway) {}
+
     public function process_request(string $method, ?string $id) {
         if($id) {
             $this->process_single_resource($method, $id);
@@ -16,7 +18,7 @@ class ExpertController {
     private function process_collection_resource($method): void {
         switch($method) {
             case "GET":
-                echo json_encode(["id" => 123]); // replace with getting all experts
+                echo json_encode($this->$gateway->get_all());
                 break;
         }
     }
