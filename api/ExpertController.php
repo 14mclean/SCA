@@ -11,11 +11,11 @@ class ExpertController {
         }
     }
 
-    private function process_single_resource($method, $id): void {
+    private function process_single_resource(string $method, string $id): void {
 
     }
 
-    private function process_collection_resource($method): void {
+    private function process_collection_resource(string $method): void {
         switch($method) {
             case "GET":
                 echo json_encode($this->gateway->get_all());
