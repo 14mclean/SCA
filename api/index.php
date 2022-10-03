@@ -1,5 +1,5 @@
 <?php
-    spl_autoload_register(function($class) {require __DIR__ . "/$class.php";})
+    spl_autoload_register(function($class) {require __DIR__ . "/$class.php";});
 
     $url = substr($_SERVER["REQUEST_URI"], 4);
     $parts = array_slice(explode("/", $url),1);
