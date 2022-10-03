@@ -1,7 +1,7 @@
 <?php
 
 abstract class Controller {
-    public function __construct(private ExpertGateway $gateway, private string $resource_name) {}
+    public function __construct(private Gateway $gateway, private string $resource_name) {}
 
     public function process_request(string $method, ?string $id): void {
         if($id) {
