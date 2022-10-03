@@ -13,4 +13,4 @@
     var_dump($id);
 
     $controller = new ExpertController;
-    $controller->proccess_request($_SERVER["REQUEST_METHOD"], $id);
+    $controller->process_request($_SERVER["REQUEST_METHOD"], $id);
