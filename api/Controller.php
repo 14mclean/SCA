@@ -48,7 +48,7 @@ abstract class Controller {
                 echo json_encode([
                     "message" => "$this->resource_name $id deleted",
                     "rows" => $rows_affected
-                ])
+                ]);
                 break;
             default:
                 http_response_code(405);
