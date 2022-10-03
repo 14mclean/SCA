@@ -68,7 +68,7 @@ abstract class Controller {
 
                 if(!empty($errors)) {
                     http_response_code(422);
-                    echo json_encode(["errors" => $errors])
+                    echo json_encode(["errors" => $errors]);
                     break;
                 }
 
