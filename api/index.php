@@ -1,4 +1,5 @@
 <?php
+    declare(strict_types=1);
     spl_autoload_register(function($class) {require __DIR__ . "/$class.php";});
 
     $url = substr($_SERVER["REQUEST_URI"], 4);
@@ -10,7 +11,6 @@
     }
 
     $id = $parts[1] ?? null;
-    var_dump($id);
 
     $controller = new ExpertController;
     $controller->process_request($_SERVER["REQUEST_METHOD"], $id);
