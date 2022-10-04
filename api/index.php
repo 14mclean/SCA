@@ -22,6 +22,11 @@ switch($parts[0]) {
         $controller = new UserController($gateway);
         $controller->process_request($_SERVER["REQUEST_METHOD"], $parts);
         break;
+    case "expertresources":
+        $gateway = new ExpertResourceGateway($db);
+        $controller = new ExpertResourceController($gateway);
+        $controller->process_request($_SERVER["REQUEST_METHOD"], $parts);
+        break;
     default:
         http_response_code(404);
         exit();
