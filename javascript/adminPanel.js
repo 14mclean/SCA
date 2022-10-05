@@ -1,5 +1,5 @@
 //import {API, API_METHOD_DELETE, API_METHOD_GET, API_METHOD_PATCH, API_METHOD_POST} from './API.js';
-require('./API.js');
+import './API.js';
 
 // ----- HTML ELements -----
 const approve_expert_buttons = document.querySelectorAll(".approveButton");
