@@ -16,7 +16,7 @@ export class API {
 
         switch(method){
             case(this.API_METHOD_GET):
-                return this.#get_requset(path);
+                return this.#get_request(path);
             case(this.API_METHOD_POST):
                 return this.#post_request(path);
             case(this.API_METHOD_PATCH):
