@@ -51,8 +51,8 @@
                     echo("<td class='unapprovedEmail'>$email</td>");
                     echo("<td>$org</td>");
                     echo("<td>$loc</td>");
-                    echo('<td> <button class="approveButton" id=$userID><img src="assets/check.png"></button> </td>');
-                    echo('<td> <button class="blockButton" email=$email><img src="assets/remove.png"></button> </td>');
+                    echo("<td> <button class='approveButton' id=$userID><img src='assets/check.png'></button> </td>");
+                    echo("<td> <button class='blockButton' email=$email><img src='assets/remove.png'></button> </td>");
                     echo("</tr>");
                 }
                 echo("</table>");
