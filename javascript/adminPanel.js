@@ -21,7 +21,7 @@ for(const button of remove_admin_buttons) {
 function approve_expert(event) {
     let data = {"adminApproved": 1};
     API.api_request("experts/"+event.currentTarget.id, API.API_METHOD_PATCH, JSON.stringify(data));
-    location.reload();
+    //location.reload();
 }
 
 
@@ -29,7 +29,7 @@ function approve_expert(event) {
 function remove_admin(event) {
     let data = {"userLevel": "Teacher"};
     API.api_request("users/"+event.currentTarget.id, API.API_METHOD_PATCH, JSON.stringify(data));
-    location.reload();
+    //location.reload();
 }
 
 
@@ -37,5 +37,5 @@ function remove_admin(event) {
 function block_email(event) { // *** TODO ***
     let data = {"email": event.currentTarget.email, "date": "?current date?"};
     API.api_request("blocked/", API.API_METHOD_POST, JSON.stringify(data));
-    location.reload();
+    //location.reload();
 }
