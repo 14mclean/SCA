@@ -51,8 +51,8 @@
                     echo("<td class='unapprovedEmail'>$email</td>");
                     echo("<td>$org</td>");
                     echo("<td>$loc</td>");
-                    echo('<td> <button id=$userID><img src="assets/check.png"></button> </td>');
-                    echo('<td> <button email=$email><img src="assets/remove.png"></button> </td>');
+                    echo('<td> <button class="approveButton" id=$userID><img src="assets/check.png"></button> </td>');
+                    echo('<td> <button class="blockButton" email=$email><img src="assets/remove.png"></button> </td>');
                     echo("</tr>");
                 }
                 echo("</table>");
@@ -62,7 +62,7 @@
         <section id="admins">
             <div>
                 <h1>Admin Users</h1>
-                <button><img src="assets/plus.png"></button>
+                <button class="newAdminButton"><img src="assets/plus.png"></button>
             </div>
             
             <?php
@@ -85,7 +85,7 @@
 
                     echo("<tr>");
                     echo("<td class='adminEmail'>$email</td>");
-                    echo('<td><button><img src="assets/remove.png"></button></td>');
+                    echo('<td><button class="demoteAdminButton"><img src="assets/remove.png"></button></td>');
                     echo("</tr>");
                 }
                 echo("</table>");

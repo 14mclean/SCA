@@ -1,10 +1,10 @@
 import API from 'API.js';
 
 // ----- HTML ELements -----
-const approve_expert_buttons = document.querySelectorAll();
-const block_email_buttons = document.querySelectorAll();
-const new_admin_button = document.querySelector();
-const remove_admin_buttons = document.querySelectorAll();
+const approve_expert_buttons = document.querySelectorAll(".approveButton");
+const block_email_buttons = document.querySelectorAll(".blockButton");
+const new_admin_button = document.querySelector(".newAdminButton");
+const remove_admin_buttons = document.querySelectorAll(".demoteAdminButton");
 
 
 // ----- Event Listeners -----
