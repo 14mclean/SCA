@@ -6,11 +6,11 @@ const remove_admin_buttons = document.querySelectorAll(".demoteAdminButton");
 
 
 // ----- Event Listeners -----
-for(const button in approve_expert_buttons) {
+for(const button of approve_expert_buttons) {
     button.addEventListener("click", approve_expert);
 }
 
-for(const button in remove_admin_buttons) {
+for(const button of remove_admin_buttons) {
     button.addEventListener("click", remove_admin);
 }
 
