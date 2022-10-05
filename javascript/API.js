@@ -1,8 +1,8 @@
 export default class API {
     static API_METHOD_GET = 1;
-    static API_METHOD_PATCH = 1;
-    static API_METHOD_POST = 1;
-    static API_METHOD_DELETE = 1;
+    static API_METHOD_PATCH = 2;
+    static API_METHOD_POST = 3;
+    static API_METHOD_DELETE = 4;
     static #url = "/api/";
     static #methods = {
         API_METHOD_GET:"GET",
