@@ -3,7 +3,7 @@ export default class API {
     static API_METHOD_PATCH = 1;
     static API_METHOD_POST = 1;
     static API_METHOD_DELETE = 1;
-    static #url = "schoolcitizenassemblies/api/";
+    static #url = "/api/";
     static #methods = {
         API_METHOD_GET:"GET",
         API_METHOD_PATCH:"PATCH",
