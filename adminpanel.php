@@ -33,15 +33,16 @@
 
                 $db = new Database();
                 $statement = $db->prepareStatement(
-                    "SELECT Users.email, Experts.organisation, Experts.location FROM Users INNER JOIN Experts ON Users.userID = Experts.userID WHERE Experts.adminVerified = 0",
+                    "SELECT Users.userID Users.email, Experts.organisation, Experts.location FROM Users INNER JOIN Experts ON Users.userID = Experts.userID WHERE Experts.adminVerified = 0",
                     "",
                     array()
                 );
-                $result = $db->sendQuery($statement, array("email", "org", "loc"));
+                $result = $db->sendQuery($statement, array("userID", "email", "org", "loc"));
 
                 echo("<table>");
                 echo("<tr><td>Email</td><td>Organisation</td><td>Location</td><td>Approve Expert</td><td>Block Email</td>");
                 foreach($result as $row) {
+                    $userID = $row["userID"];
                     $email = $row["email"];
                     $org = $row["organisation"];
                     $loc = $row["location"];
@@ -50,8 +51,8 @@
                     echo("<td class='unapprovedEmail'>$email</td>");
                     echo("<td>$org</td>");
                     echo("<td>$loc</td>");
-                    echo('<td> <button><img src="assets/check.png"></button> </td>');
-                    echo('<td> <button><img src="assets/remove.png"></button> </td>');
+                    echo('<td> <button id=$userID><img src="assets/check.png"></button> </td>');
+                    echo('<td> <button email=$email><img src="assets/remove.png"></button> </td>');
                     echo("</tr>");
                 }
                 echo("</table>");

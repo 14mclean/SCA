@@ -1,45 +1,38 @@
-class PostForm extends XMLHttpRequest {
-    constructor() {
-        super();
-        this.form = new FormData();
-    }
-
-    append(name, value,) {
-        this.form.append(name, value);
-    }
-
-    send(path) {
-        super.open("POST", path);
-        super.send(this.form);
-    }
-}
+import API from 'API.js';
 
 // ----- HTML ELements -----
-const approveExpertButtons = document.querySelectorAll();
-const blockEmailButtons = document.querySelectorAll();
-const newAdminButton = document.querySelector();
-const removeAdminButtons = document.querySelectorAll();
-const unapprovedEmails = document.querySelectorAll();
+const approve_expert_buttons = document.querySelectorAll();
+const block_email_buttons = document.querySelectorAll();
+const new_admin_button = document.querySelector();
+const remove_admin_buttons = document.querySelectorAll();
 
 
 // ----- Event Listeners -----
+for(const button in approve_expert_buttons) {
+    button.addEventListener("click", approve_expert);
+}
+
+for(const button in remove_admin_buttons) {
+    button.addEventListener("click", remove_admin);
+}
 
 
 // ----- Approve expert -----
-for(var i = 0; i < approveButtons.length; i++) {
-    approveButtons[i].associatedEmail = unapprovedEmails[i].textContent;
+function approve_expert(event) {
+    data = {"adminApproved": 1};
+    API.api_request("experts/"+event.currentTarget.id, "PATCH", JSON.stringify(data));
 }
 
-function approveExpert(event) {
-    form = new PostForm();
-    form.append("email", event.currentTarget.associatedEmail);
-    form.send("../phpScripts/approveExpert.php");
-    // refresh page
+
+// ----- Demote Admin -----
+function remove_admin(event) {
+    data = {"userLevel": "Teacher"};
+    API.api_request("users/"+event.currentTarget.id, "PATCH", JSON.stringify(data));
 }
 
-function removeAdmin(event) {
-    form = new PostForm();
-    form.append("email", event.currentTarget.associatedEmail);
-    form.send("../phpScripts/approveExpert.php");
-    // refresh page
+
+// ----- Block E-Mail -----
+function block_email(event) { // *** TODO ***
+    data = {"email": event.currentTarget.email, "date": "?current date?"};
+    API.api_request("blocked/", "PATCH", JSON.stringify(data));
 }
