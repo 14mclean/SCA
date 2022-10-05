@@ -11,6 +11,7 @@ $url = substr($_SERVER["REQUEST_URI"], 4); // remove "/api" from URL
 $parts = array_slice(explode("/", $url),1);
 $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3"); // config file for hardcoded data?
 
+echo $parts;
 switch($parts[0]) {
     case "experts":
         $gateway = new ExpertGateway($db);
