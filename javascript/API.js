@@ -1,4 +1,4 @@
-export class API {
+export default class API {
     static API_METHOD_GET = 1;
     static API_METHOD_PATCH = 1;
     static API_METHOD_POST = 1;
