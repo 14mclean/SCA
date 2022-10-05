@@ -1,4 +1,4 @@
-class API {
+export class API {
     static API_METHOD_GET = 1;
     static API_METHOD_PATCH = 1;
     static API_METHOD_POST = 1;
@@ -82,5 +82,3 @@ class API {
         });
     }
 }
-
-export {API, API_METHOD_DELETE, API_METHOD_GET, API_METHOD_PATCH, API_METHOD_POST};
