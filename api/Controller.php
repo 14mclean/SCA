@@ -4,6 +4,7 @@ abstract class Controller {
     public function __construct(private Gateway $gateway, private string $resource_name) {}
 
     public function process_request(string $method, array $url_parts): void {
+        var_dump($url_parts);
         $id = $url_parts[1] ?? null;
         if($id) {
             $this->process_single_resource($method, $id);
@@ -58,7 +59,6 @@ abstract class Controller {
     }
 
     protected function process_collection_resource(string $method): void {
-        var_dump($method);
         switch($method) {
             case "GET":
                 echo json_encode($this->gateway->get_all());
