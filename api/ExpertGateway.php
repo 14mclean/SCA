@@ -27,10 +27,7 @@ class ExpertGateway implements Gateway {
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function update(array $current_expert_details, array $new_expert_details): int {
-        var_dump($current_expert_details);        
-        var_dump($new_expert_details);
-        
+    public function update(array $current_expert_details, array $new_expert_details): int {        
         $statement = $this->connection->prepare(
             "UPDATE Experts 
             SET adminVerified = :adminVerified, organisation = :organisation, ages = :ages, expertise = :expertise,
