@@ -58,6 +58,7 @@ abstract class Controller {
     }
 
     protected function process_collection_resource(string $method): void {
+        var_dump($method);
         switch($method) {
             case "GET":
                 echo json_encode($this->gateway->get_all());
