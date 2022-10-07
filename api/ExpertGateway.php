@@ -38,7 +38,7 @@ class ExpertGateway implements Gateway {
             studentResources = :studentResources, location = :location
             WHERE userID = :userid;"
             );
-        $statement->bindValue(":adminVerified", $new_expert_details["name"] ?? $current_expert_details["name"], PDO::PARAM_STR);
+        $statement->bindValue(":adminVerified", $new_expert_details["adminVerified"] ?? $current_expert_details["adminVerified"], PDO::PARAM_STR);
         $statement->bindValue(":organisation", $new_expert_details["organisation"] ?? $current_expert_details["organisation"], PDO::PARAM_STR);
         $statement->bindValue(":ages", $new_expert_details["ages"] ?? $current_expert_details["ages"]); // which PDO type
         $statement->bindValue(":expertise", $new_expert_details["expertise"] ?? $current_expert_details["expertise"], PDO::PARAM_STR);
