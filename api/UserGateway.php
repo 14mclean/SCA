@@ -14,7 +14,7 @@ class UserGateway implements Gateway{
 
     public function create(array $data): string {
         // allow for defaults
-        $statemnet->connection->prepare("INSERT INTO Users (email, passwordHash, emailVerified, userLevel) VALUES (:email, :passwordHash, :emailVerified, :userLevel)");
+        $statement = $this->connection->prepare("INSERT INTO Users (email, passwordHash, emailVerified, userLevel) VALUES (:email, :passwordHash, :emailVerified, :userLevel)");
         $statement->bindValue(":email", $data["email"], PDO::PARAM_STR);
         $statement->bindValue(":passwordHash", $data["passwordHash"], PDO::PARAM_STR);
         $statement->bindValue(":emailVerified", $data["emailVerified"], PDO::PARAM_BOOL);

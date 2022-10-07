@@ -14,7 +14,7 @@ class ExpertGateway implements Gateway {
 
     public function create(array $data): string {
         // be able to insert more than userid
-        $statemnet->connection->prepare("INSERT INTO Experts (userID, adminVerified) VALUES (:userid, 0)");
+        $statemnet = $this->connection->prepare("INSERT INTO Experts (userID, adminVerified) VALUES (:userid, 0)");
         $statement->bindValue(":userid", $data["userID"], PDO::PARAM_INT);
         $statement->execute();
         return $this->connection->lastInsertId();
