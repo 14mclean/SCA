@@ -48,7 +48,7 @@ class ExpertGateway implements Gateway {
         $statement->bindValue(":studentF2F", $new_expert_details["studentF2F"] ?? $current_expert_details["studentF2F"], PDO::PARAM_BOOL);
         $statement->bindValue(":studentResources", $new_expert_details["studentResources"] ?? $current_expert_details["studentResources"]);
         $statement->bindValue(":location", $new_expert_details["location"] ?? $current_expert_details["location"], PDO::PARAM_STR);
-        $statement->bindValue(":userid", $current_expert_details["userID"], PDO:PARAM_INT);
+        $statement->bindValue(":userid", $current_expert_details["userID"], PDO::PARAM_INT);
 
         $statement->execute();
         return $statement->rowCount();
