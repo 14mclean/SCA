@@ -13,7 +13,7 @@ class ExpertResourceGateway implements Gateway {
     }
 
     public function create(array $data): string {
-        $statemnet = $this->connection->prepare("INSERT INTO ExpertResources (userID, name, link) VALUES (:userid, :name, :link)");
+        $statement = $this->connection->prepare("INSERT INTO ExpertResources (userID, name, link) VALUES (:userid, :name, :link)");
         $statement->bindValue(":userid", $data["userID"], PDO::PARAM_INT);
         $statement->bindValue(":name", $data["name"], PDO::PARAM_STR);
         $statement->bindValue(":link", $data["link"], PDO::PARAM_STR);
