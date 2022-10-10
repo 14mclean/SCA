@@ -10,7 +10,7 @@ const remove_admin_buttons = document.querySelectorAll(".demoteAdminButton");
 // ----- Event Listeners -----
 new_admin_button.addEventListener("click", admin_form_visibility);
 document.querySelector(".popup button:not([type=\"submit\"])").addEventListener("click",admin_form_visibility);
-document.querySelector(".popup form").addEventListener("submit", approve_expert);
+document.querySelector(".popup form").addEventListener("submit", add_admin);
 
 
 for(const button of approve_expert_buttons) {
@@ -21,10 +21,25 @@ for(const button of remove_admin_buttons) {
     button.addEventListener("click", remove_admin);
 }
 
+// ----- Approve expert -----
+function add_admin(event) {
+    preventDefault();
+
+    let email = document.querySelector(".popup form input").value;
+    response = API.api_request("users"+email, API.API_METHOD_GET);
+
+    for(const record in response) {
+        if(record["email"] == email) {
+            API.api_request("users/"+record["userID"], API_METHOD_PATCH, {"userLevel":"Admin"});
+        }
+    }
+    
+    //location.reload();
+}
+
 
 // ----- Approve expert -----
 function approve_expert(event) {
-    preventDefault();
     let data = {"adminVerified": 1};
     API.api_request("experts/"+event.currentTarget.id, API.API_METHOD_PATCH, JSON.stringify(data));
     location.reload();
