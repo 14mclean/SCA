@@ -96,7 +96,7 @@
             <div><h1>E-Mail Notifications</h1></div>
         </section>
 
-        <div class="blurCover">
+        <div class="blurCover" style="opacity: 0; height: 0px;">
             <div class="popup">
                 <button>🠔</button>
                 <form class="newAdminForm">
