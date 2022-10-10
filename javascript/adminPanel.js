@@ -57,7 +57,9 @@ function admin_form_visibility(event) {
     console.log(blurDiv.style.opacity);
     if(blurDiv.style.opacity != 1) {
         blurDiv.style.opacity = 1;
+        blurDiv.style.height = "100vh";
     } else {
         blurDiv.style.opacity = 0;
+        blurDiv.style.height = 0;
     }
 }
