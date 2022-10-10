@@ -96,7 +96,7 @@ section table tbody tr td {
 }
 
 .newAdminForm h1 {
-    color: white;
+    color: grey;
     font-family: 'Open Sans';
     font-weight: 300;
     text-align: center;
@@ -106,7 +106,7 @@ section table tbody tr td {
     margin-left: 15%;
     width: 70%;
     border-radius: 5px;
-    border-width: 0;
+    border-color: grey;
     height: 30px;
 }
 
@@ -116,7 +116,7 @@ section table tbody tr td {
     width: 30%;
     height: 10%;
     background-color: grey;
-    color: lightgrey;
+    color: white;
     border-radius: 5px;
     margin-bottom: 10%;
 }
