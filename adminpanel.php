@@ -97,7 +97,12 @@
         </section>
 
         <div class="blurCover">
-            Test
+            <form class="newAdminForm">
+                <button><</button>
+                <h1>New Admin</h1>
+                <input type="email" placeholder="Email" name="email" required=required>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </body>
     <script type="module" src="javascript/adminPanel.js"></script>

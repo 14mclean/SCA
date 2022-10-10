@@ -82,3 +82,8 @@ section table tbody tr td {
     backdrop-filter: blur(6px);
 }
 
+.newAdminForm {
+    width: 50vw;
+    height: 50vh;
+    background-color: white;
+}
