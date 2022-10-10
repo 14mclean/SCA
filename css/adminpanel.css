@@ -82,7 +82,7 @@ section table tbody tr td {
     backdrop-filter: blur(6px);
 }
 
-.newAdminForm {
+.popup {
     position: relative;
     top: 50vh;
     left: 50vw;
@@ -93,6 +93,11 @@ section table tbody tr td {
     border-color: grey;
     border-radius: 15px;
     border-width: 2px;
+}
+
+.newAdminForm {
+    
+    
 }
 
 .newAdminForm h1 {

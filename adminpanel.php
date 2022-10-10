@@ -97,12 +97,14 @@
         </section>
 
         <div class="blurCover">
-            <form class="newAdminForm">
-                <button onclick="admin_form_visibility()">🠔</button>
-                <h1>New Admin</h1>
-                <input type="email" placeholder="Email" name="email" required=required>
-                <button type="submit">Submit</button>
-            </form>
+            <div class="popup">
+                <form class="newAdminForm">
+                    <button onclick="admin_form_visibility()">🠔</button>
+                    <h1>New Admin</h1>
+                    <input type="email" placeholder="Email" name="email" required=required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     </body>
     <script type="module" src="javascript/adminPanel.js"></script>
