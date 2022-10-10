@@ -33,8 +33,9 @@ function add_admin(event) {
             API.api_request("users/"+record["userID"], API_METHOD_PATCH, {"userLevel":"Admin"});
         }
     }
-    
+
     //location.reload();
+    return false;
 }
 
 
