@@ -39,3 +39,15 @@ function block_email(event) { // *** TODO ***
     //API.api_request("blocked/", API.API_METHOD_POST, JSON.stringify(data));
     //location.reload();
 }
+
+
+// ----- Show/Hide add admin -----
+function admin_form_visibility(event) {
+    const form = document.querySelector(".blurCover");
+
+    if(form.style.display == "none") {
+        form.style.display == "initial"
+    } else {
+        form.style.display == "none"
+    }
+}

@@ -62,7 +62,7 @@
         <section id="admins">
             <div>
                 <h1>Admin Users</h1>
-                <button class="newAdminButton"><img src="assets/plus.png"></button>
+                <button class="newAdminButton" onclick="admin_form_visibility()"><img src="assets/plus.png"></button>
             </div>
             
             <?php
@@ -98,7 +98,7 @@
 
         <div class="blurCover">
             <form class="newAdminForm">
-                <button>🠔</button>
+                <button onclick="admin_form_visibility()">🠔</button>
                 <h1>New Admin</h1>
                 <input type="email" placeholder="Email" name="email" required=required>
                 <button type="submit">Submit</button>
