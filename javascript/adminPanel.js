@@ -50,10 +50,8 @@ function admin_form_visibility(event) {
     let blurDiv = document.querySelector(".blurCover");
 
     if(blurDiv.style.display != "block") {
-        blurDiv.style.display == "block";
-        console.log("block");
+        blurDiv.style.display = "block";
     } else {
-        blurDiv.style.display == "none";
-        console.log("none");
+        blurDiv.style.display = "none";
     }
 }
