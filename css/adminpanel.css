@@ -90,4 +90,12 @@ section table tbody tr td {
     width: fit-content;
     height: fit-content;
     background-color: lightsteelblue;
+    border-color: steelblue;
+    border-radius: 5px;
+}
+
+.newAdminForm h1 {
+    color: white;
+    font-family: 'Open Sans';
+    font-weight: 300;
 }
