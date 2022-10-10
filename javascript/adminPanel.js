@@ -50,8 +50,8 @@ function admin_form_visibility(event) {
     const form = document.querySelector(".blurCover");
 
     if(form.style.display == "none") {
-        form.style.display == "initial"
+        form.style.display == "block";
     } else {
-        form.style.display == "none"
+        form.style.display == "none";
     }
 }
