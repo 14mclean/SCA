@@ -98,7 +98,7 @@
 
         <div class="blurCover">
             <form class="newAdminForm">
-                <button><</button>
+                <button>🠔</button>
                 <h1>New Admin</h1>
                 <input type="email" placeholder="Email" name="email" required=required>
                 <button type="submit">Submit</button>
