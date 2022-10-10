@@ -68,8 +68,9 @@ export default class API {
     }
 
     static #patch_request(path, body_data) {
+        console.log(body_data);
         fetch(path, {
-            method: "PATCH",
+            method: 'PATCH',
             headers: {'Content-Type': 'application/json'},
             body: body_data
         })
