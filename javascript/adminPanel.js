@@ -21,7 +21,7 @@ for(const button of remove_admin_buttons) {
 function approve_expert(event) {
     let data = {"adminVerified": 1};
     API.api_request("experts/"+event.currentTarget.id, API.API_METHOD_PATCH, JSON.stringify(data));
-    //location.reload();
+    location.reload();
 }
 
 
