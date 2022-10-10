@@ -36,6 +36,6 @@ function remove_admin(event) {
 // ----- Block E-Mail -----
 function block_email(event) { // *** TODO ***
     let data = {"email": event.currentTarget.email, "date": "?current date?"};
-    API.api_request("blocked/", API.API_METHOD_POST, JSON.stringify(data));
+    //API.api_request("blocked/", API.API_METHOD_POST, JSON.stringify(data));
     //location.reload();
 }
