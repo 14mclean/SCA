@@ -121,6 +121,6 @@ section table tbody tr td {
     margin-bottom: 10%;
 }
 
-.popup button {
+.popup button:not([type="submit"]) {
     font-size: 28px;
 }

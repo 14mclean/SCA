@@ -8,6 +8,10 @@ const remove_admin_buttons = document.querySelectorAll(".demoteAdminButton");
 
 
 // ----- Event Listeners -----
+new_admin_button.addEventListener("click", admin_form_visibility);
+document.querySelector(".popup button:not([type=\"submit\"])").addEventListener("click",admin_form_visibility);
+
+
 for(const button of approve_expert_buttons) {
     button.addEventListener("click", approve_expert);
 }
