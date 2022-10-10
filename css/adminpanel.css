@@ -73,6 +73,7 @@ section table tbody tr td {
 }
 
 .blurCover {
+    display: block;
     backdrop-filter: blur(6px);
     z-index: 1;
     width: 100vw;
