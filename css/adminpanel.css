@@ -111,9 +111,9 @@ section table tbody tr td {
 }
 
 .newAdminForm button[type="submit"] {
-    margin-left: 45%;
+    margin-left: 30%;
     margin-top: 10%;
-    width: 10%;
+    width: 30%;
     background-color: grey;
     color: lightgrey;
 }
