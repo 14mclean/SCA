@@ -23,7 +23,7 @@ for(const button of remove_admin_buttons) {
 
 // ----- Approve expert -----
 function add_admin(event) {
-    preventDefault();
+    event.preventDefault();
 
     let email = document.querySelector(".popup form input").value;
     response = API.api_request("users"+email, API.API_METHOD_GET);
