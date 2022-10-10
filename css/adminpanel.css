@@ -91,7 +91,7 @@ section table tbody tr td {
     height: fit-content;
     background-color: lightsteelblue;
     border-color: steelblue;
-    border-radius: 5px;
+    border-radius: 15px;
     border-width: 2px;
 }
 
@@ -99,4 +99,11 @@ section table tbody tr td {
     color: white;
     font-family: 'Open Sans';
     font-weight: 300;
+    text-align: center;
+}
+
+.newAdminForm input {
+    margin-left: 15%;
+    width: 70%;
+    border-radius: 5px;
 }
