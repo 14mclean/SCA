@@ -54,7 +54,7 @@ function admin_form_visibility(event) {
     } else {
         blurDiv.style.display = "none";
     }*/
-    
+    console.log(blurDiv.style.opacity);
     if(blurDiv.style.opacity != 1) {
         blurDiv.style.opacity = 1;
     } else {
