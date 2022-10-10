@@ -87,7 +87,7 @@ section table tbody tr td {
     top: 50vh;
     left: 50vw;
     transform: translate(-50%,-50%);
-    width: 50vw;
-    height: 50vh;
+    width: fit-content;
+    height: fit-content;
     background-color: lightsteelblue;
 }
