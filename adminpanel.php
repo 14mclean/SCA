@@ -98,8 +98,8 @@
 
         <div class="blurCover">
             <div class="popup">
+                <button onclick="admin_form_visibility()">🠔</button>
                 <form class="newAdminForm">
-                    <button onclick="admin_form_visibility()">🠔</button>
                     <h1>New Admin</h1>
                     <input type="email" placeholder="Email" name="email" required=required>
                     <button type="submit">Submit</button>
