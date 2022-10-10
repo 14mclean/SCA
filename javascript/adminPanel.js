@@ -47,13 +47,13 @@ function block_email(event) { // *** TODO ***
 
 // ----- Show/Hide add admin -----
 function admin_form_visibility(event) {
-    const form = document.querySelector(".blurCover");
+    let blurDiv = document.querySelector(".blurCover");
 
-    if(form.style.display != "block") {
-        form.style.display == "block";
+    if(blurDiv.style.display != "block") {
+        blurDiv.style.display == "block";
         console.log("block");
     } else {
-        form.style.display == "none";
+        blurDiv.style.display == "none";
         console.log("none");
     }
 }
