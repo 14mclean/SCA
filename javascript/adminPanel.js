@@ -49,9 +49,15 @@ function block_email(event) { // *** TODO ***
 function admin_form_visibility(event) {
     let blurDiv = document.querySelector(".blurCover");
 
-    if(blurDiv.style.display != "block") {
+    /*if(blurDiv.style.display != "block") {
         blurDiv.style.display = "block";
     } else {
         blurDiv.style.display = "none";
+    }*/
+    
+    if(blurDiv.style.opacity != 1) {
+        blurDiv.style.opacity = 1;
+    } else {
+        blurDiv.style.opacity = 0;
     }
 }
