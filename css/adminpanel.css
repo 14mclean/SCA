@@ -81,7 +81,7 @@ section table tbody tr td {
     top: 0;
     backdrop-filter: blur(6px);
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in;
 }
 
 .popup {
