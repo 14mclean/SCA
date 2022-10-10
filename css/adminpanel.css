@@ -96,7 +96,7 @@ section table tbody tr td {
 }
 
 .newAdminForm h1 {
-    color: grey;
+    color: darkgray;
     font-family: 'Open Sans';
     font-weight: 300;
     text-align: center;
@@ -122,5 +122,5 @@ section table tbody tr td {
 }
 
 .newAdminForm button:not([type="submit"]) {
-    font-size: 32px;
+    font-size: 28px;
 }
