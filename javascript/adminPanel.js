@@ -27,7 +27,7 @@ function add_admin(event) {
 
     let email = document.querySelector(".popup form input").value;
     let response = API.api_request("users", API.API_METHOD_GET);
-
+    console.log(typeof response);
     for(const record of response) {
         if(record["email"] == email) {
             API.api_request("users/"+record["userID"], API_METHOD_PATCH, {"userLevel":"Admin"});
