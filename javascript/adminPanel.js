@@ -49,9 +49,9 @@ function block_email(event) { // *** TODO ***
 function admin_form_visibility(event) {
     const form = document.querySelector(".blurCover");
 
-    if(form.style.display == "none") {
-        form.style.display == "block";
-    } else {
+    if(form.style.display != "block") {
         form.style.display == "none";
+    } else {
+        form.style.display == "block";
     }
 }
