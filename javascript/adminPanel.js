@@ -26,7 +26,7 @@ function add_admin(event) {
     event.preventDefault();
 
     let email = document.querySelector(".popup form input").value;
-    response = API.api_request("users"+email, API.API_METHOD_GET);
+    let response = API.api_request("users"+email, API.API_METHOD_GET);
 
     for(const record in response) {
         if(record["email"] == email) {
