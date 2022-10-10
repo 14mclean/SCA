@@ -95,11 +95,6 @@ section table tbody tr td {
     border-width: 2px;
 }
 
-.newAdminForm {
-    
-    
-}
-
 .newAdminForm h1 {
     color: black;
     font-family: 'Open Sans';
@@ -126,6 +121,6 @@ section table tbody tr td {
     margin-bottom: 10%;
 }
 
-.newAdminForm button:not([type="submit"]) {
+.popup button {
     font-size: 28px;
 }
