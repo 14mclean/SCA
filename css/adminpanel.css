@@ -92,6 +92,7 @@ section table tbody tr td {
     background-color: lightsteelblue;
     border-color: steelblue;
     border-radius: 5px;
+    border-width: 2px;
 }
 
 .newAdminForm h1 {
