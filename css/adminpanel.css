@@ -71,3 +71,11 @@ section table tbody tr td {
     font-family: 'Open Sans';
     font-size: 14px;
 }
+
+.blurCover {
+    backdrop-filter: blur(6px);
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+}
+

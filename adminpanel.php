@@ -95,6 +95,10 @@
         <section id="notifications">
             <div><h1>E-Mail Notifications</h1></div>
         </section>
+
+        <div class=""blurLayer>
+            Test
+        </div>
     </body>
     <script type="module" src="javascript/adminPanel.js"></script>
 </html>
