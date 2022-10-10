@@ -18,9 +18,9 @@ export default class API {
             case(this.API_METHOD_GET):
                 return this.#get_request(path);
             case(this.API_METHOD_POST):
-                return this.#post_request(path);
+                return this.#post_request(path, body_data);
             case(this.API_METHOD_PATCH):
-                return this.#patch_request(path);
+                return this.#patch_request(path, body_data);
             case(this.API_METHOD_DELETE):
                 return this.#delete_request(path);
         }
