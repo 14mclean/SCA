@@ -50,10 +50,10 @@ function admin_form_visibility(event) {
     const form = document.querySelector(".blurCover");
 
     if(form.style.display != "block") {
-        form.style.display == "none";
-        console.log("none");
-    } else {
         form.style.display == "block";
         console.log("block");
+    } else {
+        form.style.display == "none";
+        console.log("none");
     }
 }
