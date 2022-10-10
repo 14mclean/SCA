@@ -10,6 +10,7 @@ const remove_admin_buttons = document.querySelectorAll(".demoteAdminButton");
 // ----- Event Listeners -----
 new_admin_button.addEventListener("click", admin_form_visibility);
 document.querySelector(".popup button:not([type=\"submit\"])").addEventListener("click",admin_form_visibility);
+document.querySelector(".popup form").addEventListener("submit", approve_expert);
 
 
 for(const button of approve_expert_buttons) {
@@ -23,6 +24,7 @@ for(const button of remove_admin_buttons) {
 
 // ----- Approve expert -----
 function approve_expert(event) {
+    preventDefault();
     let data = {"adminVerified": 1};
     API.api_request("experts/"+event.currentTarget.id, API.API_METHOD_PATCH, JSON.stringify(data));
     location.reload();
@@ -49,12 +51,6 @@ function block_email(event) { // *** TODO ***
 function admin_form_visibility(event) {
     let blurDiv = document.querySelector(".blurCover");
 
-    /*if(blurDiv.style.display != "block") {
-        blurDiv.style.display = "block";
-    } else {
-        blurDiv.style.display = "none";
-    }*/
-    console.log(blurDiv.style.opacity);
     if(blurDiv.style.opacity != 1) {
         blurDiv.style.opacity = 1;
         blurDiv.style.height = "100vh";
