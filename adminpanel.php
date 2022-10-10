@@ -96,7 +96,7 @@
             <div><h1>E-Mail Notifications</h1></div>
         </section>
 
-        <div class=""blurLayer>
+        <div class="blurCover">
             Test
         </div>
     </body>
