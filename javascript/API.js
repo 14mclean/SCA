@@ -81,7 +81,7 @@ export default class API {
     static #antipromise(promise) {
         result = [];
         promise.then(
-            data => result.push(data)
+            data => console.log(data)
         );
         return result;
     }
