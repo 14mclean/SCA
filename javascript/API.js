@@ -16,7 +16,8 @@ export default class API {
 
         switch(method){
             case(this.API_METHOD_GET):
-                return this.#get_request(path);
+                const temp = this.#get_request(path);
+                return temp;
             case(this.API_METHOD_POST):
                 return this.#post_request(path, body_data);
             case(this.API_METHOD_PATCH):
