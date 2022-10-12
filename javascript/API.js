@@ -29,8 +29,8 @@ export default class API {
 
     static async #get_request(path) {
         const response = await fetch(path);
-        const json_body = await response.json()
-        return this.#antipromise(json_body);
+        const json_body = await response.json();
+        return json_body.toArray();
     }
 
     static #delete_request(path) {
