@@ -35,6 +35,7 @@ export default class API {
         .then(json => {
             this.#data.push(json);
         })
+        console.log(this.#data);
         const temp = this.#data[0];
         this.#data = [];
         return temp;
