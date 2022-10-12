@@ -41,7 +41,7 @@ function add_admin(event) {
                 fetch("users/"+record["userID"], {
                     method: 'PATCH',
                     headers: {'Content-Type': 'application/json'},
-                    body: {"userLevel":"Admin"}
+                    body: JSON.stringify({"userLevel":"Admin"})
                 })
                 .then((response) => {
                     if(!response.ok) {
