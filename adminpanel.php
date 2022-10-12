@@ -24,13 +24,10 @@
         <a class="homeButton" href="home.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Home_free_icon.svg/1200px-Home_free_icon.svg.png"></a>
 
         <section id="unapprovedExperts">
-            <div><h1>Unapproved Experts</h1></div>
+            <div>
+                <h1>Unapproved Experts</h1>
+            </div>
             <?php
-                // get userID, email where adminVerified = 0 from USers and experts
-                // create table with button to verify (then remove from list)
-                // button to block email
-                // each row in db is row in table
-
                 $db = new Database();
                 $statement = $db->prepareStatement(
                     "SELECT Users.userID, Users.email, Experts.organisation, Experts.location FROM Users INNER JOIN Experts ON Users.userID = Experts.userID WHERE Experts.adminVerified = 0",
@@ -66,10 +63,6 @@
             </div>
             
             <?php
-                // get userID, email from users where userLevel = "Admin"
-                // button to delete admin users
-                // add button to elevate other user to admin
-
                 $db = new Database();
                 $statement = $db->prepareStatement(
                     "SELECT userID, email FROM Users WHERE userLevel = 'Admin'",
