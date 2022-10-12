@@ -72,20 +72,21 @@
 
                 $db = new Database();
                 $statement = $db->prepareStatement(
-                    "SELECT email FROM Users WHERE userLevel = 'Admin'",
+                    "SELECT userID, email FROM Users WHERE userLevel = 'Admin'",
                     "",
                     array()
                 );
-                $result = $db->sendQuery($statement, array("email"));
+                $result = $db->sendQuery($statement, array("userID", "email"));
 
                 echo("<table>");
                 echo("<tr><td>Email</td><td>Remove Admin</td></tr>");
                 foreach($result as $row) {
                     $email = $row['email'];
+                    $userID = $row['userID'];
 
                     echo("<tr>");
                     echo("<td class='adminEmail'>$email</td>");
-                    echo('<td><button class="demoteAdminButton"><img src="assets/remove.png"></button></td>');
+                    echo("<td><button class='demoteAdminButton' id=$userID><img src='assets/remove.png'></button></td>");
                     echo("</tr>");
                 }
                 echo("</table>");
