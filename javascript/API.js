@@ -33,6 +33,7 @@ export default class API {
         fetch(path)
         .then(response => response.json())
         .then(json => {
+            console.log(json)
             result.push(json)
         })
         return result;
