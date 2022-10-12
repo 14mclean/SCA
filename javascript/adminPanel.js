@@ -28,7 +28,13 @@ function add_admin(event) {
     let email = document.querySelector(".popup form input").value;
 
     fetch("/api/users")
-    .then(response => response.json())
+    .then((response) => {
+        if(response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Server error ' + response.status);
+        }
+    })
     .then(json => {
         for(const record of json) {
             if(record["email"] == email) {
@@ -36,11 +42,15 @@ function add_admin(event) {
                     method: 'PATCH',
                     headers: {'Content-Type': 'application/json'},
                     body: {"userLevel":"Admin"}
+                })
+                .then((response) => {
+                    if(!response.ok) {
+                        throw new Error('Server error ' + response.status);
+                    }
                 });
             }
         }
-    })
-
+    });
 
     //location.reload();
     return false;
