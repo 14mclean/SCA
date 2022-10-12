@@ -52,7 +52,7 @@ function add_admin(event) {
         }
     });
 
-    //location.reload();
+    location.reload();
     return false;
 }
 
