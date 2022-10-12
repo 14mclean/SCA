@@ -28,24 +28,9 @@ export default class API {
     }
 
     static async #get_request(path) {
-        /*fetch(path)
-        .then((response) => {
-            if(response.ok) {
-              return response.json();
-            } else {
-              throw new Error('Server error ' + response.status);
-            }
-        })*/
-
-        /*fetch(path)
-        .then((response) => response.json())
-        .then((data) =>{
-            return data
-        });*/
-
         const response = await fetch(path);
         const json_body = await response.json()
-        return json_body;
+        return json_body.data;
     }
 
     static #delete_request(path) {
