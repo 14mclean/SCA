@@ -27,7 +27,7 @@ export default class API {
 
     }
 
-    static #get_request(path) {
+    static async #get_request(path) {
         /*fetch(path)
         .then((response) => {
             if(response.ok) {
@@ -37,11 +37,15 @@ export default class API {
             }
         })*/
 
-        fetch(path)
+        /*fetch(path)
         .then((response) => response.json())
         .then((data) =>{
             return data
-        });
+        });*/
+
+        const response = await fetch(path);
+        const json_body = await response.json()
+        return json_body;
     }
 
     static #delete_request(path) {
