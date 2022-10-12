@@ -67,8 +67,11 @@ function approve_expert(event) {
 
 // ----- Demote Admin -----
 function remove_admin(event) {
-    let data = {"userLevel": "Teacher"};
-    API.api_request("users/"+event.currentTarget.id, API.API_METHOD_PATCH, JSON.stringify(data));
+    fetch("/api/users/"+event.currentTarget.id, {
+        method: 'PATCH',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({"userLevel":"Teacher"})
+    })
     //location.reload();
 }
 
