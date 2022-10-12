@@ -30,7 +30,7 @@ export default class API {
     static async #get_request(path) {
         const response = await fetch(path);
         const json_body = await response.json()
-        return json_body.data;
+        return this.#antipromise(json_body);
     }
 
     static #delete_request(path) {
@@ -76,5 +76,13 @@ export default class API {
               throw new Error('Server error ' + response.status);
             }
         });
+    }
+
+    static #antipromise(promise) {
+        result = [];
+        promise.then(
+            data => result.push(data)
+        );
+        return result;
     }
 }
