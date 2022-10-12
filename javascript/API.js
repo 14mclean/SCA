@@ -11,7 +11,7 @@ export default class API {
         API_METHOD_DELETE:"DELETE"
     }
 
-    static #data = null;
+    static #data = [];
 
     static api_request(path, method, body_data = null) {
         path = this.#url + path;
@@ -33,10 +33,10 @@ export default class API {
         fetch(path)
         .then(response => response.json())
         .then(json => {
-            this.#data = json;
+            this.#data.push(json);
         })
-        const temp = this.#data;
-        this.#data = null;
+        const temp = this.#data[0];
+        this.#data = [];
         return temp;
     }
 
