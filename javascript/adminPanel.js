@@ -38,7 +38,7 @@ function add_admin(event) {
     .then(json => {
         for(const record of json) {
             if(record["email"] == email) {
-                fetch("users/"+record["userID"], {
+                fetch("/api/users/"+record["userID"], {
                     method: 'PATCH',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({"userLevel":"Admin"})
