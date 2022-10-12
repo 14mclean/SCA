@@ -40,7 +40,7 @@ class UserGateway implements Gateway{
         $statement->bindValue(":passwordHash", $new_user_details["passwordHash"] ?? $current_user_details["passwordHash"], PDO::PARAM_STR);
         $statement->bindValue(":emailVerified", $new_user_details["emailVerified"] ?? $current_user_details["emailVerified"], PDO::PARAM_BOOL);
         $statement->bindValue(":userLevel", $new_user_details["userLevel"] ?? $current_user_details["userLevel"], PDO::PARAM_STR);
-        $statement->bindValue(":userID", $current_user_details["userID"], PDO::PARAM_INT);
+        $statement->bindValue(":userid", $current_user_details["userID"], PDO::PARAM_INT);
 
         $statement->execute();
         return $statement->rowCount();
