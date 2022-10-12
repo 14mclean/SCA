@@ -59,8 +59,17 @@ function add_admin(event) {
 
 // ----- Approve expert -----
 function approve_expert(event) {
-    let data = {"adminVerified": 1};
-    API.api_request("experts/"+event.currentTarget.id, API.API_METHOD_PATCH, JSON.stringify(data));
+    fetch("/api/experts"+event.currentTarget.id, {
+        method: 'PATCH',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({"adminVerified": 1})
+    })
+    .then((response) => {
+        if(!response.ok) {
+            throw new Error('Server error ' + response.status);
+        }
+    });
+    
     location.reload();
 }
 
@@ -71,8 +80,13 @@ function remove_admin(event) {
         method: 'PATCH',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({"userLevel":"Teacher"})
-    })
-    //location.reload();
+    }).then((response) => {
+        if(!response.ok) {
+            throw new Error('Server error ' + response.status);
+        }
+    });
+
+    location.reload();
 }
 
 
