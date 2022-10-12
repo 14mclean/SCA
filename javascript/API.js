@@ -28,14 +28,20 @@ export default class API {
     }
 
     static #get_request(path) {
-        fetch(path)
+        /*fetch(path)
         .then((response) => {
             if(response.ok) {
               return response.json();
             } else {
               throw new Error('Server error ' + response.status);
             }
-        })
+        })*/
+
+        fetch(path)
+        .then((response) => response.json())
+        .then((data) =>{
+            return data
+        });
     }
 
     static #delete_request(path) {
