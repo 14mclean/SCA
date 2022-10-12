@@ -19,7 +19,7 @@ export default class API {
         switch(method){
             case(this.API_METHOD_GET):
                 this.#get_request(path);
-                const temp = this.#data[0];
+                const temp = this.#data;
                 this.#data = null;
                 return temp;
             case(this.API_METHOD_POST):
