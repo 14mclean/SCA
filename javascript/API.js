@@ -11,12 +11,16 @@ export default class API {
         API_METHOD_DELETE:"DELETE"
     }
 
+    static #data = [];
+
     static api_request(path, method, body_data = null) {
         path = this.#url + path;
 
         switch(method){
             case(this.API_METHOD_GET):
-                const temp = this.#get_request(path);
+                this.#get_request(path);
+                const temp = this.#data;
+                this.#data = [];
                 return temp;
             case(this.API_METHOD_POST):
                 return this.#post_request(path, body_data);
@@ -29,13 +33,11 @@ export default class API {
     }
 
     static #get_request(path) {
-        let result = [];
         fetch(path)
         .then(response => response.json())
         .then(json => {
-            result.push(json);
+            this.#data.push(json);
         })
-        return result;
     }
 
     static #delete_request(path) {
