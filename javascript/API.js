@@ -18,10 +18,7 @@ export default class API {
 
         switch(method){
             case(this.API_METHOD_GET):
-                this.#get_request(path);
-                const temp = this.#data;
-                this.#data = null;
-                return temp;
+                return this.#get_request(path);
             case(this.API_METHOD_POST):
                 return this.#post_request(path, body_data);
             case(this.API_METHOD_PATCH):
@@ -38,6 +35,9 @@ export default class API {
         .then(json => {
             this.#data = json;
         })
+        const temp = this.#data;
+        this.#data = null;
+        return temp;
     }
 
     static #delete_request(path) {
