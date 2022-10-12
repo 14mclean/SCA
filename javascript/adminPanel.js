@@ -26,13 +26,21 @@ function add_admin(event) {
     event.preventDefault();
 
     let email = document.querySelector(".popup form input").value;
-    let response = API.api_request("users", API.API_METHOD_GET);
-    console.log(response);
-    for(const record of response) {
-        if(record["email"] == email) {
-            API.api_request("users/"+record["userID"], API_METHOD_PATCH, {"userLevel":"Admin"});
+
+    fetch("/api/users")
+    .then(response => response.json())
+    .then(json => {
+        for(const record of json) {
+            if(record["email"] == email) {
+                fetch("users/"+record["userID"], {
+                    method: 'PATCH',
+                    headers: {'Content-Type': 'application/json'},
+                    body: {"userLevel":"Admin"}
+                });
+            }
         }
-    }
+    })
+
 
     //location.reload();
     return false;
