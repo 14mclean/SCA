@@ -28,11 +28,14 @@ export default class API {
 
     }
 
-    static async #get_request(path) {
-        const response = await fetch(path);
-        const json_body = await response.json();
-        console.log(typeof json_body);
-        return json_body;
+    static #get_request(path) {
+        let result = [];
+        fetch(path)
+        .then(response => response.json())
+        .then(json => {
+            result.push(json)
+        })
+        return result;
     }
 
     static #delete_request(path) {
