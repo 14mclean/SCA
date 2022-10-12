@@ -30,7 +30,7 @@ export default class API {
     static async #get_request(path) {
         const response = await fetch(path);
         const json_body = await response.json();
-        return json_body.toArray();
+        return Array(json_body);
     }
 
     static #delete_request(path) {
