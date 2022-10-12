@@ -79,6 +79,7 @@ export default class API {
     }
 
     static #antipromise(promise) {
+        console.log(typeof promise);
         let result = [];
         promise.then(
             data => result.push(data)
