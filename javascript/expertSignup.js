@@ -16,7 +16,7 @@ function expert_signup(event) {
 function password_validate(event) {
     pwd = password_input.value;
 
-    if(pwd.length > 8) {
+    if(pwd.length < 8) {
         password_input.tooShort = true;
     } else if((pwd.match(/[A-Z]/g) || []).length < 1) {
         password_input.setCustomValidity("Password requires at least 1 uppercase character");
