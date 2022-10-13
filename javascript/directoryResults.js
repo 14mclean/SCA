@@ -44,18 +44,6 @@ const textInputs = document.querySelectorAll('input[type="text"]');
 const checkboxInputs = document.querySelectorAll('input[type="checkbox"]');
 const rangeInputs = document.querySelectorAll('input[type="range"]');
 
-/*for(const input of textInputs) {
-    input.addEventListener("input", updateResults);
-}
-
-for(const input of checkboxInputs) {
-    input.addEventListener("click", updateResults);
-}
-
-for(const input of rangeInputs) {
-    input.addEventListener("dragend", updateResults); //mouseup ?
-}*/
-
 for(const input of textInputs) {
     input.addEventListener("input", update_results);
 }
@@ -68,56 +56,9 @@ for(const input of rangeInputs) {
     input.addEventListener("dragend", update_results); //mouseup ?
 }
 
-function updateResults() {
-    var getFilter = "adminVerified=1";
-    var ages = [];
-    var organisations = [];
-    var outcode = "";
-    const maxRange = rangeInputs[0].value;
-
-    for(const input of checkboxInputs) {
-        if(input.checked) {
-            if(input.name.includes("age")) {
-                ages.push("ks"+input.name[3]);
-            } else if(input.name == "teacherAdvice" || input.name == "projectWork" || input.name == "studentOnline" || input.name == "studentResources" || input.name == "studentOnline") {
-                getFilter += "&" + input.name + "=1";
-            } else if(input.name != "studentInteraction") {
-                organisations.push(input.name);
-            }
-        } 
-    }
-
-    if(ages.length > 0) {
-        getFilter += "&ages=" + ages.toString();
-    }
-
-    if(organisations.length > 0) {
-        getFilter += "&orgs=" + organisations.toString();
-    }
-
-    for(const input of textInputs) {
-        switch(input.name) {
-            case "expertise":
-                getFilter += "&expertise=" + input.value;
-            case "outcode":
-                outcode = input.value;
-        }
-    }
-
-    fetch("../phpScripts/getResults.php?"+getFilter)
-    .then(response => response.json())
-    .then(data => {
-        for(const expert of data) {
-            if(data.length > 0) {
-                addExpert(expert["userID"], expert["location"]);
-            }
-        }
-    });
-}
-
-
 function update_results() {
     // clear current results
+    document.querySelector(".results").textContent = '';
 
     let organisations = [];
     let ages = [];
@@ -185,26 +126,4 @@ function add_expert(userID, location) {
         });
         document.querySelector(".results").appendChild(new_result);
     }
-}
-
-
-function addExpert(userID, location) {
-    // google api for distance
-
-    // if fits distance
-    const newResult = document.createElement("div");
-    newResult.setAttribute("class","item");
-
-    fetch("../phpScripts/getResources.php?userid="+userID)
-    .then(response => response.json())
-    .then(data => {
-        for(const resource of data) {
-            const newLink = document.createElement("a");
-            newLink.setAttribute("href", resource["link"]);
-            newLink.appendChild(document.createTextNode(resource["name"]))
-            newResult.appendChild(newLink);
-        }
-    });
-
-    document.querySelector(".results").appendChild(newResult);
 }
