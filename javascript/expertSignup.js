@@ -9,7 +9,53 @@ function expert_signup(event) {
     password_input.dispatchEvent(new Event("input"));
 
     if(password_input.checkValidity() && email_input.checkValidity()) {
-        console.log("check for preused email");
+        fetch("/api/users") // get all users
+        .then((response) => {
+            if(response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Server error ' + response.status);
+            }
+        })
+        .then(json => {
+            for(const record of json) {
+                if(record["email"] == email_input.value) { // check if email has been taken
+                    email_input.setCustomValidity("Email has already been used");
+                    email_input.reportValidity();
+                    return
+                }
+            }
+
+            fetch("/api/users", { // POST new user information
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                        "email": email_input.value,
+                        "password": password_input.value,
+                        "emailVerified": 0,
+                        "userLevel": "Expert"
+                    })
+            })
+            .then((response) => response.json())
+            .then(json => {
+                if(response.ok) {
+                    fetch("/api/experts", { // POST new expert information
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({
+                            "userID": json["id"]
+                        })
+                    })
+                    .then((response) => {
+                        if(!response.ok) {
+                            throw new Error('Server error ' + response.status);
+                        }
+                    });
+                } else {
+                    throw new Error('Server error ' + response.status);
+                }
+            })
+        });
     }
 }
 
