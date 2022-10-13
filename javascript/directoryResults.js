@@ -87,14 +87,14 @@ function update_results() {
                 (interactions["studentF2F"] && row["studentF2F"] == 0) || // does student f2f, if checked 
                 (interactions["studentResources"] && row["studentResources"] == 0) || // does student resources, if checked 
                 row["adminVerified"] != 1 || // ensures expert is verified
-                !organisations.includes(row["organisation"]) // if one of the checked organisations
+                (!organisations.includes(row["organisation"]) && organisations.length > 0) // if one of the checked organisations
             ) {
                 continue
             }
 
             // caters to all of the checked ages
             for(const age in row["ages"]) {
-                if(!ages.includes(ages)) {
+                if(!ages.includes(ages) && ages.length > 0) {
                     continue;
                 }
             }
