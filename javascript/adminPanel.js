@@ -1,5 +1,3 @@
-import API from './API.js';
-
 // ----- HTML ELements -----
 const approve_expert_buttons = document.querySelectorAll(".approveButton");
 const block_email_buttons = document.querySelectorAll(".blockButton");
