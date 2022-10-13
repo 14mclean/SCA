@@ -76,7 +76,7 @@ function update_results() {
         }
     }
 
-    fetch("/api/users")
+    fetch("/api/experts")
     .then((response) => response.json())
     .then(json => {
         for(const row of json) {
