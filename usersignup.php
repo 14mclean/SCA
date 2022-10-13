@@ -58,7 +58,7 @@
             </p>
         </div>
 
-        <a class="expertSignup" href="expertsignup.php">
+        <a class="expertSignup" href="expertsignup.html">
             Expert Sign Up
         </a>
     </body>
