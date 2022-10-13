@@ -36,24 +36,26 @@ function expert_signup(event) {
                         "userLevel": "Expert"
                     })
             })
-            .then((response) => response.json())
-            .then(json => {
+            .then((response) => {
                 if(response.ok) {
-                    fetch("/api/experts", { // POST new expert information
-                        method: 'POST',
-                        headers: {'Content-Type': 'application/json'},
-                        body: JSON.stringify({
-                            "userID": json["id"]
-                        })
-                    })
-                    .then((response) => {
-                        if(!response.ok) {
-                            throw new Error('Server error ' + response.status);
-                        }
-                    });
+                    return response.json();
                 } else {
                     throw new Error('Server error ' + response.status);
                 }
+            })
+            .then(json => {
+                fetch("/api/experts", { // POST new expert information
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        "userID": json["id"]
+                    })
+                })
+                .then((response) => {
+                    if(!response.ok) {
+                        throw new Error('Server error ' + response.status);
+                    }
+                });
             })
         });
     }
