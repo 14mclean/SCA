@@ -24,24 +24,22 @@
         <a class="homeButton" href="home.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Home_free_icon.svg/1200px-Home_free_icon.svg.png"></a>
 
         <section id="unapprovedExperts">
-            <div><h1>Unapproved Experts</h1></div>
+            <div>
+                <h1>Unapproved Experts</h1>
+            </div>
             <?php
-                // get userID, email where adminVerified = 0 from USers and experts
-                // create table with button to verify (then remove from list)
-                // button to block email
-                // each row in db is row in table
-
                 $db = new Database();
                 $statement = $db->prepareStatement(
-                    "SELECT Users.email, Experts.organisation, Experts.location FROM Users INNER JOIN Experts ON Users.userID = Experts.userID WHERE Experts.adminVerified = 0",
+                    "SELECT Users.userID, Users.email, Experts.organisation, Experts.location FROM Users INNER JOIN Experts ON Users.userID = Experts.userID WHERE Experts.adminVerified = 0",
                     "",
                     array()
                 );
-                $result = $db->sendQuery($statement, array("email", "org", "loc"));
+                $result = $db->sendQuery($statement, array("userID", "email", "org", "loc"));
 
                 echo("<table>");
                 echo("<tr><td>Email</td><td>Organisation</td><td>Location</td><td>Approve Expert</td><td>Block Email</td>");
                 foreach($result as $row) {
+                    $userID = $row["userID"];
                     $email = $row["email"];
                     $org = $row["organisation"];
                     $loc = $row["location"];
@@ -50,8 +48,8 @@
                     echo("<td class='unapprovedEmail'>$email</td>");
                     echo("<td>$org</td>");
                     echo("<td>$loc</td>");
-                    echo('<td> <button><img src="assets/check.png"></button> </td>');
-                    echo('<td> <button><img src="assets/remove.png"></button> </td>');
+                    echo("<td> <button class='approveButton' id=$userID><img src='assets/check.png'></button> </td>");
+                    echo("<td> <button class='blockButton' email=$email><img src='assets/remove.png'></button> </td>");
                     echo("</tr>");
                 }
                 echo("</table>");
@@ -61,30 +59,27 @@
         <section id="admins">
             <div>
                 <h1>Admin Users</h1>
-                <button><img src="assets/plus.png"></button>
+                <button class="newAdminButton"><img src="assets/plus.png"></button>
             </div>
             
             <?php
-                // get userID, email from users where userLevel = "Admin"
-                // button to delete admin users
-                // add button to elevate other user to admin
-
                 $db = new Database();
                 $statement = $db->prepareStatement(
-                    "SELECT email FROM Users WHERE userLevel = 'Admin'",
+                    "SELECT userID, email FROM Users WHERE userLevel = 'Admin'",
                     "",
                     array()
                 );
-                $result = $db->sendQuery($statement, array("email"));
+                $result = $db->sendQuery($statement, array("userID", "email"));
 
                 echo("<table>");
                 echo("<tr><td>Email</td><td>Remove Admin</td></tr>");
                 foreach($result as $row) {
                     $email = $row['email'];
+                    $userID = $row['userID'];
 
                     echo("<tr>");
                     echo("<td class='adminEmail'>$email</td>");
-                    echo('<td><button><img src="assets/remove.png"></button></td>');
+                    echo("<td><button class='demoteAdminButton' id=$userID><img src='assets/remove.png'></button></td>");
                     echo("</tr>");
                 }
                 echo("</table>");
@@ -94,6 +89,17 @@
         <section id="notifications">
             <div><h1>E-Mail Notifications</h1></div>
         </section>
+
+        <div class="blurCover" style="opacity: 0; height: 0px;">
+            <div class="popup">
+                <button>🠔</button>
+                <form class="newAdminForm">
+                    <h1>New Admin</h1>
+                    <input type="email" placeholder="Email" name="email" required=required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
     </body>
-    <script src="javascript/adminPanel.js"></script>
+    <script type="module" src="javascript/adminPanel.js"></script>
 </html>

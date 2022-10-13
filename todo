@@ -1,8 +1,4 @@
-admin panel: buttons not sending data properly through POST
-
 question marks with popup for each field
-
-fix admin panel for new db
 
 sanitize before saving to db, after reading from db and before writing to html
 

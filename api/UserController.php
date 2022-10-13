@@ -1,8 +1,8 @@
 <?php
 
-class ExpertController extends Controller{
-    public function __construct(ExpertGateway $gateway) {
-        parent::__construct($gateway, "Expert");
+class UserController extends Controller {
+    public function __construct(UserGateway $gateway) {
+        parent::__construct($gateway, "User");
     }
 
     protected function get_validation_errors(array $data, bool $is_new = true): array {
