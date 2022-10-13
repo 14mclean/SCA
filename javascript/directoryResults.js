@@ -57,7 +57,6 @@ for(const input of rangeInputs) {
 }
 
 function update_results() {
-    // clear current results
     document.querySelector(".results").textContent = '';
 
     let organisations = [];
