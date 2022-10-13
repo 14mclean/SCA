@@ -1,12 +1,12 @@
  / approve expert: expert patch userid approve=1 
-expert signup: user post, expert post (all details)
+ / expert signup: user post, expert post (all details)
 get experts from filters ??
 update expert: expert patch
 get resources for expert: resources get
 update resources for expert: resources patch
 get link status ??
  / remove admin: user patch userid userlevel=teacher
-user signup: user post (all details)
+(test) user signup: user post (all details)
 
 
 
