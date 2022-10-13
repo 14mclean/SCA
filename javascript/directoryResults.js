@@ -111,6 +111,7 @@ function add_expert(userID, location) {
     if(distance < rangeInputs[0].value) {
         const new_result = document.createElement("div");
         new_result.setAttribute("class","item");
+        new_result.setAttribute("id",userID);
 
         fetch("/api/expertresources")
         .then(response => response.json())
