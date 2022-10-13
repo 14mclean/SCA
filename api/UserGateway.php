@@ -13,7 +13,9 @@ class UserGateway implements Gateway{
     }
 
     public function create(array $data): string {
-        print_r($data);
+        if(!empty([$data["password"]])) {
+            $data["passwordHash"] = hash("sha256", $data["password"]);
+        }
         // allow for defaults
         $statement = $this->connection->prepare("INSERT INTO Users (email, passwordHash, emailVerified, userLevel) VALUES (:email, :passwordHash, :emailVerified, :userLevel)");
         $statement->bindValue(":email", $data["email"], PDO::PARAM_STR);
