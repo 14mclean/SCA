@@ -10,7 +10,6 @@ class UserController extends Controller {
 
         if(!empty([$data["password"]])) {
             $data["passwordHash"] = hash("sha256", $data["password"]);
-            print_r($data);
         }
 
         // do field validation
