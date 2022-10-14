@@ -1,3 +1,12 @@
+document.querySelector(".profile").addEventListener("submit", submit);
+document.querySelector(".addResource").addEventListener("click", add_resource);
+document.querySelector("input[name='location']").addEventListener("input", validate_location_input);
+
+//for(const linkInput of resourceLinkInputs) linkInput.addEventListener("input", checkResourceLink);
+for(const img of document.querySelectorAll('img[src="assets/remove.png"]')) img.addEventListener("click", delete_resource);
+//for(const element of document.querySelectorAll('input[type="text"]')) element.addEventListener("input", buttonCheck);
+//for(const element of document.querySelectorAll('input[type="url"]')) element.addEventListener("input", buttonCheck);
+
 // ---------- Update whether specific student interactions can be seen ----------
 function update_interaction_visibilities() {
     const student_interaction_checkbox = document.querySelector('input[name="studentInteraction"]');
@@ -23,7 +32,7 @@ function update_interaction_visibilities() {
 
 
 // ---------- Check validity of location input ----------
-function validateLocationInput(event) {
+function validate_location_input(event) {
     if(event.target.value == "") {
         locationInput.setCustomValidity('')
     } else if(!validPostcode(event.target.value)) {
@@ -33,7 +42,7 @@ function validateLocationInput(event) {
     }
 }
 
-function validPostcode(outcode) {
+function valid_postcode(outcode) {
     function generatePattern(string) {
         pattern = "";
 
@@ -66,7 +75,7 @@ function validPostcode(outcode) {
 
 
 // ---------- Add new row to resources table ----------
-function addResource() {
+function add_resource() {
     // make table row
     const new_row = document.createElement("tr");
 
@@ -118,7 +127,7 @@ function addResource() {
 
 
 // ---------- Delete resource row ----------
-function deleteResource(event) {
+function delete_resource(event) {
     event.currentTarget.parentElement.parentElement.remove();
 }
 
