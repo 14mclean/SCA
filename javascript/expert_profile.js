@@ -149,7 +149,7 @@ function submit(event) {
     }
     
     // Update expert info
-    fetch("experts/"+userid, {
+    fetch("experts/"+userID, {
         method: 'PATCH',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
