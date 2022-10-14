@@ -45,7 +45,7 @@ class ExpertResourceGateway implements Gateway {
 
     public function delete(string $id): int {
         $statement = $this->connection->prepare("DELETE FROM ExpertResources WHERE resourceID = :resourceid");
-        $statement.bindValue(":resourceid", $id, PDO::PARAM_INT);
+        $statement->bindValue(":resourceid", $id, PDO::PARAM_INT);
         $statement->execute();
         return $statement->rowCount();
     }
