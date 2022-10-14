@@ -100,7 +100,7 @@ function add_resource() {
     linkInput.setAttribute("name", "resourceLink");
     name_input.setAttribute("required", "required");
     linkInput.setAttribute("placeholder", "Resource Link");
-    linkInput.addEventListener("input", checkResourceLink);
+    //linkInput.addEventListener("input", checkResourceLink);
     // append input to data
     link_data.appendChild(linkInput);
     // append data to row
@@ -111,7 +111,7 @@ function add_resource() {
     // make text input
     const delete_img = document.createElement("img");
     delete_img.setAttribute("src", "assets/remove.png")
-    delete_img.addEventListener("click", deleteResource);
+    delete_img.addEventListener("click", delete_resource);
     // append input to data
     delete_data.appendChild(delete_img);
     // append data to row
