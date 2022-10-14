@@ -3,7 +3,11 @@ question marks with popup for each field
 sanitize before saving to db, after reading from db and before writing to html
 
 login:
-    form novalidate, jsaction
+    form novalidate
     honeypot input (not visible to humans so if contents dont allow)
 
 look into JWT
+look into OAuth
+
+fix expertSignup.js fetch mess
+visual/css changes

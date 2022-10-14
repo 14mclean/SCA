@@ -212,5 +212,5 @@
         const userID = <?php echo"$userID"?>;
     </script>
     <script src="javascript/navbar.js"></script>
-    <script src="javascript/expertProfile.js"></script>
+    <script src="javascript/expert_profile.js"></script>
 </html>
