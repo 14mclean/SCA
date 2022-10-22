@@ -19,7 +19,7 @@
         session_start();
         $_SESSION["userID"] = $result[0]["userID"] ?? $result["userID"];
         $_SESSION["userLevel"] = $result[0]["userLevel"]  ?? $result["userLevel"];
-        //header("Location: ../directory.php"); // redirect to directory
+        header("Location: ../directory.php"); // redirect to directory
     } else {
         header("Location: ../meet-the-experts.php");
     }
