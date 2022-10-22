@@ -11,4 +11,6 @@ look into OAuth
 
 fix expertSignup.js fetch mess
 implement new asthetic
-    logo to left of title
+new (origianl?) coverflow mechanism
+email validation
+login to html/js

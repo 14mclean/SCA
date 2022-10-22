@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    width: 100vw;
+}
+
+.model {
+    margin-top: 30vh;
+	width: 100vw;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+
+.model div {
+	flex-grow: 1;
+}
+
+.stage0 {
+    height: 60px;
+    width: 100px;
+    background-color: black;
+    color: white;
+}
+
+.stage1 {
+    border-right: 70px solid red;
+	border-bottom: 25px solid transparent;
+	border-top: 25px solid transparent;
+	width: 0;
+	height: 60px;
+}
+
+.stage2 {
+    border-right: 100px solid purple;
+	border-bottom: 35px solid transparent;
+	border-top: 35px solid transparent;
+	width: 0;
+	height: 115px;
+}
+
+.stage3 {
+    width: 0;
+	height: 0;
+	border-top: 90px solid transparent;
+	border-left: 150px solid green;
+	border-bottom: 90px solid transparent;
+}
+
+.stage4 {
+    width: 0;
+	height: 0;
+	border-top: 90px solid transparent;
+	border-right: 150px solid rgb(255, 255, 0);
+	border-bottom: 90px solid transparent;
+}
+
+.stage5 {
+    border-left: 100px solid blue;
+	border-bottom: 35px solid transparent;
+	border-top: 35px solid transparent;
+	width: 0;
+	height: 115px;
+}
+
+.stage6 {
+    border-left: 70px solid violet;
+	border-bottom: 25px solid transparent;
+	border-top: 25px solid transparent;
+	width: 0;
+	height: 60px; 
+}
+
+.stage7 {
+    width: 0;
+	height: 0;
+	border-top: 30px solid transparent;
+	border-left: 50px solid orange;
+	border-bottom: 30px solid transparent;
+}
+
+.stage8 {
+    height: 60px;
+    width: 100px;
+    background-color: black;
+    color: white;
+}
+
+.container {
+	width: 200px;
+	height: 200px;
+}
+
+polygon {
+	fill:lime;
+	stroke-width:0;
+	fill-rule:nonzero;
+}

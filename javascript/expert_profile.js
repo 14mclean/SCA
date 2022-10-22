@@ -100,7 +100,7 @@ function add_resource() {
     linkInput.setAttribute("name", "resourceLink");
     name_input.setAttribute("required", "required");
     linkInput.setAttribute("placeholder", "Resource Link");
-    //linkInput.addEventListener("input", checkResourceLink);
+    //linkInput.addEventListener("input", checkResourceLink); TODO:
     // append input to data
     link_data.appendChild(linkInput);
     // append data to row
@@ -153,15 +153,15 @@ function submit(event) {
         method: 'PATCH',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-            "organisation": "", // get data
+            "organisation": document.querySelector('input[name="organisation"]').value, // get data
             "ages": "",
-            "expertise": "",
-            "teacherAdvice": "",
-            "projectWork": "",
-            "studentOnline": "",
-            "studentF2F": "",
-            "studentResources": "",
-            "location": ""
+            "expertise": document.querySelector('input[name="expertise"]').value,
+            "teacherAdvice": +document.querySelector('#teacherAdvice').checked,
+            "projectWork": +document.querySelector('#projectWork').checked,
+            "studentOnline": +document.querySelector('').checked,
+            "studentF2F": +document.querySelector('').checked,      // selectors??
+            "studentResources": +document.querySelector('').checked,
+            "location": document.querySelector('input[name="location"]').value
         })
     })
     .then((response) => {
