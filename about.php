@@ -31,11 +31,9 @@
             <nav class="subnav">
             <?php
                 if($logged_in) {
-                    if($user_level == "") {
-                        echo('<a>Logout</a>');
-                    }
+                    echo('<a>Logout</a>');
                     
-                    if($user_level == "") {
+                    if($user_level == "Admin") {
                         echo('<a>Admin Panel</a>');
                     }
                 } else {

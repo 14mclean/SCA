@@ -16,6 +16,9 @@
     var_dump($result);
 
     if(count($result) == 1 || isset($result["userID"])) {
+        // check email validation
+
+
         session_start();
         $_SESSION["userID"] = $result[0]["userID"] ?? $result["userID"];
         $_SESSION["userLevel"] = $result[0]["userLevel"]  ?? $result["userLevel"];
