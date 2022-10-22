@@ -39,7 +39,7 @@
                         echo('<a>Admin Panel</a>');
                     }
                 } else {
-                    echo('<a>Log In</a>');
+                    echo('<a href="login.html">Log In</a>');
                 }
                 ?>
             </nav>
