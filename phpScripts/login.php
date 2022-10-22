@@ -1,31 +1,25 @@
 <?php
     ini_set("display_errors", 1); // show errors in html (remove after dev)
 
-    include_once("database.php");
+    include_once("../api/Database.php");
 
-    $passHash = hash("sha256", $_POST["password"]); // hash user inputted password
+    $passHash = hash("sha256", $_POST["password"]);
 
-    $db = new Database();
-
-    $statement = $db->prepareStatement(
-        "SELECT userID,emailverified,userLevel FROM Users WHERE email = ? AND passwordHash = ?",
-        "ss",
-        array($_POST["email"], $passHash)
-    );    
-
-    $result = $db->sendQuery($statement, array("userID", "verifiedEmail", "userLevel"));
+    $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
+    $connection = $db->get_connection();
+    $statement = $this->connection->prepare("SELECT userID,emailverified,userLevel FROM Users WHERE email = :email AND passwordHash = :passwordHash");
+    $statement->bindValue(":email", $email, PDO::PARAM_STR);
+    $statement->bindValue(":passwordHash", $passHash, PDO::PARAM_STR);
+    $statement->execute();
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
 
     if(count($result) == 1) {
-        if($result[0]["verifiedEmail"] == 1 || true) { // TODO: bypass email verification
-            session_start();
-            $_SESSION["userID"] = $result[0]["userID"];
-            $_SESSION["userLevel"] = $result[0]["userLevel"];
-            header("Location: ../directoryresults.php"); // redirect to directory
-        } else {
-            header("Location: ../login.php?loginError=verifiedEmail"); // report non-verified email
-        }
+        session_start();
+        $_SESSION["userID"] = $result[0]["userID"];
+        $_SESSION["userLevel"] = $result[0]["userLevel"];
+        header("Location: ../directoryresults.php"); // redirect to directory
     } else {
-        header("Location: ../login.php?loginError=login"); // report incorrect details
+        header("Location: ../meet-the-experts.php");
     }
     exit();
 ?>
