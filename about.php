@@ -30,12 +30,11 @@
 
             <nav class="subnav">
             <?php
-                if($logged_in) {
-                    echo('<a>Logout</a>');
-                    
+                if($logged_in) {                    
                     if($user_level == "Admin") {
                         echo('<a>Admin Panel</a>');
                     }
+                    echo('<a href="phpScripts/logout.php">Logout</a>');
                 } else {
                     echo('<a href="login.html">Log In</a>');
                 }

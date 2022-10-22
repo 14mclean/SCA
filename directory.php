@@ -38,7 +38,7 @@
                     if($user_level == "Admin") {
                         echo('<a>Admin Panel</a>');
                     }
-                    echo('<a>Logout</a>');
+                    echo('<a href="phpScripts/logout.php">Logout</a>');
                 }
                 ?>
             </nav>
