@@ -39,9 +39,7 @@
                         echo('<a>Admin Panel</a>');
                     }
                 } else {
-                    if($user_level == "") {
-                        echo('<a>Log In</a>');
-                    }
+                    echo('<a>Log In</a>');
                 }
                 ?>
             </nav>
