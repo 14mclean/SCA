@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Log In - SCA</title>
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <link rel="stylesheet" href="css/login.css">
+    </head>
+
+    <body>
+        <header>
+            <a class="back_arrow" href="javascript:history.back()">🠔</a>
+            <h1><a href="home.html">School Citizen Assemblies</a></h1>
+        </header>
+
+        <main>
+            <div class="form_container">
+                <h1>Log In</h1>
+
+                <form>
+                    <input id="email_input" type="email" placeholder="E-mail" required>
+
+                    <input id="password_input" type="password" placeholder="Password" required>
+                    <img src="assets/noEye.png">
+
+                    <input type="text" style="display: none;">
+
+                    <a class="register_button">Register Here</a>
+
+                    <button>Login</button>
+                </form>
+            </div>
+        </main>
+    </body>
+
+    <script>
+        document.querySelector("img").addEventListener("click", swap_visibility);
+        function swap_visibility(event) {
+            const password_input = document.querySelector('#password_input');
+
+            if(password_input.type == "password") {
+                password_input.type = "text";
+                event.target.src = "assets/openEye.png";
+            } else {
+                password_input.type = "password";
+                event.target.src = "assets/noEye.png";
+            }
+        }
+
+        document.querySelector("form").addEventListener("submit", check_credentials);
+        async function check_credentials(event) {
+            event.preventDefault();
+
+            const password = document.querySelector('#password_input').value;
+            const email = document.querySelector('#email_input').value;
+
+            var temp = new TextEncoder().encode(password);
+            temp = await crypto.subtle.digest('SHA-256', temp);
+            temp = Array.from(new Uint8Array(temp));
+            const password_hash = temp.map(b => b.toString(16).padStart(2, '0')).join('');
+
+            fetch("/api/users")
+            .then((response) => {
+                if(response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Server error ' + response.status);
+                }
+            })
+            .then(json => {
+                for(const record of json) {
+                    if(record["email"] == email && record["passwordHash"] == password_hash) {
+                        window.location.href = "meet-the-experts.php";
+                    }
+                }
+                document.querySelector(".form_container form button").style.borderColor = "red";
+            });
+        }
+    </script>
+</html>
