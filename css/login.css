@@ -177,9 +177,10 @@ form button:hover {
     border-color: #222222;
     border-width: 2px;
     border-style: solid;
-    width: 30vw;
-    height: 20vh;
-    margin-left: 15vw;
+    width: 400px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 35vh;
     border-radius: 17px;
     text-align: center;
