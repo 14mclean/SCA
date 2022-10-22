@@ -32,14 +32,18 @@
             <?php
                 if($logged_in) {
                     if($user_level == "") {
-                        echo('<a>Log In</a>');
+                        echo('<a>Logout</a>');
                     }
                     
                     if($user_level == "") {
                         echo('<a>Admin Panel</a>');
                     }
+                } else {
+                    if($user_level == "") {
+                        echo('<a>Log In</a>');
+                    }
                 }
-            ?>
+                ?>
             </nav>
         </header>
 
