@@ -3,12 +3,12 @@
 
     include_once("../api/Database.php");
 
-    $passHash = hash("sha256", $_POST["password"]);
+    $passHash = hash("sha256", $_GET["password"]);
 
     $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
     $connection = $db->get_connection();
-    $statement = $this->connection->prepare("SELECT userID,emailverified,userLevel FROM Users WHERE email = :email AND passwordHash = :passwordHash");
-    $statement->bindValue(":email", $email, PDO::PARAM_STR);
+    $statement = $connection->prepare("SELECT userID,emailverified,userLevel FROM Users WHERE email = :email AND passwordHash = :passwordHash");
+    $statement->bindValue(":email", $_GET["email"], PDO::PARAM_STR);
     $statement->bindValue(":passwordHash", $passHash, PDO::PARAM_STR);
     $statement->execute();
     $result = $statement->fetch(PDO::FETCH_ASSOC);
