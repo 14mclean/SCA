@@ -4,7 +4,8 @@
         $logged_in = true;
         $user_level = $_SESSION["userLevel"];
     } else {
-        $logged_in = false;
+        header('login.php');
+        exit();
     }
 ?>
 
@@ -13,9 +14,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Meet the Experts - SCA</title>
+        <title>Directory - SCA</title>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-        <link rel="stylesheet" href="css/meet-the-experts.css">
+        <link rel="stylesheet" href="css/directory.css">
     </head>
 
     <body>
@@ -41,8 +42,6 @@
                     if($user_level == "") {
                         echo('<a>Admin Panel</a>');
                     }
-                } else {
-                    echo('<a>Log In</a>');
                 }
                 ?>
             </nav>
