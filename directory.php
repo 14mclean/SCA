@@ -4,7 +4,7 @@
         $logged_in = true;
         $user_level = $_SESSION["userLevel"];
     } else {
-        header('login.php');
+        header("Location: login.php");
         exit();
     }
 ?>
