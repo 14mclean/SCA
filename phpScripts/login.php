@@ -15,7 +15,7 @@
 
     var_dump($result);
 
-    if(count($result) == 1) {
+    if(count($result) == 1 || isset($result["userID"])) {
         session_start();
         $_SESSION["userID"] = $result[0]["userID"];
         $_SESSION["userLevel"] = $result[0]["userLevel"];
