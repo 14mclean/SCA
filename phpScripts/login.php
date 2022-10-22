@@ -17,10 +17,8 @@
 
     if(count($result) == 1 || isset($result["userID"])) {
         session_start();
-        var_dump($result[0]["userID"]);
-        var_dump($result[0]["userLevel"]);
-        $_SESSION["userID"] = $result[0]["userID"];
-        $_SESSION["userLevel"] = $result[0]["userLevel"];
+        $_SESSION["userID"] = $result[0]["userID"] ?? $result["userID"];
+        $_SESSION["userLevel"] = $result[0]["userLevel"]  ?? $result["userLevel"];
         //header("Location: ../directory.php"); // redirect to directory
     } else {
         header("Location: ../meet-the-experts.php");
