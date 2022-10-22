@@ -139,7 +139,7 @@ form button:hover {
       0 4px 4px rgba(0, 0, 0, 0.075);
 }
 
-.register_button {
+.register-button {
     position: absolute;
     bottom: 50px;
     left: 50px;
@@ -155,6 +155,51 @@ form button:hover {
     cursor: pointer;
 }
 
-.register_button:hover {
+.register-button:hover {
     background-color: #401b5722;
+}
+
+.decision-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+    display: none;
+}
+
+.decision-blur a {
+    display: inline-block;
+    z-index: 1;
+    background-color: white;
+    border-color: #222222;
+    border-width: 2px;
+    border-style: solid;
+    width: 30vw;
+    height: 20vh;
+    margin-left: 15vw;
+    margin-top: 35vh;
+    border-radius: 17px;
+    text-align: center;
+    text-decoration: none;
+    color: #222222;
+}
+
+.decision-blur a:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.decision-blur h1 {
+    width: 100%;
+    font-family: 'Raleway';
+}
+
+.decision-blur p {
+    font-family: 'Raleway';
+    margin-top: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
 }

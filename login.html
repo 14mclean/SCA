@@ -26,12 +26,24 @@
 
                     <input type="text" style="display: none;">
 
-                    <a class="register_button">Register Here</a>
+                    <a class="register-button">Register Here</a>
 
                     <button>Login</button>
                 </form>
             </div>
         </main>
+
+        <div class="decision-blur">
+            <a href="register.html/?level=teacher">
+                <h1>User/Teacher</h1>
+                <p>If you want to search through the directory for resources provided by experts</p>
+            </a>
+
+            <a href="register.html/?level=expert">
+                <h1>Expert</h1>
+                <p>If you want to contribute your knowledge and resources to the directory and the users searching it.</p>
+            </a>
+        </div>
     </body>
 
     <script>
@@ -75,6 +87,19 @@
                 document.querySelector(".form_container form button").style.borderColor = "red";
                 return false;
             });
+        }
+
+        document.querySelector(".decision-blur").addEventListener("click", decision_visibility);
+        document.querySelector(".register-button").addEventListener("click", decision_visibility);
+        function decision_visibility(event) {
+            const decision_blur = document.querySelector(".decision-blur");
+            
+            if(decision_blur.style.display == "block") {
+                decision_blur.style.display = "none";
+                
+            } else {
+                decision_blur.style.display = "block";
+            }
         }
     </script>
 </html>
