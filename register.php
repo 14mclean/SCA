@@ -60,20 +60,89 @@
         function password_validate() {
             const password_input = document.querySelector("#password_input");
             const password = password_input.value;
+            let is_valid = true;
 
             if(password.length < 8) {
                 password_input.tooShort = true;
+                is_valid = false;
             } else if((password.match(/[A-Z]/g) || []).length < 1) {
                 password_input.setCustomValidity("Password requires at least 1 uppercase character");
+                is_valid = false;
             } else if((password.match(/[a-z]/g) || []).length < 1) {
                 password_input.setCustomValidity("Password requires at least 1 lowercase character");
+                is_valid = false;
             } else if((password.match(/[0-9]/g) || []).length < 1) {
                 password_input.setCustomValidity("Password requires at least 1 numeric character");
+                is_valid = false;
             } else {
                 password_input.setCustomValidity("");
             }
 
             password_input.reportValidity();
+            return is_valid;
+        }
+
+        function submit(event) {
+            event.preventDefault();
+            const email_input = document.querySelector("#email_input");
+
+            if(!password_validate() || email_input.checkValidity()) {
+                return false;
+            }
+
+            fetch("/api/users") // GET all users
+            .then((response) => {
+                if(response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Server error ' + response.status);
+                }
+            })
+            .then(json => {
+                for(const record of json) {
+                    if(record["email"] == email_input.value) { // check if email already used
+                        email_input.setCustomValidity("Email already taken");
+                        email_input.reportValidity();
+                        return false;
+                    }
+                }
+                
+                fetch("/api/users", { // POST new user information
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                        "email": email_input.value,
+                        "password": password_input.value,
+                        "emailVerified": 0,
+                        "userLevel": <?php echo($_GET["level"]) ?>
+                    })
+                })
+                .then((response) => {
+                    if(response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Server error ' + response.status);
+                    }
+                })
+                .then(json => {
+                    if(<?php echo($_GET["level"]) ?> == "Expert") { // check if expert
+                        fetch("/api/experts", { // POST new expert information
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({
+                            "userID": json["id"]
+                        })
+                        })
+                        .then((response) => {
+                            if(!response.ok) {
+                                throw new Error('Server error ' + response.status);
+                            }
+                        });
+                    } 
+
+                    window.location.href=""; // TODO: foward to email validation
+                });
+            })
         }
     </script>
 </html>
