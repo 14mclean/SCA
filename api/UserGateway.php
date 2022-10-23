@@ -14,7 +14,7 @@ class UserGateway implements Gateway{
             foreach($_GET as $column => $value) {
                 $condition_string .= " $column = $value AND";
             }
-            $statement_string .= $substr($condition_string, 0, -3);
+            $statement_string .= substr($condition_string, 0, -3);
         }
         $statement = $this->connection->query($statement_string);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
