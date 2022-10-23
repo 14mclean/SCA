@@ -29,9 +29,9 @@
 
                     <?php
                         if($_GET["level"] == "Teacher") {
-                            echo("<a href='register.php?level=Expert'>An Expert?</a>");
+                            echo("<a class='level-switch-button' href='register.php?level=Expert'>An Expert?</a>");
                         } else {
-                            echo("<a href='register.php?level=Teacher'>A Teacher?</a>");
+                            echo("<a class='level-switch-button' href='register.php?level=Teacher'>A Teacher?</a>");
                         }
                     ?>
 
