@@ -55,5 +55,24 @@
                 event.target.src = "assets/noEye.png";
             }
         }
+
+        function password_validate() {
+            const password_input = document.querySelector("#password_input");
+            const password = password_input.value;
+
+            if(password.length < 8) {
+                password_input.tooShort = true;
+            } else if((password.match(/[A-Z]/g) || []).length < 1) {
+                password_input.setCustomValidity("Password requires at least 1 uppercase character");
+            } else if((password.match(/[a-z]/g) || []).length < 1) {
+                password_input.setCustomValidity("Password requires at least 1 lowercase character");
+            } else if((password.match(/[0-9]/g) || []).length < 1) {
+                password_input.setCustomValidity("Password requires at least 1 numeric character");
+            } else {
+                password_input.setCustomValidity("");
+            }
+
+            password_input.reportValidity();
+        }
     </script>
 </html>
