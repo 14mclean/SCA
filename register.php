@@ -114,7 +114,7 @@
                         "email": email_input.value,
                         "password": password_input.value,
                         "emailVerified": 0,
-                        "userLevel": <?php echo($_GET["level"]) ?>
+                        "userLevel": "<?php echo($_GET["level"]) ?>"
                     })
                 })
                 .then((response) => {
@@ -125,7 +125,7 @@
                     }
                 })
                 .then(json => {
-                    if(<?php echo($_GET["level"]) ?> == "Expert") { // check if expert
+                    if("<?php echo($_GET["level"]) ?>" == "Expert") { // check if expert
                         fetch("/api/experts", { // POST new expert information
                         method: 'POST',
                         headers: {'Content-Type': 'application/json'},
