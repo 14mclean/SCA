@@ -1,13 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-body {
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: #401b57;
-}
-
 header {
     width: 100%;
     position: relative;
@@ -66,6 +59,10 @@ header h1 a {
     top: 30px;
     font-family: 'Raleway';
     font-weight: 500;
+}
+
+.form_container h2 {
+
 }
 
 .form_container form {
@@ -137,78 +134,4 @@ form button:hover {
       0 1px 1px rgba(0, 0, 0, 0.075),
       0 2px 2px rgba(0, 0, 0, 0.075),
       0 4px 4px rgba(0, 0, 0, 0.075);
-}
-
-.register-button {
-    position: absolute;
-    bottom: 50px;
-    left: 50px;
-    color: #401b57;
-    font-family: 'Raleway';
-    font-size: 14px;
-    font-weight: 600;
-    height: 30px;
-    line-height: 30px;
-    justify-content: center;
-    padding-left: 5px;
-    padding-right: 5px;
-    cursor: pointer;
-}
-
-.register-button:hover {
-    background-color: #401b5722;
-}
-
-.decision-blur {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(4px);
-    display: none;
-}
-
-.decision-blur a {
-    display: inline-block;
-    background-color: white;
-    border-color: #222222;
-    border-width: 2px;
-    border-style: solid;
-    width: 400px;
-    height: 200px;
-    border-radius: 17px;
-    text-align: center;
-    text-decoration: none;
-    color: #222222;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-right: 40vw;
-}
-
-#teacher-decision {
-    top: 30%;
-}
-
-#expert-decision {
-    top: 35%;
-}
-
-.decision-blur a:hover {
-    background-color: #eeeeee;
-    cursor: pointer;
-}
-
-.decision-blur h1 {
-    width: 100%;
-    font-family: 'Raleway';
-}
-
-.decision-blur p {
-    font-family: 'Raleway';
-    margin-top: 50px;
-    padding-left: 10%;
-    padding-right: 10%;
 }

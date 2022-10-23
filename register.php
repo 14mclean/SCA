@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Log In - SCA</title>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/register.css">
     </head>
 
     <body>
@@ -17,6 +17,7 @@
         <main>
             <div class="form_container">
                 <h1>Register</h1>
+                <h2><?php$_GET["level"]?></h2>
 
                 <form action="phpScripts/login.php">
                     <input id="email_input" name="email" type="email" placeholder="E-mail" required>
@@ -25,8 +26,6 @@
                     <img src="assets/noEye.png">
 
                     <input type="text" style="display: none;">
-
-                    <a class="register_button">Register Here</a>
 
                     <button>Login</button>
                 </form>
