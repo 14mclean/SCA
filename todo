@@ -1,0 +1,19 @@
+question marks with popup for each field
+
+sanitize before saving to db, after reading from db and before writing to html
+
+look into JWT
+look into OAuth
+
+new (origianl?) coverflow mechanism
+forgot password
+mobile version of each page
+
+email validation:
+ - db: {userID, code(hash userid), codeCreationDT}
+ - send email with url (GET?) and code
+ - if code too old, delete and reject
+ - else verify email
+
+
+ ** FILTER BY DB NOT JS **

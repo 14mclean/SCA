@@ -8,7 +8,15 @@ class UserGateway implements Gateway{
     }
 
     public function get_all(): array {
-        $statement = $this->connection->query("SELECT * FROM Users");
+        $statement_string = "SELECT * FROM Users";
+        if(count($_GET) > 0) {
+            $condition_string = " WHERE";
+            foreach($_GET as $column => $value) {
+                $condition_string =. " $column = $value AND";
+            }
+            $statement_string =. $substr($condition_string, 0, -3);
+        }
+        $statement = $this->connection->query($statement_string);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
