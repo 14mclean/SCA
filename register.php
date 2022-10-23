@@ -56,6 +56,7 @@
             }
         }
 
+        document.querySelector("#password_input").addEventListener("input", password_validate);
         function password_validate() {
             const password_input = document.querySelector("#password_input");
             const password = password_input.value;
