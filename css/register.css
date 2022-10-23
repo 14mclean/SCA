@@ -73,10 +73,10 @@ header h1 a {
     position: relative;
     width: 100%;
     text-align: center;
-    top: 50px;
+    top: 45px;
     font-family: 'Raleway';
-    font-weight: 400;
-    font-size: 20px;
+    font-weight: 100;
+    font-size: 18px;
     margin-top: 0;
 }
 
