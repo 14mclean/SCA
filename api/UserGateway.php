@@ -8,7 +8,6 @@ class UserGateway implements Gateway{
     }
 
     public function get_all(): array {
-        var_dump($_GET);
         $statement_string = "SELECT * FROM Users";
         if(count($_GET) > 0) {
             $condition_string = " WHERE";

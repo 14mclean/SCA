@@ -15,17 +15,17 @@ switch($parts[0]) {
     case "experts":
         $gateway = new ExpertGateway($db);
         $controller = new ExpertController($gateway);
-        $controller->process_request($_SERVER["REQUEST_METHOD"], $parts);
+        $controller->process_request($_SERVER["REQUEST_METHOD"], explode("/", $url));
         break;
     case "users":
         $gateway = new UserGateway($db);
         $controller = new UserController($gateway);
-        $controller->process_request($_SERVER["REQUEST_METHOD"], $parts);
+        $controller->process_request($_SERVER["REQUEST_METHOD"], explode("/", $url));
         break;
     case "expertresources":
         $gateway = new ExpertResourceGateway($db);
         $controller = new ExpertResourceController($gateway);
-        $controller->process_request($_SERVER["REQUEST_METHOD"], $parts);
+        $controller->process_request($_SERVER["REQUEST_METHOD"], explode("/", $url));
         break;
     default:
         http_response_code(404);
