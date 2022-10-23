@@ -120,6 +120,14 @@ input:focus {
     border-color: #3d1854;
 }
 
+input:invalid {
+    border-color: red;
+}
+
+input:invalid:focus {
+    border-color: darkred;
+}
+
 #email_input {
     top: 80px;
 }
