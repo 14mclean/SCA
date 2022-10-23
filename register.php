@@ -16,7 +16,7 @@
 
         <main>
             <div class="form_container">
-                <h1>Register</h1>
+                <h1>Sign Up</h1>
                 <h2><?php$_GET["level"]?></h2>
 
                 <form action="phpScripts/login.php">
@@ -27,7 +27,15 @@
 
                     <input type="text" style="display: none;">
 
-                    <button>Login</button>
+                    <a class="switch-level-button">A<?php
+                        if($_GET["level"] == "Teacher") {
+                            echo(" Teacher?");
+                        } else {
+                            echo("n Expert?");
+                        }
+                    ?></a>
+
+                    <button>Register</button>
                 </form>
             </div>
         </main>
