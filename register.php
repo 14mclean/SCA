@@ -17,7 +17,7 @@
         <main>
             <div class="form_container">
                 <h1>Sign Up</h1>
-                <h2><?php$_GET["level"]?></h2>
+                <h2><?php echo $_GET["level"]?></h2>
 
                 <form action="phpScripts/login.php">
                     <input id="email_input" name="email" type="email" placeholder="E-mail" required>

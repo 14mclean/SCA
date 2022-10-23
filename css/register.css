@@ -69,7 +69,13 @@ header h1 a {
 }
 
 .form_container h2 {
-
+    position: relative;
+    width: 100%;
+    text-align: center;
+    top: 50px;
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 25px;
 }
 
 .form_container form {
