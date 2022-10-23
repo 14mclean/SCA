@@ -27,13 +27,13 @@
 
                     <input type="text" style="display: none;">
 
-                    <a class="switch-level-button">A<?php
+                    <?php
                         if($_GET["level"] == "Teacher") {
-                            echo(" Teacher?");
+                            echo("<a href='register.php?level=Expert'>An Expert?</a>");
                         } else {
-                            echo("n Expert?");
+                            echo("<a href='register.php?level=Teacher'>A Teacher?</a>");
                         }
-                    ?></a>
+                    ?>
 
                     <button>Register</button>
                 </form>
