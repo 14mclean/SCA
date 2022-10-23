@@ -32,4 +32,19 @@
             </div>
         </main>
     </body>
+
+    <script>
+        document.querySelector("img").addEventListener("click", swap_visibility);
+        function swap_visibility(event) {
+            const password_input = document.querySelector('#password_input');
+
+            if(password_input.type == "password") {
+                password_input.type = "text";
+                event.target.src = "assets/openEye.png";
+            } else {
+                password_input.type = "password";
+                event.target.src = "assets/noEye.png";
+            }
+        }
+    </script>
 </html>
