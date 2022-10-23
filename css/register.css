@@ -67,9 +67,12 @@ header h1 a {
     font-family: 'Raleway';
     font-weight: 500;
     margin-bottom: 0;
+    padding-bottom: 7px;
+    border-bottom: solid black 1px;
 }
 
 .form_container h2 {
+    padding-top: 7px;
     position: relative;
     width: 100%;
     text-align: center;
