@@ -66,6 +66,7 @@ header h1 a {
     top: 30px;
     font-family: 'Raleway';
     font-weight: 500;
+    margin-bottom: 0;
 }
 
 .form_container h2 {
@@ -75,7 +76,8 @@ header h1 a {
     top: 50px;
     font-family: 'Raleway';
     font-weight: 400;
-    font-size: 25px;
+    font-size: 20px;
+    margin-top: 0;
 }
 
 .form_container form {
