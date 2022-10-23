@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Log In - SCA</title>
+        <title>Sign Up - SCA</title>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
         <link rel="stylesheet" href="css/register.css">
     </head>
@@ -29,9 +29,9 @@
 
                     <?php
                         if($_GET["level"] == "Teacher") {
-                            echo("<a class='level-switch-button' href='register.php?level=Expert'>An Expert?</a>");
+                            echo("<a class='switch-level-button' href='register.php?level=Expert'>An Expert?</a>");
                         } else {
-                            echo("<a class='level-switch-button' href='register.php?level=Teacher'>A Teacher?</a>");
+                            echo("<a class='switch-level-button' href='register.php?level=Teacher'>A Teacher?</a>");
                         }
                     ?>
 
