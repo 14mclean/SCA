@@ -69,6 +69,11 @@ header h1 a {
     margin-bottom: 0;
 }
 
+.form_container hr {
+    position: relative;
+    top: 40px;
+}
+
 .form_container h2 {
     position: relative;
     width: 100%;
