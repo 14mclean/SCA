@@ -72,6 +72,7 @@ header h1 a {
 .form_container hr {
     position: relative;
     top: 40px;
+    width: 50%;
 }
 
 .form_container h2 {

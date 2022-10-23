@@ -17,7 +17,7 @@
         <main>
             <div class="form_container">
                 <h1>Sign Up</h1>
-                <hr width:"50%" />
+                <hr />
                 <h2><?php echo $_GET["level"]?></h2>
 
                 <form action="phpScripts/login.php">
