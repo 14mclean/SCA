@@ -18,10 +18,12 @@ class UserGateway implements Gateway{
             $statement_string .= substr($condition_string, 0, -3);
         }
 
-        $statement $this->connection->prepare($statement_string);
+        $statement = $this->connection->prepare($statement_string);
+
         foreach($_GET as $column => $value) {
             $statement->bindValue(":$column", $value); // data type?
         }
+
         $statement->execute();
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
