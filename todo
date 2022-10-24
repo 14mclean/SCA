@@ -14,6 +14,3 @@ email validation:
  - send email with url (GET?) and code
  - if code too old, delete and reject
  - else verify email
-
-
- ** FILTER BY DB NOT JS **

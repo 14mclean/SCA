@@ -65,28 +65,37 @@
             const password = document.querySelector('#password_input').value;
             const email = document.querySelector('#email_input').value;
 
-            var temp = new TextEncoder().encode(password);
-            temp = await crypto.subtle.digest('SHA-256', temp);
-            temp = Array.from(new Uint8Array(temp));
-            const password_hash = temp.map(b => b.toString(16).padStart(2, '0')).join('');
-
-            fetch("/api/users")
+            fetch("/phpScripts/credentials_check.php", {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({"email":email,"password":password})
+            })
             .then((response) => {
-                if(response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error('Server error ' + response.status);
+                switch(response.status) {
+                    case 200:
+                        break;
+                    case 401:
+                        return response.text();
+                        break;
+                    default:
+                        throw new Error('Server error ' + response.status);
+                        break;
                 }
             })
-            .then(json => {
-                for(const record of json) {
-                    if(record["email"] == email && record["passwordHash"] == password_hash) {
-                        return true; 
-                    }
+            .then(content => {
+                const submit_button = document.querySelector(".form_container form button");
+                if(content == "Email not verified") {
+                    submit_button.setCustomValidity("Email not verified");
+                    submit_button.reportValdity();
+                    return false;
+                } else if(content == "Invalid") {
+                    submit_button.setCustomValidity("Invalid Credentials");
+                    submit_button.reportValdity();
+                    return false;
+                } else {
+                    return true;
                 }
-                document.querySelector(".form_container form button").style.borderColor = "red";
-                return false;
-            });
+            })
         }
 
         document.querySelector(".decision-blur").addEventListener("click", decision_visibility);

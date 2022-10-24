@@ -4,7 +4,7 @@ ini_set("display_errors", 1); // show errors in html (remove after dev)
 
 include_once("../api/Database.php");
 
-$passHash = hash("sha256", $_GET["password"]);
+$passHash = hash("sha256", $_GET["password"]); // TODO change to POST
 
 $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
 $connection = $db->get_connection();

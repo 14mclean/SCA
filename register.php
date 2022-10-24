@@ -90,7 +90,7 @@
                 return false;
             }
 
-            fetch("/api/users") // GET all users
+            fetch("/api/users?email="+email_input.value) // get any users with this email
             .then((response) => {
                 if(response.ok) {
                     return response.json();
@@ -99,14 +99,12 @@
                 }
             })
             .then(json => {
-                for(const record of json) {
-                    if(record["email"] == email_input.value) { // check if email already used
-                        email_input.setCustomValidity("Email already taken");
-                        email_input.reportValidity();
-                        return false;
-                    }
+                if(count(json) > 0) { // if json has contents
+                    email_input.setCustomValidity("Email already taken");
+                    email_input.reportValidity();
+                    return false; // fail
                 }
-                
+
                 fetch("/api/users", { // POST new user information
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -142,7 +140,7 @@
 
                     window.location.href=""; // TODO: foward to email validation
                 });
-            })
+            });
         }
     </script>
 </html>
