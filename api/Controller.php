@@ -60,7 +60,7 @@ abstract class Controller {
     protected function process_collection_resource(string $method): void {
         switch($method) {
             case "GET":
-                echo json_encode($this->gateway->get_all()); // pass params
+                echo json_encode($this->gateway->get_all());
                 break;
             case "POST":
                 $data = (array) json_decode(file_get_contents("php://input"), true);

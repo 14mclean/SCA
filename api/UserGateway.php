@@ -21,7 +21,7 @@ class UserGateway implements Gateway{
         $statement = $this->connection->prepare($statement_string);
 
         foreach($_GET as $column => $value) {
-            $statement->bindValue(":$column", $value); // data type?
+            $statement->bindValue(":$column", $value);
         }
 
         $statement->execute();
