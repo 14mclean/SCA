@@ -9,22 +9,27 @@ class UserGateway implements Gateway{
 
     public function get_all(): array {
         $statement_string = "SELECT * FROM Users";
+
         if(count($_GET) > 0) {
             $condition_string = " WHERE";
             foreach($_GET as $column => $value) {
-                $condition_string .= " $column = $value AND";
+                $condition_string .= " $column = :$column AND";
             }
             $statement_string .= substr($condition_string, 0, -3);
         }
-        $statement = $this->connection->query($statement_string);
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        $statement $this->connection->prepare($statement_string);
+        foreach($_GET as $column => $value) {
+            $statement->bindValue(":$column", $value); // data type?
+        }
+        $statement->execute();
+        return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
     public function create(array $data): string {
         if(!empty([$data["password"]])) {
             $data["passwordHash"] = hash("sha256", $data["password"]);
         }
-        // allow for defaults
         $statement = $this->connection->prepare("INSERT INTO Users (email, passwordHash, emailVerified, userLevel) VALUES (:email, :passwordHash, :emailVerified, :userLevel)");
         $statement->bindValue(":email", $data["email"], PDO::PARAM_STR);
         $statement->bindValue(":passwordHash", $data["passwordHash"], PDO::PARAM_STR);
