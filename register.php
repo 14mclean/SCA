@@ -87,8 +87,10 @@
             event.preventDefault();
             const email_input = document.querySelector("#email_input");
 
-            if(!password_validate() || email_input.checkValidity()) {
-                return false;
+            if(!email_input.checkValidity()) {
+                // show bad
+            } else if(!password_validate()) {
+                // show bad
             }
 
             fetch("/api/users?email="+email_input.value) // get any users with this email
