@@ -27,6 +27,6 @@ if(count($result) == 1 || isset($result["userID"])) {
     $_SESSION["userLevel"] = $result[0]["userLevel"]  ?? $result["userLevel"];
     header("Location: ../directory.php"); // redirect to directory
 } else {
-    header("Location: ../meet-the-experts.php");
+    //header("Location: ../meet-the-experts.php");
 }
 exit();
