@@ -141,7 +141,7 @@
                         });
                     } 
 
-                    window.location.href=""; // TODO: foward to email validation
+                    window.location.href="email-validation.html"; // TODO: foward to email validation
                 });
             });
         }
