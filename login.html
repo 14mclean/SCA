@@ -24,6 +24,9 @@
                     <input id="password_input" name="password" type="password" placeholder="Password" required>
                     <img src="assets/noEye.png">
 
+                    <p id="bad-login">The email and password did not match any account. Please try again.</p>
+                    <p id="unverified-email">The email associated with this account has not been validated</p>
+                    
                     <input type="text" style="display: none;">
 
                     <a class="register-button">Register Here</a>
@@ -85,10 +88,11 @@
             })
             .then(content => {
                 if(content == "Email not verified") {
-                    document.querySelector('#email_input').setCustomValidity("Email not verified");
-                    
+                    document.querySelector('#unverified-email').style.display = "block";
+                    document.querySelector('#bad-login').style.display = "none";
                 } else if(content == "Invalid") {
-                    document.querySelector('#password_input').setCustomValidity("Unknown email or password");
+                    document.querySelector('#bad-login').style.display = "block";
+                    document.querySelector('#unverified-email').style.display = "none";
                 } else {
                     //window.location.href = "phpScripts/login.php";
                 }

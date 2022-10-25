@@ -116,6 +116,30 @@ img {
     cursor: pointer;
 }
 
+#unverified-email {
+    width: 300px;
+    position: relative;
+    left: 80px;
+    top: -5px;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+
+#bad-login {
+    width: 300px;
+    position: relative;
+    left: 80px;
+    top: 110px;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+
 form button {
     position: absolute;
     bottom: 50px;
