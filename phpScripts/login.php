@@ -5,6 +5,8 @@ ini_set("display_errors", 1); // show errors in html (remove after dev)
 include_once("../api/Database.php");
 
 $data = (array) json_decode(file_get_contents("php://input"), true);
+var_dump($_POST);
+var_dump($data);
 $passHash = hash("sha256", $data["password"]); // TODO change to POST
 
 $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
