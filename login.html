@@ -84,14 +84,11 @@
                 }
             })
             .then(content => {
-                const submit_button = document.querySelector(".form_container form button");
                 if(content == "Email not verified") {
-                    document.querySelector('#email_input').setCustomValidity("Email not verified")
-                    document.querySelector('#email_input').reportValdity();
+                    document.querySelector('#email_input').setCustomValidity("Email not verified");
                     
                 } else if(content == "Invalid") {
                     document.querySelector('#password_input').setCustomValidity("Unknown email or password");
-                    document.querySelector('#password_input').reportValdity();
                 } else {
                     //window.location.href = "phpScripts/login.php";
                 }
