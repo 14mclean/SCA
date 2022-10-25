@@ -20,7 +20,7 @@
                 <hr />
                 <h2><?php echo $_GET["level"]?></h2>
 
-                <form action="phpScripts/login.php">
+                <form>
                     <input id="email_input" name="email" type="email" placeholder="E-mail" required>
 
                     <input id="password_input" name="password" type="password" placeholder="Password" required>
