@@ -102,7 +102,7 @@
                 }
             })
             .then(json => {
-                if(count(json) > 0) { // if json has contents
+                if(json.length > 0) { // if json has contents
                     email_input.setCustomValidity("Email already taken");
                     email_input.reportValidity();
                     return false; // fail
