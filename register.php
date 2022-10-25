@@ -20,7 +20,7 @@
                 <hr />
                 <h2><?php echo $_GET["level"]?></h2>
 
-                <form onsumbit="submit()">
+                <form>
                     <input id="email_input" name="email" type="email" placeholder="E-mail" required>
 
                     <input id="password_input" name="password" type="password" placeholder="Password" required>
@@ -82,6 +82,7 @@
             return is_valid;
         }
 
+        document.querySelector("form").addEventListener("submit", submit);
         function submit(event) {
             event.preventDefault();
             const email_input = document.querySelector("#email_input");
