@@ -16,6 +16,9 @@ $statement->bindValue(":passwordHash", $passwordHash, PDO::PARAM_STR);
 $statement->execute();
 
 $result = $statement->fetch(PDO::FETCH_ASSOC);
+if($result == false) {
+    $result = [];
+}
 
 if(count($result) == 1 || isset($result["userID"])) {
     if( ($result[0]["emailVerified"] ?? $result["emailVerified"]) == 0) {
