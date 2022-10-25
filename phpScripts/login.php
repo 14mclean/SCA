@@ -14,7 +14,9 @@ $statement->bindValue(":passwordHash", $passHash, PDO::PARAM_STR);
 $statement->execute();
 $result = $statement->fetch(PDO::FETCH_ASSOC);
 
-var_dump($result);
+if($result == false) {
+    $result = [];
+}
 
 if(count($result) == 1 || isset($result["userID"])) {
     // check email validation
