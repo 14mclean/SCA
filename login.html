@@ -18,7 +18,7 @@
             <div class="form_container">
                 <h1>Log In</h1>
 
-                <form action="phpScripts/login.php">
+                <form>
                     <input id="email_input" name="email" type="email" placeholder="E-mail" required>
 
                     <input id="password_input" name="password" type="password" placeholder="Password" required>
@@ -87,13 +87,12 @@
                 if(content == "Email not verified") {
                     submit_button.setCustomValidity("Email not verified");
                     submit_button.reportValdity();
-                    return false;
+                    
                 } else if(content == "Invalid") {
                     submit_button.setCustomValidity("Invalid Credentials");
                     submit_button.reportValdity();
-                    return false;
                 } else {
-                    return true;
+                    window.location.href = "phpScripts/login.php";
                 }
             })
         }
