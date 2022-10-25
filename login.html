@@ -86,12 +86,12 @@
             .then(content => {
                 const submit_button = document.querySelector(".form_container form button");
                 if(content == "Email not verified") {
-                    submit_button.setCustomValidity("Email not verified");
-                    submit_button.reportValdity();
+                    document.querySelector('#email_input').setCustomValidity("Email not verified")
+                    document.querySelector('#email_input').reportValdity();
                     
                 } else if(content == "Invalid") {
-                    submit_button.setCustomValidity("Invalid Credentials");
-                    submit_button.reportValdity();
+                    document.querySelector('#password_input').setCustomValidity("Unknown email or password");
+                    document.querySelector('#password_input').reportValdity();
                 } else {
                     //window.location.href = "phpScripts/login.php";
                 }
