@@ -24,6 +24,7 @@ do {
 } while(code_exists($connection, $code)); // if code clashes repeat
 
 $message = file_get_contents("../assets/verification-email.html");
+$message = "test";
 
 mail( // send email
     $data["email"],
