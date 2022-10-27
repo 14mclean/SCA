@@ -12,7 +12,7 @@ function code_exists($connection, $code) {
     $statement->bindValue(":code", $code, PDO::PARAM_STR);
     $statement->execute();
     $result = $statement->fetch(PDO::FETCH_ASSOC);
-    return $result->fetchColumn() > 0;
+    return count($result) > 0;
 }
 
 do {
