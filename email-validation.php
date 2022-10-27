@@ -1,6 +1,6 @@
 <?php
 
-include_once("../api/Database.php");
+include_once("api/Database.php");
 
 $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
 $connection = $db->get_connection();
