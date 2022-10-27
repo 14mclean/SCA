@@ -86,6 +86,7 @@
         function submit(event) {
             event.preventDefault();
             const email_input = document.querySelector("#email_input");
+            const email = email_input.value;
 
             if(!email_input.checkValidity()) {
                 // show bad
@@ -93,7 +94,7 @@
                 // show bad
             }
 
-            fetch("/api/users?email="+email_input.value) // get any users with this email
+            fetch("/api/users?email="+email) // get any users with this email
             .then((response) => {
                 if(response.ok) {
                     return response.json();
@@ -112,7 +113,7 @@
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
-                        "email": email_input.value,
+                        "email": email,
                         "password": password_input.value,
                         "emailVerified": 0,
                         "userLevel": "<?php echo($_GET["level"]) ?>"
@@ -126,6 +127,20 @@
                     }
                 })
                 .then(json => {
+                    fetch("/send_validation_email.php", {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({
+                            "email": email,
+                            "userID": json["id"]
+                        })
+                    })
+                    .then(response => {
+                        if(!response.ok) {
+                            throw new Error('Server error ' + response.status);
+                        }
+                    });
+
                     if("<?php echo($_GET["level"]) ?>" == "Expert") { // check if expert
                         fetch("/api/experts", { // POST new expert information
                         method: 'POST',
@@ -140,8 +155,8 @@
                             }
                         });
                     } 
-
-                    window.location.href="email-validation.html"; // TODO: foward to email validation
+                    
+                    window.location.href="email-validation.html";
                 });
             });
         }
