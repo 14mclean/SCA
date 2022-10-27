@@ -156,7 +156,7 @@
                         });
                     } 
                     
-                    window.location.href="email-validation.php";
+                    window.location.href="meet-the-experts.php";
                 });
             });
         }
