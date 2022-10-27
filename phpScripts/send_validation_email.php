@@ -26,8 +26,8 @@ do {
 mail( // send email
     $data["email"],
     "School Citizen Assemblies Email Verification",
-    "Click this link: schoolcitizenassemblies/email-validation?code=".$code,
-    "From: no-reply@schoolcitizenassemblies.org"
+    file_get_contents("../assets/verification-email.html", true),
+    "From: no-reply@schoolcitizenassemblies.org \r\n MIME-Version: 1.0 \r\n Content-Type: text/html; charset=UTF-8\r\n"
 );
 
 $statement = $connection->prepare("INSERT INTO EmailCodes (userID,code) VALUES (:userid, :code)");
