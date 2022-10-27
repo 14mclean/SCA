@@ -127,7 +127,7 @@
                     }
                 })
                 .then(json => {
-                    fetch("/send_validation_email.php", {
+                    fetch("phpScripts/send_validation_email.php", {
                         method: 'POST',
                         headers: {'Content-Type': 'application/json'},
                         body: JSON.stringify({
