@@ -24,13 +24,13 @@ do {
 } while(code_exists($connection, $code)); // if code clashes repeat
 
 $message = file_get_contents("../assets/verification-email.html");
-$message = "test";
+$message = "<h1>test</h1>";
 
 mail( // send email
     $data["email"],
     "School Citizen Assemblies Email Verification",
     $message,
-    "From: no-reply@schoolcitizenassemblies.org \r\n MIME-Version: 1.0 \r\n Content-Type: text/html; charset=UTF-8\r\n"
+    "From: no-reply@schoolcitizenassemblies.org\r\nMIME-Version: 1.0\r\nContent-Type: text/html; charset=UTF-8\r\n"
 );
 
 $statement = $connection->prepare("INSERT INTO EmailCodes (userID,code) VALUES (:userid, :code)");
