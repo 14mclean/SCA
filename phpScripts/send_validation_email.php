@@ -12,7 +12,11 @@ function code_exists($connection, $code) {
     $statement->bindValue(":code", $code, PDO::PARAM_STR);
     $statement->execute();
     $result = $statement->fetch(PDO::FETCH_ASSOC);
-    return count($result) > 0 ?? $result;
+    if($result == false) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 do {
@@ -27,6 +31,6 @@ mail( // send email
 );
 
 $statement = $connection->prepare("INSERT INTO EmailCodes (userID,code) VALUES (:userid, :code)");
-$statement->bindValue(":userid", $data["userID"]); // TODO get userid
+$statement->bindValue(":userid", $data["userID"]);
 $statement->bindValue(":code", $code);
 $statement->execute();
