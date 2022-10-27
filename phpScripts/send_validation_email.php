@@ -23,7 +23,80 @@ do {
     $code = bin2hex(random_bytes(128)); // randomly generate code
 } while(code_exists($connection, $code)); // if code clashes repeat
 
-$message = file_get_contents("../assets/verification-email.html");
+$message = "
+<!DOCTYPE html>
+    <head>
+        <title></title>
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+            body {
+                overflow: hidden;
+                background-color: #dddddd;
+            }
+
+            div {
+                background-color: white;
+                width: 800px;
+                height: 500px;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            header {
+                background-color: #401b57;
+                height: 50px;
+            }
+
+            header h1 {
+                color: white;
+                margin-left: 50px;
+                line-height: 50px;
+                font-family: 'Raleway';
+            }
+
+            h2 {
+                font-family: 'Open Sans';
+                margin-left: 20px;
+            }
+
+            p {
+                font-family: 'Open Sans';
+                margin-left: 20px;
+            }
+
+            a {
+                background-color: #401b57;
+                border-radius: 5px;
+                color: white;
+                font-family: 'Raleway';
+                padding: 8px 20px;
+                position: relative;
+                left: 25px;
+                top: 30px
+            }
+
+            a:hover {
+                background-color: #401b57df;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <header>
+                <h1>School Citizen Assemblies</h1>
+            </header>
+            
+            <h2>Email Confirmation</h2>
+            <p>Thank you for signing up for the SCA, please click the button below to verify this email address </p>
+            <a href=https://schoolcitizenassemblies.org/email-validation.php?code=$code>Verify</a>
+        </div>
+    </body>
+</html>
+";
 
 mail( // send email
     $data["email"],
