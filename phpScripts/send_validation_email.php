@@ -7,7 +7,7 @@ include_once("../api/Database.php");
 $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
 $connection = $db->get_connection();
 
-code_exists($code) {
+function code_exists($code) {
     $statement = $connection->prepare("SELECT * FROM EmailCodes WHERE code = :code");
     $statement->bindValue(":code", $code, PDO::PARAM_STR);
     $statement->execute();
