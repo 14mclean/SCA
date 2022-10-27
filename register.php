@@ -156,7 +156,7 @@
                         });
                     } 
                     
-                    window.location.href="email-validation.html";
+                    window.location.href="email-validation.php";
                 });
             });
         }
