@@ -23,10 +23,12 @@ do {
     $code = bin2hex(random_bytes(128)); // randomly generate code
 } while(code_exists($connection, $code)); // if code clashes repeat
 
+$message = file_get_contents("../assets/verification-email.html");
+
 mail( // send email
     $data["email"],
     "School Citizen Assemblies Email Verification",
-    file_get_contents("../assets/verification-email.html", true),
+    $message,
     "From: no-reply@schoolcitizenassemblies.org \r\n MIME-Version: 1.0 \r\n Content-Type: text/html; charset=UTF-8\r\n"
 );
 
