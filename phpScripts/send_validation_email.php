@@ -7,7 +7,7 @@ include_once("../api/Database.php");
 $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
 $connection = $db->get_connection();
 
-function code_exists($code) {
+function code_exists($connection, $code) {
     $statement = $connection->prepare("SELECT * FROM EmailCodes WHERE code = :code");
     $statement->bindValue(":code", $code, PDO::PARAM_STR);
     $statement->execute();
@@ -17,7 +17,7 @@ function code_exists($code) {
 
 do {
     $code = bin2hex(random_bytes(128)); // randomly generate code
-} while(code_exists($code)); // if code clashes repeat
+} while(code_exists($connection, $code)); // if code clashes repeat
 
 mail( // send email
     $data["email"],
