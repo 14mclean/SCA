@@ -20,7 +20,7 @@ function code_exists($connection, $code) {
 }
 
 do {
-    $code = bin2hex(random_bytes(128)); // randomly generate code
+    $code = bin2hex(random_bytes(64)); // randomly generate code
 } while(code_exists($connection, $code)); // if code clashes repeat
 
 $message = "

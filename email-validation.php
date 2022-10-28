@@ -29,7 +29,7 @@ $statement->bindValue(":userid", $userID, PDO::PARAM_INT);
 $statement->execute();
 
 // delete code
-$statement = $connection->prepare("DELETE FROM EmailCodes WHERE codes=:code");
+$statement = $connection->prepare("DELETE FROM EmailCodes WHERE code=:code");
 $statement->bindValue(":code", $code, PDO::PARAM_STR);
 $statement->execute();
 
