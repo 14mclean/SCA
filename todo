@@ -8,9 +8,3 @@ look into OAuth
 new (origianl?) coverflow mechanism
 forgot password
 mobile version of each page
-
-email validation:
- - db: {userID, code(hash userid), codeCreationDT}
- - send email with url (GET?) and code
- - if code too old, delete and reject
- - else verify email
