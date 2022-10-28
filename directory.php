@@ -66,18 +66,19 @@
                     $statement->execute();
                     $result = $statement->fetchAll();
 
-                    foreach($result as &$row) {
-                        $org = $row["Organisation"];
-
-                        echo("
-                        <label class='custom-checkbox'>
-                            $org
-                            <input type='checkbox'>
-                            <span class='new-checkbox'></span>
-                        </label>
-                        ");
+                    if($result) {
+                        foreach($result as &$row) {
+                            $org = $row["Organisation"];
+    
+                            echo("
+                            <label class='custom-checkbox'>
+                                $org
+                                <input type='checkbox'>
+                                <span class='new-checkbox'></span>
+                            </label>
+                            ");
+                        }
                     }
-
                     ?>
                 </div>
 
