@@ -207,7 +207,7 @@
     <script>
 
     function hide_refinement(refinement_div) {
-        refinement_div.classList.toggle("collapse");
+        refinement_div.classList.toggle("collapsed");
 
         const vert_span = refinement_div.firstElementChild.firstElementChild.firstElementChild;
         if(vert_span.style.transform == "rotate(90deg)") {
