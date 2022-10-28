@@ -203,4 +203,19 @@
             <p>info@schoolcitizenassemblies.org</p>
         </footer>
     </body>
+
+    <script>
+
+    function hide_refinement(refinement_div) {
+        refinement_div.classList.toggle("collapse");
+
+        const vert_span = refinement_div.firstElmentChild.firstElmentChild;
+        if(vert_span.style.webkitTransform == "rotate(0deg)") {
+            vert_span.style.webkitTransform = "rotate(90deg)";
+        } else {
+            vert_span.style.webkitTransform = "rotate(0deg)";
+        }
+    }
+
+    </script>
 </html>
