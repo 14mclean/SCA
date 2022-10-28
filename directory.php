@@ -209,7 +209,7 @@
     function hide_refinement(refinement_div) {
         refinement_div.classList.toggle("collapse");
 
-        const vert_span = refinement_div.firstElmentChild.firstElmentChild;
+        const vert_span = refinement_div.firstElementChild.firstElementChild;
         if(vert_span.style.webkitTransform == "rotate(0deg)") {
             vert_span.style.webkitTransform = "rotate(90deg)";
         } else {
