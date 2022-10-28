@@ -210,10 +210,10 @@
         refinement_div.classList.toggle("collapsed");
 
         const vert_span = refinement_div.firstElementChild.firstElementChild.firstElementChild;
-        if(vert_span.style.transform == "rotate(90deg)") {
-            vert_span.style.transform = "rotate(0deg)";
-        } else {
+        if(vert_span.style.transform == "rotate(0deg)") {
             vert_span.style.transform = "rotate(90deg)";
+        } else {
+            vert_span.style.transform = "rotate(0deg)";
         }
     }
 
