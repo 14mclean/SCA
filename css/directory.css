@@ -65,7 +65,157 @@ header nav a:hover {
 }
 
 main {
+    position: relative;
+    top: 10px;
+    display: inline-block;
+}
 
+aside {
+    width: 270px;
+    height: 800px;
+    float: left;
+    position: relative;
+    top: 20px
+}
+
+.refinement {
+    width: 85%;
+    margin-left: 15px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    max-height: 200px;
+    height: auto;
+	transition: max-height 0.5s ease-out;
+}
+
+.refinement.collapsed {
+    max-height: 30px;
+}
+
+.refinement h2 {
+    font-family: 'Raleway';
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+#expand-button {
+    width: 12px;
+    height: 12px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+#expand-button span {
+    content: "";
+    margin-top: 16px;
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 12px;
+    background-color: #444;
+    top: -11px;
+}
+
+#expand-button #vertical {
+    transform: rotate(90deg);
+    transition: transform 0.45s cubic-bezier(0.165,0.84,0.44,1)
+}
+
+.custom-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Open Sans';
+    font-weight: 500;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 200px;
+}
+  
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.new-checkbox {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    border: 1px solid #888888;
+    border-radius: 3px;
+}
+
+.custom-checkbox:hover input ~ .new-checkbox {
+    background-color: #eee;
+}
+
+.custom-checkbox input:checked ~ .new-checkbox {
+    background-color: #6b2c91;
+    border-color: #6b2c91;
+}
+
+.new-checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked ~ .new-checkbox:after {
+    display: block;
+}
+
+.custom-checkbox .new-checkbox:after {
+    left: 6px;
+    top: 2px;
+    width: 3px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#distance input {
+    float: left;
+}
+
+#distance output {
+    float: left;
+    margin-left: 15px;
+    font-family: 'Open Sans';
+    font-size: 14px;
+}
+
+#distance p {
+    margin: 0;
+    float: left;
+    font-family: 'Open Sans';
+    font-size: 14px;
+}
+
+#results {
+    border-radius: 15px;
+    border: 1px solid #dddddd;
+    position: relative;
+    top: 35px;
+    left: 20px;
+    float: right;
+    width: calc(100vw - 310px);
+    height: 800px
 }
 
 footer {
