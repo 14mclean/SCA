@@ -28,9 +28,9 @@ $message = "
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
     @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-    body {
-        overflow: hidden;
+    #background {
         background-color: #dddddd;
+        width: 100%;
     }
 
     div {
@@ -82,14 +82,16 @@ $message = "
     }
 </style>
     
-<div>
-    <header>
-        <h1>School Citizen Assemblies</h1>
-    </header>
-    
-    <h2>Email Confirmation</h2>
-    <p>Thank you for signing up for the SCA, please click the button below to verify this email address </p>
-    <a href=https://schoolcitizenassemblies.org/email-validation.php?code=$code>Verify</a>
+<div id='background'>
+    <div>
+        <header>
+            <h1>School Citizen Assemblies</h1>
+        </header>
+
+        <h2>Email Confirmation</h2>
+        <p>Thank you for signing up for the SCA, please click the button below to verify this email address </p>
+        <a href=https://schoolcitizenassemblies.org/email-validation.php?code=$code>Verify</a>
+    </div>
 </div>
 
 ";
