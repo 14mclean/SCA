@@ -67,7 +67,7 @@
                     $result = $statement->fetchAll();
 
                     foreach($result as &$row) {
-                        $org = $row["organisation"];
+                        $org = $row["Organisation"];
 
                         echo("
                         <label class='custom-checkbox'>
