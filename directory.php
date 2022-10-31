@@ -195,7 +195,7 @@
             <div id="search-container">
                 <input type="text">
             </div>
-
+            <br>
             <div id="results">
                 test
             </div>
