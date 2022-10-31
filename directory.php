@@ -192,6 +192,10 @@
                 </div>
             </aside>
 
+            <div id="search-container">
+                <input type="text">
+            </div>
+
             <div id="results">
                 test
             </div>
@@ -229,9 +233,10 @@
 
     function search() {
         // org = ticked OR ticked ...
-        // ages = ticked AND ticked ...
-        // 
-        fetch("/api/experts?")
+        // ages = ticked OR ticked ...
+        // interaction types = ticked OR ticked ...
+        // student interactions = if(student interaction) {ticked OR ticked}
+        // adminVerified = 1
     }
 
     </script>
