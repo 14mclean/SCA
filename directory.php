@@ -139,13 +139,13 @@
 
                     <label class="custom-checkbox">
                         Student Interaction
-                        <input type="checkbox">
+                        <input type="checkbox" onclick="show_interactions()">
                         <span class="new-checkbox"></span>
                     </label>
 
                     <label class="custom-checkbox">
                         Project Work
-                        <input type="checkbox" onclick="show_interactions()">
+                        <input type="checkbox">
                         <span class="new-checkbox"></span>
                     </label>
                 </div>
