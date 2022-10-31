@@ -145,7 +145,7 @@
 
                     <label class="custom-checkbox">
                         Project Work
-                        <input type="checkbox">
+                        <input type="checkbox" onclick="show_interactions()">
                         <span class="new-checkbox"></span>
                     </label>
                 </div>
@@ -215,6 +215,22 @@
         } else {
             vert_span.style.transform = "rotate(0deg)";
         }
+    }
+
+    function show_interactions() {
+        const student_interactions = document.querySelector("#student-interactions");
+
+        if(student_interactions.style.maxHeight == "200px") {
+            student_interactions.style.maxHeight = "0px";
+        } else {
+            student_interactions.style.maxHeight = "200px";
+        }
+    }
+
+    function search() {
+        // org = 
+        // 
+        fetch("/api/experts?")
     }
 
     </script>

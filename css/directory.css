@@ -83,7 +83,7 @@ aside {
     margin-left: 15px;
     margin-bottom: 40px;
     overflow: hidden;
-    max-height: 200px;
+    max-height: 120px;
     height: auto;
 	transition: max-height 0.5s ease-out;
 }
@@ -98,6 +98,18 @@ aside {
     font-weight: 600;
     color: #333333;
     margin-bottom: 10px;
+}
+
+#ages {
+    max-height: 170px;
+}
+
+#distance {
+    max-height: 80px;
+}
+
+#organisation {
+    overflow-y: scroll;
 }
 
 #expand-button {
@@ -121,7 +133,7 @@ aside {
 
 #expand-button #vertical {
     transform: rotate(90deg);
-    transition: transform 0.45s cubic-bezier(0.165,0.84,0.44,1)
+    transition: transform 0.45s cubic-bezier(0.165,0.84,0.44,1);
 }
 
 .custom-checkbox {
