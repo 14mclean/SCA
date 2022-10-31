@@ -79,8 +79,9 @@ aside {
 }
 
 .refinement {
-    width: 85%;
+    width: 95%;
     margin-left: 15px;
+    margin-right: 0;
     margin-bottom: 40px;
     overflow: hidden;
     max-height: 120px;
@@ -119,6 +120,8 @@ aside {
     position: relative;
     float: right;
     cursor: pointer;
+    position: relative;
+    right: 20px;
 }
 
 #expand-button span {
