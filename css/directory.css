@@ -242,6 +242,7 @@ aside {
     width: calc(100%-271px);
     text-align: center;
     flex-grow: 3;
+    height: 50px;
 }
 
 #results {
