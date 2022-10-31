@@ -79,7 +79,7 @@ aside {
 }
 
 #ages {
-    max-height: 170px;
+    max-height: 180px;
 }
 
 #ages.collapsed {
@@ -91,6 +91,14 @@ aside {
 }
 
 #distance.collapsed {
+    max-height: 30px;
+}
+
+#student-interactions {
+    max-height: 0px;
+}
+
+#student-interactions.collapsed {
     max-height: 30px;
 }
 

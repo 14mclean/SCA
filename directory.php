@@ -228,7 +228,8 @@
     }
 
     function search() {
-        // org = 
+        // org = ticked OR ticked ...
+        // ages = ticked AND ticked ...
         // 
         fetch("/api/experts?")
     }
