@@ -235,7 +235,11 @@ aside {
 }
 
 #search-container {
-    
+    float: right;
+    position: relative;
+    top: 40px;
+    right: 50%;
+    transform: translate(50%);
 }
 
 #results {
