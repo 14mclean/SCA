@@ -238,15 +238,14 @@ aside {
     float: right;
     position: relative;
     top: 40px;
-    right: 50%;
-    transform: translate(50%);
+    width: 100%;
 }
 
 #results {
     border-radius: 15px;
     border: 1px solid #dddddd;
     position: relative;
-    top: 35px;
+    top: 50px;
     left: 20px;
     float: right;
     width: calc(100vw - 310px);
