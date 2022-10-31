@@ -78,6 +78,14 @@ aside {
     top: 20px
 }
 
+#ages {
+    max-height: 170px;
+}
+
+#distance {
+    max-height: 80px;
+}
+
 .refinement {
     width: 95%;
     margin-left: 15px;
@@ -99,18 +107,6 @@ aside {
     font-weight: 600;
     color: #333333;
     margin-bottom: 10px;
-}
-
-#ages {
-    max-height: 170px;
-}
-
-#distance {
-    max-height: 80px;
-}
-
-#organisation {
-    
 }
 
 #expand-button {
