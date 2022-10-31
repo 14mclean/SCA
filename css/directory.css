@@ -82,8 +82,16 @@ aside {
     max-height: 170px;
 }
 
+#ages.collapsed {
+    max-height: 30px;
+}
+
 #distance {
     max-height: 80px;
+}
+
+#distance.collapsed {
+    max-height: 30px;
 }
 
 .refinement {
