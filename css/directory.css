@@ -67,15 +67,16 @@ header nav a:hover {
 main {
     position: relative;
     top: 10px;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
 }
 
 aside {
-    width: 270px;
     height: 800px;
     float: left;
     position: relative;
-    top: 20px
+    top: 20px;
+    flex-grow: 1;
 }
 
 #ages {
@@ -238,7 +239,9 @@ aside {
     float: right;
     position: relative;
     top: 40px;
-    width: calc(100%-270px);
+    width: calc(100%-271px);
+    text-align: center;
+    flex-grow: 3;
 }
 
 #results {
@@ -249,7 +252,8 @@ aside {
     left: 20px;
     float: right;
     width: calc(100vw - 310px);
-    height: 800px
+    height: 800px;
+    flex-grow: 3;
 }
 
 footer {
