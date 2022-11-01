@@ -314,9 +314,7 @@ aside {
     position: relative;
     left: 15px;
     margin-bottom: 15px;
-    height: 40px;
-    line-height: 18px;
-    vertical-align: middle;
+    height: fit-content;
 }
 
 .result h2 {
