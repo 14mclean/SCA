@@ -273,6 +273,14 @@ aside {
     border: 1px solid #dddddd;
     height: fit-content;
     margin-top: 50px;
+    display: flex;
+    align-content: space-around;
+}
+
+.result {
+    height: 150px;
+    width: 150px;
+    background-color: #ddd;
 }
 
 footer {
