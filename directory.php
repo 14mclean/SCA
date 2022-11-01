@@ -200,6 +200,7 @@
                 <div id="results">
                     <div class="result">
                         <img src="assets/profilePicture.png">
+                        <p>@ Manchester University</p>
                     </div>
 
                     <div class="result">
