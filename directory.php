@@ -194,7 +194,7 @@
 
             <div id="right">
                 <div id="search-container">
-                    <input type="text" placeholer="Search Expertise">
+                    <input type="text" placeholder="Search Expertise">
                 </div>
                 
                 <div id="results">
