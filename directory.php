@@ -199,7 +199,7 @@
                 
                 <div id="results">
                     <div class="result">
-                        org
+                        <img src="assets/profilePicture.png">
                     </div>
 
                     <div class="result">

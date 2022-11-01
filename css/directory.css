@@ -283,9 +283,17 @@ aside {
 }
 
 .result {
-    height: 150px;
-    width: 150px;
+    height: 250px;
+    width: 250px;
     background-color: #ddd;
+}
+
+.result img {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 5px;
+    left: 5px;
 }
 
 footer {
