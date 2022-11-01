@@ -60,6 +60,7 @@ header nav a:hover {
     top: 130px;
     background-color: #6b2c91;
     margin-top: -50px;
+    display: flex;
     justify-content: space-around;
 }
 
