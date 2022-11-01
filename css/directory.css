@@ -275,6 +275,7 @@ aside {
     margin-top: 50px;
     display: flex;
     align-content: space-around;
+    padding: 30px 30px;
 }
 
 .result {
