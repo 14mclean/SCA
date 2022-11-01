@@ -10,3 +10,14 @@ forgot password
 mobile version of each page
 
 distance slider: min, max initial
+
+collect:
+    name
+    expertise
+    place of work (org)
+    voulenteer/employee?
+    job title (if employee)
+    ages (key stages)
+    interaction types (& student interaction types)
+    location
+    resource: title, link, description(optional)
