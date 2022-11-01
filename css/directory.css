@@ -304,6 +304,8 @@ aside {
     margin: 0;
     font-weight: 600;
     width: 180px;
+    float: right;
+    margin-right: 10px;
 }
 
 .result h2 {
@@ -313,6 +315,8 @@ aside {
     margin: 0;
     font-weight: 100;
     width: 180px;
+    float: right;
+    margin-right: 10px;
 }
 
 .result p {
