@@ -241,6 +241,8 @@ aside {
 #search-container {
     text-align: center;
     height: 50px;
+    overflow: hidden;
+    float: none;
 }
 
 #search-container input {
