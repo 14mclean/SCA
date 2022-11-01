@@ -283,12 +283,12 @@ aside {
 }
 
 .result {
-    height: none;
     max-height: 160px;
     width: 250px;
     background-color: #ddd;
     display: inline-block;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    overflow: hidden;
 }
 
 .result:hover {
