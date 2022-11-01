@@ -246,7 +246,9 @@ aside {
 }
 
 #search-container input {
-
+    width: 80%;
+    height: 90%;
+    margin-top: 5%;
 }
 
 #results {
