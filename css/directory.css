@@ -283,6 +283,7 @@ aside {
 }
 
 .result {
+    height: none;
     max-height: 160px;
     width: 250px;
     background-color: #ddd;
