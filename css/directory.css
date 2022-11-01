@@ -256,7 +256,6 @@ aside {
     font-size: 16px;
     font-family: 'Open Sans';
     border: 1px solid #dfe1e5;
-    outline: none;
 }
 
 #search-container input:hover {
@@ -265,8 +264,8 @@ aside {
     border-color: rgba(223,225,229,0);
 }
 
-#search-container input:focus-visible {
-    outline: -webkit-focus-ring-color auto 1px;
+#search-container input:focus {
+    outline: none;
 }
 
 #results {
