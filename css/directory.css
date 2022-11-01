@@ -255,12 +255,11 @@ aside {
     border-radius: 15px;
     font-size: 16px;
     font-family: 'Open Sans';
-    border: 1px solid #333
 }
 
 #search-container input:hover {
-    background-color: #ccc;
-    border: none;
+    background-color: #eee;
+    border-color: #666;
     box-shadow: 0 1px 6px 0 #a7a7a7;
 }
 
