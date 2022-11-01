@@ -258,10 +258,6 @@ aside {
     border: 1px solid #333
 }
 
-#search-container input:active {
-    border: 2px solid #555;
-}
-
 #results {
     border-radius: 15px;
     border: 1px solid #dddddd;
