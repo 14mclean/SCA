@@ -249,8 +249,12 @@ aside {
 }
 
 #search-container input {
-    width: 400px;
-    height: 30px;
+    width: 380px;
+    height: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #results {
