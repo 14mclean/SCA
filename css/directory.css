@@ -286,6 +286,7 @@ aside {
     height: 250px;
     width: 250px;
     background-color: #ddd;
+    display: inline-block;
 }
 
 .result img {
