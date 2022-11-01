@@ -260,7 +260,7 @@ aside {
 
 #search-container input:hover {
     background-color: #eee;
-    border-color: #666;
+    border-color: #999;
     box-shadow: 0 1px 6px 0 #a7a7a7;
 }
 
