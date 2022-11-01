@@ -194,7 +194,7 @@
 
             <div id="right">
                 <div id="search-container">
-                    <input type="text">
+                    <input type="text"><img src="searchIcon.png"></input>
                 </div>
                 
                 <div id="results">
