@@ -315,6 +315,7 @@ aside {
     left: 15px;
     margin-bottom: 15px;
     height: fit-content;
+    vertical-align: text-top;
 }
 
 .result h2 {
