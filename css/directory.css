@@ -258,7 +258,7 @@ aside {
     border: 1px solid #333
 }
 
-#search-container input:focus {
+#search-container input:active {
     border: 2px solid #555;
 }
 
