@@ -276,6 +276,7 @@ aside {
     display: flex;
     align-content: space-around;
     padding: 30px 30px;
+    flex-wrap: wrap;
 }
 
 .result {
