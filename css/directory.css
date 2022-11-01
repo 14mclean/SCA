@@ -312,8 +312,7 @@ aside {
     font-weight: 600;
     width: 180px;
     position: relative;
-    right: 10px;
-    top: 20px;
+    left: 15px;
     margin-bottom: 15px;
 }
 
@@ -324,7 +323,7 @@ aside {
     font-size: 16px;
     margin: 0;
     font-weight: 100;
-    width: 100%;
+    width: 240px;
     position: relative;
     top: 15px;
     padding-left: 10px;
