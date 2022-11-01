@@ -298,29 +298,33 @@ aside {
 }
 
 .result h1 {
-    color: #fff;
+    color: #333;
     font-family: 'Raleway';
     font-size: 18px;
     margin: 0;
     font-weight: 600;
     width: 180px;
     float: right;
-    margin-right: 10px;
+    position: relative;
+    right: 10px;
+    top: 25px;
 }
 
 .result h2 {
-    color: #fff;
+    color: #333;
     font-family: 'Raleway';
     font-size: 16px;
     margin: 0;
     font-weight: 100;
     width: 180px;
     float: right;
-    margin-right: 10px;
+    position: relative;
+    right: 10px;
+    top: 25px;
 }
 
 .result p {
-    color: #fff;
+    color: #333;
     font-family: 'Raleway';
     font-size: 14px;
     margin: 0;
