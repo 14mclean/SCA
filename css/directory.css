@@ -289,6 +289,7 @@ aside {
     display: inline-block;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     overflow: hidden;
+    transition: max-height ease-out 0.7s;
 }
 
 .result:hover {
@@ -298,54 +299,64 @@ aside {
 .result img {
     width: 40px;
     height: 40px;
-    position: relative;
-    top: 10px;
-    left: 10px;
+    margin: 15px 0px 15px 15px;
 }
 
 .result h1 {
-    display: inline-block;
+    display: block;
+    float: right;
+    margin: 20px 10px 0px 0px;
+    width: 170px;
+    height: 42px;
+    
     color: #333;
     font-family: 'Raleway';
     font-size: 18px;
-    margin: 0;
     font-weight: 600;
-    width: 180px;
-    position: relative;
-    left: 15px;
-    margin-bottom: 15px;
-    height: fit-content;
-    vertical-align: text-top;
+    
 }
 
 .result h2 {
-    display: inline-block;
     color: #333;
     font-family: 'Raleway';
     font-size: 16px;
     margin: 0;
     font-weight: 100;
-    width: 240px;
-    position: relative;
-    top: 15px;
-    padding-left: 10px;
-    margin-bottom: 15px;
+    padding-left: 15px;
 }
 
 .result table {
+    margin: 15px 10px 10px 10px;
+    width: 90%;
+}
+
+.result table tr {
+    font-family: 'Raleway';
+    font-size: 14px;
+    font-weight: 600;
+    color: #777;
+}
+
+.result table tr #link {
+    width: 20%;
+    padding-left: 5px;
+    
+}
+
+.result table tr #link a {
+    width: fit-content;
+    text-decoration: none;
+}
+
+.result a {
+    display: inline-block;
+    color: #6b2c91;
+    font-family: 'Raleway';
+    font-size: 14px;
+    width: 250px;
+    text-align: center;
     margin-top: 15px;
-}
-
-.result tr {
-
-}
-
-.result td {
-
-}
-
-.result p {
-
+    margin-bottom: 5px;
 }
 
 footer {
