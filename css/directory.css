@@ -283,10 +283,15 @@ aside {
 }
 
 .result {
-    height: 250px;
+    max-height: 140px;
     width: 250px;
     background-color: #ddd;
     display: inline-block;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.result:hover {
+    max-height: 300px;
 }
 
 .result img {
@@ -308,6 +313,7 @@ aside {
     position: relative;
     right: 10px;
     top: 20px;
+    margin-bottom: 15px;
 }
 
 .result h2 {
@@ -318,15 +324,24 @@ aside {
     font-weight: 100;
     width: 100%;
     position: relative;
-    top: 10px;
+    top: 15px;
     padding-left: 10px;
-}
-
-.result p {
-    display: none;
+    margin-bottom: 15px;
 }
 
 .result table {
+    display: none;
+}
+
+.result tr {
+
+}
+
+.result td {
+
+}
+
+.result p {
     display: none;
 }
 
