@@ -297,6 +297,10 @@ aside {
     left: 10px;
 }
 
+.result p {
+    width: 200px;
+}
+
 footer {
     position: absolute;
     bottom: 0;
