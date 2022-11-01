@@ -232,11 +232,14 @@ aside {
     font-size: 14px;
 }
 
+#right {
+    display: block;
+}
+
 #search-container {
     position: relative;
     top: 40px;
     text-align: center;
-    width: calc(100vw - 310px);
     height: 50px;
 }
 
@@ -249,8 +252,7 @@ aside {
     border: 1px solid #dddddd;
     position: relative;
     top: 70px;
-    left: -70px;
-    width: calc(100vw - 310px);
+    left: -100px;
     height: 800px;
 }
 

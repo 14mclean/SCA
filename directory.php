@@ -192,12 +192,14 @@
                 </div>
             </aside>
 
-            <div id="search-container">
-                <input type="text">
-            </div>
-            <br>
-            <div id="results">
-                test
+            <div id="right">
+                <div id="search-container">
+                    <input type="text">
+                </div>
+                <br>
+                <div id="results">
+                    test
+                </div>
             </div>
         </main>
 
