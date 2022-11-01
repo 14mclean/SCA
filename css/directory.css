@@ -283,7 +283,7 @@ aside {
 }
 
 .result {
-    max-height: 160px;
+    max-height: 120px;
     width: 250px;
     background-color: #ddd;
     display: inline-block;
@@ -331,7 +331,7 @@ aside {
 }
 
 .result table {
-    
+    margin-top: 15px;
 }
 
 .result tr {
