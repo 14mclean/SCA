@@ -299,6 +299,12 @@ aside {
 
 .result p {
     width: 200px;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    top: 10px;
+    left: 50px;
+    padding-left: 10px;
 }
 
 footer {
