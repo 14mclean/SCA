@@ -204,19 +204,13 @@
                     </div>
 
                     <div class="result">
-                        org
+                        <img src="assets/profilePicture.png">
+                        <p>@ WWF</p>
                     </div>
 
                     <div class="result">
-                        org
-                    </div>
-
-                    <div class="result">
-                        org
-                    </div>
-
-                    <div class="result">
-                        org
+                        <img src="assets/profilePicture.png">
+                        <p>@ National Trust Dunham Massey</p>
                     </div>
                 </div>
             </div>
