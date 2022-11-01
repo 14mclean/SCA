@@ -37,8 +37,6 @@ header nav {
     margin-right: 50px;
     width: 30%;
     align-content: center;
-    display: flex;
-    justify-content: space-around;
 }
 
 header nav a {
@@ -76,7 +74,6 @@ aside {
     float: left;
     position: relative;
     top: 20px;
-    flex-grow: 1;
 }
 
 #ages {
@@ -236,12 +233,15 @@ aside {
 }
 
 #search-container {
-    float: right;
     position: relative;
     top: 40px;
     text-align: center;
-    flex-grow: 3;
+    width: calc(100vw - 310px);
     height: 50px;
+}
+
+#search-container input {
+
 }
 
 #results {
@@ -249,11 +249,9 @@ aside {
     border: 1px solid #dddddd;
     position: relative;
     top: 50px;
-    left: 20px;
-    float: right;
+    left: -70px;
     width: calc(100vw - 310px);
     height: 800px;
-    flex-grow: 3;
 }
 
 footer {
