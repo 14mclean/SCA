@@ -194,7 +194,7 @@
 
             <div id="right">
                 <div id="search-container">
-                    <input type="text"><img src="searchIcon.png"></input>
+                    <input type="text" placeholer="Search Expertise">
                 </div>
                 
                 <div id="results">
