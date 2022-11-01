@@ -68,6 +68,7 @@ main {
     position: relative;
     top: 30px;
     display: flex;
+    height: fit-content;
 }
 
 aside {
