@@ -200,17 +200,15 @@
                 <div id="results">
                     <div class="result">
                         <img src="assets/profilePicture.png">
-                        <p>@ Manchester University</p>
-                    </div>
-
-                    <div class="result">
-                        <img src="assets/profilePicture.png">
-                        <p>@ WWF</p>
-                    </div>
-
-                    <div class="result">
-                        <img src="assets/profilePicture.png">
-                        <p>@ National Trust Dunham Massey</p>
+                        <h1>Chris McLean</h1>
+                        <h2>Employee at University of Manchester</h2>
+                        <p>Contact Expert</p>
+                        <table>
+                            <tr>
+                                <td>This is a resource</td>
+                                <td>Link</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
