@@ -317,6 +317,9 @@ aside {
     margin: 0;
     font-weight: 100;
     width: 100%;
+    position: relative;
+    top: 10px;
+    padding-left: 10px;
 }
 
 .result p {
