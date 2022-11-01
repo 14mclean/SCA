@@ -304,13 +304,13 @@ aside {
 }
 
 .result h1 {
+    display: inline-block;
     color: #333;
     font-family: 'Raleway';
     font-size: 18px;
     margin: 0;
     font-weight: 600;
     width: 180px;
-    float: right;
     position: relative;
     right: 10px;
     top: 20px;
@@ -318,6 +318,7 @@ aside {
 }
 
 .result h2 {
+    display: inline-block;
     color: #333;
     font-family: 'Raleway';
     font-size: 16px;
