@@ -21,7 +21,7 @@ WHERE user_id = :user_id;
 $statement->bindValue(":user_id", $user_id, PDO::PARAM_INT);
 $statement->execute();
 $result = $statement->fetchAll();
-vardump($result);
+var_dump($result);
 ?>
 
 <!DOCTYPE html>
