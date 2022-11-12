@@ -37,7 +37,7 @@ class UserGateway implements Gateway{
         if(!empty([$data["password"]])) {
             $data["password_hash"] = hash("sha256", $data["password"]);
         }
-        $statement = $this->connection->prepare("INSERT INTO Users (email, password_hash, email_verified, user_level) VALUES (:email, :password_hash, :email_verified, :user_level)");
+        $statement = $this->connection->prepare("INSERT INTO User (email, password_hash, email_verified, user_level) VALUES (:email, :password_hash, :email_verified, :user_level)");
         $statement->bindValue(":email", $data["email"], PDO::PARAM_STR);
         $statement->bindValue(":password_hash", $data["password_hash"], PDO::PARAM_STR);
         $statement->bindValue(":email_verified", $data["email_verified"], PDO::PARAM_BOOL);
@@ -55,7 +55,7 @@ class UserGateway implements Gateway{
 
     public function update(array $current_user_details, array $new_user_details): int {
         $statement = $this->connection->prepare(
-            "UPDATE Users 
+            "UPDATE User 
             SET email = :email, password_hash = :password_hash, email_verified = :email_verified, user_level = :user_level
             WHERE user_id = :user_id;"
             );
