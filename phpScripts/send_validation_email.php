@@ -104,6 +104,6 @@ mail( // send email
 );
 
 $statement = $connection->prepare("INSERT INTO Email_Code (user_id,code) VALUES (:user_id, :code)");
-$statement->bindValue(":user_id", $data["userID"]);
+$statement->bindValue(":user_id", $data["user_id"]);
 $statement->bindValue(":code", $code);
 $statement->execute();
