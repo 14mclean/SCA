@@ -29,20 +29,20 @@ class ExpertGateway implements Gateway {
     }
 
     public function create(array $data): string {
-        $statement = $this->connection->prepare("INSERT BOOLO Expert (user_id, admin_verified) VALUES (:user_id, 0)");
-        $statement->bindValue(":user_id", $data["user_id"], PDO::PARAM_BOOL);
+        $statement = $this->connection->prepare("INSERT INTO Expert (user_id, admin_verified) VALUES (:user_id, 0)");
+        $statement->bindValue(":user_id", $data["user_id"], PDO::PARAM_INT);
         $statement->execute();
         return $this->connection->lastInsertId();
     }
 
     public function get(string $id): array | false {
         $statement = $this->connection->prepare("SELECT * FROM Expert WHERE user_id=:user_id");
-        $statement->bindValue(":user_id", $id, PDO::PARAM_BOOL);
+        $statement->bindValue(":user_id", $id, PDO::PARAM_INT);
         $statement->execute();
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function update(array $current_expert_details, array $new_expert_details): BOOL {      
+    public function update(array $current_expert_details, array $new_expert_details): INT {      
         $statement = $this->connection->prepare("
             UPDATE Expert
             SET name = :name,
@@ -65,30 +65,30 @@ class ExpertGateway implements Gateway {
         ");
 
         $statement->bindValue(":name", $new_expert_details["name"] ?? $current_expert_details["name"], PDO::PARAM_STR);
-        $statement->bindValue(":admin_verified", $new_expert_details["admin_verified"] ?? $current_expert_details["admin_verified"], PDO::PARAM_BOOL);
+        $statement->bindValue(":admin_verified", $new_expert_details["admin_verified"] ?? $current_expert_details["admin_verified"], PDO::PARAM_INT);
         $statement->bindValue(":about", $new_expert_details["about"] ?? $current_expert_details["about"], PDO::PARAM_STR);
         $statement->bindValue(":organisation", $new_expert_details["organisation"] ?? $current_expert_details["organisation"], PDO::PARAM_STR);
         $statement->bindValue(":location", $new_expert_details["location"] ?? $current_expert_details["location"], PDO::PARAM_STR);
         $statement->bindValue(":job_title", $new_expert_details["job_title"] ?? $current_expert_details["job_title"], PDO::PARAM_STR);
-        $statement->bindValue(":does_teacher_advice", $new_expert_details["does_teacher_advice"] ?? $current_expert_details["does_teacher_advice"], PDO::PARAM_BOOL);
-        $statement->bindValue(":does_project_work", $new_expert_details["does_project_work"] ?? $current_expert_details["does_project_work"], PDO::PARAM_BOOL);
-        $statement->bindValue(":does_student_online", $new_expert_details["does_student_online"] ?? $current_expert_details["does_student_online"], PDO::PARAM_BOOL);
-        $statement->bindValue(":does_student_f2f", $new_expert_details["does_student_f2f"] ?? $current_expert_details["does_student_f2f"], PDO::PARAM_BOOL);
-        $statement->bindValue(":does_student_resource", $new_expert_details["does_student_resource"] ?? $current_expert_details["does_student_resource"], PDO::PARAM_BOOL);
-        $statement->bindValue(":does_ks1", $new_expert_details["does_ks1"] ?? $current_expert_details["does_ks1"], PDO::PARAM_BOOL);
-        $statement->bindValue(":does_ks2", $new_expert_details["does_ks2"] ?? $current_expert_details["does_ks2"], PDO::PARAM_BOOL);
-        $statement->bindValue(":does_ks3", $new_expert_details["does_ks3"] ?? $current_expert_details["does_ks3"], PDO::PARAM_BOOL);
-        $statement->bindValue(":does_ks4", $new_expert_details["does_ks4"] ?? $current_expert_details["does_ks4"], PDO::PARAM_BOOL);
-        $statement->bindValue(":does_ks5", $new_expert_details["does_ks5"] ?? $current_expert_details["does_ks5"], PDO::PARAM_BOOL);
-        $statement->bindValue(":user_id", $new_expert_details["user_id"] ?? $current_expert_details["user_id"], PDO::PARAM_BOOL);
+        $statement->bindValue(":does_teacher_advice", $new_expert_details["does_teacher_advice"] ?? $current_expert_details["does_teacher_advice"], PDO::PARAM_INT);
+        $statement->bindValue(":does_project_work", $new_expert_details["does_project_work"] ?? $current_expert_details["does_project_work"], PDO::PARAM_INT);
+        $statement->bindValue(":does_student_online", $new_expert_details["does_student_online"] ?? $current_expert_details["does_student_online"], PDO::PARAM_INT);
+        $statement->bindValue(":does_student_f2f", $new_expert_details["does_student_f2f"] ?? $current_expert_details["does_student_f2f"], PDO::PARAM_INT);
+        $statement->bindValue(":does_student_resource", $new_expert_details["does_student_resource"] ?? $current_expert_details["does_student_resource"], PDO::PARAM_INT);
+        $statement->bindValue(":does_ks1", $new_expert_details["does_ks1"] ?? $current_expert_details["does_ks1"], PDO::PARAM_INT);
+        $statement->bindValue(":does_ks2", $new_expert_details["does_ks2"] ?? $current_expert_details["does_ks2"], PDO::PARAM_INT);
+        $statement->bindValue(":does_ks3", $new_expert_details["does_ks3"] ?? $current_expert_details["does_ks3"], PDO::PARAM_INT);
+        $statement->bindValue(":does_ks4", $new_expert_details["does_ks4"] ?? $current_expert_details["does_ks4"], PDO::PARAM_INT);
+        $statement->bindValue(":does_ks5", $new_expert_details["does_ks5"] ?? $current_expert_details["does_ks5"], PDO::PARAM_INT);
+        $statement->bindValue(":user_id", $new_expert_details["user_id"] ?? $current_expert_details["user_id"], PDO::PARAM_INT);
 
         $statement->execute();
         return $statement->rowCount();
     }
 
-    public function delete(string $id): BOOL {
+    public function delete(string $id): INT {
         $statement = $this->connection->prepare("DELETE FROM Expert WHERE user_id = :user_id");
-        $statement.bindValue(":user_id", $id, PDO::PARAM_BOOL);
+        $statement.bindValue(":user_id", $id, PDO::PARAM_INT);
         $statement->execute();
         return $statement->rowCount();
     }
