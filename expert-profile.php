@@ -3,7 +3,7 @@
 session_start();
 $user_id = $_SESSION["user_id"];
 $user_level = $_SESSION["user_level"];
-
+print_r($user_id);
 if(!isset($user_level) || $user_level == "Teacher") {
     header("Location: login.html");
     exit();
