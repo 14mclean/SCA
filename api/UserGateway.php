@@ -8,7 +8,7 @@ class UserGateway implements Gateway{
     }
 
     public function get_all(): array {
-        $statement_string = "SELECT * FROM Users";
+        $statement_string = "SELECT * FROM User";
 
         if(count($_GET) > 0) {
             $condition_string = " WHERE";
@@ -35,20 +35,20 @@ class UserGateway implements Gateway{
 
     public function create(array $data): string {
         if(!empty([$data["password"]])) {
-            $data["passwordHash"] = hash("sha256", $data["password"]);
+            $data["password_hash"] = hash("sha256", $data["password"]);
         }
-        $statement = $this->connection->prepare("INSERT INTO Users (email, passwordHash, emailVerified, userLevel) VALUES (:email, :passwordHash, :emailVerified, :userLevel)");
+        $statement = $this->connection->prepare("INSERT INTO Users (email, password_hash, email_verified, user_level) VALUES (:email, :password_hash, :email_verified, :user_level)");
         $statement->bindValue(":email", $data["email"], PDO::PARAM_STR);
-        $statement->bindValue(":passwordHash", $data["passwordHash"], PDO::PARAM_STR);
-        $statement->bindValue(":emailVerified", $data["emailVerified"], PDO::PARAM_BOOL);
-        $statement->bindValue(":userLevel", $data["userLevel"], PDO::PARAM_STR);
+        $statement->bindValue(":password_hash", $data["password_hash"], PDO::PARAM_STR);
+        $statement->bindValue(":email_verified", $data["email_verified"], PDO::PARAM_BOOL);
+        $statement->bindValue(":user_level", $data["user_level"], PDO::PARAM_STR);
         $statement->execute();
         return $this->connection->lastInsertId();
     }
 
     public function get(string $id): array | false {
-        $statement = $this->connection->prepare("SELECT * FROM Users WHERE userID=:userid");
-        $statement->bindValue(":userid", $id, PDO::PARAM_INT);
+        $statement = $this->connection->prepare("SELECT * FROM User WHERE user_id=:user_id");
+        $statement->bindValue(":user_id", $id, PDO::PARAM_INT);
         $statement->execute();
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
@@ -56,22 +56,22 @@ class UserGateway implements Gateway{
     public function update(array $current_user_details, array $new_user_details): int {
         $statement = $this->connection->prepare(
             "UPDATE Users 
-            SET email = :email, passwordHash = :passwordHash, emailVerified = :emailVerified, userLevel = :userLevel
-            WHERE userID = :userid;"
+            SET email = :email, password_hash = :password_hash, email_verified = :email_verified, user_level = :user_level
+            WHERE user_id = :user_id;"
             );
         $statement->bindValue(":email", $new_user_details["email"] ?? $current_user_details["email"], PDO::PARAM_STR);
-        $statement->bindValue(":passwordHash", $new_user_details["passwordHash"] ?? $current_user_details["passwordHash"], PDO::PARAM_STR);
-        $statement->bindValue(":emailVerified", $new_user_details["emailVerified"] ?? $current_user_details["emailVerified"], PDO::PARAM_BOOL);
-        $statement->bindValue(":userLevel", $new_user_details["userLevel"] ?? $current_user_details["userLevel"], PDO::PARAM_STR);
-        $statement->bindValue(":userid", $current_user_details["userID"], PDO::PARAM_INT);
+        $statement->bindValue(":password_hash", $new_user_details["password_hash"] ?? $current_user_details["password_hash"], PDO::PARAM_STR);
+        $statement->bindValue(":email_verified", $new_user_details["email_verified"] ?? $current_user_details["email_verified"], PDO::PARAM_BOOL);
+        $statement->bindValue(":user_level", $new_user_details["user_level"] ?? $current_user_details["user_level"], PDO::PARAM_STR);
+        $statement->bindValue(":user_id", $current_user_details["user_id"], PDO::PARAM_INT);
 
         $statement->execute();
         return $statement->rowCount();
     }
 
     public function delete(string $id): int {
-        $statement = $this->connection->prepare("DELETE FROM Users WHERE userID = :userid");
-        $statement.bindValue(":userid", $id, PDO::PARAM_INT);
+        $statement = $this->connection->prepare("DELETE FROM User WHERE user_id = :user_id");
+        $statement.bindValue(":user_id", $id, PDO::PARAM_INT);
         $statement->execute();
         return $statement->rowCount();
     }

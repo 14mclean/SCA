@@ -8,7 +8,7 @@ class EmailCodesGateway implements Gateway {
     }
 
     public function get_all(): array {
-        $statement_string = "SELECT * FROM EmailCodes";
+        $statement_string = "SELECT * FROM Email_Code";
 
         if(count($_GET) > 0) {
             $condition_string = " WHERE";
@@ -29,16 +29,16 @@ class EmailCodesGateway implements Gateway {
     }
 
     public function create(array $data): string {
-        $statement = $this->connection->prepare("INSERT INTO EmailCode (userID, code) VALUES (:userid, :code)");
-        $statement->bindValue(":userid", $data["userID"], PDO::PARAM_INT);
+        $statement = $this->connection->prepare("INSERT INTO Email_Code (user_id, code) VALUES (:user_id, :code)");
+        $statement->bindValue(":user_id", $data["user_id"], PDO::PARAM_INT);
         $statement->bindValue(":code", $data["code"], PDO::PARAM_STR);
         $statement->execute();
         return $this->connection->lastInsertId();
     }
 
     public function get(string $id): array | false {
-        $statement = $this->connection->prepare("SELECT * FROM EmailCode WHERE userID=:userid");
-        $statement->bindValue(":userid", $id, PDO::PARAM_INT);
+        $statement = $this->connection->prepare("SELECT * FROM Email_Code WHERE user_id=:user_id");
+        $statement->bindValue(":user_id", $id, PDO::PARAM_INT);
         $statement->execute();
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
@@ -49,8 +49,8 @@ class EmailCodesGateway implements Gateway {
     }
 
     public function delete(string $id): int {
-        $statement = $this->connection->prepare("DELETE FROM EmailCodes WHERE userID = :userid");
-        $statement.bindValue(":userid", $id, PDO::PARAM_INT);
+        $statement = $this->connection->prepare("DELETE FROM Email_Code WHERE userID = :userid");
+        $statement.bindValue(":user_id", $id, PDO::PARAM_INT);
         $statement->execute();
         return $statement->rowCount();
     }

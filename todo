@@ -13,7 +13,7 @@ distance slider: min, max initial
 
 collect:
     name
-    expertise
+    expertise (multiple)
     place of work (org)
     voulenteer/employee?
     job title (if employee)
@@ -21,3 +21,7 @@ collect:
     interaction types (& student interaction types)
     location
     resource: title, link, description(optional)
+
+    which are required?
+
+add save buttons to profile

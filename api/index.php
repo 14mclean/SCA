@@ -31,6 +31,12 @@ switch($parts[0]) {
         $gateway = new EmailCodesGateway($db);
         $controller = new EmailCodesController($db);
         $controller->process_request($_SERVER["REQUEST_METHOD"], explode("/", $url));
+        break;
+    case "expertise":
+        $gateway = new ExpertiseGateway($db);
+        $controller = new ExpertiseController($db);
+        $controller->process_request($_SERVER["REQUEST_METHOD"], explode("/", $url));
+        break;
     default:
         http_response_code(404);
         exit();
