@@ -115,8 +115,8 @@
                 body: JSON.stringify({
                         "email": email,
                         "password": password_input.value,
-                        "emailVerified": 0,
-                        "userLevel": "<?php echo($_GET["level"]) ?>"
+                        "email_erified": 0,
+                        "user_level": "<?php echo($_GET["level"]) ?>"
                     })
                 })
                 .then((response) => {
@@ -132,7 +132,7 @@
                         headers: {'Content-Type': 'application/json'},
                         body: JSON.stringify({
                             "email": email,
-                            "userID": json["id"]
+                            "user_id": json["id"]
                         })
                     })
                     .then(response => {

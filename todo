@@ -1,5 +1,3 @@
-question marks with popup for each field
-
 sanitize before saving to db, after reading from db and before writing to html
 
 look into JWT
@@ -10,18 +8,5 @@ forgot password
 mobile version of each page
 
 distance slider: min, max initial
-
-collect:
-    name
-    expertise (multiple)
-    place of work (org)
-    voulenteer/employee?
-    job title (if employee)
-    ages (key stages)
-    interaction types (& student interaction types)
-    location
-    resource: title, link, description(optional)
-
-    which are required?
 
 add save buttons to profile
