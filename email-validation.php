@@ -35,8 +35,8 @@ $statement->execute();
 
 // start session and add userID & userLevel to session
 session_start();
-$_SESSION["userID"] = $userID;
-$_SESSION["userLevel"] = $userLevel;
+$_SESSION["user_id"] = $userID;
+$_SESSION["user_level"] = $userLevel;
 
 ?>
 
