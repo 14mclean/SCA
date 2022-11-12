@@ -1,3 +1,29 @@
+<?php
+
+session_start();
+$user_id = $_SESSION["user_id"];
+$user_level = $_SESSION["user_level"];
+
+if(!isset($user_level) || $user_level == "Teacher") {
+    header("Location: login.html");
+    exit();
+}
+
+include_once("api/Database.php");
+$db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
+$connection = $db->get_connection();
+
+$statement = $connection->prepare("
+SELECT name, about, organisation, location, job_title, does_teacher_advice, does_project_work, does_student_online, does_student_f2f, does_student_resource, does_ks1, does_ks2, does_ks3, does_ks4, does_ks5
+FROM Expert
+WHERE user_id = :user_id;
+");
+$statement->bindValue(":user_id", $user_id, PDO::PARAM_INT);
+$statement->execute();
+$result = $statement->fetchAll();
+vardump($result);
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
