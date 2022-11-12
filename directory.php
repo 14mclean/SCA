@@ -62,7 +62,7 @@
 
                     <?php
 
-                    $statement = $connection->prepare("SELECT DISTINCT Organisation FROM Experts WHERE adminVerified=1");
+                    $statement = $connection->prepare("SELECT DISTINCT Organisation FROM Expert WHERE admin_verified=1");
                     $statement->execute();
                     $result = $statement->fetchAll();
 
