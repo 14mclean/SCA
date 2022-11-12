@@ -8,7 +8,7 @@ $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPan
 $connection = $db->get_connection();
 
 function code_exists($connection, $code) {
-    $statement = $connection->prepare("SELECT * FROM EmailCodes WHERE code = :code");
+    $statement = $connection->prepare("SELECT * FROM Email_Code WHERE code = :code");
     $statement->bindValue(":code", $code, PDO::PARAM_STR);
     $statement->execute();
     $result = $statement->fetch(PDO::FETCH_ASSOC);
@@ -103,7 +103,7 @@ mail( // send email
     "From: SCA <no-reply@schoolcitizenassemblies.org>\r\nMIME-Version: 1.0\r\nContent-Type: text/html; charset=UTF-8\r\n"
 );
 
-$statement = $connection->prepare("INSERT INTO EmailCodes (userID,code) VALUES (:userid, :code)");
-$statement->bindValue(":userid", $data["userID"]);
+$statement = $connection->prepare("INSERT INTO Email_Code (user_id,code) VALUES (:user_id, :code)");
+$statement->bindValue(":user_id", $data["userID"]);
 $statement->bindValue(":code", $code);
 $statement->execute();
