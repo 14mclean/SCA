@@ -146,7 +146,7 @@
                         method: 'POST',
                         headers: {'Content-Type': 'application/json'},
                         body: JSON.stringify({
-                            "userID": json["id"]
+                            "user_id": json["id"]
                         })
                         })
                         .then((response) => {
