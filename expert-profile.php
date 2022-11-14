@@ -230,6 +230,19 @@ var_dump($resources);
                                 <td></td>
                             </tr>
 
+                            <?php
+
+                            foreach($resources as $resource) {
+                                echo('
+                                <td>$resource["title"]</td>
+                                <td>$resource["link"]</td>
+                                <td>$resource["description"]</td>
+                                <td><button type="Button" id="remove-resource-button" onclick="remove_resource(this)"><img src="assets/remove.png"></button></td>
+                                ');
+                            }
+
+                            ?>
+
                             <tr>
                                 <td>Google</td>
                                 <td>google.co.uk</td>
