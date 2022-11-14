@@ -453,7 +453,7 @@ $resources = $result;
         function init() {
             student_interactions_visibility();
             
-            if(<?php echo($job_title) ?> == "Volunteer") {
+            if("<?php echo($job_title) ?>" == "Volunteer") {
                 job_title_visibility(
                     document.querySelector("#isVolunteer")
                 );
