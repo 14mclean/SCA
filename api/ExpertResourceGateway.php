@@ -29,10 +29,11 @@ class ExpertResourceGateway implements Gateway {
     }
 
     public function create(array $data): string {
-        $statement = $this->connection->prepare("INSERT INTO Expert_Resource (user_id, name, link) VALUES (:user_id, :name, :link)");
+        $statement = $this->connection->prepare("INSERT INTO Expert_Resource (user_id, name, link, description) VALUES (:user_id, :name, :link, :description)");
         $statement->bindValue(":user_id", $data["user_id"], PDO::PARAM_INT);
         $statement->bindValue(":name", $data["name"], PDO::PARAM_STR);
         $statement->bindValue(":link", $data["link"], PDO::PARAM_STR);
+        statement->bindValue(":description", $data["description"], PDO::PARAM_STR);
         $statement->execute();
         return $this->connection->lastInsertId();
     }
@@ -47,11 +48,12 @@ class ExpertResourceGateway implements Gateway {
     public function update(array $current_expert_details, array $new_expert_details): int {
         $statement = $this->connection->prepare(
             "UPDATE Expert_Resource
-            SET name = :name, link = :link
+            SET name = :name, link = :link, description = :description,
             WHERE resource_id = :resource_id;"
             );
         $statement->bindValue(":name", $data["name"], PDO::PARAM_STR);
-        $statement->bindValue(":link", $data["link"], PDO::PA_RAM_STR);
+        $statement->bindValue(":link", $data["link"], PDO::PARAM_STR);
+        $statement->bindValue(":description", $data["description"], PDO::PARAM_STR);
         $statement->bindValue(":resource_id", $data["resource_id"], PDO::PARAM_INT);
 
         $statement->execute();

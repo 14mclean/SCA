@@ -234,7 +234,7 @@ var_dump($resources);
 
                             foreach($resources as $resource) {
                                 var_dump($resource);
-                                $title = $resource["title"];
+                                $title = $resource["name"];
                                 $link = $resource["link"];
                                 $desc = $resource["description"];
 
