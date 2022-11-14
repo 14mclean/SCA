@@ -87,7 +87,7 @@ $resources = $result;
                                 <p>Your first and last name</p>
                             </div>
 
-                            <input type="text" id="name" value=<?php "$name" ?>>
+                            <input type="text" id="name" value="<?php echo($name) ?>">
                         </div>
 
                         <hr>
@@ -98,7 +98,7 @@ $resources = $result;
                                 <p>A short description of you and your work</p>
                             </div>
 
-                            <textarea id="about-them" name="about-them" spellcheck="true" value=<?php echo("$about") ?>></textarea>
+                            <textarea id="about-them" name="about-them" spellcheck="true" value="<?php echo($about) ?>"></textarea>
                         </div>
 
                         <hr>
@@ -109,7 +109,7 @@ $resources = $result;
                                 <p>First part of your postcode (e.g. SW6)</p>
                             </div>
                             
-                            <input type="text" id="location" oninput="location_validity()" value=<?php echo("$location") ?>>
+                            <input type="text" id="location" oninput="location_validity()" value="<?php echo($location) ?>">
                         </div>
 
                         <hr>
@@ -134,7 +134,7 @@ $resources = $result;
                                 <p>The organisation that you are currently a part of that is relevant to your expertise</p>
                             </div>
                             
-                            <input type="text" id="organisation" value=<?php "$organisation" ?>>
+                            <input type="text" id="organisation" value="<?php echo($organisation) ?>">
                         </div>
 
                         <hr>
@@ -152,7 +152,7 @@ $resources = $result;
                                     <label for="job-title">Job Title</label>
                                     <p style="width: 95px">Your job title followed by your department</p>
                                 </div>
-                                <input type="text" id="job-title" value=<?php "$job_title"?>>
+                                <input type="text" id="job-title" value="<?php echo($job_title) ?>">
                             </div>
                             
                         </div>
