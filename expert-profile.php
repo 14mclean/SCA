@@ -41,6 +41,8 @@ $ks3 = boolval($result["does_ks3"]);
 $ks4 = boolval($result["does_ks4"]);
 $ks5 = boolval($result["does_ks5"]);
 
+var_dump($name);
+
 $statement = $connection->prepare("
 SELECT *
 FROM Expert_Resource
