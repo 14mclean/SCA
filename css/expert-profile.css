@@ -97,6 +97,11 @@ main {
     font-family: 'Open Sans';
     margin-bottom: 50px;
     margin-top: 50px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    opacity: 0.8;
 }
 
 .subform {
