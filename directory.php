@@ -43,6 +43,7 @@
                         echo('<a>Admin Panel</a>');
                     }
                     echo('<a href="phpScripts/logout.php">Logout</a>');
+                    echo('<a href="expert-profile.php">Profile</a>');
                 }
                 ?>
             </nav>
