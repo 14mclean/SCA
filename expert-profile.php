@@ -20,7 +20,7 @@ WHERE user_id = :user_id;
 ");
 $statement->bindValue(":user_id", $user_id, PDO::PARAM_INT);
 $statement->execute();
-$result = $statement->fetchAll();
+$result = $statement->fetchAll()[0];
 
 var_dump($result);
 
