@@ -92,6 +92,8 @@ main {
     border-radius: 15px;
     background-color: #401b57;
     color: white;
+    margin-left: 50vw;
+    transform: translateX(-50%);
 }
 
 .subform {
