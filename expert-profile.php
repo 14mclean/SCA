@@ -233,11 +233,17 @@ var_dump($resources);
                             <?php
 
                             foreach($resources as $resource) {
+                                $title = $resource["title"];
+                                $link = $resource["link"]
+                                $desc = $resource["description"]
+
                                 echo("
-                                <td>$resource[\"title\"]</td>
-                                <td>$resource[\"link\"]</td>
-                                <td>$resource[\"description\"]</td>
-                                <td><button type='Button' id='remove-resource-button' onclick='remove_resource(this)'><img src='assets/remove.png'></button></td>
+                                <tr>
+                                    <td>$title</td>
+                                    <td>$link</td>
+                                    <td>$desc</td>
+                                    <td><button type='Button' id='remove-resource-button' onclick='remove_resource(this)'><img src='assets/remove.png'></button></td>
+                                </tr>
                                 ");
                             }
 
