@@ -479,11 +479,25 @@ $expertise = $result;
         document.querySelector("div#form-container form").addEventListener("submit", (event) => {
             event.preventDefault();
 
-            // check location validity
+            fetch("/api/expertresources/"+user_id)
+            .then()
 
+            // get user's current resources
+                // compare old and new
+                // delete any not in current
+                // add any not in old
+
+            // get user's current expertise
+                // compare old and new
+                // delete any not in current
+                // add any not in old 
+
+            // send patch request for user details
 
             return false;
         });
+
+        
 
         function init() {
             student_interactions_visibility();
@@ -500,5 +514,6 @@ $expertise = $result;
         }
 
         init();
+        const user_id = <?php echo($user_id) ?>;
     </script>
 </html>

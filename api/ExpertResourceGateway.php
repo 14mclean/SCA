@@ -16,12 +16,14 @@ class ExpertResourceGateway implements Gateway {
                 $condition_string .= " $column = :$column AND";
             }
             $statement_string .= substr($condition_string, 0, -3);
-        }
 
-        $statement = $this->connection->prepare($statement_string);
+            $statement = $this->connection->prepare($statement_string);
 
-        foreach($_GET as $column => $value) {
-            $statement->bindValue(":$column", $value);
+            foreach($_GET as $column => $value) {
+                $statement->bindValue(":$column", $value);
+            }
+        } else {
+            $statement = $this->connection->prepare($statement_string);
         }
 
         $statement->execute();
