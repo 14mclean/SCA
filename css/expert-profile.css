@@ -94,10 +94,11 @@ main {
     margin-left: 50vw;
     transform: translateX(-50%);
     border: none;
-    font-family: 'Open Sans';
+    font-family: 'Raleway';
     margin-bottom: 50px;
     margin-top: 50px;
     cursor: pointer;
+    box-shadow: 0 1px 6px rgb(64 27 87 / 28%);
 }
 
 .save-button:hover {
