@@ -169,34 +169,34 @@ $resources = $result;
                         <div class="check-group">
                             <div>
                                 <label for="teacher-advice">Teacher Advice</label>
-                                <input id="teacher-advice" type="checkbox">
+                                <input id="teacher-advice" type="checkbox" <?php if($teacher_advice) echo("checked"); ?>>
                             </div>
 
                             <div>
                                 <label for="project-work">Project Work</label>
-                                <input id="project-work" type="checkbox">
+                                <input id="project-work" type="checkbox" <?php if($project_work) echo("checked"); ?>>
                             </div>
 
                             <div>
                                 <label for="student-interactions">Student Interactions</label>
-                                <input id="student-interactions" type="checkbox" onclick="student_interactions_visibility()">
+                                <input id="student-interactions" type="checkbox" onclick="student_interactions_visibility()" <?php if($student_interactions) echo("checked"); ?>>
                             </div>
                         </div>
 
                         <div class="check-group" id="student-interactions">
                             <div>
                                 <label for="student-online">Online</label>
-                                <input id="student-online" type="checkbox">
+                                <input id="student-online" type="checkbox" <?php if($student_online) echo("checked"); ?>>
                             </div>
 
                             <div>
                                 <label for="student-f2f">Face-to-Face</label>
-                                <input id="student-f2f" type="checkbox">
+                                <input id="student-f2f" type="checkbox" <?php if($student_f2f) echo("checked"); ?>>
                             </div>
 
                             <div>
                                 <label for="student-resources">Resources</label>
-                                <input id="student-resources" type="checkbox">
+                                <input id="student-resources" type="checkbox" <?php if($student_resource) echo("checked"); ?>>
                             </div>
                         </div>
 
@@ -209,11 +209,11 @@ $resources = $result;
                         </div>
 
                         <div id="ages">
-                            <label for="doesKS1">KS1</label>    <input type="checkbox" id="doesKS1">
-                            <label for="doesKS2">KS2</label>    <input type="checkbox" id="doesKS2">
-                            <label for="doesKS3">KS3</label>    <input type="checkbox" id="doesKS3">
-                            <label for="doesKS4">KS4</label>    <input type="checkbox" id="doesKS4">
-                            <label for="doesKS5">KS5</label>    <input type="checkbox" id="doesKS5">
+                            <label for="doesKS1">KS1</label>    <input type="checkbox" id="doesKS1" <?php if($ks1) echo("checked"); ?>>
+                            <label for="doesKS2">KS2</label>    <input type="checkbox" id="doesKS2" <?php if($ks2) echo("checked"); ?>>
+                            <label for="doesKS3">KS3</label>    <input type="checkbox" id="doesKS3" <?php if($ks3) echo("checked"); ?>>
+                            <label for="doesKS4">KS4</label>    <input type="checkbox" id="doesKS4" <?php if($ks4) echo("checked"); ?>>
+                            <label for="doesKS5">KS5</label>    <input type="checkbox" id="doesKS5" <?php if($ks5) echo("checked"); ?>>
                         </div>
                     </div>
 
