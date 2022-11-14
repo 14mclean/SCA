@@ -455,11 +455,11 @@ $resources = $result;
             
             if(<?php echo($job_title) ?> == "Volunteer") {
                 job_title_visibility(
-                    document.querySelector("#isVolunteer");
+                    document.querySelector("#isVolunteer")
                 );
             } else {
                 job_title_visibility(
-                    document.querySelector("#isEmployee");
+                    document.querySelector("#isEmployee")
                 );
             }   
         }
