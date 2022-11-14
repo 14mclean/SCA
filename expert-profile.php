@@ -22,6 +22,8 @@ $statement->bindValue(":user_id", $user_id, PDO::PARAM_INT);
 $statement->execute();
 $result = $statement->fetchAll();
 
+var_dump($result);
+
 $name = $result["name"];
 $about = $result["about"];
 $location = $result["location"];
