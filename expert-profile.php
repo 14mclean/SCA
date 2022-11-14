@@ -107,7 +107,7 @@ $expertise = $result;
                                 <p>A short description of you and your work</p>
                             </div>
 
-                            <textarea id="about-them" name="about-them" spellcheck="true" value="<?php echo($about) ?>"></textarea>
+                            <textarea id="about-them" name="about-them" spellcheck="true"><?php echo($about) ?></textarea>
                         </div>
 
                         <hr>
