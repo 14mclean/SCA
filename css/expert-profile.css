@@ -98,11 +98,11 @@ main {
     margin-bottom: 50px;
     margin-top: 50px;
     cursor: pointer;
-    box-shadow: 0 1px 6px rgb(64 27 87 / 28%);
 }
 
 .save-button:hover {
     opacity: 0.8;
+    box-shadow: 0 1px 6px rgba(64, 27, 87, 0.63);
 }
 
 .subform {
