@@ -454,5 +454,7 @@ $resources = $result;
             student_interactions_visibility();
             //job_title_visibility();
         }
+
+        init();
     </script>
 </html>
