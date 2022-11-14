@@ -50,6 +50,8 @@ $result = $statement->fetchAll();
 
 $resources = $result;
 
+var_dump($resources);
+
 // expertise
 ?>
 
