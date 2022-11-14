@@ -452,7 +452,16 @@ $resources = $result;
 
         function init() {
             student_interactions_visibility();
-            //job_title_visibility();
+            
+            if(<?php echo($job_title) ?> == "Volunteer") {
+                job_title_visibility(
+                    document.querySelector("#isVolunteer");
+                );
+            } else {
+                job_title_visibility(
+                    document.querySelector("#isEmployee");
+                );
+            }   
         }
 
         init();
