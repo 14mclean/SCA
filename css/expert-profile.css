@@ -86,6 +86,14 @@ main {
     margin-top: 5vh;
 }
 
+.save-button {
+    width: 100px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: #401b57;
+    color: white;
+}
+
 .subform {
     display: inline-block;
     width: 500px;

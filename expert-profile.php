@@ -87,6 +87,8 @@ $expertise = $result;
             <div id="form-container">
                 <form>
 
+                    <button class="save-button">Save</button>
+
                     <div class="subform">
                         <h1>Personal Information</h1>
 
@@ -269,6 +271,8 @@ $expertise = $result;
 
                         <button id="new-resource-button"><img src="assets/plus.png"></button>
                     </div>
+
+                    <button class="save-button">Save</button>
                 </form>
             </div> 
         </main>
