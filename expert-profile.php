@@ -409,12 +409,6 @@ $resources = $result;
                 url = "http://" + url;
             }
 
-            /*fetch("phpScripts/url_status.php?"+url)
-            .then((response) => response.text())
-            .then((body) => {
-                return body < 400 && 499 < body;
-            });*/
-
             let response = await fetch("phpScripts/url_status.php?"+url);
             let body = await response.text();
             return body < 400 && 499 < body; 
@@ -455,5 +449,10 @@ $resources = $result;
 
             return false;
         });
+
+        function init() {
+            student_interactions_visibility();
+            //job_title_visibility();
+        }
     </script>
 </html>
