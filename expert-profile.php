@@ -234,8 +234,8 @@ var_dump($resources);
 
                             foreach($resources as $resource) {
                                 $title = $resource["title"];
-                                $link = $resource["link"]
-                                $desc = $resource["description"]
+                                $link = $resource["link"];
+                                $desc = $resource["description"];
 
                                 echo("
                                 <tr>
