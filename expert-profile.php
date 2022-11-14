@@ -3,7 +3,7 @@
 session_start();
 $user_id = $_SESSION["user_id"];
 $user_level = $_SESSION["user_level"];
-print_r($user_id);
+
 if(!isset($user_level) || $user_level == "Teacher") {
     header("Location: login.html");
     exit();
@@ -21,7 +21,36 @@ WHERE user_id = :user_id;
 $statement->bindValue(":user_id", $user_id, PDO::PARAM_INT);
 $statement->execute();
 $result = $statement->fetchAll();
-var_dump($result);
+
+$name = $result["name"];
+$about = $result["about"];
+$location = $result["location"];
+$organisation = $result["organisation"];
+$job_title = $result["job_title"];
+$teacher_advice = boolval($result["does_teacher_advice"]);
+$project_work = boolval($result["does_project_work"]);
+$student_online = boolval($result["does_student_online"]);
+$student_f2f = boolval($result["does_student_f2f"]);
+$student_resource = boolval($result["does_student_resource"]);
+$student_interactions = $student_f2f || $student_online || $student_resource;
+$ks1 = boolval($result["does_ks1"]);
+$ks2 = boolval($result["does_ks2"]);
+$ks3 = boolval($result["does_ks3"]);
+$ks4 = boolval($result["does_ks4"]);
+$ks5 = boolval($result["does_ks5"]);
+
+$statement = $connection->prepare("
+SELECT *
+FROM Expert_Resource
+WHERE user_id = :user_id;
+");
+$statement->bindValue(":user_id", $user_id, PDO::PARAM_INT);
+$statement->execute();
+$result = $statement->fetchAll();
+
+$resources = $result;
+
+// expertise
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +87,7 @@ var_dump($result);
                                 <p>Your first and last name</p>
                             </div>
 
-                            <input type="text" id="name">
+                            <input type="text" id="name" value=<?php "$name" ?>>
                         </div>
 
                         <hr>
@@ -69,7 +98,7 @@ var_dump($result);
                                 <p>A short description of you and your work</p>
                             </div>
 
-                            <textarea id="about-them" name="about-them" spellcheck="true"></textarea>
+                            <textarea id="about-them" name="about-them" spellcheck="true" value=<?php "$about" ?>></textarea>
                         </div>
 
                         <hr>
@@ -80,7 +109,7 @@ var_dump($result);
                                 <p>First part of your postcode (e.g. SW6)</p>
                             </div>
                             
-                            <input type="text" id="location" oninput="location_validity()">
+                            <input type="text" id="location" oninput="location_validity()" value=<?php "$location" ?>>
                         </div>
 
                         <hr>
@@ -105,7 +134,7 @@ var_dump($result);
                                 <p>The organisation that you are currently a part of that is relevant to your expertise</p>
                             </div>
                             
-                            <input type="text" id="organisation">
+                            <input type="text" id="organisation" value=<?php "$organisation" ?>>
                         </div>
 
                         <hr>
@@ -113,9 +142,9 @@ var_dump($result);
                         <div class="entry">
                             <div>
                                 <label for="isEmployee">Employee</label>
-                                <input type="radio" id="isEmployee" name="role" value="employee" onclick="job_title_visibility(this)"><br>
+                                <input type="radio" id="isEmployee" name="role" value="employee" onclick="job_title_visibility(this)" <?php if($job_title != "Volunteer") echo("checked");?>><br>
                                 <label for="isVolunteer">Volunteer</label>
-                                <input type="radio" id="isVolunteer" name="role" value="volunteer" onclick="job_title_visibility(this)"><br>
+                                <input type="radio" id="isVolunteer" name="role" value="volunteer" onclick="job_title_visibility(this)" <?php if($job_title == "Volunteer") echo("checked");?>><br>
                             </div>
                             
                             <div id="job-title">
@@ -123,7 +152,7 @@ var_dump($result);
                                     <label for="job-title">Job Title</label>
                                     <p style="width: 95px">Your job title followed by your department</p>
                                 </div>
-                                <input type="text" id="job-title">
+                                <input type="text" id="job-title" value=<?php "$job_title"?>>
                             </div>
                             
                         </div>
