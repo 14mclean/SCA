@@ -22,8 +22,6 @@ $statement->bindValue(":user_id", $user_id, PDO::PARAM_INT);
 $statement->execute();
 $result = $statement->fetchAll()[0];
 
-var_dump($result);
-
 $name = $result["name"];
 $about = $result["about"];
 $location = $result["location"];
@@ -40,8 +38,6 @@ $ks2 = boolval($result["does_ks2"]);
 $ks3 = boolval($result["does_ks3"]);
 $ks4 = boolval($result["does_ks4"]);
 $ks5 = boolval($result["does_ks5"]);
-
-var_dump($name);
 
 $statement = $connection->prepare("
 SELECT *
@@ -102,7 +98,7 @@ $resources = $result;
                                 <p>A short description of you and your work</p>
                             </div>
 
-                            <textarea id="about-them" name="about-them" spellcheck="true" value=<?php "$about" ?>></textarea>
+                            <textarea id="about-them" name="about-them" spellcheck="true" value=<?php echo("$about") ?>></textarea>
                         </div>
 
                         <hr>
@@ -113,7 +109,7 @@ $resources = $result;
                                 <p>First part of your postcode (e.g. SW6)</p>
                             </div>
                             
-                            <input type="text" id="location" oninput="location_validity()" value=<?php "$location" ?>>
+                            <input type="text" id="location" oninput="location_validity()" value=<?php echo("$location") ?>>
                         </div>
 
                         <hr>
