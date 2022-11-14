@@ -39,6 +39,7 @@ $ks3 = boolval($result["does_ks3"]);
 $ks4 = boolval($result["does_ks4"]);
 $ks5 = boolval($result["does_ks5"]);
 
+// resources
 $statement = $connection->prepare("
 SELECT *
 FROM Expert_Resource
@@ -47,12 +48,18 @@ WHERE user_id = :user_id;
 $statement->bindValue(":user_id", $user_id, PDO::PARAM_INT);
 $statement->execute();
 $result = $statement->fetchAll();
-
 $resources = $result;
 
-var_dump($resources);
-
 // expertise
+$statement = $connection->prepare("
+SELECT *
+FROM Expertise
+WHERE user_id = :user_id;
+");
+$statement->bindValue(":user_id", $user_id, PDO::PARAM_INT);
+$statement->execute();
+$result = $statement->fetchAll();
+$expertise = $result;
 ?>
 
 <!DOCTYPE html>
@@ -123,6 +130,16 @@ var_dump($resources);
                             </div>
                             
                             <div id="expertises">
+                                <?php
+                                    foreach($expertise as $expertise_instance) {
+                                        $expertise_name = $expertise_instance["expertise"];
+                                        echo("
+                                        <input type=\"text\" id=\"expertise\" value=\"$expertise_name\"></input>
+                                        ");
+                                    }
+                                ?>
+
+
                                 <input type="text" id="expertise">
                             </div>
                             
@@ -248,13 +265,6 @@ var_dump($resources);
                             }
 
                             ?>
-
-                            <tr>
-                                <td>Google</td>
-                                <td>google.co.uk</td>
-                                <td>A simple link to google</td>
-                                <td><button type="Button" id="remove-resource-button" onclick="remove_resource(this)"><img src="assets/remove.png"></button></td>
-                            </tr>
                         </table>
 
                         <button id="new-resource-button"><img src="assets/plus.png"></button>
