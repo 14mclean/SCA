@@ -538,10 +538,7 @@ $expertise = $result;
                 // delete any not in current
                 // add any not in old 
             });
-            console.log(typeof organisation);
-            console.log(JSON.stringify({
-                    "organisation": organisation
-                }));
+            
             // send patch request for user details
             fetch("/api/experts/"+user_id, {
                 method: "PATCH",
@@ -549,7 +546,7 @@ $expertise = $result;
                 body: JSON.stringify({
                     "name": name,
                     "about": about,
-                    "organisation": organisation.value,
+                    "organisation": organisation,
                     "location": location,
                     "job_title": job_title,
                     "does_teacher_advice": teacher_advice,
