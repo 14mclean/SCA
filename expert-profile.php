@@ -553,7 +553,7 @@ $expertise = $result;
                     "does_ks2": ks2,
                     "does_ks3": ks3,
                     "does_ks4": ks4,
-                    "does_ks5": ks5,
+                    "does_ks5": ks5
                 }));
             // send patch request for user details
             fetch("/api/experts/"+user_id, {
@@ -574,7 +574,7 @@ $expertise = $result;
                     "does_ks2": ks2,
                     "does_ks3": ks3,
                     "does_ks4": ks4,
-                    "does_ks5": ks5,
+                    "does_ks5": ks5
                 })
             });
 
