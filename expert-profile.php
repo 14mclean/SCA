@@ -494,7 +494,7 @@ $expertise = $result;
             ks3 = +document.getElementById("doesKS3").checked,
             ks4 = +document.getElementById("doesKS4").checked,
             ks5 = +document.getElementById("doesKS5").checked;
-            console.log(orgabisation);
+            console.log(organistion);
 
             let new_resources = [],
                 new_expertise = [];
