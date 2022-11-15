@@ -539,21 +539,7 @@ $expertise = $result;
                 // add any not in old 
             });
             console.log(JSON.stringify({
-                    "name": name,
-                    "about": about,
-                    "organisation": organisation,
-                    "location": location,
-                    "job_title": job_title,
-                    "does_teacher_advice": teacher_advice,
-                    "does_project_work": project_work,
-                    "does_student_online": student_online,
-                    "does_student_f2f": student_f2f,
-                    "does_student_resource": student_resources,
-                    "does_ks1": ks1,
-                    "does_ks2": ks2,
-                    "does_ks3": ks3,
-                    "does_ks4": ks4,
-                    "does_ks5": ks5
+                    "organisation": organisation
                 }));
             // send patch request for user details
             fetch("/api/experts/"+user_id, {
