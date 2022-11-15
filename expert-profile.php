@@ -494,7 +494,7 @@ $expertise = $result;
             ks3 = +document.getElementById("doesKS3").checked,
             ks4 = +document.getElementById("doesKS4").checked,
             ks5 = +document.getElementById("doesKS5").checked;
-            console.log(organistion);
+            
 
             let new_resources = [],
                 new_expertise = [];
@@ -538,7 +538,7 @@ $expertise = $result;
                 // delete any not in current
                 // add any not in old 
             });
-
+            console.log(organistion);
             // send patch request for user details
             fetch("/api/experts/"+user_id, {
                 method: "PATCH",
