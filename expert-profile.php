@@ -479,20 +479,87 @@ $expertise = $result;
         document.querySelector("div#form-container form").addEventListener("submit", (event) => {
             event.preventDefault();
 
-            fetch("/api/expertresources/"+user_id)
-            .then()
+            const name = document.getElementById("name").value,
+            about = document.getElementById("about-them").value,
+            location = document.getElementById("location").value,
+            organistion = document.getElementById("organisation").value,
+            job_title = (document.getElementById("isVolunteer").value == "volunteer") ? "Volunteer":document.getElementById("job-title").value,
+            teacher_advice = +document.getElementById("teacher-advice").checked,
+            project_work = +document.getElementById("project-work").checked,
+            student_online = +(document.getElementById("student-online").checked && document.getElementById("student-interactions").checked),
+            student_f2f = ++(document.getElementById("student-f2f").checked && document.getElementById("student-interactions").checked),
+            student_resources = ++(document.getElementById("student-resources").checked && document.getElementById("student-interactions").checked),
+            ks1 = +document.getElementById("ks1").checked,
+            ks2 = +document.getElementById("ks2").checked,
+            ks3 = +document.getElementById("ks3").checked,
+            ks4 = +document.getElementById("ks4").checked,
+            ks5 = +document.getElementById("ks5").checked;
+
+            let new_resources = [],
+                new_expertise = [];
+
+            for(const row of document.querySelectorAll("#resource-table tbody tr:not(:first-child)")) {
+                const name = row.children[0];
+                const link = row.children[1];
+                const description = row.children[2];
+
+                new_resources.push({"name": name, "link": link, "description": description});
+            }
+
+            for(const input of document.querySelectorAll("#expertises input")) {
+                new_expertise.push(input.value);
+            }
 
             // get user's current resources
-                // compare old and new
-                // delete any not in current
-                // add any not in old
-
-            // get user's current expertise
+            fetch("/api/expertresources?user_id="+user_id)
+            .then(response => {
+                if(response.ok) {
+                    return response.json();
+                }
+            })
+            .then(old_resources => {
                 // compare old and new
                 // delete any not in current
                 // add any not in old 
+                console.log(new_resources);
+                console.log(old_resources);
+            });
+
+            // get user's current expertise
+            fetch("/api/expertise?user_id="+user_id)
+            .then(response => {
+                if(response.ok) {
+                    return response.json();
+                }
+            })
+            .then(old_expertise => {
+                // compare old and new
+                // delete any not in current
+                // add any not in old 
+            });
 
             // send patch request for user details
+            fetch("/api/experts/"+user_id, {
+                method: "PATCH",
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    "name": name,
+                    "about": about,
+                    "organisation": organisation,
+                    "location": location,
+                    "job_title": job_title,
+                    "does_teacher_advice": teacher_advice,
+                    "does_project_work": project_work,
+                    "does_student_online": student_online,
+                    "does_student_f2f": student_f2f,
+                    "does_student_resource": student_resources,
+                    "does_ks1": ks1,
+                    "does_ks2": ks2,
+                    "does_ks3": ks3,
+                    "does_ks4": ks4,
+                    "does_ks5": ks5,
+                })
+            });
 
             return false;
         });
