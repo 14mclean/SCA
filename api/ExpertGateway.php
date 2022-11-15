@@ -60,7 +60,7 @@ class ExpertGateway implements Gateway {
             does_ks2 = :does_ks2,
             does_ks3 = :does_ks3,
             does_ks4 = :does_ks4,
-            does_ks5 = :does_ks5,
+            does_ks5 = :does_ks5
             WHERE user_id = :user_id;
         ");
 
