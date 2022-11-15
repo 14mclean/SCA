@@ -500,9 +500,9 @@ $expertise = $result;
                 new_expertise = [];
 
             for(const row of document.querySelectorAll("#resource-table tbody tr:not(:first-child)")) {
-                const name = row.children[0];
-                const link = row.children[1];
-                const description = row.children[2];
+                const name = row.children[0].textContent;
+                const link = row.children[1].textContent;
+                const description = row.children[2].textContent;
 
                 new_resources.push({"name": name, "link": link, "description": description});
             }
