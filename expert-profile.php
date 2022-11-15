@@ -538,6 +538,7 @@ $expertise = $result;
                 // delete any not in current
                 // add any not in old 
             });
+            console.log(typeof organisation);
             console.log(JSON.stringify({
                     "organisation": organisation
                 }));
