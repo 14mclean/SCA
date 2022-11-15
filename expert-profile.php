@@ -549,7 +549,7 @@ $expertise = $result;
                 body: JSON.stringify({
                     "name": name,
                     "about": about,
-                    "organisation": organisation,
+                    "organisation": organisation.value,
                     "location": location,
                     "job_title": job_title,
                     "does_teacher_advice": teacher_advice,
