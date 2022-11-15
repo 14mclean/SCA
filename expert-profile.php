@@ -483,7 +483,7 @@ $expertise = $result;
             about = document.getElementById("about-them").value,
             location = document.getElementById("location").value,
             organistion = document.getElementById("organisation").value,
-            job_title = (document.getElementById("isVolunteer").value == "volunteer") ? "Volunteer":document.getElementById("job-title").value,
+            job_title = (document.getElementById("isVolunteer").checked) ? "Volunteer":document.getElementById("job-title").value,
             teacher_advice = +document.getElementById("teacher-advice").checked,
             project_work = +document.getElementById("project-work").checked,
             student_online = +(document.getElementById("student-online").checked && document.getElementById("student-interactions").checked),
@@ -494,6 +494,7 @@ $expertise = $result;
             ks3 = +document.getElementById("doesKS3").checked,
             ks4 = +document.getElementById("doesKS4").checked,
             ks5 = +document.getElementById("doesKS5").checked;
+            console.log(orgabisation);
 
             let new_resources = [],
                 new_expertise = [];
