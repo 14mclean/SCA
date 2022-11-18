@@ -504,7 +504,7 @@ $expertise = $result;
                 const link = row.children[1].textContent;
                 const description = row.children[2].textContent;
 
-                new_resources.push({"name": name, "link": link, "description": description});
+                new_resources.push({"name": name, "link": link, "description": description, "user_id":user_id});
             }
 
             for(const input of document.querySelectorAll("#expertises input")) {
@@ -519,11 +519,50 @@ $expertise = $result;
                 }
             })
             .then(old_resources => {
-                // compare old and new
-                // delete any not in current
-                // add any not in old 
-                console.log(new_resources);
-                console.log(old_resources);
+                function resource_array_includes(array, resource) {
+                    function resource_equality(resource1, resource2) {
+                        return
+                            resource1["user_id"] == resource2["user_id"] &&
+                            resource1["name"] == resource2["name"] &&
+                            resource1["link"] == resource2["link"] &&
+                            resource1["description"] == resource2["description"];
+                    }
+
+                    for(const element of array) {
+                        if(resource_equality(element, resource)) return true;
+                    }
+                    return false
+                }
+                
+                // foreach all_resources
+                    // if in old, not new
+                        // delete
+                    // if in new, not old
+                        // post
+
+                for(const resource of old_resources.concat(new_resources)) {
+                    let in_new = resource_array_includes(new_resources, resource),
+                        in_old = resource_array_includes(old_resources, resource);
+
+                    if(in_old && !in_new) {
+                        fetch("/api/expertresources/"+resource["resource_id"], {
+                            method: "DELETE",
+                            headers: {'Content-Type': 'application/json'}
+                        })
+                    } else if(in_new && !in_old) {
+                        fetch("/api/expertresources", {
+                            method: "POST",
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify({
+                                "user_id": user_id,
+                                "name": resource["name"],
+                                "link": resource["link"],
+                                "description": resource["description"],
+                            })
+                        })
+                    }
+                }
+                
             });
 
             // get user's current expertise

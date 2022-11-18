@@ -35,7 +35,7 @@ class ExpertResourceGateway implements Gateway {
         $statement->bindValue(":user_id", $data["user_id"], PDO::PARAM_INT);
         $statement->bindValue(":name", $data["name"], PDO::PARAM_STR);
         $statement->bindValue(":link", $data["link"], PDO::PARAM_STR);
-        statement->bindValue(":description", $data["description"], PDO::PARAM_STR);
+        $statement->bindValue(":description", $data["description"], PDO::PARAM_STR);
         $statement->execute();
         return $this->connection->lastInsertId();
     }
