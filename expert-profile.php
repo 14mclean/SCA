@@ -576,6 +576,7 @@ $expertise = $result;
                 // compare old and new
                 // delete any not in current
                 // add any not in old 
+                console.log(old_expertise);
             });
             
             // send patch request for user details
