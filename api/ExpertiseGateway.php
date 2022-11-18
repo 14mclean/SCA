@@ -57,4 +57,11 @@ class ExpertiseGateway implements Gateway {
         $statement->execute();
         return $statement->rowCount();
     }
+
+    public function delete(string $id): int {
+        $statement = $this->connection->prepare("DELETE FROM Expertise WHERE expertise_instance_id = :expertise_instance_id");
+        $statement.bindValue(":expertise_instance_id", $id, PDO::PARAM_INT);
+        $statement->execute();
+        return $statement->rowCount();
+    }
 }
