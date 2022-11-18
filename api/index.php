@@ -29,12 +29,12 @@ switch($parts[0]) {
         break;
     case "emailcodes":
         $gateway = new EmailCodesGateway($db);
-        $controller = new EmailCodesController($db);
+        $controller = new EmailCodesController($gateway);
         $controller->process_request($_SERVER["REQUEST_METHOD"], explode("/", $url));
         break;
     case "expertise":
         $gateway = new ExpertiseGateway($db);
-        $controller = new ExpertiseController($db);
+        $controller = new ExpertiseController($gateway);
         $controller->process_request($_SERVER["REQUEST_METHOD"], explode("/", $url));
         break;
     default:

@@ -2,7 +2,7 @@
 
 class ExpertiseController extends Controller{
     public function __construct(ExpertiseGateway $gateway) {
-        parent::__construct($gateway, "Expert");
+        parent::__construct($gateway, "Expertise");
     }
 
     protected function get_validation_errors(array $data, bool $is_new = true): array {
