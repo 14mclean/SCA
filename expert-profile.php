@@ -580,7 +580,7 @@ $expertise = $result;
                     }
 
                     for(const element of array) {
-                        if(resource_equality(element, expertise)) return true;
+                        if(expertise_equality(element, expertise)) return true;
                     }
                     return false
                 }
