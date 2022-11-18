@@ -1,5 +1,3 @@
-sanitize before saving to db, after reading from db and before writing to html
-
 look into JWT
 look into OAuth
 
@@ -8,5 +6,3 @@ forgot password
 mobile version of each page
 
 distance slider: min, max initial
-
-add save buttons to profile
