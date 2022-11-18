@@ -562,22 +562,55 @@ $expertise = $result;
                         })
                     }
                 }
-                
             });
 
             // get user's current expertise
             fetch("/api/expertise?user_id="+user_id)
             .then(response => {
                 if(response.ok) {
-                    //return response.json();
-                    return response.text();
+                    return response.json();
                 }
             })
             .then(old_expertise => {
-                // compare old and new
-                // delete any not in current
-                // add any not in old 
-                console.log(old_expertise);
+                function expertise_array_includes(array, expertise) {
+                    function expertise_equality(expertise1, expertise2) {
+                        return
+                            expertise1["user_id"] == expertise2["user_id"] &&
+                            expertise1["expertise"] == expertise2["name"];
+                    }
+
+                    for(const element of array) {
+                        if(resource_equality(element, expertise)) return true;
+                    }
+                    return false
+                }
+                
+                // foreach all_expertise
+                    // if in old, not new
+                        // delete
+                    // if in new, not old
+                        // post
+
+                for(const expertise of old_expertise.concat(new_expertise)) {
+                    let in_new = expertise_array_includes(new_expertise, expertise),
+                        in_old = expertise_array_includes(old_expertise, expertise);
+
+                    if(in_old && !in_new) {
+                        fetch("/api/expertise/"+expertise["expertise_instance_id"], {
+                            method: "DELETE",
+                            headers: {'Content-Type': 'application/json'}
+                        })
+                    } else if(in_new && !in_old) {
+                        fetch("/api/expertise", {
+                            method: "POST",
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify({
+                                "user_id": user_id,
+                                "expertise": expertise["expertise"]
+                            })
+                        })
+                    }
+                }
             });
             
             // send patch request for user details
