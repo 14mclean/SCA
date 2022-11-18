@@ -25,7 +25,12 @@ class ExpertiseGateway implements Gateway {
         }
 
         $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        if($result == false) {
+            return array();
+        } else {
+            return $result;
+        }
     }
 
     public function create(array $data): string {
