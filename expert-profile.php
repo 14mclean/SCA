@@ -569,7 +569,8 @@ $expertise = $result;
             fetch("/api/expertise?user_id="+user_id)
             .then(response => {
                 if(response.ok) {
-                    return response.json();
+                    //return response.json();
+                    return response.text();
                 }
             })
             .then(old_expertise => {
