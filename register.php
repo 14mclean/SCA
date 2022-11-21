@@ -21,9 +21,9 @@
                 <h2><?php echo $_GET["level"]?></h2>
 
                 <form>
-                    <input id="email_input" name="email" type="email" placeholder="E-mail" required>
+                    <input id="email_input" name="email" type="email" placeholder="E-mail" required oninput="clear_validation(this)">
 
-                    <input id="password_input" name="password" type="password" placeholder="Password" required>
+                    <input id="password_input" name="password" type="password" placeholder="Password" required oninput="clear_validation(this)">
                     <img src="assets/noEye.png">
 
                     <input type="text" style="display: none;">
@@ -43,6 +43,11 @@
     </body>
 
     <script>
+        function clear_validation(element) {
+            element.setCustomValidity("");
+            element.reportValidity();
+        }
+
         document.querySelector("img").addEventListener("click", swap_visibility);
         function swap_visibility(event) {
             const password_input = document.querySelector('#password_input');
@@ -94,7 +99,6 @@
                 // show bad
             }
 
-             // TODO: change filter methods
             //fetch("/api/users?email="+email) // get any users with this email
             fetch("/api/users?filter=" + btoa(JSON.stringify({"email":{"operator":"", "value": [email]}})))
             .then((response) => {
@@ -158,7 +162,7 @@
                         });
                     } 
                     
-                    //window.location.href="meet-the-experts.php";
+                    window.location.href="meet-the-experts.php";
                 });
             });
         }

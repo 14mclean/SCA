@@ -337,6 +337,8 @@
         })
         .then(json => {
             console.log(json);
+            // TODO: expertise search
+            // TODO: update currently shown experts
         });
     }
 
