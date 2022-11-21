@@ -17,10 +17,14 @@ class UserGateway implements Gateway{
             $statement_string .= " WHERE";
 
             foreach($filter as $column_title => $column_data) {
+                if(!count($column_data["value"])) {
+                    continue;
+                }
+
                 $statement_string .= " (";
-                
-                foreach($column_data["value"] as $value) { // 
-                    $statement_string .= $column_title . "=:" . hash("sha1", $value, false) . " " . $column_data["operator"] . " "; 
+
+                foreach($column_data["value"] as $value) {
+                    $statement_string .= $column_title . "=:" . hash("sha1", $column_title.$value, false) . " " . $column_data["operator"] . " "; 
                 }
                 $statement_string = substr($statement_string, 0, -strlen($column_data["operator"])-2);
                 $statement_string .= ") AND";
@@ -32,7 +36,7 @@ class UserGateway implements Gateway{
 
         foreach($filter as $column_title => $column_data) {
             foreach($column_data["value"] as $value) {
-                $statement->bindValue(":" . hash("sha1", $value, false), $value);
+                $statement->bindValue(":" . hash("sha1", $column_title.$value, false), $value);
             }
         }
 
