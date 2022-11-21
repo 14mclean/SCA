@@ -320,7 +320,7 @@
             "does_project_work": {"operator": "", "value": [+project_work]},
             "does_student_online": {"operator": "", "value": [+student_online]},
             "does_student_f2f": {"operator": "", "value": [+student_f2f]},
-            "does_student_resource": {"operator": "", "value": [+student_resource]},
+            "does_student_resource": {"operator": "", "value": [+student_resources]},
             "does_ks1": {"operator": "", "value": [+does_ks1]},
             "does_ks2": {"operator": "", "value": [+does_ks2]},
             "does_ks3": {"operator": "", "value": [+does_ks3]},
