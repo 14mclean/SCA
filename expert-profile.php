@@ -512,7 +512,8 @@ $expertise = $result;
             }
 
             // get user's current resources
-            fetch("/api/expertresources?user_id="+user_id) // TODO: change filter methods
+            //fetch("/api/expertresources?user_id="+user_id) // TODO: change filter methods
+            fetch("/api/expertresources?filter=" + btoa(JSON.stringify({"user_id":{"operator":"", "value": [user_id]}})))
             .then(response => {
                 if(response.ok) {
                     return response.json();
@@ -565,7 +566,8 @@ $expertise = $result;
             });
 
             // get user's current expertise
-            fetch("/api/expertise?user_id="+user_id) // TODO: change filter methods
+            //fetch("/api/expertise?user_id="+user_id) // TODO: change filter methods
+            fetch("/api/expertise?filter=" + btoa(JSON.stringify({"user_id":{"operator":"", "value": [user_id]}})))
             .then(response => {
                 if(response.ok) {
                     return response.json();

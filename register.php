@@ -95,7 +95,8 @@
             }
 
              // TODO: change filter methods
-            fetch("/api/users?email="+email) // get any users with this email
+            //fetch("/api/users?email="+email) // get any users with this email
+            fetch("/api/users?filter=" + btoa(JSON.stringify({"email":{"operator":"", "value": [email]}})))
             .then((response) => {
                 if(response.ok) {
                     return response.json();
