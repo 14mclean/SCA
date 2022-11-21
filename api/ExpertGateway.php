@@ -27,10 +27,8 @@ class ExpertGateway implements Gateway {
             }
             $statement_string = substr($statement_string, 0, -4);
         }
-
-        var_dump($statement_string);
         
-        /*$statement = $this->connection->prepare($statement_string);
+        $statement = $this->connection->prepare($statement_string);
 
         foreach($filter as $column_title => $column_data) {
             foreach($column_data["value"] as $value) {
@@ -39,7 +37,7 @@ class ExpertGateway implements Gateway {
         }
 
         $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_ASSOC);*/
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
 
         /*
         if(count($_GET) > 0) {
