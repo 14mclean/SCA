@@ -329,7 +329,7 @@
         };
 
         // fetch with options
-        fetch("/api/experts?filter=" + btoa(json_encode(filter)))
+        fetch("/api/experts?filter=" + btoa(JSON.stringify(filter)))
         .then(response => {
             if(response.ok) {
                 return response.json();
