@@ -72,7 +72,7 @@
                             $org = $row["Organisation"];
     
                             echo("
-                            <label class="custom-checkbox">
+                            <label class='custom-checkbox'>
                                 $org
                                 <input type='checkbox' value='$org'>
                                 <span class='new-checkbox'></span>
