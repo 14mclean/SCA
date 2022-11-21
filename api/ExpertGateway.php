@@ -22,7 +22,7 @@ class ExpertGateway implements Gateway {
                 foreach($column_data["value"] as $value) { // 
                     $statement_string .= $column_title . "=:" . hash("sha1", $value, false) . " " . $column_data["operator"] . " "; 
                 }
-                $statement_string = substr($statement_string, 0, -5);
+                $statement_string = substr($statement_string, 0, -strlen($column_data["operator"])-2);
                 $statement_string .= ") AND";
             }
             $statement_string = substr($statement_string, 0, -4);
@@ -38,32 +38,6 @@ class ExpertGateway implements Gateway {
 
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_ASSOC);
-
-        /*
-        if(count($_GET) > 0) {
-            $condition_string = " WHERE";
-            foreach($_GET as $column => $value) {
-                if(str_contains($value, ",")) { // when value contains comma, seperate by comma and make OR expression
-                    // {column} = {}
-                } else if(str_contains($value, ";")) { // when seperated by semi-colon make AND expression 
-
-                } else {
-                    $condition_string .= " $column = :$column AND";
-                }
-            }
-            $statement_string .= substr($condition_string, 0, -3);
-        }
-
-        $statement = $this->connection->prepare($statement_string);
-
-        foreach($_GET as $column => $value) {
-            $statement->bindValue(":$column", $value);
-        }
-
-
-
-        $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_ASSOC);*/
     }
 
     public function create(array $data): string {
