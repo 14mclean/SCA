@@ -23,7 +23,7 @@ class ExpertGateway implements Gateway {
                 foreach($column_data["value"] as $value) {
                     $statement_string .= $column_title . "=:" . $value . " " . $column_data["operator"] . " "; 
                 }
-                $statement_string = substr($statement_string, 0, -3);
+                $statement_string = substr($statement_string, 0, -4);
                 $statement_string .= ") AND";
             }
             $statement_string = substr($statement_string, 0, -3);
