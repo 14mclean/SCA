@@ -274,6 +274,8 @@ aside {
     height: 25px;
     float: right;
     position: absolute;
+    top: 5px;
+    right: 30px;
 }
 
 #results {
