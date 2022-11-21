@@ -250,7 +250,8 @@ aside {
 }
 
 #search-container input {
-    width: 380px;
+    min-width: 300px;
+    width: 20vw;
     height: 25px;
     padding: 5px 15px 5px 15px;
     border-radius: 15px;
@@ -272,9 +273,8 @@ aside {
 #search-container img {
     width: 25px;
     height: 25px;
-    float: right;
     position: relative;
-    right: 80px;
+    left: 80px;
     top: 5px;
 }
 
