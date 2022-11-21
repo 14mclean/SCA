@@ -13,7 +13,7 @@ class ExpertGateway implements Gateway {
         $filter = $_GET["filter"] ?? null;
 
         if($filter != null) {
-            $filter = json_decode(base64_decode($filter));
+            $filter = json_decode(base64_decode($filter), TRUE);
             $statement_string .= " WHERE";
 
             foreach($filter as $column_title => $column_data) {
