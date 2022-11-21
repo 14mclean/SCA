@@ -17,7 +17,7 @@ class ExpertGateway implements Gateway {
             $statement_string .= " WHERE";
 
             foreach($filter as $column_title => $column_data) {
-                $statement_string .= " ("
+                $statement_string .= " (";
                 
                 foreach($column_data["value"] as $value) {
                     $statement_string .= $column_title . "=:" . $value . " " . $column_data["operator"] . " "; 
