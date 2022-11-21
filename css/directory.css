@@ -273,9 +273,6 @@ aside {
     width: 25px;
     height: 25px;
     float: right;
-    position: relative;
-    top: 5px;
-    right: 30px;
 }
 
 #results {
