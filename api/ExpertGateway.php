@@ -49,12 +49,12 @@ class ExpertGateway implements Gateway {
 
         foreach($_GET as $column => $value) {
             $statement->bindValue(":$column", $value);
-        }*/
+        }
 
 
 
         $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);*/
     }
 
     public function create(array $data): string {
