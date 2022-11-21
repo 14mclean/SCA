@@ -14,6 +14,7 @@ class ExpertGateway implements Gateway {
 
         if($filter != null) {
             $filter = json_decode(base64_decode($filter), TRUE);
+            var_dump($filter);
             $statement_string .= " WHERE";
 
             foreach($filter as $column_title => $column_data) {
@@ -22,10 +23,10 @@ class ExpertGateway implements Gateway {
                 foreach($column_data["value"] as $value) {
                     $statement_string .= $column_title . "=:" . $value . " " . $column_data["operator"] . " "; 
                 }
-                $statement_string .= substr($statement_string, 0, -3);
+                $statement_string = substr($statement_string, 0, -3);
                 $statement_string .= ") AND";
             }
-            $statement_string .= substr($statement_string, 0, -3);
+            $statement_string = substr($statement_string, 0, -3);
         }
 
         var_dump($statement_string);
