@@ -74,7 +74,7 @@
                             echo("
                             <label class='custom-checkbox'>
                                 $org
-                                <input type='checkbox'>
+                                <input type='checkbox' value='$org'>
                                 <span class='new-checkbox'></span>
                             </label>
                             ");
@@ -94,31 +94,31 @@
 
                     <label class="custom-checkbox">
                         KS1
-                        <input type="checkbox">
+                        <input type="checkbox" value="ks1">
                         <span class="new-checkbox"></span>
                     </label>
 
                     <label class="custom-checkbox">
                         KS2
-                        <input type="checkbox">
+                        <input type="checkbox" value="ks2">
                         <span class="new-checkbox"></span>
                     </label>
 
                     <label class="custom-checkbox">
                         KS3
-                        <input type="checkbox">
+                        <input type="checkbox" value="ks3">
                         <span class="new-checkbox"></span>
                     </label>
 
                     <label class="custom-checkbox">
                         KS4
-                        <input type="checkbox">
+                        <input type="checkbox" value="ks4">
                         <span class="new-checkbox"></span>
                     </label>
 
                     <label class="custom-checkbox">
                         KS5
-                        <input type="checkbox">
+                        <input type="checkbox" value="ks5">
                         <span class="new-checkbox"></span>
                     </label>
                 </div>
@@ -134,19 +134,19 @@
                     
                     <label class="custom-checkbox">
                         Teacher Advice & Information
-                        <input type="checkbox">
+                        <input type="checkbox" value="teacher_advice>
                         <span class="new-checkbox"></span>
                     </label>
 
                     <label class="custom-checkbox">
                         Student Interaction
-                        <input type="checkbox" onclick="show_interactions()">
+                        <input type="checkbox" onclick="show_interactions()" value="student_interactions">
                         <span class="new-checkbox"></span>
                     </label>
 
                     <label class="custom-checkbox">
                         Project Work
-                        <input type="checkbox">
+                        <input type="checkbox" value="project_work">
                         <span class="new-checkbox"></span>
                     </label>
                 </div>
@@ -162,19 +162,19 @@
                     
                     <label class="custom-checkbox">
                         Online
-                        <input type="checkbox">
+                        <input type="checkbox" value="student-online">
                         <span class="new-checkbox"></span>
                     </label>
 
                     <label class="custom-checkbox">
                         Face-to-Face
-                        <input type="checkbox">
+                        <input type="checkbox" value="student_f2f">
                         <span class="new-checkbox"></span>
                     </label>
 
                     <label class="custom-checkbox">
                         Resources
-                        <input type="checkbox">
+                        <input type="checkbox" value="student_resources">
                         <span class="new-checkbox"></span>
                     </label>
                 </div>
@@ -247,11 +247,79 @@
     }
 
     function search() {
-        // org = ticked OR ticked ...
-        // ages = ticked OR ticked ...
-        // interaction types = ticked OR ticked ...
-        // student interactions = if(student interaction) {ticked OR ticked}
+
+        // TODO: ADD EMPLOYEEE/VOLUNTEER FILTER  
+        
         // adminVerified = 1
+
+        let orgs = "",
+        teacher_advice = false,
+        project_work = false,
+        student_online = false,
+        student_f2f = false,
+        student_resources = false,
+        does_ks1 = false,
+        does_ks2 = false,
+        does_ks3 = false,
+        does_ks4 = false,
+        does_ks5 = false;
+
+        // org = ticked OR ticked ...
+        for(const org_checkbox of document.querySelectorAll(".refinement#organisation input")) {
+            if(org_checkbox.checked) {
+                orgs.push(org_checkbox.value);
+            }
+        }
+
+        // interaction types = ticked OR ticked ...
+        for(const interactions_checkbox of document.querySelectorAll(".refinement#interactions input")) {
+            if(interactions_checkbox.checked) {
+                switch(interactions_checkbox.value) {
+                    case "teacher_advice":
+                        teacher_advice = true;
+                    case "project_work":
+                        project_work = true;
+                    case "student_interactions":
+                        // student interactions = if(student interaction) {ticked OR ticked}
+                        for(const student_interactions_checkbox of document.querySelectorAll(".refinement#student-interactions input")) {
+                            if(student_interactions_checkbox.checked) {
+                                switch student_interactions_checkbox.value {
+                                    case "student_online":
+                                        student_online = true;
+                                    case "student_f2f":
+                                        student_f2f = true;
+                                    case "student_resources":
+                                        student_resources = true;
+                                    default:
+                                        console.log("Error with value " + student_interactions_checkbox.value);
+                                }
+                            }
+                        }
+                    default:
+                        console.log("Error with value "+interactions_checkbox.value);
+                }
+            }
+        }
+
+        // ages = ticked OR ticked ...
+        for(const ages_checkbox of document.querySelectorAll(".refinement#ages input")) {
+            if(ages_checkbox.checked) {
+                switch(ages_checkbox.value) {
+                    case "ks1":
+                        does_ks1 = true;
+                    case "ks2":
+                        does_ks2 = true;
+                    case "ks3":
+                        does_ks3 = true;
+                    case "ks4":
+                        does_ks4 = true;
+                    case "ks5":
+                        does_ks5 = true;
+                }
+            }
+        }
+
+        fetch("/api/expert?")
     }
 
     </script>

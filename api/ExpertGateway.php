@@ -10,10 +10,37 @@ class ExpertGateway implements Gateway {
     public function get_all(): array {
         $statement_string = "SELECT * FROM Expert";
 
+        $filter = $_GET["filter"] ?? null;
+
+        if($filter != null) {
+            $filter = json_decode(base64_decode($filter));
+            $statement_string .= " WHERE";
+
+            foreach($filter as $column_title => $column_data) {
+                $statement_string .= " ("
+                
+                foreach($column_data["value"] as $value) {
+                    $statement_string .= $column_title . "=:" . $value . " " . $column_data["operator"] . " "; 
+                }
+                $statement_string .= substr($condition_string, 0, -3);
+                $statement_string .= ") AND";
+            }
+            $statement_string .= substr($condition_string, 0, -3);
+        }
+
+        echo($statement_string);
+
+        /*
         if(count($_GET) > 0) {
             $condition_string = " WHERE";
             foreach($_GET as $column => $value) {
-                $condition_string .= " $column = :$column AND";
+                if(str_contains($value, ",")) { // when value contains comma, seperate by comma and make OR expression
+                    // {column} = {}
+                } else if(str_contains($value, ";")) { // when seperated by semi-colon make AND expression 
+
+                } else {
+                    $condition_string .= " $column = :$column AND";
+                }
             }
             $statement_string .= substr($condition_string, 0, -3);
         }
@@ -22,7 +49,9 @@ class ExpertGateway implements Gateway {
 
         foreach($_GET as $column => $value) {
             $statement->bindValue(":$column", $value);
-        }
+        }*/
+
+
 
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_ASSOC);
