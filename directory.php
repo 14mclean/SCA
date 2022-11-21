@@ -134,7 +134,7 @@
                     
                     <label class="custom-checkbox">
                         Teacher Advice & Information
-                        <input type="checkbox" value="teacher_advice>
+                        <input type="checkbox" value="teacher_advice">
                         <span class="new-checkbox"></span>
                     </label>
 
@@ -312,17 +312,6 @@
                 }
             }
         }
-
-        /*
-
-        {
-            "org": {
-                "operator": "AND"/"OR",
-                "value" : []
-            }
-        }
-
-        */
 
         let filter = {
             "admin_verified": {"operator": "", "value": [1]},

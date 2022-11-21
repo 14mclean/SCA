@@ -276,6 +276,7 @@ aside {
     position: relative;
     right: 40px;
     top: 7px;
+    cursor: pointer;
 }
 
 #results {
