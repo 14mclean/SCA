@@ -127,7 +127,7 @@ aside {
     margin-bottom: 10px;
 }
 
-#expand-button {
+.expand-button {
     width: 12px;
     height: 12px;
     position: relative;
@@ -137,7 +137,7 @@ aside {
     right: 20px;
 }
 
-#expand-button span {
+.expand-button span {
     content: "";
     margin-top: 16px;
     position: absolute;
@@ -148,7 +148,7 @@ aside {
     top: -11px;
 }
 
-#expand-button #vertical {
+.expand-button #vertical {
     transition: transform 0.45s cubic-bezier(0.165,0.84,0.44,1);
 }
 

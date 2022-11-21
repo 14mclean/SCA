@@ -19,7 +19,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Directory - SCA</title>
-        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet">
         <link rel="stylesheet" href="css/directory.css">
     </head>
 
@@ -55,7 +55,7 @@
                     <h2>
                         Organisation
                         
-                        <div id="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
+                        <div class="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
                             <span id="vertical"></span>
                             <span id="horizontal"></span>
                         </div>
@@ -72,7 +72,7 @@
                             $org = $row["Organisation"];
     
                             echo("
-                            <label class='custom-checkbox'>
+                            <label class="custom-checkbox">
                                 $org
                                 <input type='checkbox' value='$org'>
                                 <span class='new-checkbox'></span>
@@ -86,7 +86,7 @@
                 <div class="refinement" id="ages">
                     <h2>
                         Ages
-                        <div id="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
+                        <div class="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
                             <span id="vertical"></span>
                             <span id="horizontal"></span>
                         </div>
@@ -126,7 +126,7 @@
                 <div class="refinement" id="interactions">
                     <h2>
                         Interaction Types
-                        <div id="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
+                        <div class="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
                             <span id="vertical"></span>
                             <span id="horizontal"></span>
                         </div>
@@ -154,7 +154,7 @@
                 <div class="refinement" id="student-interactions">
                     <h2>
                         Student Interactions
-                        <div id="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
+                        <div class="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
                             <span id="vertical"></span>
                             <span id="horizontal"></span>
                         </div>
@@ -182,7 +182,7 @@
                 <div class="refinement" id="distance">
                     <h2>
                         Distance
-                        <div id="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
+                        <div class="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
                             <span id="vertical"></span>
                             <span id="horizontal"></span>
                         </div>
