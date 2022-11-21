@@ -19,8 +19,8 @@ class ExpertGateway implements Gateway {
             foreach($filter as $column_title => $column_data) {
                 $statement_string .= " (";
                 
-                foreach($column_data["value"] as $value) {
-                    $statement_string .= $column_title . "=:" . $value . " " . $column_data["operator"] . " "; 
+                foreach($column_data["value"] as $value) { // 
+                    $statement_string .= $column_title . "=:" . hash("sha1", $value, false) . " " . $column_data["operator"] . " "; 
                 }
                 $statement_string = substr($statement_string, 0, -5);
                 $statement_string .= ") AND";
@@ -34,7 +34,7 @@ class ExpertGateway implements Gateway {
 
         foreach($filter as $column_title => $column_data) {
             foreach($column_data["value"] as $value) {
-                $statement->bindValue(":$value", $value); // new names?
+                $statement->bindValue(":hash("sha1", $value, false)", $value); // new names?
             }
         }
 
