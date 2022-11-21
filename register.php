@@ -94,6 +94,7 @@
                 // show bad
             }
 
+             // TODO: change filter methods
             fetch("/api/users?email="+email) // get any users with this email
             .then((response) => {
                 if(response.ok) {

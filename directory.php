@@ -248,11 +248,8 @@
 
     function search() {
 
-        // TODO: ADD EMPLOYEEE/VOLUNTEER FILTER  
-        
-        // adminVerified = 1
-
-        let orgs = "",
+        let admin_verified = true,
+        orgs = "",
         teacher_advice = false,
         project_work = false,
         student_online = false,
@@ -264,14 +261,12 @@
         does_ks4 = false,
         does_ks5 = false;
 
-        // org = ticked OR ticked ...
         for(const org_checkbox of document.querySelectorAll(".refinement#organisation input")) {
             if(org_checkbox.checked) {
                 orgs.push(org_checkbox.value);
             }
         }
 
-        // interaction types = ticked OR ticked ...
         for(const interactions_checkbox of document.querySelectorAll(".refinement#interactions input")) {
             if(interactions_checkbox.checked) {
                 switch(interactions_checkbox.value) {
@@ -280,7 +275,6 @@
                     case "project_work":
                         project_work = true;
                     case "student_interactions":
-                        // student interactions = if(student interaction) {ticked OR ticked}
                         for(const student_interactions_checkbox of document.querySelectorAll(".refinement#student-interactions input")) {
                             if(student_interactions_checkbox.checked) {
                                 switch student_interactions_checkbox.value {
@@ -301,7 +295,6 @@
             }
         }
 
-        // ages = ticked OR ticked ...
         for(const ages_checkbox of document.querySelectorAll(".refinement#ages input")) {
             if(ages_checkbox.checked) {
                 switch(ages_checkbox.value) {
@@ -319,7 +312,42 @@
             }
         }
 
-        fetch("/api/expert?")
+        /*
+
+        {
+            "org": {
+                "operator": "AND"/"OR",
+                "value" : []
+            }
+        }
+
+        */
+
+        let filter = {
+            "admin_verified": {"operator": "", "value": [1]},
+            "organisation": {"operator": "OR", "value": orgs},
+            "does_teacher_advice": {"operator": "", "value": [+teacher_advice]},
+            "does_project_work": {"operator": "", "value": [+project_work]},
+            "does_student_online": {"operator": "", "value": [+student_online]},
+            "does_student_f2f": {"operator": "", "value": [+student_f2f]},
+            "does_student_resource": {"operator": "", "value": [+student_resource]},
+            "does_ks1": {"operator": "", "value": [+does_ks1]},
+            "does_ks2": {"operator": "", "value": [+does_ks2]},
+            "does_ks3": {"operator": "", "value": [+does_ks3]},
+            "does_ks4": {"operator": "", "value": [+does_ks4]},
+            "does_ks5": {"operator": "", "value": [+does_ks5]}
+        };
+
+        // fetch with options
+        fetch("/api/experts?filter=" + btoa(json_encode(filter)))
+        .then(response => {
+            if(response.ok) {
+                return response.json();
+            }
+        })
+        .then(json => {
+            console.log(json);
+        });
     }
 
     </script>

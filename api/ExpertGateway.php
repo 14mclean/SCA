@@ -32,7 +32,7 @@ class ExpertGateway implements Gateway {
 
         foreach($filter as $column_title => $column_data) {
             foreach($column_data["value"] as $value) {
-                $statement->bindValue(":" . hash("sha1", $value, false), $value); // new names?
+                $statement->bindValue(":" . hash("sha1", $value, false), $value);
             }
         }
 

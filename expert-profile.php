@@ -512,7 +512,7 @@ $expertise = $result;
             }
 
             // get user's current resources
-            fetch("/api/expertresources?user_id="+user_id)
+            fetch("/api/expertresources?user_id="+user_id) // TODO: change filter methods
             .then(response => {
                 if(response.ok) {
                     return response.json();
@@ -565,7 +565,7 @@ $expertise = $result;
             });
 
             // get user's current expertise
-            fetch("/api/expertise?user_id="+user_id)
+            fetch("/api/expertise?user_id="+user_id) // TODO: change filter methods
             .then(response => {
                 if(response.ok) {
                     return response.json();
