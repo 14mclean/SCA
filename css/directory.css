@@ -149,7 +149,6 @@ aside {
 }
 
 #expand-button #vertical {
-    /*transform: rotate(90deg);*/
     transition: transform 0.45s cubic-bezier(0.165,0.84,0.44,1);
 }
 
@@ -268,6 +267,11 @@ aside {
 
 #search-container input:focus {
     outline: none;
+}
+
+#search-container img {
+    width: 25px;
+    height: 25px;
 }
 
 #results {

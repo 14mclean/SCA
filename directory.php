@@ -196,6 +196,7 @@
             <div id="right">
                 <div id="search-container">
                     <input type="text" placeholder="Search Expertise">
+                    <img src="assets/searchIcon.png">
                 </div>
                 
                 <div id="results">
