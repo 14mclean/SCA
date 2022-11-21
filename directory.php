@@ -316,16 +316,16 @@
         let filter = {
             "admin_verified": {"operator": "", "value": [1]},
             "organisation": {"operator": "OR", "value": orgs},
-            "does_teacher_advice": {"operator": "", "value": [+teacher_advice]},
-            "does_project_work": {"operator": "", "value": [+project_work]},
-            "does_student_online": {"operator": "", "value": [+student_online]},
-            "does_student_f2f": {"operator": "", "value": [+student_f2f]},
-            "does_student_resource": {"operator": "", "value": [+student_resources]},
-            "does_ks1": {"operator": "", "value": [+does_ks1]},
-            "does_ks2": {"operator": "", "value": [+does_ks2]},
-            "does_ks3": {"operator": "", "value": [+does_ks3]},
-            "does_ks4": {"operator": "", "value": [+does_ks4]},
-            "does_ks5": {"operator": "", "value": [+does_ks5]}
+            "does_teacher_advice": {"operator": "OR", "value": [+teacher_advice, 1]},
+            "does_project_work": {"operator": "OR", "value": [+project_work, 1]},
+            "does_student_online": {"operator": "OR", "value": [+student_online, 1]},
+            "does_student_f2f": {"operator": "OR", "value": [+student_f2f, 1]},
+            "does_student_resource": {"operator": "OR", "value": [+student_resources, 1]},
+            "does_ks1": {"operator": "OR", "value": [+does_ks1, 1]},
+            "does_ks2": {"operator": "OR", "value": [+does_ks2, 1]},
+            "does_ks3": {"operator": "OR", "value": [+does_ks3, 1]},
+            "does_ks4": {"operator": "OR", "value": [+does_ks4, 1]},
+            "does_ks5": {"operator": "OR", "value": [+does_ks5, 1]}
         };
 
         // fetch with options

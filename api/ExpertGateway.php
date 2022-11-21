@@ -12,7 +12,7 @@ class ExpertGateway implements Gateway {
 
         $filter = $_GET["filter"] ?? null;
 
-        if($filter != null) {
+        if($filter != null) { // TODO: UPDATE ALL OTHER GATEWAYS
             $filter = json_decode(base64_decode($filter), TRUE);
             $statement_string .= " WHERE";
 
