@@ -25,7 +25,7 @@ class ExpertGateway implements Gateway {
                 $statement_string = substr($statement_string, 0, -5);
                 $statement_string .= ") AND";
             }
-            $statement_string = substr($statement_string, 0, -3);
+            $statement_string = substr($statement_string, 0, -4);
         }
 
         var_dump($statement_string);
