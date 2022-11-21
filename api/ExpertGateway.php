@@ -19,7 +19,7 @@ class ExpertGateway implements Gateway {
             foreach($filter as $column_title => $column_data) {
                 $statement_string .= " (";
                 
-                foreach($column_data["value"] as $value) { // 
+                foreach($column_data["value"] as $value) {
                     $statement_string .= $column_title . "=:" . hash("sha1", $value, false) . " " . $column_data["operator"] . " "; 
                 }
                 $statement_string = substr($statement_string, 0, -strlen($column_data["operator"])-2);
@@ -27,7 +27,7 @@ class ExpertGateway implements Gateway {
             }
             $statement_string = substr($statement_string, 0, -4);
         }
-        
+        var_dump($statement_string);
         $statement = $this->connection->prepare($statement_string);
 
         foreach($filter as $column_title => $column_data) {
