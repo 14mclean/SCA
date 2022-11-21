@@ -28,7 +28,7 @@ class ExpertGateway implements Gateway {
             $statement_string .= substr($statement_string, 0, -3);
         }
 
-        echo($statement_string);
+        var_dump($statement_string);
 
         /*
         if(count($_GET) > 0) {
