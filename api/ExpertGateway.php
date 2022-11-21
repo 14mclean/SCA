@@ -17,8 +17,12 @@ class ExpertGateway implements Gateway {
             $statement_string .= " WHERE";
 
             foreach($filter as $column_title => $column_data) {
+                if(count($column_data["value"])) {
+                    continue;
+                }
+
                 $statement_string .= " (";
-                
+
                 foreach($column_data["value"] as $value) {
                     $statement_string .= $column_title . "=:" . hash("sha1", $column_title.$value, false) . " " . $column_data["operator"] . " "; 
                 }
