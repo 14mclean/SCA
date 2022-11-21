@@ -250,7 +250,7 @@
     function search() {
 
         let admin_verified = true,
-        orgs = "",
+        orgs = [],
         teacher_advice = false,
         project_work = false,
         student_online = false,
