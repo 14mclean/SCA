@@ -31,7 +31,7 @@ class ExpertGateway implements Gateway {
             }
             $statement_string = substr($statement_string, 0, -4);
         }
-        var_dump($statement_string);
+        
         $statement = $this->connection->prepare($statement_string);
 
         foreach($filter as $column_title => $column_data) {
