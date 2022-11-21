@@ -272,6 +272,8 @@ aside {
 #search-container img {
     width: 25px;
     height: 25px;
+    float: right;
+    position: absolute;
 }
 
 #results {
