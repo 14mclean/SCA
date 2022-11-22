@@ -153,8 +153,8 @@ main {
     .forth-section img {
         margin-left: 50vw;
         transform: translateX(-50%);
-        margin-top: 70px;
-        height: calc(66vh - 200px);
+        margin-top: 30px;
+        height: calc(66vh - 190px);
     }
 
 .fifth-section {
