@@ -145,16 +145,19 @@ main {
 
     .forth-section h1 {
         margin-left: 100px;
-        margin-top: 50px;
         font-size: 36px;
         font-family: 'Raleway';
+        width: fit-content;
+        margin-right: 0px;
+        display: inline-block;
+        position: relative;
+        bottom: calc(60vh - 50px);
     }
 
     .forth-section img {
-        margin-left: 50vw;
-        transform: translateX(-50%);
-        margin-top: 30px;
-        height: calc(66vh - 190px);
+        margin-left: 0;
+        height: 60vh;
+        margin-top: 50px
     }
 
 .fifth-section {
