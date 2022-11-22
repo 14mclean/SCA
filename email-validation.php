@@ -16,7 +16,7 @@ $result = $statement->fetch(PDO::FETCH_ASSOC);
 $user_id = $result[0]["user_id"] ?? $result["user_id"];
 
 // get userLevel for userID
-$statement = $connection->prepare("SELECT * FROM Users WHERE user_id = :user_id");
+$statement = $connection->prepare("SELECT * FROM User WHERE user_id = :user_id");
 $statement->bindValue(":user_id", $userID, PDO::PARAM_INT);
 $statement->execute();
 
@@ -24,7 +24,7 @@ $result = $statement->fetch(PDO::FETCH_ASSOC);
 $user_level = $result[0]["user_level"] ?? $result["user_level"];
 
 // update user to email verified
-$statement = $connection->prepare("UPDATE Users SET email_verified=1 WHERE user_id=:user_id");
+$statement = $connection->prepare("UPDATE User SET email_verified=1 WHERE user_id=:user_id");
 $statement->bindValue(":user_id", $userID, PDO::PARAM_INT);
 $statement->execute();
 
