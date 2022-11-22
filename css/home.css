@@ -148,16 +148,15 @@ main {
         font-size: 36px;
         font-family: 'Raleway';
         width: fit-content;
-        margin-right: 0px;
-        display: inline-block;
-        position: relative;
-        margin-top: 50px;
-        float: left;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     .forth-section img {
-        margin-top: 3.5vh;
-        height: 59vh;
+        height: calc(66vh - 100px);
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
 .fifth-section {
