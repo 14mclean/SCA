@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Expert Resources - SCA</title>
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <link rel="stylesheet" href="css/expert-resources.css">
+    </head>
+
+    <body>
+        <header>
+            <h1><a href="home.html">School Citizen Assemblies</a></h1>
+
+            <nav>
+                <a href="about.html">About Us</a>
+                <a>Teacher Resources</a>
+                <a href="meet-the-experts.php">Meet The Experts</a>
+            </nav>
+        </header>
+
+        <main>
+            <p class="arrow" id="left" onclick="order_resources(-1)">⮜</p>
+
+            <div id="coverflow">
+                <img src="assets/chesterzoo.png">
+                <img src="assets/nationalTrust.jpg">
+                <img src="assets/oxfam.png">
+                <img src="assets/UoM.png">
+                <img src="assets/wwf.jpg">
+            </div>
+
+            <p class="arrow" id="right" onclick="order_resources(1)">⮞</p>
+        </main>
+
+        <footer>
+            <h1>School Citizen Assemblies</h1>
+
+            <p>info@schoolcitizenassemblies.org</p>
+        </footer>
+    </body>
+
+    <script>
+        let resource_tiles = Array.from(document.querySelectorAll("#coverflow img"));
+
+        function order_resources(shift) {
+
+            if(shift == -1) {
+                resource_tiles.push(resource_tiles.shift());
+            } else if(shift == 1) {
+                resource_tiles.unshift(resource_tiles.pop());
+            }
+
+            for(let i = 0; i < resource_tiles.length; i++) {
+                let t = (Math.round(resource_tiles.length/2-i))*100;
+                
+                if(t == 0) {
+                    resource_tiles[i].style.opacity = "1";
+                } else {
+                    resource_tiles[i].style.opacity = "0";
+                }
+
+                resource_tiles[i].style.transform = "translate(calc("+t+"vw - 50%), -50%)";
+            }
+        }
+
+        order_resources(0);
+    </script>
+</html>
