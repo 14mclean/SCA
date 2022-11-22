@@ -60,29 +60,33 @@ main {
 
     .first-section h1 {
         color: white;
-        margin-left: 150px;
-        margin-top: 0;
-        transform: translateY(17vh);
         word-wrap: normal;
-        width: 50px;
+        width: 300px;
         font-size: 56px;
         font-family: 'Raleway';
+        margin: 0;
+        position: absolute;
+        left: 150px;
+        top: calc(calc(calc(66vh - 100px) / 2) + 80px);
+        transform: translateY(-50%);
     }
 
     .first-section img {
         float: right;
-        margin-right: 10vw;
-        margin-top: -80px;
-        margin-bottom: 0px;
+        position: absolute;
+        right: 100px;
+        top: calc(calc(calc(66vh - 100px) / 2) + 80px);
+        transform: translateY(-50%);
     }
 
     .first-section h2 {
         color: white;
         font-family: 'Raleway';
         font-size: 16px;
-        margin-left: 150px;
-        margin-top: 350px;
         font-weight: 100;
+        position: absolute;
+        left: 100px;
+        top: calc(calc(calc(66vh - 100px) / 2) + 190px);
     }
 
 .second-section {
