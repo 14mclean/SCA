@@ -154,6 +154,7 @@ main {
         margin-left: 50vw;
         transform: translateX(-50%);
         margin-top: 70px;
+        height: calc(66vh - 200px);
     }
 
 .fifth-section {
