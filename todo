@@ -7,5 +7,5 @@ mobile version of each page
 
 distance slider: min, max initial
 Fix password fail on login (Undefined array key "email_verified")
-register clear validation on input
 check honeypot box on sign up
+Fix email code validation (Base table or view not found: 1146 Table 'SchoolCitizenAssemblies.EmailCodes' )
