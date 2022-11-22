@@ -27,7 +27,7 @@
                     <p id="bad-login">The email and password did not match any account. Please try again.</p>
                     <p id="unverified-email">The email associated with this account has not been validated</p>
                     
-                    <input type="text" style="display: none;">
+                    <input id="last" type="text" style="display: none;">
 
                     <a class="register-button">Register Here</a>
 
@@ -67,6 +67,10 @@
         function check_credentials(event) {
             const password = document.querySelector('#password_input').value;
             const email = document.querySelector('#email_input').value;
+
+            if(document.querySelector("input#last").value != "") {
+                return;
+            }
 
             fetch("/phpScripts/credentials_check.php", {
                 method: 'POST',
