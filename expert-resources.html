@@ -61,9 +61,9 @@
             if(Math.abs(x_delta) < 50) return;
 
             if(x_delta < 0) {
-                order_resources(-1);
-            } else if(x_delta > 0) {
                 order_resources(1);
+            } else if(x_delta > 0) {
+                order_resources(-1);
             }
         }
 
