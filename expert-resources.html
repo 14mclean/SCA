@@ -47,11 +47,11 @@
         touch_end_x = 0;
 
         main.addEventListener("touchstart", function(event) {
-            touch_start_x = event.screenX;
+            touch_start_x = event.changedTouches[0].screenX;
         }, false);
 
         main.addEventListener("touchend", function(event) {
-            touch_end_x = event.screenX;
+            touch_end_x = event.changedTouches[0].screenX;
             handle_swipe();
         }, false);
 
