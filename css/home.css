@@ -85,8 +85,9 @@ main {
         font-size: 16px;
         font-weight: 100;
         position: absolute;
-        left: 100px;
-        top: calc(calc(calc(66vh - 100px) / 2) + 210px);
+        left: 150px;
+        top: calc(calc(calc(66vh - 100px) / 2) + 200px);
+        width: 40vw;
     }
 
 .second-section {
