@@ -27,7 +27,7 @@ header {
         float: right;
         margin-top: 25px;
         margin-right: 50px;
-        width: 30%;
+        width: 400px;
         align-content: center;
         display: flex;
         justify-content: space-around;
@@ -193,4 +193,28 @@ footer p {
     float: left;
     margin-top: -33px;
     margin-left: 270px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .first-section {
+
+    }
+    
+        .first-section h1 {
+            width: 80%;
+            left: 10%;
+            top: 200px;
+        }
+    
+        .first-section img {
+            left: 50%;
+            transform: translateX(-50%);
+            top: 350px;
+        }
+    
+        .first-section h2 {
+            left: 10%;
+            top: 250px;
+            width: 80%;
+        }
 }
