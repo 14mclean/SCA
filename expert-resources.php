@@ -58,22 +58,27 @@
             <div id="coverflow">
                 <div class="coverflow-item">
                     <img src="assets/chesterzoo.png">
+                    <h2>Chester Zoo</h2>
                 </div> 
 
                 <div class="coverflow-item">
                     <img src="assets/nationalTrust.jpg">
+                    <h2>Chester Zoo</h2>
                 </div>
 
                 <div class="coverflow-item">
                     <img src="assets/oxfam.png">
+                    <h2>Chester Zoo</h2>
                 </div>
 
                 <div class="coverflow-item">
                     <img src="assets/UoM.png">
+                    <h2>Chester Zoo</h2>
                 </div>
 
                 <div class="coverflow-item">
                     <img src="assets/wwf.jpg">
+                    <h2>Chester Zoo</h2>
                 </div>
             </div>
 

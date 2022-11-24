@@ -122,6 +122,13 @@ main {
     transform: translateY(-50%);
 }
 
+.coverflow-item img {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    font-family: 'Raleway';
+}
+
 footer {
     position: absolute;
     bottom: -80px;
