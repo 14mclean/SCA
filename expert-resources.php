@@ -78,7 +78,7 @@
 
                 <div class="coverflow-item">
                     <img src="assets/wwf.jpg">
-                    <h2>WWWF</h2>
+                    <h2>WWF</h2>
                 </div>
             </div>
 
