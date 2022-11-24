@@ -65,7 +65,7 @@ header nav a:hover {
     width: 100%;
     height: 30px;
     position: absolute;
-    left: 0;
+    left: -10px;
     top: 130px;
     background-color: #6b2c91;
     margin-top: -50px;
@@ -123,7 +123,7 @@ footer p {
         margin-right: auto;
     }
 
-    header nav {
+    header nav:not(.subnav) {
         width: 100px;
         height: 100vh;
         margin: 0;
