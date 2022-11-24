@@ -122,4 +122,27 @@ footer p {
         margin-left: auto;
         margin-right: auto;
     }
+
+    header nav {
+        width: 100px;
+        height: 100vh;
+        margin: 0;
+        display: block;
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-color: #1A1A1A;
+        z-index: 1;
+        transform: translateX(150px);
+        /*transition: linear 0.17s;*/
+        transition: ease-in-out 0.4s;
+        padding-top: 50px;
+    }
+
+    header nav a {
+        margin-top: 50px;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
 }
