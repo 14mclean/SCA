@@ -20,7 +20,7 @@
 
     <body>
         <header>
-            <h1><a href="home.html">School Citizen Assemblies</a></h1>
+            <h1 id="title-heading"><a href="home.html">School Citizen Assemblies</a></h1>
 
             <div id="burger">
                 <div class="bar"></div>
@@ -28,13 +28,13 @@
                 <div class="bar"></div>
             </div>
 
-            <nav>
+            <nav id="menu">
                 <a href="about.html">About Us</a>
                 <a>Teacher Resources</a>
                 <a href="meet-the-experts.php">Meet The Experts</a>
             </nav>
 
-            <nav class="subnav">
+            <nav id="subnav">
             <?php
                 if($logged_in) {                    
                     if($user_level == "Admin") {
@@ -61,15 +61,18 @@
     </body>
 
     <script>
-        const menu = document.querySelector("nav");
+        const menu = document.querySelector("#menu");
+        const sub_menu = document.querySelector("#subnav");
         const burger = document.querySelector("#burger")
 
         burger.addEventListener("click", (event) => {
             if(menu.style.transform == "translateX(0px)") {
                 menu.style.transform = "translateX(150px)";
+                sub_menu.style.transform = "translateX(150px)";
                 burger.style.position = "absolute";
             } else {
                 menu.style.transform = "translateX(0px)";
+                sub_menu.style.transform = "translateX(0px)";
                 burger.style.position = "fixed";
             }
         });
