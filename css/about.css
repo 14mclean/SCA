@@ -30,6 +30,7 @@ header h1 {
     margin-top: 0;
     margin-left: 50px;
     width: fit-content;
+    display: inline-block;
 }
 
 header h1 a {
