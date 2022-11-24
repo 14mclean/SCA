@@ -22,6 +22,12 @@
         <header>
             <h1><a href="home.html">School Citizen Assemblies</a></h1>
 
+            <div id="burger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
             <nav>
                 <a href="about.html">About Us</a>
                 <a>Teacher Resources</a>
