@@ -11,6 +11,12 @@
     <body>
         <header>
             <img src="assets/tempLogo.png">
+            <div id="burger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
             <nav>
                 <a href="about.php">About Us</a>
                 <a>Teacher Resources</a>
@@ -66,4 +72,16 @@
             <p>info@schoolcitizenassemblies.org</p>
         </footer>
     </body>
+
+    <script>
+        const menu = document.querySelector("nav");
+
+        document.querySelector("#burger").addEventListener("click", () => {
+            if(menu.style.transform == "translateX(0px)") {
+                menu.style.transform = "translateX(150px)";
+            } else {
+                menu.style.transform = "translateX(0px)";
+            }
+        });
+    </script>
 </html>

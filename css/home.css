@@ -19,6 +19,11 @@ header {
     display: inline-block;
     margin: 0;
 }
+
+    header #burger {
+        display: none;
+    }
+
     header img {
         height: 80px;
     }
@@ -258,8 +263,53 @@ footer p {
 }
 
 @media only screen and (max-width: 550px) {
+    header img {
+        display: inline-block;
+    }
+
+    header #burger {
+        display: inline-block;
+        width: fit-content;
+        height: fit-content;
+        cursor: pointer;
+        display: initial;
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        z-index: 2;
+    }
+
+    header #burger .bar {
+        width: 35px;
+        background-color: #ddd;
+        height: 3px;
+        margin-top: 7px;
+        border-radius: 5px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     header nav {
-        display: none;
+        width: 100px;
+        height: 100vh;
+        margin: 0;
+        display: block;
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-color: #1A1A1A;
+        z-index: 1;
+        transform: translateX(150px);
+        /*transition: linear 0.17s;*/
+        transition: ease-in-out 0.4s;
+        padding-top: 50px;
+    }
+
+    header nav a {
+        margin-top: 50px;
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 
     .first-section {
