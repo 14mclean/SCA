@@ -75,6 +75,7 @@ main {
     position: absolute;
     top: 80px;
     width: 100vw;
+    overflow: hidden;
 }
 
 .arrow {
@@ -110,7 +111,7 @@ main {
 #coverflow img {
     width: 40vmin;
     position: absolute;
-    top: 50vh;
+    top: 45%;
     left: 50vw;
     transition: ease-in 0.4s;
 }
@@ -155,7 +156,7 @@ footer p {
         position: absolute;
         top: 20px;
         right: 30px;
-        z-index: 2;
+        z-index: 3;
     }
 
     #burger .bar {
@@ -177,7 +178,7 @@ footer p {
         right: 0;
         top: 0;
         background-color: #1A1A1A;
-        z-index: 1;
+        z-index: 2;
         transform: translateX(150px);
         /*transition: linear 0.17s;*/
         transition: ease-in-out 0.4s;
@@ -209,6 +210,14 @@ footer p {
         width: 100px;
         text-align: center;
         margin-bottom: 35px;
+    }
+
+    #coverflow img {
+        width: 70vw;
+    }
+
+    .arrow {
+        display: none;
     }
 
     footer {

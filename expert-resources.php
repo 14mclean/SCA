@@ -89,7 +89,7 @@
                 burger.style.position = "fixed";
             }
         });
-
+        
         let resource_tiles = Array.from(document.querySelectorAll("#coverflow img")),
         main = document.querySelector("main"),
         touch_start_x = 0,
@@ -136,6 +136,6 @@
             }
         }
 
-        order_resources(0);
+        order_resources();
     </script>
 </html>
