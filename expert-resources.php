@@ -56,11 +56,25 @@
             <p class="arrow" id="left" onclick="order_resources(-1)">⮜</p>
 
             <div id="coverflow">
-                <img src="assets/chesterzoo.png">
-                <img src="assets/nationalTrust.jpg">
-                <img src="assets/oxfam.png">
-                <img src="assets/UoM.png">
-                <img src="assets/wwf.jpg">
+                <div class="coverflow-item">
+                    <img src="assets/chesterzoo.png">
+                </div> 
+
+                <div class="coverflow-item">
+                    <img src="assets/nationalTrust.jpg">
+                </div>
+
+                <div class="coverflow-item">
+                    <img src="assets/oxfam.png">
+                </div>
+
+                <div class="coverflow-item">
+                    <img src="assets/UoM.png">
+                </div>
+
+                <div class="coverflow-item">
+                    <img src="assets/wwf.jpg">
+                </div>
             </div>
 
             <p class="arrow" id="right" onclick="order_resources(1)">⮞</p>
