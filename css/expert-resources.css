@@ -118,6 +118,8 @@ main {
 .coverflow-item img {
     width: 40vmin;
     margin-left: calc(calc(100vw - 40vmin)/2);
+    margin-top: 50%;
+    transform: translateY(-50%);
 }
 
 footer {
