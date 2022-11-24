@@ -104,7 +104,7 @@
             }
         });
         
-        let resource_tiles = Array.from(document.querySelectorAll("#coverflow img")),
+        let resource_tiles = Array.from(document.querySelectorAll("#coverflow-item")),
         main = document.querySelector("main"),
         touch_start_x = 0,
         touch_end_x = 0;
