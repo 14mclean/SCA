@@ -71,7 +71,7 @@ nav a {
 }
 
 main {
-    height: calc(100vh - 80px);
+    height: 100vh;
 }
 
 .arrow {
