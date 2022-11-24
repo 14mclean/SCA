@@ -70,8 +70,11 @@ nav a {
     margin-top: 6px;
 }
 
-main {
-
+main { 
+    height: calc(100vh - 80px);
+    position: absolute;
+    top: 80px;
+    width: 100vw;
 }
 
 .arrow {
@@ -114,7 +117,7 @@ main {
 
 footer {
     position: absolute;
-    bottom: 0;
+    bottom: -80px;
     width: 100vw;
     height: 50px;
     background-color: #333333;

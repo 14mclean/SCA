@@ -117,7 +117,6 @@
         }
 
         function order_resources(shift) {
-
             if(shift == -1) {
                 resource_tiles.push(resource_tiles.shift());
             } else if(shift == 1) {
