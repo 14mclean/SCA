@@ -59,4 +59,19 @@
             <p>info@schoolcitizenassemblies.org</p>
         </footer>
     </body>
+
+    <script>
+        const menu = document.querySelector("nav");
+        const burger = document.querySelector("#burger")
+
+        burger.addEventListener("click", (event) => {
+            if(menu.style.transform == "translateX(0px)") {
+                menu.style.transform = "translateX(150px)";
+                burger.style.position = "absolute";
+            } else {
+                menu.style.transform = "translateX(0px)";
+                burger.style.position = "fixed";
+            }
+        });
+    </script>
 </html>
