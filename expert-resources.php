@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if(isset($_SESSION["user_id"])) {
+        $logged_in = true;
+        $user_level = $_SESSION["user_level"];
+    } else {
+        $logged_in = false;
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
