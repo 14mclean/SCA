@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meet the Experts - SCA</title>
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <link rel="stylesheet" href="css/meet-the-experts.css">
+    </head>
+
+    <body>
+        <header>
+            <h1 id="title-heading"><a href="home.html">School Citizen Assemblies</a></h1>
+
+            <div id="burger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <nav id="menu">
+                <a href="about.html">About Us</a>
+                <a>Teacher Resources</a>
+                <a href="meet-the-experts.php">Meet The Experts</a>
+            </nav>
+
+            <nav id="subnav">
+                <a href="expert-resources.php">Expert Resources</a>
+                <a href="directory.php">Directory</a>
+                
+                <a href="expert-profile.php">Profile</a>
+                <a href="login.html">Logout</a>
+            </nav>
+        </header>
+
+        <main>
+            
+        </main>
+
+        <footer>
+            <h1>School Citizen Assemblies</h1>
+
+            <p>info@schoolcitizenassemblies.org</p>
+        </footer>
+    </body>
+
+    <script>
+        const menu = document.querySelector("#menu");
+        const sub_menu = document.querySelector("#subnav");
+        const burger = document.querySelector("#burger")
+
+        burger.addEventListener("click", (event) => {
+            if(menu.style.transform == "translateX(0px)") {
+                menu.style.transform = "translateX(150px)";
+                sub_menu.style.transform = "translateX(150px)";
+                burger.style.position = "absolute";
+            } else {
+                menu.style.transform = "translateX(0px)";
+                sub_menu.style.transform = "translateX(0px)";
+                burger.style.position = "fixed";
+            }
+        });
+
+        
+        let resource_tiles = Array.from(document.querySelectorAll("#coverflow img")),
+        main = document.querySelector("main"),
+        touch_start_x = 0,
+        touch_end_x = 0;
+
+        main.addEventListener("touchstart", function(event) {
+            touch_start_x = event.changedTouches[0].screenX;
+        }, false);
+
+        main.addEventListener("touchend", function(event) {
+            touch_end_x = event.changedTouches[0].screenX;
+            handle_swipe();
+        }, false);
+
+        function handle_swipe() {
+            console.log("test");
+        }
+    </script>
+</html>
+
+<!--
+
+.arrow {
+    display: inline-block;
+    position: absolute;
+    font-size: 70px;
+    margin: 0;
+    cursor: pointer;
+    font-family: 'Raleway';
+    color: #222;
+    z-index: 1;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    top: 50%;
+    line-height: 70px;
+    text-align: center;
+}
+
+.arrow#left{
+    left: 50px;
+}
+
+.arrow#right{
+    right: 50px;
+}
+
+#coverflow {
+    display: inline-block;
+}
+
+#coverflow img {
+    width: 40vmin;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transition: ease-in 0.4s;
+}
+
+-->

@@ -4,8 +4,8 @@
 html, body {
     margin: 0;
     width: 100vw;
-    height: calc(100vh + 50px);
-    overflow: hidden;
+    height: fit-content;
+    overflow-x: hidden;
 }
 
 header {
@@ -71,7 +71,7 @@ nav a {
 }
 
 main {
-    /*height: 100vh;*/
+
 }
 
 .arrow {
@@ -138,10 +138,6 @@ footer p {
 }
 
 @media only screen and (max-width: 880px) {
-    html, body {
-        height: calc(100vh + 80px);
-    }
-
     #title-heading {
         margin-left: 15px;
         font-size: 20px;
