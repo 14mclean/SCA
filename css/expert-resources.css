@@ -122,11 +122,12 @@ main {
     transform: translateY(-50%);
 }
 
-.coverflow-item img {
+.coverflow-item h2 {
     width: 100%;
     height: fit-content;
     text-align: center;
     font-family: 'Raleway';
+    margin: 0 0 0 0;
 }
 
 footer {
