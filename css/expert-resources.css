@@ -129,7 +129,7 @@ main {
     font-family: 'Raleway';
     margin: 0 0 0 0;
     position: absolute;
-    bottom: 0;
+    bottom: -50px;
 }
 
 footer {

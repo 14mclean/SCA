@@ -63,22 +63,22 @@
 
                 <div class="coverflow-item">
                     <img src="assets/nationalTrust.jpg">
-                    <h2>Chester Zoo</h2>
+                    <h2>National Trust</h2>
                 </div>
 
                 <div class="coverflow-item">
                     <img src="assets/oxfam.png">
-                    <h2>Chester Zoo</h2>
+                    <h2>Oxfam</h2>
                 </div>
 
                 <div class="coverflow-item">
                     <img src="assets/UoM.png">
-                    <h2>Chester Zoo</h2>
+                    <h2>University of Manchester</h2>
                 </div>
 
                 <div class="coverflow-item">
                     <img src="assets/wwf.jpg">
-                    <h2>Chester Zoo</h2>
+                    <h2>WWWF</h2>
                 </div>
             </div>
 
