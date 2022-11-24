@@ -223,6 +223,7 @@ footer p {
 
     .coverflow-item img {
         width: 70vw;
+        margin-left: calc(calc(100vw - 70vw)/2);
     }
 
     .arrow {
