@@ -10,12 +10,35 @@
 
     <body>
         <header>
-            <h1><a href="home.html">School Citizen Assemblies</a></h1>
+            <h1 id="title-heading"><a href="home.html">School Citizen Assemblies</a></h1>
 
-            <nav>
+            <div id="burger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <nav id="menu">
                 <a href="about.html">About Us</a>
                 <a>Teacher Resources</a>
                 <a href="meet-the-experts.php">Meet The Experts</a>
+            </nav>
+
+            <nav id="subnav">
+                <a href="expert-resources.php">Expert Resources</a>
+                <a href="directory.php">Directory</a>
+
+                <?php
+                if($logged_in) {                    
+                    if($user_level == "Admin") {
+                        echo('<a>Admin Panel</a>');
+                    }
+                    echo('<a href="expert-profile.php">Profile</a>');
+                    echo('<a href="phpScripts/logout.php">Logout</a>');
+                } else {
+                    echo('<a href="login.html">Log In</a>');
+                }
+                ?>
             </nav>
         </header>
 
@@ -41,6 +64,22 @@
     </body>
 
     <script>
+        const menu = document.querySelector("#menu");
+        const sub_menu = document.querySelector("#subnav");
+        const burger = document.querySelector("#burger")
+
+        burger.addEventListener("click", (event) => {
+            if(menu.style.transform == "translateX(0px)") {
+                menu.style.transform = "translateX(150px)";
+                sub_menu.style.transform = "translateX(150px)";
+                burger.style.position = "absolute";
+            } else {
+                menu.style.transform = "translateX(0px)";
+                sub_menu.style.transform = "translateX(0px)";
+                burger.style.position = "fixed";
+            }
+        });
+
         let resource_tiles = Array.from(document.querySelectorAll("#coverflow img")),
         main = document.querySelector("main"),
         touch_start_x = 0,

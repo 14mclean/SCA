@@ -20,22 +20,22 @@
 
     <body>
         <header>
-        <h1 id="title-heading"><a href="home.html">School Citizen Assemblies</a></h1>
+            <h1 id="title-heading"><a href="home.html">School Citizen Assemblies</a></h1>
 
-        <div id="burger">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
+            <div id="burger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
 
-        <nav id="menu">
-            <a href="about.html">About Us</a>
-            <a>Teacher Resources</a>
-            <a href="meet-the-experts.php">Meet The Experts</a>
-        </nav>
+            <nav id="menu">
+                <a href="about.html">About Us</a>
+                <a>Teacher Resources</a>
+                <a href="meet-the-experts.php">Meet The Experts</a>
+            </nav>
 
             <nav id="subnav">
-                <a href="expert-resources.html">Expert Resources</a>
+                <a href="expert-resources.php">Expert Resources</a>
                 <a href="directory.php">Directory</a>
 
                 <?php
