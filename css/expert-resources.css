@@ -128,6 +128,8 @@ main {
     text-align: center;
     font-family: 'Raleway';
     margin: 0 0 0 0;
+    position: absolute;
+    bottom: 0;
 }
 
 footer {
