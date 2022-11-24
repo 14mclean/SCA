@@ -29,6 +29,7 @@ header h1 {
     line-height: 80px;
     margin-top: 0;
     margin-left: 50px;
+    width: fit-content;
 }
 
 header h1 a {
