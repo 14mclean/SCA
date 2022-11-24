@@ -28,8 +28,8 @@
                 <a href="meet-the-experts.php">Meet The Experts</a>
             </nav>
 
-            <nav class="subnav">
-                <a>Expert Resources</a>
+            <nav id="subnav">
+                <a href="expert-resources.html">Expert Resources</a>
                 <a href="directory.php">Directory</a>
 
                 <?php
@@ -56,4 +56,22 @@
             <p>info@schoolcitizenassemblies.org</p>
         </footer>
     </body>
+
+    <script>
+        const menu = document.querySelector("#menu");
+        const sub_menu = document.querySelector("#subnav");
+        const burger = document.querySelector("#burger")
+
+        burger.addEventListener("click", (event) => {
+            if(menu.style.transform == "translateX(0px)") {
+                menu.style.transform = "translateX(150px)";
+                sub_menu.style.transform = "translateX(150px)";
+                burger.style.position = "absolute";
+            } else {
+                menu.style.transform = "translateX(0px)";
+                sub_menu.style.transform = "translateX(0px)";
+                burger.style.position = "fixed";
+            }
+        });
+    </script>
 </html>
