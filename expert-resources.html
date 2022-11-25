@@ -110,7 +110,10 @@
         document.addEventListener("touchstart", swipe_start);
 
         function swipe_start(event) {
-            resource_tiles.forEach( (tile) => {tile.style.transition = "linear 0;"});
+            for(const tile of resource_tiles) {
+                tile.style.transition = "linear 0s";
+            }
+
             const initial_x = event.clientX ?? event.touches[0].clientX;
             let moving_item = null;
                   
@@ -139,9 +142,19 @@
                 const x_delta = current_x-initial_x;
 
                 if(Math.abs(x_delta) > 80) {
-                    resource_tiles.forEach( (tile) => {tile.style.transition = "ease-in 0.4s;"});
-                    order_resources(Math.sign(x_delta));
+                    for(const tile of resource_tiles) {
+                        tile.style.transition = "ease-in 0.4s";
+                    }
+                    
+                    order_resources(-Math.sign(x_delta));
+                } else {
+                    moving_item.style.transform = "translate(calc(0vw - 50%), -50%)";
                 }
+
+                document.removeEventListener("mousemove", swipe_move);
+                document.removeEventListener("touchmove", swipe_move);
+                document.removeEventListener("mouseup", swipe_end);
+                document.removeEventListener("touchend", swipe_end);
             }
         }
         
