@@ -112,7 +112,7 @@ main {
     position: absolute;
     top: 45%;
     left: 50vw;
-    transition: ease-in 0.4s;
+    /*transition: ease-in 0.4s;*/
     width: 60vw;
     height: fit-content;
 }
