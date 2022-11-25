@@ -114,6 +114,7 @@ main {
     left: 50vw;
     width: 60vw;
     height: fit-content;
+    transition: ease-in 0.4s;
 }
 
 .coverflow-item img {

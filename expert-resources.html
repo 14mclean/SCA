@@ -31,7 +31,7 @@
         </header>
 
         <main>
-            <p class="arrow" id="left" onclick="order_resources(-1)">⮜</p>
+            <p class="arrow" id="left" onclick="order_resources(1)">⮜</p>
 
             <div id="coverflow">
                 <div class="coverflow-item">
@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <p class="arrow" id="right" onclick="order_resources(1)">⮞</p>
+            <p class="arrow" id="right" onclick="order_resources(-1)">⮞</p>
         </main>
 
         <footer>
@@ -106,7 +106,6 @@
 
         let resource_tiles = Array.from(document.querySelectorAll(".coverflow-item"));
 
-        document.addEventListener("mousedown", swipe_start);
         document.addEventListener("touchstart", swipe_start);
 
         function swipe_start(event) {
@@ -124,7 +123,6 @@
                 }
             }
 
-            document.addEventListener("mousemove", swipe_move);
             document.addEventListener("touchmove", swipe_move);
 
             function swipe_move(event) {
@@ -134,7 +132,6 @@
                 moving_item.style.transform = "translate(calc(" + x_delta + "px - 50%), -50%)";
             }
 
-            document.addEventListener("mouseup", swipe_end);
             document.addEventListener("touchend", swipe_end);
 
             function swipe_end(event) {
@@ -143,7 +140,7 @@
 
                 if(Math.abs(x_delta) > 80) {
                     for(const tile of resource_tiles) {
-                        tile.style.transition = "ease-in 0.4s";
+                        tile.style.transition = "ease-in 0.2s";
                     }
                     
                     order_resources(-Math.sign(x_delta));
