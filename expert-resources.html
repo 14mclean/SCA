@@ -137,7 +137,7 @@
                 const current_x = event.clientX ?? event.changedTouches[0].clientX;
                 const x_delta = current_x-initial_x;
 
-                if(Math.abs(x_delta) > 200) {
+                if(Math.abs(x_delta) > 80) {
                     resource_tiles.forEach( (tile) => {tile.style.transition = "ease-in 0.4s;"});
                     order_resources(Math.sign(x_delta));
                 }
