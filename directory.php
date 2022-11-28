@@ -349,13 +349,13 @@
                 filter["user_id"]["value"].push(expert["user_id"]);
             }
 
-            fetch("/api/expertise?filter=" + btoa(JSON.stringify(filter)))
+            /*fetch("/api/expertise?filter=" + btoa(JSON.stringify(filter)))
             .then(response => {
                 if(response.ok) {
                     return response.json();
                 }
             })
-            .then((expertise_json, json) => {
+            .then(expertise_json => {
                 let unique_expertise = new Set();
 
                 for(const record of expertise_json) {
@@ -371,7 +371,18 @@
                         console.log(expert);
                     }
                 }
+            });*/
+
+            fetch("/api/expertise?filter=" + btoa(JSON.stringify(filter)))
+            .then(response => {
+                if(response.ok) {
+                    handle_expertise(json, response.json())
+                }
             });
+
+            function handle_expertise(expert_json, expertise_json) {
+                console.log("test");
+            }
         });
     }
 
