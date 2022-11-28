@@ -261,7 +261,8 @@
         does_ks2 = false,
         does_ks3 = false,
         does_ks4 = false,
-        does_ks5 = false;
+        does_ks5 = false,
+        expertise_value = document.querySelector("input[type='text']").value;
 
         for(const org_checkbox of document.querySelectorAll(".refinement#organisation input")) {
             if(org_checkbox.checked) {
@@ -341,6 +342,8 @@
             // TODO: expertise search
             // TODO: update currently shown experts
 
+            // *** CHECK LOCATION ***
+
             // get expertise of all experts post filter
             let filter = {"user_id": {"operator": "OR", "value": []}}
             for(const expert of json) {
@@ -355,6 +358,14 @@
             })
             .then(expertise_json => {
                 console.log(expertise_json);
+
+                unique_expertise = Set();
+                for(const record of expertise_json) {
+                    unique_expertise.add(record["expertise"]);
+                }
+
+                const results = fuzzysort.go(expertise_value, unique_expertise);
+                console.log(results);
             });
 
             // fuzzysort.go(expertise_input, all_expertise, {threshold: **})
