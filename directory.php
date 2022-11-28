@@ -378,7 +378,7 @@
                             }
                         }
                     }
-                    if(skip == 1) break;
+                    if(skip() == 1) break;
                 }
             }
         });
