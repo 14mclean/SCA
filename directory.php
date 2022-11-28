@@ -373,14 +373,12 @@
                     (expert) => {
                         for(const expertise_instance of expertise) {
                         
-                        if(expertise_instance["user_id"] == expert["user_id"] && results.some(x => x.toLowerCase() == expertise_instance["expertise"].toLowerCase())) {
-                            console.log(expert);
-                            return;
+                            if(expertise_instance["user_id"] == expert["user_id"] && results.some(x => x.toLowerCase() == expertise_instance["expertise"].toLowerCase())) {
+                                console.log(expert);
+                                return;
+                            }
                         }
                     }
-                    }
-
-                    
                 }
             }
         });
