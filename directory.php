@@ -365,13 +365,14 @@
 
                 // fuzzysort.go(expertise_input, all_expertise, {threshold: **})
                 let results = fuzzysort.go(expertise_value, Array.from(unique_expertise), {threshold: -10000});
-                console.log(results);
                 results.forEach(function (element, index) {results[index] = element["t"]});
-                console.log(results);
-            });
 
-            
-            // for all results (threshold value in fuzzysearch func)
+                for(const expert of json) {
+                    if(results.includes(expert["expertise"])) {
+                        console.log(expert);
+                    }
+                }
+            });
         });
     }
 
