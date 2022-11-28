@@ -359,7 +359,7 @@
             .then(expertise_json => {
                 console.log(expertise_json);
 
-                unique_expertise = Set();
+                unique_expertise = new Set();
                 for(const record of expertise_json) {
                     unique_expertise.add(record["expertise"]);
                 }
