@@ -224,6 +224,7 @@
         </footer>
     </body>
 
+    <script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
     <script>
 
     function hide_refinement(refinement_div) {
@@ -339,6 +340,25 @@
             console.log(json);
             // TODO: expertise search
             // TODO: update currently shown experts
+
+            // get expertise of all experts post filter
+            let filter = {"user_id": {"operator": "OR", "value": []}}
+            for(const expert of json) {
+                filter["user_id"]["value"].push(expert["user_id"]);
+            }
+
+            fetch("/api/expertise?filter=" + btoa(JSON.stringify(filter)))
+            .then(response => {
+                if(response.ok) {
+                    return response.json();
+                }
+            })
+            .then(expertise_json => {
+                console.log(expertise_json);
+            });
+
+            // fuzzysort.go(expertise_input, all_expertise, {threshold: **})
+            // for all results (threshold value in fuzzysearch func)
         });
     }
 
