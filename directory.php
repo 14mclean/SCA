@@ -380,9 +380,9 @@
                 }
             });
 
-            function handle_expertise(expert_json, expertise_json) {
+            async function handle_expertise(expert_json, expertise_json) {
                 console.log(expert_json);
-                console.log(expertise_json);
+                console.log(await resolve(expertise_json));
             }
         });
     }
