@@ -369,16 +369,14 @@
                 let results = fuzzysort.go(expertise_value, Array.from(unique_expertise), {threshold: -10000});
                 results.forEach(function (element, index) {results[index] = element["t"]});
 
+                outer:
                 for(const expert of expert_json) {
-                    const skip = (expert) => {
-                        for(const expertise_instance of expertise) {
-                            if(expertise_instance["user_id"] == expert["user_id"] && results.some(x => x.toLowerCase() == expertise_instance["expertise"].toLowerCase())) {
-                                console.log(expert);
-                                return 1;
-                            }
+                    for(const expertise_instance of expertise) {
+                        if(expertise_instance["user_id"] == expert["user_id"] && results.some(x => x.toLowerCase() == expertise_instance["expertise"].toLowerCase())) {
+                            console.log(expert);
+                            break outer;
                         }
                     }
-                    if(skip() == 1) break;
                 }
             }
         });
