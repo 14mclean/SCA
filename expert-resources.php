@@ -53,7 +53,7 @@
         </header>
 
         <main>
-            <p class="arrow" id="left" onclick="order_resources(-1)">⮜</p>
+            <p class="arrow" id="left" onclick="order_resources(1)">⮜</p>
 
             <div id="coverflow">
                 <div class="coverflow-item">
@@ -82,7 +82,7 @@
                 </div>
             </div>
 
-            <p class="arrow" id="right" onclick="order_resources(1)">⮞</p>
+            <p class="arrow" id="right" onclick="order_resources(-1)">⮞</p>
         </main>
 
         <footer>
@@ -109,48 +109,54 @@
             }
         });
 
-        /*
+        let resource_tiles = Array.from(document.querySelectorAll(".coverflow-item"));
 
-        on mousedown/touchdown {
-            save initial position, item element
+        document.addEventListener("touchstart", swipe_start);
 
-            on mousemove/touchmove {
-                get mouse/touch position
-                change element position by (currentMouseX - mouseStartX)
+        function swipe_start(event) {
+            for(const tile of resource_tiles) {
+                tile.style.transition = "linear 0s";
             }
 
-            on mouseup/touchend {
-                check if mouse/touch far enough to either side
-                order_resources() based off which side
+            const initial_x = event.clientX ?? event.touches[0].clientX;
+            let moving_item = null;
+                  
+            for(const tile of resource_tiles) {
+                if(tile.style.opacity == "1") {
+                    moving_item = tile;
+                    break;
+                }
             }
-        }
-        */
 
-        document.addEventListener()
-        
-        /*let resource_tiles = Array.from(document.querySelectorAll(".coverflow-item")),
-        main = document.querySelector("main"),
-        touch_start_x = 0,
-        touch_end_x = 0;
+            document.addEventListener("touchmove", swipe_move);
 
-        main.addEventListener("touchstart", function(event) {
-            touch_start_x = event.changedTouches[0].screenX;
-        }, false);
+            function swipe_move(event) {
+                const current_x = event.clientX ?? event.changedTouches[0].clientX;
+                const x_delta = current_x-initial_x;
 
-        main.addEventListener("touchend", function(event) {
-            touch_end_x = event.changedTouches[0].screenX;
-            handle_swipe();
-        }, false);
+                moving_item.style.transform = "translate(calc(" + x_delta + "px - 50%), -50%)";
+            }
 
-        function handle_swipe() {
-            const x_delta = touch_end_x - touch_start_x; // if +'ve moved right, -'ve left
+            document.addEventListener("touchend", swipe_end);
 
-            if(Math.abs(x_delta) < 50) return;
+            function swipe_end(event) {
+                const current_x = event.clientX ?? event.changedTouches[0].clientX;
+                const x_delta = current_x-initial_x;
 
-            if(x_delta < 0) {
-                order_resources(1);
-            } else if(x_delta > 0) {
-                order_resources(-1);
+                if(Math.abs(x_delta) > 80) {
+                    for(const tile of resource_tiles) {
+                        tile.style.transition = "ease-in 0.2s";
+                    }
+                    
+                    order_resources(-Math.sign(x_delta));
+                } else {
+                    moving_item.style.transform = "translate(calc(0vw - 50%), -50%)";
+                }
+
+                document.removeEventListener("mousemove", swipe_move);
+                document.removeEventListener("touchmove", swipe_move);
+                document.removeEventListener("mouseup", swipe_end);
+                document.removeEventListener("touchend", swipe_end);
             }
         }
 
@@ -174,6 +180,6 @@
             }
         }
 
-        order_resources();*/
+        order_resources();
     </script>
 </html>

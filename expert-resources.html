@@ -87,23 +87,6 @@
             }
         });
 
-        /*
-
-        on mousedown/touchdown {
-            save initial position, item element
-
-            on mousemove/touchmove {
-                get mouse/touch position
-                change element position by (currentMouseX - mouseStartX)
-            }
-
-            on mouseup/touchend {
-                check if mouse/touch far enough to either side
-                order_resources() based off which side
-            }
-        }
-        */
-
         let resource_tiles = Array.from(document.querySelectorAll(".coverflow-item"));
 
         document.addEventListener("touchstart", swipe_start);
@@ -154,8 +137,6 @@
                 document.removeEventListener("touchend", swipe_end);
             }
         }
-        
-        // **************
 
         function order_resources(shift) {
             if(shift == -1) {
