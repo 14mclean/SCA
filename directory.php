@@ -381,8 +381,9 @@
             });
 
             async function handle_expertise(expert_json, expertise_json) {
+                const expertise = await expertise_json.json();
                 console.log(expert_json);
-                await console.log(expertise_json.json());
+                console.log(expertise);
             }
         });
     }
