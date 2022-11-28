@@ -364,7 +364,7 @@
                 }
 
                 console.log(unique_expertise);
-                const results = fuzzysort.go(expertise_value, unique_expertise);
+                const results = fuzzysort.go(expertise_value, Array.from(unique_expertise));
                 console.log(results);
             });
 
