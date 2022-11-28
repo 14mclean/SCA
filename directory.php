@@ -363,12 +363,13 @@
                     unique_expertise.add(record["expertise"]);
                 }
 
-                console.log(unique_expertise);
-                const results = fuzzysort.go(expertise_value, Array.from(unique_expertise));
+                // fuzzysort.go(expertise_input, all_expertise, {threshold: **})
+                let results = fuzzysort.go(expertise_value, Array.from(unique_expertise), {threshold: -10000});
+                results.forEach(function (element, index) {results[index] = element["t"]});
                 console.log(results);
             });
 
-            // fuzzysort.go(expertise_input, all_expertise, {threshold: **})
+            
             // for all results (threshold value in fuzzysearch func)
         });
     }
