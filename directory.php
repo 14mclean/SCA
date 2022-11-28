@@ -338,7 +338,6 @@
             }
         })
         .then(json => {
-            console.log(json);
             // TODO: expertise search
             // TODO: update currently shown experts
 
@@ -364,6 +363,7 @@
                     unique_expertise.add(record["expertise"]);
                 }
 
+                console.log(unique_expertise);
                 const results = fuzzysort.go(expertise_value, unique_expertise);
                 console.log(results);
             });
