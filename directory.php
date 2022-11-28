@@ -370,8 +370,10 @@
                 results.forEach(function (element, index) {results[index] = element["t"]});
 
                 for(const expert of expert_json) {
-                    if(results.includes(expert["expertise"])) {
-                        console.log(expert);
+                    for(const expertise_instance of expertise) {
+                        if(expertise_instance["user_id"] == expert["user_id"] && results.includes(expertise_instance["expertise"])) {
+                            console.log(expert)
+                        }
                     }
                 }
             }
