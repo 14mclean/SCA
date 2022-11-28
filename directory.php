@@ -376,13 +376,13 @@
             fetch("/api/expertise?filter=" + btoa(JSON.stringify(filter)))
             .then(response => {
                 if(response.ok) {
-                    handle_expertise(json, response.json());
+                    handle_expertise(json, response);
                 }
             });
 
             async function handle_expertise(expert_json, expertise_json) {
                 console.log(expert_json);
-                await console.log(expertise_json);
+                await console.log(expertise_json.json());
             }
         });
     }
