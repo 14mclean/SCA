@@ -349,30 +349,6 @@
                 filter["user_id"]["value"].push(expert["user_id"]);
             }
 
-            /*fetch("/api/expertise?filter=" + btoa(JSON.stringify(filter)))
-            .then(response => {
-                if(response.ok) {
-                    return response.json();
-                }
-            })
-            .then(expertise_json => {
-                let unique_expertise = new Set();
-
-                for(const record of expertise_json) {
-                    unique_expertise.add(record["expertise"]);
-                }
-
-                // fuzzysort.go(expertise_input, all_expertise, {threshold: **})
-                let results = fuzzysort.go(expertise_value, Array.from(unique_expertise), {threshold: -10000});
-                results.forEach(function (element, index) {results[index] = element["t"]});
-
-                for(const expert of json) {
-                    if(results.includes(expert["expertise"])) {
-                        console.log(expert);
-                    }
-                }
-            });*/
-
             fetch("/api/expertise?filter=" + btoa(JSON.stringify(filter)))
             .then(response => {
                 if(response.ok) {
@@ -382,8 +358,22 @@
 
             async function handle_expertise(expert_json, expertise_json) {
                 const expertise = await expertise_json.json();
-                console.log(expert_json);
-                console.log(expertise);
+
+                let unique_expertise = new Set();
+
+                for(const record of expertise) {
+                    unique_expertise.add(record["expertise"]);
+                }
+
+                // fuzzysort.go(expertise_input, all_expertise, {threshold: **})
+                let results = fuzzysort.go(expertise_value, Array.from(unique_expertise), {threshold: -10000});
+                results.forEach(function (element, index) {results[index] = element["t"]});
+
+                for(const expert of expert_json) {
+                    if(results.includes(expert["expertise"])) {
+                        console.log(expert);
+                    }
+                }
             }
         });
     }
