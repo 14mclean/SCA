@@ -355,8 +355,9 @@
                     return response.json();
                 }
             })
-            .then(expertise_json => {
-                unique_expertise = new Set();
+            .then((expertise_json, json) => {
+                let unique_expertise = new Set();
+
                 for(const record of expertise_json) {
                     unique_expertise.add(record["expertise"]);
                 }
