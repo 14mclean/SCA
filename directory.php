@@ -365,7 +365,8 @@
 
                 // fuzzysort.go(expertise_input, all_expertise, {threshold: **})
                 let results = fuzzysort.go(expertise_value, Array.from(unique_expertise), {threshold: -10000});
-                results.forEach(function (element, index) {if(index != "total") {results[index] = element["t"]}});
+                console.log(results);
+                results.forEach(function (element, index) {results[index] = element["t"]});
                 console.log(results);
             });
 
