@@ -370,12 +370,17 @@
                 results.forEach(function (element, index) {results[index] = element["t"]});
 
                 for(const expert of expert_json) {
-                    for(const expertise_instance of expertise) {
+                    (expert) => {
+                        for(const expertise_instance of expertise) {
                         
                         if(expertise_instance["user_id"] == expert["user_id"] && results.some(x => x.toLowerCase() == expertise_instance["expertise"].toLowerCase())) {
-                            console.log(expert)
+                            console.log(expert);
+                            return;
                         }
                     }
+                    }
+
+                    
                 }
             }
         });
