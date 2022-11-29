@@ -342,7 +342,7 @@
             .then(async response => {
                 if(!response.ok) return;
 
-                const expertise = await expertise_json.json();
+                const expertise = await response.json();
 
                 let unique_expertise = new Set();
 
