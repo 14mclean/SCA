@@ -330,8 +330,6 @@
             }
         })
         .then(json => {
-            console.log(json);
-            if(!json) return; // remove all
             // *** CHECK LOCATION ***
 
             // get expertise of all experts post filter
