@@ -218,7 +218,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
     <script>
-    document.querySelectorAll('input[type="checkbox"]').forEach(function(element) {element.addEventListener("change", search()}));
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(element) {element.addEventListener("change", search()});
 
     function hide_refinement(refinement_div) {
         refinement_div.classList.toggle("collapsed");
