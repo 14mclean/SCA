@@ -338,9 +338,6 @@
             }
         })
         .then(json => {
-            // TODO: expertise search
-            // TODO: update currently shown experts
-
             // *** CHECK LOCATION ***
 
             // get expertise of all experts post filter
@@ -365,18 +362,26 @@
                     unique_expertise.add(record["expertise"]);
                 }
 
-                // fuzzysort.go(expertise_input, all_expertise, {threshold: **})
                 let results = fuzzysort.go(expertise_value, Array.from(unique_expertise), {threshold: -10000});
                 results.forEach(function (element, index) {results[index] = element["t"]});
+
+                let result_elements = document.querySelectorAll(".result");
+                result_elements.forEach(function(element, index) {result_elements[index] = element.id});
 
                 outer:
                 for(const expert of expert_json) {
                     for(const expertise_instance of expertise) {
                         if(expertise_instance["user_id"] == expert["user_id"] && results.some(x => x.toLowerCase() == expertise_instance["expertise"].toLowerCase())) {
-                            console.log(expert);
+                            if(!result_elements.includes(expert["user_id"])) {
+                                add_expert(expert);
+                            }
                             break outer;
                         }
                     }
+                }
+
+                function add_expert(expert, expertise) {
+
                 }
             }
         });
