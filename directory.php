@@ -373,7 +373,30 @@
                 }
 
                 function add_expert(expert, expertise) {
+                    /*
 
+                    <div class="result">
+                        <img src="assets/profilePicture.png">
+                        <h1>Chris McLean</h1>
+                        <h2>Employee at University of Manchester</h2>
+                    </div>
+
+                    */
+
+                    let result_div = document.createElement("div");
+                    let profile_img = document.createElement("img");
+                    let result_name = document.createElement("h1");
+                    let result_org = document.createElement("h2");
+
+                    result_div.setAttribute("class", "result");
+                    profile_img.setAttribute("src", "assets/profilePicture.png");
+                    result_name.setAttribute("textContent", expert["name"]);
+                    result_org.setAttribute("textContent", expert["job_title"] + " at " + expert["organisation"]);
+
+                    result_div.appendChild(profile_img);
+                    result_div.appendChild(result_name);
+                    result_div.appendChild(result_org);
+                    document.querySelector(".results").appendChild(result_div);
                 }
             }
         });
