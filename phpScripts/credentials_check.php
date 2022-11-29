@@ -21,7 +21,7 @@ if($result == false) {
 }
 
 if(count($result) == 1 || isset($result["userID"])) {
-    if( ($result[0]["emailVerified"] ?? $result["emailVerified"]) == 0) {
+    if( ($result[0]["email_verified"] ?? $result["email_verified"]) == 0) {
         http_response_code(401);
         echo("Email not verified") ;
     } else {
