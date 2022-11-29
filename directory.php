@@ -357,15 +357,22 @@
                 let result_elements = Array.from(document.querySelectorAll(".result"));
                 result_elements.forEach(function(element, index) {result_elements[index] = element.id});
 
-                for(const result_id of result_elements) {
-
+                for(const result_id of result_elements) { // TODO: remove old results
+                    // if id not in result
+                        // remove result element
+                    for(const expert of expert_json) {
+                        if(expert["user_id"] == result_id) {
+                            document.querySelector(".result#"+result_id).remove();
+                            break;
+                        }
+                    }
                 }
 
                 outer:
                 for(const expert of expert_json) {
                     for(const expertise_instance of expertise) {
                         if(expertise_instance["user_id"] == expert["user_id"] && results.some(x => x.toLowerCase() == expertise_instance["expertise"].toLowerCase())) {
-                            if(!result_elements.includes(expert["user_id"].toString())) { // TODO: remove old results
+                            if(!result_elements.includes(expert["user_id"].toString())) { 
                                 let result_div = document.createElement("div");
                                 let profile_img = document.createElement("img");
                                 let result_name = document.createElement("h1");
