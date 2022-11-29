@@ -204,14 +204,6 @@
                         <img src="assets/profilePicture.png">
                         <h1>Chris McLean</h1>
                         <h2>Employee at University of Manchester</h2>
-                        
-                        <table>
-                            <tr>
-                                <td>This is a resource</td>
-                                <td>Link</td>
-                            </tr>
-                        </table>
-                        <p>Contact Expert</p>
                     </div>
                 </div>
             </div>

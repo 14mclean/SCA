@@ -303,9 +303,9 @@ aside {
     transition: max-height ease-out 0.7s;
 }
 
-.result:hover {
+/*.result:hover {
     max-height: 300px;
-}
+}*/
 
 .result img {
     width: 40px;
