@@ -343,6 +343,7 @@
                 if(!response.ok) return;
 
                 const expertise = await response.json();
+                const expert_json = json;
 
                 let unique_expertise = new Set();
 
