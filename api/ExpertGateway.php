@@ -40,7 +40,6 @@ class ExpertGateway implements Gateway {
             }
         }
 
-        $statement->debugDumpParams();
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
