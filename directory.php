@@ -391,7 +391,7 @@
                     result_div.setAttribute("class", "result");
                     profile_img.setAttribute("src", "assets/profilePicture.png");
                     
-                    result_org.appendChild(document.createTextNode(expert["name"]));
+                    result_name.appendChild(document.createTextNode(expert["name"]));
                     result_org.appendChild(document.createTextNode(expert["job_title"] + " at " + expert["organisation"]));
                     result_div.appendChild(profile_img);
                     result_div.appendChild(result_name);
