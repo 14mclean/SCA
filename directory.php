@@ -330,6 +330,7 @@
             }
         })
         .then(json => {
+            console.log(json);
             if(json.length == 0) return; // remove all
             // *** CHECK LOCATION ***
 
