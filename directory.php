@@ -331,7 +331,7 @@
         })
         .then(json => {
             console.log(json);
-            if(json.length == 0) return; // remove all
+            if(!json) return; // remove all
             // *** CHECK LOCATION ***
 
             // get expertise of all experts post filter
