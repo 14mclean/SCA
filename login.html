@@ -18,7 +18,7 @@
             <div class="form_container">
                 <h1>Log In</h1>
 
-                <form onsubmit="return false; return check_credentials();" action="phpScripts/login.php" method="POST">
+                <form onsubmit="check_credentials(this); return false;" action="phpScripts/login.php" method="POST">
                     <input id="email_input" name="email" type="email" placeholder="E-mail" required>
 
                     <input id="password_input" name="password" type="password" placeholder="Password" required>
@@ -63,7 +63,7 @@
             }
         }
 
-        function check_credentials(event) {
+        function check_credentials(form) {
             const password = document.querySelector('#password_input').value;
             const email = document.querySelector('#email_input').value;
 
@@ -80,6 +80,7 @@
             .then(response => {
                 switch(response.status) {
                     case 200:
+                        form.submit();
                         return true;
                     case 401:
                         if(content == "Email not verified") {
