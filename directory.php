@@ -365,7 +365,7 @@
                 let results = fuzzysort.go(expertise_value, Array.from(unique_expertise), {threshold: -10000});
                 results.forEach(function (element, index) {results[index] = element["t"]});
 
-                let result_elements = document.querySelectorAll(".result");
+                let result_elements = Array.from(document.querySelectorAll(".result"));
                 result_elements.forEach(function(element, index) {result_elements[index] = element.id});
 
                 outer:
