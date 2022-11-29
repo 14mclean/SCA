@@ -188,7 +188,7 @@
                         </div>
                     </h2>
                     
-                    <input type="range" name="distanceRange" min="1" max="180" value="30" oninput="this.nextElementSibling.value = this.value">
+                    <input type="range" name="distanceRange" min="1" max="180" value="30" oninput="this.nextElementSibling.value = this.value" disabled>
                     <output>30</output><p>mi</p>
                 </div>
             </aside>
@@ -218,6 +218,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
     <script>
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(element) {element.addEventListener("change", search()}));
 
     function hide_refinement(refinement_div) {
         refinement_div.classList.toggle("collapsed");
@@ -357,11 +358,15 @@
                 let result_elements = Array.from(document.querySelectorAll(".result"));
                 result_elements.forEach(function(element, index) {result_elements[index] = element.id});
 
+                for(const result_id of result_elements) {
+
+                }
+
                 outer:
                 for(const expert of expert_json) {
                     for(const expertise_instance of expertise) {
                         if(expertise_instance["user_id"] == expert["user_id"] && results.some(x => x.toLowerCase() == expertise_instance["expertise"].toLowerCase())) {
-                            if(!result_elements.includes(expert["user_id"].toString())) {
+                            if(!result_elements.includes(expert["user_id"].toString())) { // TODO: remove old results
                                 let result_div = document.createElement("div");
                                 let profile_img = document.createElement("img");
                                 let result_name = document.createElement("h1");
