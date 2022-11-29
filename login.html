@@ -80,20 +80,18 @@
                 switch(response.status) {
                     case 200:
                         form.submit();
-                        return true;
+                        break;
                     case 401:
                         if(content == "Email not verified") {
                             document.querySelector('#unverified-email').style.display = "block";
                             document.querySelector('#bad-login').style.display = "none";
-                            return false;
                         } else if(content == "Invalid") {
                             document.querySelector('#bad-login').style.display = "block";
                             document.querySelector('#unverified-email').style.display = "none";
-                            return false;
                         }
+                        break;
                     default:
                         throw new Error('Server error ' + response.status);
-                        return false;
                 }
             });
         }
