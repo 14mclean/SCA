@@ -361,8 +361,8 @@
                     // if id not in result
                         // remove result element
                     for(const expert of expert_json) {
-                        if(expert["user_id"] == result_id) {
-                            document.querySelector(".result#"+"expert"+expert["user_id"]).remove();
+                        if("expert"+expert["user_id"] == result_id) {
+                            document.querySelector(".result#"+result_id).remove();
                             break;
                         }
                     }
