@@ -82,7 +82,7 @@
                         form.submit();
                         break;
                     case 401:
-                        return response.content();
+                        return response.text();
                         break;
                     default:
                         throw new Error('Server error ' + response.status);
