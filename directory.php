@@ -368,6 +368,7 @@
                                 let result_org = document.createElement("h2");
 
                                 result_div.setAttribute("class", "result");
+                                result_div.setAttribute("id", expert["user_id"]);
                                 profile_img.setAttribute("src", "assets/profilePicture.png");
                                 
                                 result_name.appendChild(document.createTextNode(expert["name"]));
