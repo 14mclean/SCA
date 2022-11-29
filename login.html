@@ -18,7 +18,7 @@
             <div class="form_container">
                 <h1>Log In</h1>
 
-                <form onsumbit="return check_credentials()" action="phpScripts/login.php" method="POST">
+                <form onsumbit="return check_credentials();" action="phpScripts/login.php" method="POST">
                     <input id="email_input" name="email" type="email" placeholder="E-mail" required>
 
                     <input id="password_input" name="password" type="password" placeholder="Password" required>
@@ -64,7 +64,7 @@
         }
 
         //document.querySelector("form").addEventListener("submit", check_credentials);
-        function check_credentials(event) {
+        /*function check_credentials(event) {
             const password = document.querySelector('#password_input').value;
             const email = document.querySelector('#email_input').value;
 
@@ -101,7 +101,40 @@
                 }
                 return true;
             })
-        }
+        }*/
+
+        async function check_credentials(event) {
+            const password = document.querySelector('#password_input').value;
+            const email = document.querySelector('#email_input').value;
+
+            if(document.querySelector("input#last").value != "") {
+                return;
+            }
+
+            let response = await fetch("/phpScripts/credentials_check.php", {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({"email":email,"password":password})
+            });
+
+            switch(response.status) {
+                case 200:
+                    return true;
+                case 401:
+                    if(content == "Email not verified") {
+                        document.querySelector('#unverified-email').style.display = "block";
+                        document.querySelector('#bad-login').style.display = "none";
+                        return false;
+                    } else if(content == "Invalid") {
+                        document.querySelector('#bad-login').style.display = "block";
+                        document.querySelector('#unverified-email').style.display = "none";
+                        return false;
+                    }
+                default:
+                    throw new Error('Server error ' + response.status);
+                    return false;
+            }
+        } 
 
         document.querySelector(".decision-blur").addEventListener("click", decision_visibility);
         document.querySelector(".register-button").addEventListener("click", decision_visibility);
