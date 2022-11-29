@@ -396,7 +396,7 @@
                     result_div.appendChild(profile_img);
                     result_div.appendChild(result_name);
                     result_div.appendChild(result_org);
-                    document.querySelector(".results").appendChild(result_div);
+                    document.querySelector("#results").appendChild(result_div);
                 }
             }
         });
