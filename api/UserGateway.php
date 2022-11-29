@@ -23,8 +23,8 @@ class UserGateway implements Gateway{
 
                 $statement_string .= " (";
 
-                foreach($column_data["value"] as $value) {
-                    $statement_string .= $column_title . "=:" . hash("sha1", $column_title.$value, false) . " " . $column_data["operator"] . " "; 
+                foreach($column_data["value"] as $key => $value) {
+                    $statement_string .= $column_title . "=:" . hash("sha1", $column_title.$value.$key, false) . " " . $column_data["operator"] . " "; 
                 }
                 $statement_string = substr($statement_string, 0, -strlen($column_data["operator"])-2);
                 $statement_string .= ") AND";
@@ -35,8 +35,8 @@ class UserGateway implements Gateway{
         $statement = $this->connection->prepare($statement_string);
 
         foreach($filter as $column_title => $column_data) {
-            foreach($column_data["value"] as $value) {
-                $statement->bindValue(":" . hash("sha1", $column_title.$value, false), $value);
+            foreach($column_data["value"] as $key => $value) {
+                $statement->bindValue(":" . hash("sha1", $column_title.$value.$key, false), $value);
             }
         }
 
