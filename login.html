@@ -18,7 +18,7 @@
             <div class="form_container">
                 <h1>Log In</h1>
 
-                <form method="POST">
+                <form onsumbit="return check_credentials()" action="phpScripts/login.php" method="POST">
                     <input id="email_input" name="email" type="email" placeholder="E-mail" required>
 
                     <input id="password_input" name="password" type="password" placeholder="Password" required>
@@ -63,9 +63,8 @@
             }
         }
 
-        document.querySelector("form").addEventListener("submit", check_credentials);
+        //document.querySelector("form").addEventListener("submit", check_credentials);
         function check_credentials(event) {
-            event.preventDefault();
             const password = document.querySelector('#password_input').value;
             const email = document.querySelector('#email_input').value;
 
@@ -94,10 +93,13 @@
                 if(content == "Email not verified") {
                     document.querySelector('#unverified-email').style.display = "block";
                     document.querySelector('#bad-login').style.display = "none";
+                    return false;
                 } else if(content == "Invalid") {
                     document.querySelector('#bad-login').style.display = "block";
                     document.querySelector('#unverified-email').style.display = "none";
+                    return false;
                 }
+                return true;
             })
         }
 
