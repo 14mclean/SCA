@@ -200,11 +200,6 @@
                 </div>
                 
                 <div id="results">
-                    <div class="result">
-                        <img src="assets/profilePicture.png">
-                        <h1>Chris McLean</h1>
-                        <h2>Employee at University of Manchester</h2>
-                    </div>
                 </div>
             </div>
         </main>
@@ -357,9 +352,7 @@
                 let result_elements = Array.from(document.querySelectorAll(".result"));
                 result_elements.forEach(function(element, index) {result_elements[index] = element.id});
 
-                for(const result_id of result_elements) { // TODO: remove old results
-                    // if id not in result
-                        // remove result element
+                for(const result_id of result_elements) {
                     if(result_id == "") continue;
 
                     let found = false;
