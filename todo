@@ -1,8 +1,7 @@
-new (origianl?) coverflow mechanism
 forgot password
 mobile version of each page
 
-distance slider: min, max initial
+distance slider: min, max, initial
 
 Fix password fail on login (Undefined array key "email_verified")
 Tell user that email has been sent
