@@ -362,7 +362,7 @@
                         // remove result element
                     for(const expert of expert_json) {
                         if(expert["user_id"] == result_id) {
-                            document.querySelector(".result#"+result_id).remove();
+                            document.querySelector(".result#"+"expert"+expert["user_id"]).remove();
                             break;
                         }
                     }
@@ -372,14 +372,14 @@
                 for(const expert of expert_json) {
                     for(const expertise_instance of expertise) {
                         if(expertise_instance["user_id"] == expert["user_id"] && results.some(x => x.toLowerCase() == expertise_instance["expertise"].toLowerCase())) {
-                            if(!result_elements.includes(expert["user_id"].toString())) { 
+                            if(!result_elements.includes("expert"+expert["user_id"])) { 
                                 let result_div = document.createElement("div");
                                 let profile_img = document.createElement("img");
                                 let result_name = document.createElement("h1");
                                 let result_org = document.createElement("h2");
 
                                 result_div.setAttribute("class", "result");
-                                result_div.setAttribute("id", expert["user_id"]);
+                                result_div.setAttribute("id", "expert"+expert["user_id"]);
                                 profile_img.setAttribute("src", "assets/profilePicture.png");
                                 
                                 result_name.appendChild(document.createTextNode(expert["name"]));
