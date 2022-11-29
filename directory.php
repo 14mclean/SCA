@@ -362,28 +362,24 @@
                     for(const expertise_instance of expertise) {
                         if(expertise_instance["user_id"] == expert["user_id"] && results.some(x => x.toLowerCase() == expertise_instance["expertise"].toLowerCase())) {
                             if(!result_elements.includes(expert["user_id"])) {
-                                add_expert(expert);
+                                let result_div = document.createElement("div");
+                                let profile_img = document.createElement("img");
+                                let result_name = document.createElement("h1");
+                                let result_org = document.createElement("h2");
+
+                                result_div.setAttribute("class", "result");
+                                profile_img.setAttribute("src", "assets/profilePicture.png");
+                                
+                                result_name.appendChild(document.createTextNode(expert["name"]));
+                                result_org.appendChild(document.createTextNode(expert["job_title"] + " at " + expert["organisation"]));
+                                result_div.appendChild(profile_img);
+                                result_div.appendChild(result_name);
+                                result_div.appendChild(result_org);
+                                document.querySelector("#results").appendChild(result_div);
                             }
                             break outer;
                         }
                     }
-                }
-
-                function add_expert(expert, expertise) {
-                    let result_div = document.createElement("div");
-                    let profile_img = document.createElement("img");
-                    let result_name = document.createElement("h1");
-                    let result_org = document.createElement("h2");
-
-                    result_div.setAttribute("class", "result");
-                    profile_img.setAttribute("src", "assets/profilePicture.png");
-                    
-                    result_name.appendChild(document.createTextNode(expert["name"]));
-                    result_org.appendChild(document.createTextNode(expert["job_title"] + " at " + expert["organisation"]));
-                    result_div.appendChild(profile_img);
-                    result_div.appendChild(result_name);
-                    result_div.appendChild(result_org);
-                    document.querySelector("#results").appendChild(result_div);
                 }
             });
         });
