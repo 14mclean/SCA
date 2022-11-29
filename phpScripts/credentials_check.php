@@ -10,7 +10,7 @@ $passwordHash = hash("sha256", $data["password"]);
 $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
 $connection = $db->get_connection();
 
-$statement = $connection->prepare("SELECT emailVerified FROM Users WHERE email = :email AND passwordHash = :passwordHash");
+$statement = $connection->prepare("SELECT emailVerified FROM User WHERE email = :email AND password_hash = :passwordHash");
 $statement->bindValue(":email", $data["email"], PDO::PARAM_STR);
 $statement->bindValue(":passwordHash", $passwordHash, PDO::PARAM_STR);
 $statement->execute();
