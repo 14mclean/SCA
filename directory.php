@@ -361,7 +361,7 @@
                 for(const expert of expert_json) {
                     for(const expertise_instance of expertise) {
                         if(expertise_instance["user_id"] == expert["user_id"] && results.some(x => x.toLowerCase() == expertise_instance["expertise"].toLowerCase())) {
-                            if(!result_elements.includes(expert["user_id"])) {
+                            if(!result_elements.includes(expert["user_id"].toString())) {
                                 let result_div = document.createElement("div");
                                 let profile_img = document.createElement("img");
                                 let result_name = document.createElement("h1");
