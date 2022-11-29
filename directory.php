@@ -339,13 +339,9 @@
             }
 
             fetch("/api/expertise?filter=" + btoa(JSON.stringify(filter)))
-            .then(response => {
-                if(response.ok) {
-                    handle_expertise(json, response);
-                }
-            });
+            .then(async response => {
+                if(!response.ok) return;
 
-            async function handle_expertise(expert_json, expertise_json) {
                 const expertise = await expertise_json.json();
 
                 let unique_expertise = new Set();
@@ -373,16 +369,6 @@
                 }
 
                 function add_expert(expert, expertise) {
-                    /*
-
-                    <div class="result">
-                        <img src="assets/profilePicture.png">
-                        <h1>Chris McLean</h1>
-                        <h2>Employee at University of Manchester</h2>
-                    </div>
-
-                    */
-
                     let result_div = document.createElement("div");
                     let profile_img = document.createElement("img");
                     let result_name = document.createElement("h1");
@@ -398,7 +384,7 @@
                     result_div.appendChild(result_org);
                     document.querySelector("#results").appendChild(result_div);
                 }
-            }
+            });
         });
     }
 
