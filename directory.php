@@ -360,11 +360,16 @@
                 for(const result_id of result_elements) { // TODO: remove old results
                     // if id not in result
                         // remove result element
+                    let found = false;
                     for(const expert of expert_json) {
                         if("expert"+expert["user_id"] == result_id) {
-                            document.querySelector(".result#"+result_id).remove();
+                            found = true;
                             break;
                         }
+                    }
+                    if(!found) {
+                        document.querySelector(".result#"+result_id).remove();
+                            break;
                     }
                 }
 
