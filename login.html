@@ -63,52 +63,12 @@
             }
         }
 
-        //document.querySelector("form").addEventListener("submit", check_credentials);
-        /*function check_credentials(event) {
-            const password = document.querySelector('#password_input').value;
-            const email = document.querySelector('#email_input').value;
-
-            if(document.querySelector("input#last").value != "") {
-                return;
-            }
-
-            fetch("/phpScripts/credentials_check.php", {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({"email":email,"password":password})
-            })
-            .then((response) => {
-                switch(response.status) {
-                    case 200:
-                        break;
-                    case 401:
-                        return response.text();
-                        break;
-                    default:
-                        throw new Error('Server error ' + response.status);
-                        break;
-                }
-            })
-            .then(content => {
-                if(content == "Email not verified") {
-                    document.querySelector('#unverified-email').style.display = "block";
-                    document.querySelector('#bad-login').style.display = "none";
-                    return false;
-                } else if(content == "Invalid") {
-                    document.querySelector('#bad-login').style.display = "block";
-                    document.querySelector('#unverified-email').style.display = "none";
-                    return false;
-                }
-                return true;
-            })
-        }*/
-
         function check_credentials(event) {
             const password = document.querySelector('#password_input').value;
             const email = document.querySelector('#email_input').value;
 
             if(document.querySelector("input#last").value != "") {
-                return;
+                return false;
             }
 
             return
@@ -133,7 +93,7 @@
                         }
                     default:
                         throw new Error('Server error ' + response.status);
-                    return false;
+                        return false;
                 }
             });
         }
