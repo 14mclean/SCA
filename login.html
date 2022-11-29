@@ -82,16 +82,19 @@
                         form.submit();
                         break;
                     case 401:
-                        if(content == "Email not verified") {
-                            document.querySelector('#unverified-email').style.display = "block";
-                            document.querySelector('#bad-login').style.display = "none";
-                        } else if(content == "Invalid") {
-                            document.querySelector('#bad-login').style.display = "block";
-                            document.querySelector('#unverified-email').style.display = "none";
-                        }
+                        return response.content();
                         break;
                     default:
                         throw new Error('Server error ' + response.status);
+                }
+            })
+            .then(content => {
+                if(content == "Email not verified") {
+                    document.querySelector('#unverified-email').style.display = "block";
+                    document.querySelector('#bad-login').style.display = "none";
+                } else if(content == "Invalid") {
+                    document.querySelector('#bad-login').style.display = "block";
+                    document.querySelector('#unverified-email').style.display = "none";
                 }
             });
         }
