@@ -116,7 +116,11 @@ input {
     font-family: 'Open Sans' !important;
 }
 
-input:-webkit-autofill {
+input:-webkit-autofill::first-line,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
     font-size: 16px !important;
     font-family: 'Open Sans' !important;
 }
