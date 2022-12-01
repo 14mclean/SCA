@@ -116,7 +116,7 @@ input {
     font-family: 'Open Sans' !important;
 }
 
-input::-internal-input-suggested {
+input:-webkit-autofill {
     font-size: 16px !important;
     font-family: 'Open Sans' !important;
 }
