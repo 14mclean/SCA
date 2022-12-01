@@ -116,7 +116,7 @@ input {
     font-family: 'Open Sans';
 }
 
-input:autofill {
+input:-internal-autofill-selected {
     font-size: 16px !important;
     font-family: 'Open Sans' !important;
 }
