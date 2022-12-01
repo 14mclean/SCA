@@ -121,7 +121,7 @@ input {
     font-family: 'Open Sans' !important;
 }*/
 
-input div {
+input div#placeholder {
     font-size: 16px !important;
     font-family: 'Open Sans' !important;
 }
