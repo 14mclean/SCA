@@ -3,7 +3,6 @@ mobile version of each page
 
 distance slider: min, max, initial
 
-Fix password fail on login (Undefined array key "email_verified")
 Tell user that email has been sent
-email verfied asthetics
-directory expertise fuzzy search
+email verfied asthetics (email & page)
+register not loading css or something, validation wacky too
