@@ -116,6 +116,11 @@ input {
     font-family: 'Open Sans' !important;
 }
 
+input::-internal-input-suggested {
+    font-size: 16px !important;
+    font-family: 'Open Sans' !important;
+}
+
 input:focus {
     border-color: #3d1854;
 }
