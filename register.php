@@ -67,12 +67,12 @@
             }
 
             // 1 or more uppercase
-            if(!password_value.toLowerCase() != password_value) {
+            if(password_value.toLowerCase() != password_value) {
                 validity_value = "Password requires at least 1 uppercase character";
             }
 
             // 1 or more lowercase
-            if(!password_value.toUpperCase() != password_value) {
+            if(password_value.toUpperCase() != password_value) {
                 validity_value = "Password requires at least 1 lowercase character";
             }
 
