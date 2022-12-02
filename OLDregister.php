@@ -24,7 +24,7 @@
                     <input id="email_input" name="email" type="email" autocomplete="email" placeholder="E-mail" required oninput="clear_validation(this)">
 
                     <input id="password_input" name="password" type="password" autocomplete="new-password" placeholder="Password" required oninput="clear_validation(this)">
-                    <img id="visibility-eye" src="assets/noEye.png">
+                    <img src="assets/noEye.png">
 
                     <input type="text" style="display: none;">
 
@@ -43,20 +43,13 @@
     </body>
 
     <script>
-
-        function debounce(callback, wait) {
-            let timeout;
-            return (...args) => {
-                clearTimeout(timeout);
-                timeout = setTimeout(function () { callback.apply(this, args); }, wait);
-            };
+        function clear_validation(element) {
+            element.setCustomValidity("");
+            element.reportValidity();
         }
 
-        document.querySelector("#password_input").addEventListener("keyup", debounce(() => {
-            // validate password
-        }, 1000));
-
-        document.querySelector("#visibility-eye").addEventListener("click", (event) => { // show/hide password visibility
+        document.querySelector("img").addEventListener("click", swap_visibility);
+        function swap_visibility(event) {
             const password_input = document.querySelector('#password_input');
 
             if(password_input.type == "password") {
@@ -66,12 +59,53 @@
                 password_input.type = "password";
                 event.target.src = "assets/noEye.png";
             }
-        });
+        }
 
-        document.querySelector("form").addEventListener("submit", (event) => { // submit form details
+        document.querySelector("#password_input").addEventListener("input", password_validate);
+        function password_validate() {
+            const password_input = document.querySelector("#password_input");
+            const password = password_input.value;
+            let is_valid = true;
+
+            if(password.length < 8) {
+                password_input.tooShort = true;
+                is_valid = false;
+            } 
+            
+            if(password.match(/[A-Z]/g) == null) {
+                password_input.setCustomValidity("Password requires at least 1 uppercase character");
+                is_valid = false;
+            }
+
+            if(password.match(/[a-z]/g) == null) {
+                password_input.setCustomValidity("Password requires at least 1 lowercase character");
+                is_valid = false;
+            }
+
+            if(password.match(/[0-9]/g) == null) {
+                password_input.setCustomValidity("Password requires at least 1 numeric character");
+                is_valid = false;
+            } 
+            
+            if(is_valid) {
+                password_input.setCustomValidity("");
+            }
+
+            password_input.reportValidity();
+            return is_valid;
+        }
+
+        document.querySelector("form").addEventListener("submit", submit);
+        function submit(event) {
             event.preventDefault();
             const email_input = document.querySelector("#email_input");
             const email = email_input.value;
+
+            if(!email_input.checkValidity()) {
+                // show bad
+            } else if(!password_validate()) {
+                // show bad
+            }
 
             //fetch("/api/users?email="+email) // get any users with this email
             fetch("/api/users?filter=" + btoa(JSON.stringify({"email":{"operator":"", "value": [email]}})))
@@ -139,6 +173,6 @@
                     window.location.href="meet-the-experts.php";
                 });
             });
-        });
+        }
     </script>
 </html>
