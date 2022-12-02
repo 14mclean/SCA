@@ -116,7 +116,7 @@ input {
 }
 
 input:focus-visible {
-    outline: #3d1854 2px;
+    outline: #3d1854 solid 2px;
 }
 
 input:invalid {
