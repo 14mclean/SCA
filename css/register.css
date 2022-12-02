@@ -117,14 +117,17 @@ input {
 }
 
 input:focus-visible {
+    outline: none;
     border-color: #3d1854;
 }
 
 input:invalid {
+    outline: none;
     border-color: red;
 }
 
 input:invalid:focus-visible {
+    outline: none;
     border-color: darkred;
 }
 
