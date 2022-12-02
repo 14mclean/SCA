@@ -5,4 +5,5 @@ distance slider: min, max, initial
 
 Tell user that email has been sent
 email verfied asthetics (email & page)
-register not loading css or something, validation wacky too
+check register validation
+validate ALL fields 1s after finished typing 
