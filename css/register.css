@@ -119,6 +119,7 @@ input {
 input:focus-visible {
     outline: none;
     border-color: #3d1854;
+    border-width: 2px;
 }
 
 input:invalid {
@@ -127,7 +128,6 @@ input:invalid {
 }
 
 input:invalid:focus-visible {
-    outline: none;
     border-color: darkred;
 }
 
