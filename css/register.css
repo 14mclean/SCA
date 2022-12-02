@@ -116,7 +116,7 @@ input {
     font-family: 'Open Sans' !important;
 }
 
-input:focus {
+input:focus-visible {
     border-color: #3d1854;
 }
 
@@ -124,7 +124,7 @@ input:invalid {
     border-color: red;
 }
 
-input:invalid:focus {
+input:invalid:focus-visible {
     border-color: darkred;
 }
 
