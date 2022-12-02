@@ -67,17 +67,17 @@
             }
 
             // 1 or more uppercase
-            if(!(/^[A-Z]*$/.test(password_value))) {
+            if(!password_value.toLowerCase() != password_value) {
                 validity_value = "Password requires at least 1 uppercase character";
             }
 
             // 1 or more lowercase
-            if(!(/^[a-z]*$/.test(password_value))) {
+            if(!password_value.toUpperCase() != password_value) {
                 validity_value = "Password requires at least 1 lowercase character";
             }
 
             // 1 or more numeric
-            if(!(/^[0-9]*$/.test(password_value))) {
+            if(!/\d/.test(password_value)) {
                 validity_value = "Password requires at least 1 numeric character";
             }
 
