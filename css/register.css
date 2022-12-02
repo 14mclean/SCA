@@ -116,15 +116,6 @@ input {
     font-family: 'Open Sans' !important;
 }
 
-input:-webkit-autofill::first-line,
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-    font-size: 16px !important;
-    font-family: 'Open Sans' !important;
-}
-
 input:focus {
     border-color: #3d1854;
 }
@@ -135,6 +126,10 @@ input:invalid {
 
 input:invalid:focus {
     border-color: darkred;
+}
+
+input:placeholder-shown {
+    border-color: #999999;
 }
 
 #email_input {
