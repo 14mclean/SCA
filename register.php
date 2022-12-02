@@ -52,8 +52,35 @@
             };
         }
 
-        document.querySelector("#password_input").addEventListener("keyup", debounce(() => {
-            // validate password
+        document.querySelector("#password_input").addEventListener("keyup", debounce(() => { // validate password 1s after typing concludes
+            const password_input = document.querySelector("#password_input");
+            const password_value = password_input.value;
+            let validity_value = "";
+
+            // 8 or more chars
+            if(password_value.length < 8) {
+                validity_value = "Password must be at least 8 characters long";
+            }
+
+            // 1 or more uppercase
+            if(!(/^[A-Z]*$/.test(password_value))) {
+                validity_value = "Password requires at least 1 uppercase character";
+            }
+
+            // 1 or more lowercase
+            if(!(/^[a-z]*$/.test(password_value))) {
+                validity_value = "Password requires at least 1 lowercase character";
+            }
+
+            // 1 or more numeric
+            if(!(/^[0-9]*$/.test(password_value))) {
+                validity_value = "Password requires at least 1 numeric character";
+            }
+
+            password_input.setCustomValidity(validity_value);
+            password_input.reportValidity();
+            return validity_value == "";
+
         }, 1000));
 
         document.querySelector("#visibility-eye").addEventListener("click", (event) => { // show/hide password visibility
