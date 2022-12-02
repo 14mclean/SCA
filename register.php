@@ -21,9 +21,9 @@
                 <h2><?php echo $_GET["level"]?></h2>
 
                 <form>
-                    <input id="email_input" name="email" type="email" placeholder="E-mail" required oninput="clear_validation(this)">
+                    <input id="email_input" name="email" type="email" autocomplete="email" placeholder="E-mail" required oninput="clear_validation(this)">
 
-                    <input id="password_input" name="password" type="password" placeholder="Password" required oninput="clear_validation(this)">
+                    <input id="password_input" name="password" type="password" autocomplete="new-password" placeholder="Password" required oninput="clear_validation(this)">
                     <img src="assets/noEye.png">
 
                     <input type="text" style="display: none;">
