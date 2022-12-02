@@ -70,16 +70,24 @@
             if(password.length < 8) {
                 password_input.tooShort = true;
                 is_valid = false;
-            } else if(password.match(/[A-Z]/g) == null) {
+            } 
+            
+            if(password.match(/[A-Z]/g) == null) {
                 password_input.setCustomValidity("Password requires at least 1 uppercase character");
                 is_valid = false;
-            } else if(password.match(/[a-z]/g) == null) {
+            }
+
+            if(password.match(/[a-z]/g) == null) {
                 password_input.setCustomValidity("Password requires at least 1 lowercase character");
                 is_valid = false;
-            } else if(password.match(/[0-9]/g) == null) {
+            }
+            
+            if(password.match(/[0-9]/g) == null) {
                 password_input.setCustomValidity("Password requires at least 1 numeric character");
                 is_valid = false;
-            } else {
+            } 
+            
+            if(is_valid) {
                 password_input.setCustomValidity("");
             }
 
