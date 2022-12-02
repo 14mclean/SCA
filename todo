@@ -5,5 +5,5 @@ distance slider: min, max, initial
 
 Tell user that email has been sent
 email verfied asthetics (email & page)
-check register validation
-validate ALL fields 1s after finished typing 
+
+validate ALL fields 1s after finished typing (done: registeration)
