@@ -43,6 +43,10 @@
     </body>
 
     <script>
+        function clear_validation(element) {
+            element.setCustomValidity("");
+            element.reportValidity();
+        }
 
         function debounce(callback, wait) {
             let timeout;
