@@ -108,31 +108,39 @@ input {
     padding-bottom: 5px;
 
     border-radius: 7px;
-    border-color: #999999;
+    /*border-color: #999999;
     border-width: 1px;
-    border-style: solid;
+    border-style: solid;*/
+    outline-width: 1px;
+    outline-color: #999;
+    outline-style: solid;
 
     font-size: 16px !important;
     font-family: 'Open Sans' !important;
 }
 
 input:focus-visible {
-    outline: none;
+    /*outline: none;
     border-color: #3d1854;
-    border-width: 2px;
+    border-width: 2px;*/
+    outline-color: #3d1854;
+    outline-width: 2px;
 }
 
 input:invalid {
-    outline: none;
-    border-color: red;
+    /*outline: none;
+    border-color: red;*/
+    outline-color: red;
 }
 
 input:invalid:focus-visible {
-    border-color: darkred;
+    /*border-color: darkred;*/
+    outline-color: darkred;
 }
 
 input:placeholder-shown {
-    border-color: #999999;
+    /*border-color: #999999;*/
+    outline-color: #999;
 }
 
 #email_input {
