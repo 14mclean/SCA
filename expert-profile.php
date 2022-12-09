@@ -120,7 +120,7 @@ $expertise = $result;
                                 <p>First part of your postcode (e.g. SW6)</p>
                             </div>
                             
-                            <input type="text" id="location" oninput="location_validity()" value="<?php echo($location) ?>">
+                            <input type="text" id="location" value="<?php echo($location) ?>">
                         </div>
 
                         <hr>
@@ -306,7 +306,15 @@ $expertise = $result;
     </body>
 
     <script>
-        function location_validity() {
+        function debounce(callback, wait) {
+            let timeout;
+            return (...args) => {
+                clearTimeout(timeout);
+                timeout = setTimeout(function () { callback.apply(this, args); }, wait);
+            };
+        }
+
+        document.querySelector("input#location").addEventListener("keyup", debounce(() => { // validate password 1s after typing concludes
             const location_input = document.querySelector("#location");
 
             if(location_input.value == "" || valid_outcode(location_input.value)) {
@@ -315,7 +323,7 @@ $expertise = $result;
                 location_input.setCustomValidity("Invalid outcode format");
             }
             location_input.reportValidity();
-        }
+        }, 1000));
 
         function valid_outcode(outcode) {
             function generatePattern(string) {
@@ -476,7 +484,7 @@ $expertise = $result;
             }
         }
 
-        document.querySelector("div#form-container form").addEventListener("submit", (event) => {
+        document.querySelector("div#form-container form").addEventListener("submit", (event) => { // submit data
             event.preventDefault();
 
             const name = document.getElementById("name").value,
@@ -512,7 +520,6 @@ $expertise = $result;
             }
 
             // get user's current resources
-            //fetch("/api/expertresources?user_id="+user_id) // TODO: change filter methods
             fetch("/api/expertresources?filter=" + btoa(JSON.stringify({"user_id":{"operator":"", "value": [user_id]}})))
             .then(response => {
                 if(response.ok) {
@@ -566,7 +573,6 @@ $expertise = $result;
             });
 
             // get user's current expertise
-            //fetch("/api/expertise?user_id="+user_id) // TODO: change filter methods
             fetch("/api/expertise?filter=" + btoa(JSON.stringify({"user_id":{"operator":"", "value": [user_id]}})))
             .then(response => {
                 if(response.ok) {
