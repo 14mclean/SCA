@@ -57,7 +57,7 @@ $_SESSION["user_level"] = $user_level;
 
         <main>
             <div id="container">
-                <h1>email verified</h1>
+                <h1>Email has been Verified</h1>
             </div>
         </main>
     </body>
