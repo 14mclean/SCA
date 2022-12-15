@@ -644,7 +644,7 @@ $expertise = $result;
                 })
             });
 
-            return false;
+            window.location.href = "directory.php";
         });
 
         

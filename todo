@@ -5,3 +5,5 @@ distance slider: min, max, initial
 
 Tell user that email has been sent
 email verfied asthetics (email & page)
+
+Scaling on every site (em over px) (100% vs 150%)

@@ -167,7 +167,7 @@
                         });
                     } 
                     
-                    window.location.href="meet-the-experts.php";
+                    window.location.href="post-registration.html";
                 });
             });
         });
