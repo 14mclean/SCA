@@ -71,9 +71,9 @@ nav a {
 }
 
 main { 
-    height: calc(100vh - 80px);
+    height: calc(100vh - 110px);
     position: absolute;
-    top: 80px;
+    top: 110px;
     width: 100vw;
     overflow: hidden;
 }
