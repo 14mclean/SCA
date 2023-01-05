@@ -70,7 +70,7 @@ main {
     position: relative;
     top: 30px;
     display: flex;
-    height: fit-content;
+    height: 100vh;
 }
 
 aside {
