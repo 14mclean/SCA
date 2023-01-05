@@ -29,7 +29,7 @@
             </div>
 
             <nav id="menu">
-                <a href="about.html">About Us</a>
+                <a href="about.php">About Us</a>
                 <a>Teacher Resources</a>
                 <a href="meet-the-experts.php">Meet The Experts</a>
             </nav>
