@@ -360,10 +360,6 @@ aside {
     transition: max-height ease-out 0.7s;
 }
 
-/*.result:hover {
-    max-height: 300px;
-}*/
-
 .result img {
     width: 40px;
     height: 40px;
@@ -428,7 +424,7 @@ aside {
 }
 
 footer {
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100vw;
     height: 50px;
