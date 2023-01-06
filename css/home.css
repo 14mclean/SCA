@@ -37,7 +37,6 @@ header {
     }
     
     #menu ul {
-        position: relative;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
@@ -88,7 +87,7 @@ header {
     }
     
     .subnav {
-        position: absolute;
+        position: relative;
         top: -100px;
         color: #ddd;
         background-color: #401b57;
