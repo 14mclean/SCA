@@ -74,7 +74,7 @@ $expertise = $result;
 
     <body>
         <header>
-            <h1><a href="home.html">School Citizen Assemblies</a></h1>
+            <h1><a href="home.php">School Citizen Assemblies</a></h1>
 
             <nav>
                 <a href="about.php">About Us</a>
