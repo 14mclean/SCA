@@ -110,6 +110,7 @@ header {
     margin-top: 20px;
     cursor: pointer;
     width: 100%;
+    text-decoration: none;
 }
 
 .subnav a:hover {
@@ -219,7 +220,6 @@ footer p {
     .subnav a {
         position: relative;
         top: 0px;
-        text-decoration: none;
     }
 
     #burger {
