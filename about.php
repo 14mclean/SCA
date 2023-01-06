@@ -72,7 +72,7 @@
                     } else {
                         echo('
                             <li>
-                                <button href="login.html" class="nav-button" id="login">Login</button>
+                                <button onclick="location.href=\'login.html\';" class="nav-button" id="login">Login</button>
                             </li>
                         ');
                     }
