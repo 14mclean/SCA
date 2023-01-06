@@ -125,7 +125,68 @@ header {
 }
 
 main {
+    height: calc(100vh - 110px);
+    position: absolute;
+    top: 110px;
+    width: 100vw;
+    overflow: hidden;
     z-index: -2;
+}
+
+.arrow {
+    display: inline-block;
+    position: absolute;
+    font-size: 70px;
+    margin: 0;
+    cursor: pointer;
+    font-family: 'Raleway';
+    color: #222;
+    z-index: 1;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    top: 50%;
+    line-height: 70px;
+    text-align: center;
+}
+
+.arrow#left{
+    left: 50px;
+}
+
+.arrow#right{
+    right: 50px;
+}
+
+#coverflow {
+    display: inline-block;
+}
+
+.coverflow-item {
+    position: absolute;
+    top: 45%;
+    left: 50vw;
+    width: 60vw;
+    height: fit-content;
+    transition: ease-in 0.4s;
+}
+
+.coverflow-item img {
+    width: 40vmin;
+    margin-left: calc(calc(100% - 40vmin)/2);
+    margin-top: 50%;
+    transform: translateY(-50%);
+}
+
+.coverflow-item h2 {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    font-family: 'Raleway';
+    margin: 0 0 0 0;
+    position: absolute;
+    bottom: 100px;
 }
 
 footer {

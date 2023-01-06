@@ -87,7 +87,36 @@
         </header>
 
         <main>
-            
+            <p class="arrow" id="left" onclick="order_resources(1)">⮜</p>
+
+            <div id="coverflow">
+                <div class="coverflow-item">
+                    <img src="assets/chesterzoo.png">
+                    <h2>Chester Zoo</h2>
+                </div> 
+
+                <div class="coverflow-item">
+                    <img src="assets/nationalTrust.jpg">
+                    <h2>National Trust</h2>
+                </div>
+
+                <div class="coverflow-item">
+                    <img src="assets/oxfam.png">
+                    <h2>Oxfam</h2>
+                </div>
+
+                <div class="coverflow-item">
+                    <img src="assets/UoM.png">
+                    <h2>University of Manchester</h2>
+                </div>
+
+                <div class="coverflow-item">
+                    <img src="assets/wwf.jpg">
+                    <h2>WWF</h2>
+                </div>
+            </div>
+
+            <p class="arrow" id="right" onclick="order_resources(-1)">⮞</p>
         </main>
 
         <footer>
