@@ -8,62 +8,117 @@ body {
 }
 
 header {
+    width: 100vw;
     background-color: #401b57;
-    width: 100%;
-    position: relative;
+    position: absolute;
     top: 0;
-    left: 0;
     height: 80px;
+}
+
+#title-heading {
+    width: fit-content;
+    height: 100%;
     margin: 0;
+    margin-left: 50px;
+    line-height: 80px;
     display: inline-block;
 }
 
-header h1 {
-    font-family: 'Raleway';
-    font-size: 26px;
-    line-height: 80px;
-    margin-top: 0;
-    margin-left: 50px;
+#title-heading a {
+   color: white; 
+   text-decoration: none;
+   font-family: 'Raleway';
 }
 
-header h1 a {
-    color: white;
-    text-decoration: none;
+#menu {
+    position: absolute;
+    right: 20px;
+    height: 100%;
+    display: inline-block;
+    width: 525px;
 }
 
-header nav {
-    float: right;
-    margin-top: -70px;
-    margin-right: 50px;
-    width: 30%;
-    align-content: center;
+#close-nav {
+    display: none;
+}
+
+#menu ul {
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    padding: 0;
 }
 
-header nav a {
-    color: #dddddd;
-    font-family: 'Raleway';
+#menu ul li {
+    list-style: none;
+}
+
+.nav-button {
+    background-color: transparent;
+    border-color: transparent;
+    color: #ddd;
     font-size: 14px;
-    margin-top: 5px;
+    font-family: 'Raleway';
     cursor: pointer;
-    text-decoration: none;
 }
 
-header nav a:hover {
+.nav-button:hover {
     color: white;
+}
+
+.nav-button:not(#about,#login)::after {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    content: "";
+    display: inline-block;
+    height: 0;
+    margin-bottom: 5px;
+    margin-left: 0.5rem;
+    margin-top: 0.15rem;
+    position: relative;
+    right: 0;
+    vertical-align: middle;
+    width: 0;
+}
+
+.nav-button.open:not(#about,#login)::after {
+    transform: rotate(180deg);
 }
 
 .subnav {
-    width: 100%;
-    height: 30px;
     position: absolute;
-    left: 0;
-    top: 130px;
-    background-color: #6b2c91;
-    margin-top: -50px;
-    display: flex;
-    justify-content: space-around;
+    top: -100px;
+    color: #ddd;
+    background-color: #401b57;
+    margin-left: 5px;
+    font-size: 14px;
+    font-family: 'Raleway';
+    padding: 15px 10px 20px 10px;
+    z-index: -2;
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+}
+
+.subnav a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+    color: #ddd;
+}
+
+.subnav a:hover {
+    color: white;
+}
+
+#burger {
+    display: none;
 }
 
 main {
@@ -393,4 +448,100 @@ footer p {
     float: left;
     margin-top: -33px;
     margin-left: 270px;
+}
+
+@media (max-width: 990px) {
+    #title-heading {
+        margin-left: 15px;
+        font-size: 20px;
+    }
+
+    #menu {
+        height: 100vh;
+        width: 180px;
+        background-color: #1A1A1A;
+        position: fixed;
+        right: -200px;
+        box-shadow:
+            0 1px 1px rgba(0, 0, 0, 0.075),
+            0 2px 2px rgba(0, 0, 0, 0.075),
+            0 4px 4px rgba(0, 0, 0, 0.075),
+            0 8px 8px rgba(0, 0, 0, 0.075),
+            0 16px 16px rgba(0, 0, 0, 0.075);
+        z-index: 1;
+        transition: transform .3s;
+    }
+
+    #close-nav {
+        display: initial;
+        fill: #ddd;
+        width: 18px;
+        height: 18px;
+        position: fixed;
+        top: 30px;
+        right: -70px;
+        z-index: 5;
+        transition: transform .3s;
+    }
+
+    #menu ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 30px;
+        height: 70vh;
+        width: 180px;
+        position: fixed;
+        top: 100px;
+    }
+
+    #menu li {
+        position: relative;
+        left: 0px;
+        width: 100%;
+    }
+
+    .nav-button {
+        position: relative;
+        left: 10px;
+    }
+
+    .subnav {
+        display: block;
+        position: relative;
+        top: 0;
+        max-height: 0px;
+        overflow: hidden;
+        background-color: #1A1A1A;
+        padding: 0;
+        transition: max-height 0.5s;
+    }
+
+    .subnav a {
+        position: relative;
+        top: 0px;
+    }
+
+    #burger {
+        display: initial;
+        fill: #ddd;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+    }
+
+    footer {
+        height: 80px;
+    }
+    
+    footer h1 {
+        margin-left: 15px;
+    }
+    
+    footer p {
+        margin-top: 0px;
+        margin-left: 15px;
+    }
 }

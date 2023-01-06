@@ -6,4 +6,6 @@ distance slider: min, max, initial
 Tell user that email has been sent
 email verfied asthetics (email & page)
 
-Scaling on every site (em over px) (100% vs 150%)
+em not px
+rethink placing of profile (my account?), logout, etc.
+Last section of homepage
