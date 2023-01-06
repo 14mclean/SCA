@@ -116,6 +116,7 @@ header {
 
 main {
     position: relative;
+    top: -4px;
     width: 100vw;
     height: fit-content;
     z-index: -1;
