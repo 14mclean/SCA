@@ -76,18 +76,7 @@
                             </li>
                         ');
                     }
-
                     ?>
-
-                    <li>
-                        <button class="nav-button" id="my-account" onclick="show_subnav(this)">My Account</button>
-
-                        <div class="subnav" id="my-account">
-                            <a>Admin Panel</a>
-                            <a>Profile</a>
-                            <a>Logout</a>
-                        </div>
-                    </li>
                 </ul>
             </nav>
 
