@@ -11,7 +11,7 @@
     <body>
         <header>
             <a class="back_arrow" href="javascript:history.back()">🠔</a>
-            <h1><a href="index.php">School Citizen Assemblies</a></h1>
+            <h1><a href="/">School Citizen Assemblies</a></h1>
         </header>
 
         <main>

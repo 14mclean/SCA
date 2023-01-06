@@ -52,7 +52,7 @@ $_SESSION["user_level"] = $user_level;
 
     <body>
         <header>
-            <h1><a href="index.php">School Citizen Assemblies</a></h1>
+            <h1><a href="/">School Citizen Assemblies</a></h1>
         </header>
 
         <main>
