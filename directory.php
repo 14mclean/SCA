@@ -35,7 +35,7 @@
 
                 <ul>
                     <li>
-                        <button class="nav-button" id="about">About Us</button>
+                        <button class="nav-button" id="about" onclick="location.href='login.html';">About Us</button>
                     </li>
                     <li>
                         <button class="nav-button" id="teacher-resources" onclick="show_subnav(this)">Teacher Resources</button>
