@@ -115,7 +115,7 @@ header {
     }
 
 main {
-    margin-top: -4px;
+    position: relative;
     width: 100vw;
     height: fit-content;
     z-index: -1;
