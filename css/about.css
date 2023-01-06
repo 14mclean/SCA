@@ -219,6 +219,7 @@ footer p {
     .subnav a {
         position: relative;
         top: 0px;
+        text-decoration: none;
     }
 
     #burger {
