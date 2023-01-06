@@ -20,7 +20,7 @@
 
     <body>
         <header>
-            <h1 id="title-heading"><a href="index.php">School Citizen Assemblies</a></h1>
+            <h1 id="title-heading"><a href="/">School Citizen Assemblies</a></h1>
 
             <nav id="menu">
                 <svg id="close-nav" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" overflow="visible" stroke="#ddd" stroke-width="6" stroke-linecap="round">
