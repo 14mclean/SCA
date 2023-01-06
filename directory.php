@@ -254,6 +254,7 @@
     </body>
 
     <script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
+    <script src="header.js"></script>
     <script>
     document.querySelectorAll('input[type="checkbox"]').forEach(function(element) {element.addEventListener("change", search())});    
 
