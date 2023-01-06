@@ -13,7 +13,6 @@ header {
     position: absolute;
     top: 0;
     height: 80px;
-    z-index: 2;
 }
 
 #title-heading {
@@ -100,7 +99,7 @@ header {
     font-size: 14px;
     font-family: 'Raleway';
     padding: 15px 10px 20px 10px;
-    z-index: 1;
+    z-index: -1;
     box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
 }
 
@@ -127,6 +126,7 @@ main {
     top: 80px;
     display: flex;
     height: 100vh;
+    z-index: -2;
 }
 
 aside {
