@@ -126,6 +126,7 @@
         </footer>
     </body>
 
+    <script src="header.js"></script>
     <script>
         let resource_tiles = Array.from(document.querySelectorAll(".coverflow-item"));
 
