@@ -87,7 +87,7 @@ header {
     }
     
     .subnav {
-        position: relative;
+        position: absolute;
         top: -100px;
         color: #ddd;
         background-color: #401b57;
