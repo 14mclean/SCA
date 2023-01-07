@@ -1,15 +1,15 @@
 <?php
 
 session_start();
-$user_id = $_SESSION["user_id"];
-$user_level = $_SESSION["user_level"];
-
-if(!isset($user_level) || $user_level == "Teacher") {
+if(isset($_SESSION["user_id"])) {
+    $logged_in = true;
+    $user_level = $_SESSION["user_level"];
+} else {
     header("Location: login.html");
     exit();
 }
-
 include_once("api/Database.php");
+
 $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
 $connection = $db->get_connection();
 
