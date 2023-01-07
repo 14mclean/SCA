@@ -132,7 +132,7 @@ main {
     height: fit-content;
     min-height: 94vh;
     z-index: -2;
-    
+    top: 80px;
 }
 
 #form-container {
