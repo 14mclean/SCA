@@ -363,6 +363,7 @@ $expertise = $result;
         </footer>
     </body>
 
+    <script src="header.js"></script>
     <script>
         function debounce(callback, wait) {
             let timeout;
