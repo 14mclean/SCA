@@ -330,7 +330,7 @@ footer p {
     }
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 700px) {
     #menu {
         height: 100vh;
         width: 180px;
