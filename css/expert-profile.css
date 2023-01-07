@@ -126,7 +126,6 @@ header {
 
 main {
     position: relative;
-    display: inline-block;
     width: 100vw;
     height: fit-content;
     min-height: 94vh;
