@@ -236,3 +236,36 @@ form button:hover {
     padding-left: 10%;
     padding-right: 10%;
 }
+
+@media (max-width: 550px) {
+    .back_arrow {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .form_container {
+        background-color: #401b57;
+        box-shadow: none;
+    }
+
+    .form_container h1 {
+        color: white;
+    }
+
+    form button {
+        position: relative;
+        top: 180px;
+        color: #401b57;
+        background-color: white;
+        font-weight: 600;
+        box-shadow:
+            0 1px 1px rgba(0, 0, 0, 0.075),
+            0 2px 2px rgba(0, 0, 0, 0.075),
+            0 4px 4px rgba(0, 0, 0, 0.075);
+    }
+
+    .register-button {
+        color: white;
+        top: 250px;
+    }
+}
