@@ -4,6 +4,7 @@ session_start();
 if(isset($_SESSION["user_id"])) {
     $logged_in = true;
     $user_level = $_SESSION["user_level"];
+    $user_id = $_SESSION["user_id"];
 } else {
     header("Location: login.html");
     exit();
