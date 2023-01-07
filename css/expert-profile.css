@@ -126,12 +126,13 @@ header {
 }
 
 main {
+    position: relative;
+    z-index: -2;
     display: inline-block;
     width: 100vw;
     height: fit-content;
     min-height: 94vh;
-    position: relative;
-    z-index: -2;
+    
 }
 
 #form-container {
