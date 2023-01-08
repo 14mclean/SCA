@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>School Citizen Assemblies</title>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-        <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="css/index.css">
     </head>
 
     <body>
