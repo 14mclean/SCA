@@ -56,7 +56,7 @@
                     if($logged_in) {
                         echo('
                             <li>
-                                <button class="nav-button" id="my-account" onclick="show_subnav(this)">My Account</button>
+                                <button class="nav-button" id="my-account" onclick="show_subnav(event)">My Account</button>
 
                                 <div class="subnav" id="my-account">
                         ');
