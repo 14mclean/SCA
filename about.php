@@ -66,7 +66,7 @@
                         echo('
                                 <a href="expert-profile.php">Profile</a>
                                 <a href="phpScripts/logout.php">Logout</a>
-                                <a style="height: 0">My Account></a>
+                                <a style="height: 0; color: transparent">My Account></a>
                             </div>
                         </li>
                         ');
