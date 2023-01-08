@@ -33,7 +33,7 @@ function show_subnav(element) {
             nav.style.transform = "translateY(190px)";
         }
 
-        document.addEventListener("click", handle_close_subnav);
+        document.querySelector("body").addEventListener("click", handle_close_subnav);
     }
 
     function close_subnav(nav) {
@@ -44,7 +44,7 @@ function show_subnav(element) {
             nav.style.transform = "translateY(0px)";
         }
 
-        document.removeEventListener("click", handle_close_subnav);
+        document.querySelector("body").removeEventListener("click", handle_close_subnav);
     }
 
     const subnav = document.querySelector(".subnav#" + element.id);
