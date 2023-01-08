@@ -14,7 +14,8 @@ function show_sidebar() {
     }
 }
 
-function show_subnav(element) {
+function show_subnav(event) {
+    const element = event.target;
     function handle_close_subnav(event) {
         const navs = document.querySelectorAll(".subnav");
         for(const nav of navs) {
@@ -59,5 +60,6 @@ function show_subnav(element) {
     } else {
         open_subnav(subnav);
     }
+    event.stopPropagation();
 }
 
