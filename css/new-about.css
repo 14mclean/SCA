@@ -97,13 +97,13 @@ header {
 
 .subnav {
     position: absolute;
-    top: -12em;
+    top: -14em;
     color: #ddd;
     background-color: #555;
     margin-left: 5px;
     font-size: 0.875em;
     font-family: 'Raleway';
-    padding: 5em 1.2em 1.25em 0.7em;
+    padding: 5.5em 1.2em 1.25em 0.7em;
     box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
     z-index: -1;
 }
