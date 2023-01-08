@@ -31,7 +31,7 @@ function show_subnav(element) {
     }
 }
 
-document.querySelector("body").addEventListener("click", () => {
+document.querySelector("main").addEventListener("click", () => {
     const subnavs = document.querySelectorAll(".subnav");
     for(const nav of subnavs) {
         document.querySelector(".nav-button#" + nav.id).classList.remove("open"); 
