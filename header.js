@@ -1,4 +1,4 @@
-  document.querySelector("#burger").addEventListener("click", show_sidebar);
+document.querySelector("#burger").addEventListener("click", show_sidebar);
 document.querySelector("#close-nav").addEventListener("click", show_sidebar);
 
 function show_sidebar() {
@@ -15,13 +15,25 @@ function show_sidebar() {
 }
 
 function show_subnav(element) {
+    function handle_close_subnav(event) {
+        const navs = document.querySelectorAll(".subnav");
+        for(const nav of navs) {
+            close_subnav(nav);
+        }
+        
+        // passthrough click event
+        console.log(event);
+    }
+
     function open_subnav(nav) {
         document.querySelector(".nav-button#" + nav.id).classList.add("open");
         if(window.matchMedia("(max-width: 990px)").matches) {
             nav.style.maxHeight = "180px";
         } else {
             nav.style.transform = "translateY(190px)";
-        } 
+        }
+
+        document.addEventListener("click", handle_close_subnav);
     }
 
     function close_subnav(nav) {
@@ -31,6 +43,8 @@ function show_subnav(element) {
         } else {
             nav.style.transform = "translateY(0px)";
         }
+
+        document.removeEventListener("click", handle_close_subnav);
     }
 
     const subnav = document.querySelector(".subnav#" + element.id);
@@ -46,3 +60,4 @@ function show_subnav(element) {
         open_subnav(subnav);
     }
 }
+
