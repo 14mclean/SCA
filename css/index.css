@@ -98,6 +98,7 @@ header {
     padding: 5.5em 1.2em 1.25em 1.2em;
     box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
     z-index: 1;
+    border-radius: 6px;
 }
 
 .subnav a {
