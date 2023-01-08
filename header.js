@@ -30,6 +30,18 @@ function show_subnav(element) {
         open_subnav(subnav);
     }
 }
+
+document.querySelector("body").addEventListener("click", () => {
+    const subnavs = document.querySelectorAll(".subnav");
+    for(const nav of subnavs) {
+        document.querySelector(".nav-button#" + nav.id).classList.remove("open"); 
+        if(window.matchMedia("(max-width: 990px)").matches) {
+            nav.style.maxHeight = "0px";
+        } else {
+            nav.style.transform = "translateY(0px)";
+        }
+    }
+});
     
 document.querySelector("#burger").addEventListener("click", show_sidebar);
 document.querySelector("#close-nav").addEventListener("click", show_sidebar);
