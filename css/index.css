@@ -20,6 +20,7 @@ header {
     margin: 0;
     display: inline-block;
     margin: 0;
+    z-index: -3;
 }
     header img {
         height: 80px;
