@@ -31,8 +31,8 @@ function show_subnav(element) {
     }
 }
 
-document.querySelector("header").addEventListener("click", close_all_subnavs);
-document.querySelector("main").addEventListener("click", close_all_subnavs);
+document.querySelector("html").addEventListener("click", close_all_subnavs);
+//document.querySelector("main").addEventListener("click", close_all_subnavs);
 
 function close_all_subnavs() {
     const subnavs = document.querySelectorAll(".subnav");
