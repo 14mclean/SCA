@@ -4,7 +4,7 @@ function show_subnav(element) {
         if(window.matchMedia("(max-width: 990px)").matches) {
             nav.style.maxHeight = "180px";
         } else {
-            nav.style.transform = "translateY(150px)";
+            nav.style.transform = "translateY(190px)";
         } 
     }
 
@@ -38,11 +38,11 @@ function show_sidebar() {
     const menu = document.querySelector("#menu");
     const cross = document.querySelector("#close-nav");
 
-    if(menu.style.transform == "translateX(-190px)") {
+    if(menu.style.transform == "translateX(-150px)") {
         menu.style.transform = "translateX(0px)";
         cross.style.transform = "translateX(0px)";
     } else {
-        menu.style.transform = "translateX(-190px)";
-        cross.style.transform = "translateX(-190px)";
+        menu.style.transform = "translateX(-150px)";
+        cross.style.transform = "translateX(-150px)";
     }
 }
