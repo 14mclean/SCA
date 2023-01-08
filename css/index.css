@@ -16,107 +16,107 @@ header {
     position: relative;
     top: 0;
     left: 0;
-    height: 80px;
+    height: 5em;
     margin: 0;
     display: inline-block;
     margin: 0;
-    z-index: -3;
 }
     header img {
         height: 80px;
     }
 
     #menu {
-        position: absolute;
-        right: 1.25em;
-        height: 100%;
-        display: inline-block;
-        width: 32.8125em;
-        z-index: -1;
-    }
-    
-    #close-nav {
-        display: none;
-    }
-    
-    #menu ul {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        align-items: center;
-        padding: 0;
-    }
-    
-    #menu ul li {
-        list-style: none;
-    }
-    
-    .nav-button {
-        background-color: transparent;
-        border-color: transparent;
-        color: #ddd;
-        font-size: 0.875em;
-        font-family: 'Raleway';
-        cursor: pointer;
-    }
-    
-    .nav-button:hover {
-        color: white;
-    }
-    
-    .nav-button:not(#about,#login)::after {
-        border-left: 0.3125em solid transparent;
-        border-right: 0.3125em solid transparent;
-        border-top: 0.3125em solid #fff;
-        content: "";
-        display: inline-block;
-        height: 0;
-        margin-bottom: 0.3125em;
-        margin-left: 0.5rem;
-        margin-top: 0.15rem;
-        position: relative;
-        right: 0;
-        vertical-align: middle;
-        width: 0;
-    }
-    
-    .nav-button.open:not(#about,#login)::after {
-        transform: rotate(180deg);
-    }
-    
-    .subnav {
-        position: absolute;
-        top: -14em;
-        color: #ddd;
-        background-color: #555;
-        margin-left: 5px;
-        font-size: 0.875em;
-        font-family: 'Raleway';
-        padding: 5.5em 1.2em 1.25em 0.7em;
-        box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
-        z-index: -1;
-    }
-    
-    .subnav a {
-        display: block;
-        text-align: center;
-        margin-top: 1.25em;
-        cursor: pointer;
-        width: 100%;
-        text-decoration: none;
-        color: #ddd;
-    }
-    
-    .subnav a:hover {
-        color: white;
-    }
-    
-    #burger {
-        display: none;
-    }
+    position: absolute;
+    right: 1.25em;
+    height: 100%;
+    display: inline-block;
+    width: 32.8125em;
+    z-index: 2;
+}
+
+#close-nav {
+    display: none;
+}
+
+#menu ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    padding: 0;
+}
+
+#menu ul li {
+    list-style: none;
+}
+
+.nav-button {
+    background-color: transparent;
+    border-color: transparent;
+    color: #ddd;
+    font-size: 0.875em;
+    font-family: 'Raleway';
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-button:hover {
+    color: white;
+}
+
+.nav-button:not(#about,#login)::after {
+    border-left: 0.3125em solid transparent;
+    border-right: 0.3125em solid transparent;
+    border-top: 0.3125em solid #fff;
+    content: "";
+    display: inline-block;
+    height: 0;
+    margin-bottom: 0.3125em;
+    margin-left: 0.5rem;
+    margin-top: 0.15rem;
+    position: relative;
+    right: 0;
+    vertical-align: middle;
+    width: 0;
+}
+
+.nav-button.open:not(#about,#login)::after {
+    transform: rotate(180deg);
+}
+
+.subnav {
+    position: absolute;
+    top: -14em;
+    color: #ddd;
+    background-color: #6b2c91;
+    font-size: 0.875em;
+    font-family: 'Raleway';
+    padding: 5.5em 1.2em 1.25em 1.2em;
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+    z-index: 1;
+}
+
+.subnav a {
+    display: block;
+    text-align: center;
+    margin-top: 1.25em;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+    color: #ddd;
+}
+
+.subnav a:hover {
+    color: white;
+}
+
+#burger {
+    display: none;
+}
 
 main {
     position: relative;

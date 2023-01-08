@@ -7,7 +7,6 @@ html, body {
     height: 100vh;
     overflow-x: hidden;
     position: relative;
-    z-index: -10;
 }
 
 header {
@@ -39,6 +38,7 @@ header {
     height: 100%;
     display: inline-block;
     width: 32.8125em;
+    z-index: 2;
 }
 
 #close-nav {
@@ -67,6 +67,8 @@ header {
     font-size: 0.875em;
     font-family: 'Raleway';
     cursor: pointer;
+    position: relative;
+    z-index: 2;
 }
 
 .nav-button:hover {
@@ -95,15 +97,14 @@ header {
 
 .subnav {
     position: absolute;
-    top: -6.25em;
+    top: -14em;
     color: #ddd;
-    background-color: #401b57;
-    margin-left: 5px;
+    background-color: #6b2c91;
     font-size: 0.875em;
     font-family: 'Raleway';
-    padding: 0.9375em 0.625em 1.25em 0.625em;
-    z-index: -1;
+    padding: 5.5em 1.2em 1.25em 1.2em;
     box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+    z-index: 1;
 }
 
 .subnav a {
@@ -125,7 +126,7 @@ header {
 }
 
 main {
-    z-index: -2;
+
 }
 
 footer {
