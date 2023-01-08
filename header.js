@@ -38,11 +38,11 @@ function show_sidebar() {
     const menu = document.querySelector("#menu");
     const cross = document.querySelector("#close-nav");
 
-    if(menu.style.transform == "translateX(-190px)") {
+    if(menu.style.transform == "translateX(-165px)") {
         menu.style.transform = "translateX(0px)";
         cross.style.transform = "translateX(0px)";
     } else {
-        menu.style.transform = "translateX(-190px)";
-        cross.style.transform = "translateX(-190px)";
+        menu.style.transform = "translateX(-165px)";
+        cross.style.transform = "translateX(-165px)";
     }
 }
