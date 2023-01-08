@@ -129,14 +129,26 @@ header {
 }
 
 footer {
-    height: 5em;
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    height: 50px;
+    background-color: #333333;
+    color: white;
+    font-family: 'Raleway';
 }
 
 footer h1 {
-    margin-left: 0.9375em;
+    font-size: 14px;
+    line-height: 50px;
+    margin-left: 50px;
+    margin-bottom: 0;
+    margin-top: 0px;
 }
 
 footer p {
-    margin-top: 0;
-    margin-left: 0.9375em;
+    font-size: 14px;
+    float: left;
+    margin-top: -33px;
+    margin-left: 270px;
 }
