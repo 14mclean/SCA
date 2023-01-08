@@ -5,12 +5,12 @@ function show_sidebar() {
     const menu = document.querySelector("#menu");
     const cross = document.querySelector("#close-nav");
 
-    if(menu.style.transform == "translateX(-150px)") {
+    if(menu.style.transform == "translateX(-200px)") {
         menu.style.transform = "translateX(0px)";
         cross.style.transform = "translateX(0px)";
     } else {
-        menu.style.transform = "translateX(-150px)";
-        cross.style.transform = "translateX(-150px)";
+        menu.style.transform = "translateX(-200px)";
+        cross.style.transform = "translateX(-200px)";
     }
 }
 
