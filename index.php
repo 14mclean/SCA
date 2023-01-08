@@ -30,10 +30,10 @@
 
                 <ul>
                     <li>
-                    <a class="nav-button" id="about" onclick="location.href='about.php';">About Us</a>
+                    <button class="nav-button" id="about" onclick="location.href='about.php';">About Us</button>
                     </li>
                     <li>
-                        <a class="nav-button" id="teacher-resources" onclick="show_subnav(event)">Teacher Resources</a>
+                        <button class="nav-button" id="teacher-resources" onclick="show_subnav(event)">Teacher Resources</button>
 
                         <div class="subnav" id="teacher-resources">
                             <a>Student Resources</a>
@@ -42,7 +42,7 @@
                         </div>
                     </li>
                     <li>
-                        <a class="nav-button" id="mte" onclick="show_subnav(event)">Meet The Experts</a>
+                        <button class="nav-button" id="mte" onclick="show_subnav(event)">Meet The Experts</button>
 
                         <div class="subnav" id="mte">
                             <a href="meet-the-experts.php">Meet The Experts</a>
