@@ -88,7 +88,7 @@ $expertise = $result;
                     <button class="nav-button" id="about" onclick="location.href='about.php';">About Us</button>
                     </li>
                     <li>
-                        <button class="nav-button" id="teacher-resources" onclick="show_subnav(this)">Teacher Resources</button>
+                        <button class="nav-button" id="teacher-resources" onclick="show_subnav(event)">Teacher Resources</button>
 
                         <div class="subnav" id="teacher-resources">
                             <a>Student Resources</a>
@@ -97,7 +97,7 @@ $expertise = $result;
                         </div>
                     </li>
                     <li>
-                        <button class="nav-button" id="mte" onclick="show_subnav(this)">Meet The Experts</button>
+                        <button class="nav-button" id="mte" onclick="show_subnav(event)">Meet The Experts</button>
 
                         <div class="subnav" id="mte">
                             <a href="meet-the-experts.php">Meet The Experts</a>
@@ -111,7 +111,7 @@ $expertise = $result;
                     if($logged_in) {
                         echo('
                             <li>
-                                <button class="nav-button" id="my-account" onclick="show_subnav(this)">My Account</button>
+                                <button class="nav-button" id="my-account" onclick="show_subnav(event)">My Account</button>
 
                                 <div class="subnav" id="my-account">
                         ');
