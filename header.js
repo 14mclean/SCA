@@ -16,14 +16,12 @@ function show_sidebar() {
 
 function show_subnav(event) {
     const element = event.target;
-    function handle_close_subnav(event) {
+
+    function handle_close_subnav() {
         const navs = document.querySelectorAll(".subnav");
         for(const nav of navs) {
             close_subnav(nav);
         }
-        
-        // passthrough click event
-        console.log(event);
     }
 
     function open_subnav(nav) {
