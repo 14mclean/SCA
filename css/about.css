@@ -34,10 +34,11 @@ header {
 
 #menu {
     position: absolute;
-    right: 20px;
+    right: 1.25em;
     height: 100%;
     display: inline-block;
-    width: 525px;
+    width: 32.8125em;
+    z-index: 2;
 }
 
 #close-nav {
@@ -63,9 +64,12 @@ header {
     background-color: transparent;
     border-color: transparent;
     color: #ddd;
-    font-size: 14px;
+    font-size: 0.875em;
     font-family: 'Raleway';
     cursor: pointer;
+    position: relative;
+    z-index: 2;
+    font-weight: 600;
 }
 
 .nav-button:hover {
@@ -73,13 +77,13 @@ header {
 }
 
 .nav-button:not(#about,#login)::after {
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #fff;
+    border-left: 0.3125em solid transparent;
+    border-right: 0.3125em solid transparent;
+    border-top: 0.3125em solid #fff;
     content: "";
     display: inline-block;
     height: 0;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125em;
     margin-left: 0.5rem;
     margin-top: 0.15rem;
     position: relative;
@@ -94,21 +98,22 @@ header {
 
 .subnav {
     position: absolute;
-    top: -100px;
+    top: -14em;
     color: #ddd;
-    background-color: #401b57;
-    margin-left: 5px;
-    font-size: 14px;
+    background-color: #6b2c91;
+    font-size: 0.875em;
     font-family: 'Raleway';
-    padding: 15px 10px 20px 10px;
-    z-index: -1;
+    padding: 5.5em 1.2em 1.25em 1.2em;
     box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+    z-index: 1;
+    border-radius: 6px;
+    transition: ease .25s;
 }
 
 .subnav a {
     display: block;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1.25em;
     cursor: pointer;
     width: 100%;
     text-decoration: none;
@@ -123,129 +128,15 @@ header {
     display: none;
 }
 
-main {
-
-}
-
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-    height: 3.125em;
-    background-color: #333333;
-    color: white;
-    font-family: 'Raleway';
+    height: 5em;
 }
 
 footer h1 {
-    font-size: 0.875em;
-    line-height: 3.125em;
-    margin-left: 3.125em;
-    margin-bottom: 0;
-    margin-top: 0;
+    margin-left: 0.9375em;
 }
 
 footer p {
-    font-size: 0.875em;
-    float: left;
-    margin-top: -2.0625em;
-    margin-left: 16.875em;
-}
-
-@media (max-width: 61.875em) {
-    #title-heading {
-        margin-left: 0.9375em;
-        font-size: 1.25em;
-        line-height: 4em;
-    }
-
-    #menu {
-        height: 100vh;
-        width: 11.25em;
-        background-color: #1A1A1A;
-        position: fixed;
-        right: -12.5em;
-        box-shadow:
-            0 1px 1px rgba(0, 0, 0, 0.075),
-            0 2px 2px rgba(0, 0, 0, 0.075),
-            0 4px 4px rgba(0, 0, 0, 0.075),
-            0 8px 8px rgba(0, 0, 0, 0.075),
-            0 16px 16px rgba(0, 0, 0, 0.075);
-        z-index: 1;
-        transition: transform .3s;
-    }
-
-    #close-nav {
-        display: initial;
-        fill: #ddd;
-        width: 1.125em;
-        height: 1.125em;
-        position: fixed;
-        top: 1.875em;
-        right: -4.375em;
-        z-index: 5;
-        transition: transform .3s;
-    }
-
-    #menu ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        gap: 1.875em;
-        height: 70vh;
-        width: 11.25em;
-        position: fixed;
-        top: 6.25em;
-    }
-
-    #menu li {
-        position: relative;
-        left: 0;
-        width: 100%;
-        z-index: -2;
-    }
-
-    .nav-button {
-        position: relative;
-        left: 0.625em;
-    }
-
-    .subnav {
-        display: block;
-        position: relative;
-        top: 0;
-        max-height: 0;
-        overflow: hidden;
-        background-color: #1A1A1A;
-        padding: 0;
-        transition: max-height 0.5s;
-    }
-
-    .subnav a {
-        position: relative;
-        top: 0;
-    }
-
-    #burger {
-        display: initial;
-        fill: #ddd;
-        width: 1.5em;
-        height: 1.5em;
-        position: absolute;
-        top: 1.875em;
-        right: 1.25em;
-    }
-
-    footer {
-        height: 5em;
-    }
-    
-    footer h1 {
-        margin-left: 0.9375em;
-    }
-    
-    footer p {
-        margin-top: 0;
-        margin-left: 0.9375em;
-    }
+    margin-top: 0;
+    margin-left: 0.9375em;
 }
