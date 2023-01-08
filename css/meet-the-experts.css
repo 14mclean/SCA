@@ -4,30 +4,37 @@
 html, body {
     margin: 0;
     width: 100vw;
-    height: fit-content;
+    height: 100vh;
     overflow-x: hidden;
     position: relative;
-    z-index: -10;
 }
 
 header {
+    width: 100vw;
     background-color: #401b57;
-    width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 5em;
-    margin: 0;
-    display: inline-block;
-    margin: 0;
-}
-    header img {
-        height: 80px;
-    }
-
-    #menu {
     position: absolute;
-    right: 2.5em;
+    top: 0;
+    height: 5em;
+}
+
+#title-heading {
+    width: fit-content;
+    height: 100%;
+    margin: 0;
+    margin-left: 1.6em;
+    line-height: 2.5em;
+    display: inline-block;
+}
+
+#title-heading a {
+   color: white; 
+   text-decoration: none;
+   font-family: 'Raleway';
+}
+
+#menu {
+    position: absolute;
+    right: 1.25em;
     height: 100%;
     display: inline-block;
     width: 32.8125em;

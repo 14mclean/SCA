@@ -3,11 +3,10 @@
 
 html, body {
     margin: 0;
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
     overflow-x: hidden;
     position: relative;
-    z-index: -10;
 }
 
 header {
@@ -15,15 +14,15 @@ header {
     background-color: #401b57;
     position: absolute;
     top: 0;
-    height: 80px;
+    height: 5em;
 }
 
 #title-heading {
     width: fit-content;
     height: 100%;
     margin: 0;
-    margin-left: 50px;
-    line-height: 80px;
+    margin-left: 1.6em;
+    line-height: 2.5em;
     display: inline-block;
 }
 
@@ -33,33 +32,9 @@ header {
    font-family: 'Raleway';
 }
 
-html, body {
-    margin: 0;
-    width: 100vw;
-    height: fit-content;
-    overflow-x: hidden;
-    position: relative;
-    z-index: -10;
-}
-
-header {
-    background-color: #401b57;
-    width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 5em;
-    margin: 0;
-    display: inline-block;
-    margin: 0;
-}
-    header img {
-        height: 80px;
-    }
-
-    #menu {
+#menu {
     position: absolute;
-    right: 2.5em;
+    right: 1.25em;
     height: 100%;
     display: inline-block;
     width: 32.8125em;
