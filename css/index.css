@@ -122,7 +122,6 @@ main {
     top: -4px;
     width: 100vw;
     height: fit-content;
-    z-index: -2;
 }
 
 .first-section {
