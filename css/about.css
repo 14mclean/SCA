@@ -15,15 +15,15 @@ header {
     background-color: #401b57;
     position: absolute;
     top: 0;
-    height: 80px;
+    height: 5em;
 }
 
 #title-heading {
     width: fit-content;
     height: 100%;
     margin: 0;
-    margin-left: 50px;
-    line-height: 80px;
+    margin-left: 1.6em;
+    line-height: 2.5em;
     display: inline-block;
 }
 
@@ -35,10 +35,10 @@ header {
 
 #menu {
     position: absolute;
-    right: 20px;
+    right: 1.25em;
     height: 100%;
     display: inline-block;
-    width: 525px;
+    width: 32.8125em;
 }
 
 #close-nav {
@@ -64,7 +64,7 @@ header {
     background-color: transparent;
     border-color: transparent;
     color: #ddd;
-    font-size: 14px;
+    font-size: 0.875em;
     font-family: 'Raleway';
     cursor: pointer;
 }
@@ -74,13 +74,13 @@ header {
 }
 
 .nav-button:not(#about,#login)::after {
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #fff;
+    border-left: 0.3125em solid transparent;
+    border-right: 0.3125em solid transparent;
+    border-top: 0.3125em solid #fff;
     content: "";
     display: inline-block;
     height: 0;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125em;
     margin-left: 0.5rem;
     margin-top: 0.15rem;
     position: relative;
@@ -95,13 +95,13 @@ header {
 
 .subnav {
     position: absolute;
-    top: -100px;
+    top: -6.25em;
     color: #ddd;
     background-color: #401b57;
     margin-left: 5px;
-    font-size: 14px;
+    font-size: 0.875em;
     font-family: 'Raleway';
-    padding: 15px 10px 20px 10px;
+    padding: 0.9375em 0.625em 1.25em 0.625em;
     z-index: -1;
     box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
 }
@@ -109,7 +109,7 @@ header {
 .subnav a {
     display: block;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1.25em;
     cursor: pointer;
     width: 100%;
     text-decoration: none;
@@ -132,39 +132,40 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100vw;
-    height: 50px;
+    height: 3.125em;
     background-color: #333333;
     color: white;
     font-family: 'Raleway';
 }
 
 footer h1 {
-    font-size: 14px;
-    line-height: 50px;
-    margin-left: 50px;
+    font-size: 0.875em;
+    line-height: 3.125em;
+    margin-left: 3.125em;
     margin-bottom: 0;
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 footer p {
-    font-size: 14px;
+    font-size: 0.875em;
     float: left;
-    margin-top: -33px;
-    margin-left: 270px;
+    margin-top: -2.0625em;
+    margin-left: 16.875em;
 }
 
-@media (max-width: 990px) {
+@media (max-width: 61.875em) {
     #title-heading {
-        margin-left: 15px;
-        font-size: 20px;
+        margin-left: 0.9375em;
+        font-size: 1.25em;
+        line-height: 4em;
     }
 
     #menu {
         height: 100vh;
-        width: 180px;
+        width: 11.25em;
         background-color: #1A1A1A;
         position: fixed;
-        right: -200px;
+        right: -12.5em;
         box-shadow:
             0 1px 1px rgba(0, 0, 0, 0.075),
             0 2px 2px rgba(0, 0, 0, 0.075),
@@ -178,11 +179,11 @@ footer p {
     #close-nav {
         display: initial;
         fill: #ddd;
-        width: 18px;
-        height: 18px;
+        width: 1.125em;
+        height: 1.125em;
         position: fixed;
-        top: 30px;
-        right: -70px;
+        top: 1.875em;
+        right: -4.375em;
         z-index: 5;
         transition: transform .3s;
     }
@@ -191,30 +192,30 @@ footer p {
         display: flex;
         flex-direction: column;
         justify-content: start;
-        gap: 30px;
+        gap: 1.875em;
         height: 70vh;
-        width: 180px;
+        width: 11.25em;
         position: fixed;
-        top: 100px;
+        top: 6.25em;
     }
 
     #menu li {
         position: relative;
-        left: 0px;
+        left: 0;
         width: 100%;
         z-index: -2;
     }
 
     .nav-button {
         position: relative;
-        left: 10px;
+        left: 0.625em;
     }
 
     .subnav {
         display: block;
         position: relative;
         top: 0;
-        max-height: 0px;
+        max-height: 0;
         overflow: hidden;
         background-color: #1A1A1A;
         padding: 0;
@@ -223,29 +224,29 @@ footer p {
 
     .subnav a {
         position: relative;
-        top: 0px;
+        top: 0;
     }
 
     #burger {
         display: initial;
         fill: #ddd;
-        width: 24px;
-        height: 24px;
+        width: 1.5em;
+        height: 1.5em;
         position: absolute;
-        top: 30px;
-        right: 20px;
+        top: 1.875em;
+        right: 1.25em;
     }
 
     footer {
-        height: 80px;
+        height: 5em;
     }
     
     footer h1 {
-        margin-left: 15px;
+        margin-left: 0.9375em;
     }
     
     footer p {
-        margin-top: 0px;
-        margin-left: 15px;
+        margin-top: 0;
+        margin-left: 0.9375em;
     }
 }
