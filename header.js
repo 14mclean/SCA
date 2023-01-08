@@ -31,7 +31,10 @@ function show_subnav(element) {
     }
 }
 
-document.querySelector("main").addEventListener("click", () => {
+document.querySelector("header").addEventListener("click", close_all_subnavs);
+document.querySelector("main").addEventListener("click", close_all_subnavs);
+
+function close_all_subnavs() {
     const subnavs = document.querySelectorAll(".subnav");
     for(const nav of subnavs) {
         document.querySelector(".nav-button#" + nav.id).classList.remove("open"); 
@@ -41,7 +44,7 @@ document.querySelector("main").addEventListener("click", () => {
             nav.style.transform = "translateY(0px)";
         }
     }
-});
+}
     
 document.querySelector("#burger").addEventListener("click", show_sidebar);
 document.querySelector("#close-nav").addEventListener("click", show_sidebar);
