@@ -29,7 +29,7 @@ function show_subnav(event) {
         if(window.matchMedia("(max-width: 1000px)").matches) {
             nav.style.maxHeight = "180px";
         } else {
-            nav.style.transform = "translateY(20em)";
+            nav.style.transform = "translateY(19.5em)";
         }
 
         document.querySelector("body").addEventListener("click", handle_close_subnav);
