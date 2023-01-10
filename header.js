@@ -26,10 +26,10 @@ function show_subnav(event) {
 
     function open_subnav(nav) {
         document.querySelector(".nav-button#" + nav.id).classList.add("open");
-        if(window.matchMedia("(max-width: 990px)").matches) {
+        if(window.matchMedia("(max-width: 1000px)").matches) {
             nav.style.maxHeight = "180px";
         } else {
-            nav.style.transform = "translateY(190px)";
+            nav.style.transform = "translateY(20em)";
         }
 
         document.querySelector("body").addEventListener("click", handle_close_subnav);
@@ -37,7 +37,7 @@ function show_subnav(event) {
 
     function close_subnav(nav) {
         document.querySelector(".nav-button#" + nav.id).classList.remove("open"); 
-        if(window.matchMedia("(max-width: 990px)").matches) {
+        if(window.matchMedia("(max-width: 1000px)").matches) {
             nav.style.maxHeight = "0px";
         } else {
             nav.style.transform = "translateY(0px)";
