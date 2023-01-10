@@ -46,6 +46,8 @@ header {
 }
 
 #menu ul {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
