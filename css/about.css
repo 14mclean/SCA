@@ -71,6 +71,7 @@ header {
     position: relative;
     z-index: 2;
     font-weight: 600;
+    width: fit-content;
 }
 
 .nav-button:hover {
