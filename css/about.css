@@ -75,7 +75,7 @@ header {
 }
 
 .nav-button:not(#about,#login) {
-    padding-right: 5px;
+    padding-right: -5px;
 }
 
 .nav-button:hover {
