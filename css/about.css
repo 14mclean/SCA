@@ -132,6 +132,12 @@ header {
     display: none;
 }
 
+main {
+    position: relative;
+    top: 5em;
+    height: 100vh;
+}
+
 footer {
     position: absolute;
     bottom: 0;
