@@ -51,6 +51,7 @@ header {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+
     -webkit-box-orient: horizontal;
     -moz-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -58,11 +59,11 @@ header {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;  
+
     flex-grow: 0;
     flex-shrink: 1;
     flex-wrap: nowrap;
 
-    flex-flow: row wrap;
     justify-content: space-around;
     height: 100%;
     width: 100%;
