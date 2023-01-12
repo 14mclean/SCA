@@ -17,7 +17,7 @@ header {
     height: 5em;
 }
 
-header #title-heading {
+#title-heading {
     width: fit-content;
     height: 100%;
     margin: 0;
@@ -26,7 +26,7 @@ header #title-heading {
     display: inline-block;
 }
 
-header #title-heading a {
+#title-heading a {
    color: white; 
    text-decoration: none;
    font-family: 'Raleway';
@@ -41,15 +41,15 @@ header #title-heading a {
     z-index: 2;
 }
 
-header .open-sidebar#menu {
+.open-sidebar#menu {
     transform: translateX(-200px);
 }
 
-header #close-nav {
+#close-nav {
     display: none;
 }
 
-header .open-sidebar#close-nav {
+.open-sidebar#close-nav {
     transform: translateX(-200px);
 }
 
@@ -176,11 +176,11 @@ footer p {
 }
 
 @media only screen and (max-width: 1000px) {
-    header #title-heading {
+    #title-heading {
         margin-left: 5%;
     }
     
-    header #title-heading a {
+    #title-heading a {
        font-size: 80%;
     }
 
@@ -267,7 +267,7 @@ footer p {
 }
 
 @media only screen and (max-width: 500px) {
-    header #title-heading a {
+    #title-heading a {
         font-size: 5vw;
     }
 
