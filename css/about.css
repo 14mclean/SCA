@@ -17,7 +17,7 @@ header {
     height: 5em;
 }
 
-#title-heading {
+header #title-heading {
     width: fit-content;
     height: 100%;
     margin: 0;
@@ -26,7 +26,7 @@ header {
     display: inline-block;
 }
 
-#title-heading a {
+header #title-heading a {
    color: white; 
    text-decoration: none;
    font-family: 'Raleway';
@@ -41,11 +41,19 @@ header {
     z-index: 2;
 }
 
-#close-nav {
+header .open-sidebar#menu {
+    transform: translateX(-200px);
+}
+
+header #close-nav {
     display: none;
 }
 
-#menu ul {
+header .open-sidebar#close-nav {
+    transform: translateX(-200px);
+}
+
+#nav-list {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
@@ -57,7 +65,7 @@ header {
     padding: 0;
 }
 
-#menu ul li {
+#nav-list li {
     list-style: none;
 }
 
@@ -79,7 +87,7 @@ header {
     color: white;
 }
 
-.nav-button:not(#about,#login)::after {
+.nav-button.collapsable::after {
     border-left: 0.3125em solid transparent;
     border-right: 0.3125em solid transparent;
     border-top: 0.3125em solid #fff;
@@ -95,7 +103,7 @@ header {
     width: 0;
 }
 
-.nav-button.open:not(#about,#login)::after {
+.nav-button.collapsable.open::after {
     transform: rotate(180deg);
 }
 
@@ -111,6 +119,11 @@ header {
     z-index: 1;
     border-radius: 6px;
     transition: ease .3s;
+    transform: translateY(0em);
+}
+
+.subnav.open {
+    transform: translateY(19.5em);
 }
 
 .subnav a {
@@ -147,7 +160,7 @@ footer {
     font-family: 'Raleway';
 }
 
-footer h1 {
+footer h2 {
     font-size: 14px;
     line-height: 50px;
     margin-left: 50px;
@@ -163,6 +176,14 @@ footer p {
 }
 
 @media only screen and (max-width: 1000px) {
+    #title-heading {
+        margin-left: 5%;
+    }
+    
+    #title-heading a {
+       font-size: 80%;
+    }
+
     #menu {
         height: 100vh;
         width: 180px;
@@ -191,7 +212,7 @@ footer p {
         transition: transform .3s;
     }
 
-    #menu ul {
+    #nav-list {
         display: flex;
         flex-direction: column;
         justify-content: start;
@@ -225,6 +246,10 @@ footer p {
         transition: max-height 0.5s;
     }
 
+    .subnav.open {
+        max-height: 180px;
+    }
+
     .subnav a {
         position: relative;
         top: 0px;
@@ -242,11 +267,15 @@ footer p {
 }
 
 @media only screen and (max-width: 500px) {
+    #title-heading a {
+        font-size: 5vw;
+    }
+
     footer {
         height: 80px;
     }
     
-    footer h1 {
+    footer h2 {
         margin-left: 15px;
     }
     

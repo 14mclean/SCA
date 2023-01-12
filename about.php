@@ -9,7 +9,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,9 @@
 
     <body>
         <header>
-            <h1 id="title-heading"><a href="/">School Citizen Assemblies</a></h1>
+            <h1 id="title-heading">
+                <a href="/">School Citizen Assemblies</a>
+            </h1>
 
             <nav id="menu">
                 <svg id="close-nav" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" overflow="visible" stroke="#ddd" stroke-width="6" stroke-linecap="round">
@@ -28,27 +30,33 @@
                     <line x1="50" y2="50" />
                  </svg>
 
-                <ul>
+                <ul id="nav-list">
                     <li>
-                    <button class="nav-button" id="about" onclick="location.href='about.php';">About Us</button>
+                        <button class="nav-button" id="about">About Us</button>
                     </li>
-                    <li>
-                        <button class="nav-button" id="teacher-resources" onclick="show_subnav(event)">Teacher Resources</button>
 
-                        <div class="subnav" id="teacher-resources">
-                            <a>Student Resources</a>
-                            <a>Teacher Resources</a>
-                            <a>SCA Toolkit</a>
-                        </div>
+                    <li>
+                        <button class="nav-button collapsable" id="teacher-resources">Teacher Resources</button>
+
+                        <ul class="subnav" id="teacher-resources">
+                            <li><a>Student Resources</a></li>
+                            <li><a>Teacher Resources</a></li>
+                            <li><a>SCA Toolkit</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <button class="nav-button" id="mte" onclick="show_subnav(event)">Meet The Experts</button>
 
-                        <div class="subnav" id="mte">
-                            <a href="meet-the-experts.php">Meet The Experts</a>
-                            <a href="expert-resources.php">Expert Resources</a>
-                            <a href="directory.php">Directory</a>
-                        </div>
+                    <li>
+                        <button class="nav-button collapsable" id="mte">Meet The Experts</button>
+
+                        <ul class="subnav" id="mte">
+                            <li><a href="meet-the-experts.php">Meet The Experts</a></li>
+                            <li><a href="expert-resources.php">Expert Resources</a></li>
+                            <li><a href="directory.php">Directory</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <button onclick="location.href='login.html';" class="nav-button" id="login">Login</button>
                     </li>
 
                     <?php
@@ -56,7 +64,7 @@
                     if($logged_in) {
                         echo('
                             <li>
-                                <button class="nav-button" id="my-account" onclick="show_subnav(event)">My Account</button>
+                                <button class="nav-button" id="my-account">My Account</button>
 
                                 <div class="subnav" id="my-account">
                         ');
@@ -72,7 +80,7 @@
                     } else {
                         echo('
                             <li>
-                                <button onclick="location.href=\'login.html\';" class="nav-button" id="login">Login</button>
+                                <button class="nav-button" id="login">Login</button>
                             </li>
                         ');
                     }
@@ -91,11 +99,11 @@
         </main>
 
         <footer>
-            <h1>School Citizen Assemblies</h1>
+            <h2>© School Citizen Assemblies</h2>
 
             <p>info@schoolcitizenassemblies.org</p>
         </footer>
-    </body>
 
-    <script src="header.js"></script>
+        <script src="javascript/header.js"></script>
+    </body>
 </html>
