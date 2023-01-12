@@ -53,11 +53,6 @@
                             <li><a href="expert-resources.php">Expert Resources</a></li>
                             <li><a href="directory.php">Directory</a></li>
                         </ul>
-                    </li>
-
-                    <li>
-                        <button onclick="location.href='login.html';" class="nav-button" id="login">Login</button>
-                    </li>
 
                     <?php
 
