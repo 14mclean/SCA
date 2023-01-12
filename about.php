@@ -59,7 +59,7 @@
                     if($logged_in) {
                         echo('
                             <li>
-                                <button class="nav-button" id="my-account">My Account</button>
+                                <button class="nav-button collapsable" id="my-account">My Account</button>
 
                                 <div class="subnav" id="my-account">
                         ');
