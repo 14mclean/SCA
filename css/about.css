@@ -248,6 +248,7 @@ footer p {
 
     .subnav.open {
         max-height: 180px;
+        transform: translateY(0);
     }
 
     .subnav a {
