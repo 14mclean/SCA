@@ -176,11 +176,11 @@ footer p {
 }
 
 @media only screen and (max-width: 1000px) {
-    #title-heading {
+    header #title-heading {
         margin-left: 5%;
     }
     
-    #title-heading a {
+    header #title-heading a {
        font-size: 80%;
     }
 
@@ -267,7 +267,7 @@ footer p {
 }
 
 @media only screen and (max-width: 500px) {
-    #title-heading a {
+    header #title-heading a {
         font-size: 5vw;
     }
 
