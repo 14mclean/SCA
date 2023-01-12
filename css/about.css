@@ -120,6 +120,7 @@ header .open-sidebar#close-nav {
     border-radius: 6px;
     transition: ease .3s;
     transform: translateY(0em);
+    min-width: 76px;
 }
 
 .subnav.open {
