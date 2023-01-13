@@ -154,7 +154,7 @@ mail( // send email
     $data["email"],
     "School Citizen Assemblies Email Verification",
     $message,
-    "From: SCA <no-reply@schoolcitizenassemblies.org>\r\nMIME-Version: 1.0\r\nContent-Type: text/html; charset=UTF-8\r\n"
+    "From: SCA <hello@schoolcitizenassemblies.org>\r\nMIME-Version: 1.0\r\nContent-Type: text/html; charset=UTF-8\r\n"
 );
 
 $statement = $connection->prepare("INSERT INTO Email_Code (user_id,code) VALUES (:user_id, :code)");
