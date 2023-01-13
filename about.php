@@ -96,7 +96,7 @@
         <footer>
             <h2>© School Citizen Assemblies</h2>
 
-            <p>info@schoolcitizenassemblies.org</p>
+            <p>support@schoolcitizenassemblies.org</p>
         </footer>
 
         <script src="javascript/header.js"></script>
