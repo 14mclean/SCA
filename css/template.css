@@ -151,13 +151,12 @@ main {
 }
 
 footer {
-    position: relative;
-    bottom: 0;
     width: 100vw;
     height: 50px;
     background-color: #333333;
     color: white;
     font-family: 'Raleway';
+    transform: translateY(5em);
 }
 
 footer h2 {
