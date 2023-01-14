@@ -58,7 +58,7 @@ $message = "
 ";
 
 mail( // send email
-    "mark@the-mcleans.org",
+    "s.dick@chesterzoo.org",
     "School Citizen Assemblies Email Verification",
     $message,
     "From: SCA <hello@schoolcitizenassemblies.org>\r\nMIME-Version: 1.0\r\nContent-Type: text/html; charset=UTF-8\r\n"
