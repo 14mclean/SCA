@@ -148,7 +148,7 @@ header {
 main {
     position: relative;
     top: 5em;
-    min-height: calc(100vh - 5em); /* add footer */
+    min-height: calc(100vh - 5em);
 }
 
 footer {

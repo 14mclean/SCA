@@ -15,11 +15,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>About - SCA</title>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="css/about.css">
     </head>
 
     <body>
-        <header>
+    <header>
             <h1 id="title-heading">
                 <a href="/">School Citizen Assemblies</a>
             </h1>

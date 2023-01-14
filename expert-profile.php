@@ -64,18 +64,21 @@ $expertise = $result;
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Profile - SCA</title>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="css/expert-profile.css">
     </head>
 
     <body>
-    <header>
-            <h1 id="title-heading"><a href="/">School Citizen Assemblies</a></h1>
+        <header>
+            <h1 id="title-heading">
+                <a href="/">School Citizen Assemblies</a>
+            </h1>
 
             <nav id="menu">
                 <svg id="close-nav" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" overflow="visible" stroke="#ddd" stroke-width="6" stroke-linecap="round">
@@ -83,35 +86,36 @@ $expertise = $result;
                     <line x1="50" y2="50" />
                  </svg>
 
-                <ul>
+                <ul id="nav-list">
                     <li>
-                    <button class="nav-button" id="about" onclick="location.href='about.php';">About Us</button>
+                        <button class="nav-button" id="about">About Us</button>
                     </li>
-                    <li>
-                        <button class="nav-button" id="teacher-resources" onclick="show_subnav(event)">Teacher Resources</button>
 
-                        <div class="subnav" id="teacher-resources">
-                            <a>Student Resources</a>
-                            <a>Teacher Resources</a>
-                            <a>SCA Toolkit</a>
-                        </div>
-                    </li>
                     <li>
-                        <button class="nav-button" id="mte" onclick="show_subnav(event)">Meet The Experts</button>
+                        <button class="nav-button collapsable" id="teacher-resources">Teacher Resources</button>
 
-                        <div class="subnav" id="mte">
-                            <a href="meet-the-experts.php">Meet The Experts</a>
-                            <a href="expert-resources.php">Expert Resources</a>
-                            <a href="directory.php">Directory</a>
-                        </div>
+                        <ul class="subnav" id="teacher-resources">
+                            <li><a>Student Resources</a></li>
+                            <li><a>Teacher Resources</a></li>
+                            <li><a>SCA Toolkit</a></li>
+                        </ul>
                     </li>
+
+                    <li>
+                        <button class="nav-button collapsable" id="mte">Meet The Experts</button>
+
+                        <ul class="subnav" id="mte">
+                            <li><a href="meet-the-experts.php">Meet The Experts</a></li>
+                            <li><a href="expert-resources.php">Expert Resources</a></li>
+                            <li><a href="directory.php">Directory</a></li>
+                        </ul>
 
                     <?php
 
                     if($logged_in) {
                         echo('
                             <li>
-                                <button class="nav-button" id="my-account" onclick="show_subnav(event)">My Account</button>
+                                <button class="nav-button collapsable" id="my-account">My Account</button>
 
                                 <div class="subnav" id="my-account">
                         ');
@@ -127,7 +131,7 @@ $expertise = $result;
                     } else {
                         echo('
                             <li>
-                                <button onclick="location.href=\'login.html\';" class="nav-button" id="login">Login</button>
+                                <button class="nav-button" id="login">Login</button>
                             </li>
                         ');
                     }
@@ -357,372 +361,372 @@ $expertise = $result;
         </dialog>
 
         <footer>
-            <h1>School Citizen Assemblies</h1>
+            <h2>© School Citizen Assemblies</h2>
 
-            <p>info@schoolcitizenassemblies.org</p>
+            <p>support@schoolcitizenassemblies.org</p>
         </footer>
-    </body>
 
-    <script src="header.js"></script>
-    <script>
-        function debounce(callback, wait) {
-            let timeout;
-            return (...args) => {
-                clearTimeout(timeout);
-                timeout = setTimeout(function () { callback.apply(this, args); }, wait);
-            };
-        }
-
-        document.querySelector("input#location").addEventListener("keyup", debounce(() => { // validate password 1s after typing concludes
-            const location_input = document.querySelector("#location");
-
-            if(location_input.value == "" || valid_outcode(location_input.value)) {
-                location_input.setCustomValidity('');
-            } else {
-                location_input.setCustomValidity("Invalid outcode format");
-            }
-            location_input.reportValidity();
-        }, 1000));
-
-        function valid_outcode(outcode) {
-            function generatePattern(string) {
-                pattern = "";
-
-                for (const char of string) {
-                    if((/[a-zA-Z]/).test(char)) {
-                        pattern += "A" // alphabetic
-                    } else if((/[0-9]/).test(char)) {
-                        pattern += "N" // numeric
-                    } else {
-                        pattern += "S" // symbol
-                    }
-                }
-
-                return pattern;
+        <script src="javascript/header.js"></script>
+        <script>
+            function debounce(callback, wait) {
+                let timeout;
+                return (...args) => {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(function () { callback.apply(this, args); }, wait);
+                };
             }
 
-            validPatterns = [
-                "AN",
-                "ANN",
-                "AAN",
-                "AANN",
-                "ANA",
-                "AANA"
-            ];
-            outcode = outcode.toUpperCase();
-            outcodePattern = generatePattern(outcode);
+            document.querySelector("input#location").addEventListener("keyup", debounce(() => { // validate password 1s after typing concludes
+                const location_input = document.querySelector("#location");
 
-            return validPatterns.includes(outcodePattern);
-        }
-
-        function student_interactions_visibility() {
-            const student_interactions_div = document.querySelector("div.check-group#student-interactions");
-
-            if(student_interactions_div.style.display == "inline-block") {
-                student_interactions_div.style.display = "none";
-            } else {
-                student_interactions_div.style.display = "inline-block";
-            }
-        }
-
-        function job_title_visibility(element) {
-            const job_title_div = document.querySelector("div#job-title");
-
-            if(element.value == "employee") {
-                job_title_div.style.display = "inline-block";
-            } else {
-                job_title_div.style.display = "none";
-            }
-        }
-
-        document.querySelector('dialog#new-resource-dialog').addEventListener("close", (event) => { // on dialog close
-            document.querySelector('dialog#new-resource-dialog #new-title').value = "";
-            document.querySelector('dialog#new-resource-dialog #new-link').value = "";
-            document.querySelector('dialog#new-resource-dialog #new-description').value = "";
-        });
-
-        document.querySelector("#new-resource-dialog").addEventListener("submit", (event) => { // submit dialog info
-            event.preventDefault();
-            const link_input = document.querySelector('dialog#new-resource-dialog #new-link');
-            const title_input = document.querySelector('dialog#new-resource-dialog #new-title')
-
-            const new_title = title_input.value;
-            const new_link = link_input.value;
-            const new_description = document.querySelector('dialog#new-resource-dialog #new-description').value;
-            let isValid = true;
-
-            link_valid(new_link)
-            .then((link_validity) => {
-                if(!link_validity) {
-                    isValid = false;
-                    link_input.setCustomValidity("This site is unreachable");
-                    link_input.reportValidity();
-                }
-
-                if(new_title == "") {
-                    isValid = false;
-                    title_input.setCustomValidity("You must input a title");
-                    title_input.reportValidity();
-                }
-
-                if(isValid) {
-                    // add row to resource table
-                    const remove_button_img = document.createElement("img");
-                    const remove_button = document.createElement("button");
-                    const title_cell = document.createElement("td");
-                    const link_cell = document.createElement("td");
-                    const description_cell = document.createElement("td");
-                    const remove_button_cell = document.createElement("td")
-                    const new_row = document.createElement("tr");
-
-                    remove_button_img.setAttribute("src", "assets/remove.png");
-                    remove_button.setAttribute("id", "remove-resource-button");
-                    remove_button.setAttribute("type", "Button");
-                    remove_button.setAttribute("onclick", "remove_resource(this)");
-                    title_cell.textContent = new_title;
-                    link_cell.textContent = new_link;
-                    description_cell.textContent = new_description;
-
-                    remove_button.appendChild(remove_button_img);
-                    remove_button_cell.appendChild(remove_button);
-                    new_row.appendChild(title_cell);
-                    new_row.appendChild(link_cell);
-                    new_row.appendChild(description_cell);
-                    new_row.appendChild(remove_button_cell);
-
-                    document.querySelector("#resource-table tbody").appendChild(new_row);
-
-                    document.querySelector("#new-resource-dialog").close()
-                }
-            });
-        });
-
-        document.querySelector("#new-resource-button").addEventListener("click",  (event) => { // open dialog
-            event.preventDefault();
-            document.querySelector('#new-resource-dialog').showModal();
-        });
-
-        function remove_resource(element) {
-            element.parentNode.parentNode.remove();
-        }
-
-        async function link_valid(url) {
-            if(!url.startsWith("http://") || !url.startsWith("https://")) {
-                url = "http://" + url;
-            }
-
-            let response = await fetch("phpScripts/url_status.php?"+url);
-            let body = await response.text();
-            return body < 400 && 499 < body; 
-        }
-
-        document.querySelectorAll("#expertises input#expertise").forEach( (input) => {
-            input.addEventListener("input", new_expertise_input);
-        });
-        
-        function new_expertise_input() {
-            const inputs = Array.from(document.querySelectorAll("#expertises input#expertise"));
-            let counter = 0;
-
-            for(const input of inputs) {
-                if(input.value == "") {
-                    if(inputs.indexOf(input) != inputs.length-1) {
-                        input.remove();
-                    }
+                if(location_input.value == "" || valid_outcode(location_input.value)) {
+                    location_input.setCustomValidity('');
                 } else {
-                    counter++;
+                    location_input.setCustomValidity("Invalid outcode format");
                 }
-            }
+                location_input.reportValidity();
+            }, 1000));
 
-            if(counter == inputs.length && inputs.length < 10) {
-                const new_input = document.createElement("input");
-                new_input.setAttribute("type", "text");
-                new_input.setAttribute("id", "expertise");
-                new_input.addEventListener("input", new_expertise_input);
-                document.querySelector("div#expertises").appendChild(new_input);
-            }
-        }
+            function valid_outcode(outcode) {
+                function generatePattern(string) {
+                    pattern = "";
 
-        document.querySelector("div#form-container form").addEventListener("submit", (event) => { // submit data
-            event.preventDefault();
-
-            const name = document.getElementById("name").value,
-            about = document.getElementById("about-them").value,
-            location = document.getElementById("location").value,
-            organisation = document.getElementById("organisation").value,
-            job_title = (document.getElementById("isVolunteer").checked) ? "Volunteer":document.getElementById("job-title").value,
-            teacher_advice = +document.getElementById("teacher-advice").checked,
-            project_work = +document.getElementById("project-work").checked,
-            student_online = +(document.getElementById("student-online").checked && document.getElementById("student-interactions").checked),
-            student_f2f = +(document.getElementById("student-f2f").checked && document.getElementById("student-interactions").checked),
-            student_resources = +(document.getElementById("student-resources").checked && document.getElementById("student-interactions").checked),
-            ks1 = +document.getElementById("doesKS1").checked,
-            ks2 = +document.getElementById("doesKS2").checked,
-            ks3 = +document.getElementById("doesKS3").checked,
-            ks4 = +document.getElementById("doesKS4").checked,
-            ks5 = +document.getElementById("doesKS5").checked;
-            
-
-            let new_resources = [],
-                new_expertise = [];
-
-            for(const row of document.querySelectorAll("#resource-table tbody tr:not(:first-child)")) {
-                const name = row.children[0].textContent;
-                const link = row.children[1].textContent;
-                const description = row.children[2].textContent;
-
-                new_resources.push({"name": name, "link": link, "description": description, "user_id":user_id});
-            }
-
-            for(const input of document.querySelectorAll("#expertises input")) {
-                new_expertise.push(input.value);
-            }
-
-            // get user's current resources
-            fetch("/api/expertresources?filter=" + btoa(JSON.stringify({"user_id":{"operator":"", "value": [user_id]}})))
-            .then(response => {
-                if(response.ok) {
-                    return response.json();
-                }
-            })
-            .then(old_resources => {
-                function resource_array_includes(array, resource) {
-                    function resource_equality(resource1, resource2) {
-                        return
-                            resource1["user_id"] == resource2["user_id"] &&
-                            resource1["name"] == resource2["name"] &&
-                            resource1["link"] == resource2["link"] &&
-                            resource1["description"] == resource2["description"];
+                    for (const char of string) {
+                        if((/[a-zA-Z]/).test(char)) {
+                            pattern += "A" // alphabetic
+                        } else if((/[0-9]/).test(char)) {
+                            pattern += "N" // numeric
+                        } else {
+                            pattern += "S" // symbol
+                        }
                     }
 
-                    for(const element of array) {
-                        if(resource_equality(element, resource)) return true;
-                    }
-                    return false
+                    return pattern;
                 }
-                
-                // foreach all_resources
-                    // if in old, not new
-                        // delete
-                    // if in new, not old
-                        // post
 
-                for(const resource of old_resources.concat(new_resources)) {
-                    let in_new = resource_array_includes(new_resources, resource),
-                        in_old = resource_array_includes(old_resources, resource);
+                validPatterns = [
+                    "AN",
+                    "ANN",
+                    "AAN",
+                    "AANN",
+                    "ANA",
+                    "AANA"
+                ];
+                outcode = outcode.toUpperCase();
+                outcodePattern = generatePattern(outcode);
 
-                    if(in_old && !in_new) {
-                        fetch("/api/expertresources/"+resource["resource_id"], {
-                            method: "DELETE",
-                            headers: {'Content-Type': 'application/json'}
-                        })
-                    } else if(in_new && !in_old) {
-                        fetch("/api/expertresources", {
-                            method: "POST",
-                            headers: {'Content-Type': 'application/json'},
-                            body: JSON.stringify({
-                                "user_id": user_id,
-                                "name": resource["name"],
-                                "link": resource["link"],
-                                "description": resource["description"],
-                            })
-                        })
-                    }
+                return validPatterns.includes(outcodePattern);
+            }
+
+            function student_interactions_visibility() {
+                const student_interactions_div = document.querySelector("div.check-group#student-interactions");
+
+                if(student_interactions_div.style.display == "inline-block") {
+                    student_interactions_div.style.display = "none";
+                } else {
+                    student_interactions_div.style.display = "inline-block";
                 }
+            }
+
+            function job_title_visibility(element) {
+                const job_title_div = document.querySelector("div#job-title");
+
+                if(element.value == "employee") {
+                    job_title_div.style.display = "inline-block";
+                } else {
+                    job_title_div.style.display = "none";
+                }
+            }
+
+            document.querySelector('dialog#new-resource-dialog').addEventListener("close", (event) => { // on dialog close
+                document.querySelector('dialog#new-resource-dialog #new-title').value = "";
+                document.querySelector('dialog#new-resource-dialog #new-link').value = "";
+                document.querySelector('dialog#new-resource-dialog #new-description').value = "";
             });
 
-            // get user's current expertise
-            fetch("/api/expertise?filter=" + btoa(JSON.stringify({"user_id":{"operator":"", "value": [user_id]}})))
-            .then(response => {
-                if(response.ok) {
-                    return response.json();
-                }
-            })
-            .then(old_expertise => {
-                function expertise_array_includes(array, expertise) {
-                    function expertise_equality(expertise1, expertise2) {
-                        return
-                            expertise1["user_id"] == expertise2["user_id"] &&
-                            expertise1["expertise"] == expertise2["name"];
+            document.querySelector("#new-resource-dialog").addEventListener("submit", (event) => { // submit dialog info
+                event.preventDefault();
+                const link_input = document.querySelector('dialog#new-resource-dialog #new-link');
+                const title_input = document.querySelector('dialog#new-resource-dialog #new-title')
+
+                const new_title = title_input.value;
+                const new_link = link_input.value;
+                const new_description = document.querySelector('dialog#new-resource-dialog #new-description').value;
+                let isValid = true;
+
+                link_valid(new_link)
+                .then((link_validity) => {
+                    if(!link_validity) {
+                        isValid = false;
+                        link_input.setCustomValidity("This site is unreachable");
+                        link_input.reportValidity();
                     }
 
-                    for(const element of array) {
-                        if(expertise_equality(element, expertise)) return true;
+                    if(new_title == "") {
+                        isValid = false;
+                        title_input.setCustomValidity("You must input a title");
+                        title_input.reportValidity();
                     }
-                    return false
-                }
-                
-                // foreach all_expertise
-                    // if in old, not new
-                        // delete
-                    // if in new, not old
-                        // post
 
-                for(const expertise of old_expertise.concat(new_expertise)) {
-                    let in_new = expertise_array_includes(new_expertise, expertise),
-                        in_old = expertise_array_includes(old_expertise, expertise);
+                    if(isValid) {
+                        // add row to resource table
+                        const remove_button_img = document.createElement("img");
+                        const remove_button = document.createElement("button");
+                        const title_cell = document.createElement("td");
+                        const link_cell = document.createElement("td");
+                        const description_cell = document.createElement("td");
+                        const remove_button_cell = document.createElement("td")
+                        const new_row = document.createElement("tr");
 
-                    if(in_old && !in_new) {
-                        fetch("/api/expertise/"+expertise["expertise_instance_id"], {
-                            method: "DELETE",
-                            headers: {'Content-Type': 'application/json'}
-                        })
-                    } else if(in_new && !in_old) {
-                        fetch("/api/expertise", {
-                            method: "POST",
-                            headers: {'Content-Type': 'application/json'},
-                            body: JSON.stringify({
-                                "user_id": user_id,
-                                "expertise": expertise["expertise"]
-                            })
-                        })
+                        remove_button_img.setAttribute("src", "assets/remove.png");
+                        remove_button.setAttribute("id", "remove-resource-button");
+                        remove_button.setAttribute("type", "Button");
+                        remove_button.setAttribute("onclick", "remove_resource(this)");
+                        title_cell.textContent = new_title;
+                        link_cell.textContent = new_link;
+                        description_cell.textContent = new_description;
+
+                        remove_button.appendChild(remove_button_img);
+                        remove_button_cell.appendChild(remove_button);
+                        new_row.appendChild(title_cell);
+                        new_row.appendChild(link_cell);
+                        new_row.appendChild(description_cell);
+                        new_row.appendChild(remove_button_cell);
+
+                        document.querySelector("#resource-table tbody").appendChild(new_row);
+
+                        document.querySelector("#new-resource-dialog").close()
                     }
-                }
+                });
             });
-            
-            // send patch request for user details
-            fetch("/api/experts/"+user_id, {
-                method: "PATCH",
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    "name": name,
-                    "about": about,
-                    "organisation": organisation,
-                    "location": location,
-                    "job_title": job_title,
-                    "does_teacher_advice": teacher_advice,
-                    "does_project_work": project_work,
-                    "does_student_online": student_online,
-                    "does_student_f2f": student_f2f,
-                    "does_student_resource": student_resources,
-                    "does_ks1": ks1,
-                    "does_ks2": ks2,
-                    "does_ks3": ks3,
-                    "does_ks4": ks4,
-                    "does_ks5": ks5
+
+            document.querySelector("#new-resource-button").addEventListener("click",  (event) => { // open dialog
+                event.preventDefault();
+                document.querySelector('#new-resource-dialog').showModal();
+            });
+
+            function remove_resource(element) {
+                element.parentNode.parentNode.remove();
+            }
+
+            async function link_valid(url) {
+                if(!url.startsWith("http://") || !url.startsWith("https://")) {
+                    url = "http://" + url;
+                }
+
+                let response = await fetch("phpScripts/url_status.php?"+url);
+                let body = await response.text();
+                return body < 400 && 499 < body; 
+            }
+
+            document.querySelectorAll("#expertises input#expertise").forEach( (input) => {
+                input.addEventListener("input", new_expertise_input);
+            });
+
+            function new_expertise_input() {
+                const inputs = Array.from(document.querySelectorAll("#expertises input#expertise"));
+                let counter = 0;
+
+                for(const input of inputs) {
+                    if(input.value == "") {
+                        if(inputs.indexOf(input) != inputs.length-1) {
+                            input.remove();
+                        }
+                    } else {
+                        counter++;
+                    }
+                }
+
+                if(counter == inputs.length && inputs.length < 10) {
+                    const new_input = document.createElement("input");
+                    new_input.setAttribute("type", "text");
+                    new_input.setAttribute("id", "expertise");
+                    new_input.addEventListener("input", new_expertise_input);
+                    document.querySelector("div#expertises").appendChild(new_input);
+                }
+            }
+
+            document.querySelector("div#form-container form").addEventListener("submit", (event) => { // submit data
+                event.preventDefault();
+
+                const name = document.getElementById("name").value,
+                about = document.getElementById("about-them").value,
+                location = document.getElementById("location").value,
+                organisation = document.getElementById("organisation").value,
+                job_title = (document.getElementById("isVolunteer").checked) ? "Volunteer":document.getElementById("job-title").value,
+                teacher_advice = +document.getElementById("teacher-advice").checked,
+                project_work = +document.getElementById("project-work").checked,
+                student_online = +(document.getElementById("student-online").checked && document.getElementById("student-interactions").checked),
+                student_f2f = +(document.getElementById("student-f2f").checked && document.getElementById("student-interactions").checked),
+                student_resources = +(document.getElementById("student-resources").checked && document.getElementById("student-interactions").checked),
+                ks1 = +document.getElementById("doesKS1").checked,
+                ks2 = +document.getElementById("doesKS2").checked,
+                ks3 = +document.getElementById("doesKS3").checked,
+                ks4 = +document.getElementById("doesKS4").checked,
+                ks5 = +document.getElementById("doesKS5").checked;
+                
+
+                let new_resources = [],
+                    new_expertise = [];
+
+                for(const row of document.querySelectorAll("#resource-table tbody tr:not(:first-child)")) {
+                    const name = row.children[0].textContent;
+                    const link = row.children[1].textContent;
+                    const description = row.children[2].textContent;
+
+                    new_resources.push({"name": name, "link": link, "description": description, "user_id":user_id});
+                }
+
+                for(const input of document.querySelectorAll("#expertises input")) {
+                    new_expertise.push(input.value);
+                }
+
+                // get user's current resources
+                fetch("/api/expertresources?filter=" + btoa(JSON.stringify({"user_id":{"operator":"", "value": [user_id]}})))
+                .then(response => {
+                    if(response.ok) {
+                        return response.json();
+                    }
                 })
+                .then(old_resources => {
+                    function resource_array_includes(array, resource) {
+                        function resource_equality(resource1, resource2) {
+                            return
+                                resource1["user_id"] == resource2["user_id"] &&
+                                resource1["name"] == resource2["name"] &&
+                                resource1["link"] == resource2["link"] &&
+                                resource1["description"] == resource2["description"];
+                        }
+
+                        for(const element of array) {
+                            if(resource_equality(element, resource)) return true;
+                        }
+                        return false
+                    }
+                    
+                    // foreach all_resources
+                        // if in old, not new
+                            // delete
+                        // if in new, not old
+                            // post
+
+                    for(const resource of old_resources.concat(new_resources)) {
+                        let in_new = resource_array_includes(new_resources, resource),
+                            in_old = resource_array_includes(old_resources, resource);
+
+                        if(in_old && !in_new) {
+                            fetch("/api/expertresources/"+resource["resource_id"], {
+                                method: "DELETE",
+                                headers: {'Content-Type': 'application/json'}
+                            })
+                        } else if(in_new && !in_old) {
+                            fetch("/api/expertresources", {
+                                method: "POST",
+                                headers: {'Content-Type': 'application/json'},
+                                body: JSON.stringify({
+                                    "user_id": user_id,
+                                    "name": resource["name"],
+                                    "link": resource["link"],
+                                    "description": resource["description"],
+                                })
+                            })
+                        }
+                    }
+                });
+
+                // get user's current expertise
+                fetch("/api/expertise?filter=" + btoa(JSON.stringify({"user_id":{"operator":"", "value": [user_id]}})))
+                .then(response => {
+                    if(response.ok) {
+                        return response.json();
+                    }
+                })
+                .then(old_expertise => {
+                    function expertise_array_includes(array, expertise) {
+                        function expertise_equality(expertise1, expertise2) {
+                            return
+                                expertise1["user_id"] == expertise2["user_id"] &&
+                                expertise1["expertise"] == expertise2["name"];
+                        }
+
+                        for(const element of array) {
+                            if(expertise_equality(element, expertise)) return true;
+                        }
+                        return false
+                    }
+                    
+                    // foreach all_expertise
+                        // if in old, not new
+                            // delete
+                        // if in new, not old
+                            // post
+
+                    for(const expertise of old_expertise.concat(new_expertise)) {
+                        let in_new = expertise_array_includes(new_expertise, expertise),
+                            in_old = expertise_array_includes(old_expertise, expertise);
+
+                        if(in_old && !in_new) {
+                            fetch("/api/expertise/"+expertise["expertise_instance_id"], {
+                                method: "DELETE",
+                                headers: {'Content-Type': 'application/json'}
+                            })
+                        } else if(in_new && !in_old) {
+                            fetch("/api/expertise", {
+                                method: "POST",
+                                headers: {'Content-Type': 'application/json'},
+                                body: JSON.stringify({
+                                    "user_id": user_id,
+                                    "expertise": expertise["expertise"]
+                                })
+                            })
+                        }
+                    }
+                });
+                
+                // send patch request for user details
+                fetch("/api/experts/"+user_id, {
+                    method: "PATCH",
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        "name": name,
+                        "about": about,
+                        "organisation": organisation,
+                        "location": location,
+                        "job_title": job_title,
+                        "does_teacher_advice": teacher_advice,
+                        "does_project_work": project_work,
+                        "does_student_online": student_online,
+                        "does_student_f2f": student_f2f,
+                        "does_student_resource": student_resources,
+                        "does_ks1": ks1,
+                        "does_ks2": ks2,
+                        "does_ks3": ks3,
+                        "does_ks4": ks4,
+                        "does_ks5": ks5
+                    })
+                });
+
+                window.location.href = "directory.php";
             });
 
-            window.location.href = "directory.php";
-        });
 
-        
 
-        function init() {
-            student_interactions_visibility();
-            
-            if("<?php echo($job_title) ?>" == "Volunteer") {
-                job_title_visibility(
-                    document.querySelector("#isVolunteer")
-                );
-            } else {
-                job_title_visibility(
-                    document.querySelector("#isEmployee")
-                );
-            }   
-        }
+            function init() {
+                student_interactions_visibility();
+                
+                if("<?php echo($job_title) ?>" == "Volunteer") {
+                    job_title_visibility(
+                        document.querySelector("#isVolunteer")
+                    );
+                } else {
+                    job_title_visibility(
+                        document.querySelector("#isEmployee")
+                    );
+                }   
+            }
 
-        init();
-        const user_id = <?php echo($user_id) ?>;
-    </script>
+            init();
+            const user_id = <?php echo($user_id) ?>;
+        </script>
+    </body>
 </html>
