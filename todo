@@ -3,17 +3,11 @@ mobile version of each page
 
 distance slider: min, max, initial
 
-Tell user that email has been sent
-email verfied asthetics (email & page)
+email verfied & post-email asthetics
 
 em not px
 Last section of homepage
 Go through login css
-
-email verification:
-    email design
-    email from: hello@schoolcitizenassemblies.org
-    header: Verify your email address
 
 add alt attributes to img
 avoid div's
