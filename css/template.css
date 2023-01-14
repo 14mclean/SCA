@@ -210,6 +210,7 @@ footer p {
         right: -4.375em;
         z-index: 5;
         transition: transform .3s;
+        cursor: pointer;
     }
 
     #nav-list {
@@ -264,6 +265,7 @@ footer p {
         position: absolute;
         top: 1.875em;
         right: 2em;
+        cursor: pointer;
     }
 }
 
