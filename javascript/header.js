@@ -17,15 +17,17 @@ aboutButton.addEventListener("click", () => {
     location.href = "about.php";
 });
 
+function close_all_subnavs() {
+    const navs = document.querySelectorAll(".subnav");
+
+    for(const nav of navs) {
+        nav.classList.remove("open");
+    }
+}
+
 collapsableNavButtons.forEach(button => {
     button.addEventListener("click", (event) => {
-        function close_all() {
-            const navs = document.querySelectorAll(".subnav");
-
-            for(const nav of navs) {
-                nav.classList.remove("open");
-            }
-        }
+        
 
         const element = event.target;
         const subnav = document.querySelector(".subnav#" + element.id);
@@ -38,9 +40,9 @@ collapsableNavButtons.forEach(button => {
         subnav.classList.toggle("open");
 
         if(subnav.classList.contains("open")) {
-            body.addEventListener("click", close_all);
+            body.addEventListener("click", close_all_subnavs);
         } else {
-            body.removeEventListener("click", close_all);
+            body.removeEventListener("click", close_all_subnavs);
         }
 
         event.stopPropagation();
@@ -57,6 +59,7 @@ function toggle_sidebar(event) {
         body.addEventListener("click", toggle_sidebar);
     } else {
         body.removeEventListener("click", toggle_sidebar);
+        close_all_subnavs()
     }
     event.stopPropagation();
 }
