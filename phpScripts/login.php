@@ -25,8 +25,8 @@ if( ($result[0]["email_verified"] ?? $result["email_verified"]) == 0) {
     session_start();
     $_SESSION["user_id"] = $result[0]["user_id"] ?? $result["user_id"];
     $_SESSION["user_level"] = $result[0]["user_level"]  ?? $result["user_level"];
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    header("Location: ../directory.php"); // redirect to directory
 } else {
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    header("Location: ../meet-the-experts.php");
 }
 exit();
