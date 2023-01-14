@@ -3,5 +3,5 @@
 session_start();
 $_SESSION = array();
 session_destroy();
-header("Location: ../meet-the-experts.php");
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 exit();
