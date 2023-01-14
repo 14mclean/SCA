@@ -22,7 +22,7 @@ header {
     height: 100%;
     margin: 0;
     margin-left: 1.6em;
-    line-height: 2.5em;
+    line-height: 2.3em;
     display: inline-block;
 }
 
@@ -263,7 +263,7 @@ footer p {
         height: 1.5em;
         position: absolute;
         top: 1.875em;
-        right: 1.25em;
+        right: 2em;
     }
 }
 
