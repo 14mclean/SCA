@@ -2,7 +2,7 @@
 
 ini_set("display_errors", 1); // show errors in html (remove after dev)
 
-$email = $_POST["email"]
+$email = $_POST["email"];
 
 include_once("../api/Database.php");
 $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
@@ -97,7 +97,7 @@ mail(
     "Password Reset",
     $message,
     "From: SCA <sca@schoolcitizenassemblies.org>\r\nMIME-Version: 1.0\r\nContent-Type: text/html; charset=UTF-8\r\n"
-)
+);
 
 header("/");
 exit();
