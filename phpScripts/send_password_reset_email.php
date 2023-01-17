@@ -2,12 +2,13 @@
 
 ini_set("display_errors", 1); // show errors in html (remove after dev)
 
-$email = $_POST["email"];
+$email = (array) json_decode(file_get_contents("php://input"), true)["email"]; 
 
 include_once("../api/Database.php");
 $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
 $connection = $db->get_connection();
 
+// get user_id
 $statement = $connection->prepare("SELECT user_id FROM User WHERE email = :email");
 $statement->bindValue(":email", $email, PDO::PARAM_STR);
 $statement->execute();
@@ -30,8 +31,8 @@ do {
     $code = bin2hex(random_bytes(64)); // randomly generate code
 } while(code_exists($connection, $code)); // if code clashes repeat
 
-// add code to db
-$statement = $connection->prepare("INSERT INTO `Password_Reset_Code`(`user_id`, `code`, `entry_date`) VALUES (:user_id, :code, :entry_date)");
+// add code & entry datetime to db
+$statement = $connection->prepare("INSERT INTO Password_Reset_Code (user_id,code,entry_date) VALUES (:user_id, :code, :entry_date)");
 $statement->bindValue(":user_id", $user_id);
 $statement->bindValue(":code", $code);
 $statement->bindValue(":entry_date", date('Y-m-d H:i:s'));
@@ -98,6 +99,3 @@ mail(
     $message,
     "From: SCA <sca@schoolcitizenassemblies.org>\r\nMIME-Version: 1.0\r\nContent-Type: text/html; charset=UTF-8\r\n"
 );
-
-header("/");
-exit();

@@ -15,7 +15,7 @@ $result = $statement->fetch(PDO::FETCH_ASSOC);
 $error = "";
 
 if($result) {
-    $expiry_datetime = DateTime($result["entry_date"]);
+    $expiry_datetime = date_create($result["entry_date"]);
     $expiry_datetime->modify("+1 day");
 
     $user_id = $result["user_id"];
