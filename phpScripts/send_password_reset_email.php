@@ -8,7 +8,7 @@ include_once("../api/Database.php");
 $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
 $connection = $db->get_connection();
 
-$statement = $connection->prepare("SELECT user_id FROM Users WHERE email = :email");
+$statement = $connection->prepare("SELECT user_id FROM User WHERE email = :email");
 $statement->bindValue(":email", $email, PDO::PARAM_STR);
 $statement->execute();
 $result = $statement->fetch(PDO::FETCH_ASSOC);
