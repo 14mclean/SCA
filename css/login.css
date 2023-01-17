@@ -116,6 +116,20 @@ img {
     cursor: pointer;
 }
 
+#forgot-button {
+    color: #3d1854;
+    position: absolute;
+    top: 220px;
+    left: 50px;
+    font: normal normal 600 13px/13px 'Raleway';
+    padding: 5px;
+    cursor: pointer;
+}
+
+#forgot-button:hover {
+    background-color: #401b5722;
+}
+
 #unverified-email {
     width: 300px;
     position: relative;
