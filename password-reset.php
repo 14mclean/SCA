@@ -21,7 +21,7 @@ if($result) {
     $user_id = $result["user_id"];
 
     if($expiry_datetime > date('Y-m-d H:i:s')) {
-        $error = "Password reset link expired, if you still need "
+        $error = "Password reset link expired, if you still need to change your password click <a href=\"forgot-password.html\">Here</a>";
     }
 
     // delete code
