@@ -41,12 +41,11 @@ if($result) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Password Reset - SCA</title>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-        <link rel="stylesheet" href="css/forgot-password.css">
+        <link rel="stylesheet" href="css/password-reset.css">
     </head>
 
     <body>
         <header>
-            <a class="back_arrow" href="javascript:history.back()">🠔</a>
             <h1><a href="/">School Citizen Assemblies</a></h1>
         </header>
 

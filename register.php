@@ -42,6 +42,7 @@
         </main>
     </body>
 
+    <script src="javascript/valid_password.js"></script>
     <script>
         function clear_validation(element) {
             element.setCustomValidity("");
@@ -58,7 +59,7 @@
 
         document.querySelector("#password_input").addEventListener("keyup", debounce(() => { // validate password 1s after typing concludes
             const password_input = document.querySelector("#password_input");
-            const password_value = password_input.value;
+            /*const password_value = password_input.value;
             let validity_value = "";
 
             // 8 or more chars
@@ -79,7 +80,8 @@
             // 1 or more numeric
             if(!/\d/.test(password_value)) {
                 validity_value = "Password requires at least 1 numeric character";
-            }
+            }*/
+            const validity_value = valid_password(password_input);
 
             password_input.setCustomValidity(validity_value);
             password_input.reportValidity();
