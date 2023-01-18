@@ -81,7 +81,7 @@
             if(!/\d/.test(password_value)) {
                 validity_value = "Password requires at least 1 numeric character";
             }*/
-            const validity_value = valid_password(password_input);
+            const validity_value = password_validity(password_input);
 
             password_input.setCustomValidity(validity_value);
             password_input.reportValidity();
