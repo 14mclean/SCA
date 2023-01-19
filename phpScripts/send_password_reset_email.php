@@ -2,7 +2,8 @@
 
 ini_set("display_errors", 1); // show errors in html (remove after dev)
 
-$email = (array) json_decode(file_get_contents("php://input"), true)["email"]; 
+$email = ((array) json_decode(file_get_contents("php://input"), true))["email"]; 
+echo($email);
 
 include_once("../api/Database.php");
 $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
