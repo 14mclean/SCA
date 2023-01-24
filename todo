@@ -1,9 +1,12 @@
-forgot password
 mobile version of each page
 
 distance slider: min, max, initial
 
 email verfied & post-email asthetics
+
+autocomplete for top 5 fuzzysort with debounce for expertise search
+
+rework directory view
 
 em not px
 Last section of homepage
@@ -13,3 +16,9 @@ add alt attributes to img
 avoid div's
 js to own files
 remove "onclick"s
+
+password reset:
+    js api check email in db before going to php, display error if no email
+    add password visibility buttons
+    properly show errros in password-reset.php
+    test all features of password reset
