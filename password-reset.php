@@ -57,10 +57,19 @@ if($result) {
 
                 <form action="phpScripts/reset_password.php" method="POST">
                     <input id="password_input" name="password" type="password" placeholder="Password" autocomplete="new-password" required>
+                    <img class="visibility-eye" id="initial" src="assets/noEye.png">
+
                     <input id="confirm_password_input" name="password" type="password" placeholder="Confirm Password" autocomplete="new-password" required>
+                    <img class="visibility-eye" id="confirm" src="assets/noEye.png">
+                    
                     <button type="submit">Reset</button>
+
+                    <!-- show errors -->
                 </form>
             </div>
         </main>
+
+        <script src="javascript/debounce.js"></script>
+        <script src="javascript/password-reset.js"></script>
     </body>
 </html>

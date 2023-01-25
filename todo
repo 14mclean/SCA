@@ -10,7 +10,7 @@ rework directory view
 
 em not px
 Last section of homepage
-Go through login css
+Go through login css (errros!)
 
 add alt attributes to img
 avoid div's
@@ -18,7 +18,5 @@ js to own files
 remove "onclick"s
 
 password reset:
-    js api check email in db before going to php, display error if no email
-    add password visibility buttons
     properly show errros in password-reset.php
     test all features of password reset
