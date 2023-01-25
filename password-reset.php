@@ -57,8 +57,7 @@ echo($error);
             <div class="form_container">
                 <form action="phpScripts/reset_password.php" method="POST">
                     <?php
-                    echo($error);
-                    if($error = "") { ?>
+                    if($error == "") { ?>
 
                         <h1>Password Reset</h1>
 
