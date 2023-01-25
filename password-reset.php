@@ -54,31 +54,29 @@ echo($error);
         </header>
 
         <main>
-            <div class="form_container">
-                <form action="phpScripts/reset_password.php" method="POST">
-                    <?php
-                    if($error == "") { ?>
+            <form action="phpScripts/reset_password.php" method="POST">
+                <?php
+                if($error == "") { ?>
 
-                        <h1>Password Reset</h1>
+                    <h2>Password Reset</h2>
 
-                        <p id="descriptor">Enter a new password for your account</p>
+                    <p id="descriptor">Enter a new password for your account</p>
 
-                        <input id="password_input" name="password" type="password" placeholder="Password" autocomplete="new-password" required>
-                        <img class="visibility-eye" id="initial" src="assets/noEye.png">
+                    <input id="password_input" name="password" type="password" placeholder="Password" autocomplete="new-password" required>
+                    <img class="visibility-eye" id="initial" src="assets/noEye.png">
 
-                        <input id="confirm_password_input" name="password" type="password" placeholder="Confirm Password" autocomplete="new-password" required>
-                        <img class="visibility-eye" id="confirm" src="assets/noEye.png">
-                        
-                        <button type="submit">Reset</button>
+                    <input id="confirm_password_input" name="password" type="password" placeholder="Confirm Password" autocomplete="new-password" required>
+                    <img class="visibility-eye" id="confirm" src="assets/noEye.png">
 
-                    <?php
-                    } else {
-                        echo("<p>test $error </p>");
-                        
-                    }?>
-                    <!-- TODO: show errors -->
-                </form>
-            </div>
+                    <button type="submit">Reset</button>
+
+                <?php
+                } else {
+                    echo("<p id=\"errors\">$error</p>");
+                    
+                }?>
+                <!-- TODO: show errors -->
+            </form>
         </main>
 
         <script src="javascript/debounce.js"></script>
