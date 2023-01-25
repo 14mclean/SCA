@@ -70,6 +70,7 @@ if($result) {
         </main>
 
         <script src="javascript/debounce.js"></script>
+        <script src="javascript/valid_password.js"></script>
         <script src="javascript/password-reset.js"></script>
     </body>
 </html>
