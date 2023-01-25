@@ -56,15 +56,23 @@ if($result) {
                 <p id="descriptor">Enter a new password for your account</p>
 
                 <form action="phpScripts/reset_password.php" method="POST">
-                    <input id="password_input" name="password" type="password" placeholder="Password" autocomplete="new-password" required>
-                    <img class="visibility-eye" id="initial" src="assets/noEye.png">
+                    <?php if($error = ""): ?>
 
-                    <input id="confirm_password_input" name="password" type="password" placeholder="Confirm Password" autocomplete="new-password" required>
-                    <img class="visibility-eye" id="confirm" src="assets/noEye.png">
-                    
-                    <button type="submit">Reset</button>
+                        <input id="password_input" name="password" type="password" placeholder="Password" autocomplete="new-password" required>
+                        <img class="visibility-eye" id="initial" src="assets/noEye.png">
 
-                    <!-- show errors -->
+                        <input id="confirm_password_input" name="password" type="password" placeholder="Confirm Password" autocomplete="new-password" required>
+                        <img class="visibility-eye" id="confirm" src="assets/noEye.png">
+                        
+                        <button type="submit">Reset</button>
+
+                    <?php else: ?>
+
+                        <p>
+                            <?php echo $error ?>
+                        </p>
+
+                    <!-- TODO: show errors -->
                 </form>
             </div>
         </main>
