@@ -72,6 +72,8 @@ if($result) {
                             <?php echo $error ?>
                         </p>
 
+                    <?php endif; ?>
+
                     <!-- TODO: show errors -->
                 </form>
             </div>
