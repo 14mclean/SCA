@@ -73,7 +73,7 @@ echo($error);
 
                     <?php
                     } else {
-                        echo("<p>$error</p>")   ;
+                        echo("<p>test $error </p>")   ;
                     }?>
     
 
