@@ -14,6 +14,8 @@ $statement->execute();
 $result = $statement->fetch(PDO::FETCH_ASSOC);
 $error = "";
 
+echo($result);
+
 if($result) {
     $expiry_datetime = date_create($result["entry_date"]);
     $expiry_datetime->modify("+1 day");
@@ -31,6 +33,8 @@ if($result) {
 } else {
     $error = "This password reset link does not exist";
 }
+
+echo($error);
 
 ?>
 
