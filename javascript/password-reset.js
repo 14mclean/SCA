@@ -1,4 +1,4 @@
-const password_inputs = document.querySelectorAll("input[\"type=password\"]");
+const password_inputs = document.querySelectorAll("input[type=\"password\"]");
 const visibility_eyes = document.querySelectorAll(".visibility-eye");
 
 
