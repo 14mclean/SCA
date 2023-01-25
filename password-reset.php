@@ -72,13 +72,10 @@ echo($error);
                         <button type="submit">Reset</button>
 
                     <?php
-                    } else {
-                        echo("<p>test $error </p>");
-                        echo($error);
-                    }?>
-    
-
-                    <!-- TODO: show errors -->
+                    } else { ?>
+                        <p><?php $error ?></p>
+                        <!-- TODO: show errors -->
+                    <?php } ?>
                 </form>
             </div>
         </main>
