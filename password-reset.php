@@ -73,7 +73,7 @@ echo($error);
 
                     <?php
                     } else { ?>
-                        <p><?php $error ?></p>
+                        <p><?php echo $error; ?></p>
                         <!-- TODO: show errors -->
                     <?php } ?>
                 </form>
