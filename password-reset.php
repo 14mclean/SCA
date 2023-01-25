@@ -33,9 +33,6 @@ if($result) {
 } else {
     $error = "This password reset link does not exist";
 }
-
-echo($error);
-
 ?>
 
 <!DOCTYPE html>
