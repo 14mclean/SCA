@@ -16,9 +16,8 @@ password-reset asthetics
 
 add alt attributes to img
 avoid div's
-js to own files
+figure how to move register & expert profile js to own files
 remove "onclick"s
 
 password reset:
-    properly show errros in password-reset.php
     test all features of password reset
