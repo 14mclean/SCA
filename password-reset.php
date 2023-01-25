@@ -57,6 +57,7 @@ echo($error);
             <div class="form_container">
                 <form action="phpScripts/reset_password.php" method="POST">
                     <?php
+                    echo($error);
                     if($error = "") { ?>
 
                         <h1>Password Reset</h1>
@@ -72,10 +73,11 @@ echo($error);
                         <button type="submit">Reset</button>
 
                     <?php
-                    } else { ?>
-                        <p><?php echo $error; ?></p>
-                        <!-- TODO: show errors -->
-                    <?php } ?>
+                    } else {
+                        echo("<p>test $error </p>");
+                        
+                    }?>
+                    <!-- TODO: show errors -->
                 </form>
             </div>
         </main>
