@@ -51,12 +51,12 @@ if($result) {
 
         <main>
             <div class="form_container">
-                <h1>Password Reset</h1>
-
-                <p id="descriptor">Enter a new password for your account</p>
-
                 <form action="phpScripts/reset_password.php" method="POST">
                     <?php if($error = ""): ?>
+
+                        <h1>Password Reset</h1>
+
+                        <p id="descriptor">Enter a new password for your account</p>
 
                         <input id="password_input" name="password" type="password" placeholder="Password" autocomplete="new-password" required>
                         <img class="visibility-eye" id="initial" src="assets/noEye.png">
@@ -69,7 +69,7 @@ if($result) {
                     <?php else: ?>
 
                         <p>
-                            <?php echo $error ?>
+                            <?php echo($error); ?>
                         </p>
 
                     <?php endif; ?>
