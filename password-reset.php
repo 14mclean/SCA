@@ -1,7 +1,5 @@
 <?php
 
-ini_set("display_errors", 1);
-
 include_once("api/Database.php");
 
 $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
@@ -75,7 +73,8 @@ echo($error);
 
                     <?php
                     } else {
-                        echo("<p>test $error </p>")   ;
+                        echo("<p>test $error </p>");
+                        echo($error);
                     }?>
     
 
