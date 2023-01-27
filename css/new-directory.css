@@ -58,13 +58,23 @@ section.filter-item {
     margin-bottom: 25px;
 }
 
+section.filter-item#student-interactions {
+    max-height: 0px;
+    transition: 0.4s;
+    overflow-y: hidden;
+}
+
+section.filter-item#student-interactions.shown {
+    max-height: 120px;
+}
+
 h3.filter-item-title {
     font: normal normal 600 14px/14px 'Open Sans';
     color: #2c2c2c;
     cursor: pointer;
 }
 
-h3.filter-item-title:after {
+h3.filter-item-title:not(#distance):after {
     border-left: 0.3125em solid transparent;
     border-right: 0.3125em solid transparent;
     border-top: 0.3125em solid #333;
@@ -102,60 +112,98 @@ ul.filter-list li {
     margin-bottom: 5px;
 }
 
-div.custom-checkbox {
-    display: inline-block;
+input.custom-check {
     position: relative;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    width: 16px;
-    height: 16px;
-}
-
-div.custom-checkbox input {
-    font-size: 100%;
+    width: 17px;
+    height: 17px;
     margin: 0;
-    opacity: 0;
-    padding: 0;
-    position: absolute;
     z-index: 1;
+    appearance: none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    -o-appearance:none;
+    cursor: pointer;
 }
 
-span.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 14px;
-    width: 14px;
-    background-color: #fff;
+input.custom-check:after {
+    position: relative;
+    display: inline-block;
+    content: '';
+    width: 15px;
+    height: 15px;
     border: 1px solid #666;
     border-radius: 3px;
+    z-index: 0;
 }
 
-span.filter-label {
+input.custom-check:checked:after {
+    background-image: url("../assets/transparent-check.png");
+    background-size: 13px 13px;
+    background-position: 1px 1px;
+    filter: invert(100%);
+    background-color: #bfe4a8;
+    border-color: #bfe4a8;
+}
+
+label.filter-label {
     position: relative;
     left: 7px;
     top: -3px;
     font: normal normal 400 14px/14px 'Open Sans';
-}
-
-output#distance-value {
-    font-family: 'Open Sans';
-    font-size: 14px;
-    position: relative;
-    top: -3px;
-}
-
-button#enter-distance {
-    display: block;
-    background-color: #eee;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    outline: none;
-    margin-left: 5px;
-    margin-top: 5px;
     cursor: pointer;
+}
+
+h3.filter-item-title#distance {
+    display: inline-block;
+}
+
+input.toggle {
+    position: relative;
+    width: 17px;
+    height: 17px;
+    margin: 0;
+    z-index: 1;
+    appearance: none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    -o-appearance:none;
+    cursor: pointer;
+    top: 4px;
+    left: 5px;
+}
+
+input.toggle:before {
+    content: '';
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    width: 36px;
+    border-radius: 34px;
+    height: 18px;
+}
+
+input.toggle:after {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 3px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+input.toggle:checked:after {
+    -webkit-transform: translateX(17px);
+    -ms-transform: translateX(17px);
+    transform: translateX(17px);
+}
+
+input.toggle:checked:before {
+    background-color: #6e1a8a;
 }

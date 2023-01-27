@@ -16,7 +16,7 @@
 <!--
     PHPness:
      / start with check login info
-     / re-add php for header (myaccount, etc.)
+     - re-add php for header (myaccount, etc.)
      - get all unique orgs from experts
      - if GET variable active, show checked box
      - if student interaction checked, show student interactions filters
@@ -118,17 +118,7 @@
                     <h3 class="filter-item-title">Organisation</h3>
 
                     <ul class="filter-list">
-                        <!--<li>
-                            <div class="custom-checkbox">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </div>
-
-                            <span class="filter-label">Test Ltd</span>
-                        </li>-->
-
                         <?php
-
                         $statement = $connection->prepare("SELECT DISTINCT Organisation FROM Expert WHERE admin_verified=1");
                         $statement->execute();
                         $result = $statement->fetchAll();
@@ -149,7 +139,6 @@
                                 ");
                             }
                         }
-
                         ?>
                     </ul>
                 </section>

@@ -18,6 +18,8 @@ flip nav arrows when open
 
 open sans for hard to read text
 
+long,lat => postcode & reverse: api.postcodes.io/postcodes?lon=:longitude&lat=:latitude
+
 add alt attributes to img
 avoid div's
 figure how to move register & expert profile js to own files
