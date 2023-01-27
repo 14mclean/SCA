@@ -53,6 +53,7 @@
                             <li><a href="expert-resources.php">Expert Resources</a></li>
                             <li><a href="directory.php">Directory</a></li>
                         </ul>
+                    </li>
 
                     <?php
 

@@ -14,6 +14,10 @@ Go through login css (errros!)
 only 1 h1 per page
 password-reset asthetics
 
+flip nav arrows when open
+
+open sans for hard to read text
+
 add alt attributes to img
 avoid div's
 figure how to move register & expert profile js to own files
@@ -21,3 +25,12 @@ remove "onclick"s
 
 password reset:
     test all features of password reset
+
+missing pages:
+    index: last block content
+    about us: content
+    student resources: all
+    teacher resources: all
+    sca toolkit: all
+    meet the experts: content
+    admin panel: all

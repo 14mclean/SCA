@@ -1,0 +1,161 @@
+main#content {
+
+}
+
+main#results {
+    /* border: 1px solid grey;
+    border-radius: 13px; */
+
+    display: inline-block;
+    width: 100px;
+    position: absolute;
+    right: 0px;
+}
+
+div#search-bar {
+    background-color: #401b57;
+    width: 100vw;
+    height: 60px;
+    text-align: center;
+}
+
+div#search-bar input {
+    min-width: 350px;
+    width: 20vw;
+    height: 25px;
+    padding: 5px 15px 5px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Open Sans';
+    border: 1px solid #e5dfe5;
+    background-color: #eee;
+}
+
+div#search-bar input:focus-visible {
+    outline: none;
+    background-color: #fff;
+}
+
+div#search-bar img {
+    height: 26px;
+    width: 26px;
+    position: relative;
+    top: 7.5px;
+    left: -40px;
+    cursor: pointer;
+}
+
+aside#filters {
+    display: inline-block;
+    width: 230px;
+    padding: 20px;
+
+    position: absolute;
+    top: 50px;
+}
+
+section.filter-item {
+    margin-bottom: 25px;
+}
+
+h3.filter-item-title {
+    font: normal normal 600 14px/14px 'Open Sans';
+    color: #2c2c2c;
+    cursor: pointer;
+}
+
+h3.filter-item-title:after {
+    border-left: 0.3125em solid transparent;
+    border-right: 0.3125em solid transparent;
+    border-top: 0.3125em solid #333;
+    content: "";
+    display: inline-block;
+    height: 0;
+    margin-bottom: 0.3125em;
+    margin-left: 0.5rem;
+    margin-top: 0.15rem;
+    position: relative;
+    right: 0;
+    vertical-align: middle;
+    width: 0;
+    transition: 0.4s;
+}
+
+h3.filter-item-title.collapsed:after {
+    transform: rotateX(180deg);
+}
+
+ul.filter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+    height: fit-content;
+    max-height: 1000px;
+}
+
+ul.filter-list.collapsed {
+    max-height: 0px;
+}
+
+ul.filter-list li {
+    margin-bottom: 5px;
+}
+
+div.custom-checkbox {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 16px;
+    height: 16px;
+}
+
+div.custom-checkbox input {
+    font-size: 100%;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+span.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 14px;
+    width: 14px;
+    background-color: #fff;
+    border: 1px solid #666;
+    border-radius: 3px;
+}
+
+span.filter-label {
+    position: relative;
+    left: 7px;
+    top: -3px;
+    font: normal normal 400 14px/14px 'Open Sans';
+}
+
+output#distance-value {
+    font-family: 'Open Sans';
+    font-size: 14px;
+    position: relative;
+    top: -3px;
+}
+
+button#enter-distance {
+    display: block;
+    background-color: #eee;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    outline: none;
+    margin-left: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
