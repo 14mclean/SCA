@@ -16,7 +16,7 @@
     $selected_ages = explode($_GET["age"], "|") ?? null;
     $selected_orgs = explode($_GET["organisation"], "|") ?? null;
     $selected_interctions = explode($_GET["interaction"], "|") ?? null;
-    $selected_student_interactions = explode($_GET["student_interction", "|"]) ?? null;
+    $selected_student_interactions = explode($_GET["student_interction"], "|") ?? null;
     $postcode = $_GET["postcode"] ?? null;
     $distance_radius = $_GET["range"] ?? null;
 ?>
