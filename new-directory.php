@@ -193,27 +193,27 @@
 
                     <ul class="filter-list">
                         <li>
-                            <input id="age1" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age1", $selected_ages) echo("checked")) ?>>
+                            <input id="age1" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age1", $selected_ages)) echo("checked"); ?>>
                             <label id="age1" class="filter-label">KS1</label>
                         </li>
 
                         <li>
-                            <input id="age2" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age2", $selected_ages) echo("checked")) ?>>
+                            <input id="age2" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age2", $selected_ages)) echo("checked"); ?>>
                             <label id="age2" class="filter-label">KS2</label>
                         </li>
 
                         <li>
-                            <input id="age3" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age3", $selected_ages) echo("checked")) ?>>
+                            <input id="age3" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age3", $selected_ages)) echo("checked"); ?>>
                             <label id="age3" class="filter-label">KS3</label>
                         </li>
 
                         <li>
-                            <input id="age4" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age4", $selected_ages) echo("checked")) ?>>
+                            <input id="age4" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age4", $selected_ages)) echo("checked"); ?>>
                             <label id="age4" class="filter-label">KS4</label>
                         </li>
 
                         <li>
-                            <input id="age5" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age5", $selected_ages) echo("checked")) ?>>
+                            <input id="age5" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age5", $selected_ages)) echo("checked"); ?>>
                             <label id="age5" class="filter-label">KS5</label>
                         </li>
                     </ul>
