@@ -223,12 +223,12 @@
                     </ul>
                 </section>
 
-                <section class="filter-item" id="student-interactions">
+                <section class="filter-item <?php if(in_array("interactions-student", $selected_interctions)) echo("shown"); ?>" id="student-interactions">
                     <h3 class="filter-item-title">Student Interactions</h3>
 
                     <ul class="filter-list">
                         <li>
-                            <input id="studentinteractions-f2f" class="custom-check" type="checkbox" autocomplete="off">
+                            <input id="studentinteractions-f2f" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("interactions-project", $selected_interctions)) echo("checked"); ?>>
                             <label id="studentinteractions-f2f" class="filter-label">Face-to-Face</label>
                         </li>
 
