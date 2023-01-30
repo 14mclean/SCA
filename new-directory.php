@@ -13,12 +13,32 @@
     $connection = $db->get_connection();
 
     // get all GET variables
-    $selected_ages = explode($_GET["age"], "|") ?? null;
-    $selected_orgs = explode($_GET["organisation"], "|") ?? null;
-    $selected_interctions = explode($_GET["interaction"], "|") ?? null;
-    $selected_student_interactions = explode($_GET["student_interaction"], "|") ?? null;
-    $postcode = $_GET["postcode"] ?? null;
-    $distance_radius = $_GET["range"] ?? null;
+    $postcode = $_GET["postcode"] ?? "";
+    $distance_radius = $_GET["range"] ?? 0;
+
+    if(isset($_GET["age"])) {
+        $selected_ages = explode($_GET["age"], "|");
+    } else {
+        $selected_ages = [];
+    }
+
+    if(isset($_GET["organisation"])) {
+        $selected_orgs = explode($_GET["organisation"], "|");
+    } else {
+        $selected_orgs = [];
+    }
+
+    if(isset($_GET["interaction"])) {
+        $selected_interctions = explode($_GET["interaction"], "|");
+    } else {
+        $selected_interctions = [];
+    }
+
+    if(isset($_GET["student_interaction"])) {
+        $selected_student_interactions = explode($_GET["student_interaction"], "|");
+    } else {
+        $selected_student_interactions = [];
+    }
 ?>
 
 <!--
