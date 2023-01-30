@@ -56,6 +56,9 @@
     } else {
         $selected_student_interactions = [];
     }
+
+    print_r($selected_ages);
+    print_r(in_array("age1", $selected_ages));
 ?>
 
 <!--
