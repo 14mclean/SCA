@@ -11,13 +11,17 @@
 
     $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
     $connection = $db->get_connection();
+
+    // get all GET variables
+    $selected_ages = explode($_GET["age"], "|");
+    echo($_GET);
 ?>
 
 <!--
     PHPness:
      / start with check login info
      / re-add php for header (myaccount, etc.)
-     - get all unique orgs from experts
+     / get all unique orgs from experts
      - if GET variable active, show checked box
      - if student interaction checked, show student interactions filters
      - show results fitting to GET variables
