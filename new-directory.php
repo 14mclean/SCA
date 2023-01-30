@@ -13,8 +13,10 @@
     $connection = $db->get_connection();
 
     // get all GET variables
+    print_r($_GET);
+
     $selected_ages = explode($_GET["age"], "|");
-    echo($_GET);
+    
 ?>
 
 <!--
