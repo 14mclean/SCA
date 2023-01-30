@@ -1,3 +1,9 @@
+const location_options = {
+    maximumAge: 0,
+    timeout: 2000,
+    enableHighAccuracy: true
+};
+
 const filter_titles = document.querySelectorAll("h3.filter-item-title");
 const student_interaction_input = document.querySelector("input.custom-check#interactions-student");
 const student_interaction_section = document.querySelector("section.filter-item#student-interactions");
@@ -8,7 +14,13 @@ const age_checks = document.querySelectorAll("section.filter-item#ages input");
 const interaction_checks = document.querySelectorAll("section.filter-item#interactions input");
 const student_interaction_checks = document.querySelectorAll("section.filter-item#student-interactions input");
 const distance_toggle = document.querySelector("input.toggle");
+const distance_texts = document.querySelectorAll("p.distance-label");
+const distance_selector = document.querySelector("select#radius-choice");
+const postcode_entry = document.querySelector("input#postcode-entry");
+const my_location_button = document.querySelector("img#my-location-button");
+const search_button = document.querySelector("div#search-bar img");
 
+// Collapse/expand filters
 filter_titles.forEach((title) => title.addEventListener("click", (event) => {
     const current_title = event.target;
     const current_list = current_title.nextElementSibling;
@@ -17,10 +29,12 @@ filter_titles.forEach((title) => title.addEventListener("click", (event) => {
     current_list.classList.toggle("collapsed");
 }));
 
+// Show/hide student interaction filter
 student_interaction_input.addEventListener("click", () => {
     student_interaction_section.classList.toggle("shown");
 });
 
+// Check/uncheck checkboxes when the text labels associated with them are clicked
 checkbox_labels.forEach((label) => label.addEventListener("click", (event) => {
     const current_label = event.target;
     const current_checkbox = document.querySelector("input.custom-check#" + current_label.id);
@@ -29,29 +43,69 @@ checkbox_labels.forEach((label) => label.addEventListener("click", (event) => {
     current_checkbox.dispatchEvent(new Event("click"));
 }));
 
+// Disable/enable distance inputs on toggle switch
 distance_toggle.addEventListener("click", () => {
-    if(!"geolocation" in navigator) {
-        alert("No geolocation available!");
-        distance_toggle.checked = false;
-        // disable all
-    }
-    
-    navigator.permissions.query({name:'geolocation'}).then(function(result) {
-        if (result.state == 'granted') {
-            console.log("granted");
-        } else if (result.state == 'prompt') {
-            console.log("prompted");
-        } else if (result.state == 'denied') {
-            console.log("denied");
+    if(distance_toggle.checked) {
+        distance_texts.forEach((text) => {
+            text.classList.remove("disabled");
+        });
+        my_location_button.classList.remove("disabled");
+        distance_selector.disabled = false;
+        postcode_entry.disabled = false;
+    } else {
+        distance_texts.forEach((text) => {
+            text.classList.add("disabled");
+        });
+        my_location_button.classList.add("disabled");
+        distance_selector.disabled = true;
+        postcode_entry.disabled = true;
         }
-      });
-
-    // toggle geolocation permission
-    // enable/disable other inputs
 });
 
+// Fill postcode entry with geolocation data
+my_location_button.addEventListener("click", (event) => {
+    if(my_location_button.classList.contains("disabled")) return;
 
-function handle_filter_change() {
+    if(!"geolocation" in navigator) {
+        alert("Location not available");
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition((position) => {
+        const coords = position.coords;
+        fetch("https://api.postcodes.io/postcodes", {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify({"geolocations": [{
+                "longitude": coords.longitude,
+                "latitude": coords.latitude,
+                "radius": 500,
+                "limit": 1
+            }]})
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(json => {
+            if(json["status"] != 200) return;
+
+            const postcode = json["result"][0]["result"][0]["postcode"];
+            postcode_entry.value = postcode;
+        })
+    });
+});
+
+// Change search parameters with current filters
+expertise_input.addEventListener("keyup", (event) => {
+    if(event.key === "Enter") handle_filter_change(event);
+});
+search_button.addEventListener("click", handle_filter_change);
+
+async function handle_filter_change(event) {
+    event.preventDefault();
     const expertise_query = expertise_input.value;
     let orgs = [], ages = [], interactions = [], student_interactions = [];
 
@@ -80,8 +134,6 @@ function handle_filter_change() {
             }
         })
     }
-
-    // distance stoof
 
     function format_filters(filters) {
         let url_appendage = "";
@@ -113,7 +165,10 @@ function handle_filter_change() {
         get_url.searchParams.append("student_interaction", format_filters(student_interactions));
     }
 
-    // add distance
+    if(distance_toggle.checked) {
+        get_url.searchParams.append("postcode", postcode_entry.value);
+        get_url.searchParams.append("range", distance_selector.value);
+    }
 
-    // 
+    location.href = get_url.href;
 }
