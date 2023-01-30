@@ -258,7 +258,7 @@
                     </select>
                     <p class="distance-label <?php if($postcode == "") echo("disabled") ?>">radius of</p>
 
-                    <input type="text" id="postcode-entry" placeholder="Postcode" maxlength="8" <?php if($postcode == "") echo("checked value=\"$postcode\"") ?>>
+                    <input type="text" id="postcode-entry" placeholder="Postcode" maxlength="8" <?php if($postcode != "") echo("value=\"$postcode\"") ?>>
                     <img class="<?php if($postcode == "") echo("disabled") ?>" id="my-location-button" src="assets/location-icon.png">
                 </section>
             </aside>
