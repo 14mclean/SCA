@@ -39,6 +39,9 @@
     } else {
         $selected_student_interactions = [];
     }
+
+    print_r($selected_orgs);
+    print_r(in_array("Test Ltd", $selected_orgs));
 ?>
 
 <!--
