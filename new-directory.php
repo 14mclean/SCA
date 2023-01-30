@@ -17,7 +17,11 @@
     $distance_radius = $_GET["range"] ?? 0;
 
     if(isset($_GET["age"])) {
-        $selected_ages = explode($_GET["age"], "|");
+        if(str_contains($_GET["age"], "|")) {
+            $selected_ages = explode($_GET["age"], "|");
+        } else {
+            $selected_ages = [$_GET["age"]];
+        }
     } else {
         $selected_ages = [];
     }
@@ -34,19 +38,24 @@
     }
 
     if(isset($_GET["interaction"])) {
-        $selected_interctions = explode($_GET["interaction"], "|");
+        if(str_contains($_GET["interaction"], "|")) {
+            $selected_interctions = explode($_GET["interaction"], "|");
+        } else {
+            $selected_interctions = [$_GET["interaction"]];
+        }
     } else {
         $selected_interctions = [];
     }
 
     if(isset($_GET["student_interaction"])) {
-        $selected_student_interactions = explode($_GET["student_interaction"], "|");
+        if(str_contains($_GET["student_interaction"], "|")) {
+            $selected_student_interactions = explode($_GET["student_interaction"], "|");
+        } else {
+            $selected_student_interactions = [$_GET["student_interaction"]];
+        }
     } else {
         $selected_student_interactions = [];
     }
-
-    print_r($selected_orgs);
-    print_r(in_array("Test Ltd", $selected_orgs));
 ?>
 
 <!--
