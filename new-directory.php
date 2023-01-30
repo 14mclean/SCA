@@ -145,11 +145,6 @@
                     <h3 class="filter-item-title">Organisation</h3>
 
                     <ul class="filter-list">
-                        <!--<li>
-                            <input class="custom-check" type="checkbox" autocomplete="off">
-                            <label class="filter-label">Test Ltd</label>
-                        </li>-->
-
                         <?php
 
                         $statement = $connection->prepare("SELECT DISTINCT Organisation FROM Expert WHERE admin_verified=1");
@@ -159,10 +154,14 @@
                         if($result) {
                             foreach($result as &$row) {
                                 $org = $row["Organisation"];
+                                $checked = "";
+                                if(in_array($org, $selected_orgs)) {
+                                    $checked = "checked";
+                                }
         
                                 echo("
                                 <li>
-                                    <input class=\"custom-check\" type=\"checkbox\" autocomplete=\"off\" value=\"$org\">
+                                    <input class=\"custom-check\" type=\"checkbox\" autocomplete=\"off\" value=\"$org\" $checked>
                                     <label class=\"filter-label\">$org</label>
                                 </li>
                                 ");
