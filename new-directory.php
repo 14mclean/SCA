@@ -23,7 +23,12 @@
     }
 
     if(isset($_GET["organisation"])) {
-        $selected_orgs = explode($_GET["organisation"], "|");
+        if(str_contains($_GET["organisation"], "|")) {
+            $selected_orgs = explode($_GET["organisation"], "|");
+        } else {
+            $selected_orgs = [$_GET["organisation"]];
+        }
+        
     } else {
         $selected_orgs = [];
     }
