@@ -246,7 +246,7 @@
 
                 <section id="distance">
                     <h3 class="filter-item-title" id="distance">Distance</h3>
-                    <input type="checkbox" class="toggle" <?php if($postcode == "") echo("checked value=\"$postcode\"") ?>>
+                    <input type="checkbox" class="toggle" <?php if($postcode == "") echo("disabled") ?>>
 
                     <p class="distance-label <?php if($postcode == "") echo("disabled") ?>">Within a</p>
                     <select id="radius-choice" <?php if($postcode == "") echo("disabled") ?>>
@@ -258,7 +258,7 @@
                     </select>
                     <p class="distance-label <?php if($postcode == "") echo("disabled") ?>">radius of</p>
 
-                    <input type="text" id="postcode-entry" placeholder="Postcode" maxlength="8" <?php if($postcode == "") echo("disabled") ?>>
+                    <input type="text" id="postcode-entry" placeholder="Postcode" maxlength="8" <?php if($postcode == "") echo("checked value=\"$postcode\"") ?>>
                     <img class="<?php if($postcode == "") echo("disabled") ?>" id="my-location-button" src="assets/location-icon.png">
                 </section>
             </aside>
