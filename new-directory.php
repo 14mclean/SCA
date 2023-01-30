@@ -250,11 +250,11 @@
 
                     <p class="distance-label <?php if($postcode == "") echo("disabled") ?>">Within a</p>
                     <select id="radius-choice" <?php if($postcode == "") echo("disabled") ?>>
-                        <option value="5">5 mile</option>
-                        <option value="10">10 mile</option>
-                        <option value="25">25 mile</option>
-                        <option value="50">50 mile</option>
-                        <option value="100">100 mile</option>
+                        <option value="5" <?php if($distance_radius == "5") echo("selected") ?>>5 mile</option>
+                        <option value="10" <?php if($distance_radius == "10") echo("selected") ?>>10 mile</option>
+                        <option value="25" <?php if($distance_radius == "25") echo("selected") ?>>25 mile</option>
+                        <option value="50" <?php if($distance_radius == "50") echo("selected") ?>>50 mile</option>
+                        <option value="100" <?php if($distance_radius == "100") echo("selected") ?>>100 mile</option>
                     </select>
                     <p class="distance-label <?php if($postcode == "") echo("disabled") ?>">radius of</p>
 
