@@ -249,17 +249,17 @@
                     <input type="checkbox" class="toggle">
 
                     <p class="distance-label <?php if($postcode == "") echo("disabled") ?>">Within a</p>
-                    <select id="radius-choice" disabled>
+                    <select id="radius-choice" <?php if($postcode == "") echo("disabled") ?>>
                         <option value="5">5 mile</option>
                         <option value="10">10 mile</option>
                         <option value="25">25 mile</option>
                         <option value="50">50 mile</option>
                         <option value="100">100 mile</option>
                     </select>
-                    <p class="distance-label disabled">radius of</p>
+                    <p class="distance-label <?php if($postcode == "") echo("disabled") ?>">radius of</p>
 
-                    <input type="text" id="postcode-entry" placeholder="Postcode" maxlength="8" disabled>
-                    <img class="disabled" id="my-location-button" src="assets/location-icon.png">
+                    <input type="text" id="postcode-entry" placeholder="Postcode" maxlength="8" <?php if($postcode == "") echo("disabled") ?>>
+                    <img class="<?php if($postcode == "") echo("disabled") ?>" id="my-location-button" src="assets/location-icon.png">
                 </section>
             </aside>
 
