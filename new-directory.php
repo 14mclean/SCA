@@ -228,17 +228,17 @@
 
                     <ul class="filter-list">
                         <li>
-                            <input id="studentinteractions-f2f" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("interactions-project", $selected_interctions)) echo("checked"); ?>>
+                            <input id="studentinteractions-f2f" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("studentinteractions-f2f", $selected_student_interactions)) echo("checked"); ?>>
                             <label id="studentinteractions-f2f" class="filter-label">Face-to-Face</label>
                         </li>
 
                         <li>
-                            <input id="studentinteractions-online" class="custom-check" type="checkbox" autocomplete="off">
+                            <input id="studentinteractions-online" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("studentinteractions-online", $selected_student_interactions)) echo("checked"); ?>>
                             <label id="studentinteractions-online" class="filter-label">Online</label>
                         </li>
 
                         <li>
-                            <input id="studentinteractions-resources" class="custom-check" type="checkbox" autocomplete="off">
+                            <input id="studentinteractions-resources" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("studentinteractions-resources", $selected_student_interactions)) echo("checked"); ?>>
                             <label id="studentinteractions-resources" class="filter-label">Resources</label>
                         </li>
                     </ul>
@@ -248,7 +248,7 @@
                     <h3 class="filter-item-title" id="distance">Distance</h3>
                     <input type="checkbox" class="toggle">
 
-                    <p class="distance-label disabled">Within a</p>
+                    <p class="distance-label <?php if($postcode == "") echo("disabled") ?>">Within a</p>
                     <select id="radius-choice" disabled>
                         <option value="5">5 mile</option>
                         <option value="10">10 mile</option>
