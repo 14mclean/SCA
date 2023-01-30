@@ -207,17 +207,17 @@
 
                     <ul class="filter-list">
                         <li>
-                            <input id="interactions-teacheradvice" class="custom-check" type="checkbox" autocomplete="off">
+                            <input id="interactions-teacheradvice" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("interactions-teacheradvice", $selected_interctions)) echo("checked"); ?>>
                             <label id="interactions-teacheradvice" class="filter-label">Teacher Advice & Information</label>
                         </li>
 
                         <li>
-                            <input id="interactions-student" class="custom-check" type="checkbox" autocomplete="off">
+                            <input id="interactions-student" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("interactions-student", $selected_interctions)) echo("checked"); ?>>
                             <label id="interactions-student" class="filter-label">Student Interaction</label>
                         </li>
 
                         <li>
-                            <input id="interactions-project" class="custom-check" type="checkbox" autocomplete="off">
+                            <input id="interactions-project" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("interactions-project", $selected_interctions)) echo("checked"); ?>>
                             <label id="interactions-project" class="filter-label">Project Work</label>
                         </li>
                     </ul>
