@@ -111,7 +111,7 @@ async function handle_filter_change(event) {
 
     org_checks.forEach(checkbox => {
         if(checkbox.checked) {
-            orgs.push(checkbox.nextElementSibling.textContent);
+            orgs.push(checkbox.value);
         }
     });
 

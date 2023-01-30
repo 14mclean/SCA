@@ -16,7 +16,7 @@
 <!--
     PHPness:
      / start with check login info
-     - re-add php for header (myaccount, etc.)
+     / re-add php for header (myaccount, etc.)
      - get all unique orgs from experts
      - if GET variable active, show checked box
      - if student interaction checked, show student interactions filters
@@ -96,7 +96,6 @@
                             </li>
                         ');
                     }
-
                     ?>
                 </ul>
             </nav>
@@ -114,11 +113,17 @@
             </div>
 
             <aside id="filters">
-                <section class="filter-item">
+                <section class="filter-item" id="organisations">
                     <h3 class="filter-item-title">Organisation</h3>
 
                     <ul class="filter-list">
+                        <!--<li>
+                            <input class="custom-check" type="checkbox" autocomplete="off">
+                            <label class="filter-label">Test Ltd</label>
+                        </li>-->
+
                         <?php
+
                         $statement = $connection->prepare("SELECT DISTINCT Organisation FROM Expert WHERE admin_verified=1");
                         $statement->execute();
                         $result = $statement->fetchAll();
@@ -129,12 +134,8 @@
         
                                 echo("
                                 <li>
-                                    <div class=\"custom-checkbox\">
-                                        <input type=\"checkbox\">
-                                        <span class=\"checkmark\"></span>
-                                    </div>
-
-                                    <span class=\"filter-label\">$org</span>
+                                    <input class=\"custom-check\" type=\"checkbox\" autocomplete=\"off\" value=\"$org\">
+                                    <label class=\"filter-label\">$org</label>
                                 </li>
                                 ");
                             }
@@ -143,136 +144,95 @@
                     </ul>
                 </section>
 
-                <section class="filter-item">
+                <section class="filter-item" id="ages">
                     <h3 class="filter-item-title">Ages</h3>
 
                     <ul class="filter-list">
                         <li>
-                            <div class="custom-checkbox">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </div>
-
-                            <span class="filter-label">KS1</span>
+                            <input id="age1" class="custom-check" type="checkbox" autocomplete="off">
+                            <label id="age1" class="filter-label">KS1</label>
                         </li>
 
                         <li>
-                            <div class="custom-checkbox">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </div>
-
-                            <span class="filter-label">KS2</span>
+                            <input id="age2" class="custom-check" type="checkbox" autocomplete="off">
+                            <label id="age2" class="filter-label">KS2</label>
                         </li>
 
                         <li>
-                            <div class="custom-checkbox">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </div>
-
-                            <span class="filter-label">KS3</span>
+                            <input id="age3" class="custom-check" type="checkbox" autocomplete="off">
+                            <label id="age3" class="filter-label">KS3</label>
                         </li>
 
                         <li>
-                            <div class="custom-checkbox">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </div>
-
-                            <span class="filter-label">KS4</span>
+                            <input id="age4" class="custom-check" type="checkbox" autocomplete="off">
+                            <label id="age4" class="filter-label">KS4</label>
                         </li>
 
                         <li>
-                            <div class="custom-checkbox">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </div>
-
-                            <span class="filter-label">KS5</span>
+                            <input id="age5" class="custom-check" type="checkbox" autocomplete="off">
+                            <label id="age5" class="filter-label">KS5</label>
                         </li>
                     </ul>
                 </section>
 
-                <section class="filter-item">
+                <section class="filter-item" id="interactions">
                     <h3 class="filter-item-title">Interaction Types</h3>
 
                     <ul class="filter-list">
                         <li>
-                            <div class="custom-checkbox">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </div>
-
-                            <span class="filter-label">Teacher Advice & Information</span>
+                            <input id="interactions-teacheradvice" class="custom-check" type="checkbox" autocomplete="off">
+                            <label id="interactions-teacheradvice" class="filter-label">Teacher Advice & Information</label>
                         </li>
 
                         <li>
-                            <div class="custom-checkbox">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </div>
-
-                            <span class="filter-label">Student Interaction</span>
+                            <input id="interactions-student" class="custom-check" type="checkbox" autocomplete="off">
+                            <label id="interactions-student" class="filter-label">Student Interaction</label>
                         </li>
 
                         <li>
-                            <div class="custom-checkbox">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </div>
-
-                            <span class="filter-label">Project Work</span>
+                            <input id="interactions-project" class="custom-check" type="checkbox" autocomplete="off">
+                            <label id="interactions-project" class="filter-label">Project Work</label>
                         </li>
                     </ul>
                 </section>
 
-                <section class="filter-item">
+                <section class="filter-item" id="student-interactions">
                     <h3 class="filter-item-title">Student Interactions</h3>
 
                     <ul class="filter-list">
                         <li>
-                            <div class="custom-checkbox">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </div>
-
-                            <span class="filter-label">Face-to-Face</span>
+                            <input id="studentinteractions-f2f" class="custom-check" type="checkbox" autocomplete="off">
+                            <label id="studentinteractions-f2f" class="filter-label">Face-to-Face</label>
                         </li>
 
                         <li>
-                            <div class="custom-checkbox">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </div>
-
-                            <span class="filter-label">Online</span>
+                            <input id="studentinteractions-online" class="custom-check" type="checkbox" autocomplete="off">
+                            <label id="studentinteractions-online" class="filter-label">Online</label>
                         </li>
 
                         <li>
-                            <div class="custom-checkbox">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </div>
-
-                            <span class="filter-label">Resources</span>
+                            <input id="studentinteractions-resources" class="custom-check" type="checkbox" autocomplete="off">
+                            <label id="studentinteractions-resources" class="filter-label">Resources</label>
                         </li>
                     </ul>
                 </section>
 
-                <section class="filter-item">
-                    <h3 class="filter-item-title">Distance</h3>
+                <section id="distance">
+                    <h3 class="filter-item-title" id="distance">Distance</h3>
+                    <input type="checkbox" class="toggle">
 
-                    <ul class="filter-list">
-                        <li>
-                            <input type="range" name="distanceRange" min="1" max="180" value="30mi" oninput="this.nextElementSibling.value = this.value+'mi'">
-                            <output id="distance-value">30mi</output>
-                        </li>
+                    <p class="distance-label disabled">Within a</p>
+                    <select id="radius-choice" disabled>
+                        <option value="5">5 mile</option>
+                        <option value="10">10 mile</option>
+                        <option value="25">25 mile</option>
+                        <option value="50">50 mile</option>
+                        <option value="100">100 mile</option>
+                    </select>
+                    <p class="distance-label disabled">radius of</p>
 
-                        <li>
-                            <button id="enter-distance">Go</button>
-                        </li>
-                    </ul>
+                    <input type="text" id="postcode-entry" placeholder="Postcode" maxlength="8" disabled>
+                    <img class="disabled" id="my-location-button" src="assets/location-icon.png">
                 </section>
             </aside>
 
