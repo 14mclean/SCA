@@ -41,16 +41,6 @@
     }
 ?>
 
-<!--
-    PHPness:
-     / start with check login info
-     / re-add php for header (myaccount, etc.)
-     / get all unique orgs from experts
-     - if GET variable active, show checked box
-     - if student interaction checked, show student interactions filters
-     - show results fitting to GET variables
--->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -264,7 +254,13 @@
             </aside>
 
             <main id="results">
-
+                <!-- TODO: show results -->
+                <?php
+                $statement = $connection->prepare("SELECT name, about, location, job_title FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id WHERE admin_verified=1"); // org fits, checkboxes, 
+                $statement->execute();
+                $result = $statement->fetchAll();
+                print_r($result);
+                ?>
             </main>
         </main>
 
