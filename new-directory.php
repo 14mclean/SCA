@@ -269,6 +269,7 @@
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                 // filter by location
+                print_r($postcode);
                 $ch = curl_init();
 
                 curl_setopt($ch, CURLOPT_URL, "https://api.postcodes.io/postcodes/$postcode");
