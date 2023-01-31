@@ -269,18 +269,21 @@
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                 // filter by location
-                $tmp = str_replace(" ", "", $postcode);
-                $ch = curl_init();
+                function outcode_to_coords($postcode, $type="outcodes") {
+                    $postcode = str_replace(" ", "", $postcode);
+                    $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "https://api.postcodes.io/postcodes/$tmp");
-                curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json"));
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                    curl_setopt($ch, CURLOPT_URL, "https://api.postcodes.io/$type/$tmp");
+                    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json"));
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-                $response = curl_exec($ch);
-                
-                print_r("https://api.postcodes.io/postcodes/$tmp");
-                print_r($response);
-                curl_close($ch);
+                    $response = curl_exec($ch);
+                    
+                    print_r("https://api.postcodes.io/postcodes/$tmp");
+                    return $response;
+                }
+
+                print_r(outcode_to_coords($postcode, "postcodes"));
 
 
                 /*
