@@ -298,7 +298,21 @@
         </footer>
 
         <script>
-            const distinct_expertise = ["Testing", "Being a tester"];
+            <?php
+                
+                $statement = $connection->prepare("SELECT DISTINCT expertise FROM Expertise INNER JOIN Expert WHERE admin_verified=1");
+                $statement->execute();
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $expertise_js_array_string = "const distinct_expertise = [";
+
+                foreach($result as $expertise) {
+                    $expertise_js_array_string .= $expertise["expertise"] . ",";
+                }
+                $expertise_js_array_string = rtrim($expertise_js_array_string, ",");
+                $expertise_js_array_string .= "];";
+                echo($expertise_js_array_string);
+            ?>
+            //const distinct_expertise = ["Testing", "Being a tester"];
         </script>
         <script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
         <script src="javascript/header.js"></script>
