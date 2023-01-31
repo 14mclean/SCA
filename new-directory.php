@@ -317,9 +317,9 @@
                         $distance = location_distance($current_coords, $expert_coords);
                         $distance /= 1609; // convert from meters to miles
                         if($distance <= $_GET["range"]) {
-                            print_r("delete");
-                        } else {
                             print_r("keep");
+                        } else {
+                            print_r("delete");
                         }
                     }
                 }
