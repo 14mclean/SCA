@@ -271,13 +271,13 @@
                 // filter by location
                 $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "https://postcodes.io/postcodes/$postcode");
+                curl_setopt($ch, CURLOPT_URL, "https://api.postcodes.io/postcodes/$postcode");
                 curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json"));
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
                 $response = curl_exec($ch);
                 curl_close($ch);
-                
+
                 print_r($response);
 
                 /*
