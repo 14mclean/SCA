@@ -107,6 +107,17 @@ search_button.addEventListener("click", handle_filter_change);
 
 async function handle_filter_change(event) {
     event.preventDefault();
+
+    await fetch("https://api.postcodes.io/postcodes/" + postcode_entry.value.replace(/ /g, '') +"/validate")
+    .then(response => {return response.json()})
+    .then(json => {
+        if(json["result"] != true) {
+            postcode_entry.setCustomValidity("Not a known postcode");
+            postcode_entry.reportValidity();
+            return;
+        }
+    });
+
     const expertise_query = expertise_input.value;
     let orgs = [], ages = [], interactions = [], student_interactions = [];
 
@@ -193,3 +204,17 @@ expertise_input.addEventListener("keyup", () => {
         expertise_suggestions[i].textContent = suggestions[i];
     }
 });
+
+// Validate postcode
+postcode_entry.addEventListener("input", debounce( () => {
+    fetch("https://api.postcodes.io/postcodes/" + postcode_entry.value.replace(/ /g, '') +"/validate")
+    .then(response => {return response.json()})
+    .then(json => {
+        if(json["result"] == true) {
+            postcode_entry.setCustomValidity("");
+        } else {
+            postcode_entry.setCustomValidity("Not a known postcode");
+        }
+        postcode_entry.reportValidity();
+    });
+}, 1000));
