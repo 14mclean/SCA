@@ -268,6 +268,17 @@
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+                // filter by location
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, "https://postcodes.io/postcodes/$postcode");
+                curl_setopt($cURL,CURLOPT_HTTPHEADER,array (
+                    "Accept: application/json"
+                ));
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                $response = curl_exec($ch);
+                curl_close($ch);
+                print_r($response);
+
                 /*
 
                 Array (
@@ -308,10 +319,9 @@
                     $expertise_js_array_string .= "\"" . $expertise["expertise"] . "\",";
                 }
                 $expertise_js_array_string = rtrim($expertise_js_array_string, ",");
-                $expertise_js_array_string .= "];";
+                $expertise_js_array_string .= "];\n";
                 echo($expertise_js_array_string);
             ?>
-            //const distinct_expertise = ["Testing", "Being a tester"];
         </script>
         <script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
         <script src="javascript/header.js"></script>
