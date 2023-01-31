@@ -273,14 +273,11 @@
                     $postcode = str_replace(" ", "", $postcode);
                     $ch = curl_init();
 
-                    curl_setopt($ch, CURLOPT_URL, "https://api.postcodes.io/$type/$tmp");
+                    curl_setopt($ch, CURLOPT_URL, "https://api.postcodes.io/$type/$postcode");
                     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json"));
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-                    $response = curl_exec($ch);
-                    
-                    print_r("https://api.postcodes.io/postcodes/$tmp");
-                    return $response;
+                    return curl_exec($ch);
                 }
 
                 print_r(outcode_to_coords($postcode, "postcodes"));
