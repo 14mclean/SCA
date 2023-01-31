@@ -276,9 +276,9 @@
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
                 $response = curl_exec($ch);
+                print_r($response);
                 curl_close($ch);
 
-                print_r($response);
 
                 /*
 
