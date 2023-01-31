@@ -315,7 +315,7 @@
                     foreach($result as $expert) {
                         $expert_coords = outcode_to_coords($expert["location"]);
                         $distance = location_distance($current_coords, $expert_coords);
-                        $distance =/ 1609;
+                        $distance /= 1609;
                         print_r($distance);
                     }
                 }
