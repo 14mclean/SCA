@@ -277,7 +277,15 @@
                     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json"));
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-                    return curl_exec($ch);
+                    $response = curl_exec($ch);
+                    if($response["status"] == 200) {
+                        return [
+                            $response["result"]["latitude"],
+                            $response["result"]["longitude"]
+                        ];
+                    } else {
+                        return false;
+                    }
                 }
 
                 print_r(outcode_to_coords($postcode, "postcodes"));
