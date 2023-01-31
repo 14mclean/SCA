@@ -316,7 +316,7 @@
                         $expert_coords = outcode_to_coords($expert["location"]);
                         $distance = location_distance($current_coords, $expert_coords);
                         $distance /= 1609; // convert from meters to miles
-                        if($distance <= $range) {
+                        if($distance <= $_GET["range"]) {
                             print_r("delete");
                         } else {
                             print_r("keep");
