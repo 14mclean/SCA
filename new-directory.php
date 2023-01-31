@@ -264,56 +264,60 @@
             <main id="results">
                 <!-- TODO: show results -->
                 <?php
-                $statement = $connection->prepare("SELECT name, about, location, job_title FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id WHERE admin_verified=1"); // org fits, checkboxes, 
-                $statement->execute();
-                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-                // filter by location
-                function outcode_to_coords($postcode, $type="outcodes") {
-                    $postcode = str_replace(" ", "", $postcode);
-                    $ch = curl_init();
+                if($postcode != "") {
+                    $statement = $connection->prepare("SELECT name, about, location, job_title FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id WHERE admin_verified=1"); // org fits, checkboxes, 
+                    $statement->execute();
+                    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-                    curl_setopt($ch, CURLOPT_URL, "https://api.postcodes.io/$type/$postcode");
-                    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json"));
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                    // filter by location
+                    function outcode_to_coords($postcode, $type="outcodes") {
+                        $postcode = str_replace(" ", "", $postcode);
+                        $ch = curl_init();
 
-                    $response = (array) json_decode(curl_exec($ch), true);
-                    if($response["status"] == 200) {
-                        return [
-                            floatval($response["result"]["latitude"]),
-                            floatval($response["result"]["longitude"])
-                        ];
-                    } else {
-                        return false;
+                        curl_setopt($ch, CURLOPT_URL, "https://api.postcodes.io/$type/$postcode");
+                        curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json"));
+                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+                        $response = (array) json_decode(curl_exec($ch), true);
+                        if($response["status"] == 200) {
+                            return [
+                                floatval($response["result"]["latitude"]),
+                                floatval($response["result"]["longitude"])
+                            ];
+                        } else {
+                            return false;
+                        }
                     }
-                }
 
-                define("R", 6371e3); // earth radius (m)
-                function location_distance(array $location1, array $location2): float {
-                    $latitude1_radians = $location1[0] * M_PI / 180;
-                    $latitude2_radians = $location2[0] * M_PI / 180;
-                    $latitude_delta = ($location2[0] - $location1[0]) * M_PI / 180;
-                    $longitude_delta = ($location2[1] - $location1[1]) * M_PI / 180;
-                    $haversine_a = 
-                        sin($latitude_delta / 2) *
-                        sin($latitude_delta / 2) +
-                        cos($latitude1_radians) *
-                        cos($latitude2_radians) *
-                        sin($longitude_delta / 2) *
-                        sin($longitude_delta / 2);
-                    $haversine_c = 2 * atan2(
-                        sqrt($haversine_a),
-                        sqrt(1 - $haversine_a)
-                    );
-                    $distance = R * $haversine_c;
-                    return $distance;
-                }
+                    define("R", 6371e3); // earth radius (m)
+                    function location_distance(array $location1, array $location2): float {
+                        $latitude1_radians = $location1[0] * M_PI / 180;
+                        $latitude2_radians = $location2[0] * M_PI / 180;
+                        $latitude_delta = ($location2[0] - $location1[0]) * M_PI / 180;
+                        $longitude_delta = ($location2[1] - $location1[1]) * M_PI / 180;
+                        $haversine_a = 
+                            sin($latitude_delta / 2) *
+                            sin($latitude_delta / 2) +
+                            cos($latitude1_radians) *
+                            cos($latitude2_radians) *
+                            sin($longitude_delta / 2) *
+                            sin($longitude_delta / 2);
+                        $haversine_c = 2 * atan2(
+                            sqrt($haversine_a),
+                            sqrt(1 - $haversine_a)
+                        );
+                        $distance = R * $haversine_c;
+                        return $distance;
+                    }
 
-                $current_coords = outcode_to_coords($postcode, "postcodes");
-                foreach($result as $expert) {
-                    $expert_coords = outcode_to_coords($expert["location"]);
-                    $distance = location_distance($current_coords, $expert_coords);
-                    print_r($distance);
+                    $current_coords = outcode_to_coords($postcode, "postcodes");
+                    foreach($result as $expert) {
+                        $expert_coords = outcode_to_coords($expert["location"]);
+                        $distance = location_distance($current_coords, $expert_coords);
+                        $distance =/ 1609;
+                        print_r($distance);
+                    }
                 }
 
                 /*
