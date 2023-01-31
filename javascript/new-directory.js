@@ -19,6 +19,7 @@ const distance_selector = document.querySelector("select#radius-choice");
 const postcode_entry = document.querySelector("input#postcode-entry");
 const my_location_button = document.querySelector("img#my-location-button");
 const search_button = document.querySelector("div#search-bar img");
+const expertise_suggestions = document.querySelectorAll("div#expertise-search-wrapper li");
 
 // Collapse/expand filters
 filter_titles.forEach((title) => title.addEventListener("click", (event) => {
@@ -63,7 +64,7 @@ distance_toggle.addEventListener("click", () => {
 });
 
 // Fill postcode entry with geolocation data
-my_location_button.addEventListener("click", (event) => {
+my_location_button.addEventListener("click", () => {
     if(my_location_button.classList.contains("disabled")) return;
 
     if(!"geolocation" in navigator) {
@@ -172,3 +173,23 @@ async function handle_filter_change(event) {
 
     location.href = get_url.href;
 }
+
+// Add suggestions to expertise search
+expertise_input.addEventListener("keyup", () => {
+    const results = fuzzysort.go(expertise_input.value, distinct_expertise);
+    let suggestions = [];
+
+    if(results.length > 0) {
+        suggestions = [
+            (results.length >= 1) ? results[0]["target"].toLowerCase() : "",
+            (results.length >= 2) ? results[1]["target"].toLowerCase() : "",
+            (results.length >= 3) ? results[2]["target"].toLowerCase() : ""
+        ];
+    } else {
+        suggestions = [distinct_expertise[0].toLowerCase(), distinct_expertise[1].toLowerCase(), distinct_expertise[2].toLowerCase()];
+    }   
+    
+    for(let i = 0; i < 3; i++) {
+        expertise_suggestions[i].textContent = suggestions[i];
+    }
+});

@@ -74,8 +74,16 @@
 
         <main id="content">
             <div id="search-bar">
-                <input type="text" placeholder="Search Expertise">
-                <img src="../assets/searchIcon.png">
+                <div id="expertise-search-wrapper">
+                    <input type="text" placeholder="Search Expertise">
+                    <img src="../assets/searchIcon.png">
+
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
             </div>
 
             <aside id="filters">
@@ -193,8 +201,12 @@
             <p>support@schoolcitizenassemblies.org</p>
         </footer>
 
+        <script>
+            const distinct_expertise = ["Testing", "Being a tester"];
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
         <script src="javascript/header.js"></script>
+        <script src="javascript/debounce.js"></script>
         <script src="javascript/new-directory.js"></script>
     </body>
 </html>
