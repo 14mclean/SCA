@@ -280,8 +280,8 @@
                     $response = (array) json_decode(curl_exec($ch), true);
                     if($response["status"] == 200) {
                         return [
-                            (float) $response["result"]["latitude"],
-                            (float) $response["result"]["longitude"]
+                            floatval($response["result"]["latitude"]),
+                            floatvla((float) $response["result"]["longitude"])
                         ];
                     } else {
                         return false;
