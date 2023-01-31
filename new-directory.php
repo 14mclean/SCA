@@ -289,7 +289,7 @@
                 }
 
                 $current_coords = outcode_to_coords($postcode, "postcodes");
-                foreach($expert as $result) {
+                foreach($result as $expert) {
                     [$lat, $long] = outcode_to_coords($expert["location"]);
                     print_r($lat);
                 }
