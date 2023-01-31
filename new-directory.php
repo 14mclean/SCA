@@ -267,7 +267,6 @@
                 $statement = $connection->prepare("SELECT name, about, location, job_title FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id WHERE admin_verified=1"); // org fits, checkboxes, 
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-                print_r($result);
 
                 /*
 
@@ -306,7 +305,7 @@
                 $expertise_js_array_string = "const distinct_expertise = [";
 
                 foreach($result as $expertise) {
-                    $expertise_js_array_string .= $expertise["expertise"] . ",";
+                    $expertise_js_array_string .= "\"" . $expertise["expertise"] . "\",";
                 }
                 $expertise_js_array_string = rtrim($expertise_js_array_string, ",");
                 $expertise_js_array_string .= "];";
