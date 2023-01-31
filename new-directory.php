@@ -288,8 +288,8 @@
                     }
                 }
 
+                define("R", 6371e3); // earth radius (m)
                 function location_distance(array $location1, array $location2): float {
-                    define("R", 6371e3); // earth radius (m)
                     $latitude1_radians = $location1[0] * M_PI / 180;
                     $latitude2_radians = $location2[0] * M_PI / 180;
                     $latitude_delta = ($location2[0] - $location1[0]) * M_PI / 180;
