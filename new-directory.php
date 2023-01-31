@@ -280,8 +280,8 @@
                     $response = (array) json_decode(curl_exec($ch), true);
                     if($response["status"] == 200) {
                         return [
-                            $response["result"]["latitude"],
-                            $response["result"]["longitude"]
+                            (float) $response["result"]["latitude"],
+                            (float) $response["result"]["longitude"]
                         ];
                     } else {
                         return false;
@@ -291,7 +291,7 @@
                 $current_coords = outcode_to_coords($postcode, "postcodes");
                 foreach($result as $expert) {
                     [$lat, $long] = outcode_to_coords($expert["location"]);
-                    print_r($lat);
+                    
                 }
 
                 /*
