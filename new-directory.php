@@ -277,7 +277,7 @@
                     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json"));
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-                    $response = json_decode(curl_exec($ch));
+                    $response = (array) json_decode(curl_exec($ch), true);
                     if($response["status"] == 200) {
                         return [
                             $response["result"]["latitude"],
