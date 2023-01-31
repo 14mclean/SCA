@@ -275,6 +275,7 @@
                 curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json"));
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
+                print_r(curl_getinfo($ch));
                 $response = curl_exec($ch);
                 curl_close($ch);
 
