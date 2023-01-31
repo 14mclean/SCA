@@ -281,7 +281,7 @@
                     if($response["status"] == 200) {
                         return [
                             floatval($response["result"]["latitude"]),
-                            floatvla((float) $response["result"]["longitude"])
+                            floatval((float) $response["result"]["longitude"])
                         ];
                     } else {
                         return false;
