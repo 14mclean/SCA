@@ -126,8 +126,16 @@
 
         <main id="content">
             <div id="search-bar">
-                <input type="text" placeholder="Search Expertise">
-                <img src="../assets/searchIcon.png">
+                <div id="expertise-search-wrapper">
+                    <input type="text" placeholder="Search Expertise">
+                    <img src="../assets/searchIcon.png">
+
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
             </div>
 
             <aside id="filters">
@@ -258,8 +266,27 @@
                 <?php
                 $statement = $connection->prepare("SELECT name, about, location, job_title FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id WHERE admin_verified=1"); // org fits, checkboxes, 
                 $statement->execute();
-                $result = $statement->fetchAll();
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
                 print_r($result);
+
+                /*
+
+                Array (
+                    [0] => Array (
+                        [name] => Testing Tester
+                        [about] => This is a test account
+                        [location] => WA13
+                        [job_title] => Tester
+                    )
+                    [1] => Array (
+                        [name] => Testing Tester
+                        [about] => This is a test account
+                        [location] => WA13
+                        [job_title] => Tester
+                    )
+                )
+
+                */
                 ?>
             </main>
         </main>
@@ -270,6 +297,9 @@
             <p>support@schoolcitizenassemblies.org</p>
         </footer>
 
+        <script>
+            const distinct_expertise = ["Testing", "Being a tester"];
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
         <script src="javascript/header.js"></script>
         <script src="javascript/new-directory.js"></script>
