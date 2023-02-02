@@ -15,6 +15,7 @@
     // get all GET variables
     $postcode = $_GET["postcode"] ?? "";
     $distance_radius = $_GET["range"] ?? 0;
+    $expertise = $_GET["expertise"] ?? "";
 
     if(isset($_GET["age"])) {
         $selected_ages = explode("|", $_GET["age"], );
@@ -265,64 +266,91 @@
                 <!-- TODO: show results -->
                 <?php
 
-                if($postcode != "") {
-                    $statement = $connection->prepare("SELECT name, about, location, job_title FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id WHERE admin_verified=1"); // org fits, checkboxes, 
-                    $statement->execute();
-                    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+                define("R", 6371e3); // earth radius (m)
+                function location_distance(array $location1, array $location2): float {
+                    $latitude1_radians = $location1[0] * M_PI / 180;
+                    $latitude2_radians = $location2[0] * M_PI / 180;
+                    $latitude_delta = ($location2[0] - $location1[0]) * M_PI / 180;
+                    $longitude_delta = ($location2[1] - $location1[1]) * M_PI / 180;
+                    $haversine_a = 
+                        sin($latitude_delta / 2) *
+                        sin($latitude_delta / 2) +
+                        cos($latitude1_radians) *
+                        cos($latitude2_radians) *
+                        sin($longitude_delta / 2) *
+                        sin($longitude_delta / 2);
+                    $haversine_c = 2 * atan2(
+                        sqrt($haversine_a),
+                        sqrt(1 - $haversine_a)
+                    );
+                    $distance = R * $haversine_c;
+                    return $distance;
+                }
 
-                    // filter by location
-                    function outcode_to_coords($postcode, $type="outcodes") {
-                        $postcode = str_replace(" ", "", $postcode);
-                        $ch = curl_init();
+                function outcode_to_coords($postcode, $type="outcodes") {
+                    $postcode = str_replace(" ", "", $postcode);
+                    $ch = curl_init();
 
-                        curl_setopt($ch, CURLOPT_URL, "https://api.postcodes.io/$type/$postcode");
-                        curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json"));
-                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                    curl_setopt($ch, CURLOPT_URL, "https://api.postcodes.io/$type/$postcode");
+                    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json"));
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-                        $response = (array) json_decode(curl_exec($ch), true);
-                        if($response["status"] == 200) {
-                            return [
-                                floatval($response["result"]["latitude"]),
-                                floatval($response["result"]["longitude"])
-                            ];
-                        } else {
-                            return false;
-                        }
-                    }
-
-                    define("R", 6371e3); // earth radius (m)
-                    function location_distance(array $location1, array $location2): float {
-                        $latitude1_radians = $location1[0] * M_PI / 180;
-                        $latitude2_radians = $location2[0] * M_PI / 180;
-                        $latitude_delta = ($location2[0] - $location1[0]) * M_PI / 180;
-                        $longitude_delta = ($location2[1] - $location1[1]) * M_PI / 180;
-                        $haversine_a = 
-                            sin($latitude_delta / 2) *
-                            sin($latitude_delta / 2) +
-                            cos($latitude1_radians) *
-                            cos($latitude2_radians) *
-                            sin($longitude_delta / 2) *
-                            sin($longitude_delta / 2);
-                        $haversine_c = 2 * atan2(
-                            sqrt($haversine_a),
-                            sqrt(1 - $haversine_a)
-                        );
-                        $distance = R * $haversine_c;
-                        return $distance;
-                    }
-
-                    $current_coords = outcode_to_coords($postcode, "postcodes");
-                    foreach($result as $expert) {
-                        $expert_coords = outcode_to_coords($expert["location"]);
-                        $distance = location_distance($current_coords, $expert_coords);
-                        $distance /= 1609; // convert from meters to miles
-                        if($distance <= $_GET["range"]) {
-                            print_r("keep");
-                        } else {
-                            print_r("delete");
-                        }
+                    $response = (array) json_decode(curl_exec($ch), true);
+                    if($response["status"] == 200) {
+                        return [
+                            floatval($response["result"]["latitude"]),
+                            floatval($response["result"]["longitude"])
+                        ];
+                    } else {
+                        return false;
                     }
                 }
+
+                $current_coords = outcode_to_coords($postcode, "postcodes");
+                $accepted_expertise = [];// TODO: fill
+                $statement = $connection->prepare("SELECT name, about, location, job_title, organisation,expertise FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id WHERE admin_verified=1 LIMIT 0, 100;"); // org fits, checkboxes, 
+                $statement->execute();
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach($result as $expert_expertise) {
+                    // filter by postcode
+                    if($postcode != "") {
+                        /*$expert_coords = outcode_to_coords($expert["location"]);
+                        $distance = location_distance($current_coords, $expert_coords);
+                        $distance /= 1609; // convert from meters to miles
+                        if($distance > $_GET["range"]) {
+                            unset($result[$i]);
+                        } */
+                        // TODO: fix
+                    }
+
+                    // filter by expertise
+                    if($expertise != "") {
+ 
+                    }
+
+                    $current_expertise = [];
+                    foreach($result as $other_expertise) {
+                        if($other_expertise["name"] == $expert_expertise["name"]) {
+                            array_push($current_expertise, $other_expertise["expertise"]);
+                        }
+                    }
+
+                    $job_title = $expert_expertise['job_title'];
+                    $org = $expert_expertise['organisation'];
+                    $about = $expert_expertise['about'];
+
+                    echo("<li>");
+                    echo("<img class=\"profile-picture\" src=\"assets/profilePicture.png\">");
+                    echo("<h3 class=\"profile-subheading job\">$job_title at $org</h3>");
+                    echo("<p class=\"about\">$about</p>");
+                    //echo("<p class=\"distance\">~0 miles away</p>");
+                    echo("<h3 class=\"profile-subheading expertise\">Expertise:</h3>");
+                    echo("<p class=\"expertise\">$current_expertise</p>");
+                    echo("</li>");
+                }
+
+                
 
                 /*
 
@@ -332,12 +360,15 @@
                         [about] => This is a test account
                         [location] => WA13
                         [job_title] => Tester
+                        [expertise] => Testing
+                        org
                     )
                     [1] => Array (
                         [name] => Testing Tester
                         [about] => This is a test account
                         [location] => WA13
                         [job_title] => Tester
+                        [expertise] => Being a tester
                     )
                 )
 
@@ -355,7 +386,7 @@
         <script>
             <?php
                 
-                $statement = $connection->prepare("SELECT DISTINCT expertise FROM Expertise INNER JOIN Expert WHERE admin_verified=1");
+                $statement = $connection->prepare("SELECT expertise FROM Expertise INNER JOIN Expert ON Expertise.user_id = Expert.user_id WHERE admin_verified=1 GROUP BY expertise ORDER BY COUNT(expertise) DESC");
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
                 $expertise_js_array_string = "const distinct_expertise = [";
