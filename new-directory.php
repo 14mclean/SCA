@@ -351,7 +351,7 @@
                         <ul class=\"expertise-list\">
                     ");
 
-                    foreach($e as $current_expertise) {
+                    foreach($current_expertise as $e) {
                         echo("<li class=\"expertise\">$e</li>");
                     }
 
