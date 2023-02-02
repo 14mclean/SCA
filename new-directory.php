@@ -352,7 +352,7 @@
                     ");
 
                     foreach($e as $current_expertise) {
-                        echo("<li class=\"expertise\">$e</li>")
+                        echo("<li class=\"expertise\">$e</li>");
                     }
 
                     echo("
