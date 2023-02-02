@@ -398,7 +398,7 @@
                         foreach($result as $i => $tmp_expertise) {
                             if($tmp_expertise["name"] == $current_expertise["name"]) {
                                 $result = array_splice($result, $i, $i);
-                                $e = $tmp_expertise["expertise"];
+                                $e = ucwords($tmp_expertise["expertise"]);
                                 echo("<li class=\"expertise\">$e</li>");
                             }
                         }
