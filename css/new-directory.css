@@ -299,6 +299,7 @@ ul#results {
     flex-grow: 1;
     padding: 5px;
     align-content: flex-start;
+    margin-right: 20px;
 }
 
 ul#results li.profile-result {
@@ -355,7 +356,7 @@ li.expertise {
 }
 
 li.expertise:hover {
-    background-color: #5e2880;
+    /*background-color: #5e2880;*/
 }
 
 h3.profile-subheading {
