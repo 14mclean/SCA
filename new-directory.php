@@ -307,7 +307,7 @@
                 }
 
                 $current_coords = outcode_to_coords($postcode, "postcodes");
-                $accepted_expertise = [];// TODO: fill
+                $accepted_expertise = []; // TODO: fill
                 $statement = $connection->prepare("SELECT name, about, location, job_title, organisation,expertise FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id WHERE admin_verified=1 LIMIT 0, 100;"); // org fits, checkboxes, 
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -332,7 +332,7 @@
                     $current_expertise = [];
                     foreach($result as $i => $other_expertise) {
                         if($other_expertise["name"] == $expert_expertise["name"]) {
-                            array_push($current_expertise, $other_expertise["expertise"]);
+                            array_push($current_expertise, ucwords($other_expertise["expertise"]));
                             unset($result[$i]);
                         }
                     }
@@ -341,7 +341,6 @@
                     $job_title = $expert_expertise['job_title'];
                     $org = $expert_expertise['organisation'];
                     $about = $expert_expertise['about'];
-                    $expertise_list = implode(", ", $current_expertise);
 
                     echo("
                     <li class=\"profile-result\">
