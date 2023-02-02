@@ -97,7 +97,6 @@ section.filter-item {
 
 section.filter-item#student-interactions {
     max-height: 0px;
-    transition: 0.4s;
     overflow-y: hidden;
 }
 
