@@ -305,7 +305,7 @@
             </aside>
 
             <ul id="results">
-                <?php/*
+                <!--
 
                 if($postcode != "") {
                     $current_coords = outcode_to_coords($postcode, "postcodes");
@@ -364,8 +364,9 @@
                     }
 
                     echo("</li>");
-                }*/
+                }
                 ?>
+                -->
 
                 <?php
                     if($postcode != "") {
