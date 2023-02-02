@@ -404,6 +404,7 @@
         </script>
         <script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
         <script src="javascript/header.js"></script>
+        <script src="javascript/debounce.js"></script>
         <script src="javascript/new-directory.js"></script>
     </body>
 </html>
