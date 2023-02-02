@@ -123,9 +123,7 @@
                 <path d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
             </svg>
-        </header>
 
-        <main id="content">
             <div id="search-bar">
                 <div id="expertise-search-wrapper">
                     <input type="text" placeholder="Search Expertise">
@@ -138,7 +136,9 @@
                     </ul>
                 </div>
             </div>
+        </header>
 
+        <main id="content">
             <aside id="filters">
                 <section class="filter-item" id="organisations">
                     <h3 class="filter-item-title">Organisation</h3>
