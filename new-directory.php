@@ -305,7 +305,7 @@
             </aside>
 
             <ul id="results">
-                <!--
+                <?php
 
                 if($postcode != "") {
                     $current_coords = outcode_to_coords($postcode, "postcodes");
@@ -365,63 +365,6 @@
 
                     echo("</li>");
                 }
-                ?>
-                -->
-
-                <?php
-                    if($postcode != "") {
-                        $current_coords = outcode_to_coords($postcode, "postcodes");
-                    }
-                    
-                    $statement = $connection->prepare("SELECT name, about, location, job_title, organisation,expertise FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id WHERE admin_verified=1 LIMIT 0, 100;"); // org fits, checkboxes, 
-                    $statement->execute();
-                    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-                    
-                    while(count($result) > 0) {
-                        $current_expertise = array_shift($result);
-
-                        $name = $current_expertise["name"];
-                        $job_title = $current_expertise['job_title'];
-                        $org = $current_expertise['organisation'];
-                        $about = $current_expertise['about'];
-
-                        echo("
-                        <li class=\"profile-result\">
-                            <img class=\"profile-picture\" src=\"assets/profilePicture.png\">
-                            <h2 class=\"profile-name\">$name</h2>
-
-                            <ul class=\"expertise-list\">
-                        ");
-
-                        // group all expertise for each user
-                        foreach($result as $i => $tmp_expertise) {
-                            if($tmp_expertise["name"] == $current_expertise["name"]) {
-                                $result = array_splice($result, $i, count($result));
-                                $e = $tmp_expertise["expertise"];
-                                echo("<li class=\"expertise\">$e</li>");
-                            }
-                        }
-
-                        echo("
-                        </ul>
-                        <h3 class=\"profile-subheading job\">$job_title at $org</h3>
-
-                        <p class=\"about\">$about</p>
-                        ");
-
-                        // filter by postcode
-                        if($postcode != "") {
-                            $expert_coords = outcode_to_coords($expert["location"]);
-                            $distance = location_distance($current_coords, $expert_coords);
-                            $distance /= 1609; // convert from meters to miles
-                            if($distance <= $_GET["range"]) {
-                                echo("<p class=\"distance\">~$distance miles away</p>");
-                            }
-                        }
-
-                        echo("</li>");
-                    }
                 ?>
             </ul>
         </main>
