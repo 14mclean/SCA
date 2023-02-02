@@ -346,7 +346,7 @@
 
                     echo("<li>");
                     echo("<img class=\"profile-picture\" src=\"assets/profilePicture.png\">");
-                    echo("<h2 class=\"profile-name\">$name</h2>")
+                    echo("<h2 class=\"profile-name\">$name</h2>");
                     echo("<h3 class=\"profile-subheading job\">$job_title at $org</h3>");
                     echo("<p class=\"about\">$about</p>");
                     //echo("<p class=\"distance\">~0 miles away</p>");
