@@ -379,7 +379,7 @@
 
                     
                     while(count($result) > 0) {
-                        $current_expertise = array_shift($result);
+                        $current_expertise = $result[0];
 
                         $name = $current_expertise["name"];
                         $job_title = $current_expertise['job_title'];
