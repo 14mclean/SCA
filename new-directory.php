@@ -262,8 +262,7 @@
                 </section>
             </aside>
 
-            <main id="results">
-                <ul>
+            <ul id="results">
                 <!-- TODO: show results -->
                 <?php
 
@@ -344,15 +343,27 @@
                     $about = $expert_expertise['about'];
                     $expertise_list = implode(", ", $current_expertise);
 
-                    echo("<li>");
-                    echo("<img class=\"profile-picture\" src=\"assets/profilePicture.png\">");
-                    echo("<h2 class=\"profile-name\">$name</h2>");
-                    echo("<h3 class=\"profile-subheading job\">$job_title at $org</h3>");
-                    echo("<p class=\"about\">$about</p>");
-                    //echo("<p class=\"distance\">~0 miles away</p>");
-                    echo("<h3 class=\"profile-subheading expertise\">Expertise:</h3>");
-                    echo("<p class=\"expertise\">$expertise_list</p>");
-                    echo("</li>");
+                    echo("
+                    <li class=\"profile-result\">
+                        <img class=\"profile-picture\" src=\"assets/profilePicture.png\">
+                        <h2 class=\"profile-name\">$name</h2>
+
+                        <ul class=\"expertise-list\">
+                    ");
+
+                    foreach($e as $current_expertise) {
+                        echo("<li class=\"expertise\">$e</li>")
+                    }
+
+                    echo("
+                        </ul>
+                        </ul>
+                        <h3 class=\"profile-subheading job\">$job_title at $org</h3>
+
+                        <p class=\"about\">$about</p>
+                        <p class=\"distance\">~0 miles away</p>
+                    </li>
+                    ");
                 }
 
                 
@@ -379,8 +390,7 @@
 
                 */
                 ?>
-                </ul>
-            </main>
+            </ul>
         </main>
 
         <footer>

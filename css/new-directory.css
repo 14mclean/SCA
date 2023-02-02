@@ -289,37 +289,30 @@ img#my-location-button.disabled {
     cursor: default;
 }
 
-main#results {
-    border: 1px solid #ccc;
-    border-radius: 13px; 
-
-    flex-grow: 1;
-    display: inline-block;
-    margin: 10px;
-    top: 0;
-    min-height: calc(100vh - calc(5em + 60px));
-}
-
-main#results ul {
+ul#results {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    padding: 0;
-    margin: 10px;
-    margin-top: 0px;
     justify-content: space-evenly;
+    border: 1px solid #ccc;
+    border-radius: 13px; 
+    flex-grow: 1;
+    padding: 5px;
+    align-content: flex-start;
 }
 
-main#results li {
+ul#results li.profile-result {
     background-color: #eee;
     padding: 20px;
+    padding-bottom: 5px;
     border: none;
     border-radius: 5px;
     outline: 10px solid white;
     margin-top: 15px;
+    height: fit-content;
 }
 
-main#results li:hover {
+ul#results li.profile-result:hover {
     background-color: #e8e8e8;
 }
 
@@ -339,7 +332,30 @@ h2.profile-name {
     line-height: 24px;
     position: relative;
     top: -6px;
+}
+
+ul.expertise-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    margin-top: 5px;
     margin-bottom: 5px;
+}
+
+li.expertise {
+    display: inline-block;
+    background-color: #401b57;
+    border-radius: 7px;
+    padding: 0px 7px 2px 7px;
+    color: #eee;
+    font: 16px 'Open Sans';
+    font-variant: small-caps;
+    margin-bottom: 5px;
+}
+
+li.expertise:hover {
+    background-color: #5e2880;
 }
 
 h3.profile-subheading {
@@ -349,6 +365,7 @@ h3.profile-subheading {
     color: #333;
     margin: 0;
     display: block;
+    width: fit-content;
 }
 
 p.about {
@@ -358,33 +375,27 @@ p.about {
     margin: 0;
     margin-top: 10px;
     display: block;
+    width: fit-content;
 }
 
 p.distance {
     font-family: 'Open Sans';
-    font-size: 14px;
+    font-size: 12px;
     margin: 0;
     margin-top: 10px;
     margin-bottom: 10px;
     display: block;
-}
-
-p.expertise {
-    margin: 0;
-    margin-top: 5px;
-    font-family: 'Open Sans';
-    font-size: 14px;
-    display: block;
+    width: fit-content;
 }
 
 @media only screen and (max-width: 1500px) {
-    main#results li {
+    ul#results li.profile-result {
         max-width: 40%;
     }
 }
 
 @media only screen and (min-width: 1500px) {
-    main#results li {
+    ul#results li.profile-result {
         max-width: 33.333%;
     }
 }
