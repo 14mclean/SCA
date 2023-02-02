@@ -366,10 +366,6 @@ li.expertise {
     margin-right: 5px;
 }
 
-li.expertise:hover {
-    /*background-color: #5e2880;*/
-}
-
 h3.profile-subheading {
     font-family: 'Open Sans';
     display: inline-block;
