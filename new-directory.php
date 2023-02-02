@@ -357,7 +357,6 @@
 
                     echo("
                         </ul>
-                        </ul>
                         <h3 class=\"profile-subheading job\">$job_title at $org</h3>
 
                         <p class=\"about\">$about</p>
