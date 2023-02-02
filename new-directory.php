@@ -380,10 +380,10 @@
                     while(count($result) > 0) {
                         $current_expertise = array_shift($result);
 
-                        $name = $expert_expertise["name"];
-                        $job_title = $expert_expertise['job_title'];
-                        $org = $expert_expertise['organisation'];
-                        $about = $expert_expertise['about'];
+                        $name = $current_expertise["name"];
+                        $job_title = $current_expertise['job_title'];
+                        $org = $current_expertise['organisation'];
+                        $about = $current_expertise['about'];
 
                         echo("
                         <li class=\"profile-result\">
