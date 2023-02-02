@@ -263,6 +263,7 @@
             </aside>
 
             <main id="results">
+                <ul>
                 <!-- TODO: show results -->
                 <?php
 
@@ -339,6 +340,7 @@
                     $job_title = $expert_expertise['job_title'];
                     $org = $expert_expertise['organisation'];
                     $about = $expert_expertise['about'];
+                    $expertise_list = implode(", ", $current_expertise);
 
                     echo("<li>");
                     echo("<img class=\"profile-picture\" src=\"assets/profilePicture.png\">");
@@ -346,7 +348,7 @@
                     echo("<p class=\"about\">$about</p>");
                     //echo("<p class=\"distance\">~0 miles away</p>");
                     echo("<h3 class=\"profile-subheading expertise\">Expertise:</h3>");
-                    echo("<p class=\"expertise\">$current_expertise</p>");
+                    echo("<p class=\"expertise\">$expertise_list</p>");
                     echo("</li>");
                 }
 
@@ -374,6 +376,7 @@
 
                 */
                 ?>
+                </ul>
             </main>
         </main>
 
