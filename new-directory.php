@@ -331,9 +331,10 @@
                     }
 
                     $current_expertise = [];
-                    foreach($result as $other_expertise) {
+                    foreach($result as $i => $other_expertise) {
                         if($other_expertise["name"] == $expert_expertise["name"]) {
                             array_push($current_expertise, $other_expertise["expertise"]);
+                            unset($result[$i]);
                         }
                     }
 
