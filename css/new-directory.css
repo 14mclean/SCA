@@ -349,8 +349,9 @@ li.expertise {
     border-radius: 7px;
     padding: 0px 7px 2px 7px;
     color: #eee;
-    font: 16px 'Open Sans';
+    font: 14px 'Open Sans';
     margin-bottom: 5px;
+    margin-right: 5px;
 }
 
 li.expertise:hover {
