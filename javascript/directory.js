@@ -197,9 +197,13 @@ async function handle_filter_change(event) {
 }
 
 // Add suggestions to expertise search
-expertise_input.addEventListener("keyup", () => {
+expertise_input.addEventListener("keyup", add_suggestions);
+
+function add_suggestions() {
     if(expertise_input.value == "") {
-        init_suggestions();
+        for(let i = 0; i < 3; i++) {
+            expertise_suggestions[i].textContent = distinct_expertise[i].toLowerCase();
+        }
         return;
     }
 
@@ -208,7 +212,7 @@ expertise_input.addEventListener("keyup", () => {
     for(let i = 0; i < 3; i++) {
         expertise_suggestions[i].textContent = (results.length >= i+1) ? results[i]["target"].toLowerCase() : "";
     }
-});
+}
 
 // Validate postcode
 postcode_entry.addEventListener("input", debounce( () => {
@@ -225,10 +229,4 @@ postcode_entry.addEventListener("input", debounce( () => {
 }, 1000));
 
 
-function init_suggestions() {
-    for(let i = 0; i < 3; i++) {
-        expertise_suggestions[i].textContent = distinct_expertise[i].toLowerCase();
-    }
-}
-
-init_suggestions();
+add_suggestions();
