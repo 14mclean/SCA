@@ -169,7 +169,7 @@
 
             <div id="search-bar">
                 <div id="expertise-search-wrapper">
-                    <input type="text" placeholder="Search Expertise">
+                    <input type="text" placeholder="Search Expertise" value="<?php echo($expertise) ?>">
                     <img src="../assets/searchIcon.png">
 
                     <ul>
