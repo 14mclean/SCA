@@ -187,7 +187,7 @@ async function handle_filter_change(event) {
 
 // Add suggestions to expertise search
 expertise_input.addEventListener("keyup", () => {
-    if(expertise_input == "") {
+    if(expertise_input.value == "") {
         init_suggestions();
         return;
     }
