@@ -75,12 +75,6 @@
                             </div>
                         </li>
                         ');
-                        echo('
-                                <a href="expert-profile.php">Profile</a>
-                                <a href="phpScripts/logout.php">Logout</a>
-                            </div>
-                        </li>
-                        ');
                     } else {
                         echo('
                             <li>
