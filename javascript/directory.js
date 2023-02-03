@@ -193,20 +193,9 @@ expertise_input.addEventListener("keyup", () => {
     }
 
     const results = fuzzysort.go(expertise_input.value, distinct_expertise);
-    let suggestions = [];
-
-    if(results.length > 0) {
-        suggestions = [
-            (results.length >= 1) ? results[0]["target"].toLowerCase() : "",
-            (results.length >= 2) ? results[1]["target"].toLowerCase() : "",
-            (results.length >= 3) ? results[2]["target"].toLowerCase() : ""
-        ];
-    } else {
-        suggestions = [distinct_expertise[0].toLowerCase(), distinct_expertise[1].toLowerCase(), distinct_expertise[2].toLowerCase()];
-    }   
     
     for(let i = 0; i < 3; i++) {
-        expertise_suggestions[i].textContent = suggestions[i];
+        expertise_suggestions[i].textContent = (results.length >= i+1) ? results[i]["target"].toLowerCase() : "";
     }
 });
 
