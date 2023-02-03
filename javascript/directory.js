@@ -227,7 +227,6 @@ postcode_entry.addEventListener("input", debounce( () => {
 
 function init_suggestions() {
     for(let i = 0; i < 3; i++) {
-        console.log(distinct_expertise[i]);
         expertise_suggestions[i].textContent = distinct_expertise[i].toLowerCase();
     }
 }
