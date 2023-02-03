@@ -104,6 +104,12 @@ expertise_input.addEventListener("keyup", (event) => {
     if(event.key === "Enter") handle_filter_change(event);
 });
 search_button.addEventListener("click", handle_filter_change);
+expertise_suggestions.forEach((suggestion) => suggestion.addEventListener("click", 
+(event) => {
+    expertise_input.value = event.target.textContent;
+    handle_filter_change(event)
+}
+));
 
 async function handle_filter_change(event) {
     event.preventDefault();

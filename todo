@@ -4,12 +4,9 @@ distance options
 
 email verfied & post-email asthetics
 
-autocomplete for top 5 fuzzysort with debounce for expertise search
-
 em not px
-Last section of homepage
 Go through login css (errros!)
-only 1 h1 per page
+only 1 h1 per page - email-validation, expert profile, forgot password, index, login, register
 password-reset asthetics
 
 open sans for hard to read text
@@ -17,7 +14,7 @@ open sans for hard to read text
 add alt attributes to img
 avoid div's
 figure how to move register & expert profile js to own files
-remove "onclick"s
+remove "onclick"s - expert profile, expert resources
 
 password reset:
     test all features of password reset
