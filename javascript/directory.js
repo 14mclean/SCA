@@ -106,10 +106,10 @@ expertise_input.addEventListener("keyup", (event) => {
 search_button.addEventListener("click", handle_filter_change);
 expertise_suggestions.forEach((suggestion) => suggestion.addEventListener("click", 
 (event) => {
+    console.log("test");
     expertise_input.value = event.target.textContent;
-    handle_filter_change(event)
-}
-));
+    handle_filter_change(event);
+}));
 
 async function handle_filter_change(event) {
     event.preventDefault();
