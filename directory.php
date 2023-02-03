@@ -401,7 +401,7 @@
                         if($postcode != "") {
                             $expert_coords = outcode_to_coords($current_expertise["location"]);
                             $distance = location_distance($current_coords, $expert_coords);
-                            $distance /= 1609; // convert from meters to miles
+                            $distance = round($distance/1609, 2); // convert from meters to miles
                             if($distance <= $_GET["range"]) {
                                 echo("<p class=\"distance\">~$distance miles away</p>");
                             }
