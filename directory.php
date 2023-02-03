@@ -92,7 +92,7 @@
         <title>Directory - SCA</title>
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel='stylesheet'>
         <link rel="stylesheet" href="css/template.css">
-        <link rel="stylesheet" href="css/new-directory.css">
+        <link rel="stylesheet" href="css/directory.css">
     </head>
 
     <body>
@@ -305,70 +305,8 @@
             </aside>
 
             <ul id="results">
-                <!--
-
-                if($postcode != "") {
-                    $current_coords = outcode_to_coords($postcode, "postcodes");
-                }
-                
-                $statement = $connection->prepare("SELECT name, about, location, job_title, organisation,expertise FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id WHERE admin_verified=1 LIMIT 0, 100;"); // org fits, checkboxes, 
-                $statement->execute();
-                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-                foreach($result as $expert_expertise) {
-                    // filter by expertise
-                    if($expertise != "") {
- 
-                    }
-
-                    $current_expertise = [];
-                    foreach($result as $i => $other_expertise) {
-                        if($other_expertise["name"] == $expert_expertise["name"]) {
-                            array_push($current_expertise, ucwords($other_expertise["expertise"]));
-                            unset($result[$i]);
-                        }
-                    }
-
-                    $name = $expert_expertise["name"];
-                    $job_title = $expert_expertise['job_title'];
-                    $org = $expert_expertise['organisation'];
-                    $about = $expert_expertise['about'];
-
-                    echo("
-                    <li class=\"profile-result\">
-                        <img class=\"profile-picture\" src=\"assets/profilePicture.png\">
-                        <h2 class=\"profile-name\">$name</h2>
-
-                        <ul class=\"expertise-list\">
-                    ");
-
-                    foreach($current_expertise as $e) {
-                        echo("<li class=\"expertise\">$e</li>");
-                    }
-
-                    echo("
-                        </ul>
-                        <h3 class=\"profile-subheading job\">$job_title at $org</h3>
-
-                        <p class=\"about\">$about</p>
-                    ");
-
-                    // filter by postcode
-                    if($postcode != "") {
-                        $expert_coords = outcode_to_coords($expert["location"]);
-                        $distance = location_distance($current_coords, $expert_coords);
-                        $distance /= 1609; // convert from meters to miles
-                        if($distance <= $_GET["range"]) {
-                            echo("<p class=\"distance\">~$distance miles away</p>");
-                        }
-                    }
-
-                    echo("</li>");
-                }
-                ?>
-                -->
-
                 <?php
+                    // TODO: filter by expertise
                     if($postcode != "") {
                         $current_coords = outcode_to_coords($postcode, "postcodes");
                     }
