@@ -20,6 +20,7 @@ const postcode_entry = document.querySelector("input#postcode-entry");
 const my_location_button = document.querySelector("img#my-location-button");
 const search_button = document.querySelector("div#search-bar img");
 const expertise_suggestions = document.querySelectorAll("div#expertise-search-wrapper li");
+const all_checkboxes = document.querySelectorAll("aside#filters input.custom-check")
 
 // Collapse/expand filters
 filter_titles.forEach((title) => title.addEventListener("click", (event) => {
@@ -104,6 +105,7 @@ expertise_input.addEventListener("keyup", (event) => {
     if(event.key === "Enter") handle_filter_change(event);
 });
 search_button.addEventListener("mousedown", handle_filter_change);
+all_checkboxes.forEach((checkboxes) => checkboxes.addEventListener("click", handle_filter_change));
 expertise_suggestions.forEach((suggestion) => suggestion.addEventListener("click", 
 (event) => {
     console.log("test");
