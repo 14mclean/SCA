@@ -16,6 +16,8 @@ avoid div's
 figure how to move register & expert profile js to own files
 remove "onclick"s - expert profile, expert resources
 
+directory text works for checkboxes but not actual checkbox
+
 password reset:
     test all features of password reset
 

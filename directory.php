@@ -30,9 +30,9 @@
     }
 
     if(isset($_GET["interaction"])) {
-        $selected_interctions = explode("|", $_GET["interaction"], );
+        $selected_interactions = explode("|", $_GET["interaction"], );
     } else {
-        $selected_interctions = [];
+        $selected_interactions = [];
     }
 
     if(isset($_GET["student_interaction"])) {
@@ -249,23 +249,23 @@
 
                     <ul class="filter-list">
                         <li>
-                            <input id="interactions-teacheradvice" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("interactions-teacheradvice", $selected_interctions)) echo("checked"); ?>>
+                            <input id="interactions-teacheradvice" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("interactions-teacheradvice", $selected_interactions)) echo("checked"); ?>>
                             <label id="interactions-teacheradvice" class="filter-label">Teacher Advice & Information</label>
                         </li>
 
                         <li>
-                            <input id="interactions-student" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("interactions-student", $selected_interctions)) echo("checked"); ?>>
+                            <input id="interactions-student" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("interactions-student", $selected_interactions)) echo("checked"); ?>>
                             <label id="interactions-student" class="filter-label">Student Interaction</label>
                         </li>
 
                         <li>
-                            <input id="interactions-project" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("interactions-project", $selected_interctions)) echo("checked"); ?>>
+                            <input id="interactions-project" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("interactions-project", $selected_interactions)) echo("checked"); ?>>
                             <label id="interactions-project" class="filter-label">Project Work</label>
                         </li>
                     </ul>
                 </section>
 
-                <section class="filter-item <?php if(in_array("interactions-student", $selected_interctions)) echo("shown"); ?>" id="student-interactions">
+                <section class="filter-item <?php if(in_array("interactions-student", $selected_interactions)) echo("shown"); ?>" id="student-interactions">
                     <h3 class="filter-item-title">Student Interactions</h3>
 
                     <ul class="filter-list">
@@ -311,8 +311,56 @@
                     if($postcode != "") {
                         $current_coords = outcode_to_coords($postcode, "postcodes");
                     }
+
+                    $filters_string = "";
+
+                    if(in_array("age1", $selected_ages)) {
+                        $filters_string .= " AND does_ks1 = 1";
+                    }
+
+                    if(in_array("age2", $selected_ages)) {
+                        $filters_string .= " AND does_ks2 = 1";
+                    }
+
+                    if(in_array("age3", $selected_ages)) {
+                        $filters_string .= " AND does_ks3 = 1";
+                    }
+
+                    if(in_array("age4", $selected_ages)) {
+                        $filters_string .= " AND does_ks4 = 1";
+                    }
+
+                    if(in_array("age5", $selected_ages)) {
+                        $filters_string .= " AND does_ks5 = 1";
+                    }
+
+                    if(in_array("interactions-teacheradvice", $selected_interactions)) {
+                        $filters_string .= " AND does_teacher_advice = 1";
+                    }
+
+                    if(in_array("interactions-project", $selected_interactions)) {
+                        $filters_string .= " AND does_project_work = 1";
+                    }
+
+                    if(in_array("interactions-student", $selected_interactions)) {
+                        if(in_array("studentinteractions-f2f", $selected_student_interactions)) {
+                            $filters_string .= " AND does_student_f2f = 1";
+                        }
+
+                        if(in_array("studentinteractions-online", $selected_student_interactions)) {
+                            $filters_string .= " AND does_student_online = 1";
+                        }
+
+                        if(in_array("studentinteractions-resources", $selected_student_interactions)) {
+                            $filters_string .= " AND does_student_resources = 1";
+                        }
+                    }
+
                     
-                    $statement = $connection->prepare("SELECT name, about, location, job_title, organisation,expertise FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id WHERE admin_verified=1 LIMIT 0, 100;"); // org fits, checkboxes, 
+                    $statement = $connection->prepare("SELECT name, about, location, job_title, organisation,expertise 
+                    FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id 
+                    WHERE admin_verified = 1 $filters_string
+                    LIMIT 0, 100;"); // org fits, checkboxes, 
                     $statement->execute();
                     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 

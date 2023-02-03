@@ -104,6 +104,9 @@ my_location_button.addEventListener("click", () => {
 expertise_input.addEventListener("keyup", (event) => {
     if(event.key === "Enter") handle_filter_change(event);
 });
+postcode_entry.addEventListener("keyup", (event) => {
+    if(event.key === "Enter") handle_filter_change(event);
+});
 search_button.addEventListener("mousedown", handle_filter_change);
 all_checkboxes.forEach((checkboxes) => checkboxes.addEventListener("click", handle_filter_change));
 expertise_suggestions.forEach((suggestion) => suggestion.addEventListener("click", 
