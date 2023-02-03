@@ -80,6 +80,7 @@ div#expertise-search-wrapper li {
     padding-left: 25px;
     height: 25px;
     line-height: 25px;
+    text-transform: capitalize;
 }
 
 div#expertise-search-wrapper li:empty {
