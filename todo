@@ -1,6 +1,6 @@
 mobile version of each page
 
-distance slider: min, max, initial
+distance options
 
 email verfied & post-email asthetics
 
@@ -13,8 +13,6 @@ only 1 h1 per page
 password-reset asthetics
 
 open sans for hard to read text
-
-long,lat => postcode & reverse: api.postcodes.io/postcodes?lon=:longitude&lat=:latitude
 
 add alt attributes to img
 avoid div's

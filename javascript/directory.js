@@ -187,6 +187,11 @@ async function handle_filter_change(event) {
 
 // Add suggestions to expertise search
 expertise_input.addEventListener("keyup", () => {
+    if(expertise_input == "") {
+        init_suggestions();
+        return;
+    }
+
     const results = fuzzysort.go(expertise_input.value, distinct_expertise);
     let suggestions = [];
 
@@ -218,3 +223,12 @@ postcode_entry.addEventListener("input", debounce( () => {
         postcode_entry.reportValidity();
     });
 }, 1000));
+
+
+function init_suggestions() {
+    for(let i = 0; i < 3; i++) {
+        expertise_suggestions[i].textContent = distinct_expertise[i].toLowerCase();
+    }
+}
+
+init_suggestions();
