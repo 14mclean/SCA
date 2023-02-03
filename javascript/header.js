@@ -27,8 +27,6 @@ function close_all_subnavs() {
 
 collapsableNavButtons.forEach(button => {
     button.addEventListener("click", (event) => {
-        
-
         const element = event.target;
         const subnav = document.querySelector(".subnav#" + element.id);
         const others = document.querySelectorAll(".subnav:not(#" + element.id + ")");
@@ -37,6 +35,7 @@ collapsableNavButtons.forEach(button => {
             other_nav.classList.remove("open");
         }
 
+        element.classList.toggle("open");
         subnav.classList.toggle("open");
 
         if(subnav.classList.contains("open")) {
@@ -46,7 +45,7 @@ collapsableNavButtons.forEach(button => {
         }
 
         event.stopPropagation();
-    })
+    });
 });
 
 [burger, closeNav].forEach(el => { el.addEventListener("click", toggle_sidebar); });

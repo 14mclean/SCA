@@ -11,6 +11,77 @@
 
     $db = new Database("localhost", "SchoolCitizenAssemblies", "mwd3iqjaesdr", "cPanMT3");
     $connection = $db->get_connection();
+
+    // get all GET variables
+    $postcode = $_GET["postcode"] ?? "";
+    $distance_radius = $_GET["range"] ?? 0;
+    $expertise = $_GET["expertise"] ?? "";
+
+    if(isset($_GET["age"])) {
+        $selected_ages = explode("|", $_GET["age"], );
+    } else {
+        $selected_ages = [];
+    }
+
+    if(isset($_GET["organisation"])) {
+        $selected_orgs = explode("|", $_GET["organisation"], );
+    } else {
+        $selected_orgs = [];
+    }
+
+    if(isset($_GET["interaction"])) {
+        $selected_interctions = explode("|", $_GET["interaction"], );
+    } else {
+        $selected_interctions = [];
+    }
+
+    if(isset($_GET["student_interaction"])) {
+        $selected_student_interactions = explode("|", $_GET["student_interaction"], );
+    } else {
+        $selected_student_interactions = [];
+    }
+
+    // prepare for results
+    define("R", 6371e3); // earth radius (m)
+
+    function location_distance(array $location1, array $location2): float {
+        $latitude1_radians = $location1[0] * M_PI / 180;
+        $latitude2_radians = $location2[0] * M_PI / 180;
+        $latitude_delta = ($location2[0] - $location1[0]) * M_PI / 180;
+        $longitude_delta = ($location2[1] - $location1[1]) * M_PI / 180;
+        $haversine_a = 
+            sin($latitude_delta / 2) *
+            sin($latitude_delta / 2) +
+            cos($latitude1_radians) *
+            cos($latitude2_radians) *
+            sin($longitude_delta / 2) *
+            sin($longitude_delta / 2);
+        $haversine_c = 2 * atan2(
+            sqrt($haversine_a),
+            sqrt(1 - $haversine_a)
+        );
+        $distance = R * $haversine_c;
+        return $distance;
+    }
+
+    function outcode_to_coords($postcode, $type="outcodes") {
+        $postcode = str_replace(" ", "", $postcode);
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, "https://api.postcodes.io/$type/$postcode");
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept: application/json"));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $response = (array) json_decode(curl_exec($ch), true);
+        if($response["status"] == 200) {
+            return [
+                floatval($response["result"]["latitude"]),
+                floatval($response["result"]["longitude"])
+            ];
+        } else {
+            return false;
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +92,7 @@
         <title>Directory - SCA</title>
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel='stylesheet'>
         <link rel="stylesheet" href="css/template.css">
-        <link rel="stylesheet" href="css/directory.css">
+        <link rel="stylesheet" href="css/new-directory.css">
     </head>
 
     <body>
@@ -59,6 +130,7 @@
                             <li><a href="expert-resources.php">Expert Resources</a></li>
                             <li><a href="directory.php">Directory</a></li>
                         </ul>
+                    </li>
 
                     <?php
 
@@ -93,161 +165,265 @@
                 <path d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
             </svg>
-        </header>
 
-        <main>
-            <aside>
-                <div class="refinement" id="organisation">
-                    <h2>
-                        Organisation
-                        
-                        <div class="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
-                            <span id="vertical"></span>
-                            <span id="horizontal"></span>
-                        </div>
-                    </h2>
-
-                    <?php
-
-                    $statement = $connection->prepare("SELECT DISTINCT Organisation FROM Expert WHERE admin_verified=1");
-                    $statement->execute();
-                    $result = $statement->fetchAll();
-
-                    if($result) {
-                        foreach($result as &$row) {
-                            $org = $row["Organisation"];
-    
-                            echo("
-                            <label class='custom-checkbox'>
-                                $org
-                                <input type='checkbox' value='$org'>
-                                <span class='new-checkbox'></span>
-                            </label>
-                            ");
-                        }
-                    }
-                    ?>
-                </div>
-
-                <div class="refinement" id="ages">
-                    <h2>
-                        Ages
-                        <div class="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
-                            <span id="vertical"></span>
-                            <span id="horizontal"></span>
-                        </div>
-                    </h2>
-
-                    <label class="custom-checkbox">
-                        KS1
-                        <input type="checkbox" value="ks1">
-                        <span class="new-checkbox"></span>
-                    </label>
-
-                    <label class="custom-checkbox">
-                        KS2
-                        <input type="checkbox" value="ks2">
-                        <span class="new-checkbox"></span>
-                    </label>
-
-                    <label class="custom-checkbox">
-                        KS3
-                        <input type="checkbox" value="ks3">
-                        <span class="new-checkbox"></span>
-                    </label>
-
-                    <label class="custom-checkbox">
-                        KS4
-                        <input type="checkbox" value="ks4">
-                        <span class="new-checkbox"></span>
-                    </label>
-
-                    <label class="custom-checkbox">
-                        KS5
-                        <input type="checkbox" value="ks5">
-                        <span class="new-checkbox"></span>
-                    </label>
-                </div>
-
-                <div class="refinement" id="interactions">
-                    <h2>
-                        Interaction Types
-                        <div class="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
-                            <span id="vertical"></span>
-                            <span id="horizontal"></span>
-                        </div>
-                    </h2>
-                    
-                    <label class="custom-checkbox">
-                        Teacher Advice & Information
-                        <input type="checkbox" value="teacher_advice">
-                        <span class="new-checkbox"></span>
-                    </label>
-
-                    <label class="custom-checkbox">
-                        Student Interaction
-                        <input type="checkbox" onclick="show_interactions()" value="student_interactions">
-                        <span class="new-checkbox"></span>
-                    </label>
-
-                    <label class="custom-checkbox">
-                        Project Work
-                        <input type="checkbox" value="project_work">
-                        <span class="new-checkbox"></span>
-                    </label>
-                </div>
-
-                <div class="refinement" id="student-interactions">
-                    <h2>
-                        Student Interactions
-                        <div class="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
-                            <span id="vertical"></span>
-                            <span id="horizontal"></span>
-                        </div>
-                    </h2>
-                    
-                    <label class="custom-checkbox">
-                        Online
-                        <input type="checkbox" value="student-online">
-                        <span class="new-checkbox"></span>
-                    </label>
-
-                    <label class="custom-checkbox">
-                        Face-to-Face
-                        <input type="checkbox" value="student_f2f">
-                        <span class="new-checkbox"></span>
-                    </label>
-
-                    <label class="custom-checkbox">
-                        Resources
-                        <input type="checkbox" value="student_resources">
-                        <span class="new-checkbox"></span>
-                    </label>
-                </div>
-
-                <div class="refinement" id="distance">
-                    <h2>
-                        Distance
-                        <div class="expand-button" onclick="hide_refinement(this.parentElement.parentElement)">
-                            <span id="vertical"></span>
-                            <span id="horizontal"></span>
-                        </div>
-                    </h2>
-                    
-                    <input type="range" name="distanceRange" min="1" max="180" value="30" oninput="this.nextElementSibling.value = this.value" disabled>
-                    <output>30</output><p>mi</p>
-                </div>
-            </aside>
-
-            <div id="right">
-                <div id="search-container">
+            <div id="search-bar">
+                <div id="expertise-search-wrapper">
                     <input type="text" placeholder="Search Expertise">
-                    <img src="assets/searchIcon.png" onclick="search()">
-                </div>
-                
-                <div id="results">
+                    <img src="../assets/searchIcon.png">
+
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
                 </div>
             </div>
+        </header>
+
+        <main id="content">
+            <aside id="filters">
+                <section class="filter-item" id="organisations">
+                    <h3 class="filter-item-title">Organisation</h3>
+
+                    <ul class="filter-list">
+                        <?php
+
+                        $statement = $connection->prepare("SELECT DISTINCT Organisation FROM Expert WHERE admin_verified=1");
+                        $statement->execute();
+                        $result = $statement->fetchAll();
+
+                        if($result) {
+                            foreach($result as &$row) {
+                                $org = $row["Organisation"];
+                                $checked = "";
+                                if(in_array($org, $selected_orgs)) {
+                                    $checked = "checked";
+                                }
+        
+                                echo("
+                                <li>
+                                    <input class=\"custom-check\" type=\"checkbox\" autocomplete=\"off\" value=\"$org\" $checked>
+                                    <label class=\"filter-label\">$org</label>
+                                </li>
+                                ");
+                            }
+                        }
+                        ?>
+                    </ul>
+                </section>
+
+                <section class="filter-item" id="ages">
+                    <h3 class="filter-item-title">Ages</h3>
+
+                    <ul class="filter-list">
+                        <li>
+                            <input id="age1" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age1", $selected_ages)) echo("checked"); ?>>
+                            <label id="age1" class="filter-label">KS1</label>
+                        </li>
+
+                        <li>
+                            <input id="age2" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age2", $selected_ages)) echo("checked"); ?>>
+                            <label id="age2" class="filter-label">KS2</label>
+                        </li>
+
+                        <li>
+                            <input id="age3" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age3", $selected_ages)) echo("checked"); ?>>
+                            <label id="age3" class="filter-label">KS3</label>
+                        </li>
+
+                        <li>
+                            <input id="age4" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age4", $selected_ages)) echo("checked"); ?>>
+                            <label id="age4" class="filter-label">KS4</label>
+                        </li>
+
+                        <li>
+                            <input id="age5" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("age5", $selected_ages)) echo("checked"); ?>>
+                            <label id="age5" class="filter-label">KS5</label>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="filter-item" id="interactions">
+                    <h3 class="filter-item-title">Interaction Types</h3>
+
+                    <ul class="filter-list">
+                        <li>
+                            <input id="interactions-teacheradvice" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("interactions-teacheradvice", $selected_interctions)) echo("checked"); ?>>
+                            <label id="interactions-teacheradvice" class="filter-label">Teacher Advice & Information</label>
+                        </li>
+
+                        <li>
+                            <input id="interactions-student" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("interactions-student", $selected_interctions)) echo("checked"); ?>>
+                            <label id="interactions-student" class="filter-label">Student Interaction</label>
+                        </li>
+
+                        <li>
+                            <input id="interactions-project" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("interactions-project", $selected_interctions)) echo("checked"); ?>>
+                            <label id="interactions-project" class="filter-label">Project Work</label>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="filter-item <?php if(in_array("interactions-student", $selected_interctions)) echo("shown"); ?>" id="student-interactions">
+                    <h3 class="filter-item-title">Student Interactions</h3>
+
+                    <ul class="filter-list">
+                        <li>
+                            <input id="studentinteractions-f2f" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("studentinteractions-f2f", $selected_student_interactions)) echo("checked"); ?>>
+                            <label id="studentinteractions-f2f" class="filter-label">Face-to-Face</label>
+                        </li>
+
+                        <li>
+                            <input id="studentinteractions-online" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("studentinteractions-online", $selected_student_interactions)) echo("checked"); ?>>
+                            <label id="studentinteractions-online" class="filter-label">Online</label>
+                        </li>
+
+                        <li>
+                            <input id="studentinteractions-resources" class="custom-check" type="checkbox" autocomplete="off" <?php if(in_array("studentinteractions-resources", $selected_student_interactions)) echo("checked"); ?>>
+                            <label id="studentinteractions-resources" class="filter-label">Resources</label>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="distance">
+                    <h3 class="filter-item-title" id="distance">Distance</h3>
+                    <input type="checkbox" class="toggle" <?php if($postcode != "") echo("checked") ?>>
+
+                    <p class="distance-label <?php if($postcode == "") echo("disabled") ?>">Within a</p>
+                    <select id="radius-choice" <?php if($postcode == "") echo("disabled") ?>>
+                        <option value="5" <?php if($distance_radius == "5") echo("selected") ?>>5 mile</option>
+                        <option value="10" <?php if($distance_radius == "10") echo("selected") ?>>10 mile</option>
+                        <option value="25" <?php if($distance_radius == "25") echo("selected") ?>>25 mile</option>
+                        <option value="50" <?php if($distance_radius == "50") echo("selected") ?>>50 mile</option>
+                        <option value="100" <?php if($distance_radius == "100") echo("selected") ?>>100 mile</option>
+                    </select>
+                    <p class="distance-label <?php if($postcode == "") echo("disabled") ?>">radius of</p>
+
+                    <input type="text" id="postcode-entry" placeholder="Postcode" maxlength="8" <?php if($postcode != "") echo("value=\"$postcode\"") ?>>
+                    <img class="<?php if($postcode == "") echo("disabled") ?>" id="my-location-button" src="assets/location-icon.png">
+                </section>
+            </aside>
+
+            <ul id="results">
+                <!--
+
+                if($postcode != "") {
+                    $current_coords = outcode_to_coords($postcode, "postcodes");
+                }
+                
+                $statement = $connection->prepare("SELECT name, about, location, job_title, organisation,expertise FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id WHERE admin_verified=1 LIMIT 0, 100;"); // org fits, checkboxes, 
+                $statement->execute();
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach($result as $expert_expertise) {
+                    // filter by expertise
+                    if($expertise != "") {
+ 
+                    }
+
+                    $current_expertise = [];
+                    foreach($result as $i => $other_expertise) {
+                        if($other_expertise["name"] == $expert_expertise["name"]) {
+                            array_push($current_expertise, ucwords($other_expertise["expertise"]));
+                            unset($result[$i]);
+                        }
+                    }
+
+                    $name = $expert_expertise["name"];
+                    $job_title = $expert_expertise['job_title'];
+                    $org = $expert_expertise['organisation'];
+                    $about = $expert_expertise['about'];
+
+                    echo("
+                    <li class=\"profile-result\">
+                        <img class=\"profile-picture\" src=\"assets/profilePicture.png\">
+                        <h2 class=\"profile-name\">$name</h2>
+
+                        <ul class=\"expertise-list\">
+                    ");
+
+                    foreach($current_expertise as $e) {
+                        echo("<li class=\"expertise\">$e</li>");
+                    }
+
+                    echo("
+                        </ul>
+                        <h3 class=\"profile-subheading job\">$job_title at $org</h3>
+
+                        <p class=\"about\">$about</p>
+                    ");
+
+                    // filter by postcode
+                    if($postcode != "") {
+                        $expert_coords = outcode_to_coords($expert["location"]);
+                        $distance = location_distance($current_coords, $expert_coords);
+                        $distance /= 1609; // convert from meters to miles
+                        if($distance <= $_GET["range"]) {
+                            echo("<p class=\"distance\">~$distance miles away</p>");
+                        }
+                    }
+
+                    echo("</li>");
+                }
+                ?>
+                -->
+
+                <?php
+                    if($postcode != "") {
+                        $current_coords = outcode_to_coords($postcode, "postcodes");
+                    }
+                    
+                    $statement = $connection->prepare("SELECT name, about, location, job_title, organisation,expertise FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id WHERE admin_verified=1 LIMIT 0, 100;"); // org fits, checkboxes, 
+                    $statement->execute();
+                    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                    
+                    while(count($result) > 0) {
+                        $current_expertise = $result[0];
+
+                        $name = $current_expertise["name"];
+                        $job_title = $current_expertise['job_title'];
+                        $org = $current_expertise['organisation'];
+                        $about = $current_expertise['about'];
+
+                        echo("
+                        <li class=\"profile-result\">
+                            <img class=\"profile-picture\" src=\"assets/profilePicture.png\">
+                            <h2 class=\"profile-name\">$name</h2>
+
+                            <ul class=\"expertise-list\">
+                        ");
+
+                        // group all expertise for each user
+                        foreach($result as $i => $tmp_expertise) {
+                            if($tmp_expertise["name"] == $current_expertise["name"]) {
+                                $result = array_splice($result, $i, $i);
+                                $e = ucwords($tmp_expertise["expertise"]);
+                                echo("<li class=\"expertise\">$e</li>");
+                            }
+                        }
+
+                        echo("
+                        </ul>
+                        <h3 class=\"profile-subheading job\">$job_title at $org</h3>
+
+                        <p class=\"about\">$about</p>
+                        ");
+
+                        // filter by postcode
+                        if($postcode != "") {
+                            $expert_coords = outcode_to_coords($expert["location"]);
+                            $distance = location_distance($current_coords, $expert_coords);
+                            $distance /= 1609; // convert from meters to miles
+                            if($distance <= $_GET["range"]) {
+                                echo("<p class=\"distance\">~$distance miles away</p>");
+                            }
+                        }
+
+                        echo("</li>");
+                    }
+                ?>
+            </ul>
         </main>
 
         <footer>
@@ -256,8 +432,25 @@
             <p>support@schoolcitizenassemblies.org</p>
         </footer>
 
+        <script>
+            <?php
+                
+                $statement = $connection->prepare("SELECT expertise FROM Expertise INNER JOIN Expert ON Expertise.user_id = Expert.user_id WHERE admin_verified=1 GROUP BY expertise ORDER BY COUNT(expertise) DESC");
+                $statement->execute();
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $expertise_js_array_string = "const distinct_expertise = [";
+
+                foreach($result as $expertise) {
+                    $expertise_js_array_string .= "\"" . $expertise["expertise"] . "\",";
+                }
+                $expertise_js_array_string = rtrim($expertise_js_array_string, ",");
+                $expertise_js_array_string .= "];\n";
+                echo($expertise_js_array_string);
+            ?>
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
         <script src="javascript/header.js"></script>
-        <script src="javascript/directory.js"></script>
+        <script src="javascript/debounce.js"></script>
+        <script src="javascript/new-directory.js"></script>
     </body>
 </html>
