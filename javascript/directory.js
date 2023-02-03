@@ -117,7 +117,7 @@ expertise_suggestions.forEach((suggestion) => suggestion.addEventListener("click
 }));
 
 async function handle_filter_change(event) {
-    event.preventDefault();
+    //event.preventDefault();
 
     await fetch("https://api.postcodes.io/postcodes/" + postcode_entry.value.replace(/ /g, '') +"/validate")
     .then(response => {return response.json()})
