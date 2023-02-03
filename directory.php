@@ -352,7 +352,7 @@
                         }
 
                         if(in_array("studentinteractions-resources", $selected_student_interactions)) {
-                            $filters_string .= " AND does_student_resources = 1";
+                            $filters_string .= " AND does_student_resource = 1";
                         }
                     }
 
