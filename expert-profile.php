@@ -122,7 +122,14 @@ $expertise = $result;
                         ');
                         if($user_level == "Admin") {
                             echo('<a>Admin Panel</a>');
+                        } else if($user_level == "Expert") {
+                            echo("<a href=\"expert-profile.php\">Profile</a>");
                         }
+                        echo('
+                                <a href="phpScripts/logout.php">Logout</a>
+                            </div>
+                        </li>
+                        ');
                         echo('
                                 <a href="expert-profile.php">Profile</a>
                                 <a href="phpScripts/logout.php">Logout</a>
