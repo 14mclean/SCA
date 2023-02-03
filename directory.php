@@ -360,7 +360,7 @@
                     $statement = $connection->prepare("SELECT name, about, location, job_title, organisation,expertise 
                     FROM Expert INNER JOIN Expertise ON Expert.user_id = Expertise.user_id 
                     WHERE admin_verified = 1 $filters_string
-                    LIMIT 0, 100;"); // org fits, checkboxes, 
+                    LIMIT 100;");
                     $statement->execute();
                     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -399,7 +399,7 @@
 
                         // filter by postcode
                         if($postcode != "") {
-                            $expert_coords = outcode_to_coords($expert["location"]);
+                            $expert_coords = outcode_to_coords($current_expertise["location"]);
                             $distance = location_distance($current_coords, $expert_coords);
                             $distance /= 1609; // convert from meters to miles
                             if($distance <= $_GET["range"]) {
