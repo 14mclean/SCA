@@ -73,14 +73,17 @@ div#expertise-search-wrapper ul {
     font-family: 'Open Sans';
     font-size: 14px;
     padding: 0;
-    min-height: 0px;
+    min-height: 1px;
 }
 
 div#expertise-search-wrapper li {
     padding-left: 25px;
     height: 25px;
     line-height: 25px;
-    min-height: 0px;
+}
+
+div#expertise-search-wrapper li:empty {
+    height: 0px;
 }
 
 div#expertise-search-wrapper li:hover {
