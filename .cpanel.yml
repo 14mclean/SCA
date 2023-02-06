@@ -1,0 +1,25 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/mwd3iqjaesdr/public_html
+
+    # folders
+    - /bin/cp -R api $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R css $DEPLOYPATH
+    - /bin/cp -R javascript $DEPLOYPATH
+    - /bin/cp -R phpScripts $DEPLOYPATH
+
+    # webpages
+    - /bin/cp about.php $DEPLOYPATH
+    - /bin/cp directory.php $DEPLOYPATH
+    - /bin/cp email-validation.php $DEPLOYPATH
+    - /bin/cp expert-profile.php $DEPLOYPATH
+    - /bin/cp expert-resources.php $DEPLOYPATH
+    - /bin/cp favicon.ico $DEPLOYPATH
+    - /bin/cp forgot-password.html $DEPLOYPATH
+    - /bin/cp index.php $DEPLOYPATH
+    - /bin/cp meet-the-experts.php $DEPLOYPATH
+    - /bin/cp password-reset.php $DEPLOYPATH
+    - /bin/cp post-registration.html $DEPLOYPATH
+    - /bin/cp register.php $DEPLOYPATH
