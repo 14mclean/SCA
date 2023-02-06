@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/mwd3iqjaesdr/public_html
+    - export DEPLOYPATH=/home/mwd3iqjaesdr/public_html/
 
     # folders
     - /bin/cp -R api $DEPLOYPATH
