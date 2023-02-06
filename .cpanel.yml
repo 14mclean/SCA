@@ -19,6 +19,7 @@ deployment:
     - /bin/cp favicon.ico $DEPLOYPATH
     - /bin/cp forgot-password.html $DEPLOYPATH
     - /bin/cp index.php $DEPLOYPATH
+    - /bin/cp login.html $DEPLOYPATH
     - /bin/cp meet-the-experts.php $DEPLOYPATH
     - /bin/cp password-reset.php $DEPLOYPATH
     - /bin/cp post-registration.html $DEPLOYPATH
