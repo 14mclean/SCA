@@ -338,7 +338,8 @@ ul#results li.profile-result:hover {
 }*/
 
 svg.profile-picture {
-    
+    display: inline-block;
+    margin-right: 5px;
 }
 
 h2.profile-name {
