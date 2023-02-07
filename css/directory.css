@@ -59,6 +59,8 @@ div#search-bar svg {
     top: -33px;
     right: 7px;
     cursor: pointer;
+    width: 24px;
+    height: 24px;
 }
 
 div#search-bar img {
