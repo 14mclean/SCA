@@ -59,9 +59,9 @@ div#search-bar svg {
     top: -33px;
     right: 7px;
     cursor: pointer;
-    width: 24px;
-    height: 24px;
-    color: #2c2c2c;
+    width: 20px;
+    height: 20px;
+    color: #555555;
 }
 
 div#expertise-search-wrapper ul {
