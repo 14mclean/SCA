@@ -18,7 +18,7 @@ const distance_texts = document.querySelectorAll("p.distance-label");
 const distance_selector = document.querySelector("select#radius-choice");
 const postcode_entry = document.querySelector("input#postcode-entry");
 const my_location_button = document.querySelector("img#my-location-button");
-const search_button = document.querySelector("div#search-bar img");
+const search_button = document.querySelector("div#search-bar svg");
 const expertise_suggestions = document.querySelectorAll("div#expertise-search-wrapper li");
 const all_checkboxes = document.querySelectorAll("aside#filters input.custom-check")
 
