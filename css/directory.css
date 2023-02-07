@@ -53,6 +53,14 @@ div#search-bar input:focus-visible {
     border-bottom: #ccc solid 1px ;
 }
 
+div#search-bar svg {
+    float: right;
+    position: relative;
+    top: -33px;
+    right: 7px;
+    cursor: pointer;
+}
+
 div#search-bar img {
     height: 20px;
     width: 20px;
