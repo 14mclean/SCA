@@ -1,5 +1,5 @@
 const password_inputs = document.querySelectorAll("input[type=\"password\"]");
-const visibility_eyes = document.querySelectorAll(".visibility-eye");
+const visibility_eyes = document.querySelectorAll("svg.visibility-eye");
 
 
 password_inputs.forEach((input) => {
@@ -32,13 +32,12 @@ visibility_eyes.forEach((button) => {
         const related_input = password_inputs[
             Array.from(visibility_eyes).findIndex(element => element == event.target)
         ];
+        event.target.classList.toggle("closed");
 
         if(related_input.type == "password") {
             related_input.type = "text";
-            event.target = "assets/openEye.png";
         } else {
             related_input.type = "password";
-            event.target = "assets/noEye.png";
         }
     })
 });

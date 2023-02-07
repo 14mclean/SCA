@@ -24,7 +24,9 @@
                     <input id="email_input" name="email" type="email" autocomplete="email" placeholder="E-mail" required oninput="clear_validation(this)">
 
                     <input id="password_input" name="password" type="password" autocomplete="new-password" placeholder="Password" required oninput="clear_validation(this)">
-                    <img id="visibility-eye" src="assets/noEye.png">
+                    <svg class="visiblity-eye closed" width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path/>
+                    </svg>
 
                     <input type="text" style="display: none;">
 
@@ -69,13 +71,12 @@
 
         document.querySelector("#visibility-eye").addEventListener("click", (event) => { // show/hide password visibility
             const password_input = document.querySelector('#password_input');
+            event.target.classList.toggle("closed");
 
             if(password_input.type == "password") {
                 password_input.type = "text";
-                event.target.src = "assets/openEye.png";
             } else {
                 password_input.type = "password";
-                event.target.src = "assets/noEye.png";
             }
         });
 

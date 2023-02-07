@@ -60,10 +60,14 @@ if($result) {
                     <p id="descriptor">Enter a new password for your account</p>
 
                     <input id="password_input" name="password" type="password" placeholder="Password" autocomplete="new-password" required>
-                    <img class="visibility-eye" id="initial" src="assets/noEye.png">
+                    <svg id="initial" class="visiblity-eye closed" width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path/>
+                    </svg>
 
                     <input id="confirm_password_input" name="password" type="password" placeholder="Confirm Password" autocomplete="new-password" required>
-                    <img class="visibility-eye" id="confirm" src="assets/noEye.png">
+                    <svg id="confirm" class="visiblity-eye closed" width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path/>
+                    </svg>
 
                     <button type="submit">Reset</button>
 
