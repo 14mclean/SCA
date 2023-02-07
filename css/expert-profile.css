@@ -247,8 +247,11 @@ main {
     cursor: pointer;
 }
 
-#remove-resource-button img {
-    width: 20px;  
+#remove-resource-button svg {
+    background: #571b1b;
+    border-radius: 5px;
+    stroke: #ccc;
+    fill: #fff;
 }
 
 #new-resource-button {
@@ -261,8 +264,11 @@ main {
     cursor: pointer;
 }
 
-#new-resource-button img {
-    width: 20px;
+#new-resource-button svg {
+    background: #401b57;
+    border-radius: 5px;
+    stroke: #ccc;
+    fill: #fff;
 }
 
 dialog#new-resource-dialog {

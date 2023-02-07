@@ -325,7 +325,13 @@ $expertise = $result;
                                     <td>$title</td>
                                     <td>$link</td>
                                     <td>$desc</td>
-                                    <td><button type='Button' id='remove-resource-button' onclick='remove_resource(this)'><img src='assets/remove.png'></button></td>
+                                    <td>
+                                        <button type='Button' id='remove-resource-button' onclick='remove_resource(this)'>
+                                                <svg width=\"22px\" height=\"22px\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">
+                                                <path d=\"M18 11h-5V6h-2v5H6v2h5v5h2v-5h5\"/>
+                                            </svg>
+                                        </button>
+                                    </td>
                                 </tr>
                                 ");
                             }
@@ -334,8 +340,7 @@ $expertise = $result;
                         </table>
 
                         <button id="new-resource-button">
-                            <!--<img src="assets/plus.png">-->
-                            <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="22px" height="22px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18 11h-5V6h-2v5H6v2h5v5h2v-5h5"/>
                             </svg>
                         </button>
