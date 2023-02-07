@@ -117,18 +117,20 @@ expertise_suggestions.forEach((suggestion) => suggestion.addEventListener("click
 }));
 
 async function handle_filter_change() {
-    const valid_postcode = await fetch("https://api.postcodes.io/postcodes/" + postcode_entry.value.replace(/ /g, '') +"/validate")
-    .then(response => {return response.json()})
-    .then(json => {
-        if(json["result"] != true) {
-            postcode_entry.setCustomValidity("Not a known postcode");
-            postcode_entry.reportValidity();
-            return false;
-        } else {
-            return true;
-        }
-    });
-    if(!valid_postcode) return;
+    if(distance_toggle.checked) {
+        const valid_postcode = await fetch("https://api.postcodes.io/postcodes/" + postcode_entry.value.replace(/ /g, '') +"/validate")
+        .then(response => {return response.json()})
+        .then(json => {
+            if(json["result"] != true) {
+                postcode_entry.setCustomValidity("Not a known postcode");
+                postcode_entry.reportValidity();
+                return false;
+            } else {
+                return true;
+            }
+        });
+        if(!valid_postcode) return;
+    }
 
     const expertise_query = expertise_input.value;
     let orgs = [], ages = [], interactions = [], student_interactions = [];
