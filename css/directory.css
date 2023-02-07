@@ -288,9 +288,7 @@ input#postcode-entry:focus-visible {
     outline: 1px solid #999;
 }
 
-img#my-location-button {
-    width: 13px;
-    height: 13px;
+svg#location-button {
     position: relative;
     top: 2px;
     right: 20px;
@@ -298,7 +296,7 @@ img#my-location-button {
     opacity: 0.9;
 }
 
-img#my-location-button.disabled {
+svg#location-button.disabled {
     opacity: 0.4;
     cursor: default;
 }
@@ -330,12 +328,6 @@ ul#results li.profile-result {
 ul#results li.profile-result:hover {
     background-color: #e8e8e8;
 }
-
-/*img.profile-picture {
-    width: 24px;
-    display: inline-block;
-    margin-right: 5px;
-}*/
 
 svg.profile-picture {
     display: inline-block;

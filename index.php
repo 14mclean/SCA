@@ -126,7 +126,7 @@
             <div class="forth-section">
                 <h1>School Citizen Assemblies Model</h1>
 
-                <img src="assets/sca_model.png">
+                <img src="assets/sca_model.png" alt="The SCA model">
             </div>
 
             <div class="fifth-section">
