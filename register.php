@@ -69,7 +69,7 @@
 
         }, 1000));
 
-        document.querySelector("svg.visibility-eye").addEventListener("click", (event) => { // show/hide password visibility
+        document.querySelector("svg.visiblity-eye").addEventListener("click", (event) => { // show/hide password visibility
             const password_input = document.querySelector('#password_input');
             event.target.classList.toggle("closed");
 
