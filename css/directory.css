@@ -331,10 +331,14 @@ ul#results li.profile-result:hover {
     background-color: #e8e8e8;
 }
 
-img.profile-picture {
+/*img.profile-picture {
     width: 24px;
     display: inline-block;
     margin-right: 5px;
+}*/
+
+svg.profile-picture {
+    
 }
 
 h2.profile-name {
