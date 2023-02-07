@@ -248,7 +248,7 @@ main {
 }
 
 #remove-resource-button svg {
-    background: #571b1b;
+    background: #ff1f1f;
     border-radius: 5px;
     stroke: #ccc;
     fill: #fff;
@@ -265,7 +265,7 @@ main {
 }
 
 #new-resource-button svg {
-    background: #401b57;
+    background: #6b2c91;
     border-radius: 5px;
     stroke: #ccc;
     fill: #fff;
