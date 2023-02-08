@@ -51,6 +51,8 @@ collapsableNavButtons.forEach(button => {
 [burger, closeNav].forEach(el => { el.addEventListener("click", toggle_sidebar); });
 
 function toggle_sidebar(event) {
+    if(event.currentTarget == menu) return;
+
     menu.classList.toggle("open-sidebar");
     closeNav.classList.toggle("open-sidebar");
 
@@ -58,7 +60,7 @@ function toggle_sidebar(event) {
         body.addEventListener("click", toggle_sidebar);
     } else {
         body.removeEventListener("click", toggle_sidebar);
-        close_all_subnavs()
+        close_all_subnavs();
     }
     event.stopPropagation();
 }
