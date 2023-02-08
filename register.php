@@ -71,7 +71,7 @@
 
         document.querySelector("svg.visiblity-eye").addEventListener("click", (event) => { // show/hide password visibility
             const password_input = document.querySelector('#password_input');
-            event.target.classList.toggle("closed");
+            event.currentTarget.classList.toggle("closed");
 
             if(password_input.type == "password") {
                 password_input.type = "text";

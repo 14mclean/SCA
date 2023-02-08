@@ -32,7 +32,7 @@ visibility_eyes.forEach((button) => {
         const related_input = password_inputs[
             Array.from(visibility_eyes).findIndex(element => element == event.target)
         ];
-        event.target.classList.toggle("closed");
+        event.currentTarget.classList.toggle("closed");
 
         if(related_input.type == "password") {
             related_input.type = "text";
