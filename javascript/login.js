@@ -1,7 +1,7 @@
 document.querySelector("svg.visiblity-eye").addEventListener("click", swap_visibility);
 function swap_visibility(event) {
     const password_input = document.querySelector('#password_input');
-    event.target.classList.toggle("closed");
+    event.currentTarget.classList.toggle("closed");
 
     if(password_input.type == "password") {
         password_input.type = "text";
