@@ -1,0 +1,85 @@
+ul#admin-tables {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    width: 60vw;
+    margin-left: 20vw;
+    margin-top: 5vh;
+}
+
+ul#admin-tables li {
+    margin-top: 100px;
+}
+
+ul#admin-tables table {
+    width: 100%;
+}
+
+th.table-heading {
+    background-color: #555;
+    color: #eee;
+    font-size: 20px;
+    font-family: 'Raleway';
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+td {
+    font-family: 'Open Sans';
+    font-size: 14px;
+    padding-left: 1.5em;
+}
+
+button.table-button {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+div#new-admin {
+    background-color: #555;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 50px;
+    padding: 5px;
+}
+
+h2#new-admin {
+    color: #eee;
+    font-family: 'Raleway';
+    font-size: 14px;
+    width: fit-content;
+    display: inline-block;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+}
+
+input#new-admin-entry {
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 3px;
+    border: 1px #eee solid;
+    padding: 1px;
+}
+
+input#new-admin-entry:focus {
+    outline: none;
+    border-color: #2c2c2c;
+}
+
+button#new-admin-submit {
+    border-radius: 5px;
+    border: 1px solid #eee;
+    background-color: #eee;
+    font-family: 'Raleway';
+    font-weight: 600;
+    color: #2c2c2c;
+    height: 19px;
+    margin-right: 3px;
+}
