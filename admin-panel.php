@@ -102,7 +102,7 @@
                 <li>
                     <table>
                         <tr>
-                            <th class="table-heading" colspan="5">Verify Expert</th>
+                            <th class="table-heading" colspan="6">Verify Expert</th>
                         </tr>
                         <tr>
                             <th class="table-subheading">Name</th>
