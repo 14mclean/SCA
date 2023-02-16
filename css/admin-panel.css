@@ -26,6 +26,13 @@ th.table-heading {
     padding-bottom: 5px;
 }
 
+th.table-subheading {
+    font-family: 'Open Sans';
+    font-size: 1em;
+    padding-left: 1.5em;
+    font-weight: 600;
+}
+
 td {
     font-family: 'Open Sans';
     font-size: 14px;

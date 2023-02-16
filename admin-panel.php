@@ -104,6 +104,11 @@
                         <tr>
                             <th class="table-heading" colspan="5">Verify Expert</th>
                         </tr>
+                        <tr>
+                            <th class="table-subheadings">Name</th>
+                            <th class="table-subheadings">About</th>
+                            <th class="table-subheadings">Role at Organisation</th>
+                        </tr>
 
 <!--                        <tr id="0">
                             <td>name</td>
@@ -139,6 +144,7 @@
                                 $name = $expert["name"];
                                 $about = $expert["about"];
                                 $role = $expert["job_title"] . " @ " . $expert["organisation"];
+                                if($role == " @ ") $role = "";
 
                                 echo("
                                     <tr id=$user_id>
