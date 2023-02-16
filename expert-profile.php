@@ -121,7 +121,7 @@ $expertise = $result;
                                 <div class="subnav" id="my-account">
                         ');
                         if($user_level == "Admin") {
-                            echo('<a>Admin Panel</a>');
+                            echo('<a>Admin Panel href="admin-panel.php"</a>');
                         } else if($user_level == "Expert") {
                             echo("<a href=\"expert-profile.php\">Profile</a>");
                         }
