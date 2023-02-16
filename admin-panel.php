@@ -170,7 +170,7 @@
                         </tr>
 
                         <?php
-                            $statement = $connection->prepare("SELECT User.user_id, email, name, about, job_title, organisation FROM Expert INNER JOIN User ON User.user_id = Expert.user_id WHERE admin_verified=0");
+                            $statement = $connection->prepare("SELECT User.user_id, email, name, about, job_title, organisation FROM Expert INNER JOIN User ON User.user_id = Expert.user_id WHERE admin_verified=1");
                             $statement->execute();
                             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
