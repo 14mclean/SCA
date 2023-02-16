@@ -157,7 +157,7 @@
 
                 <li>
                     <table>
-                    <tr>
+                        <tr>
                             <th class="table-heading" colspan="6">Verify Expert</th>
                         </tr>
                         
@@ -201,26 +201,18 @@
                                 ");
                             }
                         ?>
-
-                        <!--<tr id="0">
-                            <td>name</td>
-                            <td>about</td>
-                            <td>job @ org</td>
-                            <td>
-                                <button class="table-button remove-expert">
-                                    <svg width="24px" height="24px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2.939 12.789L10 11.729l-3.061 3.06-1.729-1.728L8.271 10l-3.06-3.061L6.94 5.21 10 8.271l3.059-3.061 1.729 1.729L11.729 10l3.06 3.061-1.728 1.728z", fill="#ff0000"/>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>-->
                     </table>
                 </li>
 
                 <li>
                     <table>
                         <tr>
-                            <th class="table-heading" colspan="4">Current Admins</th>
+                            <th class="table-heading" colspan="2">Current Admins</th>
+                        </tr>
+
+                        <tr>
+                            <th class="table-subheading">E-mail</th>
+                            <th class="table-subheading">Demote</th>
                         </tr>
 
                         <tr id="0">
@@ -233,6 +225,32 @@
                                 </button>
                             </td>
                         </tr>
+
+                        <?php
+                            $statement = $connection->prepare("SELECT user_id, email from User WHERE user_level='Admin'");
+                            $statement->execute();
+                            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                            while(count($result) > 0) {
+                                $expert = array_pop($result);
+
+                                $email = $expert["email"];
+                                $user_id = $expert["user_id"];
+
+                                echo("
+                                    <tr id=$user_id>
+                                        <td>$email</td>
+                                        <td>
+                                            <button class=\"table-button remove-admin\">
+                                                <svg width=\"24px\" height=\"24px\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\">
+                                                    <path d=\"M16 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2.939 12.789L10 11.729l-3.061 3.06-1.729-1.728L8.271 10l-3.06-3.061L6.94 5.21 10 8.271l3.059-3.061 1.729 1.729L11.729 10l3.06 3.061-1.728 1.728z\", fill=\"#ff0000\"/>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ");
+                            }
+                        ?>
                     </table>
 
                     <div id="new-admin">
