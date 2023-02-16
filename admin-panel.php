@@ -105,9 +105,9 @@
                             <th class="table-heading" colspan="5">Verify Expert</th>
                         </tr>
                         <tr>
-                            <th class="table-subheadings">Name</th>
-                            <th class="table-subheadings">About</th>
-                            <th class="table-subheadings">Role at Organisation</th>
+                            <th class="table-subheading">Name</th>
+                            <th class="table-subheading">About</th>
+                            <th class="table-subheading">Role at Organisation</th>
                         </tr>
 
 <!--                        <tr id="0">
