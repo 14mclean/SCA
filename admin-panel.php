@@ -105,9 +105,11 @@
                             <th class="table-heading" colspan="6">Verify Expert</th>
                         </tr>
                         <tr>
+                            <th class="table-subheading">E-mail</th>
                             <th class="table-subheading">Name</th>
                             <th class="table-subheading">About</th>
                             <th class="table-subheading">Role at Organisation</th>
+                            <th class="table-subheading" colspan="2">Actions</th>
                         </tr>
 
                         <?php   
