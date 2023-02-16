@@ -1,4 +1,5 @@
 const verify_expert_buttons = document.querySelectorAll("button.verify-expert");
+const decline_expert_buttons = document.querySelectorAll("button.decline-expert");
 const remove_expert_buttons = document.querySelectorAll("button.remove-expert");
 const remove_admin_buttons = document.querySelectorAll("button.remove-admin");
 const new_admin_entry = document.querySelector("input#new-admin-entry");
@@ -22,6 +23,19 @@ verify_expert_buttons.forEach((button) => {
             })
         });
         //location.reload()
+    });
+});
+
+decline_expert_buttons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+        let parent = event.target;
+        do {
+            parent = parent.parentNode;
+        } while(parent.tagName != "TR")
+        
+        console.log("Decline expert with userid " + parent.id);
+
+        // demote change user id to user level teacher
     });
 });
 
