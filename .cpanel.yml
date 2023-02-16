@@ -13,6 +13,7 @@ deployment:
     # webpages
     - /bin/cp .htaccess $DEPLOYPATH
     - /bin/cp about.php $DEPLOYPATH
+    - /bin/cp admin-panel.php $DEPLOYPATH
     - /bin/cp directory.php $DEPLOYPATH
     - /bin/cp email-validation.php $DEPLOYPATH
     - /bin/cp expert-profile.php $DEPLOYPATH
