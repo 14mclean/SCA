@@ -128,10 +128,9 @@
 
                         <?php   
                             // user_id, name, about, job_title, organisation
-                            $statement = $connection->prepare("SELECT user_id, name, job_title, organisation FROM Expert WHERE admin_verified=0");
+                            $statement = $connection->prepare("SELECT user_id, name, about, job_title, organisation FROM Expert WHERE admin_verified=0");
                             $statement->execute();
                             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-                            print_r($result);
 
                             while(count($result) > 0) {
                                 $expert = array_pop($result);
