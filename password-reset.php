@@ -14,14 +14,12 @@ $statement->execute();
 $result = $statement->fetch(PDO::FETCH_ASSOC);
 $error = "";
 
-print_r($result);
-
 if($result) {
     $expiry_datetime = date_create($result["entry_date"]);
     $expiry_datetime->modify("+1 day");
     $user_id = $result["user_id"];
 
-    if($expiry_datetime > date_create("now")) {
+    if($expiry_datetime < date_create("now")) {
         $error = "Password reset link expired, if you still need to change your password click <a href=\"forgot-password.html\">Here</a>";
     }
 
