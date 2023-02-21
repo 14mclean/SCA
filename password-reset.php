@@ -13,6 +13,7 @@ $statement->bindValue(":code", $code);
 $statement->execute();
 $result = $statement->fetch(PDO::FETCH_ASSOC);
 $error = "";
+$result = ["entry_date" => date_create("now")->format('Y-m-d H:i:s'), "user_id" => 2];
 
 if($result) {
     $expiry_datetime = date_create($result["entry_date"]);
@@ -67,6 +68,8 @@ if($result) {
                     </svg>
 
                     <button type="submit">Reset</button>
+
+                    <!-- add user_id input -->
 
                 <?php
                 } else {
