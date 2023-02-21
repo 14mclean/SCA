@@ -1,5 +1,5 @@
 const password_inputs = document.querySelectorAll("input[type=\"password\"]");
-const visibility_eyes = document.querySelectorAll("svg.visibility-eye");
+const visibility_eyes = document.querySelectorAll("svg.visiblity-eye");
 
 // ensure first password value is a valid password
 password_inputs[0].addEventListener("keyup", debounce(() => {
