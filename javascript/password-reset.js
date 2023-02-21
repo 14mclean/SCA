@@ -10,7 +10,7 @@ password_inputs[0].addEventListener("keyup", debounce(() => {
 // ensure matching passwords
 password_inputs.forEach((input) => { 
     input.addEventListener("click", () => {
-        if(password_inputs[0] == "" || password_inputs[1] == "") return;
+        if(password_inputs[0].value == "" || password_inputs[1].value == "") return;
 
         if(password_inputs[0].value == password_inputs[1].value) {
             password_inputs[1].setCustomValidity("");
