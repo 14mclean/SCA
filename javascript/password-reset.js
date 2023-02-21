@@ -3,7 +3,7 @@ const visibility_eyes = document.querySelectorAll("svg.visibility-eye");
 
 // ensure first password value is a valid password
 password_inputs[0].addEventListener("keyup", debounce(() => {
-    password_inputs[0].setCustomValidity(password_inputs[0].value);
+    password_inputs[0].setCustomValidity(password_validity(password_inputs[0].value));
     password_inputs[0].reportValidity();
 }, 1000));
 
