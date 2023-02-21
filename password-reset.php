@@ -49,7 +49,7 @@ if($result) {
         </header>
 
         <main>
-            <form action="phpScripts/reset_password.php" method="POST">
+            <form id=<?php echo($user_id) ?> action="phpScripts/reset_password.php" method="POST">
                 <?php
                 if($error == "") { ?>
 
@@ -69,14 +69,11 @@ if($result) {
 
                     <button type="submit">Reset</button>
 
-                    <!-- add user_id input -->
-
                 <?php
                 } else {
                     echo("<p id=\"errors\">$error</p>");
                     
                 }?>
-                <!-- TODO: show errors -->
             </form>
         </main>
 

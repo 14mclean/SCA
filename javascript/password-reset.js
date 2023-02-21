@@ -1,5 +1,7 @@
 const password_inputs = document.querySelectorAll("input[type=\"password\"]");
 const visibility_eyes = document.querySelectorAll("svg.visiblity-eye");
+const reset_button = document.querySelector("form button");
+const user_id = document.querySelector("form").id;
 
 // ensure first password value is a valid password
 password_inputs[0].addEventListener("keyup", debounce(() => {
@@ -40,4 +42,38 @@ visibility_eyes.forEach((eye) => {
             related_input.type = "password";
         }
     });
+});
+
+reset_button.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const first_value = password_inputs[0].value;
+    const second_value = password_inputs[1].value;
+
+    // p0 not valid, set validity
+    const first_input_validity = password_validity(first_value);
+    if(first_input_validity != "") {
+        password_inputs[0].setCustomValidity(first_input_validity);
+        password_inputs[0].reportValidity();
+        return
+    }
+
+    // p1 not same, set validity
+    if(first_value != second_value) {
+        password_inputs[1].setCustomValidity("Passwords do not match");
+        password_inputs[1].reportValidity();
+        return;
+    }
+
+    // send form to php scripts password reset
+    fetch("/api/users/"+user_id, {
+        method: "PATCH",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            "password": first_value
+        })
+    });
+
+    // foward to main page
+    // window.location.href = "";
 });
