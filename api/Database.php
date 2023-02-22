@@ -25,7 +25,7 @@ class LoggedPDOStatement extends PDOStatement
 {
     protected $pdo;
 
-    public function __construct($pdo) {
+    function __construct($pdo) {
         $this->pdo = $pdo;
     }
 
