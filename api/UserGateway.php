@@ -65,6 +65,9 @@ class UserGateway implements Gateway{
     }
 
     public function update(array $current_user_details, array $new_user_details): int {
+        if(!empty([$data["password"]])) {
+            $data["password_hash"] = hash("sha256", $data["password"]);
+        }
         $statement = $this->connection->prepare(
             "UPDATE User 
             SET email = :email, password_hash = :password_hash, email_verified = :email_verified, user_level = :user_level
