@@ -27,7 +27,7 @@ class LoggedPDOStatement extends PDOStatement
 
     protected function __construct($pdo) {
         $this->pdo = $pdo;
-        $this->originalExecute = [$pdo, 'exec'];
+        $this->originalExecute = [$pdo, 'execute'];
     }
 
     public function execute(?array $params = null): bool {
