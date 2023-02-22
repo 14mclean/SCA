@@ -27,6 +27,7 @@ class LoggedPDOStatement extends PDOStatement
 
     protected function __construct($pdo) {
         $this->pdo = $pdo;
+        $this->originalExecute = [$pdo, 'exec'];
     }
 
     public function execute(?array $params = null): bool {
@@ -37,7 +38,8 @@ class LoggedPDOStatement extends PDOStatement
 
         // Log the query to a table
         $stmt = $this->pdo->prepare("INSERT INTO `Query_Log`(`timestamp`, `query_body`, `query_execute_length`) VALUES (?, ?, ?)");
-        $stmt->execute([date('Y-m-d H:i:s'), $this->queryString, $end_time - $start_time]);
+        //$stmt->execute([date('Y-m-d H:i:s'), $this->queryString, $end_time - $start_time]);
+        $result = call_user_func_array($this->originalExecute, [date('Y-m-d H:i:s'), $this->queryString, $end_time - $start_time]);
 
         return $result;
     }
