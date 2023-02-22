@@ -16,7 +16,7 @@ class Database {
             $this->password,
             [PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_STRINGIFY_FETCHES => false]
         );
-        $pdo->setAttribute(PDO::ATTR_STATEMENT_CLASS, [LoggedPDOStatement::class, [$pdo]]);
+        $pdo->setAttribute(PDO::ATTR_STATEMENT_CLASS, ["LoggedPDOStatement", [$pdo]]);
         return $pdo;
     }
 }
