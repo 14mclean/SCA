@@ -35,7 +35,10 @@ class LoggedPDOStatement extends PDOStatement
         $timestamp = date('Y-m-d H:i:s');
         $query_body = $this->queryString;
         $execute_length = $end_time - $start_time;
-        $debug_output = parent::debugDumpParams();
+        ob_start();
+        parent::debugDumpParams();
+        $debug_output = ob_get_contents();
+        ob_end_clean();
 
         $this->pdo->exec("INSERT INTO Query_Log (timestamp, query_body, query_execute_length, debug_output) VALUES ('$timestamp', '$query_body', $execute_length, '$debug_output')");
 
