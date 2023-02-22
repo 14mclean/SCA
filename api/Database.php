@@ -23,11 +23,8 @@ class Database {
 
 class LoggedPDOStatement extends PDOStatement
 {
-    protected $pdo;
 
-    protected function __construct($pdo) {
-        $this->pdo = $pdo;
-    }
+    protected function __construct(protected PDO $pdo) {}
 
     public function execute(?array $params = null): bool {
         // time and execute the query
