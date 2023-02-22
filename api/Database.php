@@ -41,7 +41,7 @@ class LoggedPDOStatement extends PDOStatement
         $debug_output = addslashes(ob_get_contents());
         ob_end_clean();
         //$query_body = preg_replace('/Sent SQL: \[[0-9]+\]/', "", explode("\n", $debug_output)[1]);
-        $query_body = preg_replace('/Sent SQL: \[[0-9]+\]/', "", preg_grep('/Sent SQL: \[[0-9]+\]/', explode("\n", $debug_output)));
+        $query_body = preg_replace('/Sent SQL: \[[0-9]+\]/', "", preg_grep('/Sent SQL: \[[0-9]+\]/', explode("\n", $debug_output))[0]);
 
         $this->pdo->exec("INSERT INTO Query_Log (timestamp, query_body, query_execute_length) VALUES ('$timestamp', '$query_body', $execute_length)");
         return $result;
