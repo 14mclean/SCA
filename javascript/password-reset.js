@@ -75,5 +75,5 @@ reset_button.addEventListener("click", (event) => {
     });
 
     // foward to main page
-    // window.location.href = "";
+    window.location.href = "index.php";
 });
