@@ -6,7 +6,7 @@ main {
         color: #333;
         font-family: 'Raleway';
         font-size: 56px;
-        margin-left: 15vw;
+        margin-left: 10vw;
         margin-bottom: 35px;
     }
 
@@ -35,13 +35,15 @@ main {
     }
 
     section#manchester-team {
-        background-color: #6b2c91;
+        background-color: #6b2c91cc;
         width: 80vw;
         margin-left: 10vw;
+        padding: 20px;
     }
 
     section#manchester-team h2 {
         font-size: 40px;
+        margin-left: 0;
     }
 
     section#manchester-team h3 {
