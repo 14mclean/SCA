@@ -35,10 +35,12 @@ main {
     }
 
     section#manchester-team {
-        background-color: #6b2c91cc;
         width: 80vw;
         margin-left: 10vw;
         padding: 20px;
+        border: #401b57 solid 2px;
+        border-radius: 5px;
+        margin-top: 80px;
     }
 
     section#manchester-team h2 {
