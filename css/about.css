@@ -7,9 +7,11 @@ main {
         font-family: 'Raleway';
         font-size: 56px;
         margin-left: 15vw;
+        margin-bottom: 35px;
     }
 
     main p#description {
+        color: #121212;
         font-family: 'Open-Sans';
         font-size: 20px;
         width: 80vw;
@@ -20,12 +22,18 @@ main {
         color: #333;
         font-family: 'Raleway';
         font-size: 32px;
-        margin-left: 15vw;
+        margin-left: 10vw;
+        margin-top: 100px;
     }
 
     main p.person-description {
+        color: #121212;
         font-family: 'Open-Sans';
         font-size: 18px;
         width: 80vw;
         margin-left: 10vw;
+    }
+
+    main section#manchester-team {
+        background-color: #401b5766;
     }
