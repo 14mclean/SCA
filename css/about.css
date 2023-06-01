@@ -56,10 +56,13 @@ main {
 
     section#manchester-team img {
         display: inline-block;
+        margin-right: 5vw;
+        height: 300px;
     }
 
     section#manchester-team p {
         margin-left: 0;
         display: inline-block;
         width: 50vw;
+        height: 300px;
     }
