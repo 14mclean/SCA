@@ -54,6 +54,11 @@ main {
         margin-left: 0;
     }
 
+    section#manchester-team img {
+        display: inline-block;
+    }
+
     section#manchester-team p {
         margin-left: 0;
+        display: inline-block;
     }
