@@ -104,7 +104,7 @@
             </p>
         
             <section id="manchester-team">
-                <h2>The University of Manchester Team<h2>
+                <h2>The University of Manchester Team</h2>
 
                 <div id="team-member">
                     <h3 class="name-title">Dr Jennifer O'Brien</h3>
