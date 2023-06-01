@@ -10,7 +10,7 @@ main {
         margin-bottom: 35px;
     }
 
-    main p#description {
+    p#description {
         color: #121212;
         font-family: 'Open-Sans';
         font-size: 20px;
@@ -18,7 +18,7 @@ main {
         margin-left: 10vw;
     }
 
-    main h3.name-title {
+    h3.name-title {
         color: #333;
         font-family: 'Raleway';
         font-size: 32px;
@@ -26,7 +26,7 @@ main {
         margin-top: 100px;
     }
 
-    main p.person-description {
+    p.person-description {
         color: #121212;
         font-family: 'Open-Sans';
         font-size: 18px;
@@ -34,6 +34,20 @@ main {
         margin-left: 10vw;
     }
 
-    main section#manchester-team {
-        background-color: #401b5766;
+    section#manchester-team {
+        background-color: #6b2c91;
+        width: 80vw;
+        margin-left: 10vw;
+    }
+
+    section#manchester-team h2 {
+        font-size: 40px;
+    }
+
+    section#manchester-team h3 {
+        margin-left: 0;
+    }
+
+    section#manchester-team p {
+        margin-left: 0;
     }
