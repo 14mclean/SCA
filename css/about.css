@@ -6,22 +6,26 @@ main {
         color: #333;
         font-family: 'Raleway';
         font-size: 56px;
+        margin-left: 15vw;
     }
 
     main p#description {
         font-family: 'Open-Sans';
         font-size: 20px;
         width: 80vw;
-        margin-left: auto;
+        margin-left: 10vw;
     }
 
     main h3.name-title {
         color: #333;
         font-family: 'Raleway';
         font-size: 32px;
+        margin-left: 15vw;
     }
 
     main p.person-description {
         font-family: 'Open-Sans';
         font-size: 18px;
+        width: 80vw;
+        margin-left: 10vw;
     }
