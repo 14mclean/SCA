@@ -106,7 +106,7 @@
             <section id="manchester-team">
                 <h2>The University of Manchester Team</h2>
 
-                <div id="team-member">
+                <div class="team-member">
                     <h3 class="name-title">Dr Jennifer O'Brien</h3>
                     <img src="assets/JOBrien.png">
                     <p class="person-description">
@@ -114,7 +114,7 @@
                     </p>
                 </div>
 
-                <div id="team-member">
+                <div class="team-member">
                     <h3 class="name-title">Professor Jonatan Pinkse</h3>
                     <img src="assets/JPinkse.png">
                     <p class="person-description">
@@ -122,7 +122,7 @@
                     </p>
                 </div>
 
-                <div id="team-member">
+                <div class="team-member">
                     <h3 class="name-title">Dr Louis Major</h3>
                     <img src="assets/LMajor.png">
                     <p class="person-description">
