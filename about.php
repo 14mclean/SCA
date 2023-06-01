@@ -94,8 +94,8 @@
 
         <main>
             <h2>About Us</h2>
-            <p id="description">T
-                he School Citizen Assemblies (SCA) approach was developed initially by Dr Chris McLean (Alliance Manchester Business School: AMBS) with the support of colleagues from around the University of Manchester. This includes Professor Jonatan Pinkse (AMBS); Dr Jennifer O'Brien (Geography) and Dr Louis Major (Manchester Institute of Education). There have also been many others involved in the design, development and application of the SCA and we wish to thank them for all of their contributions, ideas and reflections.
+            <p id="description">
+                The School Citizen Assemblies (SCA) approach was developed initially by Dr Chris McLean (Alliance Manchester Business School: AMBS) with the support of colleagues from around the University of Manchester. This includes Professor Jonatan Pinkse (AMBS); Dr Jennifer O'Brien (Geography) and Dr Louis Major (Manchester Institute of Education). There have also been many others involved in the design, development and application of the SCA and we wish to thank them for all of their contributions, ideas and reflections.
             </p>
         
             <h3 class="name-title">Dr Chris McLean</h3>
