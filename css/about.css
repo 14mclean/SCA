@@ -34,6 +34,7 @@ main {
         font-size: 18px;
         width: 80vw;
         margin-left: 10vw;
+        max-width: 1000px;
     }
 
     div.team-member img {
