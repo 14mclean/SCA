@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 main {
-
+    padding-bottom: 100px;
 }
 
     main h2 {
@@ -14,7 +14,7 @@ main {
 
     p#description {
         color: #121212;
-        font-family: 'Open-Sans';
+        font-family: 'Open Sans';
         font-size: 20px;
         width: 80vw;
         margin-left: 10vw;
@@ -30,7 +30,7 @@ main {
 
     p.person-description {
         color: #121212;
-        font-family: 'Open-Sans';
+        font-family: 'Open Sans';
         font-size: 18px;
         width: 80vw;
         margin-left: 10vw;
@@ -40,39 +40,3 @@ main {
         height: 300px;
         margin-left: 10vw;
     }
-
-    /*
-    section#manchester-team {
-        width: 70vw;
-        margin-left: 15vw;
-        padding: 20px;
-        border: #401b57 solid 2px;
-        border-radius: 5px;
-        margin-top: 80px;
-        margin-bottom: 100px;
-    }
-
-    section#manchester-team h2 {
-        font-size: 40px;
-        margin-left: 0;
-        margin-bottom: 0;
-    }
-
-    section#manchester-team h3 {
-        margin-left: 0;
-    }
-
-    section#manchester-team img {
-        display: inline-block;
-        margin-right: 5vw;
-        height: 300px;
-        vertical-align: top;
-    }
-
-    section#manchester-team p {
-        margin-left: 0;
-        display: inline-block;
-        width: 45vw;
-        height: 300px;
-    }
-    */
