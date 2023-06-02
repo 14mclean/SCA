@@ -15,6 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>About - SCA</title>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="css/about.css">
     </head>
