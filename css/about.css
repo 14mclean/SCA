@@ -34,6 +34,12 @@ main {
         margin-left: 10vw;
     }
 
+    div.team-member img {
+        height: 300px;
+        margin-left: 10vw;
+    }
+
+    /*
     section#manchester-team {
         width: 70vw;
         margin-left: 15vw;
@@ -67,3 +73,4 @@ main {
         width: 45vw;
         height: 300px;
     }
+    */
