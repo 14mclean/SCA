@@ -124,6 +124,5 @@
         </footer>
 
         <script src="javascript/header.js"></script>
-        <script src="javascript/expert-resources.js"></script>
     </body>
 </html>
