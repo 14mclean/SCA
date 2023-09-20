@@ -45,9 +45,9 @@
                         <button class="nav-button collapsable" id="teacher-resources">Teacher Resources</button>
 
                         <ul class="subnav" id="teacher-resources">
+                            <li><a href="toolkits.php">SCA Toolkit/Guides</a></li>
                             <li><a>Student Resources</a></li>
                             <!--<li><a>Teacher Resources</a></li>-->
-                            <li><a href="toolkits.php">SCA Toolkit/Guides</a></li>
                         </ul>
                     </li>
 
