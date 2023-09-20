@@ -9,6 +9,7 @@ deployment:
     - /bin/cp -R css $DEPLOYPATH
     - /bin/cp -R javascript $DEPLOYPATH
     - /bin/cp -R phpScripts $DEPLOYPATH
+    - /bin/cp -R guides $DEPLOYPATH
 
     # webpages
     - /bin/cp .htaccess $DEPLOYPATH
