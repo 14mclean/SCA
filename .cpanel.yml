@@ -28,3 +28,4 @@ deployment:
     - /bin/cp post-registration.html $DEPLOYPATH
     - /bin/cp register.php $DEPLOYPATH
     - /bin/cp work-in-progress.html $DEPLOYPATH
+    - /bin/cp toolkits.php $DEPLOYPATH
