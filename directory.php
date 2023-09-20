@@ -119,8 +119,8 @@
 
                         <ul class="subnav" id="teacher-resources">
                             <li><a>Student Resources</a></li>
-                            <li><a>Teacher Resources</a></li>
-                            <li><a>SCA Toolkit</a></li>
+                            <!--<li><a>Teacher Resources</a></li>-->
+                            <li><a href="toolkits.php">SCA Toolkit/Guides</a></li>
                         </ul>
                     </li>
 
