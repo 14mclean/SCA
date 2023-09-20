@@ -9,7 +9,7 @@ const loginButton = document.querySelector(".nav-button#login");
 
 if(loginButton) {
     loginButton.addEventListener("click", () => {
-        location.href = "login.html";
+        location.href = "login.php";
     })
 }
 

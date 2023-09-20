@@ -4,7 +4,7 @@
         $logged_in = true;
         $user_level = $_SESSION["user_level"];
     } else {
-        header("Location: login.html");
+        header("Location: login.php");
         exit();
     }
     include_once("api/Database.php");

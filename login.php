@@ -1,3 +1,7 @@
+<?php
+    header("Location: work-in-progress.html");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

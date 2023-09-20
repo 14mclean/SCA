@@ -6,7 +6,7 @@ if(isset($_SESSION["user_id"])) {
     $user_level = $_SESSION["user_level"];
     $user_id = $_SESSION["user_id"];
 } else {
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 }
 include_once("api/Database.php");
