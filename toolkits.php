@@ -100,16 +100,16 @@
 
             <h3>SCA Activity Guides</h3>
             <ul>
-                <li> <a href="guides/SCA Intro Activity Guide (Simple).pdf">SCA Intro</a> </li>
-                <li> <a href="guides/SCA Activity Guide (Core).pdf">SCA Core</a> </li>
-                <li> <a href="guides/SCA Extended Activity Guide (with extended activities).pdf">SCA Extended</a> </li>
+                <li> <a href="guides/SCA Intro Activity Guide (Simple).pdf">SCA Introductory Activity Guide</a> </li>
+                <li> <a href="guides/SCA Activity Guide (Core).pdf">SCA Core Activity Guide</a> </li>
+                <li> <a href="guides/SCA Extended Activity Guide (with extended activities).pdf">SCA Extended Activity Guide</a> </li>
             </ul>
 
             <h3>SCA Generic Skills</h3>
             <ul>
                 <li> <a href="guides/Generic Skills Guide Part 1 - Draft 2023 (1).pdf">SCA Generic Skills Part 1</a> </li>
                 <li> <a href="guides/Generic Skills Guide Part 2 - Draft 2023.pdf">SCA Generic Skills Part 2</a> </li>
-                <li> <a href="guides/MINDMAPS -Generic Skills Guide - Draft 2023.pdf">SCA Generic Skills Part 3</a> </li>
+                <li> <a href="guides/MINDMAPS -Generic Skills Guide - Draft 2023.pdf">SCA Generic Skills Mindmaps</a> </li>
             </ul>
 
             <h3>Additional SCA Guides</h3>
