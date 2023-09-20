@@ -15,9 +15,15 @@ main h3 {
 }
 
 main ul {
-
+    margin-left: 10vw;
 }
 
 main a {
+    font-family: 'Open Sans';
+    font-size: 18px;
+    color: #121212;
+}
+
+main a#practical {
     margin-left: 10vw;
 }

@@ -15,6 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Toolkits/Guides - SCA</title>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="css/toolkits.css">
     </head>
@@ -95,7 +96,7 @@
         <main>
             <h2>SCA Guides</h2>
 
-            <a href="guides/SCA Practical Guide 2023.pdf">SCA Practical Guide</a>
+            <a id="practical" href="guides/SCA Practical Guide 2023.pdf">SCA Practical Guide</a>
 
             <h3>SCA Activity Guides</h3>
             <ul>
