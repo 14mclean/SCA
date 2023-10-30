@@ -29,6 +29,15 @@ main {
         margin-left: 10%;
     }
 
+    .first-section a {
+        text-align: center;
+        color: white;
+        font-size: 24px;
+        width: 100%;
+        display: inline-block;
+        font-family: 'Raleway';
+    }
+
     .first-section h2 {
         color: white;
         font-family: 'Raleway';
