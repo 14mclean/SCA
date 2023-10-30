@@ -94,11 +94,11 @@
 
         <main>
             <div class="first-section">
-                <h1>School Citizen Assemblies</h1>
+                <!--<h1>School Citizen Assemblies</h1>-->
 
                 <img src="assets/homepage.png">
 
-                <h2><i>Assembling and empowering young people, experts and stakeholders to tackle real world challanges</i></h2>
+                <!--<h2><i>Assembling and empowering young people, experts and stakeholders to tackle real world challanges</i></h2>-->
             </div>
             
             <div class="second-section">
