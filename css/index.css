@@ -127,13 +127,6 @@ main {
         top: 200px;
     }
 
-    .first-section img {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 350px;
-        max-width: 80%;
-    }
-
     .first-section h2 {
         left: 10%;
         top: 250px;
@@ -193,10 +186,8 @@ main {
         }
     
         .first-section img {
-            width: auto;
-            height: 150px;
-            left: 70px;
-            top: 470px
+            width: 200%;
+            margin-left: -50%;
         }
     
         .first-section h2 {
