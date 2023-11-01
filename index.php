@@ -106,7 +106,7 @@
                 <h1>An Inclusive & Impactful Challange Led Learning and Engagement Toolkit</h1>
                 <p class="p1">Empowers young people to tackle real world challanges and develop a wide range of learning outcomes through engaging cirriculum design</p>
                 <p class="p2">Connects communities, experts and stakeholders to understand complex problems and develop innovative solutions together</p>
-                <p class="p3">By enacting choices, voices and actions we can join together to make a real difference to policy, practise and the world around us</p>
+                <p class="p3">By enacting choices, voices and actions we can join together to make a real difference to policy, practice and the world around us</p>
             </div>
 
             <div class="third-section">
